@@ -217,6 +217,7 @@
             transition: width 0.1s ease;
         }
 
+
         /* === Glassmorphism Header === */
         .header {
             position: fixed;
@@ -433,6 +434,8 @@
             visibility: visible;
             transform: translateY(0);
         }
+
+        
 
         @media (max-width: 992px) {
             .nav-submenu {
@@ -1076,7 +1079,7 @@
             overflow: hidden;
         }
 
-        .perfect-faculty-section::before {
+        /* .perfect-faculty-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1084,7 +1087,7 @@
             right: 0;
             height: 5px;
             background: linear-gradient(90deg, var(--primaryColor) 0%, #4CAF50 50%, var(--primaryColor) 100%);
-        }
+        } */
 
         /* Section Header */
         .section-header {
