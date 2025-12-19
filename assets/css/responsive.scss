@@ -1,0 +1,4279 @@
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    body {
+        font-size: 14px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .ptb-100 {
+        padding: {
+            top: 60px;
+            bottom: 60px;
+        };
+    }
+    .pt-100 {
+        padding-top: 60px;
+    }
+    .pb-100 {
+        padding-bottom: 60px;
+    }
+    .pt-75 {
+        padding-top: 35px;
+    }
+    .pb-75 {
+        padding-bottom: 35px;
+    }
+ 
+    // Default CSS
+    .default-btn {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .arrow-btn {
+        font-size: 15px;
+        i {
+            top: 0;
+        }
+    }
+
+    // Section Title
+    .section-title {
+        margin-bottom: 30px !important;
+
+        h2 {
+            font-size: 26px;
+        }
+    }
+
+    // Top Header 
+    .top-header-area {
+        .container-fluid {
+            max-width: 540px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        &.style-3 {
+            .container-fluid {
+                max-width: 540px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+        &.pages-style {
+            .container-fluid {
+                max-width: 540px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+    }
+    .top-header-list {
+        text-align: center;
+
+        ul {
+            li {
+                padding-right: 0;
+                margin: {
+                    right: 0;
+                    bottom: 5px;
+                };
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    .top-header-social-list {
+        text-align: center !important;
+        ul {
+            li {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    // Navbar Area 
+    .navbar {
+        .container-fluid {
+            max-width: 540px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        &.style-3 {
+            .container-fluid {
+                max-width: 540px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+        &.pages-style {
+            .container-fluid {
+                max-width: 540px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+    }
+
+    // Responsive Navbar
+    .responsive-navbar {
+        .offcanvas-header {
+            padding: 20px;
+    
+            .close-btn {
+                font-size: 18px;
+            }
+        }
+        .offcanvas-body {
+            padding: 20px;
+    
+            ul {
+                &.responsive-menu {
+                    .responsive-menu-list {
+                        line-height: 50px;
+                        height: 50px;
+        
+                        a {
+                            font-size: 15px;
+                        }
+                        .responsive-menu-items {
+                            a {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+
+    // Hero Area 
+    .hero-area {
+        padding: {
+            top: 70px;
+            bottom: 70px;
+        };
+        .container-fluid {
+            max-width: 540px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        &::after {
+            background: linear-gradient(90deg, rgba(0, 9, 41, 0.9) 31.2%, rgba(0, 9, 41, 0) 309.89%);
+        }
+    }
+    .hero-content {
+        margin-bottom: 25px;
+
+        .title {
+            margin-bottom: 25px;
+
+            h1 {
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+        .hero-btn {
+            li {
+                margin: {
+                    right: 15px;
+                    bottom: 15px;
+                };
+            }
+        }
+    }
+    .hero-reviews {
+        padding: 20px;
+        position: unset;
+        max-width: 100%;
+
+        .everything {
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+    }
+    .banner-area {
+        padding: {
+            top: 70px;
+        };
+        .container-fluid {
+            max-width: 540px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+    }
+    .banner-content {
+        margin-bottom: 60px;
+        
+        .title {
+            h1 {
+                font-size: 32px;
+            }
+        }
+        ul {
+            display: block !important;
+
+            li {
+                margin-bottom: 15px;
+                
+                .play-btn {
+                    display: flex !important;
+                    li {
+                        margin-bottom: 0;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .banner-uesr-info {
+        .banner-uesr-item {
+            padding: 20px 15px;
+
+            .icon {
+                font-size: 35px;
+                margin-right: 15px;
+            }
+            .content {
+                .title {
+                    margin-bottom: 0;
+                    
+                    h3 {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .banner-wrap-area {
+        padding: {
+            top: 70px;
+            bottom: 70px;
+        };
+
+        .container-fluid {
+            max-width: 540px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+    }
+    .banner-wrap-image {
+        margin: {
+            top: 0;
+            right: 0;
+            bottom: 25px;
+        };
+        .image-2 {
+            top: 0;
+            left: 0;
+            right: 0;
+            max-width: 182px;
+            position: relative;
+            margin: {
+                left: auto;
+                right: auto;
+                top: 25px;
+            };
+        }
+    }
+    .banner-wrap-content {
+        .title {
+            margin-bottom: 20px;
+
+            h1 {
+                font-size: 35px;
+                margin-bottom: 15px;
+            }
+        }
+        .content-shape {
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 106px;
+            position: relative;
+        }  
+        .btn-list {
+            display: block !important;
+
+            li {
+                margin-bottom: 15px;
+
+                .play-btn {
+                    li {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        } 
+        .user-list {
+            margin-top: 40px;
+            display: block !important;
+            
+            li {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    // About Area
+    .about-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+
+        .title {
+            margin-bottom: 15px;
+
+            h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    // Graduets Area 
+    .graduets-content {
+        margin-right: 0;
+
+        .graduets-card {
+            padding: 15px;
+            display: block !important;
+
+            .image {
+                margin-bottom: 15px;
+
+                img {
+                    width: 110px;
+                    height: 110px;
+                }
+            }
+        }
+    }
+    .graduets-tab-info {
+        h2 {
+            font-size: 45px;
+        }
+        .nav {
+            margin-bottom: 25px;
+            .nav-item {
+                margin: {
+                    right: 0;
+                    bottom: 12px;
+                };
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .graduets-image {
+        .graduets-counter {
+            margin-bottom: 15px;
+
+            h2 {
+                font-size: 35px;
+                img {
+                    max-width: 35px;
+                }
+            }
+        }
+        .graduets-btn {
+            text-align: left !important;
+        }
+    }
+    .single-graduates-card {
+        padding: 30px 20px;
+
+        h3 {
+            font-size: 15px;
+        }
+    }
+
+    // Funfact Area
+    .single-funfact-info {
+        padding: 30px;
+
+        h2 {
+            font-size: 35px;
+            
+            i {
+                font-size: 30px;
+            }
+        }
+    }
+
+    // Apply Area
+    .apply-image {
+        margin: {
+            right: 0;
+            left: 0;
+        };
+
+        .user-help {
+            padding: 15px;
+            position: unset;
+            margin-top: 25px;
+        }
+        &.style-2 {
+            margin-left: 0;
+            padding-left: 0;
+
+            .user-image {
+                position: unset;
+                margin-top: 25px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .apply-content {
+        margin-left: 0;
+
+        .title {
+            margin-bottom: 25px;
+            h2 {
+                font-size: 25px;
+            }
+        }
+        .apply-content-card {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            display: block !important;
+
+            .icon {
+                margin-bottom: 15px;
+            }
+            .content {
+                h3 {
+
+                }
+            }
+        }
+        .apply-btn {
+            li {
+                margin-bottom: 20px;
+                .play-btn {
+                    li {
+                        margin-bottom: 0;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &.style-2 {
+            margin-right: 0;
+        }
+    }
+ 
+    // Events Area
+    .single-events-card {
+        padding: 15px;
+
+        .content {
+            padding-left: 0;
+            display: block !important;
+
+            .date {
+                display: inline-block;
+                margin-bottom: 15px;
+
+                h2 {
+                    font-size: 35px;
+                }
+                span {
+                    text-align:  left !important; 
+                }
+
+            }
+        }
+    }
+
+    // Tuition Area
+    .single-tuition-card {
+        padding: 25px;
+    }
+    .tuition-content {
+        margin-left: 0;
+
+        .title {
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 26px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    // Facilities Area
+    .facilities-content {
+        margin-right: 0;
+        
+        .title {
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 26px;
+            }
+        }
+        .facilities-info {
+            margin-bottom: 20px;
+        }
+        &.style-2 {
+            margin: {
+                left: 0;
+            };
+        }
+        &.style-3 {
+            margin: {
+                left: 0;
+                bottom: 0;
+            };
+        }
+    }
+    .facilities-image {
+        .facilities-image-info {
+            max-width: 100%;
+            padding: 15px;
+            position: unset;
+            margin-top: 25px;
+
+            i {
+                color: var(--blackColor);
+            }
+        }
+        &.style-3 {
+            margin-right: 0;
+            text-align: center;
+
+            .image-2 {
+                position: unset;
+                margin-top: 25px;
+            }
+            .shape-4 {
+                display: none;
+            }
+            .shape-5 {
+                display: none;
+            }
+            .shape-6 {
+                display: none;
+            }
+        }
+    }
+
+    // Testimonial Area
+    .testimonial-slider-info {
+        margin-left:0;
+
+        .thumbs-arrow  {
+            display: block !important;
+        }
+        .next-prev-arrow  {
+            margin: {
+                left: 0;
+                bottom: 25px;
+            };
+        }
+        
+        .testimonial {
+            .swiper-wrapper {
+                justify-content: start !important;
+            }
+        }
+    }
+    .testimonial-slider-item {
+        padding: 15px;
+        p {
+            margin-bottom: 25px;
+        }
+        &.style-3 {
+            padding: 15px;
+            .user-list {
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                display: block !important;
+
+                .user {
+                    margin-bottom: 15px;
+                }
+            }
+
+        }
+    }
+    .testimonial-item-image {
+        img {
+            width: 35px;
+            height: 35px;
+        }
+    }
+    .testimonial-image {
+        text-align: center;
+    }
+    .testimonial-slider-info-2 {
+        .swiper-btn {
+            .swiper-button-next,.swiper-button-prev {
+                top: 103%;
+            }
+        }
+    }
+    
+
+    // subscribe Area
+    .subscribe-image-info {
+        .subscribe-item {
+            padding: 20px;
+            margin: {
+                right: 0;
+                bottom: 25px;
+            };
+
+            h3 {
+                font-size: 17px;
+            }
+            .form-group {
+                .form-control {
+                    height: 45px;
+                    padding-left: 15px;
+                }
+            }
+        }
+    }
+    .subscribe-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+
+        .title {
+            margin-bottom: 25px;
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+        .subscribe-btn {
+            li {
+                margin-bottom: 15px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .subscribe-image {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+    }
+
+    // Footer Area
+    .single-footer-widget {
+        h3 {
+            margin-bottom: 15px;
+        }
+        ul {
+            li {
+                margin-bottom: 12px;
+            }
+        }
+        &.mobile {
+            margin-left: 0;
+        }
+        &.quick {
+            margin-left: 0;
+        }
+        &.contact {
+            margin-left: 0;
+            ul {
+                li {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        &.about {
+            p {
+                margin-bottom: 20px;
+            }
+            ul {
+                li {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .copyright-logo {
+        text-align: center !important;
+        margin-bottom: 15px;
+    }
+    .copyright-title {
+        text-align: center !important;
+        margin-bottom: 10px;
+    }
+    .copyright-list {
+        text-align: center !important;
+    
+        ul {
+            li {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    // Overview Area
+    .overview-content {
+        .graduets-counter {
+            margin-bottom: 15px;
+            h2 {
+                font-size: 35px;
+                img {
+                    max-width: 35px;
+                }
+            }
+        }
+        .graduets-btn {
+            text-align: left !important;
+        }
+    }
+    .overview-image {
+        margin: {
+            top: 0;
+            left: 0;
+            right: 0;
+        };
+        .title {
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+        }
+        .casual-image {
+            &.pages-style {
+                .content-shape {
+                    img {
+                        animation: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // Programs Area
+    .programs-section-title {
+        margin-bottom: 20px;
+
+        .title {
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 27px;
+                line-height: 1.3;
+                text-align: center;
+            }
+        }
+        .programs-nav-tab {
+            .nav {
+                justify-content: center !important;
+                
+                .nav-item {
+                    margin: {
+                        right: 0;
+                        bottom: 10px;
+                    };
+                }
+            }
+        }
+    }
+
+
+    // Upcoming Area
+    .upcoming-image {
+        padding: 15px;
+        margin: {
+            left: 0;
+            right: 0;
+        };
+
+        .image {
+            margin-bottom: 20px;
+        }
+        .content {
+            .upcoming-timer {
+                .coundown-container {
+                    .countdown-el {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .title {
+                h3 {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+    .upcoming-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+
+        .title {
+            margin-bottom: 25px;
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+        .upcoming-content-info  {
+            display: block !important;
+
+            .image {
+                img {
+                    width: 100%;
+                }
+            }
+            .content {
+                padding: 20px;
+
+                ul {
+                    li {
+                        margin: {
+                            right: 0;
+                            bottom: 10px;
+                        };
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Application Area
+    .application-area {
+        .shape-1 {
+            display: none;
+        }
+        .shape-2 {
+            display: none;
+        }
+    }
+    .application-section-title {
+        .application-title {
+            margin-bottom: 25px;
+
+            h2 {
+                font-size: 26px;
+            }
+        }
+        .application-btn {
+            justify-content: start !important;
+        }
+    }
+    .single-application-card {
+        padding: 20px;
+        margin-bottom: 25px;
+
+        .d-flex {
+            display: block !important;
+
+            .icon {
+                margin-bottom: 10px;
+            }
+        }
+        .content {
+
+            h3 {
+                font-size: 17px;
+            }
+        }
+        &.style-3 {
+            padding: 20px;
+            
+            .d-flex {
+                margin-bottom: 15px;
+                display: flex !important;
+            }
+        }
+    }
+
+    // Blog Area
+    .single-blog-card {
+        .content {
+            ul {
+                li {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    // Admission Area
+    .admission-image {
+        .image-2 {
+            position: unset;
+            margin-top: 25px;
+            img {
+                width: 100%;
+                height: 100%;
+                border: unset;
+                transform: unset;
+            }
+        }
+    }
+    .admission-content {
+        h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+
+            i {
+                font-size: 25px;
+            }
+        }
+    }
+    .admission-btn {
+        justify-content: left !important;
+    }
+
+
+    // Back To Top
+    #back-to-top {
+        top: 84%;
+        height: 45px;
+    }
+
+    // Adma About Area
+    .adma-about-content {
+        .title {
+            h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+        }
+        .adma-about-card {
+            margin-bottom: 25px;
+            .arrow-btn {
+                margin-top: 0;
+            }
+        }
+    }
+    .adma-about-image {
+        .shape-3 {
+            display: none;
+        }
+        .shape-4 {
+            display: none;
+        }
+    }
+
+    // Video Area
+    .video-image {
+        .video-btn {
+            a {
+                width: 70px;
+                height: 70px;
+                font-size: 20px;
+                line-height: 77px;
+            }
+        }
+    }
+
+    // Student Area
+    .student-image {
+        margin-right: 0;
+    }
+    .student-card {
+        padding: 30px;;
+        margin-left: 0;
+
+        ul {
+            li {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .student-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+        h2 {
+            font-size: 28px;
+        }
+    }
+
+    // Counter Area
+    .single-counter-info {
+    
+        .icon {
+            font-size: 40px;
+        }
+        h2 {
+            font-size: 40px;
+        }
+    }
+    .col-lg-3 {
+        &:nth-child(2) {
+            .single-counter-info {
+                margin-left: 0;
+            }
+        }
+        &:nth-child(3) {
+            .single-counter-info {
+                margin-left: 0;
+            }
+        }
+        &:nth-child(4) {
+            .single-counter-info {
+                justify-content: start !important;
+            }
+        }
+    }
+
+    // Choose Area
+    .choose-content {
+        margin-right: 0;
+
+        .title {
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+        }
+        .choose-counter-info {
+            margin-top: 30px;
+            padding-top: 20px;
+
+            ul {
+                li {
+                    margin: {
+                        right: 50px;
+                        bottom: 15px;
+                    };
+
+                    h2 {
+                        font-size: 45px;
+                    }
+                }
+            }
+        }
+    }
+    .choose-image {
+        margin-left: 0;
+        
+        .choose-image-info {
+            max-width: 100%;
+            padding: 15px;
+            position: unset;
+            margin-top: 25px;
+        }
+    }
+
+    // Newsletter Area
+    .newsletter-content {
+        margin-right: 0;
+
+        .title {
+            h2 {
+                font-size: 25px;
+            }
+        }
+        .subscribe-btn {
+            li {
+                margin: {
+                    right: 15px;
+                    bottom: 15px;
+                };
+            }
+        }
+        &.pages-style {
+            margin-left: 0;
+            .title {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .newsletter-form {
+        padding: 20px;
+
+        .title {
+            h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+        }
+        .form-group {
+            .form-control {
+                height: 45px;
+                padding-left: 15px;
+            }
+        }
+    }
+
+    // Support Area
+    .support-image {
+        padding: {
+            left: 0;
+            bottom: 0;
+        };
+
+        &::before {
+            display: none;
+        }
+    }
+    .support-content {
+        .title {
+            h2 {
+                font-size: 26px;
+            }
+        }
+        .questions-content {
+            margin-bottom: 30px;
+        }
+    }
+
+    // Pages Banner Area
+    .pages-banner-area {
+        padding-top: 65px;
+
+        .container-fluid {
+            max-width: 540px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        .shape-7 {
+            display: none;
+        }
+    }
+    .pages-title {
+        margin: {
+            top: 0;
+            bottom: 25px;
+        };
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+    }
+    .single-pages-widget {
+        margin-bottom: 30px;
+
+        &.form {
+            .form-group {
+                .form-control {
+                    height: 45px;
+                    padding-left: 15px;
+                }
+            }
+        }
+        &.latest {
+            .latest-card {
+                display: block !important;
+                .image {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        &.gallery {
+            ul {
+                margin-right: 0;
+                text-align: center;
+            }
+        }
+    }
+    blockquote {
+        padding: 20px;
+        margin: {
+            top: 20px;
+            bottom: 20px;
+        };
+    }
+    .pages-share-and-tags {
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+
+        .tags {
+            text-align: start !important;
+        }
+    }
+    .pages-comment-area {
+        h1 {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+        .comment-card {
+            padding: 20px;
+            .ml-30 {
+                margin-left: 0;
+                .users {
+                    .d-flex {
+                        display: flex !important;
+                    }
+                }
+            }
+            .users {
+                .d-flex {
+                    display: block !important;
+
+                    .image {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .pages-leave-reply {
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        form {
+            .form-group {
+                .form-control {
+                    height: 50px;
+                    padding-left: 15px;
+                    &.textarea {
+                        height: 120px;
+                    }
+                }
+            }
+            .form-check {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    // Pagination 
+    .pagination {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .page-item {
+            .page-link {
+                height: 45px;
+                width: 45px;
+                line-height: 35px;
+                font-size: 16px;
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    // Blog 
+    .blog-left-sidebar {
+        margin-right: 0;
+
+        .single-blog-card {
+            margin-bottom: 15px;
+
+            .content {
+                h3 { 
+                    font-size: 16px;
+                }
+                ul {
+                    li {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+        .leading-management {
+            margin-bottom: 20px;
+
+            h1 {
+                font-size: 26px;
+            }
+        }
+        .applications-info {
+            h3 {
+                font-size: 16px;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+            .image {
+                margin: {
+                    top: 0;
+                };
+            }
+        }
+    }
+    .single-register-info {
+        padding: 25px;
+        max-width: 100%;
+
+        h3 {
+            font-size: 21px;
+            margin-bottom: 20px;
+        }
+        form {
+            .form-group {
+                .form-control {
+                    height: 50px;
+                    padding-left: 15px;
+                    &.textarea {
+                        height: 120px;
+                    }
+                }
+            }
+            .form-check {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .application-form-details {
+        padding: 25px;
+
+        h3 {
+            font-size: 21px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            .form-control {
+                height: 50px;
+                padding-left: 15px;
+                &.textarea {
+                    height: 120px;
+                }
+            }
+            .form-select {
+                height: 50px;
+                padding-left: 15px;
+            }
+        }
+        .form-check {
+            margin-bottom: 25px;
+        }
+        .m-30 {
+            margin-bottom: 10px;
+        }
+    }
+    .tuition-info {
+        padding: 20px;
+
+        h1 {
+            font-size: 26px;
+        }
+        .tuition-item {
+            .accordion-item {
+                .accordion-body {
+                    .table {
+                        tbody {
+                            tr {
+                                td {
+                                    white-space: nowrap;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .program-details-left-sidebar {
+        .reviews-image {
+            .reviews-info {
+                padding: 20px;
+                position: unset;
+
+                ul {
+                    display: block !important;
+
+                    li {
+                        margin: {
+                            right: 20px;
+                            bottom: 15px;
+                        };
+
+                        .star-icon {
+                            li {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .biochemistry {
+            h1 {
+                font-size: 30px;
+                margin-bottom: 13px;
+            }
+            .list-info {
+                margin-bottom: 10px;
+            }
+            .program-card {
+                h3 {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    .single-program-widget {
+        padding: 20px;
+        margin-bottom: 30px;
+
+        h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        &.department {
+            .share {
+                ul {
+                    li {
+                        font-size: 16px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        &.programs {
+            .programs-card {
+                display: block !important;
+
+                .image {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        &.register {
+            form {
+                .form-group {
+                    .form-control {
+                        height: 50px;
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+        &.events {
+            .events-card {
+                display: block !important;
+
+                .image {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    .events-details-left-sidebar {
+        margin-right: 0;
+
+        h1 {
+            font-size: 27px;
+        }
+        .register {
+            form {
+                .form-group {
+                    .form-control {
+                        height: 50px;
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .fitness-image {
+        padding: {
+            left: 0;
+            bottom: 0;
+        };
+
+        &::before {
+            display: none;
+        }
+        &.style-2 {
+            padding: {
+                right: 0;
+            };
+        }
+    }
+    .fitness-content {
+        margin-left: 0;
+
+        .title {
+            h2 {
+                font-size: 29px;
+            }
+        }
+        &.style-2 {
+            margin-right: 0;
+
+            .fitness-btn {
+                margin-top: 20px;
+                display: block !important;
+
+                li {
+                    margin: {
+                        right: 0;
+                        bottom: 15px;
+                    };
+
+                    .play-btn {
+                        li {
+                            margin-bottom: 0;
+                        }
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    .contact-form {
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        form {
+            .form-group {
+                .form-control {
+                    height: 50px;
+                    padding-left: 15px;
+                    &.textarea {
+                        height: 120px;
+                    }
+                }
+            }
+            .form-check {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .contact-information {
+        padding: 20px;
+        margin-top: 0;
+
+        .information-card {
+            margin-bottom: 25px;
+
+            .icon {
+                width: 42px;
+                margin-right: 15px;
+            }
+        }
+    }
+    .contact-map {
+        iframe {
+            height: 430px;
+        }
+    }
+    .privacy-policy-content {
+        .cards {
+            margin-bottom: 20px;
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+        .list-card {
+            margin-bottom: 15px;
+            
+            h3 {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+            ul {
+                li {
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+
+    
+
+}
+
+/* Min width 330px to Max width 767px */
+@media only screen and (min-width : 330px) and (max-width : 767px) {
+
+    // Graduets Area
+    .graduets-tab-info {
+        .nav {
+            .nav-item {
+                margin-right: 15px !important;
+            }
+        }
+    }
+
+    // Programs Area
+    .programs-nav-tab {
+        .nav {
+            .nav-item {
+                margin-right: 15px !important;
+            }
+        }
+    }
+    
+    // Upcoming Area
+    .upcoming-content {
+        .upcoming-content-info {
+            .content {
+                ul {
+                    li {
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Application Area
+    .application-section-title {
+        .application-title {
+            margin-bottom: 0;
+        }
+    }
+    .single-application-card {
+        .d-flex {
+            display: flex !important;
+        }
+    }
+
+
+    // Admission Area
+    .admission-image {
+        text-align: center;
+    }
+
+
+
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+
+    // Hero Area
+    .banner-wrap-content {
+        .user-list {
+            display: flex !important;
+        }
+        .btn-list {
+            display: flex !important;
+
+            li {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+
+    // Graduets Area
+    .graduets-content {
+        .graduets-card {
+            display: flex !important;
+            .image {
+                margin-bottom: 0;
+                img {
+                    width: 148px;
+                    height: 145px;
+                }
+            }
+        }
+    }
+    .graduets-image {
+        .graduets-btn {
+            text-align: end !important;
+        }
+    }
+
+    // Apply Area
+    .apply-content {
+        .apply-content-card {
+            display: flex !important;
+        }
+    }
+
+    // Events Area
+    .single-events-card {
+        padding-left: 0;
+
+        .content {
+            display: flex !important;
+        }
+    }
+
+    // Tuition Area
+    .single-tuition-card {
+        padding: 20px;
+    }
+
+    // Testimonial Area
+    .testimonial-image {
+        text-align: center;
+    }
+    .testimonial-slider-info {
+        .thumbs-arrow {
+            display: flex !important;
+        }
+        .next-prev-arrow {
+            margin-bottom: 0;
+        }
+    }
+    .testimonial-slider-item {
+        &.style-3 {
+            padding: 30px;
+
+            .user-list {
+                display: flex !important;
+            }
+        }
+    }
+    
+
+    // Subscribe Area
+    .subscribe-image {
+        text-align: center;
+    }
+
+    // Copyright Area
+    .copyright-list {
+        margin-bottom: 0;
+    }
+
+    // Overview Area
+    .overview-content {
+        .graduets-counter {
+            margin-bottom: 0;
+        }
+    }
+
+    // Pages Banner Area
+    //Blog
+    .blog-right-sidebar {
+        margin-left: 0;
+    }
+    .single-pages-widget {
+        &.latest {
+            .latest-card {
+                display: flex !important;
+
+                .image {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &.gallery {
+            ul {
+                text-align: start;
+            }
+        }
+    }
+    .pages-share-and-tags {
+        .tags {
+            ul {
+                li {
+                    margin-right: 7px;
+
+                    a {
+                        padding: 7px 11px;
+                    }
+                }  
+                
+            }
+        }
+    }
+    .pages-comment-area {
+        .comment-card {
+            .users {
+                .d-flex {
+                    display: flex !important;
+                }
+            }
+        }
+    }
+    .single-program-widget {
+        &.programs {
+            .programs-card {
+                display: flex !important;
+
+                .image {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &.events {
+            .events-card {
+                display: flex !important;
+
+                .image {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .fitness-content {
+        &.style-2 {
+            .fitness-btn {
+                display: block !important;
+
+                li {
+                    margin: {
+                        right: 20px;
+                        bottom: 0;
+                    };
+
+                    .play-btn {
+                        li {
+                            margin-bottom: 0;
+                        }
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    // Default CSS
+    .ptb-100 {
+        padding: {
+            top: 70px;
+            bottom: 70px;
+        };
+    }
+    .pt-100 {
+        padding-top: 70px;
+    }
+    .pb-100 {
+        padding-bottom: 70px;
+    }
+    .pt-75 {
+        padding-top: 45px;
+    }
+    .pb-75 {
+        padding-bottom: 45px;
+    }
+     
+    // Section Area
+    .section-title {
+        h2 {
+            font-size: 32px;
+        }
+    }
+
+    // Top Header Area
+    .top-header-area {
+        .container-fluid {
+            max-width: 720px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        &.style-3 {
+            .container-fluid {
+                max-width: 720px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            } 
+        }
+        &.pages-style {
+            .container-fluid {
+                max-width: 720px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+    }
+    .top-header-list {
+        margin-bottom: 10px;
+        text-align: center !important;
+
+        ul {
+            li {
+                margin-right: 8px;
+                padding-right: 14px;
+            }
+        }
+    }
+    .top-header-social-list {
+        margin-bottom: 10px;
+        text-align: center !important;
+    }
+
+    // Navbar Area
+    .navbar {
+        .container-fluid {
+            max-width: 720px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        &.style-3 {
+            .container-fluid {
+                max-width: 720px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            } 
+        }
+        &.pages-style {
+            .container-fluid {
+                max-width: 720px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+    }
+
+    // Responsive Navbar
+    .responsive-navbar {
+        .offcanvas-header {
+            padding: 20px;
+    
+            .close-btn {
+                font-size: 18px;
+            }
+        }
+        .offcanvas-body {
+            padding: 20px;
+    
+            ul {
+                &.responsive-menu {
+                    .responsive-menu-list {
+                        line-height: 50px;
+                        height: 50px;
+        
+                        a {
+                            font-size: 15px;
+                        }
+                        .responsive-menu-items {
+                            a {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Hero Area
+    .hero-area {
+        padding: {
+            top: 70px;
+            bottom: 70px;
+        };
+        
+        .container-fluid {
+            max-width: 720px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        
+        &::after {
+            background: linear-gradient(90deg, rgba(0, 9, 41, 0.9) 31.2%, rgba(0, 9, 41, 0) 309.89%);
+        }
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 25px;
+
+        .title {
+            margin-bottom: 30px;
+            h1 {
+                font-size: 58px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .hero-reviews {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        padding: 30px;
+        position: unset;
+    }
+    .banner-area {
+        padding: {
+            top: 100px;
+        };
+
+        .container-fluid {
+            max-width: 720px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+    }
+    .banner-content {
+        margin-bottom: 100px;
+
+        .title {
+            h1 {
+                font-size: 73px;
+            }
+        }
+    }
+    .banner-uesr-info {
+        .banner-uesr-item {
+            padding: 20px;
+            margin-bottom: 20px;
+
+            .icon {
+                font-size: 35px;
+            }
+        }
+    }
+    .banner-wrap-area {
+        padding: {
+            top: 100px;
+            bottom: 100px;
+        };
+
+        .container-fluid {
+            max-width: 720px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+    }
+    .banner-wrap-image {
+        margin: {
+            top: 0;
+            right: 0;
+            bottom: 35px;
+        };
+    }
+    .banner-wrap-content {
+        margin-left: 0;
+
+        .title {
+            h1 {
+                font-size: 75px;
+            }
+        }
+    }
+    
+
+    // About Area
+    .about-image {
+        text-align: center;
+    }
+    .about-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+
+        .title {
+            margin-bottom: 20px;
+            h2 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // Graduets Area
+    .graduets-tab-info {
+        .nav {
+            margin-bottom: 35px;
+        }
+    }
+    .single-graduates-card {
+        padding: 30px;
+    }
+
+    // Apply Area
+    .apply-image {
+        text-align: center;
+        margin: {
+            left: 0;
+            right: 0;
+        };
+        
+        &.style-2 {
+            text-align: left !important;
+        }
+    }
+    .apply-content {
+        margin-left: 0;
+
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+
+    // Events Area
+    .single-events-card {
+        padding-left: 0;
+
+        .content {
+            .title {
+                margin-top: 0;
+            }
+            .date {
+                h2 {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+
+    // Tuition Area
+    .tuition-content {
+        margin-left: 0;
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+
+    // Funfact Area
+    .single-funfact-info {
+        padding: 45px;
+    }
+
+    // Facilities Area
+    .facilities-content {
+        margin-right: 0;
+
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+        &.style-2 {
+            margin-left: 0;
+        }
+        &.style-3 {
+            margin: {
+                left: 0;
+                bottom: 0;
+            };
+        }
+    }
+    .facilities-image {
+        text-align: center;
+
+        .facilities-image-info {
+            left: 0;
+        }
+        &.style-2 {
+            .facilities-image-info {
+                right: 0;
+            }
+        }
+        &.style-3 {
+            margin-bottom: 25px;
+
+            .image-2 {
+                display: none;
+            }
+            .shape-4 {
+                display: none;
+            }
+            .shape-5 {
+                display: none;
+            }
+            .shape-6 {
+                display: none;
+            }
+        }
+    }
+
+    // Testimonial Area
+    .testimonial-image {
+        text-align: center;
+    }
+    .testimonial-slider-info {
+        margin-left: 0;
+
+        .next-prev-arrow {
+            margin-left: 0;
+        }
+    }
+    .testimonial-slider-item {
+        padding: 30px;
+
+        &.style-3 {
+            padding: 20px;
+        }
+    }
+
+    // Subscribe Area
+    .subscribe-image-info {
+        margin-right: 0;
+
+        .subscribe-item {
+            padding: 40px;
+            margin: {
+                right: 0;
+                bottom: 25px;
+            };
+        }
+    }
+    .subscribe-image {
+        text-align: center;
+        margin: {
+            left: 0;
+            right: 0;
+        };
+    }
+    .subscribe-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+        .title {
+            margin-bottom: 25px;
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+
+    // Footer Area
+    .single-footer-widget {
+        &.mobile {
+            margin-left: 0;
+        }
+        &.quick {
+            margin-left: 0;
+        }
+        &.contact {
+            margin-left: -20px;
+        }
+    }
+    .copyright-logo {
+        margin-bottom: 15px;
+        text-align: center !important;
+    }
+    .copyright-title {
+        text-align: left !important;
+    }
+    .copyright-list {
+        margin-left: -10px;
+        text-align: center !important;
+
+        ul {
+            li {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    // Overview Area
+    .overview-content {
+        .image {
+            text-align: center;
+        }
+        .graduets-counter {
+            h2 {
+                font-size: 45px;
+            }
+        }
+    }
+    .overview-image {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+        .casual-image {
+            text-align: center;
+        }
+    }
+
+    // Programs Area
+    .programs-section-title {
+        .title {
+            margin-bottom: 25px;
+            text-align: center;
+
+            h2 {
+                font-size: 32px;
+            }
+        }
+        .programs-nav-tab {
+            .nav {
+                justify-content: center !important;
+            }
+        }
+    }
+
+    // Upcoming Area
+    .upcoming-image {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+
+        .image {
+            text-align: center;
+        }
+    }
+    .upcoming-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+    }
+
+    // Application Area
+    .application-area {
+        .shape-1 {
+            display: none;
+        }
+        .shape-2 {
+            display: none;
+        }
+    }
+    .application-section-title {
+        .application-title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+    .single-application-card {
+        padding: 20px;
+        margin-bottom: 25px;
+
+        .d-flex {
+            display: block !important;
+
+            .icon {
+                margin-bottom: 10px;
+            }
+        }
+        .content {
+
+            h3 {
+                font-size: 17px;
+            }
+        }
+        &.style-3 {
+            padding: 25px;
+
+            .d-flex {
+                display: flex !important;
+            }
+        }
+    }
+
+    // Admission Area
+    .admission-content {
+        h2 {
+            font-size: 32px;
+        }
+    }
+    .admission-btn {
+        justify-content: center !important;
+    }
+
+    // Adma About Area
+    .adma-about-content {
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+        .adma-about-card {
+            p {
+                font-size: 15px;
+            }
+            .arrow-btn {
+                margin-top: 0;
+            }
+        }
+    }
+    .adma-about-image {
+        text-align: center !important;
+
+        .shape-3 {
+            display: none;
+        }
+        .shape-4 {
+            display: none;
+        }
+    }
+
+    // Student Area
+    .student-image {
+        margin-right: 0;
+    }
+    .student-card {
+        margin-left: 0;
+    }
+    .student-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+        h2 {
+            font-size: 32px;
+        }
+    }
+
+    // Counter Area
+    .single-counter-info {
+        justify-content: center !important;
+
+        .icon {
+            font-size: 40px;
+        }
+        h2 {
+            font-size: 40px;
+        }
+    }
+    .col-lg-3 {
+        &:nth-child(2) {
+            .single-counter-info {
+                margin-left: 0;
+                justify-content: center !important;
+            }
+        }
+        &:nth-child(3) {
+            .single-counter-info {
+                margin-left: 0;
+                justify-content: center !important;
+            }
+        }
+        &:nth-child(4) {
+            .single-counter-info {
+                justify-content: center !important;
+            }
+        }
+    }
+
+    // Choose Area
+    .choose-content {
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+    .choose-image {
+        .choose-image-info {
+            left: 0;
+        }
+    }
+
+    // Newsletter Area
+    .newsletter-content {
+        margin-right: 0;
+
+        .title {
+            margin-bottom: 25px;
+
+            h2 {
+                font-size: 34px;
+            }
+        }
+        &.pages-style {
+            margin-left: 0;
+        }
+    }
+
+    // Support Area
+    .support-content {
+        .title {
+            h2 {
+                font-size: 35px;
+            }
+        }
+    }
+
+    // Pages Banner Area
+    .pages-banner-area {
+        .container-fluid {
+            max-width: 720px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+    }
+    .pages-title {
+        margin: {
+            top: 0;
+            bottom: 25px;
+        };
+        h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+    }
+
+    // Blog
+    .blog-left-sidebar {
+        margin-right: 0;
+
+        .leading-management {
+            h1 {
+                font-size: 33px;
+            }
+        }
+    }
+    .blog-right-sidebar {
+        margin-left: 0;
+    }
+    .application-form-details {
+        padding: 50px;
+    }
+    .tuition-info {
+        padding: 30px;
+
+        h1 {
+            font-size: 35px;
+        }
+    }
+    .program-details-left-sidebar {
+        .biochemistry {
+            h1 {
+                font-size: 35px;
+            }
+        }
+        .reviews-image {
+            .reviews-info {
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                padding: 20px;
+
+                ul {
+                    li {
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .events-details-left-sidebar {
+        h1 {
+            font-size: 30px;
+        }
+    }
+    .fitness-content {
+        margin-left: 0;
+
+        .title {
+            h2 {
+                font-size: 30px;
+            }
+        }
+        &.style-2 {
+            margin-right: 0;
+        }
+    }
+    .fitness-image {
+        padding: {
+            left: 0;
+            bottom: 0;
+        };
+        text-align: center;
+        &::before {
+            display: none;
+        }
+        &.style-2 {
+            padding: {
+                right: 0;
+            };
+        }
+    }
+
+
+
+
+
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    
+    // Default CSS
+    .ptb-100 {
+        padding: {
+            top: 70px;
+            bottom: 70px;
+        };
+    }
+    .pt-100 {
+        padding-top: 70px;
+    }
+    .pb-100 {
+        padding-bottom: 70px;
+    }
+    .pt-75 {
+        padding-top: 45px;
+    }
+    .pb-75 {
+        padding-bottom: 45px;
+    }
+
+    // Default Btn
+    .default-btn {
+        font-size: 15px;
+        padding: 14px 20px;
+    }
+         
+    // Section Area
+    .section-title {
+        h2 {
+            font-size: 32px;
+        }
+    }
+
+    // Top Header Area
+    .top-header-area {
+        .container-fluid {
+            max-width: 960px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        &.pages-style {
+            
+            .container-fluid {
+                max-width: 960px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+    }
+
+    // Navbar Area
+    .navbar {
+        .container-fluid {
+            max-width: 960px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        .navbar-nav {
+            margin-right: 30px;
+            .nav-item {
+                margin: {
+                    left: 12px;
+                    right: 12px;
+                };
+
+                .nav-link {
+                    span {
+                        display: none;
+                    }
+                }
+                .dropdown-menu {
+                    width: 245px;
+                }
+            }
+        }
+        .others-option {
+            .option-item {
+                .search-form {
+                    display: none !important;
+                }
+                .search-btn {
+                    font-size: 20px;
+                    display: block !important;
+                }
+                .default-btn {
+                    display: none;
+                }
+                .responsive-icon {
+                    display: block !important;
+                }
+            }
+        }
+        &.style-3 {
+            .navbar-nav {
+                margin: {
+                    left: auto;
+                    right: auto !important;
+                };
+            }
+        }
+        &.pages-style {
+            
+            .container-fluid {
+                max-width: 960px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+            .navbar-nav {
+                margin-right: auto;
+            }
+        }
+    }
+
+    // Hero Area
+    .hero-area {
+        padding: {
+            top: 130px;
+            bottom: 100px;
+        };
+        
+        .container-fluid {
+            max-width: 960px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        
+        &::after {
+            background: linear-gradient(90deg, rgba(0, 9, 41, 0.9) 31.2%, rgba(0, 9, 41, 0) 309.89%);
+        }
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 25px;
+
+        .title {
+            margin-bottom: 30px;
+            h1 {
+                font-size: 76px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .hero-reviews {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        padding: 30px;
+        position: unset;
+    }
+    .banner-area {
+        padding: {
+            top: 150px;
+        };
+
+        .container-fluid {
+            max-width: 960px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+    }
+    .banner-content {
+        margin-bottom: 100px;
+
+        .title {
+            h1 {
+                font-size: 75px;
+            }
+        }
+    }
+    .banner-uesr-info {
+        .banner-uesr-item {
+            padding: 20px 15px;
+
+            .icon {
+                font-size: 35px;
+                margin-right: 15px;
+            }
+            .content {
+                .title {
+                    margin-bottom: 0;
+                    
+                    h3 {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .banner-wrap-area {
+        padding: {
+            top: 100px;
+            bottom: 100px;
+        };
+    }
+    .banner-wrap-image {
+        margin: {
+            top: 0;
+            right: 0;
+        };
+        .image-2 {
+            top: 0;
+            left: 0;
+            right: auto;
+            max-width: 125px;
+            position: absolute;
+
+            .middle-img {
+                max-width: 65px;
+            }
+        }
+    }
+
+    .banner-wrap-content {
+        .title {
+            margin-bottom: 25px;
+            
+            h1 {
+                font-size: 55px;
+            }
+        }
+        .content-shape {
+            top: auto;
+            left: auto;
+            right: -10px;
+            bottom: 35px;
+            margin: auto;
+            max-width: 75px;
+            position: absolute;
+            img {
+                animation: unset;
+            }
+        }  
+        .btn-list {
+            display: block !important;
+
+            li {
+                margin-bottom: 15px;
+
+                .play-btn {
+                    li {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        } 
+        .user-list {
+            margin-top: 40px;
+            
+            li {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    // About Area
+    .about-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+
+        .title {
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 31px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    // Funfact Area
+    .single-funfact-info {
+        padding: 35px;
+
+        h2 {
+            font-size: 45px;
+        }
+        p {
+            font-size: 15px;
+        }
+    }
+
+    // Apply Area
+    .apply-image {
+        margin: {
+            right: 0;
+            left: 0;
+        };
+
+        .user-help {
+            padding: 15px;
+            position: unset;
+            margin-top: 25px;
+        }
+        &.style-2 {
+            .user-image {
+                bottom: 95px;
+            }
+        }
+    }
+    .apply-content {
+        margin-left: 0;
+
+        .title {
+            margin-bottom: 25px;
+            h2 {
+                font-size: 32px;
+            }
+        }
+        .apply-content-card {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+
+            .icon {
+                margin-bottom: 15px;
+            }
+        }
+        .apply-btn {
+            li {
+                margin-right: 10px;
+
+                .play-btn {
+                    li {
+                        margin-right: 10px;
+
+                        .icon {
+                            width: 43px;
+                            height: 43px;
+                            font-size: 25px;
+                            line-height: 43px;
+                        }
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &.style-2 {
+            margin-right: 0;
+        }
+    }
+
+    // Events Area
+    .single-events-card {
+        padding: 15px;
+
+        .content {
+            display: block !important;
+
+            .title {
+                h3 {
+                    font-size: 15px;
+                }
+            }
+            .date {
+                display: inline-block;
+                margin-bottom: 15px;
+
+                h2 {
+                    font-size: 35px;
+                }
+                span {
+                    text-align:  left !important; 
+                }
+
+            }
+        }
+    }
+
+    // Tuition Area
+    .single-tuition-card {
+        padding: 20px;
+
+        h3 {
+            font-size: 15px;
+        }
+        span {
+            font-size: 14px;
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+    .tuition-content {
+        margin-left: 0;
+
+        .title {
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+
+    // Facilities Area
+    .facilities-content {
+        margin: {
+            right: 0;
+        };
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+        .facilities-info {
+            margin-bottom: 25px;
+        }
+        &.style-2 {
+            margin-left: 0;
+        }
+        &.style-3 {
+            margin-left: 40px;
+        }
+    }
+    .facilities-image {
+        .facilities-image-info {
+            margin-top: 25px;
+            position: unset; 
+
+            i {
+                color: var(--blackColor);
+            }
+        }
+        &.style-3 {
+            .shape-4 {
+                display: none;
+            }
+            .shape-5 {
+                display: none;
+            }
+            .shape-6 {
+                display: none;
+            }
+        }
+    }
+
+    // Testimonial Area
+    .testimonial-slider-info {
+        margin-left: 0;
+
+        .next-prev-arrow {
+            margin-left: 0;
+        }
+    }
+    .testimonial-slider-item {
+        padding: 30px;
+    }
+
+    // Subscribe Area 
+    .subscribe-image {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+    }
+    .subscribe-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+
+    // Footer Area
+    .single-footer-widget {
+        ul {
+            li {
+                font-size: 14px;
+            }
+        }
+        &.mobile {
+            margin-left: 0;
+        }
+        &.quick {
+            margin-left: 0;
+        }
+        &.contact {
+            margin-left: 0;
+        }
+        &.about {
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+    .col-lg-4 {
+        &:nth-child(2) {
+            .single-footer-widget {
+                margin-left: -30px;
+            }
+        }
+    }
+    .copyright-logo {
+        text-align: center !important;
+        margin-bottom: 15px;
+    }
+    .copyright-title {
+        text-align: end !important;
+        margin-bottom: 15px;
+    }
+    .copyright-list {
+        margin-bottom: 15px;
+
+        ul {
+            li {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    // Overview Area
+    .overview-image {
+        margin: {
+            top: 0;
+            left: 0;
+            right: 0;
+        };
+
+        .title {
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+    .overview-content {
+        .graduets-counter {
+            h2 {
+                font-size: 46px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        .graduets-btn {
+            .arrow-btn {
+                font-size: 14px;
+            }
+        }
+    }
+
+    // Programs Area
+    .programs-section-title  {
+        margin-bottom: 30px;
+
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+        .programs-nav-tab {
+            .nav {
+                justify-content: center !important;
+
+                .nav-item {
+                    margin: {
+                        right: 20px;
+                        bottom: 10px;
+                    };
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // Upcoming Area
+    .upcoming-image {
+        text-align: center;
+        margin: {
+            left: 0;
+            right: 0;
+        };
+    }
+    .upcoming-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+
+    // Application Area
+    .application-area {
+        .shape-1 {
+            display: none;
+        }
+        .shape-2 {
+            display: none;
+        }
+    }
+    .application-section-title {
+        .application-title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+    .single-application-card {
+        padding: 20px;
+        margin-bottom: 25px;
+
+        .d-flex {
+            display: block !important;
+
+            .icon {
+                margin-bottom: 10px;
+            }
+        }
+        .content {
+            h3 {
+                font-size: 17px;
+            }
+        }
+        &.style-3 {
+            padding: 17px; 
+
+            .d-flex {
+                display: flex !important;
+            }
+        }
+    }
+
+    // Blog Area
+    .single-blog-card {
+        .content {
+            h3 {
+                font-size: 16px;
+            }
+            ul {
+                li {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    // Admission Area
+    .admission-content {
+        h2 {
+            font-size: 30px;
+        }
+    }
+    .admission-btn {
+        .default-btn {
+            font-size: 14px;
+        }
+    }
+
+    // Adma About Area
+    .adma-about-content {
+        .title {
+            h2 {
+                font-size: 32px;
+            }
+        }
+        .adma-about-card {
+            .arrow-btn {
+                margin-top: 0;
+            }
+        }
+    }
+    .adma-about-image {
+        .shape-3 {
+            display: none;
+        }
+        .shape-4 {
+            display: none;
+        }
+    }
+
+
+    // Graduates Area
+    .single-graduates-card {
+        padding: 20px;
+
+        h3 {
+            font-size: 16px;
+        }
+        span {
+            margin-top: 25px;
+        }
+    }
+
+    // Student Area
+    .student-image {
+        margin-right: 0;
+    }
+    .student-card {
+        margin-left: 0;
+        padding: 20px 10px;
+    }
+    .student-content {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+        h2 {
+            font-size: 32px;
+        }
+    }
+
+    // Counter Area
+    .single-counter-info {
+    
+        .icon {
+            font-size: 40px;
+        }
+        h2 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 15px;
+        }
+    }
+    .col-lg-3 {
+        &:nth-child(2) {
+            .single-counter-info {
+                margin-left: 0;
+            }
+        }
+        &:nth-child(3) {
+            .single-counter-info {
+                margin-left: 0;
+            }
+        }
+        &:nth-child(4) {
+            .single-counter-info {
+                justify-content: start !important;
+            }
+        }
+    }
+
+    // Choose Area
+    .choose-content {
+        margin-right: 0;
+
+        .title {
+            margin-bottom: 20px;
+
+            h2 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+        }
+        .choose-counter-info {
+            margin-top: 30px;
+            padding-top: 20px;
+
+            ul {
+                li {
+                    margin-right: 35px;
+
+                    h2 {
+                        font-size: 45px;
+                    }
+                }
+            }
+        }
+    }
+    .choose-image {
+        margin-left: 0;
+        
+        .choose-image-info {
+            max-width: 100%;
+            padding: 15px;
+            position: unset;
+            margin-top: 25px;
+        }
+    }
+
+    // Newsletter Area
+    .newsletter-content {
+        margin-right: 40px;
+
+        .title {
+            margin-bottom: 25px;
+
+            h2 {
+                font-size: 35px;
+            }
+        }
+        .subscribe-btn {
+            li {
+                margin-right: 20px;
+            }
+        }
+    }
+    .newsletter-form {
+        padding: 30px;
+    }
+
+    // Pages Banner Area
+    .pages-banner-area { 
+        .container-fluid {
+            max-width: 960px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        .shape-7 {
+            left: 130px;
+        }
+    }
+    .pages-title {
+        margin-top: 0;
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    // Blog
+    .blog-left-sidebar {
+        margin-right: 0;
+
+        .leading-management {
+            h1 {
+                font-size: 33px;
+            }
+        }
+    }    
+    .blog-right-sidebar {
+        margin-left: 0;
+    }
+    .single-pages-widget {
+        margin-bottom: 30px;
+
+        &.form {
+            .form-group {
+                .form-control {
+                    height: 45px;
+                    padding-left: 15px;
+                }
+            }
+        }
+        &.latest {
+            .latest-card {
+                display: block !important;
+                .image {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        &.gallery {
+            ul {
+                margin-right: 0;
+                text-align: center;
+            }
+        }
+    }
+    .pages-comment-area {
+        h1 {
+            font-size: 35px;
+        }
+    }
+    .application-form-details {
+        padding: 50px;
+    }
+    .tuition-info {
+        padding: 30px;
+
+        h1 {
+            font-size: 35px;
+        }
+    }
+    .program-details-left-sidebar {
+        margin-right: 0;
+
+        .reviews-image {
+            .reviews-info {
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                padding: 20px;
+
+                ul {
+                    li {
+                        margin: {
+                            right: 20px;
+                        };
+                    }
+                }
+            }
+        }
+        .biochemistry {
+            h1 {
+                font-size: 30px;
+                margin-bottom: 13px;
+            }
+            .list-info {
+                margin-bottom: 10px;
+            }
+            .program-card {
+                h3 {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    .program-details-right-sidebar {
+        margin-left: 0;
+    }
+    .single-program-widget {
+        padding: 20px;
+        margin-bottom: 30px;
+
+        h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        &.department {
+            .share {
+                ul {
+                    li {
+                        font-size: 16px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        &.programs {
+            .programs-card {
+                display: block !important;
+
+                .image {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        &.register {
+            form {
+                .form-group {
+                    .form-control {
+                        height: 50px;
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+        
+        &.events {
+            .events-card {
+                display: block !important;
+
+                .image {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    .events-details-left-sidebar {
+        margin-right: 0;
+
+        h1 {
+            font-size: 27px;
+        }
+        .register {
+            form {
+                .form-group {
+                    .form-control {
+                        height: 50px;
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Support Area
+    .support-image {
+        padding: {
+            left: 0;
+            bottom: 0;
+        };
+
+        &::before {
+            display: none;
+        }
+    }
+    .support-content {
+        .title {
+            margin-bottom: 25px;
+            h2 {
+                font-size: 35px;
+            }
+        }
+        .questions-content {
+            margin-bottom: 30px;
+
+            .accordion-item {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .fitness-image {
+        padding: {
+            left: 0;
+            bottom: 0;
+        };
+
+        &::before {
+            display: none;
+        }
+        &.style-2 {
+            padding: {
+                right: 0;
+            };
+        }
+    }
+    .fitness-content {
+        margin-left: 0;
+
+        .title {
+            h2 {
+                font-size: 35px;
+            }
+        }
+        &.style-2 {
+            margin-right: 0;
+
+            .fitness-btn {
+                margin-top: 20px;
+                display: block !important;
+
+                li {
+                    margin: {
+                        right: 0;
+                        bottom: 15px;
+                    };
+
+                    .play-btn {
+                        li {
+                            margin-bottom: 0;
+                        }
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-form {
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        form {
+            .form-group {
+                .form-control {
+                    height: 50px;
+                    padding-left: 15px;
+                    &.textarea {
+                        height: 120px;
+                    }
+                }
+            }
+            .form-check {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .contact-information {
+        padding: 20px;
+        margin-top: 0;
+
+        .information-card {
+            margin-bottom: 20px;
+            display: block !important;
+
+            .icon {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .contact-map {
+        iframe {
+            height: 430px;
+        }
+    }
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+
+    // Top Header Area
+    .top-header-area {
+        .container-fluid {
+            max-width: 1140px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        &.style-3 {
+            .container-fluid {
+                max-width: 1140px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+        &.pages-style {
+            .container-fluid {
+                max-width: 1140px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+    }
+
+    // Navbar Area
+    .navbar {
+        .container-fluid {
+            max-width: 1140px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        .navbar-nav {
+            margin-right: 50px;
+            
+            .nav-item {
+                .nav-link {
+                    span {
+                        display: none;
+                    }
+                }
+                .dropdown-menu {
+                    width: 245px;
+                }
+            }
+        }
+        .others-option {
+            .option-item {
+                .search-form {
+                    display: none !important;
+                }
+                .search-btn {
+                    font-size: 20px;
+                    display: block !important;
+                }
+                .default-btn {
+                    display: none;
+                }
+                .responsive-icon {
+                    display: block !important;
+                }
+            }
+        }
+        &.style-3 {
+            .container-fluid {
+                max-width: 1140px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+        &.pages-style {
+            .container-fluid {
+                max-width: 1140px;
+                padding: {
+                    left: 12px;
+                    right: 12px;
+                };
+            }
+        }
+    }
+
+    // Hero Area
+    .hero-area {
+        .container-fluid {
+            max-width: 1140px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+    }
+    .hero-content {
+        .title {
+            h2 {
+                font-size: 75px;
+            }
+        }
+    }
+    .banner-area {
+        .container-fluid {
+            max-width: 1140px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+    }
+    .banner-uesr-info {
+        .banner-uesr-item {
+            padding: 27px;
+        }
+    }
+    .banner-wrap-area {
+        .container-fluid {
+            max-width: 1140px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+    }
+    .banner-wrap-content {
+        .title {
+            h1 {
+                font-size: 66px;
+            }
+        }
+        .btn-list {
+            li {
+                .default-btn {
+                    padding: 15px 25px;
+                }
+            }
+        }
+    }
+    .banner-wrap-image {
+        margin-right: 0;
+    }
+    .banner-wrap-content 
+
+    // About Area
+    .about-content {
+        margin: {
+            left: 25px;
+            right: 0;
+        };
+    }
+    .about-content {
+        margin: {
+            left: 25px;
+            right: 0;
+        };
+    }
+ 
+
+
+    // Apply Area
+    .apply-image {
+        margin: {
+            left: 0;
+            right: 0;
+        };
+    }
+    .apply-content {
+        margin-left: 20px;
+        .apply-btn {
+            li {
+                margin-right: 25px;
+            }
+        }
+    }
+
+    // Tuition Area
+    .single-tuition-card {
+        padding: 25px;
+    }
+    .tuition-content {
+        margin-left: 40px;
+    }
+
+    // Testimonial Area
+    .testimonial-slider-info {
+        margin-left: 0;
+    }
+    .subscribe-content {
+        .title {
+            h2 {
+                font-size: 40px;
+            }
+        }
+    }
+
+    // Subscribe Area
+    .subscribe-image-info {
+        .subscribe-item {
+            padding: 25px;
+            margin-right: -30px;
+        }
+    }
+    .subscribe-image {
+        margin: {
+            left: 0;
+            right: 65px;
+        };
+    }
+    .subscribe-content {
+        .subscribe-btn {
+            li {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    // Overview Area
+    .overview-image {
+        margin: {
+            top: 0;
+            left: 10px;
+            right: 0;
+        };
+    }
+
+    // Programs Area
+    .programs-section-title {
+        .title {
+            h2 {
+                font-size: 35px;
+            }
+        }
+        .programs-nav-tab {
+            .nav {
+                justify-content: start !important;
+
+                .nav-item {
+                    font-size: 15px;
+                    margin-right: 23px;
+                }
+            }
+        }
+    }
+
+    // Facilities Area
+    .facilities-content {
+        &.style-2 {
+            
+            margin-left: 80px;
+            
+            .title {
+                h2 {
+                    font-size: 36px;
+                }
+            }
+        }
+        &.style-3 {
+            margin-left: 40px;
+
+            .title {
+                h2 {
+                    font-size: 38px;
+                }
+            }
+        }
+    }
+    .facilities-image {
+        &.style-3 {
+            .image-2 {
+                bottom: -115px;
+            }
+        }
+    }
+
+    // apply Area
+    .apply-content {
+        margin-right: 0;
+        .title {
+            h2 {
+                font-size: 35px;
+            }
+        }
+    }
+ 
+    // Upcoming Area
+    .upcoming-content {
+        .upcoming-content-info {
+            .content {
+                padding: 0 15px;
+
+                ul {
+                    li {
+                        font-size: 13px;
+                        margin-right: 3px;
+                        padding-left: 18px;
+
+                        i {
+                            top: 0;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Application Area
+    .application-area {
+        .shape-1 {
+            display: none;
+        }
+        .shape-2 {
+            display: none;
+        }
+    }
+    .single-application-card {
+        padding: 20px;
+        margin-bottom: 25px;
+
+        &.style-3 {
+            padding: 25px;
+        }
+    }
+
+    // Admission Area
+    .admission-content {
+        h2 {
+            font-size: 35px;
+        }
+    }
+
+    // Graduates Area
+    .single-graduates-card {
+        padding: 45px 30px;
+    }
+
+    // Student Area
+    .student-image {
+        margin-right: 0;
+    }
+    .student-card {
+        padding: 30px;
+        margin-left: 0;
+    }
+    .student-content {
+        margin: {
+            left: 15px;
+            right: 0;
+        };
+
+        h2 {
+            font-size: 35px;
+        }
+    }
+    
+    // Counter Area
+    .single-counter-info {
+        justify-content: center !important;
+
+        .icon {
+            font-size: 45px;
+        }
+        h2 {
+            font-size: 45px;
+        }
+    }
+    .col-lg-3 {
+        &:nth-child(2) {
+            .single-counter-info {
+                margin-left: 0;
+                justify-content: center !important;
+            }
+        }
+        &:nth-child(3) {
+            .single-counter-info {
+                margin-left: 0;
+                justify-content: center !important;
+            }
+        }
+        &:nth-child(4) {
+            .single-counter-info {
+                justify-content: center !important;
+            }
+        }
+    }
+
+    // Choose Area
+    .choose-content {
+        margin-right: 45px;
+
+        .choose-counter-info {
+            ul {
+                li {
+                    margin-right: 60px;
+                }
+            }
+        }
+    }
+
+    // Newsletter Area
+    .newsletter-form {
+        padding: 35px;
+    }
+
+    // Pages Banner Area
+    .pages-banner-area {
+        .container-fluid {
+            max-width: 1140px;
+            padding: {
+                left: 12px;
+                right: 12px;
+            };
+        }
+        .shape-7 {
+            left: 130px;
+        }
+    }
+    .pages-title {
+        h2 {
+            font-size: 45px;
+        }
+    }
+    .program-details-left-sidebar {
+        margin-right: 0;
+
+        .reviews-image {
+            .reviews-info {
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                padding: 20px;
+
+                ul {
+                    li {
+                        margin: {
+                            right: 40px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+    .single-program-widget {
+        padding: 25px;
+        &.programs {
+            .programs-card {
+                .image {
+                    margin-right: 19px;
+                }
+            }
+        }
+    }
+    .fitness-content {
+        &.style-2 {
+            margin-right: 0;
+            .fitness-btn {
+                li {
+                    margin-right: 20px;
+                    .default-btn {
+                        padding: 15px 28px;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-information {
+        padding: 20px;
+    }
+  
+}
+
+/* Min width 1400px to Max width 1599px */
+@media only screen and (min-width: 1400px) and (max-width: 1699px) {
+
+    // Application Area
+    .application-area {
+        .shape-1 {
+            left: 410px;
+        }
+        .shape-2 {
+            right: 435px;
+        }
+    }
+
+}
