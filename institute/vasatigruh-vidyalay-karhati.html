@@ -61,50 +61,58 @@
     <!-- Scroll Progress Bar -->
     <!-- <div class="scroll-progress" id="scrollProgress"></div> -->
 
-    <!-- Glassmorphism Header -->
-    <header class="header sticky-top" id="header">
-        <div class="container">
-            <nav class="nav-container">
-                <a href="#" class="logo">
-                    <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="logo-img">
+    <!-- Header -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <!-- Logo -->
+                <a href="/index-3.html" class="gm-logo">
+                    <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
                 </a>
 
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-                    <span class="hamburger"></span>
+                <!-- Mobile toggle -->
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
                 </button>
 
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="/index-3.html" class="nav-link">Home</a></li>
+                <!-- Links -->
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link" href="/index-3.html">Home</a></li>
 
-                    <li class="has-submenu">
-                        <a href="/about.html" class="nav-link" aria-haspopup="true">
-                            About
-                        </a>
+                    <li class="gm-item">
+                        <a class="gm-link" href="/about.html">About</a>
                     </li>
 
-                    <li class="has-submenu">
-                        <a href="#courses" class="nav-link" aria-haspopup="true">
-                            Our Educational Institutes <i class="fas fa-chevron-down nav-chevron"
-                                aria-hidden="true"></i>
-                        </a>
-                        <ul class="nav-submenu" aria-label="Institutes submenu">
-                            <li><a href="#courses">Vasatigruh Vidyalay Karhati</a></li>
-                            <li><a href="#courses">New English School Dhakale</a></li>
-                            <li><a href="#courses">Primary School Karhati Tembha</a></li>
-                            <li><a href="#contact">KUMSS Private I.T.I Karhati</a></li>
-                            <li><a href="#contact">Gurukul English Medium School</a></li>
-                            <li><a href="#contact">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+                    <!-- Dropdown -->
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
+                        </button>
+
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem" href="/index-3.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/index-3.html">New English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem" href="/index-3.html">Primary School Karhati Tembha</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="/index-3.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/index-3.html">Gurukul English Medium School</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="/index-3.html">Shardabai Pawar Kala
+                                    Mahavidhyalaya</a></li>
                         </ul>
                     </li>
 
+                    <li><a class="gm-link" href="#testimonials">Gallery</a></li>
 
-                    <li class="has-submenu">
-                        <a href="#testimonials" class="nav-link" aria-haspopup="true">
-                            Gallery
-                        </a>
+                    <li class="gm-cta">
+                        <a class="gm-btn" href="tel:+919421394242">Contact Us</a>
                     </li>
-
-                    <li><a href="tel:+919421394242" class="btn btn-primary">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -289,7 +297,7 @@
                     future.
                 </p>
             </div>
-    
+
             <div class="courses-grid">
                 <div class="course-card">
                     <span class="course-badge">Technical</span>
@@ -305,7 +313,7 @@
                         </p>
                     </div>
                 </div>
-    
+
                 <div class="course-card">
                     <span class="course-badge">Agricultural</span>
                     <img src="/assets/img/agricultural-focus.jpg" alt="Electrician" class="course-image" loading="lazy">
@@ -319,7 +327,7 @@
                         </p>
                     </div>
                 </div>
-    
+
                 <div class="course-card">
                     <span class="course-badge">Experienced Faculty</span>
                     <img src="/assets/img/experienced-faculty.jpg" alt="Electronics Mechanic" class="course-image"
@@ -334,7 +342,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Perfect Faculty Section -->
     <section class="perfect-faculty-section" id="faculty">
         <div class="container">
@@ -345,7 +353,7 @@
                     Experienced educators committed to student success and holistic development.
                 </p>
             </div>
-    
+
             <!-- Visible Faculty Grid - 4 Cards -->
             <div class="faculty-grid" id="visibleFacultyGrid">
                 <!-- Faculty 1 -->
@@ -365,7 +373,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Faculty 2 -->
                 <div class="faculty-card">
                     <div class="card-image">
@@ -383,7 +391,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Faculty 3 -->
                 <div class="faculty-card">
                     <div class="card-image">
@@ -401,7 +409,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Faculty 4 -->
                 <div class="faculty-card">
                     <div class="card-image">
@@ -420,7 +428,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Hidden Faculty Grid - 4 More Cards -->
             <div class="faculty-grid hidden" id="hiddenFacultyGrid">
                 <!-- Faculty 5 -->
@@ -440,7 +448,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Faculty 6 -->
                 <div class="faculty-card">
                     <div class="card-image">
@@ -458,7 +466,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Faculty 7 -->
                 <div class="faculty-card">
                     <div class="card-image">
@@ -476,7 +484,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Faculty 8 -->
                 <div class="faculty-card">
                     <div class="card-image">
@@ -495,7 +503,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- View More Button -->
             <div class="view-more-wrapper">
                 <button class="view-more-btn" id="viewMoreBtn">
@@ -505,7 +513,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Leadership with Flip Cards -->
     <section class="leadership-section" id="leadership">
         <div class="container">
@@ -513,7 +521,7 @@
                 <span class="subtitle">Our Leaders</span>
                 <h2>Executive Committee</h2>
             </div>
-    
+
             <div class="leadership-grid">
                 <div class="leader-card">
                     <div class="leader-front">
@@ -528,7 +536,7 @@
                         <p>Leading KUMSS since 2004 with visionary leadership and commitment to education</p>
                     </div>
                 </div>
-    
+
                 <div class="leader-card">
                     <div class="leader-front">
                         <div class="leader-avatar">
@@ -542,7 +550,7 @@
                         <p>Dedicated to providing quality education and skill development opportunities</p>
                     </div>
                 </div>
-    
+
                 <div class="leader-card">
                     <div class="leader-front">
                         <div class="leader-avatar">
