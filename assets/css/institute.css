@@ -5,7 +5,7 @@
             --body-font-family: "Poppins", sans-serif;
             --fontSize: 16px;
 
-            --primaryColor: #0f8042;
+            --primaryColor: #ff9704;
             --secenderyColor: #f37a20;
             --whiteColor: #ffffff;
             --lightBgColor: #f4fbf7;
@@ -773,7 +773,7 @@
             margin-bottom: 1rem;
             position: relative;
             padding: 0.5rem 1.5rem;
-            background: rgba(15, 128, 66, 0.1);
+            background: rgba(255, 183, 0, 0.427);
             border-radius: 20px;
             border: 1px solid rgba(15, 128, 66, 0.2);
         }
@@ -891,7 +891,7 @@
 
         .tab-btn.active,
         .tab-btn:hover {
-            background: rgba(15, 128, 66, 0.2);
+            background: rgba(238, 178, 13, 0.384);
             color: var(--primaryColor);
             border-color: var(--primaryColor);
             transform: translateY(-3px);
@@ -1293,7 +1293,7 @@
         }
 
         .view-more-btn {
-            background: linear-gradient(135deg, var(--primaryColor) 0%, #4CAF50 100%);
+            background: var(--linkHoverColor);
             color: white;
             border: none;
             padding: 16px 45px;
@@ -1693,7 +1693,7 @@
 
         /* === Footer === */
         .footer {
-            background: rgba(15, 128, 66, 0.05);
+            background: rgb(255, 255, 255);
             padding: 6rem 0 3rem;
             position: relative;
             overflow: hidden;
