@@ -15,7 +15,7 @@
         rel="stylesheet">
 
     <!-- css  -->
-    <link rel="stylesheet" href="/assets/css/institute.css">
+   <link rel="stylesheet" href="/assets/css/institute.css">
 
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -49,7 +49,7 @@
         </div>
         <div class="loading-text">
             <div class="loading-title">KUMSS EDUCATION</div>
-            <div class="loading-subtitle">Excellence Since 1951</div>
+            <div class="loading-subtitle">Excellence Since 2021</div>
             <div class="loading-dots">
                 <div class="loading-dot"></div>
                 <div class="loading-dot"></div>
@@ -67,7 +67,7 @@
             <nav class="gm-nav" aria-label="Primary">
                 <!-- Logo -->
                 <a href="/index-3.html" class="gm-logo">
-                    <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
+                    <img src="/gurukul-english-medium-school/logo.png" alt="KUMSS Logo" class="gm-logo-img">
                 </a>
 
                 <!-- Mobile toggle -->
@@ -82,9 +82,27 @@
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link" href="/index-3.html">Home</a></li>
 
-                    <li class="gm-item">
-                        <a class="gm-link" href="/about.html">About</a>
+                   <li class="gm-item gm-dropdown" data-dropdown>
+                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="aboutMenu">
+                            About
+                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
+                        </button>
+
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem" href="/institute/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/index-3.html">New English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem" href="/index-3.html">Primary School Karhati Tembha</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="/index-3.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/index-3.html">Gurukul English Medium School</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="/index-3.html">Shardabai Pawar Kala
+                                    Mahavidhyalaya</a></li>
+                        </ul>
                     </li>
+
 
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
@@ -110,7 +128,7 @@
 
                     <li><a class="gm-link" href="#testimonials">Gallery</a></li>
 
-                    <li class="gm-cta">
+                    <li>
                         <a class="gm-btn" href="tel:+919421394242">Contact Us</a>
                     </li>
                 </ul>
@@ -121,17 +139,40 @@
     <!-- Premium Hero with HLS Video -->
     <section class="hero hero-hero-video" id="home">
         <style>
-                   .hero-hero-video {
+                  /* =========================================================
+   GLOBAL BASICS
+========================================================= */
+
+
+*{ box-sizing: border-box; }
+
+html,body{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container{
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* =========================================================
+   HERO: VIDEO ON DESKTOP + VIDEO ON MOBILE (with poster)
+========================================================= */
+
+.hero-hero-video{
   position: relative;
   min-height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding: 120px 0 70px;
+  background: #000; /* fallback */
 }
 
-/* VIDEO */
-.hero-bg-video {
+.hero-bg-video{
   position: absolute;
   inset: 0;
   width: 100%;
@@ -140,73 +181,322 @@
   z-index: 0;
 }
 
-/* OVERLAY (behind content, above video) */
-.hero-overlay {
+.hero-overlay{
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0,0,0,0.55);
   z-index: 1;
+  pointer-events: none;
 }
 
-/* CONTENT */
-.hero-content {
+.hero-hero-video .container{
   position: relative;
   z-index: 2;
-  text-align: center;
+  width: 100%;
+}
+
+/* hero content */
+.hero-content{
+  max-width: 820px;
   color: #fff;
-  max-width: 900px;
+  text-align: left;
   padding: 0 16px;
 }
 
-.hero-content h1 {
-    text-align: left;
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  margin-bottom: 12px;
+.hero-content h3{
+  margin: 0 0 8px;
+  font-size: clamp(1.4rem, 2.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.hero-content p {
-    text-align: left;
-  font-size: 1.1rem;
-  opacity: 0.9;
+.hero-content h1{
+  margin: 0 0 12px;
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
 }
 
-.hero-btn {
+.hero-content p{
+  margin: 0 0 22px;
+  font-size: 1rem;
+  line-height: 1.75;
+  opacity: 0.92;
+}
 
-  display: inline-block;
-  margin: 20px;
+/* hero button */
+.hero-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 28px;
-  background: #f37a20;
+  background: var(--secenderyColor);
   color: #fff;
-  border-radius: 6px;
+  border-radius: 10px;
   text-decoration: none;
-  margin-left: -700px;
+  border: 0;
+  margin: 0;
+  transition: transform .2s ease, background .2s ease;
 }
 
-@media (max-width: 768px) {
-  .hero-bg-video {
-    display: none;
-  }
-.hero-content h1,p {
-    width:100%;
+.hero-btn:hover{
+  transform: translateY(-2px);
 }
-  .hero-hero-video {
-    background: url("/gurukul-english-medium-school/d.jpg")center / cover no-repeat !important;
+
+/* mobile tuning (video still ON) */
+@media (max-width: 768px){
+  .hero-hero-video{
+    min-height: 85vh;
+    padding: 110px 0 50px;
   }
-  .hero-btn {
-    margin-left:0 !important;
+
+  .hero-overlay{
+    background: rgba(0,0,0,0.62);
+  }
+
+  .hero-content{
+    max-width: 100%;
+    padding: 7px 14px;
+    padding-top: 20px;
+  }
+
+  .hero-content p{
+    font-size: 0.98rem;
   }
 }
+
+/* =========================================================
+   STATS SECTION HEADING + SHORT BORDER LINE
+========================================================= */
+
+.stats-container {
+    width: 100%;
+}
+.stats-strip-wrap{
+  padding: 50px 0;
+  background: transparent;
+}
+
+.stats-section-heading-wrap{
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* this creates low width underline using border-bottom */
+.stats-section-heading{
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--secenderyColor);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 800;
+  color: var(--blackColor);
+}
+
+/* =========================================================
+   STATS STRIP (4 columns desktop, 2x2 mobile)
+========================================================= */
+
+.stats-strip{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  
+  overflow: hidden;
+  width: 100%;
+
+  /* your chosen theme */
+  background: var(--blackColor);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.stats-strip .stat{
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.stats-strip .stat:not(:last-child){
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+
+.stats-strip .num{
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.stats-strip .label{
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--secenderyColor);
+}
+
+/* mobile: 2x2 with correct dividers */
+@media (max-width: 768px){
+  .stats-strip{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* remove desktop dividers */
+  .stats-strip .stat:not(:last-child){
+    border-right: none;
+  }
+
+  /* right divider for left column only */
+  .stats-strip .stat:nth-child(1),
+  .stats-strip .stat:nth-child(3){
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+
+  /* bottom divider for first row */
+  .stats-strip .stat:nth-child(1),
+  .stats-strip .stat:nth-child(2){
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+}
+
+/* =========================================================
+   OPTIONAL: BASIC SECTION SPACING HELPERS
+   (won't break your existing institute.css)
+========================================================= */
+
+section{ width: 100%; }
+
+img{ max-width: 100%; display: block; }
+
+/* testimonials */
+.testimonials{
+  padding: 80px 0;
+  background: #fff;
+}
+
+.t-head{
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 26px;
+}
+
+.t-sub{
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #f37a20;
+  margin-bottom: 8px;
+}
+
+.t-title{
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 800;
+  color: #2f3390;
+}
+
+.t-desc{
+  margin: 0;
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+/* Grid */
+.t-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* Card */
+.t-card{
+  border-radius: 16px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.t-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+}
+
+.t-top{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.t-avatar{
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #fff;
+  background: #2f3390;
+  flex: 0 0 auto;
+}
+
+.t-meta{ min-width: 0; }
+
+.t-name{
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2f3390;
+}
+
+.t-role{
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: #4a4a4a;
+}
+
+.t-text{
+  margin: 0;
+  color: #4a4a4a;
+  line-height: 1.75;
+  font-size: 0.98rem;
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .t-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px){
+  .testimonials{ padding: 60px 0; }
+  .t-grid{ grid-template-columns: 1fr; }
+  .t-card{ padding: 16px; }
+}
+.t-stars{
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: #f37a20;
+  line-height: 1;
+}
+
 </style>
-         <video class="hero-bg-video" autoplay muted loop playsinline>
-    <source src="/gurukul-english-medium-school/hero-video.mp4" type="video/mp4">
-  </video>
+        <video
+  class="hero-bg-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+  poster="/gurukul-english-medium-school/d.jpg"
+>
+  <source src="/gurukul-english-medium-school/hero-video.mp4" type="video/mp4">
+</video>
+<div class="hero-overlay"></div>
 
-  <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
                 
-                
-                <h1>Welcome to KUMSS's<br> Gurukul English Medium School</h1>
+                <h3>Welcome to KUMSS's</h3>
+                <h1> Gurukul English Medium School</h1>
                 <p>
                     We believe in “Shaping minds, Touching lives, Building Second Homes.” From the first ORCHIDS’ bud blooming in Hyderabad 18 years ago, to now a chain of 41+ international schools, we have impacted more than 30,000 lives. <br>Setting newer benchmarks with each academic year, we are considered among the top international schools in Bengaluru, Mumbai, Hyderabad, Pune, Kolkata, Chennai, and Gurugram for imparting quality education.
                 </p>
@@ -218,6 +508,95 @@
             </div>
         </div>
     </section>
+
+    <!-- stats-->
+<section class="stats-strip-wrap">
+  <div class="stats-section-heading-wrap">
+    <h1 class="stats-section-heading">WHY KUMSS's GURUKUL ENGLISH MEDIUM SCHOOL?</h1>
+  </div>
+
+  <div class="stats-container">
+     <div class="stats-strip">
+      <div class="stat">
+  <div class="num" data-target="6000" data-suffix="+">0</div>
+  <div class="label">Boys</div>
+</div>
+
+<div class="stat">
+  <div class="num" data-target="6000" data-suffix="+">0</div>
+  <div class="label">Girls</div>
+</div>
+
+<div class="stat">
+  <div class="num" data-target="1500" data-suffix="+">0</div>
+  <div class="label">Teachers</div>
+</div>
+
+<div class="stat">
+  <div class="num" data-target="100" data-suffix="+">0</div>
+  <div class="label">Non-Teaching Staff</div>
+</div>
+
+    </div>
+    
+  </div>
+</section>
+
+<!-- testimonials-->
+ <section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="t-head">
+      <span class="t-sub">Success Stories</span>
+      <h2 class="t-title">What Our Community Says</h2>
+      <p class="t-desc">Students, parents, and teachers share their experience.</p>
+    </div>
+
+    <div class="t-grid">
+      <article class="t-card">
+        <div class="t-top">
+          <div class="t-avatar">P</div>
+          <div class="t-meta">
+            <h4 class="t-name">Priya Patil</h4>
+            <div class="t-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="t-text">
+          Teachers are supportive and disciplined. My child’s confidence improved a lot.
+        </p>
+      </article>
+
+      <article class="t-card">
+        <div class="t-top">
+          <div class="t-avatar">S</div>
+          <div class="t-meta">
+            <h4 class="t-name">Sahil More</h4>
+            <div class="t-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="t-text">
+          Classes are engaging. Activities helped me speak better and stay focused.
+        </p>
+      </article>
+
+      <article class="t-card">
+        <div class="t-top">
+          <div class="t-avatar">M</div>
+          <div class="t-meta">
+            <h4 class="t-name">Meena Deshpande</h4>
+            <div class="t-stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="t-text">
+          The environment supports both teaching quality and student outcomes. Great school culture.
+        </p>
+      </article>
+
+      <!-- Add up to 3 more cards like above -->
+    </div>
+  </div>
+</section>
+
+
 
     <!-- About Section with Tabs -->
     <section class="about-section" id="about">
@@ -243,7 +622,7 @@
             <div class="tab-content active" id="history">
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-year">1951</div>
+                        <div class="timeline-year">2021</div>
                         <h3>Foundation</h3>
                         <p>Krushi Udyog Mul Shikshan Sansthan established by visionary founder late Dr. Shri A.J.
                             Agarkar</p>
@@ -780,11 +1159,11 @@
                         <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="logo-img">
                         <div>
                             <div class="logo-text">KUMSS</div>
-                            <div class="logo-year" style="color: var(--primaryColor);">SINCE 1951</div>
+                            <div class="logo-year" style="color: var(--primaryColor);">SINCE 2021</div>
                         </div>
                     </a>
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
-                        An educational society focused on overall development of students since 1951.
+                        An educational society focused on overall development of students since 2021.
                     </p>
 
                     <div class="social-links">
@@ -808,7 +1187,7 @@
 
                 <div class="footer-col">
                     <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
@@ -822,7 +1201,7 @@
 
                 <div class="footer-col">
                     <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
                         <li><a href="#">Vasatigruh Vidyalay Karhati</a></li>
@@ -834,7 +1213,7 @@
 
                 <div class="footer-col">
                     <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Contact Info</h3>
                     <ul class="footer-links">
                         <li><a href="tel:+919421394242">+91 94213 94242</a></li>
@@ -1311,6 +1690,35 @@
                 }
             }
         });
+    </script>
+    <script>
+        const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting || e.target.dataset.done) return;
+    e.target.dataset.done = "1";
+
+    const el = e.target;
+    const target = +el.dataset.target;
+    const suffix = el.dataset.suffix || "";
+
+    const durationMs = 2000;  // ✅ change this: 800 fast, 1500 normal, 2500 slow
+    const intervalMs = 20;
+
+    const steps = Math.max(1, Math.floor(durationMs / intervalMs));
+    const step = Math.max(1, Math.ceil(target / steps));
+
+    let n = 0;
+    const t = setInterval(() => {
+      n += step;
+      if (n >= target) { n = target; clearInterval(t); }
+      el.textContent = n.toLocaleString("en-IN") + suffix;
+    }, intervalMs);
+  });
+}, { threshold: 0.4 });
+
+document.querySelectorAll(".num[data-target]").forEach(el => io.observe(el));
+
+
     </script>
 </body>
 
