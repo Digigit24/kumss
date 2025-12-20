@@ -308,8 +308,8 @@
   border-radius: 999px;
   text-decoration:none;
   font-weight: 700;
-  color: var(--whiteColor);
-  background: linear-gradient(90deg, var(--primaryColor), var(--secenderyColor));
+  color: rgba(0, 0, 0, 0.785);
+  background: linear-gradient(90deg,rgba(255, 166, 0, 0.738));
   box-shadow: 0 10px 22px rgba(15,128,66,0.18);
   transition: var(--transition);
 }
@@ -994,7 +994,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: linear-gradient(135deg, var(--primaryColor), var(--secenderyColor));
+            background-color: rgba(0, 128, 0, 0.719);
             color: var(--whiteColor);
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
