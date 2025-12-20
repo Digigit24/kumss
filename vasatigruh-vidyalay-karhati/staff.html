@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Staff | Vasatigruh Vidyalay Karhati</title>
+    <link rel="icon" href="https://kumss.org/assets/kumss_log.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/assets/css/institute.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* --- Page Specific Styles --- */
+        
+        :root {
+            --primary-color: #0f8042;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Page Hero Section */
+        .page-hero {
+            background: linear-gradient(rgba(15, 128, 66, 0.9), rgba(11, 85, 45, 0.9)), url('/assets/anita-ravindra-chavan.jpg');
+            background-size: cover;
+            background-position: center top;
+            padding: 160px 0 80px;
+            text-align: center;
+            color: white;
+            /* No margin bottom here so it flows into the gradient section */
+        }
+
+        .page-hero h1 {
+            font-family: 'Gantari', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+        }
+
+        /* --- Glassmorphism Section Styling --- */
+        
+        .perfect-faculty-section {
+            /* Soft Abstract Background to make glass visible */
+            background-color: #f0fdf4;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(145, 63%, 93%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(145, 63%, 96%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(145, 63%, 93%, 1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(145, 63%, 96%, 1) 0px, transparent 50%);
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: 'Gantari', sans-serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin: 0 0 15px;
+        }
+
+        /* Grid Layout */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        /* --- Glass Card Styling --- */
+        .faculty-card {
+            /* Glass Effect properties */
+            background: rgba(255, 255, 255, 0.45); /* Semi-transparent white */
+            backdrop-filter: blur(12px);           /* The Frost Effect */
+            -webkit-backdrop-filter: blur(12px);   /* Safari Support */
+            border: 1px solid rgba(255, 255, 255, 0.6); /* Subtle border highlight */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07); /* Soft colored shadow */
+            
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.65); /* More opaque on hover */
+            box-shadow: 0 15px 40px 0 rgba(15, 128, 66, 0.15); /* Greenish glow shadow */
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .card-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(0,0,0,0.03); /* Slight tint behind image */
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.6s ease;
+        }
+
+        .faculty-card:hover .card-image img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        .faculty-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            font-family: 'Gantari', sans-serif;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        .faculty-designation {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin: 5px 0;
+            text-transform: uppercase;
+        }
+
+        .faculty-qualification {
+            color: var(--text-light);
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: auto;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(15, 128, 66, 0.08); /* Tiny tag bg */
+            padding: 4px 8px;
+            border-radius: 6px;
+            align-self: center;
+        }
+
+        /* Navbar force white bg */
+        .gm-header {
+            background: white !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero { padding: 120px 0 60px; }
+            .page-hero h1 { font-size: 2.2rem; }
+            .faculty-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <a href="/index-3.html" class="gm-logo">
+                    <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
+                </a>
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu">
+                    <span class="gm-burger-line"></span><span class="gm-burger-line"></span><span class="gm-burger-line"></span>
+                </button>
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link" href="/index-3.html">Home</a></li>
+                    <li class="gm-item"><a class="gm-link" href="/about.html">About</a></li>
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <button class="gm-link gm-dropbtn" type="button">Our Educational Institutes <i class="fas fa-chevron-down gm-chevron"></i></button>
+                        <ul class="gm-submenu">
+                            <li><a href="/institute/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li><a href="/index-3.html">New English School Dhakale</a></li>
+                            <li><a href="/index-3.html">Primary School Karhati Tembha</a></li>
+                            <li><a href="/index-3.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li><a href="/index-3.html">Gurukul English Medium School</a></li>
+                            <li><a href="/index-3.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+                        </ul>
+                    </li>
+                    <li class="gm-item"><a class="gm-link active" style="color: var(--primary-color); font-weight:600;" href="/vasatigruh-vidyalay-karhati/staff.html">Staff</a></li>
+                    <li><a class="gm-link" href="/index-3.html#testimonials">Gallery</a></li>
+                    <li class="gm-cta"><a class="gm-btn" href="tel:+919421394242">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Dedicated Staff</h1>
+            <p>Meet the passionate educators and support staff who make learning possible at Vasatigruh Vidyalay Karhati.</p>
+        </div>
+    </section>
+
+    <!-- Faculty Grid (Glassmorphism Effect) -->
+    <section class="perfect-faculty-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">The Team</span>
+                <h2 class="section-title">Teaching & Non-Teaching Staff</h2>
+            </div>
+
+            <div class="faculty-grid">
+                
+                <!-- 1 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/anita-ravindra-chavan.jpg" alt="Mrs. Anita Ravindra Chavan" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Anita Ravindra Chavan</h3>
+                        <p class="faculty-designation">Principal</p>
+                        <p class="faculty-qualification">M.A., M.Ed.(Ph.D), D.S.M</p>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/bhausaheb-pandurang-pisal.jpg" alt="Mr. Bhausaheb Pandurang Pisal" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Bhausaheb P. Pisal</h3>
+                        <p class="faculty-designation">Supervisor</p>
+                        <p class="faculty-qualification">B.A. B.P.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/abasaheb-malhari-kokare.jpg" alt="Mr. Abasaheb Malhari Kokare" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Abasaheb M. Kokare</h3>
+                        <p class="faculty-designation">Asst. Teacher</p>
+                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/bhapkar-manjushri-lalasaheb.jpg" alt="Mrs. Bhapkar Manjushri Lalasaheb" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Bhapkar M. Lalasaheb</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.Sc(Maths), B.Ed, D.S.M</p>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/khaire-reshma-vyankat.jpg" alt="Mrs. Khaire Reshma Vyankat" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Khaire Reshma Vyankat</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.Sc. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/komal-chandgude.jpg" alt="Mrs. Komal Chandgude" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Komal Chandgude</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">B.C.S, B.Ed (Appear)</p>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/amol-subhash-kambale.jpg" alt="Mr. Amol Subhash Kambale" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Amol Subhash Kambale</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">A.T.D, A.M.G, D Art & Painting</p>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/allabaksh-husen-shaikh.jpg" alt="Mr. Allabaksh Husen Shaikh" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Allabaksh Husen Shaikh</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.Com, B.P.Ed, D.S.M.</p>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/sahebrao-parashram-devre.jpg" alt="Mr. Sahebrao Parashram Devre" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Sahebrao Parashram Devre</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.Sc. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/nilesh-sampat-lavhe.jpg" alt="Mr. Nilesh Sampat Lavhe" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Nilesh Sampat Lavhe</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 11 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/natvar-shekhhand-shinde.jpg" alt="Mr. Natvar Shekhhand Shinde" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Natvar Shekhhand Shinde</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">B.A. D.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 12 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/sarika-rajendra-shinde.jpg" alt="Mrs. Sarika Rajendra Shinde" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Sarika Rajendra Shinde</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.A. D.Ed. D.S.M</p>
+                    </div>
+                </div>
+
+                <!-- 13 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/kale-vijay-raosaheb.jpg" alt="Mr. Kale Vijay Raosaheb" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Kale Vijay Raosaheb</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.A. B.Ed. D.S.M</p>
+                    </div>
+                </div>
+
+                <!-- 14 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/vishvanath-kisan-zambade.jpg" alt="Mr. Vishvanath Kisan Zambade" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Vishvanath Kisan Zambade</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">B.A. D.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 15 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/ravindra-janardhan-raut.jpg" alt="Mr. Ravindra Janardhan Raut" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Ravindra Janardhan Raut</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">B.A. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 16 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/pomane-mahesh-sarjera.jpg" alt="Mr. Pomane Mahesh Sarjerao" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Pomane Mahesh Sarjerao</h3>
+                        <p class="faculty-designation">Asst. Teacher</p>
+                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 17 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/nilam-digambar-masal.jpg" alt="Mrs. Nilam Digambar Masal" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Nilam Digambar Masal</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.Sc. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 18 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/shital-dashrath-thorat.jpg" alt="Mrs. Shital Dashrath Thorat" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Shital Dashrath Thorat</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.Sc. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 19 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/jagtap-mayuri-dnyandev.jpg" alt="Mrs. Jagtap Mayuri Dnyandev" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Jagtap Mayuri Dnyandev</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">B.Sc. Agri (M.Sc in PVT)</p>
+                    </div>
+                </div>
+
+                <!-- 20 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/pawar-smita-haribhau.jpg" alt="Mrs. Pawar Smita Haribhau" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Pawar Smita Haribhau</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 21 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/dipali-bhimrao-yadande.jpg" alt="Mrs. Dipali Bhimrao Yadande" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Dipali Bhimrao Yadande</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 22 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/dhananjay-vitthal-jagatap.jpg" alt="Mr. Dhananjay Vitthal Jagatap" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Dhananjay Vitthal Jagatap</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 23 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/prachi-pradeeprao-jagtap.jpg" alt="Mrs. Prachi Pradeeprao Jagtap" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Prachi Pradeeprao Jagtap</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.Com B.Ed, (G.D.C & A)</p>
+                    </div>
+                </div>
+
+                <!-- 24 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/vidya-meninath-jadhav.jpg" alt="Mrs. Vidya Meninath Jadhav" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Vidya Meninath Jadhav</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">M.Com B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 25 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/aarati-sunil-bobade.jpg" alt="Mrs. Aarati Sunil Bobade" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Aarati Sunil Bobade</h3>
+                        <p class="faculty-designation">Assistant Teacher</p>
+                        <p class="faculty-qualification">B.A. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 26 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/hiralal-shamrao-dhumal.jpg" alt="Mr. Hiralal Shamrao Dhumal" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Hiralal Shamrao Dhumal</h3>
+                        <p class="faculty-designation">Sr. Clerk</p>
+                        <p class="faculty-qualification">B.Com.</p>
+                    </div>
+                </div>
+
+                <!-- 27 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/laxman-vinayak-choudhari.jpg" alt="Mr. Laxman Vinayak Choudhari" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Laxman Vinayak Choudhari</h3>
+                        <p class="faculty-designation">Jr. Clerk</p>
+                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                    </div>
+                </div>
+
+                <!-- 28 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/jayshri-aadinath-jagatap.jpg" alt="Mrs. Jayshri Aadinath Jagatap" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Jayshri Aadinath Jagatap</h3>
+                        <p class="faculty-designation">Jr. Clerk</p>
+                        <p class="faculty-qualification">M.A.</p>
+                    </div>
+                </div>
+
+                <!-- 29 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/digambar-tukaram-wabale.jpg" alt="Mr. Digambar Tukaram Wabale" loading="lazy"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Digambar Tukaram Wabale</h3>
+                        <p class="faculty-designation">Peon</p>
+                        <p class="faculty-qualification">H.S.C</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="logo-img">
+                        <div>
+                            <div class="logo-text">KUMSS</div>
+                            <div class="logo-year" style="color: var(--primaryColor);">SINCE 1951</div>
+                        </div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/index-3.html">Home</a></li>
+                        <li><a href="/about.html">About KUMSS</a></li>
+                        <li><a href="/index-3.html#vision-mission">Vision & Mission</a></li>
+                        <li><a href="/index-3.html#courses">Programs</a></li>
+                        <li><a href="/index-3.html#leadership">Leadership</a></li>
+                        <li><a href="/index-3.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+919421394242">+91 94213 94242</a></li>
+                        <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
+                        <li><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                gsap.to(navLinks, { x: 0, duration: 0.5, ease: 'power3.out' });
+                document.body.style.overflow = 'hidden';
+            } else {
+                gsap.to(navLinks, { x: 300, duration: 0.5, ease: 'power3.in' });
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Animation
+        document.addEventListener("DOMContentLoaded", function() {
+            gsap.fromTo(".faculty-card", 
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.05, 
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: ".faculty-grid",
+                        start: "top 85%",
+                    }
+                }
+            );
+        });
+    </script>
+</body>
+</html>
