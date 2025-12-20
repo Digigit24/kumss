@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krushi Udyog Mul Shikshan Sansthan | Excellence Since 1951</title>
+    <title>Shardabai Pawar Kala Mahavidhyalaya | Established in 1993-1994</title>
     <link rel="icon" href="https://kumss.org/assets/kumss_log.png" type="image/x-icon">
 
     <!-- Fonts -->
@@ -34,190 +34,331 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        
-      /* Center + stack icon above title */
-.vm-head{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-  margin-bottom: 12px;
+<style>
+  /* Hero Section */
+.hero-school-arts {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically centers content */
+    overflow: hidden;
+    text-align: center;
 }
 
-/* Icon box (adjust sizes if you want smaller/larger) */
-.vm-icon{
-  width: 54px;
-  height: 54px;
-  border-radius: 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/* Video Background */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
 }
 
-/* Icon size */
-.vm-icon i{
-  font-size: 20px;
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Minimal filter on video itself, the overlay will handle dimming */
+    /* filter: brightness(1) contrast(1); KEEP VIDEO BRIGHT AND CLEAR */
 }
 
-/* Title centered */
-.vm-title{
-  margin: 0;
-  font-size: 30px;
-  line-height: 1.2;
+.video-overlay { /* Re-introduced overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-color, rgba(0, 0, 0, 0.4)); /* Subtle dark overlay */
+    z-index: 2;
 }
 
-/* Optional: align text body nicely (keep readable) */
-.vm-text{
-  text-align: left; /* change to center if you want full centered paragraph */
+/* Content Wrapper */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.hero-content {
+  margin-top: 50px;
+    padding: 35px;
+    border-radius: 10px;
+    /* Text shadows configured for readability over a subtle dark overlay */
+}
+
+/* Animated Heading */
+.animated-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.8em;
+    font-weight: 900;
+    color: var(--primary-heading-color, #fd9d02); /* Gold/Orange */
+    margin-bottom: 25px;
+    line-height: 1;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    text-shadow: var(--heading-text-shadow, 1px 1px 5px rgba(0, 0, 0, 0.6)); /* Dark shadow for bright text */
+}
+
+.animated-heading .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    animation: revealWordSimple 1s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding-right: 18px;
+    transition: color 0.3s ease;
+}
+
+/* Delay for each word */
+.animated-heading .word:nth-child(1) { animation-delay: 0.1s; }
+.animated-heading .word:nth-child(2) { animation-delay: 0.25s; }
+.animated-heading .word:nth-child(3) { animation-delay: 0.4s; }
+.animated-heading .word:nth-child(4) { animation-delay: 0.55s; }
+.animated-heading .word:nth-child(5) { animation-delay: 0.7s; }
+.animated-heading .word:nth-child(6) { animation-delay: 0.85s; }
+.animated-heading .word:nth-child(7) { animation-delay: 1.0s; }
+
+@keyframes revealWordSimple {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.8em;
+    color: var(--secondary-text-color, #000000); /* BLACK as requested */
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: var(--subtitle-text-shadow, 1px 1px 2px rgba(255, 255, 255, 0.5)); /* Light shadow for dark text */
+}
+
+/* Button - More Attractive 3D (No changes needed, already good) */
+.btn-explore {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: var(--button-bg-color, #3498db);
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    transform: perspective(1000px) translateZ(0);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-explore:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--button-hover-bg-color, #2980b9);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    z-index: -1;
+}
+
+.btn-explore:hover {
+    color: white;
+    transform: perspective(1000px) translateZ(20px) translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.btn-explore:hover:before {
+    width: 200%;
+    height: 200%;
+    opacity: 1;
+}
+
+.btn-explore:active {
+    transform: perspective(1000px) translateZ(0) translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 
-        /* About School Section */
-        .about-school {
-            padding: 70px 0;
-            background: #ffffff;
-        }
+/* Floating Elements (No changes needed) */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
 
-        .about-school .container {
-            width: min(1100px, 92%);
-            margin: 0 auto;
-        }
+.floating-element {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    opacity: 0;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 40px;
-            align-items: center;
-        }
+.floating-1 {
+    width: 120px; height: 120px;
+    top: 10%; left: 15%;
+    animation-name: float1; animation-delay: 0s;
+}
 
-        .about-media {
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
-            background: #f5f5f5;
-        }
+.floating-2 {
+    width: 180px; height: 180px;
+    top: 75%; left: 80%;
+    animation-name: float2; animation-delay: 8s;
+}
 
-        .about-media img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-        }
+.floating-3 {
+    width: 90px; height: 90px;
+    top: 40%; left: 5%;
+    animation-name: float3; animation-delay: 17s;
+}
 
-        /* Make both columns equal height */
-        .about-grid {
-            align-items: stretch;
-            /* important */
-        }
+/* Keyframes for floating elements (no changes) */
+@keyframes float1 {
+    0% { transform: translate(0, 0) scale(0.9); opacity: 0.15; }
+    25% { transform: translate(40px, 50px) scale(1.2); opacity: 0.25; }
+    50% { transform: translate(0, 0) scale(1); opacity: 0.1; }
+    75% { transform: translate(-50px, -40px) scale(1.1); opacity: 0.2; }
+    100% { transform: translate(0, 0) scale(0.9); opacity: 0.15; }
+}
 
-        /* Image wrapper takes full height of the row */
-        .about-media {
-            height: 100%;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
-            background: #f5f5f5;
-        }
+@keyframes float2 {
+    0% { transform: translate(0, 0) scale(1.1); opacity: 0.25; }
+    25% { transform: translate(-60px, -40px) scale(1); opacity: 0.15; }
+    50% { transform: translate(0, 0) scale(1.2); opacity: 0.35; }
+    75% { transform: translate(70px, 50px) scale(0.9); opacity: 0.1; }
+    100% { transform: translate(0, 0) scale(1.1); opacity: 0.25; }
+}
 
-        /* Image fills full height like content */
-        .about-media img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-            /* keeps it clean, crops if needed */
-            /* remove aspect-ratio */
-        }
-
-        .about-kicker {
-            display: inline-block;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 0.3px;
-            padding: 8px 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(0, 0, 0, 0.12);
-            margin-bottom: 12px;
-        }
-
-        .about-content h2 {
-            font-size: clamp(24px, 3vw, 34px);
-            line-height: 1.2;
-            margin: 0 0 14px;
-        }
-
-        .about-content h3 {
-            font-size: 18px;
-            margin: 18px 0 10px;
-        }
-
-        .about-content p {
-            margin: 0 0 12px;
-            line-height: 1.7;
-            color: #444;
-        }
-
-        .about-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 18px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary,
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 11px 16px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s ease;
-        }
-
-        .btn-primary {
-            background: #0f8042;
-            color: #fff;
-            border: 1px solid #0f8042;
-        }
-
-        .btn-primary:hover {
-            filter: brightness(0.95);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #0f8042;
-            border: 1px solid rgba(15, 128, 66, 0.35);
-        }
-
-        .btn-outline:hover {
-            background: rgba(15, 128, 66, 0.08);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 900px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 22px;
-            }
-
-            .about-school {
-                padding: 55px 0;
-            }
-
-            .about-media img {
-                aspect-ratio: 16 / 10;
-            }
-        }
-    </style>
+@keyframes float3 {
+    0% { transform: translate(0, 0) scale(0.8); opacity: 0.1; }
+    25% { transform: translate(25px, -30px) scale(1); opacity: 0.2; }
+    50% { transform: translate(0, 0) scale(0.9); opacity: 0.15; }
+    75% { transform: translate(-35px, 20px) scale(0.85); opacity: 0.1; }
+    100% { transform: translate(0, 0) scale(0.8); opacity: 0.1; }
+}
 
 
+/* Responsive Design - UPDATED to increase font sizes on mobile and ensure proper display */
+
+@media (max-width: 1400px) {
+    .animated-heading { font-size: 4.2em; letter-spacing: 2px; }
+    .hero-subtitle { font-size: 1.7em; margin-bottom: 35px; }
+    .btn-explore { padding: 18px 40px; font-size: 1.4em; }
+}
+
+@media (max-width: 1200px) {
+    .animated-heading { font-size: 3.6em; letter-spacing: 1.5px; }
+    .hero-subtitle { font-size: 1.5em; margin-bottom: 30px; }
+    .btn-explore { padding: 16px 35px; font-size: 1.3em; }
+}
+
+@media (max-width: 992px) {
+    .hero-content { padding: 30px; }
+    .animated-heading { font-size: 2.8em; letter-spacing: 1px; }
+    .animated-heading .word { padding-right: 12px; }
+    .hero-subtitle { font-size: 1.3em; margin-bottom: 25px; }
+    .btn-explore { padding: 14px 30px; font-size: 1.2em; }
+    .floating-1 { width: 80px; height: 80px; }
+    .floating-2 { width: 130px; height: 130px; top: 78%; left: 75%; }
+    .floating-3 { width: 60px; height: 60px; }
+}
+
+@media (max-width: 768px) {
+    .hero-content-wrapper {
+        padding: 15px; /* Slightly more padding for tablets/larger mobiles */
+        /* min-height can be adjusted if there's a fixed navbar */
+        /* min-height: calc(100vh - var(--navbar-height, 0px)); */
+    }
+    .hero-content {
+        padding: 25px; /* Increased content padding for better readability */
+    }
+    .animated-heading {
+        font-size: 2.5em; /* Increased font size for tablets/larger mobiles */
+        margin-bottom: 25px;
+        letter-spacing: 0.8px;
+    }
+    .animated-heading .word {
+        padding-right: 10px; /* Adjusted spacing */
+    }
+    .hero-subtitle {
+        font-size: 1.2em; /* Increased subtitle font size */
+        margin-bottom: 25px;
+    }
+    .btn-explore {
+        padding: 14px 28px; /* Slightly larger button */
+        font-size: 1.2em; /* Increased button font size */
+    }
+    /* Floating elements sizes might also be slightly adjusted for less clutter on smaller screens */
+    .floating-1 { width: 65px; height: 65px; top: 12%; left: 10%; }
+    .floating-2 { width: 110px; height: 110px; top: 78%; left: 70%; }
+    .floating-3 { width: 50px; height: 50px; top: 35%; left: 5%; }
+}
+
+@media (max-width: 480px) {
+  .hero-video-container{
+    height: 700px;
+  }
+    .hero-content-wrapper {
+        padding: 10px; /* Increased padding for smaller mobiles */
+        /* min-height can be adjusted if there's a fixed navbar */
+        /* min-height: calc(100vh - var(--navbar-height, 0px)); */
+
+    }
+    .hero-content {
+margin-top: -300px;
+        padding: 20px; /* Increased content padding for better readability */
+    }
+    .animated-heading {
+        font-size: 50px; /* Increased font size for smaller mobiles */
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+    }
+    .animated-heading .word {
+     
+        padding-right: 8px; /* Adjusted spacing */
+    }
+    .hero-subtitle {
+
+         font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .btn-explore {
+        padding: 12px 22px; /* Slightly larger button */
+        font-size: 1.1em; /* Increased button font size */
+        border-radius: 40px;
+    }
+    /* Floating elements further adjusted for very small screens */
+    .floating-1 { width: 45px; height: 45px; top: 15%; left: 8%; }
+    .floating-2 { width: 80px; height: 80px; top: 75%; left: 60%; }
+    .floating-3 { width: 40px; height: 40px; top: 28%; left: 10%; }
+}
+</style>
 </head>
 
 <body>
@@ -243,13 +384,13 @@
     <!-- Scroll Progress Bar -->
     <!-- <div class="scroll-progress" id="scrollProgress"></div> -->
 
-    <!-- Header -->
-    <header class="gm-header" id="header">
+    <!-- Glassmorphism Header -->
+  <header class="gm-header" id="header">
         <div class="gm-container">
             <nav class="gm-nav" aria-label="Primary">
                 <!-- Logo -->
                 <a href="/index-3.html" class="gm-logo">
-                    <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
+                    <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
                 </a>
 
                 <!-- Mobile toggle -->
@@ -278,9 +419,7 @@
                         </button>
 
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem"
-                                    href="/institute/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
-                            </li>
+                            <li role="none"><a role="menuitem" href="/institute/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
                             <li role="none"><a role="menuitem" href="/index-3.html">New English School Dhakale</a></li>
                             <li role="none"><a role="menuitem" href="/index-3.html">Primary School Karhati Tembha</a>
                             </li>
@@ -303,291 +442,187 @@
     </header>
 
     <!-- Premium Hero with HLS Video -->
-    <section class="hero" id="home">
-        <div class="floating-elements">
-            <div class="floating-element floating-1"></div>
-            <div class="floating-element floating-2"></div>
-            <div class="floating-element floating-3"></div>
-        </div>
+<section class="hero-school-arts" id="home">
+    <div class="floating-elements">
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+        <div class="floating-element floating-3"></div>
+    </div>
 
-        <div class="hero-video-container">
-            <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
-                <!-- HLS video source will be added by JavaScript -->
-            </video>
-            <div class="video-overlay"></div>
-        </div>
+    <div class="hero-video-container">
+        <video id="heroVideo" class="hero-video" autoplay muted loop playsinline></video>
+        <div class="video-overlay"></div> <!-- Re-introduced video overlay -->
+    </div>
 
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-subtitle">Vasatigruh Vidyalay Karhati</div>
-                <p class="hero-description">
-                    For over seven decades, we've been transforming lives through exceptional education.
-                    We blend traditional values with cutting-edge technology to create leaders who shape tomorrow.
-                </p>
-
-                <div class="hero-quote">
-                    "Education opens up the mind, expands it and allows you to improve your life in so many ways."
-                </div>
-
+    <div class="container hero-content-wrapper">
+        <div class="hero-content">
+            <div class="animated-heading">
+                <span class="word">Welcome</span>
+                <span class="word">to</span>
+                <span class="word">Shardabai</span>
+                <span class="word">Pawar</span>
+                <span class="word">Kala</span>
+                <span class="word">Mahavidhyalaya</span>
             </div>
-        </div>
-    </section>
+            <div class="hero-subtitle">"Creating Art Teachers with Aesthetic Sense & Creative Skills in Fine Arts"</div>
 
+            <a href="#" class="btn-explore">Explore Our Programs</a>
+        </div>
+    </div>
+</section>
     <!-- About Section with Tabs -->
-    <section class="about-school" id="about-school">
-        <div class="container">
-            <div class="about-grid">
+ <section class="about-section" id="about">
+  <div class="container">
+    <div class="section-title">
+      <span class="subtitle">Our Legacy</span>
+      <h2>Years of Trust & Quality Education</h2>
+      <p class="lead-text">
+        New English Medium School Dhakale is committed to delivering strong academics with a value-based foundation.
+        We focus on clear concepts, confident communication, and overall personality development—so every child grows
+        ready for tomorrow.
+      </p>
+    </div>
 
-                <!-- Left: Image -->
-                <div class="about-media">
-                    <img src="/assets/img/faculty/faculty-1.jpg" alt="Vastigruh Vidyalay Karhati campus"
-                        loading="lazy" />
-                </div>
+    <div class="about-tabs">
+      <button class="tab-btn active" data-tab="history">
+        <i class="fas fa-history"></i> History
+      </button>
+    </div>
 
-                <!-- Right: Content -->
-                <div class="about-content">
-                    <span class="about-kicker">About Our School</span>
-                    <h2>Vastigruh Vidyalay Karhati (VVK)</h2>
-
-                    <p>
-                        Vastigruh Vidyalay Karhati (VVK) is a Co-educational institution located at Karhati,
-                        Baramati in Pune district of Maharashtra, India. We are affiliated with Maharashtra State
-                        Board of Secondary and Higher Secondary Education (MSBSHSE). Vastigruh Vidyalay Karhati
-                        offers secondary and higher secondary education.
-                    </p>
-
-                    <h3>Our Unique Approach: Agricultural Education</h3>
-
-                    <p>
-                        The highlight of our school is its agricultural education program. We teach students about
-                        farming and its importance and impact on day to day life of villagers as well as its
-                        surrounding environment.
-                    </p>
-
-                    <!-- <p>
-                        Research shows that learning experiences that usually take place outside the classroom
-                        have long lasting and positive impact on children. These experiences have potential to
-                        develop a range of skills such as teamwork, collaboration, communication and leadership.
-                    </p>
-
-                    <p>
-                        The children at our school learn to give a helping hand to their parents who mainly work
-                        in the fields, creating a strong connection between education and practical life skills.
-                    </p> -->
-
-                    <!-- Optional CTA -->
-                    <div class="about-actions">
-                        <a href="#contact" class="btn-primary">Enquire Now</a>
-                        <a href="#gallery" class="btn-outline">View Gallery</a>
-                    </div>
-                </div>
-
-            </div>
+    <div class="tab-content active" id="history">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">Foundation</div>
+          <h3>Our Beginning</h3>
+          <p>
+            New English Medium School Dhakale was started with a simple purpose—provide quality English-medium education
+            with strong discipline, values, and a supportive learning environment.
+          </p>
         </div>
-    </section>
 
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="section-title">
-                <span class="subtitle">Our Legacy</span>
-                <h2>Seven Decades of Excellence</h2>
-                <p class="lead-text">
-                    Established in 1952, Vastigruh Vidyalay Karhati has been serving the educational needs of the
-                    Karhati community
-                    for over 70 years. Our school was founded with the vision of providing quality education while
-                    preserving and
-                    promoting agricultural traditions.
-                </p>
-            </div>
-
-            <div class="about-tabs">
-                <button class="tab-btn active" data-tab="history">
-                    <i class="fas fa-history"></i> History
-                </button>
-            </div>
-
-            <div class="tab-content active" id="history">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">1951</div>
-                        <h3>Foundation</h3>
-                        <p>Krushi Udyog Mul Shikshan Sansthan established by visionary founder late Dr. Shri A.J.
-                            Agarkar</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2004</div>
-                        <h3>New Leadership</h3>
-                        <p>Shri Ajitdada Pawar becomes President, marking a new era of growth and development</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">Present</div>
-                        <h3>Modern Excellence</h3>
-                        <p>6 institutions serving 2000+ students with state-of-the-art facilities</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="mission">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3>Our Vision</h3>
-                        <p>To empower students through quality education in skill development and technical education
-                        </p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3>Our Mission</h3>
-                        <p>Provide high-quality education in a safe, respectful, and inclusive environment</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="values">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <h3>Excellence</h3>
-                        <p>Commitment to highest standards in education and character building</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Community</h3>
-                        <p>Building strong relationships and supporting each other's growth</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Innovation</h3>
-                        <p>Embracing new technologies and teaching methodologies</p>
-                    </div>
-                </div>
-            </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Growth</div>
+          <h3>Building Strong Learners</h3>
+          <p>
+            Over the years, we strengthened our academic approach with activity-based learning, better classroom
+            engagement, and a focus on reading, writing, and communication skills.
+          </p>
         </div>
-    </section>
+
+        <div class="timeline-item">
+          <div class="timeline-year">Today</div>
+          <h3>Future-Ready Learning</h3>
+          <p>
+            We continue to evolve with modern teaching methods, student-centered guidance, and a goal-driven system that
+            supports both academic excellence and character development.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="mission">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3>Our Vision</h3>
+          <p>
+            To nurture confident, responsible, and capable students through quality education, strong values, and a
+            future-focused mindset.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Our Mission</h3>
+          <p>
+            To provide a safe, disciplined, and supportive learning environment that strengthens academics, communication,
+            and life skills for every child.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="values">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-gem"></i>
+          </div>
+          <h3>Excellence</h3>
+          <p>
+            We set high standards in teaching and learning—so students build strong basics and achieve consistent results.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Care & Community</h3>
+          <p>
+            A school should feel like a second home. We support students with respect, guidance, and positive discipline.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Modern Learning</h3>
+          <p>
+            We use practical activities and smart teaching methods to make learning engaging, meaningful, and effective.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Vision & Mission Section -->
-    <section class="vision-mission-section" id="vision-mission">
-        <div class="container">
-            <div class="section-title">
-                <span class="subtitle">Our Guiding Principles</span>
-                <h2>Vision & Mission</h2>
-                <p class="lead-text">
-                    The foundation upon which we build excellence in education and character development
-                </p>
-            </div>
+<section class="vision-mission-section" id="vision-mission">
+  <div class="container">
+    <div class="section-title">
+      <span class="subtitle">Our Guiding Principles</span>
+      <h2>Vision & Mission</h2>
+      <p class="lead-text">
+        The values that shape our teaching, student growth, and everyday learning at New English Medium School Dhakale
+      </p>
+    </div>
 
-            <div class="vision-mission-grid">
-                <div class="vm-card">
-                    <div class="vm-head">
-                        <span class="vm-icon">
-                            <i class="fas fa-eye"></i>
-                        </span>
-                        <h3 class="vm-title">Our Vision</h3>
-                    </div>
-                    <div class="vm-text">
-                        <p>To establish ourselves as a premier institution that empowers students through quality
-                            education in skill development and technical education. We envision creating a learning
-                            ecosystem that fosters innovation, critical thinking, and holistic development.</p>
-                        <p style="margin-top: 1rem;">Our vision extends beyond academic excellence to developing
-                            responsible citizens who contribute meaningfully to society while maintaining the highest
-                            ethical standards.</p>
-                    </div>
-                </div>
-
-                <div class="vm-card">
-  <div class="vm-head">
-    <span class="vm-icon">
-      <i class="fas fa-bullseye"></i>
-    </span>
-    <h3 class="vm-title">Our Mission</h3>
-  </div>
-
-  <div class="vm-text">
-    <p>To provide high-quality education in a safe, respectful, and inclusive environment that
-      builds a foundation for lifelong learning. We are committed to developing excellent
-      infrastructure with well-equipped workshops that are regularly updated.</p>
-    <p style="margin-top: 1rem;">Through our comprehensive programs, we aim to develop leadership
-      qualities, interpersonal skills, creativity, and strong values in every student, preparing
-      them for success in their chosen fields and in life.</p>
-  </div>
-</div>
-
-            </div>
+    <div class="vision-mission-grid">
+      <div class="vm-card">
+        <div class="vm-icon">
+          <i class="fas fa-eye"></i>
         </div>
-    </section>
-
-
-
-
-    <!-- Courses Section -->
-    <section class="courses-section" id="courses">
-        <div class="container">
-            <div class="section-title">
-                <!-- <span class="subtitle">School Features</span> -->
-                <h2>School Features</h2>
-                <p class="lead-text">
-                    Industry-focused learning that builds strong basics, real skills, and confident communication for
-                    your
-                    child’s
-                    future.
-                </p>
-            </div>
-
-            <div class="courses-grid">
-                <div class="course-card">
-                    <span class="course-badge">Technical</span>
-                    <img src="/assets/img/quality-education.jpg" alt="Draughtsman Mechanical" class="course-image"
-                        loading="lazy">
-                    <div class="course-content">
-                        <h3>Quality Education</h3>
-                        <p>
-                            Affiliated with MSBSHSE, offering comprehensive secondary and higher secondary education
-                            with a
-                            focus on
-                            holistic development.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <span class="course-badge">Agricultural</span>
-                    <img src="/assets/img/agricultural-focus.jpg" alt="Electrician" class="course-image" loading="lazy">
-                    <div class="course-content">
-                        <h3>Agricultural Focus</h3>
-                        <p>
-                            Unique curriculum that integrates agricultural education with traditional academics,
-                            providing
-                            practical
-                            learning experiences.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <span class="course-badge">Experienced Faculty</span>
-                    <img src="/assets/img/experienced-faculty.jpg" alt="Electronics Mechanic" class="course-image"
-                        loading="lazy">
-                    <div class="course-content">
-                        <h3>Experienced Faculty</h3>
-                        <p>
-                            Dedicated and highly qualified teaching staff committed to student success and development.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <h3 class="vm-title">Our Vision</h3>
+        <div class="vm-text">
+          <p>To be a trusted English medium school in Dhakale that builds confident, capable, and responsible learners through modern education, strong values, and clear communication skills.</p>
+          <p style="margin-top: 1rem;">We aim to create a learning environment where students think independently, express themselves with confidence, and grow into future-ready individuals who contribute positively to society.</p>
         </div>
-    </section>
+      </div>
 
+      <div class="vm-card">
+        <div class="vm-icon">
+          <i class="fas fa-bullseye"></i>
+        </div>
+        <h3 class="vm-title">Our Mission</h3>
+        <div class="vm-text">
+          <p>To deliver quality education at New English Medium School Dhakale through skilled teaching, disciplined learning, and engaging classroom activities that strengthen academics and overall personality development.</p>
+          <p style="margin-top: 1rem;">We focus on a safe, respectful, and supportive school culture—helping every child improve in studies, communication, values, and life skills for long-term success.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    
     <!-- Perfect Faculty Section -->
     <section class="perfect-faculty-section" id="faculty">
         <div class="container">
@@ -598,129 +633,191 @@
                     Experienced educators committed to student success and holistic development.
                 </p>
             </div>
-
+    
             <!-- Visible Faculty Grid - 4 Cards -->
             <div class="faculty-grid" id="visibleFacultyGrid">
                 <!-- Faculty 1 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Shri. Shrikant Patil" loading="lazy">
+                        <img src="../assets/img/mr-kumbhar-girish-shivaji.jpeg"
+                            alt="Mr. Kumbhar Girish Shivaji" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs- Anita Ravindra Chavan</h3>
-                        <p class="faculty-designation">Principal</p>
-                        <p class="faculty-qualification">M.A., M.Ed., Ph.D.</p>
+                        <h3 class="faculty-name">Mr. Kumbhar Girish Shivaji</h3>
+                        <p class="faculty-designation">Headmaster</p>
+                        <p class="faculty-qualification">B.Sc.B.Ed, D.S.M</p>
+                        <!-- <div class="faculty-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>25+ Years Experience</span>
+                        </div> -->
                     </div>
                 </div>
-
+    
                 <!-- Faculty 2 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Sunita Deshmukh" loading="lazy">
+                        <img src="../assets/img/mr-paithankar-rajendra-uttam.jpeg"
+                            alt="Mr. Paithankar rajendra Uttam" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Bhausaheb Pandurang Pisal</h3>
-                        <p class="faculty-designation">Supervisor</p>
-                        <p class="faculty-qualification">B.A.B.P.Ed.</p>
+                        <h3 class="faculty-name">Mr. Paithankar rajendra Uttam</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">M.E.B.Ed.</p>
+                        <!-- <div class="faculty-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>20+ Years Experience</span>
+                        </div> -->
                     </div>
                 </div>
-
+    
                 <!-- Faculty 3 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Rajesh Kumar" loading="lazy">
+                        <img src="../assets/img/mr-ejgar-pintu-sambhaji.jpeg"
+                            alt="Mr. Ejgar Pintu Sambhaji" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Abasaheb Malhari Kokare</h3>
-                        <p class="faculty-designation">Asst.Teacher</p>
-                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                        <h3 class="faculty-name">Mr. Ejgar Pintu Sambhaji</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <!-- <p class="faculty-qualification">M.Sc. Mathematics</p> -->
+                        <!-- <div class="faculty-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>15+ Years Experience</span>
+                        </div> -->
                     </div>
                 </div>
-
+    
                 <!-- Faculty 4 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Meera Joshi" loading="lazy">
+                        <img src="../assets/img/miss-jagtap-geetanjali-vijay.jpeg"
+                            alt="Miss. Jagtap geetanjali Vijay" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Bhapkar Manjushri Lalasaheb</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.sc(math's),B.ed,DSM</p>
+                        <h3 class="faculty-name">Miss. Jagtap geetanjali Vijay</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">B.Sc.B.Ed</p>
+                        <!-- <div class="faculty-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>12+ Years Experience</span>
+                        </div> -->
                     </div>
                 </div>
             </div>
-
+    
             <!-- Hidden Faculty Grid - 4 More Cards -->
             <div class="faculty-grid hidden" id="hiddenFacultyGrid">
                 <!-- Faculty 5 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Dr. Anand Rao" loading="lazy">
+                        <img src="../assets/img/mr-lonkar-sandip-bhauso.jpeg"
+                            alt="Mr. Lonkar Sandip Bhauso" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">KHAIRE RESHMA VYANKAT</h3>
-                        <p class="faculty-designation">ASSISTANT TEACHER</p>
-                        <p class="faculty-qualification">M.Sc.B.Ed.</p>
+                        <h3 class="faculty-name">Mr. Lonkar Sandip Bhauso</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">M.A.M.ED .Set</p>
+                        <!-- <div class="faculty-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>18+ Years Experience</span>
+                        </div> -->
                     </div>
                 </div>
-
+    
                 <!-- Faculty 6 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Vikram Singh" loading="lazy">
+                        <img src="../assets/img/miss-kumbhar-bharati-girish.jpeg"
+                            alt="Miss. Kumbhar Bharati Girish" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Komal Chandgude</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">B.C.S(Computer Science) B.Ed (Appear)</p>
-                        <div class="faculty-experience">
+                        <h3 class="faculty-name">Miss. Kumbhar Bharati Girish</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">B.A.Bed</p>
+                        <!-- <div class="faculty-experience">
                             <i class="fas fa-clock"></i>
                             <span>10+ Years Experience</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-
+    
                 <!-- Faculty 7 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1551836026-d5c2c5af91f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Anjali Sharma" loading="lazy">
+                        <img src="../assets/img/miss-survekar-savita-shahaji.jpeg"
+                            alt="Miss. Survekar Savita Shahaji" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Amol Subhash Kambale</h3>
-                        <p class="faculty-designation">ASSISTANT TEACHER</p>
-                        <p class="faculty-qualification">A.T.D.A.M.G , D Art & Painting.D.S.M</p>
+                        <h3 class="faculty-name">Miss. Survekar Savita Shahaji</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">B.A.Bed</p>
+                        <!-- <div class="faculty-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>14+ Years Experience</span>
+                        </div> -->
                     </div>
                 </div>
-
+    
                 <!-- Faculty 8 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1556157382-2eda3e8a9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Ravi Verma" loading="lazy">
+                        <img src="../assets/img/mr-deshmane-rushikesh-rajendra.jpeg"
+                            alt="Mr. Deshmane Rushikesh Rajendra" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. ALLABAKSH HUSEN SHAIKH</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.COM,B.P.ED.,D.S.M.</p>
+                        <h3 class="faculty-name">Mr. Deshmane Rushikesh Rajendra</h3>
+                        <p class="faculty-designation">Clerk</p>
+                        <p class="faculty-qualification">TY.b.Com</p>
+                        <!-- <div class="faculty-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>16+ Years Experience</span>
+                        </div> -->
+                    </div>
+                </div>
+                   <!-- Faculty 9 -->
+                <div class="faculty-card">
+                    <div class="card-image">
+                        <img src="../assets/img/mr-soumitra-malhari-jagtap.jpeg"
+                            alt="Mr.Soumitra Malhari Jagtap" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr.Soumitra Malhari Jagtap</h3>
+                        <p class="faculty-designation">Peon</p>
+                        <p class="faculty-qualification">12th Pass</p>
+                        <!-- <div class="faculty-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>16+ Years Experience</span>
+                        </div> -->
+                    </div>
+                </div>
+                   <!-- Faculty 10 -->
+                <div class="faculty-card">
+                    <div class="card-image">
+                        <img src="../assets/img/mr-chavan-gajanan-balaso.jpeg"
+                            alt="Mr. Chavan Gajanan Balaso" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Chavan Gajanan Balaso</h3>
+                        <p class="faculty-designation">Peon</p>
+                        <p class="faculty-qualification">7th Pass</p>
+                        <!-- <div class="faculty-experience">
+                            <i class="fas fa-clock"></i>
+                            <span>16+ Years Experience</span>
+                        </div> -->
                     </div>
                 </div>
             </div>
-
+    
             <!-- View More Button -->
             <div class="view-more-wrapper">
                 <button class="view-more-btn" id="viewMoreBtn">
@@ -730,7 +827,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Leadership with Flip Cards -->
     <section class="leadership-section" id="leadership">
         <div class="container">
@@ -738,7 +835,7 @@
                 <span class="subtitle">Our Leaders</span>
                 <h2>Executive Committee</h2>
             </div>
-
+    
             <div class="leadership-grid">
                 <div class="leader-card">
                     <div class="leader-front">
@@ -753,7 +850,7 @@
                         <p>Leading KUMSS since 2004 with visionary leadership and commitment to education</p>
                     </div>
                 </div>
-
+    
                 <div class="leader-card">
                     <div class="leader-front">
                         <div class="leader-avatar">
@@ -767,7 +864,7 @@
                         <p>Dedicated to providing quality education and skill development opportunities</p>
                     </div>
                 </div>
-
+    
                 <div class="leader-card">
                     <div class="leader-front">
                         <div class="leader-avatar">
@@ -1487,6 +1584,39 @@
             }
         });
     </script>
+
+<script>
+  // script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('heroVideo');
+    // REMEMBER TO REPLACE THIS WITH YOUR ACTUAL HLS VIDEO URL
+    const videoSrc = 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8'; // Dummy HLS URL
+
+    if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play().catch(e => console.error("Video autoplay failed:", e));
+        });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        // Fallback for Safari
+        video.src = videoSrc;
+        video.addEventListener('loadedmetadata', function() {
+            video.play().catch(e => console.error("Video autoplay failed:", e));
+        });
+    } else {
+        console.error("This browser does not support HLS video.");
+        video.style.display = 'none';
+        // Fallback with same visual filter for consistency (brightness 0.8, contrast 1.05)
+        document.querySelector('.hero-video-container').style.background = 'url("https://via.placeholder.com/1920x1080/444444/FFFFFF?text=Video+Not+Supported") no-repeat center center / cover';
+        // If the video is not supported, the background image won't need a filter usually,
+        // unless you want to make it look intentionally dimmed. Removing filter for clarity on fallback.
+        // document.querySelector('.hero-video-container').style.filter = 'brightness(0.8) contrast(1.05)';
+        document.querySelector('.video-overlay').style.background = 'var(--overlay-color, rgba(0, 0, 0, 0.4))'; // Ensure overlay is still applied to fallback image
+    }
+});
+</script>
 </body>
 
 </html>
