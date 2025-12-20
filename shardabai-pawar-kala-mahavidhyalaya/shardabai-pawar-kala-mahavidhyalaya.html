@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New English Medium School Dhakale| Excellence Since 1951</title>
+    <title>Shardabai Pawar Kala Mahavidhyalaya | Established in 1993-1994</title>
     <link rel="icon" href="https://kumss.org/assets/kumss_log.png" type="image/x-icon">
 
     <!-- Fonts -->
@@ -34,8 +34,331 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  /* Hero Section */
+.hero-school-arts {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically centers content */
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Video Background */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Minimal filter on video itself, the overlay will handle dimming */
+    /* filter: brightness(1) contrast(1); KEEP VIDEO BRIGHT AND CLEAR */
+}
+
+.video-overlay { /* Re-introduced overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-color, rgba(0, 0, 0, 0.4)); /* Subtle dark overlay */
+    z-index: 2;
+}
+
+/* Content Wrapper */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.hero-content {
+  margin-top: 50px;
+    padding: 35px;
+    border-radius: 10px;
+    /* Text shadows configured for readability over a subtle dark overlay */
+}
+
+/* Animated Heading */
+.animated-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.8em;
+    font-weight: 900;
+    color: var(--primary-heading-color, #fd9d02); /* Gold/Orange */
+    margin-bottom: 25px;
+    line-height: 1;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    text-shadow: var(--heading-text-shadow, 1px 1px 5px rgba(0, 0, 0, 0.6)); /* Dark shadow for bright text */
+}
+
+.animated-heading .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    animation: revealWordSimple 1s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding-right: 18px;
+    transition: color 0.3s ease;
+}
+
+/* Delay for each word */
+.animated-heading .word:nth-child(1) { animation-delay: 0.1s; }
+.animated-heading .word:nth-child(2) { animation-delay: 0.25s; }
+.animated-heading .word:nth-child(3) { animation-delay: 0.4s; }
+.animated-heading .word:nth-child(4) { animation-delay: 0.55s; }
+.animated-heading .word:nth-child(5) { animation-delay: 0.7s; }
+.animated-heading .word:nth-child(6) { animation-delay: 0.85s; }
+.animated-heading .word:nth-child(7) { animation-delay: 1.0s; }
+
+@keyframes revealWordSimple {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.8em;
+    color: var(--secondary-text-color, #000000); /* BLACK as requested */
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: var(--subtitle-text-shadow, 1px 1px 2px rgba(255, 255, 255, 0.5)); /* Light shadow for dark text */
+}
+
+/* Button - More Attractive 3D (No changes needed, already good) */
+.btn-explore {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: var(--button-bg-color, #3498db);
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    transform: perspective(1000px) translateZ(0);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-explore:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--button-hover-bg-color, #2980b9);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    z-index: -1;
+}
+
+.btn-explore:hover {
+    color: white;
+    transform: perspective(1000px) translateZ(20px) translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.btn-explore:hover:before {
+    width: 200%;
+    height: 200%;
+    opacity: 1;
+}
+
+.btn-explore:active {
+    transform: perspective(1000px) translateZ(0) translateY(0);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 
 
+/* Floating Elements (No changes needed) */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.floating-element {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    opacity: 0;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.floating-1 {
+    width: 120px; height: 120px;
+    top: 10%; left: 15%;
+    animation-name: float1; animation-delay: 0s;
+}
+
+.floating-2 {
+    width: 180px; height: 180px;
+    top: 75%; left: 80%;
+    animation-name: float2; animation-delay: 8s;
+}
+
+.floating-3 {
+    width: 90px; height: 90px;
+    top: 40%; left: 5%;
+    animation-name: float3; animation-delay: 17s;
+}
+
+/* Keyframes for floating elements (no changes) */
+@keyframes float1 {
+    0% { transform: translate(0, 0) scale(0.9); opacity: 0.15; }
+    25% { transform: translate(40px, 50px) scale(1.2); opacity: 0.25; }
+    50% { transform: translate(0, 0) scale(1); opacity: 0.1; }
+    75% { transform: translate(-50px, -40px) scale(1.1); opacity: 0.2; }
+    100% { transform: translate(0, 0) scale(0.9); opacity: 0.15; }
+}
+
+@keyframes float2 {
+    0% { transform: translate(0, 0) scale(1.1); opacity: 0.25; }
+    25% { transform: translate(-60px, -40px) scale(1); opacity: 0.15; }
+    50% { transform: translate(0, 0) scale(1.2); opacity: 0.35; }
+    75% { transform: translate(70px, 50px) scale(0.9); opacity: 0.1; }
+    100% { transform: translate(0, 0) scale(1.1); opacity: 0.25; }
+}
+
+@keyframes float3 {
+    0% { transform: translate(0, 0) scale(0.8); opacity: 0.1; }
+    25% { transform: translate(25px, -30px) scale(1); opacity: 0.2; }
+    50% { transform: translate(0, 0) scale(0.9); opacity: 0.15; }
+    75% { transform: translate(-35px, 20px) scale(0.85); opacity: 0.1; }
+    100% { transform: translate(0, 0) scale(0.8); opacity: 0.1; }
+}
+
+
+/* Responsive Design - UPDATED to increase font sizes on mobile and ensure proper display */
+
+@media (max-width: 1400px) {
+    .animated-heading { font-size: 4.2em; letter-spacing: 2px; }
+    .hero-subtitle { font-size: 1.7em; margin-bottom: 35px; }
+    .btn-explore { padding: 18px 40px; font-size: 1.4em; }
+}
+
+@media (max-width: 1200px) {
+    .animated-heading { font-size: 3.6em; letter-spacing: 1.5px; }
+    .hero-subtitle { font-size: 1.5em; margin-bottom: 30px; }
+    .btn-explore { padding: 16px 35px; font-size: 1.3em; }
+}
+
+@media (max-width: 992px) {
+    .hero-content { padding: 30px; }
+    .animated-heading { font-size: 2.8em; letter-spacing: 1px; }
+    .animated-heading .word { padding-right: 12px; }
+    .hero-subtitle { font-size: 1.3em; margin-bottom: 25px; }
+    .btn-explore { padding: 14px 30px; font-size: 1.2em; }
+    .floating-1 { width: 80px; height: 80px; }
+    .floating-2 { width: 130px; height: 130px; top: 78%; left: 75%; }
+    .floating-3 { width: 60px; height: 60px; }
+}
+
+@media (max-width: 768px) {
+    .hero-content-wrapper {
+        padding: 15px; /* Slightly more padding for tablets/larger mobiles */
+        /* min-height can be adjusted if there's a fixed navbar */
+        /* min-height: calc(100vh - var(--navbar-height, 0px)); */
+    }
+    .hero-content {
+        padding: 25px; /* Increased content padding for better readability */
+    }
+    .animated-heading {
+        font-size: 2.5em; /* Increased font size for tablets/larger mobiles */
+        margin-bottom: 25px;
+        letter-spacing: 0.8px;
+    }
+    .animated-heading .word {
+        padding-right: 10px; /* Adjusted spacing */
+    }
+    .hero-subtitle {
+        font-size: 1.2em; /* Increased subtitle font size */
+        margin-bottom: 25px;
+    }
+    .btn-explore {
+        padding: 14px 28px; /* Slightly larger button */
+        font-size: 1.2em; /* Increased button font size */
+    }
+    /* Floating elements sizes might also be slightly adjusted for less clutter on smaller screens */
+    .floating-1 { width: 65px; height: 65px; top: 12%; left: 10%; }
+    .floating-2 { width: 110px; height: 110px; top: 78%; left: 70%; }
+    .floating-3 { width: 50px; height: 50px; top: 35%; left: 5%; }
+}
+
+@media (max-width: 480px) {
+  .hero-video-container{
+    height: 700px;
+  }
+    .hero-content-wrapper {
+        padding: 10px; /* Increased padding for smaller mobiles */
+        /* min-height can be adjusted if there's a fixed navbar */
+        /* min-height: calc(100vh - var(--navbar-height, 0px)); */
+
+    }
+    .hero-content {
+margin-top: -300px;
+        padding: 20px; /* Increased content padding for better readability */
+    }
+    .animated-heading {
+        font-size: 50px; /* Increased font size for smaller mobiles */
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+    }
+    .animated-heading .word {
+     
+        padding-right: 8px; /* Adjusted spacing */
+    }
+    .hero-subtitle {
+
+         font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .btn-explore {
+        padding: 12px 22px; /* Slightly larger button */
+        font-size: 1.1em; /* Increased button font size */
+        border-radius: 40px;
+    }
+    /* Floating elements further adjusted for very small screens */
+    .floating-1 { width: 45px; height: 45px; top: 15%; left: 8%; }
+    .floating-2 { width: 80px; height: 80px; top: 75%; left: 60%; }
+    .floating-3 { width: 40px; height: 40px; top: 28%; left: 10%; }
+}
+</style>
 </head>
 
 <body>
@@ -119,36 +442,34 @@
     </header>
 
     <!-- Premium Hero with HLS Video -->
-    <section class="hero" id="home">
-        <div class="floating-elements">
-            <div class="floating-element floating-1"></div>
-            <div class="floating-element floating-2"></div>
-            <div class="floating-element floating-3"></div>
-        </div>
+<section class="hero-school-arts" id="home">
+    <div class="floating-elements">
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+        <div class="floating-element floating-3"></div>
+    </div>
 
-        <div class="hero-video-container">
-            <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
-                <!-- HLS video source will be added by JavaScript -->
-            </video>
-            <div class="video-overlay"></div>
-        </div>
+    <div class="hero-video-container">
+        <video id="heroVideo" class="hero-video" autoplay muted loop playsinline></video>
+        <div class="video-overlay"></div> <!-- Re-introduced video overlay -->
+    </div>
 
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-subtitle">New English Medium School Dhakale</div>
-                <p class="hero-description">
-                    For over seven decades, we've been transforming lives through exceptional education.
-                    We blend traditional values with cutting-edge technology to create leaders who shape tomorrow.
-                </p>
-
-                <div class="hero-quote">
-                    "Education opens up the mind, expands it and allows you to improve your life in so many ways."
-                </div>
-
+    <div class="container hero-content-wrapper">
+        <div class="hero-content">
+            <div class="animated-heading">
+                <span class="word">Welcome</span>
+                <span class="word">to</span>
+                <span class="word">Shardabai</span>
+                <span class="word">Pawar</span>
+                <span class="word">Kala</span>
+                <span class="word">Mahavidhyalaya</span>
             </div>
-        </div>
-    </section>
+            <div class="hero-subtitle">"Creating Art Teachers with Aesthetic Sense & Creative Skills in Fine Arts"</div>
 
+            <a href="#" class="btn-explore">Explore Our Programs</a>
+        </div>
+    </div>
+</section>
     <!-- About Section with Tabs -->
  <section class="about-section" id="about">
   <div class="container">
@@ -1263,6 +1584,39 @@
             }
         });
     </script>
+
+<script>
+  // script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('heroVideo');
+    // REMEMBER TO REPLACE THIS WITH YOUR ACTUAL HLS VIDEO URL
+    const videoSrc = 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8'; // Dummy HLS URL
+
+    if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play().catch(e => console.error("Video autoplay failed:", e));
+        });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        // Fallback for Safari
+        video.src = videoSrc;
+        video.addEventListener('loadedmetadata', function() {
+            video.play().catch(e => console.error("Video autoplay failed:", e));
+        });
+    } else {
+        console.error("This browser does not support HLS video.");
+        video.style.display = 'none';
+        // Fallback with same visual filter for consistency (brightness 0.8, contrast 1.05)
+        document.querySelector('.hero-video-container').style.background = 'url("https://via.placeholder.com/1920x1080/444444/FFFFFF?text=Video+Not+Supported") no-repeat center center / cover';
+        // If the video is not supported, the background image won't need a filter usually,
+        // unless you want to make it look intentionally dimmed. Removing filter for clarity on fallback.
+        // document.querySelector('.hero-video-container').style.filter = 'brightness(0.8) contrast(1.05)';
+        document.querySelector('.video-overlay').style.background = 'var(--overlay-color, rgba(0, 0, 0, 0.4))'; // Ensure overlay is still applied to fallback image
+    }
+});
+</script>
 </body>
 
 </html>
