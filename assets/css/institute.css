@@ -316,7 +316,7 @@
 .gm-btn:hover{ transform: translateY(-1px); }
 
 /* Dropdown */
-.gm-item{ position: relative; }
+.gm-item{ position: relative; list-style: none; }
 
 .gm-dropbtn{
   display:flex;

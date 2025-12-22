@@ -90,20 +90,14 @@
                             <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
                         </button>
 
-                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="/institute/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">New English School Dhakale</a></li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">Primary School Karhati Tembha</a>
+                        <ul class="gm-submenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem" href="#">About Us</a></li>
+                            <li role="none"><a role="menuitem" href="#">History Of The School</a></li>
+                            <li role="none"><a role="menuitem" href="#">Gallery</a>
                             </li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">Gurukul English Medium School</a>
-                            </li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">Shardabai Pawar Kala
-                                    Mahavidhyalaya</a></li>
                         </ul>
                     </li>
-
-
+                      <li><a class="gm-link" href="/index-3.html">Academics</a></li>
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <!-- Desktop uses hover/focus. Mobile uses this button. -->
@@ -126,12 +120,11 @@
                         </ul>
                     </li>
 
-                    <li><a class="gm-link" href="#testimonials">Gallery</a></li>
-
-                    <li>
-                        <a class="gm-btn" href="tel:+919421394242">Contact Us</a>
-                    </li>
+                    <li><a class="gm-link" href="/gurukul-english-medium-school/staff.html">Staff</a></li>
                 </ul>
+                 
+                        <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
+                    
             </nav>
         </div>
     </header>
@@ -142,7 +135,32 @@
                   /* =========================================================
    GLOBAL BASICS
 ========================================================= */
+:root {
+            /* --- TYPOGRAPHY --- */
+            --heading-font-family: "Gantari", sans-serif;
+            --body-font-family: "Poppins", sans-serif;
+            --fontSize: 16px;
 
+            --primaryColor: #ff9704;
+            --secenderyColor: #f37a20;
+            --whiteColor: #ffffff;
+            --lightBgColor: #f4fbf7;
+            --blackColor: #2f3390;
+            --paragraphColor: #4a4a4a;
+            --linkColor: #2f3390;
+            --linkHoverColor: #f37a20;
+            --btnBgColor: #f37a20;
+            --btnTextColor: #ffffff;
+            --btnHoverBgColor: #d66615;
+            --borderColor: #e0ece4;
+            --transition: all 0.4s ease-in-out;
+
+            /* Spacing */
+            --section-padding-lg: 10rem 2rem;
+            --section-padding-md: 7rem 2rem;
+            --section-padding-sm: 5rem 1.5rem;
+            --container-max: 1400px;
+        }
 
 *{ box-sizing: border-box; }
 
@@ -156,6 +174,29 @@ html,body{
   width: min(1200px, 100%);
   margin: 0 auto;
   padding: 0 16px;
+}
+.ggm-btn {
+      display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration:none;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.785);
+  background-color: var(--primaryColor);
+}
+.ggm-btn:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px){ 
+    a.ggm-btn {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }
 
 /* =========================================================
@@ -1553,7 +1594,8 @@ img{ max-width: 100%; display: block; }
         // Update active navigation link
         function updateActiveNavLink() {
             const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
+            const navLinks = document.querySelectorAll('.gm-link');
+            const gmmBtn = document.queryselectorAll('gmm-btn');
 
             let current = '';
 
@@ -1577,6 +1619,8 @@ img{ max-width: 100%; display: block; }
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
+        const gmmBtn = document.queryselectorAll('gmmBtn');
+
 
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenuBtn.classList.toggle('active');
