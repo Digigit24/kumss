@@ -105,7 +105,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 4.0em;
     font-weight: 900;
-    color: var(--primary-heading-color, #fd802d); /* Gold/Orange */
+    color: rgb(255, 171, 14); /* Gold/Orange */
     margin-bottom: 25px;
     line-height: 1;
     overflow: hidden;
@@ -152,7 +152,7 @@
 .btn-explore {
     display: inline-block;
     padding: 10px 40px;
-    background-color: var(--button-bg-color, #3498db);
+    background-color: var(--button-bg-color, #003366);
     color: white;
     text-decoration: none;
     font-size: 1.1em;
@@ -176,7 +176,7 @@
     left: 50%;
     width: 0;
     height: 0;
-    background: var(--button-hover-bg-color, #2980b9);
+    background: var(--button-hover-bg-color, #003366);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
@@ -508,6 +508,236 @@ margin-top: -250px;
             .icon-box { width: 50px; height: 50px; }
         }
 /* About Style end */
+
+/* contact style  start*/
+/* Section Wrapper */
+.pc-section {
+  padding: 80px 20px;
+  background-color: var(--pc-bg);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.pc-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.pc-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pc-head h2 {
+  /* border-bottom: 6px solid #fd802d; */
+ 
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--pc-blue);
+  margin-bottom: 15px;
+}
+
+.pc-head p {
+  color: var(--pc-text);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* --- 3-Column Grid System --- */
+.pc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
+  gap: 30px;
+}
+
+/* Card Styling */
+.pc-card {
+
+  background: var(--pc-white);
+  padding: 40px 30px; /* Increased padding for better look */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Top Hover Bar */
+.pc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--pc-accent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.pc-card:hover::before {
+  transform: scaleX(1);
+}
+
+.pc-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Icon Styling */
+.pc-icon {
+  border: 1px solid grey;
+  width: 70px;
+  height: 70px;
+  background: #eff6ff;
+  color: var(--pc-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.pc-card:hover .pc-icon {
+  background: var(--pc-accent);
+  color: var(--pc-white);
+  transform: rotate(360deg);
+}
+
+/* Text Styling */
+.pc-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f37a20;
+  margin-bottom: 15px;
+}
+
+.pc-card p {
+  font-size: 1rem;
+  color: var(--pc-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Responsive Media Queries --- */
+
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+  .pc-grid {
+    grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+  }
+  
+  /* Make the 3rd card centered at the bottom */
+  .pc-card:last-child {
+    grid-column: span 2; 
+    max-width: 600px; /* Limit width so it doesn't look too stretched */
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .pc-section {
+    padding: 60px 15px;
+  }
+
+  .pc-head h2 {
+    font-size: 2rem;
+  }
+
+  .pc-grid {
+    grid-template-columns: 1fr; /* Stack vertically */
+  }
+
+  .pc-card:last-child {
+    grid-column: span 1; /* Reset span for mobile */
+    max-width: 100%;
+  }
+}
+/* contact style end */
+
+/* stats style start */
+/* Container Design */
+.rp-stats-unique-wrapper {
+ 
+    background-color: #003366; /* Deep Blue Theme - Change as needed */
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.rp-stats-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around; /* Distributes items evenly */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Card Design */
+.rp-stat-card {
+    flex: 1;
+    text-align: center;
+    min-width: 250px; /* Ensures items don't get too squashed */
+    color: #ffffff;
+}
+
+/* Number Styling */
+.rp-number-wrapper {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff; /* Number color */
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+/* Description Text Styling */
+.rp-stat-desc {
+    font-size: 1.1rem;
+    color: #e0e0e0; /* Slightly lighter text for description */
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 768px) {
+    .rp-stats-content {
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers items */
+    }
+
+    .rp-stat-card {
+        width: 100%;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1); /* Optional divider for mobile */
+        padding-bottom: 20px;
+    }
+
+    .rp-stat-card:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .rp-number-wrapper {
+        font-size: 2.5rem; /* Slightly smaller on mobile */
+    }
+}
+/* stats style end */
 </style>
 </head>
 
@@ -540,7 +770,7 @@ margin-top: -250px;
             <nav class="gm-nav" aria-label="Primary">
                 <!-- Logo -->
                 <a href="/index-3.html" class="gm-logo">
-                    <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
+                    <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
                 </a>
 
                 <!-- Mobile toggle -->
@@ -553,10 +783,10 @@ margin-top: -250px;
 
                 <!-- Links -->
                 <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="/index-3.html">Home</a></li>
+                    <li><a class="gm-link" href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
 
                     <li class="gm-item">
-                        <a class="gm-link" href="/about.html">About</a>
+                        <a class="gm-link" href="#about">About</a>
                     </li>
 
                     <!-- Dropdown -->
@@ -574,12 +804,14 @@ margin-top: -250px;
                             <li role="none"><a role="menuitem" href="/index-3.html">Primary School Karhati Tembha</a>
                             </li>
                             <li role="none"><a role="menuitem" href="/index-3.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">Gurukul English Medium School</a>
+                            <li role="none"><a role="menuitem" href="">Gurukul English Medium School</a>
                             </li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">Shardabai Pawar Kala
+                            <li role="none"><a role="menuitem" href="./shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala
                                     Mahavidhyalaya</a></li>
                         </ul>
                     </li>
+                    
+                    <li><a class="gm-link" href="./staff.html">Staff</a></li>
 
                     <li><a class="gm-link" href="#testimonials">Gallery</a></li>
 
@@ -621,14 +853,47 @@ margin-top: -250px;
     </div>
 </section>
 
+<!-- Unique Stats Section Start -->
+<section class="rp-stats-unique-wrapper">
+    <div class="rp-stats-content">
+        
+        <!-- Stat Item 1 -->
+        <div class="rp-stat-card">
+            <div class="rp-number-wrapper">
+                <span class="rp-static-text">90-</span>
+                <span class="rp-counter" data-target="100">0</span>
+                <span class="rp-static-text">%</span>
+            </div>
+            <p class="rp-stat-desc">Results from 1993-94 to 2023-2024</p>
+        </div>
 
+        <!-- Stat Item 2 -->
+        <div class="rp-stat-card">
+            <div class="rp-number-wrapper">
+                <span class="rp-counter" data-target="2000">0</span>
+                <!-- <span class="rp-static-text">+</span> -->
+            </div>
+            <p class="rp-stat-desc">Students Enrolled (1993-2024)</p>
+        </div>
+
+        <!-- Stat Item 3 -->
+        <div class="rp-stat-card">
+            <div class="rp-number-wrapper">
+                <span class="rp-counter" data-target="1986">0</span>
+                <!-- <span class="rp-static-text">+</span> -->
+            </div>
+            <p class="rp-stat-desc">Students Passed (1993-2024)</p>
+        </div>
+
+    </div>
+</section>
 <!-- About College start -->
 
-<section class="max-w-7xl mx-auto px-5 py-10 md:py-40">
+<section class="max-w-7xl mx-auto px-2 py-3 md:py-40">
     
     <!-- TOP HEADING SECTION -->
     <div class="text-center mb-16 lg:mb-20">
-        <h2 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight">About Us</h2>
+        <h2 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight">About Our College</h2>
         <div class="h-1.5 w-20 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
     </div>
 
@@ -701,116 +966,58 @@ margin-top: -250px;
 
 <!-- About College End -->
     <!-- About Section with Tabs -->
- <section class="about-section" id="about">
+<section class="about-section" id="#about">
   <div class="container">
     <div class="section-title">
-      <span class="subtitle">Our Legacy</span>
-      <h2>Years of Trust & Quality Education</h2>
+      <span class="subtitle">Art Education</span>
+      <h2>Shardabai Pawar Kala Mahavidyalaya</h2>
       <p class="lead-text">
-        New English Medium School Dhakale is committed to delivering strong academics with a value-based foundation.
-        We focus on clear concepts, confident communication, and overall personality development—so every child grows
-        ready for tomorrow.
+        We offer art programs designed to develop creative skills and professional expertise.
       </p>
     </div>
 
     <div class="about-tabs">
-      <button class="tab-btn active" data-tab="history">
-        <i class="fas fa-history"></i> History
+      <button class="tab-btn active" data-tab="programs">
+        <i class="fas fa-palette"></i> Our Programs
       </button>
     </div>
 
-    <div class="tab-content active" id="history">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">Foundation</div>
-          <h3>Our Beginning</h3>
-          <p>
-            New English Medium School Dhakale was started with a simple purpose—provide quality English-medium education
-            with strong discipline, values, and a supportive learning environment.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">Growth</div>
-          <h3>Building Strong Learners</h3>
-          <p>
-            Over the years, we strengthened our academic approach with activity-based learning, better classroom
-            engagement, and a focus on reading, writing, and communication skills.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">Today</div>
-          <h3>Future-Ready Learning</h3>
-          <p>
-            We continue to evolve with modern teaching methods, student-centered guidance, and a goal-driven system that
-            supports both academic excellence and character development.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-content" id="mission">
+    <div class="tab-content active" id="programs">
       <div class="features-grid">
+        
+        <!-- Course 1 -->
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-eye"></i>
+            <i class="fas fa-paint-brush"></i>
           </div>
-          <h3>Our Vision</h3>
+          <h3>Foundation Course</h3>
           <p>
-            To nurture confident, responsible, and capable students through quality education, strong values, and a
-            future-focused mindset.
+            1-year program for students who have passed 10th standard and Intermediate Drawing Exam.
           </p>
+          <a href="javascript:void:0" style="color: inherit; font-weight: bold; text-decoration: none; margin-top: 10px; display: inline-block;">
+            Learn More <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
 
+        <!-- Course 2 -->
         <div class="feature-card">
           <div class="feature-icon">
-            <i class="fas fa-bullseye"></i>
+            <i class="fas fa-chalkboard-teacher"></i>
           </div>
-          <h3>Our Mission</h3>
+          <h3>Art Teacher's Diploma (A.T.D.)</h3>
           <p>
-            To provide a safe, disciplined, and supportive learning environment that strengthens academics, communication,
-            and life skills for every child.
+            2-year diploma program for students who have passed 12th standard and Intermediate Drawing Exam.
           </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-content" id="values">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-gem"></i>
-          </div>
-          <h3>Excellence</h3>
-          <p>
-            We set high standards in teaching and learning—so students build strong basics and achieve consistent results.
-          </p>
+          <a href="javascript:void:0" style="color: inherit; font-weight: bold; text-decoration: none; margin-top: 10px; display: inline-block;">
+            Learn More <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
 
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <h3>Care & Community</h3>
-          <p>
-            A school should feel like a second home. We support students with respect, guidance, and positive discipline.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h3>Modern Learning</h3>
-          <p>
-            We use practical activities and smart teaching methods to make learning engaging, meaningful, and effective.
-          </p>
-        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
     <!-- Vision & Mission Section -->
@@ -854,206 +1061,62 @@ margin-top: -250px;
 
     
     <!-- Perfect Faculty Section -->
-    <section class="perfect-faculty-section" id="faculty">
+   <section class="perfect-faculty-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Meet Our Team</span>
-                <h2 class="section-title">Our Dedicated Faculty</h2>
-                <p class="section-description">
-                    Experienced educators committed to student success and holistic development.
-                </p>
+                <span class="section-subtitle">The Team</span>
+                <h2 class="section-title">Teaching & Non-Teaching Staff</h2>
             </div>
-    
-            <!-- Visible Faculty Grid - 4 Cards -->
-            <div class="faculty-grid" id="visibleFacultyGrid">
-                <!-- Faculty 1 -->
+
+            <div class="faculty-grid">
+                
+                <!-- 1 -->
                 <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-kumbhar-girish-shivaji.jpeg"
-                            alt="Mr. Kumbhar Girish Shivaji" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
+                    <div class="card-image"><img src="/assets/shirke-santosh-sambhaji.jpeg" alt="Mr. Shrike Santosh Sambhaji" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Kumbhar Girish Shivaji</h3>
-                        <p class="faculty-designation">Headmaster</p>
-                        <p class="faculty-qualification">B.Sc.B.Ed, D.S.M</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>25+ Years Experience</span>
-                        </div> -->
+                        <h3 class="faculty-name">Mr. Shrike Santosh Sambhaji</h3>
+                        <p class="faculty-designation">Asst Lecturer/Principle</p>
+                        <p class="faculty-qualification">
+                            A.T.D, G. D. Art (Drawing & Painting), Dip. A. Ed.
+                        </p>
                     </div>
                 </div>
-    
-                <!-- Faculty 2 -->
+
+                <!-- 2 -->
                 <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-paithankar-rajendra-uttam.jpeg"
-                            alt="Mr. Paithankar rajendra Uttam" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
+                    <div class="card-image"><img src="/assets/jangam-preetam-suresh.png" alt="Mr. Jangam Preetam Suresh" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Paithankar rajendra Uttam</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">M.E.B.Ed.</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>20+ Years Experience</span>
-                        </div> -->
+                        <h3 class="faculty-name">Mr. Jangam Preetam Suresh</h3>
+                        <p class="faculty-designation">Asst. Lecturer</p>
+                        <p class="faculty-qualification">
+                            A.T.D, G. D. Art (Drawing & Painting), Dip. A. Ed.
+                        </p>
                     </div>
                 </div>
-    
-                <!-- Faculty 3 -->
+
+                <!-- 3 -->
                 <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-ejgar-pintu-sambhaji.jpeg"
-                            alt="Mr. Ejgar Pintu Sambhaji" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
+                    <div class="card-image"><img src="/assets/dhumal-swapnil-satish.jpeg" alt="Mr. Dhumal Swapnil Satish" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Ejgar Pintu Sambhaji</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <!-- <p class="faculty-qualification">M.Sc. Mathematics</p> -->
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>15+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-    
-                <!-- Faculty 4 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/miss-jagtap-geetanjali-vijay.jpeg"
-                            alt="Miss. Jagtap geetanjali Vijay" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Miss. Jagtap geetanjali Vijay</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B.Sc.B.Ed</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>12+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Hidden Faculty Grid - 4 More Cards -->
-            <div class="faculty-grid hidden" id="hiddenFacultyGrid">
-                <!-- Faculty 5 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-lonkar-sandip-bhauso.jpeg"
-                            alt="Mr. Lonkar Sandip Bhauso" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Lonkar Sandip Bhauso</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">M.A.M.ED .Set</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>18+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-    
-                <!-- Faculty 6 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/miss-kumbhar-bharati-girish.jpeg"
-                            alt="Miss. Kumbhar Bharati Girish" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Miss. Kumbhar Bharati Girish</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B.A.Bed</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>10+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-    
-                <!-- Faculty 7 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/miss-survekar-savita-shahaji.jpeg"
-                            alt="Miss. Survekar Savita Shahaji" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Miss. Survekar Savita Shahaji</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B.A.Bed</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>14+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-    
-                <!-- Faculty 8 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-deshmane-rushikesh-rajendra.jpeg"
-                            alt="Mr. Deshmane Rushikesh Rajendra" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Deshmane Rushikesh Rajendra</h3>
+                        <h3 class="faculty-name">Mr. Dhumal Swapnil Satish</h3>
                         <p class="faculty-designation">Clerk</p>
-                        <p class="faculty-qualification">TY.b.Com</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>16+ Years Experience</span>
-                        </div> -->
+                        <p class="faculty-qualification">
+                            B.C.A, M.S.C.I.T.
+                        </p>
                     </div>
                 </div>
-                   <!-- Faculty 9 -->
+
+                <!-- 4 -->
                 <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-soumitra-malhari-jagtap.jpeg"
-                            alt="Mr.Soumitra Malhari Jagtap" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
+                    <div class="card-image"><img src="/assets/mr-jagdale-shyam-madhukar.jpeg" alt="Mr. Jagdale Shyam Madhukar" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr.Soumitra Malhari Jagtap</h3>
+                        <h3 class="faculty-name">Mr. Jagdale Shyam Madhukar</h3>
                         <p class="faculty-designation">Peon</p>
-                        <p class="faculty-qualification">12th Pass</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>16+ Years Experience</span>
-                        </div> -->
+                        <p class="faculty-qualification">
+                            M.A. (Marathi), M.S.C.I.T.
+                        </p>
                     </div>
                 </div>
-                   <!-- Faculty 10 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-chavan-gajanan-balaso.jpeg"
-                            alt="Mr. Chavan Gajanan Balaso" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Chavan Gajanan Balaso</h3>
-                        <p class="faculty-designation">Peon</p>
-                        <p class="faculty-qualification">7th Pass</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>16+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-    
-            <!-- View More Button -->
-            <div class="view-more-wrapper">
-                <button class="view-more-btn" id="viewMoreBtn">
-                    <span class="btn-text">View All Faculty</span>
-                    <i class="fas fa-chevron-down btn-icon"></i>
-                </button>
             </div>
         </div>
     </section>
@@ -1213,65 +1276,54 @@ margin-top: -250px;
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p class="lead-text">
-                    Ready to begin your educational journey? Contact us today for more information about
-                    admissions, programs, or campus visits.
-                </p>
-            </div>
+ <section class="pc-section" id="contact-cards">
+  <div class="pc-container">
+    
+    <!-- Title -->
+    <div class="pc-head">
+      <h2>Get In Touch</h2>
+      <p>Reach out to us for admissions, inquiries, or to plan your visit.</p>
+    </div>
 
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Address</h3>
-                            <p>Krushi Udyog Mul Shikshan Sanstha,<br>
-                                A/p - Karhati, Tal – Baramati,<br>
-                                Dist - Pune, 412204</p>
-                        </div>
-                    </div>
+    <!-- 3 Cards Grid -->
+    <div class="pc-grid">
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+91 94213 94242<br>
-                                +91 94236 84242<br>
-                                +91 94236 94242</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>info@kumss.org<br>
-                                iti@kumss.org</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modern-card">
-                    <h3>Schedule a Visit</h3>
-                    <p>Book a campus tour to experience our facilities firsthand.</p>
-                    <a href="tel:+919421394242" class="btn btn-primary" style="margin-top: 2rem;">
-                        <i class="fas fa-phone-alt"></i>
-                        <span>Call Now</span>
-                    </a>
-                </div>
-            </div>
+      <!-- Card 1: Address -->
+      <div class="pc-card">
+        <div class="pc-icon">
+          <i class="fas fa-map-marker-alt"></i>
         </div>
-    </section>
+        <h3>Our Location</h3>
+        <p>Karhati, (Morgaon – Baramati Road)
+Tal.Baramati, Dist. Pune, Pin code: 412204</p>
+      </div>
+
+      <!-- Card 2: Phone -->
+      <div class="pc-card">
+        <div class="pc-icon">
+          <i class="fas fa-phone-volume"></i>
+        </div>
+        <h3>Phone Support</h3>
+        <p>+91 9922415158 <br>
+           <p>+91 9657465627</p> 
+            <p>+91 9075192092</p>
+           </p>
+      </div>
+
+      <!-- Card 3: Email -->
+      <div class="pc-card">
+        <div class="pc-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3>Email Us</h3>
+        <p>
+spkm.4242@gmail.com<br>
+           </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1279,7 +1331,7 @@ margin-top: -250px;
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="#" class="logo" style="margin-bottom: 2rem; align-items: flex-start;">
-                        <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="logo-img">
+                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="logo-img" style="width: 100px; height: 100px;">
                         <div>
                             <div class="logo-text">KUMSS</div>
                             <div class="logo-year" style="color: var(--primaryColor);">SINCE 1951</div>
@@ -1347,7 +1399,7 @@ margin-top: -250px;
             </div>
 
             <div class="footer-bottom">
-                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p>© 2023 Shardabai Pawar Kala Mahavidhyalaya, Karhati. All Rights Reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
@@ -1853,6 +1905,50 @@ document.addEventListener('DOMContentLoaded', () => {
             player.load(newSrc);
         }
     }
+    document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.rp-counter');
+    const speed = 200; // The lower the slower
+
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                
+                // Calculate increment step based on target size to ensure all finish roughly same time
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 20); // Speed of refresh
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    };
+
+    // Intersection Observer to start animation when user scrolls to section
+    const observerOptions = {
+        root: null,
+        threshold: 0.3 // Trigger when 30% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target); // Run only once
+            }
+        });
+    }, observerOptions);
+
+    const section = document.querySelector('.rp-stats-unique-wrapper');
+    if(section) {
+        observer.observe(section);
+    }
+});
 </script>
 </body>
 
