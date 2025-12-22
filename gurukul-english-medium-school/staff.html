@@ -229,13 +229,299 @@
     pointer-events: none !important;
   }
 }
+.mobile-nav-toggle {
+    display: none; /* Hidden by default on desktop */
+    background: #f37a20;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    z-index: 1000;
+    position: relative;
+    transition: transform 0.3s ease;
+}
 
+.mobile-nav-toggle:hover {
+    transform: scale(1.1);
+}
+
+.mobile-nav-toggle:focus {
+    outline: 2px solid #337425;
+    outline-offset: 2px;
+}
+
+.mobile-nav-toggle:active {
+    transform: scale(0.95);
+}
+
+.toggle-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Active/Open state */
+.mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Dark theme variation */
+.mobile-nav-toggle.dark-theme .toggle-line {
+    background-color: #fff;
+}
+
+/* Animated variation */
+.mobile-nav-toggle.animated .toggle-line {
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Media query for mobile display */
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+}
+/* Navigation Links Container */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Items */
+.nav-item {
+    position: relative;
+}
+
+/* Navigation Links */
+.nav-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #f37a20;
+}
+
+/* Dropdown Button */
+.nav-dropbtn {
+    background: none;
+    border: none;
+    font-weight: 500;
+    font: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.nav-dropbtn .nav-chevron {
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown[data-dropdown-open] .nav-chevron {
+    transform: rotate(180deg);
+}
+
+/* Submenu */
+.nav-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.nav-submenu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+}
+
+.nav-dropdown[data-dropdown-open] .nav-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-submenu li {
+    margin: 0;
+}
+
+.nav-submenu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-submenu a:hover,
+.nav-submenu a:focus {
+    background-color: #f8f9fa;
+    color: #f37a20;
+}
+
+/* Call to Action Button */
+.nav-cta {
+    margin-left: 1rem;
+}
+
+.nav-button {
+    background: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background: #0056b3;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        background: #eee;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px 40px;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-item,
+    .nav-cta {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav-link,
+    .nav-dropbtn {
+        width: 100%;
+        text-align: left;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Mobile Submenu Styles */
+    .nav-submenu {
+        position: static;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: #f8f9fa;
+        border-radius: 0;
+        padding: 0;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-submenu::before {
+        display: none;
+    }
+
+    .nav-dropdown[data-dropdown-open] .nav-submenu {
+        max-height: 500px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+    }
+
+    .nav-submenu a {
+        padding: 0.75rem 1rem 0.75rem 2rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-submenu li:last-child a {
+        border-bottom: none;
+    }
+
+    .nav-cta {
+        margin-top: auto;
+        padding-top: 2rem;
+    }
+
+    .nav-button {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+ .footer-logo-img {
+                                width: 30%;
+                                height: 30%;
+                            }
     </style>
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- Mobile overlay (added) -->
+    <div class="gm-overlay" id="gmOverlay" aria-hidden="true"></div>
+
+   <!-- Header -->
     <header class="gm-header" id="header">
         <div class="gm-container">
             <nav class="gm-nav" aria-label="Primary">
@@ -245,57 +531,52 @@
                 </a>
 
                 <!-- Mobile toggle -->
-                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
-                    aria-controls="navLinks" aria-expanded="false">
-                    <span class="gm-burger-line"></span>
-                    <span class="gm-burger-line"></span>
-                    <span class="gm-burger-line"></span>
-                </button>
+               <button class="mobile-nav-toggle" id="mobileMenuBtn" type="button" aria-label="Open menu"
+    aria-controls="navLinks" aria-expanded="false">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+</button>
 
-                <!-- Links -->
-                <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="/index-3.html">Home</a></li>
+               <ul class="nav-links" id="navLinks">
+    <li><a class="nav-link" href="/index-3.html">Home</a></li>
 
-                   <li class="gm-item gm-dropdown" data-dropdown>
-                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
-                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
-                            aria-controls="aboutMenu">
-                            About
-                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
-                        </button>
+    <li class="nav-item nav-dropdown" data-dropdown>
+        <button class="nav-link nav-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+            aria-controls="aboutMenu">
+            About
+            <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
+        </button>
 
-                        <ul class="gm-submenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="#">About Us</a></li>
-                            <li role="none"><a role="menuitem" href="#">History Of The School</a></li>
-                            <li role="none"><a role="menuitem" href="#">Gallery</a>
-                            </li>
-                        </ul>
-                    </li>
-                      <li><a class="gm-link" href="/index-3.html">Academics</a></li>
-                    <!-- Dropdown -->
-                    <li class="gm-item gm-dropdown" data-dropdown>
-                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
-                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
-                            aria-controls="institutesMenu">
-                            Our Educational Institutes
-                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
-                        </button>
+        <ul class="nav-submenu" role="menu" aria-label="About submenu" id="aboutMenu">
+            <li role="none"><a role="menuitem" href="#">About Us</a></li>
+            <li role="none"><a role="menuitem" href="#">History Of The School</a></li>
+            <li role="none"><a role="menuitem" href="#">Gallery</a></li>
+        </ul>
+    </li>
+    
+    <li><a class="nav-link" href="/index-3.html">Academics</a></li>
+    
+    <li class="nav-item nav-dropdown" data-dropdown>
+        <button class="nav-link nav-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+            aria-controls="institutesMenu">
+            Our Educational Institutes
+            <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
+        </button>
 
-                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="/institute/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">New English School Dhakale</a></li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">Primary School Karhati Tembha</a>
-                            </li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">Gurukul English Medium School</a>
-                            </li>
-                            <li role="none"><a role="menuitem" href="/index-3.html">Shardabai Pawar Kala
-                                    Mahavidhyalaya</a></li>
-                        </ul>
-                    </li>
+        <ul class="nav-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+            <li role="none"><a role="menuitem" href="/institute/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+            <li role="none"><a role="menuitem" href="/index-3.html">New English School Dhakale</a></li>
+            <li role="none"><a role="menuitem" href="/index-3.html">Primary School Karhati Tembha</a></li>
+            <li role="none"><a role="menuitem" href="/index-3.html">KUMSS Private I.T.I Karhati</a></li>
+            <li role="none"><a role="menuitem" href="/index-3.html">Gurukul English Medium School</a></li>
+            <li role="none"><a role="menuitem" href="/index-3.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+        </ul>
+    </li>
 
-                    <li><a class="gm-link" href="/gurukul-english-medium-school/staff.html">Staff</a></li>
-                </ul>
+    <li><a class="nav-link" href="/gurukul-english-medium-school/staff.html">Staff</a></li>
+
+</ul>
                  
                         <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
                     
@@ -324,7 +605,7 @@
                 
                 <!-- 1 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/supriya-aherkar-principal.jpeg" alt="Mrs. Anita Ravindra Chavan" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/supriya-aherkar-principal.jpeg" alt="Mrs. Supriya Aherkar" loading="lazy"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Supriya Aherkar</h3>
                         <p class="faculty-designation">Principal</p>
@@ -334,47 +615,47 @@
 
                 <!-- 2 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/bhausaheb-pandurang-pisal.jpg" alt="Mr. Bhausaheb Pandurang Pisal" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/ashwini-khomane.jpeg" alt="Mrs. Ashwini Khomane" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Bhausaheb P. Pisal</h3>
-                        <p class="faculty-designation">Supervisor</p>
-                        <p class="faculty-qualification">B.A. B.P.Ed.</p>
+                        <h3 class="faculty-name">Mrs. Ashwini Khomane</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">M.A.B.Ed (Eng) MBA (HR)</p>
                     </div>
                 </div>
 
                 <!-- 3 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/abasaheb-malhari-kokare.jpg" alt="Mr. Abasaheb Malhari Kokare" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/asmita-wabale.jpeg" alt="Mrs. Asmita Wabale" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Abasaheb M. Kokare</h3>
-                        <p class="faculty-designation">Asst. Teacher</p>
+                        <h3 class="faculty-name">Mrs. Asmita Wabale</h3>
+                        <p class="faculty-designation">Teacher</p>
                         <p class="faculty-qualification">M.A. B.Ed.</p>
                     </div>
                 </div>
 
                 <!-- 4 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/bhapkar-manjushri-lalasaheb.jpg" alt="Mrs. Bhapkar Manjushri Lalasaheb" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/bhagyashri-bhapkar.jpeg" alt="Mrs. Bhagyshri Bhapkar" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Bhapkar M. Lalasaheb</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.Sc(Maths), B.Ed, D.S.M</p>
+                        <h3 class="faculty-name">Mrs. Bhagyshri Bhapkar</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">Bsc Micro.DMLT</p>
                     </div>
                 </div>
 
                 <!-- 5 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/khaire-reshma-vyankat.jpg" alt="Mrs. Khaire Reshma Vyankat" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/chaya-jadhav.jpeg" alt="Mrs. Chaya Jadhav" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Khaire Reshma Vyankat</h3>
+                        <h3 class="faculty-name">Mrs. Chaya Jadhav</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.Sc. B.Ed.</p>
+                        <p class="faculty-qualification">D.ed. BA</p>
                     </div>
                 </div>
 
                 <!-- 6 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/komal-chandgude.jpg" alt="Mrs. Komal Chandgude" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/komal-chandgude.jpeg" alt="Mrs. Komal Chandgude" loading="lazy"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Komal Chandgude</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
@@ -384,233 +665,125 @@
 
                 <!-- 7 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/amol-subhash-kambale.jpg" alt="Mr. Amol Subhash Kambale" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/vidya-panasare.jpeg" alt="Mrs. Vidya Pansare" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Amol Subhash Kambale</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">A.T.D, A.M.G, D Art & Painting</p>
+                        <h3 class="faculty-name">Mrs. Vidya Pansare</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">MA, Mon.TT</p>
                     </div>
                 </div>
 
                 <!-- 8 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/allabaksh-husen-shaikh.jpg" alt="Mr. Allabaksh Husen Shaikh" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/lina-jarad.jpeg" alt="Mrs. Lina Jarad" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Allabaksh Husen Shaikh</h3>
+                        <h3 class="faculty-name">Mrs. Lina Jarad</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.Com, B.P.Ed, D.S.M.</p>
+                        <p class="faculty-qualification">M.A.B.Ed. Mh-SE</p>
                     </div>
                 </div>
 
                 <!-- 9 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/sahebrao-parashram-devre.jpg" alt="Mr. Sahebrao Parashram Devre" loading="lazy"></div>
+                    <div class="card-image"><img src="#" alt="Mrs. Pawar Shital" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Sahebrao Parashram Devre</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.Sc. B.Ed.</p>
+                        <h3 class="faculty-name">Mrs. Pawar Shital</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">B.sc (Botany)</p>
                     </div>
                 </div>
 
                 <!-- 10 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/nilesh-sampat-lavhe.jpg" alt="Mr. Nilesh Sampat Lavhe" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/pooja-jagtap.jpeg" alt="pooja jagtap" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Nilesh Sampat Lavhe</h3>
+                        <h3 class="faculty-name">Mrs. Pooja Jagtap</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                        <p class="faculty-qualification">BA(English), D.ed</p>
                     </div>
                 </div>
 
                 <!-- 11 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/natvar-shekhhand-shinde.jpg" alt="Mr. Natvar Shekhhand Shinde" loading="lazy"></div>
+                    <div class="card-image"><img src="#" alt="Mrs. Priti Londhe" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Natvar Shekhhand Shinde</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">B.A. D.Ed.</p>
+                        <h3 class="faculty-name">Mrs. Priti Londhe</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">B. Sc (Micro)</p>
                     </div>
                 </div>
 
                 <!-- 12 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/sarika-rajendra-shinde.jpg" alt="Mrs. Sarika Rajendra Shinde" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/priyanka-parkale.jpeg" alt="Mrs. Priyanaka Parkale" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Sarika Rajendra Shinde</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.A. D.Ed. D.S.M</p>
+                        <h3 class="faculty-name">Mrs. Priyanaka Parkale</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">Diploma in Computer Engg.</p>
                     </div>
                 </div>
 
                 <!-- 13 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/kale-vijay-raosaheb.jpg" alt="Mr. Kale Vijay Raosaheb" loading="lazy"></div>
+                    <div class="card-image"><img src="#" alt="Miss. Rupali Kaule" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Kale Vijay Raosaheb</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.A. B.Ed. D.S.M</p>
+                        <h3 class="faculty-name">Miss. Rupali Kaule</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">MSc (Organic Chemistry)</p>
                     </div>
                 </div>
 
                 <!-- 14 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/vishvanath-kisan-zambade.jpg" alt="Mr. Vishvanath Kisan Zambade" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/shayra-bagwan.jpeg" alt="Mrs. Shayara Bagwan" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Vishvanath Kisan Zambade</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">B.A. D.Ed.</p>
+                        <h3 class="faculty-name">Mrs. Shayara Bagwan</h3>
+                        <p class="faculty-designation">Care Taker</p>
+                        <p class="faculty-qualification">10th</p>
                     </div>
                 </div>
 
                 <!-- 15 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/ravindra-janardhan-raut.jpg" alt="Mr. Ravindra Janardhan Raut" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/anita-pisal.jpeg" alt="Mrs. Anita Pisal" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Ravindra Janardhan Raut</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">B.A. B.Ed.</p>
+                        <h3 class="faculty-name">Mrs. Anita Pisal</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">MA BEd NTT Hindi with СТЕТ</p>
                     </div>
                 </div>
 
                 <!-- 16 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/pomane-mahesh-sarjera.jpg" alt="Mr. Pomane Mahesh Sarjerao" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/swati-bhapkar.jpeg" alt="Mrs. Swati Bhapkar" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Pomane Mahesh Sarjerao</h3>
+                        <h3 class="faculty-name">Mrs. Swati Bhapkar</h3>
                         <p class="faculty-designation">Asst. Teacher</p>
-                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                        <p class="faculty-qualification">M.A.BEd, BPEd</p>
                     </div>
                 </div>
 
                 <!-- 17 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/nilam-digambar-masal.jpg" alt="Mrs. Nilam Digambar Masal" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/geetanjali-lonkar.jpeg" alt="Mrs. Geetanjali Lonkar" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Nilam Digambar Masal</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.Sc. B.Ed.</p>
+                        <h3 class="faculty-name">Mrs. Geetanjali Lonkar</h3>
+                        <p class="faculty-designation">Care Taker</p>
+                        <p class="faculty-qualification">--</p>
                     </div>
                 </div>
 
                 <!-- 18 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/shital-dashrath-thorat.jpg" alt="Mrs. Shital Dashrath Thorat" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/aarti-makar.jpeg" alt="Mrs. Arti Makar" loading="lazy"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Shital Dashrath Thorat</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.Sc. B.Ed.</p>
+                        <h3 class="faculty-name">Mrs. Arti Makar</h3>
+                        <p class="faculty-designation">Care Taker</p>
+                        <p class="faculty-qualification">Sy Bsc</p>
                     </div>
                 </div>
 
-                <!-- 19 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/jagtap-mayuri-dnyandev.jpg" alt="Mrs. Jagtap Mayuri Dnyandev" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Jagtap Mayuri Dnyandev</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">B.Sc. Agri (M.Sc in PVT)</p>
-                    </div>
-                </div>
-
-                <!-- 20 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/pawar-smita-haribhau.jpg" alt="Mrs. Pawar Smita Haribhau" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Pawar Smita Haribhau</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.A. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 21 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/dipali-bhimrao-yadande.jpg" alt="Mrs. Dipali Bhimrao Yadande" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Dipali Bhimrao Yadande</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.A. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 22 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/dhananjay-vitthal-jagatap.jpg" alt="Mr. Dhananjay Vitthal Jagatap" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Dhananjay Vitthal Jagatap</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.A. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 23 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/prachi-pradeeprao-jagtap.jpg" alt="Mrs. Prachi Pradeeprao Jagtap" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Prachi Pradeeprao Jagtap</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.Com B.Ed, (G.D.C & A)</p>
-                    </div>
-                </div>
-
-                <!-- 24 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/vidya-meninath-jadhav.jpg" alt="Mrs. Vidya Meninath Jadhav" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Vidya Meninath Jadhav</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.Com B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 25 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/aarati-sunil-bobade.jpg" alt="Mrs. Aarati Sunil Bobade" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Aarati Sunil Bobade</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">B.A. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 26 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/hiralal-shamrao-dhumal.jpg" alt="Mr. Hiralal Shamrao Dhumal" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Hiralal Shamrao Dhumal</h3>
-                        <p class="faculty-designation">Sr. Clerk</p>
-                        <p class="faculty-qualification">B.Com.</p>
-                    </div>
-                </div>
-
-                <!-- 27 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/laxman-vinayak-choudhari.jpg" alt="Mr. Laxman Vinayak Choudhari" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Laxman Vinayak Choudhari</h3>
-                        <p class="faculty-designation">Jr. Clerk</p>
-                        <p class="faculty-qualification">M.A. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 28 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/jayshri-aadinath-jagatap.jpg" alt="Mrs. Jayshri Aadinath Jagatap" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Jayshri Aadinath Jagatap</h3>
-                        <p class="faculty-designation">Jr. Clerk</p>
-                        <p class="faculty-qualification">M.A.</p>
-                    </div>
-                </div>
-
-                <!-- 29 -->
-                <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/digambar-tukaram-wabale.jpg" alt="Mr. Digambar Tukaram Wabale" loading="lazy"></div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Digambar Tukaram Wabale</h3>
-                        <p class="faculty-designation">Peon</p>
-                        <p class="faculty-qualification">H.S.C</p>
-                    </div>
-                </div>
+               
 
             </div>
         </div>
@@ -621,11 +794,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="margin-bottom: 2rem; align-items: flex-start;">
-                        <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="logo-img">
+                    <a href="https://kumss.org" class="logo" style="margin-bottom: 2rem; align-items: flex-start; color: var(--primaryColor); text-decoration: none;">
+                        <img src="/gurukul-english-medium-school/logo.png" alt="KUMSS Logo" class="footer-logo-img">
                         <div>
-                            <div class="logo-text">KUMSS</div>
-                            <div class="logo-year" style="color: var(--primaryColor);">SINCE 1951</div>
+                            <div class="logo-text">KUMSS SINCE 1951</div>
                         </div>
                     </a>
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
@@ -639,7 +811,7 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="/index-3.html">Home</a></li>
                         <li><a href="/about.html">About KUMSS</a></li>
@@ -649,17 +821,31 @@
                         <li><a href="/index-3.html#contact">Contact Us</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="tel:+919421394242">+91 94213 94242</a></li>
-                        <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
-                        <li><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                        <li><a href="#">Vasatigruh Vidyalay Karhati</a></li>
+                        <li><a href="#">New English School, Dhakale</a></li>
+                        <li><a href="#">Primary School, Tembha</a></li>
+                        <li><a href="#">KUMSS Private I.T.I</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+                    <ul class="footer-links">
+                        <li> 📞 <a href="tel:+919421394242">+91 94213 94242</a></li>
+                        <li>📧 <a href="mailto:info@kumss.org">info@kumss.org</a></li>
+                        <li> 📧<a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p>ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
             </div>
         </div>
     </footer>
@@ -667,31 +853,6 @@
     <!-- Scripts -->
     <script>
         gsap.registerPlugin(ScrollTrigger);
-
-        // Mobile Menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                gsap.to(navLinks, { x: 0, duration: 0.5, ease: 'power3.out' });
-                document.body.style.overflow = 'hidden';
-            } else {
-                gsap.to(navLinks, { x: 300, duration: 0.5, ease: 'power3.in' });
-                document.body.style.overflow = '';
-            }
-        });
-
-         // Mobile dropdown toggle (About + Institutes)
-  document.querySelectorAll('.gm-dropdown .gm-dropbtn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const parent = btn.closest('.gm-dropdown');
-      const isOpen = parent.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  });
-
 
         // Animation
         document.addEventListener("DOMContentLoaded", function() {
@@ -710,6 +871,259 @@
                 }
             );
         });
+    </script>
+    <script>
+      class MobileNavigation {
+    constructor() {
+        this.toggleBtn = document.getElementById('mobileMenuBtn');
+        this.navLinks = document.getElementById('navLinks');
+        this.dropdowns = document.querySelectorAll('[data-dropdown]');
+        this.isAnimating = false;
+        
+        this.init();
+    }
+    
+    init() {
+        // Initialize menu toggle
+        this.initMenuToggle();
+        
+        // Initialize dropdowns
+        this.initDropdowns();
+        
+        // Handle clicks outside
+        this.handleClickOutside();
+        
+        // Handle keyboard navigation
+        this.handleKeyboard();
+        
+        // Handle resize
+        this.handleResize();
+    }
+    
+    initMenuToggle() {
+        if (!this.toggleBtn || !this.navLinks) return;
+        
+        this.toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleMenu();
+        });
+    }
+    
+    initDropdowns() {
+        this.dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('.nav-dropbtn');
+            const submenu = dropdown.querySelector('.nav-submenu');
+            
+            if (!button || !submenu) return;
+            
+            // Click event for dropdown button
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                
+                // On mobile, only toggle dropdown
+                if (window.innerWidth <= 768) {
+                    this.toggleDropdown(dropdown);
+                }
+            });
+            
+            // Hover for desktop
+            if (window.innerWidth > 768) {
+                dropdown.addEventListener('mouseenter', () => {
+                    this.openDropdown(dropdown);
+                });
+                
+                dropdown.addEventListener('mouseleave', () => {
+                    this.closeDropdown(dropdown);
+                });
+                
+                dropdown.addEventListener('focusin', () => {
+                    this.openDropdown(dropdown);
+                });
+                
+                dropdown.addEventListener('focusout', (e) => {
+                    if (!dropdown.contains(e.relatedTarget)) {
+                        this.closeDropdown(dropdown);
+                    }
+                });
+            }
+        });
+    }
+    
+    toggleMenu() {
+        if (this.isAnimating) return;
+        
+        this.isAnimating = true;
+        const isExpanded = this.toggleBtn.getAttribute('aria-expanded') === 'true';
+        const newState = !isExpanded;
+        
+        // Update toggle button
+        this.toggleBtn.setAttribute('aria-expanded', newState);
+        
+        // Toggle navigation menu
+        this.navLinks.classList.toggle('active');
+        
+        // Toggle body class
+        document.body.classList.toggle('menu-open', newState);
+        
+        // Close all dropdowns when closing menu
+        if (!newState) {
+            this.closeAllDropdowns();
+        }
+        
+        // Reset animation flag
+        setTimeout(() => {
+            this.isAnimating = false;
+        }, 300);
+    }
+    
+    toggleDropdown(dropdown) {
+        const isOpen = dropdown.hasAttribute('data-dropdown-open');
+        
+        // Close other dropdowns
+        this.closeAllDropdownsExcept(dropdown);
+        
+        if (isOpen) {
+            this.closeDropdown(dropdown);
+        } else {
+            this.openDropdown(dropdown);
+        }
+    }
+    
+    openDropdown(dropdown) {
+        const button = dropdown.querySelector('.nav-dropbtn');
+        const submenu = dropdown.querySelector('.nav-submenu');
+        
+        if (!button || !submenu) return;
+        
+        dropdown.setAttribute('data-dropdown-open', '');
+        button.setAttribute('aria-expanded', 'true');
+        
+        // On mobile, adjust submenu height
+        if (window.innerWidth <= 768) {
+            submenu.style.maxHeight = submenu.scrollHeight + 'px';
+        }
+    }
+    
+    closeDropdown(dropdown) {
+        const button = dropdown.querySelector('.nav-dropbtn');
+        const submenu = dropdown.querySelector('.nav-submenu');
+        
+        if (!button || !submenu) return;
+        
+        dropdown.removeAttribute('data-dropdown-open');
+        button.setAttribute('aria-expanded', 'false');
+        
+        // On mobile, reset height
+        if (window.innerWidth <= 768) {
+            submenu.style.maxHeight = '0';
+        }
+    }
+    
+    closeAllDropdowns() {
+        this.dropdowns.forEach(dropdown => {
+            this.closeDropdown(dropdown);
+        });
+    }
+    
+    closeAllDropdownsExcept(exceptDropdown) {
+        this.dropdowns.forEach(dropdown => {
+            if (dropdown !== exceptDropdown) {
+                this.closeDropdown(dropdown);
+            }
+        });
+    }
+    
+    handleClickOutside() {
+        document.addEventListener('click', (e) => {
+            // Close menu if clicking outside
+            if (this.navLinks.classList.contains('active') &&
+                !this.navLinks.contains(e.target) &&
+                !this.toggleBtn.contains(e.target)) {
+                this.toggleMenu();
+            }
+            
+            // Close dropdowns if clicking outside
+            this.dropdowns.forEach(dropdown => {
+                if (dropdown.hasAttribute('data-dropdown-open') &&
+                    !dropdown.contains(e.target)) {
+                    this.closeDropdown(dropdown);
+                }
+            });
+        });
+    }
+    
+    handleKeyboard() {
+        document.addEventListener('keydown', (e) => {
+            // Escape key
+            if (e.key === 'Escape') {
+                if (this.navLinks.classList.contains('active')) {
+                    this.toggleMenu();
+                    this.toggleBtn.focus();
+                } else {
+                    this.closeAllDropdowns();
+                }
+            }
+            
+            // Close dropdown on Tab if focusing outside
+            if (e.key === 'Tab') {
+                this.dropdowns.forEach(dropdown => {
+                    if (dropdown.hasAttribute('data-dropdown-open')) {
+                        const focusableElements = dropdown.querySelectorAll(
+                            'a, button, input, [tabindex]:not([tabindex="-1"])'
+                        );
+                        
+                        const lastElement = focusableElements[focusableElements.length - 1];
+                        const isLeaving = !dropdown.contains(document.activeElement);
+                        
+                        if (isLeaving || (e.shiftKey && document.activeElement === dropdown.querySelector('.nav-dropbtn'))) {
+                            this.closeDropdown(dropdown);
+                        }
+                    }
+                });
+            }
+        });
+    }
+    
+    handleResize() {
+        window.addEventListener('resize', () => {
+            // Reset mobile menu on desktop
+            if (window.innerWidth > 768) {
+                if (this.navLinks.classList.contains('active')) {
+                    this.toggleMenu();
+                }
+                
+                // Reset dropdown styles for desktop
+                this.dropdowns.forEach(dropdown => {
+                    const submenu = dropdown.querySelector('.nav-submenu');
+                    if (submenu) {
+                        submenu.style.maxHeight = '';
+                    }
+                });
+            }
+        });
+    }
+    
+    // Public methods
+    openMenu() {
+        if (!this.navLinks.classList.contains('active')) {
+            this.toggleMenu();
+        }
+    }
+    
+    closeMenu() {
+        if (this.navLinks.classList.contains('active')) {
+            this.toggleMenu();
+        }
+    }
+}
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileNav = new MobileNavigation();
+    
+    // Make available globally if needed
+    window.mobileNav = mobileNav;
+});
     </script>
 
 </body>
