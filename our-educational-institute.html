@@ -1,20 +1,11 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact us | KUMSS</title>
+    <title>Our Educational Institutes | Krushi Udyog Mul Shikshan Sansthan (KUMSS)</title>
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/scrollCue.css" />
-    <link rel="stylesheet" href="assets/css/remixicon.css" />
-    <link rel="stylesheet" href="assets/css/flaticon.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-    
-      <!-- Icons -->
+    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css"
@@ -24,262 +15,120 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
+    <!-- CSS Files (same as index) -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/scrollCue.css" />
+    <link rel="stylesheet" href="assets/css/remixicon.css" />
+    <link rel="stylesheet" href="assets/css/flaticon.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
 
-    <link href="assets/img/favicon.png" type="image/x-icon" rel="icon" />
+    <link href="assets/kumss_log.png" type="image/x-icon" rel="icon" />
 
+    <!-- Page-only CSS (kept minimal, won't break your existing theme) -->
     <style>
-      /* CONTACT PAGE - clean, no bg shade */
-.page-hero{
-  padding: 70px 0 40px;
-  background: url('/assets/contact.avif');
-}
-/* Hero background overlay */
-.page-hero{
-  position: relative;
-  overflow: hidden;
+  .institutes-page.clean{
+  padding: 80px 0;
+  background: transparent; /* no shade */
 }
 
-/* If your bg image is on .page-hero itself */
-.page-hero::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45); /* overlay strength */
-  z-index: 0;
+.inst-page-head{
+  text-align: center;
+  margin-bottom: 26px;
 }
-
-/* Keep hero content above overlay */
-.page-hero .container,
-.page-hero__wrap{
-  position: relative;
-  z-index: 1;
-}
-
-/* Optional: make text readable on bg */
-.page-hero h1,
-.page-hero p,
-.page-hero a,
-.page-hero .breadcrumb-clean{
-  color: #fff;
-}
-
-.page-hero .breadcrumb-clean a{
-  color: #fff;
-  opacity: .95;
-}
-.page-hero .breadcrumb-clean li + li::before{
-  color: rgba(255,255,255,0.75);
-}
-
-.page-hero__wrap{
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 22px;
-  align-items: center;
-}
-.page-hero__image{
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(11,42,91,.10);
-  box-shadow: 0 18px 40px rgba(0,0,0,.10);
-}
-.page-hero__image img{
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  display: block;
-}
-.page-hero__shape{
-  position: absolute;
-  right: -10px;
-  bottom: -10px;
-  width: 150px;
-  height: auto;
-  opacity: .9;
-  pointer-events: none;
-}
-.breadcrumb-clean{
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0;
-  display: flex;
-  gap: 10px;
-  align-items: center;
+.inst-page-head p{
+  margin: 0;
   color: #6e6656;
 }
-.breadcrumb-clean li{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.breadcrumb-clean li + li::before{
-  content: "/";
-  color: #9c927d;
-}
-.breadcrumb-clean a{
-  text-decoration: none;
-  color: #0b2a5b;
-  font-weight: 700;
-}
 
-/* Section */
-.contact-page{
-  padding: 70px 0;
-}
-.section-head-center{
-  text-align: center;
-  margin-bottom: 22px;
-}
-.contact-grid{
+.inst-grid{
   display: grid;
-  grid-template-columns: 1.25fr .75fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
-.contact-card{
-  background: #fff;
-  border: 1px solid rgba(11,42,91,.10);
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 14px 34px rgba(0,0,0,.06);
-}
-.contact-info-title{
-  margin: 0 0 14px;
-  color: #0b2a5b;
-}
 
-/* Form */
-.contact-form .form-control{
-  border-radius: 14px;
-  border: 1px solid rgba(11,42,91,.14);
-  padding: 12px 12px;
-}
-.contact-form .form-control:focus{
-  border-color: rgba(11,42,91,.35);
-  box-shadow: none;
-}
-.remember-line{
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 14px;
-  color: #6e6656;
-}
-.remember-line input{
-  margin-top: 4px;
-}
-
-/* Info items */
-.info-item{
-  display: flex;
-  gap: 12px;
-  padding: 12px 0;
-  border-top: 1px dashed rgba(11,42,91,.15);
-}
-.info-item:first-of-type{
-  border-top: 0;
-  padding-top: 0;
-}
-.info-ic{
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(11,42,91,.08);
-  color: #0b2a5b;
-  flex: 0 0 44px;
-}
-.info-txt span{
+.inst-card.clean{
   display: block;
-  color: #6e6656;
-  font-size: 13px;
-  margin-bottom: 2px;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid rgba(11, 42, 91, 0.10);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.06);
 }
-.info-txt a{
+
+.inst-img{
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+.inst-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.inst-body{
+  padding: 16px 16px 18px;
+}
+
+.inst-badge{
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(247,148,29,0.14);
   color: #0b2a5b;
   font-weight: 800;
-  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 10px;
 }
-.info-txt p{
+
+.inst-name{
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #0b2a5b;
+}
+
+.inst-year{
+  margin: 0 0 6px;
   color: #2c2a26;
 }
-/* =========================
-   MOBILE RESPONSIVE (ONLY for page-hero + contact-page)
-   ========================= */
 
+.inst-desc{
+  margin: 0;
+  color: #6e6656;
+  font-size: 14px;
+}
+
+.inst-card.clean:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 26px 60px rgba(0,0,0,0.12);
+  border-color: rgba(11, 42, 91, 0.18);
+}
+.inst-card.clean:hover .inst-img img{
+  transform: scale(1.06);
+}
+
+/* Responsive */
 @media (max-width: 991px){
-
-  /* Hero: stack text + image */
-  .page-hero{
-    padding: 55px 0 30px;
-  }
-  .page-hero__wrap{
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .page-hero__image img{
-    height: 260px;
-  }
-  .page-hero__shape{
-    width: 120px;
-    right: -8px;
-    bottom: -8px;
-  }
-
-  /* Contact: stack form + info */
-  .contact-page{
-    padding: 55px 0;
-  }
-  .contact-grid{
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
+  .inst-grid{ grid-template-columns: repeat(2, 1fr); }
+  .inst-img{ height: 200px; }
 }
-
 @media (max-width: 575px){
-
-  .page-hero__image img{
-    height: 220px;
-  }
-
-  /* Breadcrumb wrap (prevents overflow) */
-  .breadcrumb-clean{
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  /* Cards spacing tighter */
-  .contact-card{
-    padding: 14px;
-    border-radius: 16px;
-  }
-
-  /* Form inputs */
-  .contact-form .form-control{
-    border-radius: 12px;
-    padding: 11px 12px;
-  }
-
-  /* Info items align better on small screens */
-  .info-item{
-    gap: 10px;
-  }
-  .info-ic{
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    flex: 0 0 40px;
-  }
+  .institutes-page.clean{ padding: 60px 0; }
+  .inst-grid{ grid-template-columns: 1fr; }
+  .inst-img{ height: 210px; }
 }
 
-
-    </style>
+        </style>
   </head>
 
   <body>
-     <!-- Top Header (same as index) -->
+    <!-- Top Header (same as index) -->
     <div class="top-header-area style-3">
       <div class="container-fluid">
         <div class="row align-items-center">
@@ -458,109 +307,92 @@
       </div>
     </div>
 
-
-<!-- Contact Hero -->
-<section class="page-hero" id="contact">
-  <div class="container">
-    <div class="page-hero__wrap">
-      <div class="page-hero__content">
-        <h1>Contact Us</h1>
-        <ul class="breadcrumb-clean">
-          <li><a href="index.html">Home</a></li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
-
-      <div class="page-hero__image">
-        <img src="assets/contact.avif" alt="pages-image" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Get In Touch -->
-<section class="contact-page">
+<section class="institutes-page clean" id="institutes">
   <div class="container">
 
-    <div class="section-head-center">
-      <h2>Get In Touch</h2>
+    <div class="inst-page-head">
+      <h1>Our Institutes</h1>
+      <p>Image first. Details below. Clean look.</p>
     </div>
 
-    <div class="contact-grid">
+    <div class="inst-grid">
 
-      <!-- Form -->
-      <div class="contact-card">
-        <form class="contact-form" action="#" method="post">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <input class="form-control" type="text" name="name" placeholder="Your name" required />
-            </div>
-            <div class="col-md-6">
-              <input class="form-control" type="tel" name="phone" placeholder="Your phone" required />
-            </div>
-            <div class="col-md-6">
-              <input class="form-control" type="email" name="email" placeholder="Your email" required />
-            </div>
-            <div class="col-md-6">
-              <input class="form-control" type="text" name="subject" placeholder="Your subject" />
-            </div>
-            <div class="col-12">
-              <textarea class="form-control" name="message" rows="5" placeholder="Your comments..." required></textarea>
-            </div>
-
-            <div class="col-12">
-              <label class="remember-line">
-                <input type="checkbox" name="remember" />
-                <span>Save my name, email, and website in this browser for the next time I comment.</span>
-              </label>
-            </div>
-
-            <div class="col-12">
-              <button class="default-btn border-0" type="submit">
-                Send Message <i class="fi fi-sr-arrow-up-right"></i>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <!-- Info -->
-      <div class="contact-card">
-        <h3 class="contact-info-title">Contact Information</h3>
-
-        <div class="info-item">
-          <div class="info-ic"><i class="fi fi-sr-phone-call" aria-hidden="true"></i></div>
-          <div class="info-txt">
-            <span>Call Us:</span>
-            <a href="tel:+45993939990"> +91 94213 94242</a>
-          </div>
+      <a class="inst-card clean" href="#" target="_blank" rel="noopener">
+        <div class="inst-img">
+          <img src="/assets/institute.avif" alt="Vasatigruh Vidyalay Karhati campus">
         </div>
 
-        <div class="info-item">
-          <div class="info-ic"><i class="fi fi-sr-envelope" aria-hidden="true"></i></div>
-          <div class="info-txt">
-            <span>Mail Us:</span>
-            <a href="mailto:info@example.com">info@kumss.org</a>
-          </div>
+        <div class="inst-body">
+          <div class="inst-badge">VVK</div>
+          <h3 class="inst-name">Vasatigruh Vidyalay Karhati</h3>
+          <p class="inst-year">Established in <strong>1982</strong></p>
+          <p class="inst-desc">(Marathi & Semi-English Medium School)</p>
+        </div>
+      </a>
+
+      <a class="inst-card clean" href="#" target="_blank" rel="noopener">
+        <div class="inst-img">
+          <img src="/assets/institute.avif" alt="New English School, Dhakale campus">
         </div>
 
-        <div class="info-item">
-          <div class="info-ic"><i class="fi fi-sr-clock" aria-hidden="true"></i></div>
-          <div class="info-txt">
-            <span>Opening Hours:</span>
-            <p class="mb-0">Mon - Sat: 09.00am to 18.00pm</p>
-          </div>
+        <div class="inst-body">
+          <div class="inst-badge">NES D</div>
+          <h3 class="inst-name">New English School, Dhakale</h3>
+          <p class="inst-year">Established in <strong>2000</strong></p>
+          <p class="inst-desc">English Medium School</p>
+        </div>
+      </a>
+
+      <a class="inst-card clean" href="#" target="_blank" rel="noopener">
+        <div class="inst-img">
+          <img src="/assets/institute.avif" alt="Primary School, Tembha campus">
         </div>
 
-        <div class="info-item">
-          <div class="info-ic"><i class="fi fi-sr-marker" aria-hidden="true"></i></div>
-          <div class="info-txt">
-            <span>Location:</span>
-            <p class="mb-0">Krushi Udyog, Mul Shikshan Sanstha, A/p, Karhati, Malwadi, Maharashtra 412204</p>
-          </div>
+        <div class="inst-body">
+          <div class="inst-badge">PS T</div>
+          <h3 class="inst-name">Primary School, Tembha</h3>
+          <p class="inst-year">Establishing in <strong>2000</strong></p>
+          <p class="inst-desc">English Medium School</p>
+        </div>
+      </a>
+
+      <a class="inst-card clean" href="#" target="_blank" rel="noopener">
+        <div class="inst-img">
+          <img src="/assets/institute.avif" alt="KUMSS Private I.T.I Karhati campus">
         </div>
 
-      </div>
+        <div class="inst-body">
+          <div class="inst-badge">ITI KUMSS</div>
+          <h3 class="inst-name">KUMSS Private I.T.I Karhati</h3>
+          <p class="inst-year">Established in <strong>2021</strong></p>
+          <p class="inst-desc">Private Industrial Training Institute</p>
+        </div>
+      </a>
+
+      <a class="inst-card clean" href="#" target="_blank" rel="noopener">
+        <div class="inst-img">
+          <img src="/assets/institute.avif" alt="Gurukul English Medium School campus">
+        </div>
+
+        <div class="inst-body">
+          <div class="inst-badge">GURUKUL</div>
+          <h3 class="inst-name">Gurukul English Medium School</h3>
+          <p class="inst-year">Establishing in <strong>2021</strong></p>
+          <p class="inst-desc">English Medium School</p>
+        </div>
+      </a>
+
+      <a class="inst-card clean" href="#" target="_blank" rel="noopener">
+        <div class="inst-img">
+          <img src="/assets/institute.avif" alt="Shardabai Pawar Kala Mahavidhyalaya campus">
+        </div>
+
+        <div class="inst-body">
+          <div class="inst-badge">SPKM</div>
+          <h3 class="inst-name">Shardabai Pawar Kala Mahavidhyalaya</h3>
+          <p class="inst-year">Established in <strong>1993-1994</strong></p>
+        </div>
+      </a>
 
     </div>
   </div>
@@ -568,7 +400,7 @@
 
 
 
-     <!-- Footer (same as index) -->
+    <!-- Footer (same as index) -->
     <footer class="footer" id="footer">
       <div class="container">
         <div class="footer-grid">
@@ -645,24 +477,12 @@
     <button type="button" id="back-to-top">
       <i class="ri-arrow-up-double-fill"></i>
     </button>
-    <!-- End Back to Top -->
 
-    <!-- Js Files -->
-    <script
-      data-cfasync="false"
-      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-    ></script>
+    <!-- JS Files (same as index) -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/fslightbox.js"></script>
     <script src="assets/js/scrollCue.min.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-      data-cf-beacon='{"version":"2024.11.0","token":"5fe684bbe2954c839d4575e6915100ba","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
