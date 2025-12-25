@@ -149,13 +149,17 @@
         margin-bottom: 12px;
       }
       .section-head h2 {
-        margin: 0 0 8px;
-        font-size: 50px;
-      }
-      .section-head p {
-        margin: 0;
-        color: #6e6656;
-      }
+  font-size: 40px;
+  font-weight: bold;
+  color: #0b2a5b;
+}
+
+.section-head p {
+  font-size: 18px;
+  color: #0b2a5b;
+  font-weight: 600;
+  line-height: 1.4;
+}
 
       .trustees-grid {
         display: grid;
@@ -195,62 +199,9 @@
         white-space: nowrap;
       }
 
-      .fac-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-      }
-      .fac-card {
-        border: 1px solid rgba(11, 42, 91, 0.08);
-        border-radius: 16px;
-        padding: 16px 14px;
-        background: #fff;
-        height: 100%;
-      }
-      .fac-card .top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10px;
-      }
-      .fac-card i {
-        font-size: 22px;
-        color: #0b2a5b;
-      }
-      .fac-card h4 {
-        margin: 0;
-        font-size: 16px;
-      }
-
       
-      .message-wrap img {
-        height: 100%;
-        width: 100%;
-        border-radius: 10px;
-  display: block;
-  object-fit: cover;
-
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-      }
-      .message-wrap .quote {
-        font-size: 16px;
-        color: #2c2a26;
-        line-height: 1.7;
-        margin: 0;
-      }
-      .message-meta {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        margin-top: 16px;
-        padding-top: 14px;
-        border-top: 1px dashed rgba(11, 42, 91, 0.18);
-      }
-      .message-meta strong {
-        color: #0b2a5b;
-      }
-
+      
+   
       @media (max-width: 991px) {
         .about-hero .hero-card img {
           height: 320px;
@@ -261,15 +212,270 @@
         .trustees-grid {
           grid-template-columns: 1fr;
         }
-        .fac-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
       }
-      @media (max-width: 575px) {
-        .fac-grid {
-          grid-template-columns: 1fr;
-        }
-      }
+
+
+    /* =========================
+   Central Services and Facilities Section
+   ========================= */
+
+#vision-mission {
+  padding: 70px 0;
+  background: linear-gradient(135deg, #002a5c 0%, #071229e0 100%); /* Gradient background */
+}
+
+/* Section Header */
+.section-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-head .line {
+  width: 76px;
+  height: 6px;
+  border-radius: 999px;
+  background: #f7941d;
+  margin: 0 auto 15px;
+}
+
+.section-head h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #0b2a5b;
+}
+
+.section-head p {
+  font-size: 18px;
+  color: #0b2a5b;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Service Cards Layout */
+.fac-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Individual Fac Card */
+.fac-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.fac-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.fac-card .top {
+  text-align: center;
+}
+
+.fac-card h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin: 15px 0 10px;
+}
+
+.fac-card i {
+  font-size: 30px;
+  color: #f7941d;
+}
+
+.fac-card .pill {
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0b2a5b;
+  background: rgba(247, 148, 29, 0.1);
+  border: 1px solid rgba(247, 148, 29, 0.5);
+  border-radius: 12px;
+}
+
+/* Hover effect for icons */
+.fac-card:hover i {
+  color: #f7941d;
+}
+
+/* Image Reveal on Hover */
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fac-card:hover .image-container {
+  opacity: 1;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-head h2 {
+    font-size: 32px;
+  }
+
+  .section-head p {
+    font-size: 16px;
+  }
+
+  .fac-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .fac-card h4 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .fac-card h4 {
+    font-size: 16px;
+  }
+
+  .fac-card i {
+    font-size: 28px;
+  }
+}
+
+.about-block {
+  margin-top: 40px;
+}
+
+.message-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.message-image {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.message-text {
+  padding: 20px;
+  background-color: #0b2a5b;
+  border-radius: 8px;
+}
+
+.quote {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.message-meta {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.our-campus img {
+  width: 100%;
+  height:500px;
+  object-fit: cover;
+}
+
+/* General styles for mobile responsiveness */
+@media (max-width: 768px) {
+  /* Ensure that the container takes full width on mobile */
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Stack the content vertically */
+  .message-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Image section adjustments */
+  .message-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Ensure the image is not too big and is responsive */
+  .message-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Set max height to avoid stretching */
+  }
+
+  /* Adjust the message text section for smaller screens */
+  .message-text {
+    padding: 15px;
+    text-align: center; /* Center the text */
+    font-size: 14px;
+  }
+
+  /* Adjust quote text style */
+  .quote {
+    font-size: 16px; /* Slightly smaller font size for mobile */
+    line-height: 1.6;
+  }
+
+  /* Adjust message meta (Chairman and Commitment) section */
+  .message-meta {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .message-meta span {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* Button styles for mobile (ensure they're full width and stacked) */
+  .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gap-2 {
+    gap: 10px; /* Smaller gap between buttons */
+  }
+
+  .default-btn,
+  .arrow-btn {
+    width: 60%; /* Make buttons full width */
+    padding: 12px;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
     </style>
   </head>
 
@@ -454,67 +660,71 @@
     </div>
 
     <!-- ABOUT HERO -->
-    <section class="about-hero" id="about">
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-6">
-            <span class="tagline">
-              <i class="fi fi-sr-graduation-cap" aria-hidden="true"></i>
-              KUMSS Since 1951
-            </span>
+ <section class="about-hero" id="about">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Column: About Text and KPIs -->
+      <div class="col-lg-6 pe-lg-5"> <!-- Padding-right for more gap -->
+        <span class="tagline">
+          <i class="fi fi-sr-graduation-cap" aria-hidden="true"></i>
+          KUMSS Since 1951
+        </span>
 
-            <h1>About Krushi Udyog Mul Shikshan Sansthan</h1>
+        <h1>About Krushi Udyog Mul Shikshan Sansthan</h1>
 
-            <p style="color: var(--secenderyColor); font-size: large; font-style: italic; margin-bottom: 14px">
-              “Education opens up the mind, expands it, and allows you to improve your life in so many ways.”
-            </p>
+        <p style="color: var(--secenderyColor); font-size: large; font-style: italic; margin-bottom: 14px">
+          “Education opens up the mind, expands it, and allows you to improve your life in so many ways.”
+        </p>
 
-            <p>
-              KUMSS is an educational society which mainly focuses upon the overall development of students.
-              It established in the year of 1951, Great visionaries founder of the institute late Dr.Shri.A.J.Agarkar
-              plant a seed of an idea. Now, small plant becomes a big tree with great leadership of KUMSS President and
-              Dy.CM of Maharashtra Shri.Ajitdada Pawar from 2004.
-            </p>
+        <p>
+          KUMSS is an educational society which mainly focuses upon the overall development of students.
+          It established in the year of 1951, Great visionaries founder of the institute late Dr.Shri.A.J.Agarkar
+          plant a seed of an idea. Now, small plant becomes a big tree with great leadership of KUMSS President and
+          Dy.CM of Maharashtra Shri.Ajitdada Pawar from 2004.
+        </p>
 
-            <div class="about-kpi">
-              <div class="kpi">
-                <div class="kpi-top">
-                  <strong>1951</strong>
-                  <i class="fi fi-sr-calendar" aria-hidden="true"></i>
-                </div>
-                <p>Established with a clear mission for rural development.</p>
-              </div>
-
-              <div class="kpi">
-                <div class="kpi-top">
-                  <strong>All Ages</strong>
-                  <i class="fi fi-sr-users" aria-hidden="true"></i>
-                </div>
-                <p>Primary to ITI and skill training under one ecosystem.</p>
-              </div>
-
-              <div class="kpi">
-                <div class="kpi-top">
-                  <strong>Agri + Skill</strong>
-                  <i class="fi fi-sr-seedling" aria-hidden="true"></i>
-                </div>
-                <p>Agri-based learning and career-ready skill development.</p>
-              </div>
+        <div class="about-kpi">
+          <div class="kpi">
+            <div class="kpi-top">
+              <strong>1951</strong>
+              <i class="fi fi-sr-calendar" aria-hidden="true"></i>
             </div>
+            <p>Established with a clear mission for rural development.</p>
           </div>
 
-          <div class="col-lg-6">
-            <div class="hero-card">
-              <img src="assets/about-hero-img.avif" alt="KUMSS Campus" />
-              <div class="hero-badge">
-                <strong>70+ Years</strong>
-                <span>Learning, values, and rural upliftment</span>
-              </div>
+          <div class="kpi">
+            <div class="kpi-top">
+              <strong>All Ages</strong>
+              <i class="fi fi-sr-users" aria-hidden="true"></i>
             </div>
+            <p>Primary to ITI and skill training under one ecosystem.</p>
+          </div>
+
+          <div class="kpi">
+            <div class="kpi-top">
+              <strong>Agri + Skill</strong>
+              <i class="fi fi-sr-seedling" aria-hidden="true"></i>
+            </div>
+            <p>Agri-based learning and career-ready skill development.</p>
           </div>
         </div>
       </div>
-    </section>
+
+      <!-- Right Column: Image -->
+      <div class="col-lg-6 ps-lg-5"> <!-- Padding-left for more gap -->
+        <div class="hero-card">
+          <img src="assets/about-hero-img.avif" alt="KUMSS Campus" class="img-fluid">
+          <div class="hero-badge">
+            <strong>70+ Years</strong>
+            <span>Learning, values, and rural upliftment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- OUR CAMPUS -->
     <section class="about-block">
@@ -567,7 +777,7 @@
           </div>
 
           <div class="col-lg-5">
-            <div class="message-wrap">
+            <div class="message-wrap our-campus">
                 <img src="/assets/our-campus-about.jfif" alt="campus">
             </div>
                 
@@ -594,11 +804,8 @@
               To create opportunities for the development of talent within the rural area and improve the overall scope and space
               for under developed sectors KUMSS ITI will become great skill training center in future.
             </p>
-          </div>
-
-          <div class="col-lg-5">
-            <div class="message-wrap">
-              <p class="quote">
+             <div class="message-wrap">
+              <p>
                 “The goal is simple. Train locally. Grow locally. Build futures without migration.”
               </p>
               <div class="message-meta">
@@ -607,271 +814,330 @@
               </div>
             </div>
           </div>
+
+          <div class="col-lg-5">
+           <img src="/assets/about-our-campus-iti.png" alt="campus">
+          </div>
         </div>
       </div>
     </section>
 
     <!-- BOARD OF TRUSTEES -->
     <section class="about-block pt-0" id="leadership">
-      <div class="container">
-        <div class="section-head">
-          <div class="line"></div>
-          <h2>Board Of Trustees</h2>
-          <p>Guiding the institute’s vision and governance.</p>
+  <div class="container">
+    <div class="section-head">
+      <div class="line"></div>
+      <h2>Board Of Trustees</h2>
+      <p>Guiding the institute’s vision and governance.</p>
+    </div>
+
+    <div class="trustees-grid">
+      <div class="t-item">
+        <div>
+          <p class="name">Shri. Ajit Anantrao Pawar</p>
+          <p class="role">Chairman</p>
         </div>
-
-        <div class="trustees-grid">
-          <div class="t-item">
-            <div>
-              <p class="name">Shri. Ajit Anantrao Pawar</p>
-              <p class="role">Chairman</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-crown" aria-hidden="true"></i> Chairman</span>
-          </div>
-
-          <div class="t-item">
-            <div>
-              <p class="name">Shri. Dasharathrao Babaso Dhumal</p>
-              <p class="role">Vice-Chairman</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-badge-check" aria-hidden="true"></i> Vice</span>
-          </div>
-
-          <div class="t-item">
-            <div>
-              <p class="name">Shri. Prafulla Bhimdeo Taware</p>
-              <p class="role">Secretary</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-document" aria-hidden="true"></i> Secretary</span>
-          </div>
-
-          <div class="t-item">
-            <div>
-              <p class="name">Shri. Subhash Champalal Somani</p>
-              <p class="role">Treasurer</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-wallet" aria-hidden="true"></i> Treasurer</span>
-          </div>
-
-          <div class="t-item">
-            <div>
-              <p class="name">Sau. Sunetra Ajit Pawar</p>
-              <p class="role">Trustee</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-user" aria-hidden="true"></i> Trustee</span>
-          </div>
-
-          <div class="t-item">
-            <div>
-              <p class="name">Shri. Narendra Punamchand Gujrathi</p>
-              <p class="role">Trustee</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-user" aria-hidden="true"></i> Trustee</span>
-          </div>
-
-          <div class="t-item">
-            <div>
-              <p class="name">Shri. Milind Khasherao Jagtap</p>
-              <p class="role">Trustee</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-user" aria-hidden="true"></i> Trustee</span>
-          </div>
-
-          <div class="t-item">
-            <div>
-              <p class="name">Shri. Sayyad Maula Gulab Dastgir</p>
-              <p class="role">Trustee</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-user" aria-hidden="true"></i> Trustee</span>
-          </div>
-
-          <div class="t-item">
-            <div>
-              <p class="name">Shri. Dattatray Gulabrao Wable</p>
-              <p class="role">Trustee</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-user" aria-hidden="true"></i> Trustee</span>
-          </div>
-
-          <div class="t-item">
-            <div>
-              <p class="name">Shri. Pritam Suryakant Pahade</p>
-              <p class="role">Trustee</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-user" aria-hidden="true"></i> Trustee</span>
-          </div>
-
-          <div class="t-item">
-            <div>
-              <p class="name">Shri. Pranav Vijay Soman</p>
-              <p class="role">Trustee</p>
-            </div>
-            <span class="pill"><i class="fi fi-sr-user" aria-hidden="true"></i> Trustee</span>
-          </div>
-        </div>
+        <span class="pill">Chairman</span>
       </div>
-    </section>
+
+      <div class="t-item">
+        <div>
+          <p class="name">Shri. Dasharathrao Babaso Dhumal</p>
+          <p class="role">Vice-Chairman</p>
+        </div>
+        <span class="pill">Vice</span>
+      </div>
+
+      <div class="t-item">
+        <div>
+          <p class="name">Shri. Prafulla Bhimdeo Taware</p>
+          <p class="role">Secretary</p>
+        </div>
+        <span class="pill">Secretary</span>
+      </div>
+
+      <div class="t-item">
+        <div>
+          <p class="name">Shri. Subhash Champalal Somani</p>
+          <p class="role">Treasurer</p>
+        </div>
+        <span class="pill">Treasurer</span>
+      </div>
+
+      <div class="t-item">
+        <div>
+          <p class="name">Sau. Sunetra Ajit Pawar</p>
+          <p class="role">Trustee</p>
+        </div>
+        <span class="pill">Trustee</span>
+      </div>
+
+      <div class="t-item">
+        <div>
+          <p class="name">Shri. Narendra Punamchand Gujrathi</p>
+          <p class="role">Trustee</p>
+        </div>
+        <span class="pill">Trustee</span>
+      </div>
+
+      <div class="t-item">
+        <div>
+          <p class="name">Shri. Milind Khasherao Jagtap</p>
+          <p class="role">Trustee</p>
+        </div>
+        <span class="pill">Trustee</span>
+      </div>
+
+      <div class="t-item">
+        <div>
+          <p class="name">Shri. Sayyad Maula Gulab Dastgir</p>
+          <p class="role">Trustee</p>
+        </div>
+        <span class="pill">Trustee</span>
+      </div>
+
+      <div class="t-item">
+        <div>
+          <p class="name">Shri. Dattatray Gulabrao Wable</p>
+          <p class="role">Trustee</p>
+        </div>
+        <span class="pill">Trustee</span>
+      </div>
+
+      <div class="t-item">
+        <div>
+          <p class="name">Shri. Pritam Suryakant Pahade</p>
+          <p class="role">Trustee</p>
+        </div>
+        <span class="pill">Trustee</span>
+      </div>
+
+      <div class="t-item">
+        <div>
+          <p class="name">Shri. Pranav Vijay Soman</p>
+          <p class="role">Trustee</p>
+        </div>
+        <span class="pill">Trustee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- CENTRAL SERVICES & FACILITIES -->
-    <section class="about-block pt-0" id="vision-mission">
-      <div class="container">
-        <div class="section-head">
-          <div class="line"></div>
-          <h2>Central Services and Facilities</h2>
-          <p>Support systems that keep learning smooth and safe.</p>
+ <section class="about-block pt-0" id="vision-mission">
+  <div class="container">
+    <div class="section-head">
+      <div class="line"></div>
+      <h2 style="color: #fff;">Central Services and Facilities</h2>
+      <p style="color: #fff;">Support systems that keep learning smooth and safe.</p>
+    </div>
+
+    <div class="fac-grid">
+      <div class="fac-card">
+        <div class="top">
+          <h4>Drinking RO Water Dispenser</h4>
+          <i class="fi fi-sr-water" aria-hidden="true"></i>
         </div>
-
-        <div class="fac-grid">
-          <div class="fac-card">
-            <div class="top">
-              <h4>Drinking RO Water Dispenser</h4>
-              <i class="fi fi-sr-water" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>Advanced Teaching Material</h4>
-              <i class="fi fi-sr-book-open-cover" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>24 Hours Campus Security</h4>
-              <i class="fi fi-sr-shield-check" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>Wi-Fi Facility</h4>
-              <i class="fi fi-sr-wifi" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>CCTV Surveillance</h4>
-              <i class="fi fi-sr-camera" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>Library & IT Lab with Internet</h4>
-              <i class="fi fi-sr-computer" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>Electric Backup</h4>
-              <i class="fi fi-sr-bolt" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>Fire Fighting Services</h4>
-              <i class="fi fi-sr-fire-extinguisher" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>Highly Qualified Staff</h4>
-              <i class="fi fi-sr-user-check" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>First Aid</h4>
-              <i class="fi fi-sr-first-aid" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>Training and Placement Cell</h4>
-              <i class="fi fi-sr-briefcase" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>Girls Common Room</h4>
-              <i class="fi fi-sr-door-open" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>Consumer Store</h4>
-              <i class="fi fi-sr-shop" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <div class="fac-card">
-            <div class="top">
-              <h4>Well-Equipped Classrooms</h4>
-              <i class="fi fi-sr-chalkboard-user" aria-hidden="true"></i>
-            </div>
-          </div>
+        <div class="image-container">
+          <img src="/assets/drinking-ro-water-dispenser.png" alt="Drinking RO Water Dispenser">
         </div>
       </div>
-    </section>
+
+      <div class="fac-card">
+        <div class="top">
+          <h4>Advanced Teaching Material</h4>
+          <i class="fi fi-sr-book-open-cover" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/advanced-teaching-material.png" alt="Advanced Teaching Material">
+        </div>
+      </div>
+
+      <div class="fac-card">
+        <div class="top">
+          <h4>24 Hours Campus Security</h4>
+          <i class="fi fi-sr-shield-check" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/campus-security.png" alt="24 Hours Campus Security">
+        </div>
+      </div>
+
+       <!-- Wi-Fi Facility -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>Wi-Fi Facility</h4>
+          <i class="fi fi-sr-wifi" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/wifi-facility.png" alt="Wi-Fi Facility">
+        </div>
+      </div>
+
+      <!-- CCTV Surveillance -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>CCTV Surveillance</h4>
+          <i class="fi fi-sr-camera" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/cctv-surveillance.jfif" alt="CCTV Surveillance">
+        </div>
+      </div>
+
+      <!-- Library & IT Lab with Internet -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>Library & IT Lab with Internet</h4>
+          <i class="fi fi-sr-computer" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/library-it-lab.png" alt="Library & IT Lab with Internet">
+        </div>
+      </div>
+
+      <!-- Electric Backup -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>Electric Backup</h4>
+          <i class="fi fi-sr-bolt" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/electric-backup.png" alt="Electric Backup">
+        </div>
+      </div>
+
+      <!-- Fire Fighting Services -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>Fire Fighting Services</h4>
+          <i class="fi fi-sr-fire-extinguisher" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/fire-fighting-services.jfif" alt="Fire Fighting Services">
+        </div>
+      </div>
+
+      <!-- Highly Qualified Staff -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>Highly Qualified Staff</h4>
+          <i class="fi fi-sr-user-check" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/highly-qualified-staff.png" alt="Highly Qualified Staff">
+        </div>
+      </div>
+
+      <!-- First Aid -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>First Aid</h4>
+          <i class="fas fa-plus-circle" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/first-aid.png" alt="First Aid">
+        </div>
+      </div>
+
+      <!-- Training and Placement Cell -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>Training and Placement Cell</h4>
+          <i class="fi fi-sr-briefcase" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/training-placement-cell.png" alt="Training and Placement Cell">
+        </div>
+      </div>
+
+      <!-- Girls Common Room -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>Girls Common Room</h4>
+          <i class="fi fi-sr-door-open" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/girl-common-room.png" alt="Girls Common Room">
+        </div>
+      </div>
+
+      <!-- Consumer Store -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>Consumer Store</h4>
+          <i class="fi fi-sr-shop" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/consumer-store.jfif" alt="Consumer Store">
+        </div>
+      </div>
+
+      <!-- Well-Equipped Classrooms -->
+      <div class="fac-card">
+        <div class="top">
+          <h4>Well-Equipped Classrooms</h4>
+          <i class="fi fi-sr-chalkboard-user" aria-hidden="true"></i>
+        </div>
+        <div class="image-container">
+          <img src="/assets/well-equiped-classrooms.jfif" alt="Well-Equipped Classrooms">
+        </div>
+      </div>
+
+      <!-- Add more cards as needed -->
+    </div>
+  </div>
+</section>
+
 
     <!-- PRESIDENT'S MESSAGE -->
-    <section class="about-block pt-0">
-      <div class="container">
-        <div class="section-head">
-          <div class="line"></div>
-          <h2>President’s Message</h2>
-          <p>Words that reflect the purpose behind KUMSS.</p>
-        </div>
+   <section class="about-block pt-0">
+  <div class="container">
+    <div class="section-head">
+      <div class="line"></div>
+      <h2>President’s Message</h2>
+      <p>Words that reflect the purpose behind KUMSS.</p>
+    </div>
 
-        <div class="message-wrap">
-          <p class="quote">
-            “We are happy to gift a ‘Krushi Udyog Mool Shikshan Sanstha’ to the residents of Baramati (To the all baramatikars).
-            There was hardly any campus repute in western area of Baramati. People have to shift their base to main cities for
-            quality education. I am delighted to have KUMSS which will be a great learning destination in the district and nearby
-            areas and the students will not have to migrate to other places in search of quality education.
-            <br /><br />
-            We strongly believe that every student is a unique person with his/her own set of abilities, needs and aspirations.
-            We at KUMSS are committed to bring out that uniqueness.
-            <br /><br />
-            Besides academic excellence, the KUMSS is committed to inculcate in all its students strong ethical values of integrity,
-            politeness, kindness and respect for elders. I firmly believe that education should foster confidence, disciplines,
-            clarity in thoughts and decision making ability to set and achieve goals and above all, social responsibility as a
-            lifelong process.
-            <br /><br />
-            The unique KUMSS pedagogy backed up with meticulously laid state-of-the-art infrastructure brings excellence in learning,
-            training and placement. KUMSS students are groomed to think out of the box and engulf articulation, innovation, team work
-            and leadership.
-            <br /><br />
-            The challenge lies in utilizing the changing learning patterns with changes in the methods of instructions coupled with
-            technological advancements, to create an educational experience that will influence the all-round development of student
-            and uphold our commitment towards nation building.”
-          </p>
+    <div class="message-wrap d-flex">
+      <!-- Left Side Image -->
+      <div class="message-image" style="flex: 1; height: 100%;">
+         <img src="/assets/ajit-pawar-msg.png" alt="president image">
+      </div>
 
-          <div class="message-meta">
-            <span><strong>Chairman:</strong> Shri. Ajit Anantrao Pawar</span>
-            <span><strong>Commitment:</strong> Nation building</span>
-          </div>
-        </div>
+      <!-- Right Side Message Text -->
+      <div class="message-text" style="flex: 1; padding: 20px;">
+        <p class="quote">
+          “We are happy to gift a ‘Krushi Udyog Mool Shikshan Sanstha’ to the residents of Baramati (To the all baramatikars). There was hardly any campus repute in the western area of Baramati. People have to shift their base to main cities for quality education. I am delighted to have KUMSS which will be a great learning destination in the district and nearby areas and the students will not have to migrate to other places in search of quality education.
+          <br /><br />
+          We strongly believe that every student is a unique person with his/her own set of abilities, needs and aspirations. We at KUMSS are committed to bringing out that uniqueness.
+          <br /><br />
+          Besides academic excellence, KUMSS is committed to inculcate in all its students strong ethical values of integrity, politeness, kindness and respect for elders. I firmly believe that education should foster confidence, discipline, clarity in thoughts and decision making ability to set and achieve goals and above all, social responsibility as a lifelong process.
+          <br /><br />
+          The unique KUMSS pedagogy backed up with meticulously laid state-of-the-art infrastructure brings excellence in learning, training and placement. KUMSS students are groomed to think out of the box and embrace articulation, innovation, teamwork, and leadership.
+          <br /><br />
+          The challenge lies in utilizing the changing learning patterns with changes in the methods of instruction coupled with technological advancements, to create an educational experience that will influence the all-round development of students and uphold our commitment towards nation-building.”
+        </p>
 
-        <div class="mt-4 d-flex gap-2 flex-wrap">
-          <a class="text-decoration-none default-btn" href="contact.html">
-            Visit Us <i class="fi fi-sr-arrow-up-right"></i>
-          </a>
-          <a class="text-decoration-none arrow-btn" href="apply.html">
-            Admissions <i class="fi fi-sr-arrow-up-right"></i>
-          </a>
+        <div class="message-meta">
+          <span style="color: #f7941d;"><strong style="color: #fbfdff;">Chairman:</strong> Shri. Ajit Anantrao Pawar</span><br>
+          <span style="color: #f7941d;"><strong style="color: #fbfdff;">Commitment:</strong> Nation building</span>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="mt-4 d-flex gap-2 flex-wrap">
+      <a class="text-decoration-none default-btn" href="contact.html">
+        Visit Us <i class="fi fi-sr-arrow-up-right"></i>
+      </a>
+      <a class="text-decoration-none arrow-btn" href="apply.html">
+        Admissions <i class="fi fi-sr-arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer (same as index) -->
     <footer class="footer" id="footer">

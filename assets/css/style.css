@@ -150,7 +150,7 @@ a:hover {
 
 a {
   transition: var(--transition);
-  color: var(--blackColor);
+  color: var(--borderColor);
   outline: 0 !important;
 }
 a:hover {
@@ -2506,7 +2506,7 @@ Graduets Area Style
   background: #002a5c;
 }
 
-/* Container helper (if you don't already have one) */
+/* Container helper */
 .container{
   width:min(1200px, 92%);
   margin:0 auto;
@@ -2579,49 +2579,49 @@ Graduets Area Style
   border-color:#f7941d;
 }
 
-/* Chairman spotlight */
-.chairman-spotlight{
+/* Chairman spotlight (Vertical) */
+.chairman-spotlight-vertical{
   display:flex;
+  flex-direction: column;
   align-items:center;
-  gap:18px;
-  padding:18px;
-  border-radius:18px;
+  justify-content:center;
+  gap:20px;
+  padding:30px;
   background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(250, 223, 189) 100%);
   border:1px solid rgba(11,42,91,.08);
   box-shadow:0 14px 30px rgba(11,42,91,.10);
   margin:18px 0 30px;
+  border-radius: 15px;
 }
 
-.chairman-spotlight .photo{
-  width:170px;
-  height:170px;
-  border-radius:18px;
+.chairman-spotlight-vertical .photo{
+  width:250px;
+  height:250px;
+  border-radius:20px;
   overflow:hidden;
   background:#fff;
-  flex:0 0 auto;
   border:2px solid rgba(247,148,29,.45);
 }
 
-.chairman-spotlight img{
+.chairman-spotlight-vertical img{
   width:100%;
   height:100%;
   object-fit:cover;
   display:block;
 }
 
-.chairman-spotlight .info{
-  flex:1;
-  min-width:0;
+.chairman-spotlight-vertical .info{
+  text-align:center;
 }
 
-.chairman-spotlight .info h3{
+.chairman-spotlight-vertical .info h3{
   margin:10px 0 6px;
-  font-size:22px;
+  font-size:24px;
   font-weight:900;
   color:#0b2a5b;
 }
 
-.chairman-spotlight .info p{
+.chairman-spotlight-vertical .info p{
   margin:0;
   color:#4f5f77;
   font-weight:600;
@@ -2716,14 +2716,14 @@ Graduets Area Style
 
 /* Responsive */
 @media(max-width:991px){
-  .chairman-spotlight{
+  .chairman-spotlight-vertical{
     flex-direction:column;
     text-align:center;
   }
 
-  .chairman-spotlight .photo{
-    width:150px;
-    height:150px;
+  .chairman-spotlight-vertical .photo{
+    width:180px;
+    height:180px;
   }
 
   .office-grid{
@@ -2735,8 +2735,6 @@ Graduets Area Style
   }
 }
 
-
-/*commitee */
 
 /* institute section */
 .institutes-toplogo{
@@ -6702,126 +6700,120 @@ Back to Top Style
     font-weight: 500;
 }
 
-/* --- The Creative Content Boxes --- */
-.content-box {
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid var(--borderColor);
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition);
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #b8d8f84e;
 }
 
-/* Hover Effect for the whole box */
-.content-box:hover {
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    transform: translateY(-5px);
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-/* Header inside the box */
-.box-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+/* Vision Section */
+.vision-section, .mission-section, .values-section {
+    padding: 20px;
     margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    background-color: #ffffff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
 }
 
-.box-header h3 {
-    margin: 0;
-    font-size: 24px;
-    color: var(--blackColor);
-}
-
-.icon-wrapper {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 24px;
-}
-
-/* --- Theme Specific Colors --- */
-/* Mission Box (Green Theme) */
-.mission-theme {
-    border-top: 5px solid var(--primaryColor);
-}
-.mission-theme .icon-wrapper {
-    background-color: rgba(15, 128, 66, 0.1);
-    color: var(--primaryColor);
-}
-.mission-theme .list-marker {
-    color: var(--primaryColor);
-    background: rgba(15, 128, 66, 0.1);
-}
-
-/* Vision Box (Orange Theme) */
-.vision-theme {
-    border-top: 5px solid var(--secenderyColor);
-}
-.vision-theme .icon-wrapper {
-    background-color: rgba(243, 122, 32, 0.1);
-    color: var(--secenderyColor);
-}
-.vision-theme .list-marker {
-    color: var(--secenderyColor);
-    background: rgba(243, 122, 32, 0.1);
-}
-
-/* --- The Creative List Styling --- */
-.creative-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.creative-list li {
-    display: flex;
-    gap: 15px;
+.vision-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f57c00;
     margin-bottom: 20px;
-    align-items: flex-start;
 }
 
-/* The Number/Bullet styling */
-.list-marker {
-    font-weight: 700;
-    font-size: 14px;
-    min-width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    margin-top: 3px; /* Align with first line of text */
+.mission-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 20px;
 }
 
-.creative-list p {
+.values-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* List Items for Vision, Mission, and Values */
+.vision-list, .mission-list, .values-list {
+    list-style-type: none;
+    padding-left: 0;
     margin: 0;
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--paragraphColor);
 }
 
-/* --- Link Styling --- */
-.read-more-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+.vision-list li, .mission-list li, .values-list li {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.vision-list li strong, .mission-list li strong, .values-list li strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
     margin-top: 20px;
-    font-weight: 600;
-    color: var(--blackColor);
-    position: relative;
+    color: inherit;
+    transition: color 0.3s ease;
 }
-.read-more-link i {
-    transition: var(--transition);
+
+a:hover {
+    color: #0056b3;
 }
-.read-more-link:hover {
-    color: var(--secenderyColor);
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .vision-title, .mission-title, .values-title {
+        font-size: 24px;
+    }
+
+    .vision-list li, .mission-list li, .values-list li {
+        font-size: 14px;
+    }
+
+    a {
+        font-size: 14px;
+    }
 }
-.read-more-link:hover i {
-    transform: translateX(5px);
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .vision-section, .mission-section, .values-section {
+        padding: 15px;
+    }
+
+    .vision-title, .mission-title, .values-title {
+        font-size: 22px;
+    }
+
+    .vision-list li, .mission-list li, .values-list li {
+        font-size: 14px;
+    }
+
+    a {
+        font-size: 14px;
+    }
 }

@@ -1,20 +1,11 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact us | KUMSS</title>
+    <title>Our Educational Institutes | Krushi Udyog Mul Shikshan Sansthan (KUMSS)</title>
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/scrollCue.css" />
-    <link rel="stylesheet" href="assets/css/remixicon.css" />
-    <link rel="stylesheet" href="assets/css/flaticon.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-    
-      <!-- Icons -->
+    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css"
@@ -24,264 +15,70 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
+    <!-- CSS Files (same as index) -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/scrollCue.css" />
+    <link rel="stylesheet" href="assets/css/remixicon.css" />
+    <link rel="stylesheet" href="assets/css/flaticon.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
 
-    <link href="assets/img/favicon.png" type="image/x-icon" rel="icon" />
+    <link href="assets/kumss_log.png" type="image/x-icon" rel="icon" />
 
+    <!-- Page-only CSS (kept minimal, won't break your existing theme) -->
     <style>
-      /* CONTACT PAGE - clean, no bg shade */
-.page-hero{
-  padding: 70px 0 40px;
-  background: url('/assets/contact.avif');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-/* Hero background overlay */
-.page-hero{
-  position: relative;
-  overflow: hidden;
+ /* Basic Styles for the Gallery Section */
+.gallery-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
 }
 
-/* If your bg image is on .page-hero itself */
-.page-hero::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.534); /* overlay strength */
-  z-index: 0;
-}
-
-/* Keep hero content above overlay */
-.page-hero .container,
-.page-hero__wrap{
-  position: relative;
-  z-index: 1;
-}
-
-/* Optional: make text readable on bg */
-.page-hero h1,
-.page-hero p,
-.page-hero a,
-.page-hero .breadcrumb-clean{
-  color: #fff;
-}
-
-.page-hero .breadcrumb-clean a{
-  color: #fff;
-  opacity: .95;
-}
-.page-hero .breadcrumb-clean li + li::before{
-  color: rgba(255,255,255,0.75);
-}
-
-.page-hero__wrap{
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 22px;
-  align-items: center;
-}
-.page-hero__image{
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(11,42,91,.10);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.986);
-}
-.page-hero__image img{
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  display: block;
-}
-.page-hero__shape{
-  position: absolute;
-  right: -10px;
-  bottom: -10px;
-  width: 150px;
-  height: auto;
-  opacity: .9;
-  pointer-events: none;
-}
-.breadcrumb-clean{
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0;
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-  color: #6e6656;
-}
-.breadcrumb-clean li{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.breadcrumb-clean li + li::before{
-  content: "/";
-  color: #9c927d;
-}
-.breadcrumb-clean a{
-  text-decoration: none;
-  color: #0b2a5b;
-  font-weight: 700;
-}
-
-/* Section */
-.contact-page{
-  padding: 70px 0;
-}
-.section-head-center{
+.gallery-section .section-head {
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 30px;
 }
-.contact-grid{
+
+.gallery-section h2 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.gallery {
   display: grid;
-  grid-template-columns: 1.25fr .75fr;
-  gap: 18px;
-}
-.contact-card{
-  background: #fff;
-  border: 1px solid rgba(11,42,91,.10);
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 14px 34px rgba(0,0,0,.06);
-}
-.contact-info-title{
-  margin: 0 0 14px;
-  color: #0b2a5b;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
 }
 
-/* Form */
-.contact-form .form-control{
-  border-radius: 14px;
-  border: 1px solid rgba(11,42,91,.14);
-  padding: 12px 12px;
-}
-.contact-form .form-control:focus{
-  border-color: rgba(11,42,91,.35);
-  box-shadow: none;
-}
-.remember-line{
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 14px;
-  color: #6e6656;
-}
-.remember-line input{
-  margin-top: 4px;
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Info items */
-.info-item{
-  display: flex;
-  gap: 12px;
-  padding: 12px 0;
-  border-top: 1px dashed rgba(11,42,91,.15);
-}
-.info-item:first-of-type{
-  border-top: 0;
-  padding-top: 0;
-}
-.info-ic{
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(11,42,91,.08);
-  color: #0b2a5b;
-  flex: 0 0 44px;
-}
-.info-txt span{
+.gallery-item img {
+  width: 100%;
+  height: auto;
   display: block;
-  color: #6e6656;
-  font-size: 13px;
-  margin-bottom: 2px;
-}
-.info-txt a{
-  color: #0b2a5b;
-  font-weight: 800;
-  text-decoration: none;
-}
-.info-txt p{
-  color: #2c2a26;
-}
-/* =========================
-   MOBILE RESPONSIVE (ONLY for page-hero + contact-page)
-   ========================= */
-
-@media (max-width: 991px){
-
-  /* Hero: stack text + image */
-  .page-hero{
-    padding: 55px 0 30px;
-  }
-  .page-hero__wrap{
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .page-hero__image img{
-    height: 260px;
-  }
-  .page-hero__shape{
-    width: 120px;
-    right: -8px;
-    bottom: -8px;
-  }
-
-  /* Contact: stack form + info */
-  .contact-page{
-    padding: 55px 0;
-  }
-  .contact-grid{
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
+  transition: transform 0.3s ease-in-out;
 }
 
-@media (max-width: 575px){
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
 
-  .page-hero__image img{
-    height: 220px;
-  }
-
-  /* Breadcrumb wrap (prevents overflow) */
-  .breadcrumb-clean{
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  /* Cards spacing tighter */
-  .contact-card{
-    padding: 14px;
-    border-radius: 16px;
-  }
-
-  /* Form inputs */
-  .contact-form .form-control{
-    border-radius: 12px;
-    padding: 11px 12px;
-  }
-
-  /* Info items align better on small screens */
-  .info-item{
-    gap: 10px;
-  }
-  .info-ic{
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    flex: 0 0 40px;
-  }
+/* Add spacing between sections */
+.gallery-section + .gallery-section {
+  margin-top: 50px;
 }
 
 
-    </style>
+        </style>
   </head>
 
   <body>
-     <!-- Top Header (same as index) -->
+    <!-- Top Header (same as index) -->
     <div class="top-header-area style-3">
       <div class="container-fluid">
         <div class="row align-items-center">
@@ -336,7 +133,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="about.html">About us</a>
+              <a href="about.html" class="nav-link active">About us</a>
             </li>
 
             <li class="nav-item">
@@ -363,7 +160,7 @@
             <li class="nav-item"><a href="javascript:void(0)" class="dropdown-toggle nav-link">Careers</a></li>
 
             <li class="nav-item">
-              <a href="contact.html"  class="nav-link active">Contact <span>Us</span></a>
+              <a href="contact.html" class="nav-link">Contact <span>Us</span></a>
             </li>
           </ul>
 
@@ -414,7 +211,7 @@
             <a href="index.html" class="nav-link">Home</a>
           </li>
           <li class="responsive-menu-list without-icon">
-            <a href="about.html" >About us</a>
+            <a href="about.html" class="nav-link active">About us</a>
           </li>
 
           <li class="responsive-menu-list">
@@ -446,7 +243,7 @@
           </li>
 
           <li class="responsive-menu-list without-icon">
-            <a href="contact.html" class="nav-link active">Contact <span>Us</span></a>
+            <a href="contact.html" class="nav-link">Contact <span>Us</span></a>
           </li>
         </ul>
 
@@ -461,102 +258,90 @@
     </div>
 
 
-<!-- Contact Hero -->
-<section class="page-hero" id="contact">
+<section class="gallery-section" id="private-iti-karhati">
   <div class="container">
-    <div class="page-hero__wrap">
-      <div class="page-hero__content">
-        <h1>Contact Us</h1>
-        <ul class="breadcrumb-clean">
-          <li><a href="index.html">Home</a></li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
-
-      <div class="page-hero__image">
-        <img src="assets/contact.avif" alt="pages-image" />
+    <div class="section-head">
+      <h2>Private ITI Karhati</h2>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="assets/institute5.avif" alt="ITI Image 1" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- Get In Touch -->
-<section class="contact-page">
+<section class="gallery-section" id="news">
   <div class="container">
-
-    <div class="section-head-center">
-      <h2>Get In Touch</h2>
+    <div class="section-head">
+      <h2>News</h2>
     </div>
-
-    <div class="contact-grid">
-
-      <!-- Form -->
-      <div class="contact-card">
-        <form class="contact-form" action="#" method="post">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <input class="form-control" type="text" name="name" placeholder="Your name" required />
-            </div>
-            <div class="col-md-6">
-              <input class="form-control" type="tel" name="phone" placeholder="Your phone" required />
-            </div>
-            <div class="col-md-6">
-              <input class="form-control" type="email" name="email" placeholder="Your email" required />
-            </div>
-            <div class="col-md-6">
-              <input class="form-control" type="text" name="subject" placeholder="Your subject" />
-            </div>
-            <div class="col-12">
-              <textarea class="form-control" name="message" rows="5" placeholder="Your comments..." required></textarea>
-            </div>
-
-            <div class="col-12">
-              <label class="remember-line">
-                <input type="checkbox" name="remember" />
-                <span>Save my name, email, and website in this browser for the next time I comment.</span>
-              </label>
-            </div>
-
-            <div class="col-12">
-              <button class="default-btn border-0" type="submit">
-                Send Message <i class="fi fi-sr-arrow-up-right"></i>
-              </button>
-            </div>
-          </div>
-        </form>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="assets/news-one.png" alt="News Image 1" />
       </div>
-
-      <!-- Info -->
-      <div class="contact-card">
-        <h3 class="contact-info-title">Contact Information</h3>
-
-        <div class="info-item">
-          <div class="info-ic"><i class="fi fi-sr-phone-call" aria-hidden="true"></i></div>
-          <div class="info-txt">
-            <span>Call Us:</span>
-            <a href="tel:+91 94213 94242"> +91 94213 94242</a>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-ic"><i class="fi fi-sr-envelope" aria-hidden="true"></i></div>
-          <div class="info-txt">
-            <span>Mail Us:</span>
-            <a href="mailto:info@kumss.org">info@kumss.org</a>
-          </div>
-        </div>
-
-
-        <div class="info-item">
-          <div class="info-ic"><i class="fi fi-sr-marker" aria-hidden="true"></i></div>
-          <div class="info-txt">
-            <span>Location:</span>
-            <a href="https://share.google/6fCn1FIR8i3DeQaAH"><p class="mb-0">Krushi Udyog, Mul Shikshan Sanstha, A/p, Karhati, Malwadi, Maharashtra 412204</p></a>
-          </div>
-        </div>
-
+      <div class="gallery-item">
+        <img src="assets/news-two.png" alt="News Image 2" />
       </div>
+      <div class="gallery-item">
+        <img src="assets/news-three.png" alt="News Image 3" />
+      </div>
+      <div class="gallery-item">
+        <img src="assets/news-four.png" alt="News Image 4" />
+      </div>
+      <div class="gallery-item">
+        <img src="assets/news-five.png" alt="News Image 5" />
+      </div>
+       <div class="gallery-item">
+        <img src="assets/news-six.png" alt="News Image 5" />
+      </div>
+       <div class="gallery-item">
+        <img src="assets/news-seven.png" alt="News Image 5" />
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="gallery-section" id="lalitosh2024">
+  <div class="container">
+    <div class="section-head">
+      <h2>ललितोत्सव 2024</h2>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="assets/l2.jpeg" alt="Lalitosh 2024 Image 1" />
+      </div>
+      <div class="gallery-item">
+        <img src="assets/l3.jpeg" alt="Lalitosh 2024 Image 2" />
+      </div>
+      <div class="gallery-item">
+        <img src="assets/l4.jpeg" alt="Lalitosh 2024 Image 3" />
+      </div>
+      <div class="gallery-item">
+        <img src="assets/l5.jpeg" alt="Lalitosh 2024 Image 4" />
+      </div>
+      <div class="gallery-item">
+        <img src="assets/l6.jpeg" alt="Lalitosh 2024 Image 5" />
+      </div>
+       <div class="gallery-item">
+        <img src="assets/l7.jpeg" alt="Lalitosh 2024 Image 5" />
+      </div>
+       <div class="gallery-item">
+        <img src="assets/l1.jpeg" alt="Lalitosh 2024 Image 5" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="recruitments">
+  <div class="container">
+    <div class="section-head">
+      <h2>Recruitments</h2>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="assets/r1.jpg" alt="Recruitment Image 1" />
+      </div>
     </div>
   </div>
 </section>
@@ -640,24 +425,12 @@
     <button type="button" id="back-to-top">
       <i class="ri-arrow-up-double-fill"></i>
     </button>
-    <!-- End Back to Top -->
 
-    <!-- Js Files -->
-    <script
-      data-cfasync="false"
-      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-    ></script>
+    <!-- JS Files (same as index) -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/fslightbox.js"></script>
     <script src="assets/js/scrollCue.min.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-      data-cf-beacon='{"version":"2024.11.0","token":"5fe684bbe2954c839d4575e6915100ba","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
