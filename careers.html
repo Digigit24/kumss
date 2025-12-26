@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact us | KUMSS</title>
+    <title>Careers  | KUMSS</title>
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -28,254 +28,164 @@
     <link href="assets/img/favicon.png" type="image/x-icon" rel="icon" />
 
     <style>
-      /* CONTACT PAGE - clean, no bg shade */
-.page-hero{
-  padding: 70px 0 40px;
-  background: url('/assets/contact.avif');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-/* Hero background overlay */
-.page-hero{
-  position: relative;
-  overflow: hidden;
+/* General Section Styling */
+.careers {
+  background-color: #ffffff; /* Light gray background */
+  padding: 80px 0;
+  font-family: Arial, sans-serif;
 }
 
-/* If your bg image is on .page-hero itself */
-.page-hero::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.534); /* overlay strength */
-  z-index: 0;
+.careers .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Keep hero content above overlay */
-.page-hero .container,
-.page-hero__wrap{
-  position: relative;
-  z-index: 1;
+/* Section Header Styling */
+.section-head {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-/* Optional: make text readable on bg */
-.page-hero h1,
-.page-hero p,
-.page-hero a,
-.page-hero .breadcrumb-clean{
-  color: #fff;
+.section-head .line {
+  width: 80px;
+  height: 4px;
+  background-color: #106494; /* Primary blue */
+  margin: 0 auto 20px;
 }
 
-.page-hero .breadcrumb-clean a{
-  color: #fff;
-  opacity: .95;
-}
-.page-hero .breadcrumb-clean li + li::before{
-  color: rgba(255,255,255,0.75);
+.section-head h2 {
+  font-size: 36px;
+  color: #106494; /* Primary brand blue */
+  font-weight: bold;
 }
 
-.page-hero__wrap{
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 22px;
-  align-items: center;
+.section-head p {
+  font-size: 18px;
+  color: #777372; /* Soft steel gray */
+  line-height: 1.6;
+  margin-top: 10px;
 }
-.page-hero__image{
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(11,42,91,.10);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.986);
+
+/* Recruitment Info Section */
+.recruitment-info {
+  margin-top: 50px;
 }
-.page-hero__image img{
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  display: block;
+
+.info-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
 }
-.page-hero__shape{
-  position: absolute;
-  right: -10px;
-  bottom: -10px;
-  width: 150px;
-  height: auto;
-  opacity: .9;
-  pointer-events: none;
+
+/* Left Section (Contact and Info) */
+.info-left {
+  flex: 1;
+  text-align: left;
 }
-.breadcrumb-clean{
+
+.info-left h3 {
+  font-size: 28px;
+  color: #0B3769; /* Secondary deep blue */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.info-left p {
+  font-size: 16px;
+  color: #534747; /* Charcoal text gray */
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.info-left h4 {
+  font-size: 20px;
+  color: #106494; /* Primary brand blue */
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.info-left ul {
   list-style: none;
   padding: 0;
-  margin: 10px 0 0;
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-  color: #6e6656;
-}
-.breadcrumb-clean li{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.breadcrumb-clean li + li::before{
-  content: "/";
-  color: #9c927d;
-}
-.breadcrumb-clean a{
-  text-decoration: none;
-  color: #0b2a5b;
-  font-weight: 700;
+  margin-top: 10px;
 }
 
-/* Section */
-.contact-page{
-  padding: 70px 0;
+.info-left li {
+  font-size: 16px;
+  color: #534747;
+  margin-bottom: 10px;
 }
-.section-head-center{
+
+.info-left a {
+  color: #106494;
+  text-decoration: none;
+}
+
+.info-left a:hover {
+  text-decoration: underline;
+}
+
+/* Right Section (One Image at a Time) */
+.info-right {
+  flex: 1;
   text-align: center;
-  margin-bottom: 22px;
-}
-.contact-grid{
-  display: grid;
-  grid-template-columns: 1.25fr .75fr;
-  gap: 18px;
-}
-.contact-card{
-  background: #fff;
-  border: 1px solid rgba(11,42,91,.10);
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 14px 34px rgba(0,0,0,.06);
-}
-.contact-info-title{
-  margin: 0 0 14px;
-  color: #0b2a5b;
 }
 
-/* Form */
-.contact-form .form-control{
-  border-radius: 14px;
-  border: 1px solid rgba(11,42,91,.14);
-  padding: 12px 12px;
-}
-.contact-form .form-control:focus{
-  border-color: rgba(11,42,91,.35);
-  box-shadow: none;
-}
-.remember-line{
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 14px;
-  color: #6e6656;
-}
-.remember-line input{
-  margin-top: 4px;
+.info-right h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #106494; /* Primary brand blue */
+  margin-bottom: 30px;
 }
 
-/* Info items */
-.info-item{
-  display: flex;
-  gap: 12px;
-  padding: 12px 0;
-  border-top: 1px dashed rgba(11,42,91,.15);
-}
-.info-item:first-of-type{
-  border-top: 0;
-  padding-top: 0;
-}
-.info-ic{
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(11,42,91,.08);
-  color: #0b2a5b;
-  flex: 0 0 44px;
-}
-.info-txt span{
-  display: block;
-  color: #6e6656;
-  font-size: 13px;
-  margin-bottom: 2px;
-}
-.info-txt a{
-  color: #0b2a5b;
-  font-weight: 800;
-  text-decoration: none;
-}
-.info-txt p{
-  color: #2c2a26;
-}
-/* =========================
-   MOBILE RESPONSIVE (ONLY for page-hero + contact-page)
-   ========================= */
-
-@media (max-width: 991px){
-
-  /* Hero: stack text + image */
-  .page-hero{
-    padding: 55px 0 30px;
-  }
-  .page-hero__wrap{
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .page-hero__image img{
-    height: 260px;
-  }
-  .page-hero__shape{
-    width: 120px;
-    right: -8px;
-    bottom: -8px;
-  }
-
-  /* Contact: stack form + info */
-  .contact-page{
-    padding: 55px 0;
-  }
-  .contact-grid{
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
+.info-right .img-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Set maximum width for images */
+  height: 400px; /* Fixed height */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
-@media (max-width: 575px){
-
-  .page-hero__image img{
-    height: 220px;
-  }
-
-  /* Breadcrumb wrap (prevents overflow) */
-  .breadcrumb-clean{
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  /* Cards spacing tighter */
-  .contact-card{
-    padding: 14px;
-    border-radius: 16px;
-  }
-
-  /* Form inputs */
-  .contact-form .form-control{
-    border-radius: 12px;
-    padding: 11px 12px;
-  }
-
-  /* Info items align better on small screens */
-  .info-item{
-    gap: 10px;
-  }
-  .info-ic{
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    flex: 0 0 40px;
-  }
+/* Image Styling */
+.info-right img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the full image is visible */
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
 }
 
+.info-right img.active {
+  opacity: 1;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .info-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-left,
+  .info-right {
+    flex: none;
+    width: 100%;
+  }
+
+  .info-right .img-container {
+    width: 100%;
+    max-width: 100%; /* Allow full-width on smaller screens */
+    height: auto;
+  }
+}
 
     </style>
   </head>
@@ -356,11 +266,11 @@
            
 
             <li class="nav-item">
-            <a href="/careers.html" class="nav-link">Careers</a>
+            <a href="/careers.html" class="nav-link active">Careers</a>
           </li>
 
             <li class="nav-item">
-              <a href="contact.html"  class="nav-link active">Contact <span>Us</span></a>
+              <a href="contact.html"  class="nav-link">Contact <span>Us</span></a>
             </li>
           </ul>
 
@@ -433,13 +343,13 @@
           </li>
 
            <li class="responsive-menu-list without-icon">
-            <a href="/careers.html" class="nav-link">Careers</a>
+            <a href="/careers.html" class="nav-link active">Careers</a>
           </li>
 
          
 
           <li class="responsive-menu-list without-icon">
-            <a href="contact.html" class="nav-link active">Contact <span>Us</span></a>
+            <a href="contact.html" class="nav-link">Contact <span>Us</span></a>
           </li>
         </ul>
 
@@ -453,108 +363,43 @@
       </div>
     </div>
 
-
-<!-- Contact Hero -->
-<section class="page-hero" id="contact">
+<section class="careers">
   <div class="container">
-    <div class="page-hero__wrap">
-      <div class="page-hero__content">
-        <h1>Contact Us</h1>
-        <ul class="breadcrumb-clean">
-          <li><a href="index.html">Home</a></li>
-          <li>Contact Us</li>
-        </ul>
-      </div>
+    <div class="section-head">
+      <div class="line"></div>
+      <h2>Careers</h2>
+      <p>Join us and be a part of our growth journey.</p>
+    </div>
 
-      <div class="page-hero__image">
-        <img src="assets/contact.avif" alt="pages-image" />
+    <div class="recruitment-info">
+      <div class="info-content">
+        <div class="info-left">
+          <h3>Current Openings</h3>
+          <p>We are always looking for talented individuals to join our team. If you have a passion for growth and innovation, we would love to hear from you.</p>
+          
+          <h4>How to Apply:</h4>
+          <p>Send your CV to <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></p>
+          
+          <h4>Contact:</h4>
+          <p>If you have any questions or need further information, feel free to reach out to us at:</p>
+          <ul>
+            <li><strong>Phone:</strong><a href="91+ 9423684242">9423684242</a> / <a href="91+ 9423694242">9423694242</a></li>
+            <li><strong>Email:</strong> <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+          </ul>
+        </div>
+        
+        <div class="info-right">
+          <h4>Explore Our Recruitments:</h4>
+          <div class="img-container" id="img-container">
+            <img src="/assets/rec-one.jpg" alt="Recruitment Process Image 1" class="active">
+            <img src="/assets/rec-two.jpg" alt="Recruitment Process Image 2">
+            <img src="/assets/rec-three.jpg" alt="Recruitment Process Image 3">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Get In Touch -->
-<section class="contact-page">
-  <div class="container">
-
-    <div class="section-head-center">
-      <h2>Get In Touch</h2>
-    </div>
-
-    <div class="contact-grid">
-
-      <!-- Form -->
-      <div class="contact-card">
-        <form class="contact-form" action="#" method="post">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <input class="form-control" type="text" name="name" placeholder="Your name" required />
-            </div>
-            <div class="col-md-6">
-              <input class="form-control" type="tel" name="phone" placeholder="Your phone" required />
-            </div>
-            <div class="col-md-6">
-              <input class="form-control" type="email" name="email" placeholder="Your email" required />
-            </div>
-            <div class="col-md-6">
-              <input class="form-control" type="text" name="subject" placeholder="Your subject" />
-            </div>
-            <div class="col-12">
-              <textarea class="form-control" name="message" rows="5" placeholder="Your comments..." required></textarea>
-            </div>
-
-            <div class="col-12">
-              <label class="remember-line">
-                <input type="checkbox" name="remember" />
-                <span>Save my name, email, and website in this browser for the next time I comment.</span>
-              </label>
-            </div>
-
-            <div class="col-12">
-              <button class="default-btn border-0" type="submit">
-                Send Message <i class="fi fi-sr-arrow-up-right"></i>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <!-- Info -->
-      <div class="contact-card">
-        <h3 class="contact-info-title">Contact Information</h3>
-
-        <div class="info-item">
-          <div class="info-ic"><i class="fi fi-sr-phone-call" aria-hidden="true"></i></div>
-          <div class="info-txt">
-            <span>Call Us:</span>
-            <a href="tel:+91 94213 94242"> +91 94213 94242</a>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-ic"><i class="fi fi-sr-envelope" aria-hidden="true"></i></div>
-          <div class="info-txt">
-            <span>Mail Us:</span>
-            <a href="mailto:info@kumss.org">info@kumss.org</a>
-          </div>
-        </div>
-
-
-        <div class="info-item">
-          <div class="info-ic"><i class="fi fi-sr-marker" aria-hidden="true"></i></div>
-          <div class="info-txt">
-            <span>Location:</span>
-            <a href="https://share.google/6fCn1FIR8i3DeQaAH"><p class="mb-0">Krushi Udyog, Mul Shikshan Sanstha, A/p, Karhati, Malwadi, Maharashtra 412204</p></a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
 
      <!-- Footer (same as index) -->
     <footer class="footer" id="footer">
@@ -652,5 +497,30 @@
       data-cf-beacon='{"version":"2024.11.0","token":"5fe684bbe2954c839d4575e6915100ba","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
       crossorigin="anonymous"
     ></script>
+    <script>
+     // Get all the images and container
+const images = document.querySelectorAll("#img-container img");
+let currentIndex = 0;
+
+// Function to change to the next image
+function changeImage() {
+  // Hide the current image
+  images[currentIndex].classList.remove("active");
+
+  // Increment the index to show the next image
+  currentIndex = (currentIndex + 1) % images.length; // Loop back to first image after the last
+
+  // Show the next image
+  images[currentIndex].classList.add("active");
+}
+
+// Automatically change image every 3 seconds
+setInterval(changeImage, 3000);
+
+// Initially show the first image
+changeImage();
+
+
+    </script>
   </body>
 </html>
