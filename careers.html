@@ -181,9 +181,15 @@
   }
 
   .info-right .img-container {
-    width: 100%;
-    max-width: 100%; /* Allow full-width on smaller screens */
-    height: auto;
+    width: 50px;
+    max-width: 60px; /* Allow full-width on smaller screens */
+    height: auto; /* Allow images to adjust height automatically */
+    margin-bottom: 20px; /* Add margin between image and content */
+  }
+
+  .info-right img {
+    height: auto; /* Allow the images to scale properly */
+    object-fit: contain; /* Ensure images fill the container while maintaining aspect ratio */
   }
 }
 
