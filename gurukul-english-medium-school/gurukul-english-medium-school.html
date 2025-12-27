@@ -435,6 +435,165 @@ img{ max-width: 100%; display: block; }
                                 height: 30%;
                                 margin: 0;
                             }
+                               
+/* General Section Styling */
+.leadership-section {
+  padding: 80px 0;
+  background-color: #2f3390;
+  text-align: center;
+  display: flex;
+  justify-content: center; /* Centering the content horizontally */
+  align-items: center; /* Centering the content vertically */
+  min-height: 100vh;  /* Ensures the section takes up full viewport height */
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box;
+}
+
+/* Section Header Styling */
+.com-section-header .com-section-subtitle {
+  font-size: 16px;
+  color: #ffe6c1;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.com-section-header .com-section-title {
+  font-size: 36px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Leadership Layout */
+.leader-cards {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  gap: 40px;  /* Space between each leader item */
+  margin-top: 40px;
+  width: 100%;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Leader Item */
+.leader-card-item {
+  text-align: center;
+  width: 280px;  /* Set width to maintain consistent size */
+  margin-bottom: 40px; /* Space at the bottom of the cards */
+}
+
+/* Centered Leader Item (Chairman) */
+.leader-card-item.center {
+  width: 400px; /* Larger width for the Chairman */
+  font-size: 1.2em; /* Increase text size for the Chairman */
+}
+
+/* Leader Image Styling */
+.leader-image {
+  width: 220px;  /* Larger size for Chairman */
+  height: 220px; /* Larger size for Chairman */
+  margin: 0 auto 20px;  /* Center the image and add space below */
+  border-radius: 50%;  /* Make the image circular */
+  overflow: hidden;  /* Ensure the image fits inside the circle */
+}
+
+.leader-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensure the image fits perfectly */
+}
+
+/* Leader Title and Name Styling */
+.leader-position {
+  font-size: 22px;  /* Larger font size for Chairman */
+  color: #d7e6f8;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.leader-name {
+  font-size: 24px;  /* Larger font size for Chairman */
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Divider Styling */
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: #d1e6ff;  /* A thin line divider */
+  width: 80%;
+  margin: 10px auto;  /* Center the divider and add space */
+}
+
+/* Leader Description Styling */
+.leader-card-item p {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Responsive Styling for Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Section Title */
+  .com-section-header .com-section-title {
+    font-size: 28px;  /* Adjust title size */
+    margin-bottom: 20px;  /* Add space below the title */
+  }
+
+  /* Leader Image */
+  .leader-image {
+    width: 120px;  /* Smaller image for mobile */
+    height: 120px;
+  }
+
+  /* Leader Position */
+  .leader-position {
+    font-size: 18px;
+  }
+
+  /* Leader Name */
+  .leader-name {
+    font-size: 20px;
+  }
+
+  /* Cards Layout for Mobile */
+  .leader-card-item {
+    width: 100%;  /* Cards will take full width */
+    max-width: 350px; /* Limit the card's max-width on mobile */
+    margin: 10px auto;  /* Center and space out the cards */
+  }
+
+  /* Centered Leader (Chairman) */
+  .leader-card-item.center {
+    width: 100%;  /* Full width for Chairman on mobile */
+    font-size: 1em; /* Reset text size for Chairman on mobile */
+  }
+
+  /* Adjust Text Size */
+  .leader-card-item p {
+    font-size: 14px;  /* Slightly smaller text for mobile */
+  }
+
+  /* Rearranging the Vice-Chairman to be first on mobile */
+  .leader-card-item:nth-child(2) {
+    order: -1; /* Move Vice-Chairman card to the first position */
+  }
+
+  /* Rearranging the Chairman's position (if needed) */
+  .leader-card-item:nth-child(1) {
+    order: 1; /* Ensure Chairman card stays in the middle on mobile */
+  }
+}
+ .contact-link {
+    color:#2f3390;
+    text-decoration:none;
+    }
+.contact-link:hover {
+    color:#d66615;
+    text-decoration:none;
+    }    
 </style>
 </head>
 
@@ -480,23 +639,10 @@ img{ max-width: 100%; display: block; }
 
                 <!-- Links -->
                 <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="/index.html">Home</a></li>
+                    <li><a class="gm-link" href="#">Home</a></li>
 
-                   <li class="gm-item gm-dropdown" data-dropdown>
-                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
-                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
-                            aria-controls="aboutMenu">
-                            About
-                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
-                        </button>
-
-                        <ul class="gm-submenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="#">About Us</a></li>
-                            <li role="none"><a role="menuitem" href="#">History Of The School</a></li>
-                            <li role="none"><a role="menuitem" href="#">Gallery</a>
-                            </li>
-                        </ul>
-                    </li>
+                    <li><a class="gm-link" href="/gurukul-english-medium-school/about.html">About</a></li>
+                  
                       <li><a class="gm-link" href="/index.html">Academics</a></li>
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
@@ -508,14 +654,14 @@ img{ max-width: 100%; display: block; }
                         </button>
 
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="/institute/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/index.html">New English School Dhakale</a></li>
-                            <li role="none"><a role="menuitem" href="/index.html">Primary School Karhati Tembha</a>
+                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a>
                             </li>
-                            <li role="none"><a role="menuitem" href="/index.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/index.html">Gurukul English Medium School</a>
+                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a>
                             </li>
-                            <li role="none"><a role="menuitem" href="/index.html">Shardabai Pawar Kala
+                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala
                                     Mahavidhyalaya</a></li>
                         </ul>
                     </li>
@@ -614,284 +760,117 @@ img{ max-width: 100%; display: block; }
                 <!-- Faculty 1 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Shri. Shrikant Patil" loading="lazy">
+                        <img src="/assets/supriya-aherkar-principal.jpeg"
+                            alt="MRS. SUPRIYA AHERKAR" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs- Anita Ravindra Chavan</h3>
+                        <h3 class="faculty-name">MRS. SUPRIYA AHERKAR</h3>
                         <p class="faculty-designation">Principal</p>
-                        <p class="faculty-qualification">M.A., M.Ed., Ph.D.</p>
+                        <p class="faculty-qualification">MSC.B.ED</p>
                     </div>
                 </div>
 
                 <!-- Faculty 2 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Sunita Deshmukh" loading="lazy">
+                        <img src="/assets/ashwini-khomane.jpeg"
+                            alt="MRS. ASHWINI KHOMANE" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Bhausaheb Pandurang Pisal</h3>
-                        <p class="faculty-designation">Supervisor</p>
-                        <p class="faculty-qualification">B.A.B.P.Ed.</p>
+                        <h3 class="faculty-name">MRS. ASHWINI KHOMANE</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">M.A.B.ED (ENG) MBA (HR)</p>
                     </div>
                 </div>
 
                 <!-- Faculty 3 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Rajesh Kumar" loading="lazy">
+                        <img src="/assets/asmita-wabale.jpeg"
+                            alt="MRS. ASMITA WABALE" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mr. Abasaheb Malhari Kokare</h3>
-                        <p class="faculty-designation">Asst.Teacher</p>
-                        <p class="faculty-qualification">M.A. B.Ed.</p>
+                        <h3 class="faculty-name">MRS. ASMITA WABALE</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">M.A. B.ED.</p>
                     </div>
                 </div>
 
                 <!-- Faculty 4 -->
                 <div class="faculty-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Meera Joshi" loading="lazy">
+                        <img src="/assets/bhagyashri-bhapkar.jpeg"
+                            alt="MRS. BHAGYSHRI BHAPKAR" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Bhapkar Manjushri Lalasaheb</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.sc(math's),B.ed,DSM</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hidden Faculty Grid - 4 More Cards -->
-            <div class="faculty-grid hidden" id="hiddenFacultyGrid">
-                <!-- Faculty 5 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Dr. Anand Rao" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">KHAIRE RESHMA VYANKAT</h3>
-                        <p class="faculty-designation">ASSISTANT TEACHER</p>
-                        <p class="faculty-qualification">M.Sc.B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- Faculty 6 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Vikram Singh" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Komal Chandgude</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">B.C.S(Computer Science) B.Ed (Appear)</p>
-                        <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>10+ Years Experience</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Faculty 7 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1551836026-d5c2c5af91f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Anjali Sharma" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Amol Subhash Kambale</h3>
-                        <p class="faculty-designation">ASSISTANT TEACHER</p>
-                        <p class="faculty-qualification">A.T.D.A.M.G , D Art & Painting.D.S.M</p>
-                    </div>
-                </div>
-
-                <!-- Faculty 8 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1556157382-2eda3e8a9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Ravi Verma" loading="lazy">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. ALLABAKSH HUSEN SHAIKH</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.COM,B.P.ED.,D.S.M.</p>
+                        <h3 class="faculty-name">MRS. BHAGYSHRI BHAPKAR</h3>
+                        <p class="faculty-designation">Teacher</p>
+                        <p class="faculty-qualification">BSC MICRO.DMLT</p>
                     </div>
                 </div>
             </div>
 
             <!-- View More Button -->
             <div class="view-more-wrapper">
-                <button class="view-more-btn" id="viewMoreBtn">
-                    <span class="btn-text">View All Faculty</span>
-                    <i class="fas fa-chevron-down btn-icon"></i>
+                <button class="view-more-btn">
+                    <a style="text-decoration: none; color: white;" href="/gurukul-english-medium-school/staff.html"> <span class="btn-text">View All Faculty</span> <i class="fas fa-chevron-down btn-icon"></i></a>
                 </button>
             </div>
         </div>
     </section>
 
 <!-- Leadership Section -->
-<section class="leadership-section" id="leadership">
+<section class="leadership-section">
     <div class="container">
-        <div class="section-header text-center">
-            <span class="section-subtitle">Our Leaders</span>
-            <h2 class="section-title">Executive Committee</h2>
+        <div class="com-section-header text-center">
+            <span class="com-section-subtitle">Our Leaders</span>
+            <h2 class="com-section-title">Executive Committee</h2>
         </div>
 
         <div class="leader-cards">
+
+            <!-- Vice-Chairman on the left -->
             <div class="leader-card-item">
-                <div class="leader-card-content">
-                    <div class="leader-image">
-                        <img src="assets/ajit-pawar.jpg" alt="Shri. Ajit Anantrao Pawar">
-                    </div>
-                    <h3 class="leader-position">Chairman</h3>
-                    <h4 class="leader-name">Shri. Ajit Anantrao Pawar</h4>
-                    <p><strong>Deputy Chief Minister of Maharashtra</strong></p>
-                    <p>Leading KUMSS since 2004 with visionary leadership and commitment to education.</p>
+                <div class="leader-image">
+                    <img src="/assets/icon-person.webp" alt="Shri. Dasharathrao Babaso Dhumal">
                 </div>
+                <h3 class="leader-position">Vice-Chairman</h3>
+                <h4 class="leader-name">Shri. Dasharathrao Babaso Dhumal</h4>
+                <hr class="divider">
+                <p><strong>Educational Visionary</strong></p>
+                <p>Dedicated to providing quality education and skill development opportunities.</p>
             </div>
 
-            <div class="leader-card-item">
-                <div class="leader-card-content">
-                    <div class="leader-image">
-                        <img src="assets/dasharathrao-dhumal.jpg" alt="Shri. Dasharathrao Babaso Dhumal">
-                    </div>
-                    <h3 class="leader-position">Vice-Chairman</h3>
-                    <h4 class="leader-name">Shri. Dasharathrao Babaso Dhumal</h4>
-                    <p><strong>Educational Visionary</strong></p>
-                    <p>Dedicated to providing quality education and skill development opportunities.</p>
+             <!-- Chairman in the center -->
+            <div class="leader-card-item center">
+                <div class="leader-image">
+                    <img src="/assets/ajit-pawar.jfif" alt="Shri. Ajit Anantrao Pawar">
                 </div>
+                <h3 class="leader-position">Chairman</h3>
+                <h4 class="leader-name">Shri. Ajit Anantrao Pawar</h4>
+                <hr class="divider">
+                <p><strong>Deputy Chief Minister of Maharashtra</strong></p>
+                <p>Leading KUMSS since 2004 with visionary leadership and commitment to education.</p>
             </div>
 
+            <!-- Secretary on the right -->
             <div class="leader-card-item">
-                <div class="leader-card-content">
-                    <div class="leader-image">
-                        <img src="assets/prafulla-taware.jpg" alt="Shri. Prafulla Bhimdeo Taware">
-                    </div>
-                    <h3 class="leader-position">Secretary</h3>
-                    <h4 class="leader-name">Shri. Prafulla Bhimdeo Taware</h4>
-                    <p><strong>Administrative Head</strong></p>
-                    <p>Managing day-to-day operations and strategic planning.</p>
+                <div class="leader-image">
+                    <img src="/assets/icon-person.webp" alt="Shri. Prafulla Bhimdeo Taware">
                 </div>
+                <h3 class="leader-position">Secretary</h3>
+                <h4 class="leader-name">Shri. Prafulla Bhimdeo Taware</h4>
+                <hr class="divider">
+                <p><strong>Administrative Head</strong></p>
+                <p>Managing day-to-day operations and strategic planning.</p>
             </div>
         </div>
     </div>
 </section>
-
-<style>
-  /* General Section Styling */
-  .leadership-section {
-    padding: 80px 0;
-    background-color: #f4f7fa;
-    text-align: center;
-    display: flex;
-    justify-content: center;  /* Centering the content horizontally */
-    align-items: center; /* Centering the content vertically */
-    min-height: 100vh;  /* Ensures the section takes up full viewport height */
-  }
-
-  .section-header .section-subtitle {
-    font-size: 16px;
-    color: #106494;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  .section-header .section-title {
-    font-size: 36px;
-    color: #0b3769;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-
-  /* Leadership Cards Layout */
-  .leader-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ensures responsive cards */
-    gap: 20px;
-    margin-top: 40px;
-    padding: 0 20px;
-    justify-items: center;  /* Ensures that the cards are centered horizontally */
-    max-width: 1200px;  /* Optional, to prevent cards from becoming too large */
-  }
-
-  /* Leader Card Item */
-  .leader-card-item {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%;
-    max-width: 300px; /* Ensure cards don't grow too large */
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-
-  .leader-card-item:hover {
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-  }
-
-  .leader-image img {
-    width: 120px; /* Fixed width for consistency */
-    height: 120px; /* Fixed height to make images uniform */
-    object-fit: cover;
-    border-radius: 50%; /* Circular images */
-    margin-bottom: 15px;
-  }
-
-  .leader-position {
-    font-size: 18px;
-    color: #0b3769;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .leader-name {
-    font-size: 20px;
-    color: #0b3769;
-    margin-bottom: 15px;
-  }
-
-  .leader-card-item p {
-    font-size: 16px;
-    color: #534747;
-    line-height: 1.6;
-  }
-
-  /* Responsive Styling */
-  @media (max-width: 768px) {
-    .section-header .section-title {
-      font-size: 28px;
-    }
-
-    .leader-image img {
-      width: 100px; /* Smaller images on mobile */
-      height: 100px;
-    }
-
-    .leader-position {
-      font-size: 16px;
-    }
-
-    .leader-name {
-      font-size: 18px;
-    }
-  }
-</style>
-
-
 
     <!-- testimonials-->
  <section class="testimonials" id="testimonials">
@@ -966,9 +945,10 @@ img{ max-width: 100%; display: block; }
                         </div>
                         <div>
                             <h3>Address</h3>
-                            <p>Krushi Udyog Mul Shikshan Sanstha,<br>
+                            <p>
+                                 <a class="contact-link" href="https://share.google/1CXEkizvH1qKzOb2L">Krushi Udyog Mul Shikshan Sanstha,<br>
                                 A/p - Karhati, Tal – Baramati,<br>
-                                Dist - Pune, 412204</p>
+                                Dist - Pune, 412204</a></p>
                         </div>
                     </div>
 
@@ -978,9 +958,10 @@ img{ max-width: 100%; display: block; }
                         </div>
                         <div>
                             <h3>Phone</h3>
-                            <p>+91 94213 94242<br>
-                                +91 94236 84242<br>
-                                +91 94236 94242</p>
+                            <p>
+                               <a class="contact-link" href="tel: +91 94236 84242">+91 94236 84242</a><br>
+                               <a class="contact-link" href="tel:  +91 94236 94242"> +91 94236 94242</a>
+                        </p>
                         </div>
                     </div>
 
@@ -990,8 +971,9 @@ img{ max-width: 100%; display: block; }
                         </div>
                         <div>
                             <h3>Email</h3>
-                            <p>info@kumss.org<br>
-                                iti@kumss.org</p>
+                            <p> <a class="contact-link" href="mailto:info@kumss.org">info@kumss.org</a><br>
+                               <a class="contact-link" href="mailto:iti@kumss.org">iti@kumss.org</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1047,12 +1029,11 @@ img{ max-width: 100%; display: block; }
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About KUMSS</a></li>
-                        <li><a href="#vision-mission">Vision & Mission</a></li>
-                        <li><a href="#courses">Programs</a></li>
-                        <li><a href="#leadership">Leadership</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Academics</a></li>
+                         <li><a href="#">Staff</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -1061,10 +1042,10 @@ img{ max-width: 100%; display: block; }
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="#">New English School, Dhakale</a></li>
-                        <li><a href="#">Primary School, Tembha</a></li>
-                        <li><a href="#">KUMSS Private I.T.I</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
                     </ul>
                 </div>
 
@@ -1073,9 +1054,12 @@ img{ max-width: 100%; display: block; }
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Contact Info</h3>
                     <ul class="footer-links">
-                        <li><a href="tel:+919421394242">+91 94213 94242</a></li>
-                        <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
-                        <li><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                        <li><i class="fas fa-phone"></i>
+<a href="tel:+919421394242">+91 94213 94242</a></li>
+                        <li><i class="fas fa-envelope"></i>
+<a href="mailto:info@kumss.org">info@kumss.org</a></li>
+                        <li><i class="fas fa-envelope"></i>
+<a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
                     </ul>
                 </div>
             </div>

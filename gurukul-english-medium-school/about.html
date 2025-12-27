@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> About | Gurukul English Medium School</title>
+    <title>Gurukul English Medium School | Established in 2021</title>
     <link rel="icon" href="https://kumss.org/assets/kumss_log.png" type="image/x-icon">
 
     <!-- Fonts -->
@@ -36,36 +36,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
  <style>
-                  /* =========================================================
-   GLOBAL BASICS
-========================================================= */
-:root {
-            /* --- TYPOGRAPHY --- */
-            --heading-font-family: "Gantari", sans-serif;
-            --body-font-family: "Poppins", sans-serif;
-            --fontSize: 16px;
-
-            --primaryColor: #ff9704;
-            --secenderyColor: #f37a20;
-            --whiteColor: #ffffff;
-            --lightBgColor: #f4fbf7;
-            --blackColor: #2f3390;
-            --paragraphColor: #4a4a4a;
-            --linkColor: #2f3390;
-            --linkHoverColor: #f37a20;
-            --btnBgColor: #f37a20;
-            --btnTextColor: #ffffff;
-            --btnHoverBgColor: #d66615;
-            --borderColor: #e0ece4;
-            --transition: all 0.4s ease-in-out;
-
-            /* Spacing */
-            --section-padding-lg: 10rem 2rem;
-            --section-padding-md: 7rem 2rem;
-            --section-padding-sm: 5rem 1.5rem;
-            --container-max: 1400px;
-        }
-
+               
+   
 *{ box-sizing: border-box; }
 
 html,body{
@@ -74,8 +46,8 @@ html,body{
   font-family: "Poppins", sans-serif;
 }
 
-.container{
-  width: min(1200px, 100%);
+.hero-container{
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -103,21 +75,428 @@ html,body{
   }
 }
 
+.about-hero{
+    min-height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 100px;
+    background:url('/assets/about-bg-hero-img.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.about-content {
+    text-align: center;
+    height: auto;
+}
 
+.about-content h3{
+  margin: 0 0 8px;
+  color: #ffefcb;
+  font-size: clamp(1.4rem, 2.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.about-content h1{
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+/* hero button */
+.hero-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: var(--secenderyColor);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 0;
+  margin: 0;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.hero-btn:hover{
+  transform: translateY(-2px);
+}
+
+/* mobile tuning (video still ON) */
+@media (max-width: 768px){
+
+  .about-content{
+    max-width: 100%;
+    padding: 7px 14px;
+    padding-top: 20px;
+  }
+
+  .about-content p{
+    font-size: 0.98rem;
+  }
+}
+
+/* Mission and Vision Section */
+.mission-vision {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #e9f1fb);
+}
+
+/* Vision and Mission Content with Images */
+.mission-vision .vision-content,
+.mission-vision .mission-content {
+    display: flex;
+    align-items: center;
+    margin: 40px 100px 40px 100px; 
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.mission-vision .vision-content:hover,
+.mission-vision .mission-content:hover {
+    background-color: #eaf4ff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.mission-vision .vision-content img,
+.mission-vision .mission-content img {
+    max-width: 70%;
+    height: auto;
+    width: 35%;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+.mission-vision .vision .text,
+.mission-vision .mission .text {
+    max-width: 55%;
+}
+
+.mission-vision h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #233f92;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.mission-vision h2::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #233f92;
+    bottom: -10px;
+    left: 0;
+}
+
+.mission-vision p {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.mission-vision ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.mission-vision ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.mission-vision ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #233f92;
+}
+
+.mission-vision .vision p,
+.mission-vision .mission p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mission-vision {
+        padding: 30px 10px;
+    }
+
+    .mission-vision .vision-content,
+    .mission-vision .mission-content {
+        flex-direction: column;
+        margin-bottom: 10px !important;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .mission-vision .vision-content img,
+    .mission-vision .mission-content img {
+        margin-right: 0;
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .mission-vision h2 {
+        font-size: 24px;
+    }
+
+    .mission-vision p {
+        font-size: 16px;
+    }
+
+    .mission-vision ul li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mission-vision h2 {
+        font-size: 22px;
+    }
+
+    .mission-vision p {
+        font-size: 14px;
+    }
+
+    .mission-vision ul li {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   OPTIONAL: BASIC SECTION SPACING HELPERS
+   (won't break your existing institute.css)
+========================================================= */
+
+section{ width: 100%; }
+
+img{ max-width: 100%; display: block; }
 
 
 @media (max-width: 576px){
+
    .footer-logo-img {
                                 width: 30%;
                                 height: 30%;
                                 margin-left: 115px !important;
                             }
 }
+
+
  .footer-logo-img {
                                 width: 30%;
                                 height: 30%;
                                 margin: 0;
                             }
+ .contact-link {
+    color:#2f3390;
+    text-decoration:none;
+    }
+.contact-link:hover {
+    color:#d66615;
+    text-decoration:none;
+    } 
+    
+/* --- Variables for easy customization --- */
+:root {
+    --primary-blue: #2f3390;
+    --accent-orange: #ff9704;
+    --bg-color: #f8f9fa;
+    --text-color: #555;
+    --card-bg: #ffffff;
+}
+
+/* --- Global Section --- */
+.classic-timeline {
+    padding: 80px 20px;
+    background-color: #2f3390;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean font */
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* --- Header --- */
+.timeline-header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: #e9f1fb;
+    margin-bottom: 80px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-header::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-orange);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* --- Container --- */
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* The Vertical Center Line */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #e9ecef; /* Light grey line */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    z-index: 0;
+}
+
+/* --- Timeline Item --- */
+.timeline-items {
+    padding: 10px 40px;
+    position: relative;
+    background-color: transparent;
+    width: 50%;
+    z-index: 1;
+}
+
+/* Left side items */
+.timeline-items:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+/* Right side items */
+.timeline-items:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+/* --- The Dot (Icon) --- */
+.timeline-icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: -12px; /* Position on the center line */
+    background-color: var(--card-bg);
+    border: 4px solid var(--accent-orange);
+    top: 24px; /* Align with card top */
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Fix dot position for right-side items */
+.timeline-items:nth-child(even) .timeline-icon {
+    right: auto;
+    left: -12px;
+}
+
+/* Hover Effect on Dot */
+.timeline-items:hover .timeline-icon {
+    background-color: var(--accent-orange);
+    transform: scale(1.2);
+}
+
+/* --- The Content Card --- */
+.timeline-content {
+    padding: 25px 30px;
+    background-color: var(--card-bg);
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    transition: transform 0.3s ease;
+}
+
+.timeline-items:hover .timeline-content {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 15px;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Mobile Responsiveness --- */
+@media screen and (max-width: 768px) {
+    /* Move line to the left */
+    .timeline-container::after {
+        left: 31px;
+    }
+
+    /* Make items full width */
+    .timeline-items {
+        width: 100%;
+        padding-left: 70px; /* Space for the line/dot */
+        padding-right: 25px;
+        margin-bottom: 30px;
+    }
+
+    /* Reset positioning for all items to left-aligned */
+    .timeline-items:nth-child(odd), 
+    .timeline-items:nth-child(even) {
+        left: 0;
+        text-align: left;
+    }
+
+    /* Move dots to the left line */
+    .timeline-items:nth-child(odd) .timeline-icon, 
+    .timeline-items:nth-child(even) .timeline-icon {
+        left: 19px; /* Align with line */
+        right: auto;
+    }
+    
+    .timeline-header {
+        font-size: 28px;
+        margin-bottom: 50px;
+    }
+}   
 </style>
 </head>
 
@@ -163,23 +542,10 @@ html,body{
 
                 <!-- Links -->
                 <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="/index.html">Home</a></li>
+                    <li><a class="gm-link" href="#">Home</a></li>
 
-                   <li class="gm-item gm-dropdown" data-dropdown>
-                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
-                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
-                            aria-controls="aboutMenu">
-                            About
-                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
-                        </button>
-
-                        <ul class="gm-submenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="#">About Us</a></li>
-                            <li role="none"><a role="menuitem" href="#">History Of The School</a></li>
-                            <li role="none"><a role="menuitem" href="#">Gallery</a>
-                            </li>
-                        </ul>
-                    </li>
+                    <li><a class="gm-link" href="/gurukul-english-medium-school/about.html">About</a></li>
+                  
                       <li><a class="gm-link" href="/index.html">Academics</a></li>
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
@@ -191,14 +557,14 @@ html,body{
                         </button>
 
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="/institute/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/index.html">New English School Dhakale</a></li>
-                            <li role="none"><a role="menuitem" href="/index.html">Primary School Karhati Tembha</a>
+                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a>
                             </li>
-                            <li role="none"><a role="menuitem" href="/index.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/index.html">Gurukul English Medium School</a>
+                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a>
                             </li>
-                            <li role="none"><a role="menuitem" href="/index.html">Shardabai Pawar Kala
+                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala
                                     Mahavidhyalaya</a></li>
                         </ul>
                     </li>
@@ -211,9 +577,91 @@ html,body{
             </nav>
         </div>
     </header>
-    <section ></section>
 
-   
+
+    <section class="about-hero" id="home">
+        <div class="hero-container">
+            <div class="about-content">
+                <h3>About</h3>
+                <h1>Gurukul English Medium School</h1>
+            </div>
+        </div>
+    </section>
+
+  <section class="mission-vision">
+    <div class="vision">
+        <div class="vision-content">
+            <img src="/assets/our-vision.png" alt="Vision Image">
+            <div class="text">
+                <h2>Our Vision</h2>
+                <p>Our vision is to build a community of learners who are confident, empathetic, and innovative. We aim to foster a love for learning and personal growth, empowering our students to excel in academics, sports, arts, and leadership, both inside and outside the classroom.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mission">
+        <div class="mission-content">
+            <div class="text">
+                <h2>Our Mission</h2>
+                <p>Our mission is to provide a well-rounded education that equips students with the knowledge and skills they need to succeed. We focus on:</p>
+                <ul>
+                    <li>Developing critical thinking skills</li>
+                    <li>Encouraging creativity and innovation</li>
+                    <li>Promoting emotional intelligence and social responsibility</li>
+                    <li>Fostering a love of lifelong learning</li>
+                </ul>
+                <p>We believe that education is not just about teaching facts but about teaching students how to think, question, and explore the world around them.</p>
+            </div>
+             <img src="/assets/our-mission.png" alt="Mission Image">
+        </div>
+    </div>
+</section>
+
+
+<section class="classic-timeline">
+    <h2 class="timeline-header">Why Choose KUMSS Gurukul?</h2>
+    <div class="timeline-container">
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Experienced Educators</h3>
+                <p>Our faculty members are highly skilled professionals who bring their knowledge, passion, and commitment to every classroom.</p>
+            </div>
+        </div>
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Modern Infrastructure</h3>
+                <p>Our campus is equipped with state-of-the-art facilities, providing a conducive environment for learning, sports, arts, and extracurricular activities.</p>
+            </div>
+        </div>
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Holistic Development</h3>
+                <p>From academics to sports, arts, leadership training, and community service, we aim to develop well-rounded individuals who are equipped to succeed in all areas of life.</p>
+            </div>
+        </div>
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Focus on Values</h3>
+                <p>We emphasize values like integrity, compassion, respect, and responsibility, creating students who are not just smart, but also good human beings.</p>
+            </div>
+        </div>
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Inclusive Environment</h3>
+                <p>We foster an inclusive environment where every student feels valued, supported, and inspired to reach their fullest potential.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -253,12 +701,11 @@ html,body{
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About KUMSS</a></li>
-                        <li><a href="#vision-mission">Vision & Mission</a></li>
-                        <li><a href="#courses">Programs</a></li>
-                        <li><a href="#leadership">Leadership</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Academics</a></li>
+                         <li><a href="#">Staff</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -267,10 +714,10 @@ html,body{
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="#">New English School, Dhakale</a></li>
-                        <li><a href="#">Primary School, Tembha</a></li>
-                        <li><a href="#">KUMSS Private I.T.I</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
                     </ul>
                 </div>
 
@@ -279,9 +726,12 @@ html,body{
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Contact Info</h3>
                     <ul class="footer-links">
-                        <li><a href="tel:+919421394242">+91 94213 94242</a></li>
-                        <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
-                        <li><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                        <li><i class="fas fa-phone"></i>
+<a href="tel:+919421394242">+91 94213 94242</a></li>
+                        <li><i class="fas fa-envelope"></i>
+<a href="mailto:info@kumss.org">info@kumss.org</a></li>
+                        <li><i class="fas fa-envelope"></i>
+<a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
                     </ul>
                 </div>
             </div>
