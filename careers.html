@@ -28,171 +28,121 @@
     <link href="assets/img/favicon.png" type="image/x-icon" rel="icon" />
 
     <style>
-/* General Section Styling */
-.careers {
-  background-color: #ffffff; /* Light gray background */
-  padding: 80px 0;
-  font-family: Arial, sans-serif;
-}
 
-.careers .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+        /* General Section Styling */
+      .careers {
+        background-color: #ffffff;
+        padding: 60px 0;
+        font-family: Arial, sans-serif;
+      }
 
-/* Section Header Styling */
-.section-head {
-  text-align: center;
-  margin-bottom: 50px;
-}
+      .careers .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-.section-head .line {
-  width: 80px;
-  height: 4px;
-  background-color: #106494; /* Primary blue */
-  margin: 0 auto 20px;
-}
+      /* Section Header Styling (Centered at the top) */
+      .section-head {
+        text-align: center;
+        margin-bottom: 60px;
+      }
 
-.section-head h2 {
-  font-size: 36px;
-  color: #106494; /* Primary brand blue */
-  font-weight: bold;
-}
+      .section-head .line {
+        width: 80px;
+        height: 4px;
+        background-color: #106494; 
+        margin: 0 auto 20px;
+      }
 
-.section-head p {
-  font-size: 18px;
-  color: #777372; /* Soft steel gray */
-  line-height: 1.6;
-  margin-top: 10px;
-}
+      .section-head h2 {
+        font-size: 36px;
+        color: #106494;
+        font-weight: bold;
+      }
 
-/* Recruitment Info Section */
-.recruitment-info {
-  margin-top: 50px;
-}
+      .section-head p {
+        font-size: 18px;
+        color: #777372;
+        line-height: 1.6;
+        margin-top: 10px;
+      }
 
-.info-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  align-items: flex-start;
-}
+      /* Recruitment Info Section */
+      .recruitment-info {
+        margin-top: 60px;
+        text-align: center;
+      }
 
-/* Left Section (Contact and Info) */
-.info-left {
-  flex: 1;
-  text-align: left;
-}
+      .recruitment-info h3 {
+        font-size: 28px;
+        color: #0B3769;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
 
-.info-left h3 {
-  font-size: 28px;
-  color: #0B3769; /* Secondary deep blue */
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+      .recruitment-info p {
+        font-size: 16px;
+        color: #534747;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
 
-.info-left p {
-  font-size: 16px;
-  color: #534747; /* Charcoal text gray */
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
+      .recruitment-info h4 {
+        font-size: 20px;
+        color: #106494;
+        font-weight: bold;
+        margin-top: 20px;
+      }
 
-.info-left h4 {
-  font-size: 20px;
-  color: #106494; /* Primary brand blue */
-  font-weight: bold;
-  margin-top: 20px;
-}
+      .recruitment-info ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+      }
 
-.info-left ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-}
+      .recruitment-info li {
+        font-size: 16px;
+        color: #534747;
+        margin-bottom: 10px;
+      }
 
-.info-left li {
-  font-size: 16px;
-  color: #534747;
-  margin-bottom: 10px;
-}
+      .recruitment-info a {
+        color: #106494;
+        text-decoration: none;
+      }
 
-.info-left a {
-  color: #106494;
-  text-decoration: none;
-}
+      .recruitment-info a:hover {
+        text-decoration: underline;
+      }
 
-.info-left a:hover {
-  text-decoration: underline;
-}
+      /* Images placed in a container */
+      .img-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
 
-/* Right Section (One Image at a Time) */
-.info-right {
-  flex: 1;
-  text-align: center;
-}
+      .img-container img {
+        max-width: 32%; /* Limit image size */
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
 
-.info-right h4 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #106494; /* Primary brand blue */
-  margin-bottom: 30px;
-}
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        .img-container {
+          flex-direction: column;
+          align-items: center;
+        }
 
-.info-right .img-container {
-  position: relative;
-  width: 100%;
-  max-width: 600px; /* Set maximum width for images */
-  height: 400px; /* Fixed height */
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-}
-
-/* Image Styling */
-.info-right img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Ensures the full image is visible */
-  opacity: 0;
-  transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
-}
-
-.info-right img.active {
-  opacity: 1;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .info-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .info-left,
-  .info-right {
-    flex: none;
-    width: 100%;
-  }
-
-  .info-right .img-container {
-    width: 50px;
-    max-width: 60px; /* Allow full-width on smaller screens */
-    height: auto; /* Allow images to adjust height automatically */
-    margin-bottom: 20px; /* Add margin between image and content */
-  }
-
-  .info-right img {
-    height: auto; /* Allow the images to scale properly */
-    object-fit: contain; /* Ensure images fill the container while maintaining aspect ratio */
-  }
-}
-
+        .img-container img {
+          max-width: 90%;
+        }
+      }
     </style>
   </head>
 
@@ -369,44 +319,40 @@
       </div>
     </div>
 
-<section class="careers">
-  <div class="container">
-    <div class="section-head">
-      <div class="line"></div>
-      <h2>Careers</h2>
-      <p>Join us and be a part of our growth journey.</p>
-    </div>
-
-    <div class="recruitment-info">
-      <div class="info-content">
-        <div class="info-left">
-          <h3>Current Openings</h3>
-          <p>We are always looking for talented individuals to join our team. If you have a passion for growth and innovation, we would love to hear from you.</p>
-          
-          <h4>How to Apply:</h4>
-          <p>Send your CV to <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></p>
-          
-          <h4>Contact:</h4>
-          <p>If you have any questions or need further information, feel free to reach out to us at:</p>
-          <ul>
-            <li><strong>Phone:</strong><a href="91+ 9423684242">9423684242</a> / <a href="91+ 9423694242">9423694242</a></li>
-            <li><strong>Email:</strong> <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
-          </ul>
-        </div>
-        
-        <div class="info-right">
-          <h4>Explore Our Recruitments:</h4>
-          <div class="img-container" id="img-container">
-            <img src="/assets/rec-one.jpg" alt="Recruitment Process Image 1" class="active">
-            <img src="/assets/rec-two.jpg" alt="Recruitment Process Image 2">
-            <img src="/assets/rec-three.jpg" alt="Recruitment Process Image 3">
-          </div>
+    <!-- Careers Section -->
+    <section class="careers">
+      <div class="container">
+        <div class="section-head">
+          <div class="line"></div>
+          <h2>Careers</h2>
+          <p>Join us and be a part of our growth journey.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
+      <!-- "Explore Our Recruitments" Section at Bottom -->
+      <div class="recruitment-info">
+        <h3>Current Openings</h3>
+        <p>We are always looking for talented individuals to join our team. If you have a passion for growth and innovation, we would love to hear from you.</p>
+        
+        <h4>How to Apply:</h4>
+        <p>Send your CV to <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></p>
+        
+        <h4>Contact:</h4>
+        <p>If you have any questions or need further information, feel free to reach out to us at:</p>
+        <ul>
+          <li><strong>Phone:</strong><a href="tel:+919423684242">9423684242</a> / <a href="tel:+919423694242">9423694242</a></li>
+          <li><strong>Email:</strong> <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+        </ul>
+
+        <!-- Recruitment Images Section -->
+        <h4>Explore Our Recruitments:</h4>
+        <div class="img-container">
+          <img src="/assets/rec-one.jpg" alt="Recruitment Process Image 1">
+          <img src="/assets/rec-two.jpg" alt="Recruitment Process Image 2">
+          <img src="/assets/rec-three.jpg" alt="Recruitment Process Image 3">
+        </div>
+      </div>
+    </section>
      <!-- Footer (same as index) -->
     <footer class="footer" id="footer">
       <div class="container">
@@ -502,30 +448,5 @@
       data-cf-beacon='{"version":"2024.11.0","token":"5fe684bbe2954c839d4575e6915100ba","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
       crossorigin="anonymous"
     ></script>
-    <script>
-     // Get all the images and container
-const images = document.querySelectorAll("#img-container img");
-let currentIndex = 0;
-
-// Function to change to the next image
-function changeImage() {
-  // Hide the current image
-  images[currentIndex].classList.remove("active");
-
-  // Increment the index to show the next image
-  currentIndex = (currentIndex + 1) % images.length; // Loop back to first image after the last
-
-  // Show the next image
-  images[currentIndex].classList.add("active");
-}
-
-// Automatically change image every 3 seconds
-setInterval(changeImage, 3000);
-
-// Initially show the first image
-changeImage();
-
-
-    </script>
   </body>
 </html>
