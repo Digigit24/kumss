@@ -687,20 +687,20 @@
     top: 84%;
     height: 45px;
   }
-  .adma-about-content .title h2 {
+  .kumss-about-content .title h2 {
     font-size: 22px;
     margin-bottom: 15px;
   }
-  .adma-about-content .adma-about-card {
+  .kumss-about-content .kumss-about-card {
     margin-bottom: 25px;
   }
-  .adma-about-content .adma-about-card .arrow-btn {
+  .kumss-about-content .kumss-about-card .arrow-btn {
     margin-top: 0;
   }
-  .adma-about-image .shape-3 {
+  .kumss-about-image .shape-3 {
     display: none;
   }
-  .adma-about-image .shape-4 {
+  .kumss-about-image .shape-4 {
     display: none;
   }
   .video-image .video-btn a {
@@ -1628,22 +1628,22 @@
   .admission-btn {
     justify-content: center !important;
   }
-  .adma-about-content .title h2 {
+  .kumss-about-content .title h2 {
     font-size: 32px;
   }
-  .adma-about-content .adma-about-card p {
+  .kumss-about-content .kumss-about-card p {
     font-size: 15px;
   }
-  .adma-about-content .adma-about-card .arrow-btn {
+  .kumss-about-content .kumss-about-card .arrow-btn {
     margin-top: 0;
   }
-  .adma-about-image {
+  .kumss-about-image {
     text-align: center !important;
   }
-  .adma-about-image .shape-3 {
+  .kumss-about-image .shape-3 {
     display: none;
   }
-  .adma-about-image .shape-4 {
+  .kumss-about-image .shape-4 {
     display: none;
   }
   .student-image {
@@ -2231,16 +2231,16 @@
   .admission-btn .default-btn {
     font-size: 14px;
   }
-  .adma-about-content .title h2 {
+  .kumss-about-content .title h2 {
     font-size: 32px;
   }
-  .adma-about-content .adma-about-card .arrow-btn {
+  .kumss-about-content .kumss-about-card .arrow-btn {
     margin-top: 0;
   }
-  .adma-about-image .shape-3 {
+  .kumss-about-image .shape-3 {
     display: none;
   }
-  .adma-about-image .shape-4 {
+  .kumss-about-image .shape-4 {
     display: none;
   }
   .single-graduates-card {

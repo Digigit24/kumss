@@ -1,5 +1,5 @@
 /*
-@File: Adma Template Styles
+@File: kumss Template Styles
 
 * This file contains the styling for the actual template, this
 is the file you need to edit to change the look of the
@@ -32,7 +32,7 @@ This files table contents are outlined below>>>>>
 ** - Application Area Style
 ** - Blog Area Style
 ** - Admission Area Style
-** - Adma About Area Style
+** - kumss About Area Style
 ** - Video Area Style
 ** - Student Area Style
 ** - Counter Area Style
@@ -245,28 +245,28 @@ Default Btn
   color: var(--secenderyColor);
   font-family: var(--heading-font-family);
   /* ==========================
-   Adma About Area — Elegant Carded Style
+   kumss About Area — Elegant Carded Style
    ========================== */
-  .adma-about-area {
+  .kumss-about-area {
     background: linear-gradient(
       180deg,
       rgba(247, 251, 249, 1) 0%,
       rgba(255, 255, 255, 1) 100%
     );
   }
-  .adma-about-area .adma-about-content .title h2 {
+  .kumss-about-area .kumss-about-content .title h2 {
     font-size: 28px;
     gap: 12px;
     align-items: center;
     display: flex;
     color: var(--blackColor);
   }
-  .adma-about-area .adma-about-content .title h2 img {
+  .kumss-about-area .kumss-about-content .title h2 img {
     width: 44px;
     height: auto;
     margin-right: 8px;
   }
-  .adma-about-card {
+  .kumss-about-card {
     background: #ffffff;
     border-radius: 14px;
     padding: 24px 26px;
@@ -274,11 +274,11 @@ Default Btn
     border-left: 4px solid rgba(15, 128, 66, 0.12);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
   }
-  .adma-about-card:hover {
+  .kumss-about-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 40px rgba(31, 64, 45, 0.09);
   }
-  .adma-about-card h3 {
+  .kumss-about-card h3 {
     font-size: 20px;
     margin-bottom: 10px;
     display: flex;
@@ -286,27 +286,27 @@ Default Btn
     gap: 12px;
     color: var(--primaryColor);
   }
-  .adma-about-card h3 i {
+  .kumss-about-card h3 i {
     font-size: 26px;
     color: var(--secenderyColor);
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
-  .adma-about-card p {
+  .kumss-about-card p {
     margin: 0 0 14px 0;
   }
-  .adma-about-card ul {
+  .kumss-about-card ul {
     margin: 0;
     padding-left: 18px;
   }
-  .adma-about-card ul li {
+  .kumss-about-card ul li {
     margin-bottom: 8px;
     line-height: 1.6;
     position: relative;
     padding-left: 10px;
   }
-  .adma-about-card ul li:before {
+  .kumss-about-card ul li:before {
     content: "";
     width: 6px;
     height: 6px;
@@ -317,21 +317,21 @@ Default Btn
     left: -2px;
     top: 10px;
   }
-  .adma-about-image img {
+  .kumss-about-image img {
     border-radius: 12px;
     box-shadow: 0 12px 30px rgba(31, 64, 45, 0.06);
     transform: translateZ(0);
   }
-  .adma-about-area .shape-3,
-  .adma-about-area .shape-4 {
+  .kumss-about-area .shape-3,
+  .kumss-about-area .shape-4 {
     position: relative;
   }
 
   @media (max-width: 991px) {
-    .adma-about-area .adma-about-content .title h2 {
+    .kumss-about-area .kumss-about-content .title h2 {
       font-size: 22px;
     }
-    .adma-about-card {
+    .kumss-about-card {
       padding: 18px;
     }
   }
@@ -4033,7 +4033,7 @@ Overview Area Style
   margin-top: 80px;
   position: relative;
 }
-.overview-image .casual-image .adma {
+.overview-image .casual-image .kumss {
   top: -55px;
   right: 0;
   position: absolute;
@@ -4542,69 +4542,69 @@ Admission Area Style
 }
 
 /*================================================
-Adma About Area Style
+kumss About Area Style
 =================================================*/
-.adma-about-image {
+.kumss-about-image {
   margin-bottom: 25px;
   position: relative;
 }
-.adma-about-image .shape-3 {
+.kumss-about-image .shape-3 {
   top: 35px;
   left: -15px;
   position: absolute;
 }
-.adma-about-image .shape-3 img {
+.kumss-about-image .shape-3 img {
   animation: rotateme 5s linear infinite;
 }
-.adma-about-image .shape-4 {
+.kumss-about-image .shape-4 {
   left: -15px;
   bottom: 40px;
   position: absolute;
 }
-.adma-about-image .shape-4 img {
+.kumss-about-image .shape-4 img {
   animation: zoom-in-zoom-out 3s linear infinite;
 }
 
-.adma-about-content {
+.kumss-about-content {
   margin-bottom: 25px;
 }
-.adma-about-content .title {
+.kumss-about-content .title {
   max-width: 646px;
   margin-bottom: 30px;
 }
-.adma-about-content .title h2 {
+.kumss-about-content .title h2 {
   font-size: 42px;
   line-height: 0;
   margin-bottom: 25px;
 }
-.adma-about-content .title h2 img {
+.kumss-about-content .title h2 img {
   margin-right: 15px;
 }
-.adma-about-content .adma-about-card h3 {
+.kumss-about-content .kumss-about-card h3 {
   font-size: 18px;
   margin-bottom: 15px;
 }
-.adma-about-content .adma-about-card h3 i {
+.kumss-about-content .kumss-about-card h3 i {
   line-height: 0;
   font-size: 30px;
   margin-right: 10px;
   color: var(--primaryColor);
 }
-.adma-about-content .adma-about-card .arrow-btn {
+.kumss-about-content .kumss-about-card .arrow-btn {
   margin-top: 15px;
   color: var(--primaryColor);
 }
-.adma-about-content .adma-about-card .arrow-btn::before {
+.kumss-about-content .kumss-about-card .arrow-btn::before {
   background-color: var(--primaryColor);
 }
-.adma-about-content .adma-about-card .arrow-btn:hover {
+.kumss-about-content .kumss-about-card .arrow-btn:hover {
   color: var(--blackColor);
 }
-.adma-about-content .adma-about-card .arrow-btn:hover::after {
+.kumss-about-content .kumss-about-card .arrow-btn:hover::after {
   background-color: var(--blackColor);
 }
 
-.col-lg-6:nth-child(2) .adma-about-card p {
+.col-lg-6:nth-child(2) .kumss-about-card p {
   max-width: 313px;
 }
 
@@ -6582,8 +6582,8 @@ Back to Top Style
   transform: translateY(-95%);
 }
 
-/* High-specificity overrides for Adma About area to ensure styles apply */
-.adma-about-area .container .adma-about-content .adma-about-card {
+/* High-specificity overrides for kumss About area to ensure styles apply */
+.kumss-about-area .container .kumss-about-content .kumss-about-card {
   background: #ffffff !important;
   border-radius: 14px !important;
   padding: 24px 26px !important;
@@ -6591,11 +6591,11 @@ Back to Top Style
   border-left: 4px solid rgba(15, 128, 66, 0.12) !important;
   margin-bottom: 18px !important;
 }
-.adma-about-area .container .adma-about-content .adma-about-card h3 {
+.kumss-about-area .container .kumss-about-content .kumss-about-card h3 {
   font-size: 20px !important;
   color: var(--primaryColor) !important;
 }
-.adma-about-area .container .adma-about-content .adma-about-card ul li:before {
+.kumss-about-area .container .kumss-about-content .kumss-about-card ul li:before {
   left: 0 !important;
 }
 
@@ -6606,33 +6606,33 @@ Back to Top Style
 
 /* Layout tweaks: make the two cards sit side-by-side and wider on large screens */
 @media (min-width: 992px) {
-  .adma-about-area .adma-about-content .row {
+  .kumss-about-area .kumss-about-content .row {
     display: flex !important;
     gap: 20px;
     align-items: flex-start;
   }
-  .adma-about-area .adma-about-content .row > .col-lg-6 {
+  .kumss-about-area .kumss-about-content .row > .col-lg-6 {
     flex: 0 0 48% !important;
     max-width: 48% !important;
   }
-  .adma-about-area .adma-about-content .adma-about-card {
+  .kumss-about-area .kumss-about-content .kumss-about-card {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
     min-height: 220px !important;
   }
-  .adma-about-area .adma-about-content .adma-about-card .about-list ul {
+  .kumss-about-area .kumss-about-content .kumss-about-card .about-list ul {
     margin: 0;
     padding-left: 18px;
   }
-  .adma-about-area .adma-about-content .adma-about-card ul li {
+  .kumss-about-area .kumss-about-content .kumss-about-card ul li {
     margin-bottom: 8px !important;
     line-height: 1.55 !important;
   }
 }
 
 @media (max-width: 991px) {
-  .adma-about-area .adma-about-content .row {
+  .kumss-about-area .kumss-about-content .row {
     display: block !important;
   }
 }
