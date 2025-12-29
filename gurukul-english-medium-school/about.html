@@ -117,8 +117,6 @@ html,body{
   color: #fff;
   border-radius: 10px;
   text-decoration: none;
-  border: 0;
-  margin: 0;
   transition: transform .2s ease, background .2s ease;
 }
 
@@ -176,13 +174,12 @@ html,body{
     max-width: 70%;
     height: auto;
     width: 35%;
-    margin-right: 30px;
     border-radius: 10px;
 }
 
 .mission-vision .vision .text,
 .mission-vision .mission .text {
-    max-width: 55%;
+    max-width: 100%;
 }
 
 .mission-vision h2 {
@@ -239,22 +236,15 @@ html,body{
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .mission-vision {
-        padding: 30px 10px;
-    }
-
     .mission-vision .vision-content,
     .mission-vision .mission-content {
         flex-direction: column;
         margin-bottom: 10px !important;
         margin: 0;
-        padding: 10px;
     }
 
     .mission-vision .vision-content img,
     .mission-vision .mission-content img {
-        margin-right: 0;
-        width: 60%;
         margin-bottom: 20px;
     }
 
@@ -335,10 +325,6 @@ img{ max-width: 100%; display: block; }
     background-color: #2f3390;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean font */
     box-sizing: border-box;
-}
-
-*, *::before, *::after {
-    box-sizing: inherit;
 }
 
 /* --- Header --- */
@@ -501,27 +487,6 @@ img{ max-width: 100%; display: block; }
 </head>
 
 <body>
-    <!-- Premium Loading Screen -->
-    <!-- <div class="loading-screen" id="loadingScreen">
-        <div class="loading-container">
-            <div class="loading-orbit"></div>
-            <div class="loading-orbit"></div>
-            <div class="loading-orbit"></div>
-            <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="loading-logo">
-        </div>
-        <div class="loading-text">
-            <div class="loading-title">KUMSS EDUCATION</div>
-            <div class="loading-subtitle">Excellence Since 2021</div>
-            <div class="loading-dots">
-                <div class="loading-dot"></div>
-                <div class="loading-dot"></div>
-                <div class="loading-dot"></div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- Scroll Progress Bar -->
-    <!-- <div class="scroll-progress" id="scrollProgress"></div> -->
 
     <!-- Header -->
     <header class="gm-header" id="header">
@@ -546,7 +511,7 @@ img{ max-width: 100%; display: block; }
 
                     <li><a class="gm-link" href="/gurukul-english-medium-school/about.html">About</a></li>
                   
-                      <li><a class="gm-link" href="/index.html">Academics</a></li>
+                      <li><a class="gm-link" href="#">Academics</a></li>
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <!-- Desktop uses hover/focus. Mobile uses this button. -->
@@ -659,7 +624,294 @@ img{ max-width: 100%; display: block; }
     </div>
 </section>
 
+<section class="history-section">
+    <div class="history-content">
+        <h2>Our History</h2>
+        <p><span>Founded in 2021</span>, KUMSS Gurukul English Medium School was born out of a vision to provide top-tier education that nurtures both intellectual and emotional growth. From our modest beginnings, we have quickly grown into one of the top choices for students in Pune, known for our balanced approach to education.</p>
+        <p>Our school has built a strong reputation not only for academic excellence but also for instilling life skills that prepare our students for the real world. With a focus on academic innovation and personal development, we’ve already made a significant impact on the lives of hundreds of students.</p>
+    </div>
+    <div class="history-image">
+        <img src="/assets/our-history.jfif" alt="School History Image">
+    </div>
+</section>
 
+<section class="academic-excellence-section">
+    <h2>Academic Excellence</h2>
+    <div class="academic-content">
+        <p>At KUMSS Gurukul, we offer a modern and engaging curriculum that challenges students to think critically, collaborate, and grow in an intellectually stimulating environment. We believe in fostering curiosity and creativity through experiential learning, practical projects, and problem-solving activities.</p>
+        <p>We offer a wide range of subjects, including:</p>
+        <ul>
+            <li><strong>STEM (Science, Technology, Engineering, and Mathematics)</strong></li>
+            <li><strong>Humanities and Social Sciences</strong></li>
+            <li><strong>Languages and Literature</strong></li>
+            <li><strong>Sports and Physical Education</strong></li>
+            <li><strong>Arts and Creative Expression</strong></li>
+        </ul>
+        <p>Our educators work closely with students, providing personalized attention to ensure each child reaches their highest potential.</p>
+    </div>
+</section>
+<style>
+    /* Global Section Styling */
+
+/* History Section */
+.history-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:100%;
+    width:100%;
+    padding: 150px 150px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.history-section .history-content {
+    width: 50%;
+    text-align: left;
+}
+
+.history-section .history-content h2 {
+    font-size: 35px;
+    color: #233f92;
+    line-height: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+        border-bottom: 4px solid #ff9704;  /* Orange line under the heading */
+    padding-bottom: 10px; /* Space between text and line */
+}
+
+.history-section .history-content p {
+    font-size: 16px;
+    color: #101010;
+    line-height: 1.6;
+}
+.history-section .history-content span {
+    color:#d66615;
+    font-weight: 700;
+}
+
+
+.history-section .history-image {
+    width: 40%;
+}
+
+.history-section .history-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* =========================
+   History Section - Responsive CSS
+   (keeps your desktop the same, only adapts for smaller screens)
+   ========================= */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .history-section{
+    padding: 110px 60px;
+  }
+
+  .history-section .history-content{
+    width: 100% !important;
+    padding: 40px;
+  }
+
+  .history-section .history-image{
+   display: none !important;
+  }
+
+  .history-section .history-content h2{
+    font-size: 32px;
+    line-height: 44px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .history-section{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 60px 18px;
+    height: auto;
+    text-align: left;
+    box-shadow: none;
+  }
+
+  .history-section .history-content,
+  .history-section .history-image{
+    width: 100%;
+  }
+
+  .history-section .history-content h2{
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 14px;
+    border-bottom-width: 3px;
+    padding-bottom: 8px;
+  }
+
+  /* Image after heading on mobile */
+  .history-section .history-image{
+    order: 2;
+    margin-top: 10px;
+  }
+
+  .history-section .history-content{
+    order: 1;
+  }
+
+  .history-section .history-content p{
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .history-section .history-image img{
+    border-radius: 12px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .history-section{
+    padding: 48px 14px;
+  }
+
+  .history-section .history-content h2{
+    font-size: 23px;
+    line-height: 32px;
+  }
+
+  .history-section .history-content p{
+    font-size: 14.5px;
+  }
+}
+
+/* Half-diamond bg on right side (guaranteed visible) */
+.history-section{
+  position: relative;
+  overflow: hidden;
+}
+
+.history-section .history-content,
+.history-section .history-image{
+  position: relative;
+  z-index: 2; /* keep content above the shape */
+}
+
+.history-section::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -180px;                 /* shows only half */
+  transform: translateY(-50%) rotate(45deg);
+  width: 360px;
+  height: 360px;
+
+  background: rgba(13, 46, 144, 0.932);
+  border: 2px solid rgba(255, 151, 4, 0.35);
+  border-radius: 14px;
+
+  z-index: 1;                    /* above section bg, below content */
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .history-section::after{
+    width: 300px;
+    height: 300px;
+    right: -150px;
+  }
+}
+@media (max-width: 768px){
+  .history-section::after{
+    width: 240px;
+    height: 240px;
+    right: -120px;
+  }
+}
+@media (max-width: 480px){
+  .history-section::after{
+    width: 210px;
+    height: 210px;
+    right: -105px;
+  }
+}
+
+
+
+
+
+/* Academic Excellence Section */
+.academic-excellence-section {
+    padding-top: 40px;
+}
+
+.academic-excellence-section h2 {
+    font-size: 28px;
+    color: #233f92;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.academic-excellence-section .academic-content {
+    text-align: left;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.academic-excellence-section .academic-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.academic-excellence-section .academic-content ul li {
+    font-size: 16px;
+    color: #444;
+    padding-left: 20px;
+    position: relative;
+}
+
+.academic-excellence-section .academic-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ff9704;  /* Orange Bullet */
+}
+
+@media (max-width: 768px) {
+    .history-section {
+        width: 100%;
+        
+        padding: 0;
+    }
+
+    .history-section .history-content {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .history-section .history-image {
+        width: 50%;
+    }
+    .academic-excellence-section {
+    margin: 0;
+}
+    .academic-excellence-section .academic-content {
+        font-size: 14px;
+    }
+
+    .academic-excellence-section h2 {
+        font-size: 24px;
+    }
+}
+
+</style>
 
 
     <!-- Footer -->
