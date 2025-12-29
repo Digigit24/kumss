@@ -36,6 +36,172 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+
+         /* ==============================
+   KVK Academic Hero (Light, Big)
+   ============================== */
+
+.kvk-academicHero{
+  --kvk-bg: #f5f7fb;
+  --kvk-surface: #ffffff;
+  --kvk-text: #0b1220;
+  --kvk-muted: #475569;
+  --kvk-line: rgba(15, 23, 42, 0.12);
+
+  --kvk-primary: #1e3a8a;   /* school blue */
+  --kvk-accent: #f59e0b;    /* warm gold */
+
+  position: relative;
+  background: var(--kvk-bg);
+  padding: clamp(70px, 8vw, 120px) 0;
+  overflow: hidden;
+}
+
+/* Backdrop */
+.kvk-heroBackdrop{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(700px 420px at 14% 18%, rgba(30,58,138,0.10), transparent 60%),
+    radial-gradient(700px 420px at 88% 22%, rgba(245,158,11,0.10), transparent 62%),
+    linear-gradient(180deg, rgba(255,255,255,0.65), rgba(245,247,251,1));
+  z-index: 0;
+}
+
+/* Container */
+.kvk-heroShell{
+  width: min(1220px, calc(100% - 40px));
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Layout */
+.kvk-heroGrid{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(28px, 5vw, 70px);
+  align-items: center;
+}
+
+/* Left content */
+.kvk-heroMain{
+  padding: 10px 0;
+  max-width: 640px;
+}
+
+.kvk-topTag{
+  margin-bottom: 16px;
+}
+
+.kvk-pill{
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--kvk-primary);
+  background: rgba(30,58,138,0.08);
+  border: 1px solid rgba(30,58,138,0.16);
+}
+
+/* BIG heading */
+.kvk-heroTitle{
+  margin: 0 0 14px;
+  font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #1e3a8a;
+  font-size: clamp(34px, 4.2vw, 56px);
+}
+
+/* Body */
+.kvk-heroText{
+  margin: 0 0 18px;
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.75;
+  color: var(--kvk-muted);
+  max-width: 58ch;
+}
+
+/* Quote */
+.kvk-heroQuote{
+  margin: 0;
+  padding: 14px 16px;
+  border-left: 4px solid var(--kvk-accent);
+  background: rgba(255,255,255,0.70);
+  border-radius: 14px;
+  color: rgba(15, 23, 42, 0.78);
+  line-height: 1.7;
+  font-size: clamp(15px, 1.2vw, 17px);
+}
+
+/* Right media card */
+.kvk-heroSide{
+  display: grid;
+  justify-items: end;
+}
+
+.kvk-mediaCard{
+  width: min(440px, 100%);
+  aspect-ratio: 4 / 5;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--kvk-surface);
+  border: 1px solid var(--kvk-line);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.10);
+  position: relative;
+}
+
+/* Video */
+.kvk-mediaCard__video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Subtle veil for polish (still light theme) */
+.kvk-mediaCard__veil{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.10));
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .kvk-heroGrid{
+    grid-template-columns: 1fr;
+  }
+
+  .kvk-heroSide{
+    justify-items: start;
+  }
+
+  .kvk-mediaCard{
+    width: min(520px, 100%);
+    aspect-ratio: 16 / 9;
+  }
+
+  .kvk-heroMain{
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px){
+  .kvk-academicHero{
+    padding: 62px 0;
+  }
+  .kvk-heroTitle{
+    font-size: 34px;
+    line-height: 2;
+  }
+}
         
       /* Center + stack icon above title */
 .vm-head{
@@ -243,6 +409,7 @@
                                 width: 30%;
                                 height: 30%;
                             }
+
     </style>
 
 
@@ -327,35 +494,48 @@
     </header>
 
     <!-- Premium Hero with HLS Video -->
-    <section class="hero" id="home">
-        <div class="floating-elements">
-            <div class="floating-element floating-1"></div>
-            <div class="floating-element floating-2"></div>
-            <div class="floating-element floating-3"></div>
+  <section class="kvk-academicHero" id="home">
+
+  <div class="kvk-heroBackdrop" aria-hidden="true"></div>
+
+  <div class="kvk-heroShell">
+    <div class="kvk-heroGrid">
+
+      <!-- Content -->
+      <div class="kvk-heroMain">
+        <div class="kvk-topTag">
+          <span class="kvk-pill">VVK</span>
         </div>
 
-        <div class="hero-video-container">
-            <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
-                <!-- HLS video source will be added by JavaScript -->
-            </video>
-            <div class="video-overlay"></div>
+        <h1 class="kvk-heroTitle">
+         Vasatigruh Vidyalay Karhati
+        </h1>
+
+        <p class="kvk-heroText">
+          For over seven decades, we've been transforming lives through exceptional education.
+          We blend traditional values with cutting-edge technology to create leaders who shape tomorrow.
+        </p>
+
+        <blockquote class="kvk-heroQuote">
+          “Education opens up the mind, expands it and allows you to improve your life in so many ways.”
+        </blockquote>
+      </div>
+
+      <!-- Media -->
+      <div class="kvk-heroSide">
+        <div class="kvk-mediaCard">
+          <video id="heroVideo" class="kvk-mediaCard__video" autoplay muted loop playsinline>
+            <!-- HLS video source will be added by JavaScript -->
+          </video>
+          <div class="kvk-mediaCard__veil" aria-hidden="true"></div>
         </div>
+      </div>
 
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-subtitle">Vasatigruh Vidyalay Karhati</div>
-                <p class="hero-description">
-                    For over seven decades, we've been transforming lives through exceptional education.
-                    We blend traditional values with cutting-edge technology to create leaders who shape tomorrow.
-                </p>
+    </div>
+  </div>
+</section>
 
-                <div class="hero-quote">
-                    "Education opens up the mind, expands it and allows you to improve your life in so many ways."
-                </div>
 
-            </div>
-        </div>
-    </section>
 
     <!-- About Section with Tabs -->
     <section class="about-school" id="about-school">
