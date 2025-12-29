@@ -507,7 +507,7 @@ img{ max-width: 100%; display: block; }
 
                 <!-- Links -->
                 <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="#">Home</a></li>
+                    <li><a class="gm-link" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
 
                     <li><a class="gm-link" href="/gurukul-english-medium-school/about.html">About</a></li>
                   
@@ -811,8 +811,8 @@ img{ max-width: 100%; display: block; }
   width: 360px;
   height: 360px;
 
-  background: rgba(13, 46, 144, 0.932);
-  border: 2px solid rgba(255, 151, 4, 0.35);
+  background: rgba(252, 176, 0, 0.406);
+  border: 1px solid rgba(255, 150, 4, 0.08);
   border-radius: 14px;
 
   z-index: 1;                    /* above section bg, below content */
@@ -844,71 +844,84 @@ img{ max-width: 100%; display: block; }
 
 
 
-
-
 /* Academic Excellence Section */
-.academic-excellence-section {
-    padding-top: 40px;
+.academic-excellence-section{
+    background-color: #fff;
+    text-align: left;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 150px; /* desktop padding (adjust if your container already handles padding) */
 }
 
-.academic-excellence-section h2 {
-    font-size: 28px;
+/* keep content above shape */
+.academic-excellence-section > *{
+  position: relative;
+  z-index: 2;
+}
+  .academic-excellence-section h2 {
     color: #233f92;
+    line-height: 50px;
+    font-size: 35px;
     font-weight: 700;
     margin-bottom: 20px;
+    border-bottom: 4px solid #ff9704;  /* Orange line under the heading */
+    padding-bottom: 10px; /* Space between text and line */
+  }
+
+/* Left half-diamond background */
+.academic-excellence-section::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -180px;                 /* shows only half on left */
+  transform: translateY(-50%) rotate(45deg);
+  width: 360px;
+  height: 360px;
+
+  background: rgba(255, 175, 3, 0.422);
+  border: 2px solid rgba(255, 244, 229, 0.123);
+  border-radius: 14px;
+
+  z-index: 1;                   /* above section bg, below content */
+  pointer-events: none;
 }
 
-.academic-excellence-section .academic-content {
-    text-align: left;
-    font-size: 16px;
-    color: #444;
-    line-height: 1.6;
+/* Responsive padding + shape sizing */
+@media (max-width: 1024px){
+  .academic-excellence-section{
+    padding: 70px 60px;
+  }
+  .academic-excellence-section::before{
+    width: 300px;
+    height: 300px;
+    left: -150px;
+  }
 }
 
-.academic-excellence-section .academic-content ul {
-    list-style-type: none;
-    padding-left: 0;
+@media (max-width: 768px){
+  .academic-excellence-section{
+    padding: 56px 18px;
+  }
+  .academic-excellence-section::before{
+    width: 240px;
+    height: 240px;
+    left: -120px;
+  }
 }
 
-.academic-excellence-section .academic-content ul li {
-    font-size: 16px;
-    color: #444;
-    padding-left: 20px;
-    position: relative;
-}
-
-.academic-excellence-section .academic-content ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #ff9704;  /* Orange Bullet */
-}
-
-@media (max-width: 768px) {
-    .history-section {
-        width: 100%;
-        
-        padding: 0;
-    }
-
-    .history-section .history-content {
-        width: 50%;
-        margin-bottom: 20px;
-    }
-
-    .history-section .history-image {
-        width: 50%;
-    }
-    .academic-excellence-section {
-    margin: 0;
-}
-    .academic-excellence-section .academic-content {
-        font-size: 14px;
-    }
-
-    .academic-excellence-section h2 {
-        font-size: 24px;
-    }
+@media (max-width: 480px){
+  .academic-excellence-section{
+    padding: 44px 34px;
+  }
+  .academic-excellence-section h2 {
+    color: #233f92;
+    line-height: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #ff9704;  /* Orange line under the heading */
+    padding-bottom: 10px; /* Space between text and line */
+  }
+   
 }
 
 </style>
@@ -953,10 +966,10 @@ img{ max-width: 100%; display: block; }
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
+                        <li><a href="/gurukul-english-medium-school/about.html">About</a></li>
                         <li><a href="#">Academics</a></li>
-                         <li><a href="#">Staff</a></li>
+                         <li><a href="/gurukul-english-medium-school/staff.html">Staff</a></li>
                         <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>

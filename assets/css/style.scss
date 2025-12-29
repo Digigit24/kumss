@@ -1,5 +1,5 @@
 /*
-@File: Adma Template Styles
+@File: kumss Template Styles
 
 * This file contains the styling for the actual template, this
 is the file you need to edit to change the look of the
@@ -32,7 +32,7 @@ This files table contents are outlined below>>>>>
 ** - Application Area Style
 ** - Blog Area Style
 ** - Admission Area Style
-** - Adma About Area Style
+** - kumss About Area Style
 ** - Video Area Style
 ** - Student Area Style
 ** - Counter Area Style
@@ -3027,7 +3027,7 @@ Overview Area Style
         margin-top: 80px;
         position: relative;
 
-        .adma {
+        .kumss {
             top: -55px;
             right: 0;
             position: absolute;
@@ -3604,9 +3604,9 @@ Admission Area Style
 }
 
 /*================================================
-Adma About Area Style
+kumss About Area Style
 =================================================*/
-.adma-about-image {
+.kumss-about-image {
     margin-bottom: 25px;
     position: relative;
     
@@ -3628,7 +3628,7 @@ Adma About Area Style
     }
 
 }
-.adma-about-content {
+.kumss-about-content {
     margin: {
         bottom: 25px;
     };
@@ -3646,7 +3646,7 @@ Adma About Area Style
             }
         }
     }
-    .adma-about-card {
+    .kumss-about-card {
         h3 {
             font-size: 18px;
             margin-bottom: 15px;
@@ -3676,7 +3676,7 @@ Adma About Area Style
 }
 .col-lg-6 {
     &:nth-child(2) {
-        .adma-about-card {
+        .kumss-about-card {
             p {
                 max-width: 313px;
             }
