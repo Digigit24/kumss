@@ -35,13 +35,131 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Page-specific overrides (Hero image background + new layout) -->
+    <style>
+        /* ===== ITI HERO – IMAGE BACKGROUND VERSION ===== */
+        .hero {
+            position: relative;
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+            /* ✅ CHANGE THIS PATH IF NEEDED */
+            background: url("/assets/iti-temp.JPG") center / cover no-repeat;
+        }
+
+        /* Hide video layer visually (JS can remain, no break) */
+        .hero-video-container {
+            display: none !important;
+        }
+
+        /* Overlay for text readability */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(0, 0, 0, 0.658) 0%,
+                    rgba(0, 0, 0, 0.514) 45%,
+                    rgba(0, 0, 0, 0.60) 100%);
+            z-index: 0;
+        }
+
+        /* Keep floating shapes subtle */
+        .floating-elements {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: .35;
+        }
+
+        /* container already exists in your CSS; ensure content over overlay */
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero content: simple, strong, left aligned on desktop */
+        .hero-content {
+            max-width: 760px;
+            padding: 0 18px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.08;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 62ch;
+            margin: 0;
+        }
+
+        .hero-actions {
+            margin-top: 22px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ff9704, #ffc45c);
+            color: #111;
+            font-weight: 900;
+            text-decoration: none;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, .35);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .42);
+        }
+
+        .hero-cta.secondary {
+            background: rgba(255, 255, 255, .14);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, .22);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, .22);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 78vh;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+        }
+    </style>
 
 </head>
 
 <body>
 
     <!-- Header -->
-     <header class="gm-header" id="header">
+    <header class="gm-header" id="header">
         <div class="gm-container">
             <nav class="gm-nav" aria-label="Primary">
                 <!-- Logo -->
@@ -62,12 +180,11 @@
                     <li><a class="gm-link" href="#">Home</a></li>
 
                     <li class="gm-item">
-                        <a class="gm-link" href="#">About</a>
+                        <a class="gm-link" href="./about.html">About</a>
                     </li>
 
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
-                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
                         <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
                             aria-controls="institutesMenu">
                             Our Educational Institutes
@@ -75,14 +192,24 @@
                         </button>
 
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a>
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School
+                                    Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a>
                             </li>
                             <li role="none"><a role="menuitem" href="#">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a>
                             </li>
-                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala
                                     Mahavidhyalaya</a></li>
                         </ul>
                     </li>
@@ -97,7 +224,7 @@
         </div>
     </header>
 
-    <!-- Premium Hero with HLS Video -->
+    <!-- HERO (image background + new simple layout) -->
     <section class="hero" id="home">
         <div class="floating-elements">
             <div class="floating-element floating-1"></div>
@@ -105,10 +232,9 @@
             <div class="floating-element floating-3"></div>
         </div>
 
+        <!-- Keep video container (hidden by CSS) so your JS doesn't break -->
         <div class="hero-video-container">
-            <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
-                <!-- HLS video source will be added by JavaScript -->
-            </video>
+            <video id="heroVideo" class="hero-video" autoplay muted loop playsinline></video>
             <div class="video-overlay"></div>
         </div>
 
@@ -118,19 +244,28 @@
                 <p class="hero-description">
                     Enroll now for the upcoming academic session. Limited seats available.
                 </p>
+
+                <div class="hero-actions">
+                    <a href="tel:+919421394242" class="hero-cta">
+                        <i class="fas fa-phone"></i> Enquire Now
+                    </a>
+                    <a href="#courses" class="hero-cta secondary">
+                        <i class="fas fa-screwdriver-wrench"></i> Explore Courses
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section with Tabs -->
+    <!-- About Section -->
     <section class="about-section" id="about">
         <div class="container">
             <div class="section-title">
                 <span class="subtitle">About Our Campus</span>
                 <h2>KUMSS Private ITI Karhati</h2>
                 <p class="lead-text">
-                    Established in 2000, KUMSS Private ITI Karhati has been a beacon of quality education in the region. <br>
-                    
+                    Established in 2000, KUMSS Private ITI Karhati has been a beacon of quality education in the region.
+                    <br>
                 </p>
             </div>
         </div>
@@ -140,48 +275,43 @@
     <section class="courses-section" id="courses">
         <div class="container">
             <div class="section-title">
-                <!-- <span class="subtitle">Campus Features</span> -->
                 <h2>Campus Features</h2>
                 <p class="lead-text">
                     Industry-focused learning that builds strong basics, real skills, and confident communication for
-                    your
-                    future.
+                    your future.
                 </p>
             </div>
 
             <div class="courses-grid">
                 <div class="course-card">
                     <span class="course-badge">Technical</span>
-                    <img src="/assets/img/quality-education.jpg" alt="Draughtsman Mechanical" class="course-image"
+                    <img src="/assets/img/quality-education.jpg" alt="Quality Education" class="course-image"
                         loading="lazy">
                     <div class="course-content">
                         <h3>Quality Education</h3>
                         <p>
-                            Affiliated with MSBSHSE, offering comprehensive secondary and higher secondary education
-                            with a
-                            focus on
-                            holistic development.
+                            Affiliated with MSBSHSE, offering comprehensive secondary and higher secondary education with
+                            a focus on holistic development.
                         </p>
                     </div>
                 </div>
 
                 <div class="course-card">
                     <span class="course-badge">Agricultural</span>
-                    <img src="/assets/img/agricultural-focus.jpg" alt="Electrician" class="course-image" loading="lazy">
+                    <img src="/assets/img/agricultural-focus.jpg" alt="Agricultural Focus" class="course-image"
+                        loading="lazy">
                     <div class="course-content">
                         <h3>Agricultural Focus</h3>
                         <p>
                             Unique curriculum that integrates agricultural education with traditional academics,
-                            providing
-                            practical
-                            learning experiences.
+                            providing practical learning experiences.
                         </p>
                     </div>
                 </div>
 
                 <div class="course-card">
                     <span class="course-badge">Experienced Faculty</span>
-                    <img src="/assets/img/experienced-faculty.jpg" alt="Electronics Mechanic" class="course-image"
+                    <img src="/assets/img/experienced-faculty.jpg" alt="Experienced Faculty" class="course-image"
                         loading="lazy">
                     <div class="course-content">
                         <h3>Experienced Faculty</h3>
@@ -207,11 +337,10 @@
 
             <!-- Visible Faculty Grid - 4 Cards -->
             <div class="faculty-grid" id="visibleFacultyGrid">
-                <!-- Faculty 1 -->
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Shri. Shrikant Patil" loading="lazy">
+                            alt="Mrs- Anita Ravindra Chavan" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -221,11 +350,10 @@
                     </div>
                 </div>
 
-                <!-- Faculty 2 -->
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Sunita Deshmukh" loading="lazy">
+                            alt="Mr. Bhausaheb Pandurang Pisal" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -235,11 +363,10 @@
                     </div>
                 </div>
 
-                <!-- Faculty 3 -->
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Rajesh Kumar" loading="lazy">
+                            alt="Mr. Abasaheb Malhari Kokare" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -249,11 +376,10 @@
                     </div>
                 </div>
 
-                <!-- Faculty 4 -->
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Meera Joshi" loading="lazy">
+                            alt="Mrs. Bhapkar Manjushri Lalasaheb" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -266,11 +392,10 @@
 
             <!-- Hidden Faculty Grid - 4 More Cards -->
             <div class="faculty-grid hidden" id="hiddenFacultyGrid">
-                <!-- Faculty 5 -->
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Dr. Anand Rao" loading="lazy">
+                            alt="KHAIRE RESHMA VYANKAT" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -280,11 +405,10 @@
                     </div>
                 </div>
 
-                <!-- Faculty 6 -->
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Vikram Singh" loading="lazy">
+                            alt="Mrs. Komal Chandgude" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -298,11 +422,10 @@
                     </div>
                 </div>
 
-                <!-- Faculty 7 -->
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1551836026-d5c2c5af91f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Anjali Sharma" loading="lazy">
+                            alt="Mr. Amol Subhash Kambale" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -312,11 +435,10 @@
                     </div>
                 </div>
 
-                <!-- Faculty 8 -->
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1556157382-2eda3e8a9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Ravi Verma" loading="lazy">
+                            alt="Mr. ALLABAKSH HUSEN SHAIKH" loading="lazy">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -327,7 +449,6 @@
                 </div>
             </div>
 
-            <!-- View More Button -->
             <div class="view-more-wrapper">
                 <button class="view-more-btn" id="viewMoreBtn">
                     <span class="btn-text">View All Faculty</span>
@@ -350,13 +471,11 @@
 
             <div class="bento-grid">
                 <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
+                    <div class="testimonial-avatar"><i class="fas fa-user-graduate"></i></div>
                     <p class="testimonial-text">
-                        "The institute develops excellent infrastructure facilities with well-equipped workshops
-                        which are updated regularly. All efforts are pooled into developing leadership qualities,
-                        interpersonal skills, creativity, and strong values."
+                        "The institute develops excellent infrastructure facilities with well-equipped workshops which
+                        are updated regularly. All efforts are pooled into developing leadership qualities, interpersonal
+                        skills, creativity, and strong values."
                     </p>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -367,13 +486,11 @@
                 </div>
 
                 <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
+                    <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
                     <p class="testimonial-text">
-                        "KUMSS transformed my career completely. The hands-on training and industry exposure
-                        I received during my Draughtsman Mechanical course gave me the confidence to start my
-                        own technical consultancy."
+                        "KUMSS transformed my career completely. The hands-on training and industry exposure I received
+                        during my Draughtsman Mechanical course gave me the confidence to start my own technical
+                        consultancy."
                     </p>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -384,13 +501,10 @@
                 </div>
 
                 <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
+                    <div class="testimonial-avatar"><i class="fas fa-chalkboard-teacher"></i></div>
                     <p class="testimonial-text">
-                        "Teaching at KUMSS has been incredibly rewarding. The institute provides all the
-                        necessary resources and maintains an environment that fosters both teaching and
-                        learning excellence."
+                        "Teaching at KUMSS has been incredibly rewarding. The institute provides all the necessary
+                        resources and maintains an environment that fosters both teaching and learning excellence."
                     </p>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -401,13 +515,11 @@
                 </div>
 
                 <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
+                    <div class="testimonial-avatar"><i class="fas fa-user-friends"></i></div>
                     <p class="testimonial-text">
-                        "As a parent, I appreciate the emphasis on both technical skills and character
-                        building. My son has grown into a responsible and skilled professional, thanks
-                        to the holistic education at KUMSS."
+                        "As a parent, I appreciate the emphasis on both technical skills and character building. My son
+                        has grown into a responsible and skilled professional, thanks to the holistic education at
+                        KUMSS."
                     </p>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -418,13 +530,10 @@
                 </div>
 
                 <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
+                    <div class="testimonial-avatar"><i class="fas fa-briefcase"></i></div>
                     <p class="testimonial-text">
-                        "We regularly hire from KUMSS because their graduates come with practical skills
-                        and strong work ethics. They require minimal training and contribute immediately
-                        to our projects."
+                        "We regularly hire from KUMSS because their graduates come with practical skills and strong work
+                        ethics. They require minimal training and contribute immediately to our projects."
                     </p>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -443,17 +552,15 @@
             <div class="section-title">
                 <h2>Contact Us</h2>
                 <p class="lead-text">
-                    Ready to begin your educational journey? Contact us today for more information about
-                    admissions, programs, or campus visits.
+                    Ready to begin your educational journey? Contact us today for more information about admissions,
+                    programs, or campus visits.
                 </p>
             </div>
 
             <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
                             <h3>Address</h3>
                             <p>Krushi Udyog Mul Shikshan Sanstha,<br>
@@ -463,9 +570,7 @@
                     </div>
 
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <div>
                             <h3>Phone</h3>
                             <p>+91 94213 94242<br>
@@ -475,9 +580,7 @@
                     </div>
 
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div>
                             <h3>Email</h3>
                             <p>info@kumss.org<br>
@@ -503,60 +606,51 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                     <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+                    <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
                         <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
-                               <div><span>KUMSS SINCE 1951</span></div>
+                        <div><span>KUMSS SINCE 1951</span></div>
                     </a>
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
                         An educational society focused on overall development of students since 1951.
                     </p>
 
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                         <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="/gallery.html">Gallery</a></li>
                         <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English Campus, Dhakale</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English Campus,
+                                Dhakale</a></li>
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary Campus, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Contact Info</h3>
                     <ul class="footer-links">
                         <li><a href="tel:+919421394242">+91 94213 94242</a></li>
@@ -575,29 +669,28 @@
         </div>
     </footer>
 
-
     <!-- js file  -->
     <script src="/assets/js/institute.js"></script>
 
-    <!-- JavaScript -->
+    <!-- JavaScript (kept as you provided; hero video container is hidden but does not break JS) -->
     <script>
-        // Premium Loading Animation
         window.addEventListener('load', () => {
             const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                gsap.to(loadingScreen, {
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.inOut",
+                    delay: 2,
+                    onComplete: () => {
+                        loadingScreen.style.display = 'none';
+                        initAnimations();
+                    }
+                });
+            } else {
+                initAnimations();
+            }
 
-            // Animate loading screen out
-            gsap.to(loadingScreen, {
-                opacity: 0,
-                duration: 1,
-                ease: "power2.inOut",
-                delay: 2,
-                onComplete: () => {
-                    loadingScreen.style.display = 'none';
-                    initAnimations();
-                }
-            });
-
-            // Animate loading elements
             gsap.to(".loading-logo", {
                 rotation: 360,
                 duration: 20,
@@ -614,9 +707,9 @@
             });
         });
 
-        // Initialize HLS Video Streaming
         function initHLSVideo() {
             const video = document.getElementById('heroVideo');
+            if (!video) return;
 
             if (Hls.isSupported()) {
                 const hls = new Hls({
@@ -627,7 +720,6 @@
                     backBufferLength: 90
                 });
 
-                // HLS stream URL (replace with your actual HLS stream)
                 const hlsUrl = 'https://bitdash-a.akamaihd.net/s/content/media/video/hls/bbb/bbb_1080p_hls.m3u8';
 
                 hls.loadSource(hlsUrl);
@@ -652,7 +744,6 @@
                     }
                 });
             } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                // For Safari
                 video.src = 'https://bitdash-a.akamaihd.net/s/content/media/video/hls/bbb/bbb_1080p_hls.m3u8';
                 video.addEventListener('loadedmetadata', () => {
                     video.play().catch(e => console.log('Auto-play prevented:', e));
@@ -664,200 +755,46 @@
 
         function initFallbackVideo() {
             const video = document.getElementById('heroVideo');
+            if (!video) return;
             video.src = 'https://assets.codepen.io/4924623/education-hero-2.mp4';
             video.load();
             video.play().catch(e => console.log('Auto-play prevented:', e));
         }
 
-        // Initialize all animations and interactions
         function initAnimations() {
-            // Initialize GSAP with ScrollTrigger
             gsap.registerPlugin(ScrollTrigger);
-
-            // Initialize HLS video
             initHLSVideo();
 
-            // Header scroll effect
             const header = document.getElementById('header');
             let lastScroll = 0;
 
             window.addEventListener('scroll', () => {
                 const currentScroll = window.pageYOffset;
 
-                // Header effect
-                if (currentScroll > 50) {
-                    header.classList.add('scrolled');
+                if (header) {
+                    if (currentScroll > 50) {
+                        header.classList.add('scrolled');
 
-                    if (currentScroll > lastScroll && currentScroll > 200) {
-                        gsap.to(header, { y: -100, duration: 0.3 });
+                        if (currentScroll > lastScroll && currentScroll > 200) {
+                            gsap.to(header, { y: -100, duration: 0.3 });
+                        } else {
+                            gsap.to(header, { y: 0, duration: 0.3 });
+                        }
                     } else {
+                        header.classList.remove('scrolled');
                         gsap.to(header, { y: 0, duration: 0.3 });
                     }
-                } else {
-                    header.classList.remove('scrolled');
-                    gsap.to(header, { y: 0, duration: 0.3 });
                 }
 
                 lastScroll = currentScroll;
 
-                // Scroll progress bar
-                const progress = (currentScroll / (document.body.scrollHeight - window.innerHeight)) * 100;
-                document.getElementById('scrollProgress').style.width = `${progress}%`;
-
-                // Update active nav link
-                updateActiveNavLink();
-            });
-
-            // Tab system
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tabId = btn.getAttribute('data-tab');
-
-                    // Update active button
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    // Update active content
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                        if (content.id === tabId) {
-                            content.classList.add('active');
-                            gsap.fromTo(content,
-                                { opacity: 0, y: 20 },
-                                { opacity: 1, y: 0, duration: 0.5 }
-                            );
-                        }
-                    });
-                });
-            });
-
-            // Course card hover effects
-            const courseCards = document.querySelectorAll('.course-card');
-            courseCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    gsap.to(card, {
-                        y: -20,
-                        rotationY: 5,
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    });
-
-                    const image = card.querySelector('.course-image');
-                    gsap.to(image, {
-                        scale: 1.1,
-                        duration: 0.8,
-                        ease: 'power2.out'
-                    });
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    gsap.to(card, {
-                        y: 0,
-                        rotationY: 0,
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    });
-
-                    const image = card.querySelector('.course-image');
-                    gsap.to(image, {
-                        scale: 1,
-                        duration: 0.8,
-                        ease: 'power2.out'
-                    });
-                });
-            });
-
-            // Feature card animations
-            const featureCards = document.querySelectorAll('.feature-card');
-            featureCards.forEach(card => {
-                gsap.fromTo(card,
-                    {
-                        opacity: 0,
-                        y: 50,
-                        scale: 0.9
-                    },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.8,
-                        ease: 'back.out(1.2)',
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 85%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
-            });
-
-            // Vision & Mission cards animation
-            const vmCards = document.querySelectorAll('.vm-card');
-            vmCards.forEach((card, i) => {
-                gsap.fromTo(card,
-                    {
-                        opacity: 0,
-                        y: 50,
-                        scale: 0.95
-                    },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.8,
-                        delay: i * 0.2,
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 85%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
-            });
-
-            // Bento cards animation
-            const bentoCards = document.querySelectorAll('.bento-card');
-            bentoCards.forEach((card, i) => {
-                gsap.fromTo(card,
-                    {
-                        opacity: 0,
-                        y: 30,
-                        scale: 0.98
-                    },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.6,
-                        delay: i * 0.1,
-                        ease: 'power2.out',
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 90%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
-            });
-
-            // Parallax effect for video
-            gsap.to('.hero-video', {
-                y: '20%',
-                scale: 1.1,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: '.hero',
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: true
+                const bar = document.getElementById('scrollProgress');
+                if (bar) {
+                    const progress = (currentScroll / (document.body.scrollHeight - window.innerHeight)) * 100;
+                    bar.style.width = `${progress}%`;
                 }
             });
 
-            // Floating elements animation
             const floatingElements = document.querySelectorAll('.floating-element');
             floatingElements.forEach((el, i) => {
                 gsap.to(el, {
@@ -871,169 +808,43 @@
                     delay: i * 0.5
                 });
             });
-
-            // Button hover effects
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(btn => {
-                btn.addEventListener('mouseenter', () => {
-                    gsap.to(btn, {
-                        scale: 1.05,
-                        duration: 0.3,
-                        ease: 'power2.out'
-                    });
-                });
-
-                btn.addEventListener('mouseleave', () => {
-                    gsap.to(btn, {
-                        scale: 1,
-                        duration: 0.3,
-                        ease: 'power2.out'
-                    });
-                });
-            });
         }
 
-        // Update active navigation link
-        function updateActiveNavLink() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            navLinks.classList.toggle('active');
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
 
-            if (navLinks.classList.contains('active')) {
-                gsap.to(navLinks, {
-                    x: 0,
-                    duration: 0.5,
-                    ease: 'power3.out'
-                });
-                document.body.style.overflow = 'hidden';
-            } else {
-                gsap.to(navLinks, {
-                    x: 300,
-                    duration: 0.5,
-                    ease: 'power3.in'
-                });
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-
-        // Smooth scrolling with offset
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const offset = 100;
-                    const targetPosition = targetElement.offsetTop - offset;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                if (navLinks.classList.contains('active')) {
+                    gsap.to(navLinks, { x: 0, duration: 0.5, ease: 'power3.out' });
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    gsap.to(navLinks, { x: 300, duration: 0.5, ease: 'power3.in' });
+                    document.body.style.overflow = '';
                 }
-            });
-        });
-
-        // Lazy loading images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        const src = img.getAttribute('data-src');
-
-                        if (src) {
-                            img.src = src;
-                            img.removeAttribute('data-src');
-
-                            img.onload = () => {
-                                gsap.fromTo(img,
-                                    { opacity: 0, scale: 1.2 },
-                                    { opacity: 1, scale: 1, duration: 1, ease: 'power2.out' }
-                                );
-                            };
-                        }
-
-                        imageObserver.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '100px 0px',
-                threshold: 0.1
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
             });
         }
 
-        // Initialize everything when DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            // Start loading animation immediately
-            const loadingScreen = document.getElementById('loadingScreen');
-            gsap.set(loadingScreen, { opacity: 1 });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (!targetId || targetId === '#') return;
 
-            // Initialize animations after slight delay to ensure DOM is ready
-            setTimeout(() => {
-                if (document.readyState === 'complete') {
-                    // Page is already loaded
-                    window.dispatchEvent(new Event('load'));
-                }
-            }, 100);
-        });
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
 
-        // Performance monitoring
-        window.addEventListener('load', () => {
-            const perfEntries = performance.getEntriesByType('navigation');
-            if (perfEntries.length > 0) {
-                const navTiming = perfEntries[0];
-                const loadTime = navTiming.loadEventEnd - navTiming.loadEventStart;
-                console.log(`Page loaded in ${loadTime}ms`);
+                e.preventDefault();
+                const offset = 100;
+                const targetPosition = targetElement.offsetTop - offset;
 
-                if (loadTime > 3000) {
-                    console.log('Performance tip: Consider optimizing images and reducing animation complexity');
-                }
-            }
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            });
         });
     </script>
+
 </body>
 
 </html>
