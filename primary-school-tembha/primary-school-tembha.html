@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primary School Karhati Tembha</title>
-    <link rel="icon" href="https://kumss.org/assets/kumss_log.png" type="image/x-icon">
+    <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
             <div class="loading-orbit"></div>
             <div class="loading-orbit"></div>
             <div class="loading-orbit"></div>
-            <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="loading-logo">
+            <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="loading-logo">
         </div>
         <div class="loading-text">
             <div class="loading-title">KUMSS EDUCATION</div>
@@ -67,7 +67,7 @@
             <nav class="gm-nav" aria-label="Primary">
                 <!-- Logo -->
                 <a href="/index.html" class="gm-logo">
-                    <img src="https://kumss.org/assets/kumss_log.png" alt="Primary School Karhati Tembha" class="gm-logo-img">
+                    <img src="/assets/kumss_log.png" alt="Primary School Karhati Tembha" class="gm-logo-img">
                 </a>
 
                 <!-- Mobile toggle -->
@@ -80,22 +80,43 @@
 
                 <!-- Links -->
                 <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="./primary-school-tembha.html">Home</a></li>
+                    <li><a class="gm-link" href="#">Home</a></li>
 
                     <li class="gm-item">
-                        <a class="gm-link" href="/#">About</a>
+                        <a class="gm-link" href="#">About</a>
                     </li>
 
                     <li class="gm-item">
-                        <a class="gm-link" href="/#">Academics</a>
+                        <a class="gm-link" href="#">Academics</a>
+                    </li>
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
+                        </button>
+
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala
+                                    Mahavidhyalaya</a></li>
+                        </ul>
                     </li>
 
+
                     <li class="gm-item">
-                        <a class="gm-link" href="/#">Gallery</a>
+                        <a class="gm-link" href="/gallery.html">Gallery</a>
                     </li>
 
                     <li class="gm-cta">
-                        <a class="gm-btn" href="#">Contact Us</a>
+                        <a class="ggm-btn" href="/contact.html">Contact Us</a>
                     </li>
                 </ul>
             </nav>
@@ -510,12 +531,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="margin-bottom: 2rem; align-items: flex-start;">
-                        <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="logo-img">
-                        <div>
-                            <div class="logo-text">KUMSS</div>
-                            <div class="logo-year" style="color: var(--primaryColor);">SINCE 1951</div>
-                        </div>
+                      <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+                               <div><span>KUMSS SINCE 1951</span></div>
                     </a>
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
                         An educational society focused on overall development of students since 1951.

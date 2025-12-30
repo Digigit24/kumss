@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vasatigruh Vidyalay Karhati | Academics</title>
+  <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/assets/css/institute.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; font-family:"Poppins",sans-serif; }
+
+    /* =========================
+       SIMPLE HERO (changed)
+       ========================= */
+    .acad-hero-simple{
+      position: relative;
+      padding: 110px 0 52px; /* respects your fixed header spacing */
+      background: #f7f9ff;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+
+    .acad-hero-simple .hero-container{
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .acad-hero-left{
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .acad-tag{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(47,51,144,.08);
+      color: #233f92;
+      font-weight: 800;
+      border: 1px solid rgba(47,51,144,.16);
+      margin-bottom: 12px;
+    }
+
+    .acad-hero-title{
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.08;
+      font-weight: 900;
+      color: #233f92;
+    }
+
+    .acad-hero-sub{
+      margin: 0;
+      max-width: 70ch;
+      line-height: 1.75;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .acad-hero-right{
+      flex: 0 0 360px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .acad-hero-box{
+      width: 100%;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 10px 22px rgba(0,0,0,.08);
+      padding: 18px;
+    }
+
+    .acad-hero-box h4{
+      margin: 0 0 10px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #233f92;
+    }
+
+    .acad-hero-links{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .acad-pill-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      color: #0b0b0b;
+      background: rgba(255,151,4,.20);
+      border: 1px solid rgba(255,151,4,.35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .acad-pill-link:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 10px 18px rgba(0,0,0,.10);
+    }
+
+    /* =========================
+       SIMPLE HORIZONTAL LAYOUT
+       ========================= */
+    .acad-wrap-simple{
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      padding: 52px 0;
+    }
+
+    .acad-row{
+      display: flex;
+      gap: 18px;
+      align-items: stretch;
+      margin-bottom: 18px;
+    }
+
+    .acad-panel{
+      flex: 1;
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 10px 22px rgba(0,0,0,.07);
+      padding: 22px;
+    }
+
+    .acad-panel h2{
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 900;
+      color: #233f92;
+      border-bottom: 4px solid #ff9704;
+      display: inline-block;
+      padding-bottom: 8px;
+    }
+
+    .acad-panel p{
+      margin: 12px 0 0;
+      color: #222;
+      line-height: 1.8;
+      font-size: 15.5px;
+    }
+
+    .acad-miniList{
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .acad-miniList li{
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-top: 1px dashed rgba(0,0,0,.10);
+      color: #222;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .acad-miniList li:first-child{ border-top: 0; padding-top: 0; }
+    .acad-miniList i{ color:#ff9704; margin-top: 3px; }
+
+    .acad-ctaBar{
+      background: linear-gradient(135deg, #ffffff, #e9f1fb);
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 10px 22px rgba(0,0,0,.08);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .acad-ctaBar strong{ color:#233f92; font-weight: 900; }
+    .acad-ctaBar span{ color:#222; font-size: 14.5px; }
+
+    .acad-ctaBtns{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .acad-btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 900;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .acad-btn--primary{
+      background: rgba(255,151,4,.95);
+      color: #0b0b0b;
+      box-shadow: 0 14px 26px rgba(0,0,0,.18);
+    }
+    .acad-btn--ghost{
+      background: #fff;
+      color: #233f92;
+      border: 1px solid rgba(35,63,146,.18);
+    }
+    .acad-btn:hover{ transform: translateY(-2px); }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .acad-hero-simple .hero-container{
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .acad-hero-right{
+        flex: 1;
+        width: 100%;
+      }
+      .acad-row{
+        flex-direction: column;
+      }
+    }
+
+    /* Keep your existing CTA button style (unchanged) */
+    .ggm-btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 16px; border-radius:999px; text-decoration:none;
+      font-weight:700; color: rgba(0,0,0,.785);
+      background-color: var(--primaryColor);
+    }
+    .ggm-btn:hover{ box-shadow:0 10px 20px rgba(0,0,0,.2); }
+    @media (max-width: 768px){
+      a.ggm-btn{ display:none !important; visibility:hidden !important; opacity:0 !important; pointer-events:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header (same as your existing structure) -->
+  <header class="gm-header" id="header">
+    <div class="gm-container">
+      <nav class="gm-nav" aria-label="Primary">
+        <a href="/index.html" class="gm-logo">
+          <img src="/gurukul-english-medium-school/logo.png" alt="KUMSS Logo" class="gm-logo-img">
+        </a>
+
+        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+          <span class="gm-burger-line"></span>
+          <span class="gm-burger-line"></span>
+          <span class="gm-burger-line"></span>
+        </button>
+
+        <ul class="gm-links" id="navLinks">
+          <li><a class="gm-link" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Home</a></li>
+          <li><a class="gm-link" href="/vasatigruh-vidyalay-karhati/about.html">About</a></li>
+          <li><a class="gm-link" href="/vasatigruh-vidyalay-karhati/academics.html">Academics</a></li>
+
+          <li class="gm-item gm-dropdown" data-dropdown>
+            <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="institutesMenu">
+              Our Educational Institutes
+              <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
+            </button>
+
+            <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+              <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
+              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+              <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
+              <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+            </ul>
+          </li>
+
+          <li><a class="gm-link" href="/vasatigruh-vidyalay-karhati/staff.html">Staff</a></li>
+        </ul>
+
+        <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO (changed to simple horizontal layout) -->
+  <section class="acad-hero-simple" id="home">
+    <div class="hero-container">
+      <div class="acad-hero-left">
+        <div class="acad-tag"><i class="fa-solid fa-graduation-cap"></i> Academics</div>
+        <h1 class="acad-hero-title">Academics at Vasatigruh Vidyalay Karhati</h1>
+        <p class="acad-hero-sub">
+          Demo content for the academics page. Use this space to explain your curriculum structure, learning approach,
+          practical exposure, and the support system for students.
+        </p>
+      </div>
+
+      <div class="acad-hero-right">
+        <div class="acad-hero-box">
+          <h4>Quick Actions</h4>
+          <div class="acad-hero-links">
+            <a class="acad-pill-link" href="/contact.html"><i class="fa-solid fa-circle-info"></i> Enquire</a>
+            <a class="acad-pill-link" href="tel:+919421394242"><i class="fa-solid fa-phone"></i> Call</a>
+            <a class="acad-pill-link" href="/vasatigruh-vidyalay-karhati/about.html"><i class="fa-solid fa-school"></i> About</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMPLE HORIZONTAL CONTENT -->
+  <section>
+    <div class="acad-wrap-simple">
+
+      <div class="acad-row">
+        <div class="acad-panel">
+          <h2>Academic Overview</h2>
+          <p>
+            This section can describe how learning is planned and delivered across grade levels.
+            Keep it clear and parent-friendly. Focus on routine, clarity in concepts, and a steady pace of learning.
+          </p>
+        </div>
+
+        <div class="acad-panel">
+          <h2>Curriculum Framework</h2>
+          <p>
+            Use this space to mention your curriculum framework in a neutral way. You can add syllabus structure,
+            classroom planning, and how learning goals are followed.
+          </p>
+        </div>
+      </div>
+
+      <div class="acad-row">
+        <div class="acad-panel">
+          <h2>Subjects & Learning Areas</h2>
+          <ul class="acad-miniList">
+            <li><i class="fa-solid fa-book-open"></i> Core subjects like Language, Mathematics, Science, and Social Studies.</li>
+            <li><i class="fa-solid fa-flask"></i> Activity-based learning to support understanding and application.</li>
+            <li><i class="fa-solid fa-seedling"></i> Basic practical and agricultural concepts as demo content highlights.</li>
+          </ul>
+        </div>
+
+        <div class="acad-panel">
+          <h2>Student Support</h2>
+          <ul class="acad-miniList">
+            <li><i class="fa-solid fa-user-check"></i> Classroom feedback and guidance to support steady progress.</li>
+            <li><i class="fa-solid fa-clipboard-check"></i> Periodic assessments for learning review.</li>
+            <li><i class="fa-solid fa-people-group"></i> Encouraging routines, discipline, teamwork, and respectful behaviour.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acad-ctaBar">
+        <div>
+          <strong>Need more information?</strong><br />
+          <span>Use this demo CTA to guide visitors to contact or visit scheduling.</span>
+        </div>
+        <div class="acad-ctaBtns">
+          <a class="acad-btn acad-btn--primary" href="/contact.html">Schedule a Visit</a>
+          <a class="acad-btn acad-btn--ghost" href="tel:+919421394242">Call Now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/index.html" class="logo" style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+                        <div>
+                            <div style="color: #ff9704;">KUMSS SINCE 1951</div>
+                        </div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
+                        <li><a href="/gurukul-english-medium-school/about.html">About</a></li>
+                        <li><a href="#">Academics</a></li>
+                         <li><a href="/gurukul-english-medium-school/staff.html">Staff</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i>
+<a href="tel:+919421394242">+91 94213 94242</a></li>
+                        <li><i class="fas fa-envelope"></i>
+<a href="mailto:info@kumss.org">info@kumss.org</a></li>
+                        <li><i class="fas fa-envelope"></i>
+<a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+                </p>
+            </div>
+        </div>
+    </footer>
+
+  <script src="/assets/js/institute.js"></script>
+</body>
+</html>

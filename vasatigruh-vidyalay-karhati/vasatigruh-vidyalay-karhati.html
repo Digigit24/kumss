@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vasatigruh Vidyalaya | Excellence Since 1951</title>
-    <link rel="icon" href="https://kumss.org/assets/kumss_log.png" type="image/x-icon">
+    <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -202,7 +202,65 @@
     line-height: 2;
   }
 }
-        
+
+/* Ensure hero can hold absolute video layer */
+.kvk-academicHero{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Video layer */
+.kvk-heroVideoWrap{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.kvk-heroVideo{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.03);
+  filter: saturate(1.05) contrast(1.05);
+}
+
+/* Overlay for text readability */
+.kvk-heroVideoOverlay{
+  position: absolute;
+  inset: 0;
+  background:
+     linear-gradient(90deg,
+      rgba(255,255,255,.82) 0%,
+      rgba(255, 255, 255, 0.24) 55%,
+      rgba(255,255,255,.25) 100%
+    ),
+    linear-gradient(180deg,
+      rgba(255,255,255,.35) 0%,
+      rgba(255, 255, 255, 0.402) 100%
+    );
+}
+
+/* Keep your existing layers/content above video */
+.kvk-heroBackdrop{ position: relative; z-index: 1; }
+.kvk-heroShell{ position: relative; z-index: 2; }
+
+/* Mobile: stronger overlay */
+@media (max-width: 640px){
+  .kvk-heroVideoOverlay{
+    background: linear-gradient(180deg,
+      rgba(0,0,0,.70) 0%,
+      rgba(0,0,0,.55) 60%,
+      rgba(0,0,0,.62) 100%
+    );
+  }
+}
+
+  
       /* Center + stack icon above title */
 .vm-head{
   display: flex;
@@ -382,29 +440,7 @@
             }
         }
         
-.ggm-btn {
-      display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 10px 16px;
-  border-radius: 999px;
-  text-decoration:none;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.785);
-  background-color: var(--primaryColor);
-}
-.ggm-btn:hover{
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
 
-@media (max-width: 768px){ 
-    a.ggm-btn {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-}
 .footer-logo-img {
                                 width: 30%;
                                 height: 30%;
@@ -422,7 +458,7 @@
             <div class="loading-orbit"></div>
             <div class="loading-orbit"></div>
             <div class="loading-orbit"></div>
-            <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="loading-logo">
+            <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="loading-logo">
         </div>
         <div class="loading-text">
             <div class="loading-title">KUMSS EDUCATION</div>
@@ -459,9 +495,9 @@
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link" href="#">Home</a></li>
 
-                    <li><a class="gm-link" href="#">About</a></li>
+                    <li><a class="gm-link" href="./about.html">About</a></li>
                   
-                      <li><a class="gm-link" href="#">Academics</a></li>
+                      <li><a class="gm-link" href="./academics.html">Academics</a></li>
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <!-- Desktop uses hover/focus. Mobile uses this button. -->
@@ -494,7 +530,17 @@
     </header>
 
     <!-- Premium Hero with HLS Video -->
-  <section class="kvk-academicHero" id="home">
+ <section class="kvk-academicHero" id="home">
+
+  <!-- Video background (added) -->
+  <div class="kvk-heroVideoWrap" aria-hidden="true">
+    <video class="kvk-heroVideo" autoplay muted loop playsinline preload="metadata">
+      <source src="/assets/vvk-bg.mp4" type="video/mp4" />
+      <!-- Optional -->
+      <!-- <source src="assets/hero-bg.webm" type="video/webm" /> -->
+    </video>
+    <div class="kvk-heroVideoOverlay" aria-hidden="true"></div>
+  </div>
 
   <div class="kvk-heroBackdrop" aria-hidden="true"></div>
 
@@ -520,20 +566,12 @@
           “Education opens up the mind, expands it and allows you to improve your life in so many ways.”
         </blockquote>
       </div>
-
-      <!-- Media -->
-      <div class="kvk-heroSide">
-        <div class="kvk-mediaCard">
-          <video id="heroVideo" class="kvk-mediaCard__video" autoplay muted loop playsinline>
-            <!-- HLS video source will be added by JavaScript -->
-          </video>
-          <div class="kvk-mediaCard__veil" aria-hidden="true"></div>
-        </div>
-      </div>
+      
 
     </div>
   </div>
 </section>
+
 
 
 
@@ -544,7 +582,7 @@
 
                 <!-- Left: Image -->
                 <div class="about-media">
-                    <img src="/assets/img/faculty/faculty-1.jpg" alt="Vastigruh Vidyalay Karhati campus"
+                    <img src="/assets/vvk-about-img.jpg" alt="Vastigruh Vidyalay Karhati campus"
                         loading="lazy" />
                 </div>
 
@@ -568,21 +606,13 @@
                         surrounding environment.
                     </p>
 
-                    <!-- <p>
-                        Research shows that learning experiences that usually take place outside the classroom
-                        have long lasting and positive impact on children. These experiences have potential to
-                        develop a range of skills such as teamwork, collaboration, communication and leadership.
-                    </p>
-
-                    <p>
-                        The children at our school learn to give a helping hand to their parents who mainly work
-                        in the fields, creating a strong connection between education and practical life skills.
-                    </p> -->
+        
+            
 
                     <!-- Optional CTA -->
                     <div class="about-actions">
                         <a href="/contact.html" class="btn-primary">Enquire Now</a>
-                        <a href="#gallery" class="btn-outline">View Gallery</a>
+                        <a href="/gallery.html" class="btn-outline">View Gallery</a>
                     </div>
                 </div>
 
@@ -927,10 +957,10 @@
 
             <!-- View More Button -->
             <div class="view-more-wrapper">
-                <button class="view-more-btn" id="viewMoreBtn">
+                <a href="./staff.html"><button class="view-more-btn" id="viewMoreBtn">
                     <span class="btn-text">View All Faculty</span>
                     <i class="fas fa-chevron-down btn-icon"></i>
-                </button>
+                </button></a>
             </div>
         </div>
     </section>
@@ -953,6 +983,7 @@
                         <h4>Shri. Ajit Anantrao Pawar</h4>
                     </div>
                     <div class="leader-back">
+                        <img src="/assets/ajit-pawar.jfif" alt="chairman">
                         <h3>Deputy Chief Minister of Maharashtra</h3>
                         <p>Leading KUMSS since 2004 with visionary leadership and commitment to education</p>
                     </div>
@@ -1155,12 +1186,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="margin-bottom: 2rem; align-items: flex-start;">
-                        <img src="../assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
-                        <div>
-                            <div class="logo-text">KUMSS</div>
-                            <div class="logo-year" style="color: var(--primaryColor);">SINCE 1951</div>
-                        </div>
+                      <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+                               <div><span>KUMSS SINCE 1951</span></div>
                     </a>
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
                         An educational society focused on overall development of students since 1951.
@@ -1190,8 +1218,9 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="./vasatigruh-vidyalay-karhati.html">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/about.html">About</a></li>
+                        <li><a href="./academics.html">Academics</a></li>
                         <li><a href="/gallery.html">Gallery</a></li>
                         <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
