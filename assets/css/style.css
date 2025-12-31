@@ -46,6 +46,68 @@ This files table contents are outlined below>>>>>
 /*================================================
 Default Style
 =================================================*/
+ /* Global Page Loader */
+.loader-wrap{
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  transition: opacity 0.35s ease;
+}
+.octa-ring{
+  width: 80px;
+  height: 80px;
+
+  /* 8-side shape */
+  clip-path: polygon(
+    30% 4%, 70% 4%,
+    96% 30%, 96% 70%,
+    70% 96%, 30% 96%,
+    4% 70%, 4% 30%
+  );
+
+  /* shaded two-tone sweep */
+  background: conic-gradient(
+    #f78f2d 0%,
+    #f29728 30%,
+    #d29443 55%,
+    #f0b238 75%,
+    #e4812f 88%,
+    #f4a732 100%
+  );
+
+  /* make it a ring (hole in center) */
+  -webkit-mask: radial-gradient(farthest-side, transparent 62%, #000 63%);
+  mask: radial-gradient(farthest-side, transparent 62%, #000 63%);
+
+  animation: spin 0.9s linear infinite;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.12));
+}
+
+@keyframes spin{
+  to { transform: rotate(360deg); }
+}
+
+body.loaded #page-loader{ display:none; }
+/* Global Scroll Progress Bar */
+.scroll-progress{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: var(--secenderyColor, #f37a20);
+  z-index: 99999;
+  transform-origin: left center;
+}
+
+/* Optional: hide on very small screens */
+@media (max-width: 480px){
+  .scroll-progress{ height: 3px; }
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Gantari:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap");
 :root {
   /* --- TYPOGRAPHY --- */
@@ -212,31 +274,95 @@ p:last-child {
 /*=========================================
 Default Btn
 ===========================================*/
-.default-btn {
-  padding: 15px 33px;
-  display: flex;
+.default-btn{
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--whiteColor) !important;
-  background-color: var(--primaryColor);
+  gap: 10px;
+
+  padding: 14px 28px;
+
   font-family: var(--heading-font-family);
   font-size: 16px;
-  font-weight: 700;
-}
-.default-btn i {
-  line-height: 0;
-  font-size: 25px;
-  margin-left: 19px;
-  position: relative;
-}
-.default-btn:hover {
-  color: var(--blackColor) !important;
-  background-color: var(--whiteColor);
-}
-.default-btn.style-2:hover {
+  font-weight: 800;
+  letter-spacing: .2px;
+
+  background: transparent;
   color: var(--whiteColor) !important;
-  background-color: var(--blackColor);
+
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 14px;
+
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
 }
+
+.default-btn::after{
+  content:"";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 10px;
+  height: 2px;
+  background: var(--primaryColor);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+
+.default-btn i{
+  font-size: 18px;
+  line-height: 1;
+  transition: transform .18s ease;
+}
+
+.default-btn:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.26);
+}
+
+.default-btn:hover::after{
+  transform: scaleX(1);
+}
+
+.default-btn:hover i{
+  transform: translateX(4px);
+}
+
+.default-btn.style-2{
+  background: var(--primaryColor);
+  color: var(--blackColor) !important;
+  border-color: rgba(0,0,0,0.14);
+  backdrop-filter: none;
+}
+.default-btn.style-2::after{
+  background: var(--blackColor);
+}
+.scroll-progress{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  z-index: 9999;
+  background: rgba(0,0,0,0.08);
+}
+.scroll-progress__bar{
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #d66615;
+  transition: width .08s linear;
+}
+
 
 .arrow-btn {
   margin-right: 40px;

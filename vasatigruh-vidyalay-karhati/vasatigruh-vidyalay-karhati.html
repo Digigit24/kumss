@@ -452,27 +452,11 @@
 </head>
 
 <body>
-    <!-- Premium Loading Screen -->
-    <!-- <div class="loading-screen" id="loadingScreen">
-        <div class="loading-container">
-            <div class="loading-orbit"></div>
-            <div class="loading-orbit"></div>
-            <div class="loading-orbit"></div>
-            <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="loading-logo">
-        </div>
-        <div class="loading-text">
-            <div class="loading-title">KUMSS EDUCATION</div>
-            <div class="loading-subtitle">Excellence Since 1951</div>
-            <div class="loading-dots">
-                <div class="loading-dot"></div>
-                <div class="loading-dot"></div>
-                <div class="loading-dot"></div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- Scroll Progress Bar -->
-    <!-- <div class="scroll-progress" id="scrollProgress"></div> -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+     <div id="page-loader" class="loader-wrap">
+  <div class="octa-ring" aria-label="Loading">
+  </div>
+</div>
 
     <!-- Header -->
     <header class="gm-header" id="header">
@@ -583,7 +567,8 @@
                 <!-- Left: Image -->
                 <div class="about-media">
                     <img src="/assets/vvk-about-img.jpg" alt="Vastigruh Vidyalay Karhati campus"
-                        loading="lazy" />
+                         loading="lazy"
+     decoding="async" />
                 </div>
 
                 <!-- Right: Content -->
@@ -781,7 +766,8 @@
                 <div class="course-card">
                     <span class="course-badge">Technical</span>
                     <img src="/assets/img/quality-education.jpg" alt="Draughtsman Mechanical" class="course-image"
-                        loading="lazy">
+                         loading="lazy"
+     decoding="async">
                     <div class="course-content">
                         <h3>Quality Education</h3>
                         <p>
@@ -795,7 +781,8 @@
 
                 <div class="course-card">
                     <span class="course-badge">Agricultural</span>
-                    <img src="/assets/img/agricultural-focus.jpg" alt="Electrician" class="course-image" loading="lazy">
+                    <img src="/assets/img/agricultural-focus.jpg" alt="Electrician" class="course-image"  loading="lazy"
+     decoding="async">
                     <div class="course-content">
                         <h3>Agricultural Focus</h3>
                         <p>
@@ -810,7 +797,8 @@
                 <div class="course-card">
                     <span class="course-badge">Experienced Faculty</span>
                     <img src="/assets/img/experienced-faculty.jpg" alt="Electronics Mechanic" class="course-image"
-                        loading="lazy">
+                         loading="lazy"
+     decoding="async">
                     <div class="course-content">
                         <h3>Experienced Faculty</h3>
                         <p>
@@ -839,7 +827,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="/assets/anita-ravindra-chavan.jpg"
-                            alt="Mrs- Anita Ravindra Chavan" loading="lazy">
+                            alt="Mrs- Anita Ravindra Chavan"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -853,7 +842,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="/assets/bhausaheb-pandurang-pisal.jpg"
-                            alt="Mrs. Sunita Deshmukh" loading="lazy">
+                            alt="Mrs. Sunita Deshmukh"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -867,7 +857,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="/assets/abasaheb-malhari-kokare.jpg"
-                            alt="Mr. Abasaheb Malhari Kokare" loading="lazy">
+                            alt="Mr. Abasaheb Malhari Kokare"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -881,7 +872,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="/assets/bhapkar-manjushri-lalasaheb.jpg"
-                            alt="Mrs. Meera Joshi" loading="lazy">
+                            alt="Mrs. Meera Joshi"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -898,7 +890,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="/assets/khaire-reshma-vyankat.jpg"
-                            alt="Dr. Anand Rao" loading="lazy">
+                            alt="Dr. Anand Rao"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -912,7 +905,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="/assets/komal-chandgude.jpg"
-                            alt="Mr. Vikram Singh" loading="lazy">
+                            alt="Mr. Vikram Singh"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -930,7 +924,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="/assets/amol-subhash-kambale.jpg"
-                            alt="Mr. Amol Subhash Kambale" loading="lazy">
+                            alt="Mr. Amol Subhash Kambale"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -944,7 +939,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="/assets/allabaksh-husen-shaikh.jpg"
-                            alt="Mr. Ravi Verma" loading="lazy">
+                            alt="Mr. Ravi Verma"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -1265,317 +1261,7 @@
 
     <!-- JavaScript -->
     <script>
-        // Premium Loading Animation
-        window.addEventListener('load', () => {
-            const loadingScreen = document.getElementById('loadingScreen');
-
-            // Animate loading screen out
-            gsap.to(loadingScreen, {
-                opacity: 0,
-                duration: 1,
-                ease: "power2.inOut",
-                delay: 2,
-                onComplete: () => {
-                    loadingScreen.style.display = 'none';
-                    initAnimations();
-                }
-            });
-
-            // Animate loading elements
-            gsap.to(".loading-logo", {
-                rotation: 360,
-                duration: 20,
-                repeat: -1,
-                ease: "none"
-            });
-
-            gsap.to(".loading-dot", {
-                y: -20,
-                duration: 1,
-                repeat: -1,
-                yoyo: true,
-                stagger: 0.2
-            });
-        });
-
-        // Initialize HLS Video Streaming
-        function initHLSVideo() {
-            const video = document.getElementById('heroVideo');
-
-            if (Hls.isSupported()) {
-                const hls = new Hls({
-                    maxBufferLength: 30,
-                    maxMaxBufferLength: 60,
-                    enableWorker: true,
-                    lowLatencyMode: true,
-                    backBufferLength: 90
-                });
-
-                // HLS stream URL (replace with your actual HLS stream)
-                const hlsUrl = 'https://bitdash-a.akamaihd.net/s/content/media/video/hls/bbb/bbb_1080p_hls.m3u8';
-
-                hls.loadSource(hlsUrl);
-                hls.attachMedia(video);
-                hls.on(Hls.Events.MANIFEST_PARSED, () => {
-                    video.play().catch(e => console.log('Auto-play prevented:', e));
-                });
-
-                hls.on(Hls.Events.ERROR, (event, data) => {
-                    if (data.fatal) {
-                        switch (data.type) {
-                            case Hls.ErrorTypes.NETWORK_ERROR:
-                                hls.startLoad();
-                                break;
-                            case Hls.ErrorTypes.MEDIA_ERROR:
-                                hls.recoverMediaError();
-                                break;
-                            default:
-                                initFallbackVideo();
-                                break;
-                        }
-                    }
-                });
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                // For Safari
-                video.src = 'https://bitdash-a.akamaihd.net/s/content/media/video/hls/bbb/bbb_1080p_hls.m3u8';
-                video.addEventListener('loadedmetadata', () => {
-                    video.play().catch(e => console.log('Auto-play prevented:', e));
-                });
-            } else {
-                initFallbackVideo();
-            }
-        }
-
-        function initFallbackVideo() {
-            const video = document.getElementById('heroVideo');
-            video.src = 'https://assets.codepen.io/4924623/education-hero-2.mp4';
-            video.load();
-            video.play().catch(e => console.log('Auto-play prevented:', e));
-        }
-
-        // Initialize all animations and interactions
-        function initAnimations() {
-            // Initialize GSAP with ScrollTrigger
-            gsap.registerPlugin(ScrollTrigger);
-
-            // Initialize HLS video
-            initHLSVideo();
-
-            // Header scroll effect
-            const header = document.getElementById('header');
-            let lastScroll = 0;
-
-            window.addEventListener('scroll', () => {
-                const currentScroll = window.pageYOffset;
-
-                // Header effect
-                if (currentScroll > 50) {
-                    header.classList.add('scrolled');
-
-                    if (currentScroll > lastScroll && currentScroll > 200) {
-                        gsap.to(header, { y: -100, duration: 0.3 });
-                    } else {
-                        gsap.to(header, { y: 0, duration: 0.3 });
-                    }
-                } else {
-                    header.classList.remove('scrolled');
-                    gsap.to(header, { y: 0, duration: 0.3 });
-                }
-
-                lastScroll = currentScroll;
-
-                // Scroll progress bar
-                const progress = (currentScroll / (document.body.scrollHeight - window.innerHeight)) * 100;
-                document.getElementById('scrollProgress').style.width = `${progress}%`;
-
-                // Update active nav link
-                updateActiveNavLink();
-            });
-
-            // Tab system
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tabId = btn.getAttribute('data-tab');
-
-                    // Update active button
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    // Update active content
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                        if (content.id === tabId) {
-                            content.classList.add('active');
-                            gsap.fromTo(content,
-                                { opacity: 0, y: 20 },
-                                { opacity: 1, y: 0, duration: 0.5 }
-                            );
-                        }
-                    });
-                });
-            });
-
-            // Course card hover effects
-            const courseCards = document.querySelectorAll('.course-card');
-            courseCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    gsap.to(card, {
-                        y: -20,
-                        rotationY: 5,
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    });
-
-                    const image = card.querySelector('.course-image');
-                    gsap.to(image, {
-                        scale: 1.1,
-                        duration: 0.8,
-                        ease: 'power2.out'
-                    });
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    gsap.to(card, {
-                        y: 0,
-                        rotationY: 0,
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    });
-
-                    const image = card.querySelector('.course-image');
-                    gsap.to(image, {
-                        scale: 1,
-                        duration: 0.8,
-                        ease: 'power2.out'
-                    });
-                });
-            });
-
-            // Feature card animations
-            const featureCards = document.querySelectorAll('.feature-card');
-            featureCards.forEach(card => {
-                gsap.fromTo(card,
-                    {
-                        opacity: 0,
-                        y: 50,
-                        scale: 0.9
-                    },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.8,
-                        ease: 'back.out(1.2)',
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 85%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
-            });
-
-            // Vision & Mission cards animation
-            const vmCards = document.querySelectorAll('.vm-card');
-            vmCards.forEach((card, i) => {
-                gsap.fromTo(card,
-                    {
-                        opacity: 0,
-                        y: 50,
-                        scale: 0.95
-                    },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.8,
-                        delay: i * 0.2,
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 85%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
-            });
-
-            // Bento cards animation
-            const bentoCards = document.querySelectorAll('.bento-card');
-            bentoCards.forEach((card, i) => {
-                gsap.fromTo(card,
-                    {
-                        opacity: 0,
-                        y: 30,
-                        scale: 0.98
-                    },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.6,
-                        delay: i * 0.1,
-                        ease: 'power2.out',
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 90%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
-            });
-
-            // Parallax effect for video
-            gsap.to('.hero-video', {
-                y: '20%',
-                scale: 1.1,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: '.hero',
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: true
-                }
-            });
-
-            // Floating elements animation
-            const floatingElements = document.querySelectorAll('.floating-element');
-            floatingElements.forEach((el, i) => {
-                gsap.to(el, {
-                    y: 'random(-40, 40)',
-                    x: 'random(-30, 30)',
-                    rotation: 'random(-20, 20)',
-                    duration: 'random(4, 8)',
-                    repeat: -1,
-                    yoyo: true,
-                    ease: 'sine.inOut',
-                    delay: i * 0.5
-                });
-            });
-
-            // Button hover effects
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(btn => {
-                btn.addEventListener('mouseenter', () => {
-                    gsap.to(btn, {
-                        scale: 1.05,
-                        duration: 0.3,
-                        ease: 'power2.out'
-                    });
-                });
-
-                btn.addEventListener('mouseleave', () => {
-                    gsap.to(btn, {
-                        scale: 1,
-                        duration: 0.3,
-                        ease: 'power2.out'
-                    });
-                });
-            });
-        }
+       
 
         // Update active navigation link
         function updateActiveNavLink() {

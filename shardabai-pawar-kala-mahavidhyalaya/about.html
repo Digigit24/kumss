@@ -156,7 +156,7 @@
       gap: 10px;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(24, 24, 24, 0.427);
       border: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: var(--soft-shadow);
       color: var(--whiteColor, #fff);
@@ -169,6 +169,7 @@
     }
 
     .h1 {
+      color: #0d2ed6;
       font-family: "Gantari", sans-serif;
       font-weight: 900;
       letter-spacing: 0.2px;
@@ -180,7 +181,7 @@
     .lead {
       font-size: 16px;
       line-height: 1.85;
-      color: var(--paragraphColor, rgba(255, 255, 255, 0.78));
+      color: #111;
       max-width: 60ch;
     }
 
@@ -211,13 +212,7 @@
       transform: scale(1.05);
     }
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.08), transparent 45%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.68));
-      z-index: 1;
-    }
+ 
 
     .hero-inner {
       position: relative;
@@ -225,16 +220,16 @@
       padding: 34px 0 54px;
     }
 
-    .hero-card {
-      width: min(860px, 100%);
-      border-radius: 26px;
-      padding: 26px 22px;
-      background: rgba(255, 255, 255, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: var(--shadow);
-    }
+    .hero-card{
+  width: min(860px, 100%);
+  padding: 0;               /* no card padding */
+  background: transparent;  /* no glass */
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 
     .hero-actions {
       display: flex;
@@ -368,6 +363,9 @@
       .hero {
         min-height: 74vh;
       }
+      .footer-logo-img {
+        margin-left: 0 !important;
+      }
     }
 
     @media (max-width: 520px) {
@@ -379,34 +377,32 @@
         padding: 20px 16px;
       }
     }
+
+    .hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.25) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.75) 100%);
+}
+.hero-inner{ position:relative; z-index:2; }
+
   </style>
 </head>
 
 <body>
-
-  <!-- Loading Screen -->
-  <div id="loadingScreen" aria-hidden="true">
-    <div class="loading-box">
-      <div class="loading-logo">
-        <img src="/assets/kumss_log.png" alt="KUMSS Logo" />
-      </div>
-      <div class="loading-title">Loading About Page</div>
-      <div class="loading-sub">
-        Bringing the story of Shardabai Pawar Kala Mahavidhyalaya to you.
-        One moment.
-      </div>
-      <div class="loading-dots" aria-label="Loading">
-        <span class="loading-dot"></span>
-        <span class="loading-dot"></span>
-        <span class="loading-dot"></span>
-      </div>
-    </div>
+ <div id="page-loader" class="loader-wrap">
+  <div class="octa-ring" aria-label="Loading">
   </div>
+</div>
+  
 
   <!-- Scroll Progress -->
   <div class="scroll-progress" aria-hidden="true">
     <div id="scrollProgress"></div>
   </div>
+
 
   <!-- Header -->
   <header class="gm-header" id="header">
@@ -456,43 +452,35 @@
   <!-- Hero -->
   <section class="hero" id="top">
     <div class="hero-video-container" aria-hidden="true">
-      <video id="heroVideo" class="hero-video" muted playsinline autoplay loop></video>
-      <div class="hero-overlay"></div>
-    </div>
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="/assets/about-bg-hero-img.avif"
+  >
+    <source src="/assets/shardabai-bg-hero.mp4" type="video/mp4" />
+    <!-- fallback text -->
+  </video>
+
+  <div class="hero-overlay"></div>
+</div>
+
 
     <div class="page-wrap hero-inner">
       <div class="hero-card">
         <span class="kicker"><i class="fa-solid fa-palette"></i> Fine Arts Education • Karhati</span>
         <h1 class="h1">About Shardabai Pawar Kala Mahavidhyalaya</h1>
-        <p class="lead">
+        <p style="color: #fff;" class="lead">
           A focused institution for fine arts education, built to develop skilled, disciplined, and confident art educators.
           Here, creativity is trained with technique, practice, and real guidance.
         </p>
 
-        <div class="hero-actions">
-          <a class="btnx primary" href="#about"><i class="fa-solid fa-book-open"></i> Read the story</a>
-          <a class="btnx" href="#courses"><i class="fa-solid fa-graduation-cap"></i> Courses offered</a>
-          <a class="btnx" href="#results"><i class="fa-solid fa-chart-line"></i> Results & outcomes</a>
-        </div>
+      
 
-        <div class="rp-stats-unique-wrapper" aria-label="Highlights">
-          <div class="stat">
-            <div class="num"><span class="rp-counter" data-target="1993">0</span></div>
-            <div class="label">Established (1993–1994)</div>
-          </div>
-          <div class="stat">
-            <div class="num"><span class="rp-counter" data-target="100">0</span>%</div>
-            <div class="label">Consistent top performance</div>
-          </div>
-          <div class="stat">
-            <div class="num"><span class="rp-counter" data-target="2">0</span>+</div>
-            <div class="label">Career-focused programs</div>
-          </div>
-          <div class="stat">
-            <div class="num"><span class="rp-counter" data-target="1951">0</span></div>
-            <div class="label">KUMSS guidance since 1951</div>
-          </div>
-        </div>
+       
       </div>
     </div>
   </section>
@@ -742,7 +730,8 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2023 Shardabai Pawar Kala Mahavidhyalaya, Karhati. All Rights Reserved.</p>
+       <p>© <span id="yearNow"></span> Shardabai Pawar Kala Mahavidhyalaya, Karhati. All Rights Reserved.</p>
+
         <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
           ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
         </p>
@@ -971,6 +960,8 @@
       if (header) header.classList.toggle('scrolled', y > 50);
       setScrollProgress();
     });
+    document.getElementById("yearNow")?.textContent = new Date().getFullYear();
+
   </script>
 </body>
 

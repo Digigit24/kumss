@@ -1,4 +1,6 @@
 // header js
+console.log("main js loaded");
+
   (function () {
     const header = document.getElementById("header");
     const menuBtn = document.getElementById("mobileMenuBtn");
@@ -132,3 +134,44 @@ document.addEventListener('DOMContentLoaded', function() {
         facultyImages.forEach(img => imageObserver.observe(img));
     }
 });
+(function initScrollProgressBar(){
+  const bar = document.getElementById("scrollProgress");
+  if(!bar) return;
+
+  function update(){
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = Math.min(100, Math.max(0, progress)) + "%";
+  }
+
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+})();
+
+const yearEl = document.getElementById("yearNow");
+if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+(() => {
+  const MIN_TIME = 800; // change to 1200 if you want slower
+  const start = Date.now();
+
+  function hideLoader() {
+    const loader = document.getElementById("page-loader");
+    if (!loader) return;
+
+    const elapsed = Date.now() - start;
+    const remaining = Math.max(0, MIN_TIME - elapsed);
+
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      loader.style.pointerEvents = "none";
+      setTimeout(() => loader.remove(), 300);
+    }, remaining);
+  }
+
+  window.addEventListener("load", hideLoader);
+})();
+
+
+
