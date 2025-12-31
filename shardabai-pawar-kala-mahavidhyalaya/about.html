@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Shardabai Pawar Kala Mahavidhyalaya</title>
+  <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/assets/css/institute.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+  <!-- HLS.js (for .m3u8) -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.10/dist/hls.min.js"></script>
+
+  <style>
+    /* Page-only styling (keeps your institute.css untouched) */
+    :root {
+      --page-max: 1180px;
+      --glass: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+      --soft-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+      --radius: 18px;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* Loading */
+    #loadingScreen {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.12), transparent 35%),
+        radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.10), transparent 40%),
+        linear-gradient(180deg, rgba(10, 10, 10, 0.92), rgba(10, 10, 10, 0.82));
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .loading-box {
+      width: min(520px, 92vw);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+      text-align: center;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .loading-logo {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 14px;
+      overflow: hidden;
+    }
+
+    .loading-logo img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .loading-title {
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      margin-bottom: 10px;
+      font-family: "Gantari", sans-serif;
+    }
+
+    .loading-sub {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .loading-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Progress bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      z-index: 9998;
+      background: rgba(0, 0, 0, 0.10);
+    }
+
+    #scrollProgress {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.40));
+    }
+
+    /* Layout helpers */
+    .page-wrap {
+      max-width: var(--page-max);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--soft-shadow);
+      color: var(--whiteColor, #fff);
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+
+    .kicker i {
+      opacity: 0.85;
+    }
+
+    .h1 {
+      font-family: "Gantari", sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      line-height: 1.08;
+      font-size: clamp(34px, 4vw, 54px);
+      margin: 10px 0 12px;
+    }
+
+    .lead {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--paragraphColor, rgba(255, 255, 255, 0.78));
+      max-width: 60ch;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 96px; /* space for header */
+    }
+
+    .hero-video-container {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: #111;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.72) contrast(1.08);
+      transform: scale(1.05);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.08), transparent 45%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.68));
+      z-index: 1;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      padding: 34px 0 54px;
+    }
+
+    .hero-card {
+      width: min(860px, 100%);
+      border-radius: 26px;
+      padding: 26px 22px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .btnx {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.10);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform .18s ease, background .18s ease;
+    }
+
+    .btnx:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .btnx.primary {
+      background: rgba(255, 255, 255, 0.90);
+      color: #121212;
+      border-color: rgba(255, 255, 255, 0.85);
+    }
+
+    .btnx.primary:hover {
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .cardx {
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: var(--soft-shadow);
+      padding: 18px;
+    }
+
+    .cardx h3 {
+      margin: 0 0 10px;
+      font-family: "Gantari", sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .cardx p,
+    .cardx li {
+      color: var(--paragraphColor, rgba(255, 255, 255, 0.78));
+      line-height: 1.85;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .bullets {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    /* Stats */
+    .rp-stats-unique-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 16px;
+      box-shadow: var(--soft-shadow);
+      min-height: 110px;
+      display: grid;
+      gap: 6px;
+      align-content: start;
+    }
+
+    .stat .num {
+      font-family: "Gantari", sans-serif;
+      font-weight: 900;
+      font-size: 34px;
+      letter-spacing: 0.2px;
+      color: var(--whiteColor, #fff);
+      line-height: 1;
+    }
+
+    .stat .label {
+      color: var(--paragraphColor, rgba(255, 255, 255, 0.78));
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .rp-stats-unique-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        min-height: 74vh;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .rp-stats-unique-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loadingScreen" aria-hidden="true">
+    <div class="loading-box">
+      <div class="loading-logo">
+        <img src="/assets/kumss_log.png" alt="KUMSS Logo" />
+      </div>
+      <div class="loading-title">Loading About Page</div>
+      <div class="loading-sub">
+        Bringing the story of Shardabai Pawar Kala Mahavidhyalaya to you.
+        One moment.
+      </div>
+      <div class="loading-dots" aria-label="Loading">
+        <span class="loading-dot"></span>
+        <span class="loading-dot"></span>
+        <span class="loading-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div id="scrollProgress"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="gm-header" id="header">
+    <div class="gm-container">
+      <nav class="gm-nav" aria-label="Primary">
+        <a href="./shardabai-pawar-kala-mahavidhyalaya.html" class="gm-logo">
+          <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img" />
+        </a>
+
+        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+          <span class="gm-burger-line"></span>
+          <span class="gm-burger-line"></span>
+          <span class="gm-burger-line"></span>
+        </button>
+
+        <ul class="gm-links" id="navLinks">
+          <li><a class="gm-link" href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
+          <li><a class="gm-link is-active" href="./about.html">About</a></li>
+
+          <li class="gm-item gm-dropdown" data-dropdown>
+            <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="institutesMenu">
+              Our Educational Institutes
+              <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
+            </button>
+
+            <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+              <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
+              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+              <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
+              <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+            </ul>
+          </li>
+
+          <li><a class="gm-link" href="./staff.html">Staff</a></li>
+          <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
+
+          <li class="gm-cta">
+            <a class="ggm-btn" href="/contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero-video-container" aria-hidden="true">
+      <video id="heroVideo" class="hero-video" muted playsinline autoplay loop></video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="page-wrap hero-inner">
+      <div class="hero-card">
+        <span class="kicker"><i class="fa-solid fa-palette"></i> Fine Arts Education • Karhati</span>
+        <h1 class="h1">About Shardabai Pawar Kala Mahavidhyalaya</h1>
+        <p class="lead">
+          A focused institution for fine arts education, built to develop skilled, disciplined, and confident art educators.
+          Here, creativity is trained with technique, practice, and real guidance.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btnx primary" href="#about"><i class="fa-solid fa-book-open"></i> Read the story</a>
+          <a class="btnx" href="#courses"><i class="fa-solid fa-graduation-cap"></i> Courses offered</a>
+          <a class="btnx" href="#results"><i class="fa-solid fa-chart-line"></i> Results & outcomes</a>
+        </div>
+
+        <div class="rp-stats-unique-wrapper" aria-label="Highlights">
+          <div class="stat">
+            <div class="num"><span class="rp-counter" data-target="1993">0</span></div>
+            <div class="label">Established (1993–1994)</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="rp-counter" data-target="100">0</span>%</div>
+            <div class="label">Consistent top performance</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="rp-counter" data-target="2">0</span>+</div>
+            <div class="label">Career-focused programs</div>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="rp-counter" data-target="1951">0</span></div>
+            <div class="label">KUMSS guidance since 1951</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="page-wrap">
+      <div class="section-head">
+        <div>
+          <span class="kicker"><i class="fa-solid fa-landmark"></i> Institution Overview</span>
+          <h2 class="h1" style="font-size: clamp(28px, 3.2vw, 40px); margin: 10px 0 0;">A trusted centre for structured art training</h2>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="cardx">
+          <h3>Who we are</h3>
+          <p>
+            Shardabai Pawar Kala Mahavidyalaya is located in Karhati and operates under the Directorate of Art,
+            Maharashtra State, Mumbai. That means your academic standards and certification remain recognized and reliable.
+          </p>
+          <p style="margin-top: 10px;">
+            Since 1993–1994, the college has built a learning culture where imagination is respected, but craft comes first.
+            Students learn how to see, how to draw, how to build form, and how to teach art with confidence.
+          </p>
+        </div>
+
+        <div class="cardx">
+          <h3>What students gain</h3>
+          <ul class="bullets">
+            <li>Studio discipline and regular practice habits</li>
+            <li>Stronger observation, form, and composition</li>
+            <li>Feedback-driven improvement and evaluation readiness</li>
+            <li>Confidence for classrooms, studios, and professional work</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture -->
+  <section class="section" id="culture" style="padding-top: 0;">
+    <div class="page-wrap">
+      <div class="grid-3">
+        <div class="cardx feature-card">
+          <h3><i class="fa-solid fa-stopwatch" style="margin-right: 10px;"></i>Discipline</h3>
+          <p>
+            Art improves when your routine is steady. We train students to respect time, process, and consistency.
+          </p>
+        </div>
+
+        <div class="cardx feature-card">
+          <h3><i class="fa-solid fa-eye" style="margin-right: 10px;"></i>Observation</h3>
+          <p>
+            Students learn to see details, proportions, and form. This becomes the base for every artwork and every lesson they teach.
+          </p>
+        </div>
+
+        <div class="cardx feature-card">
+          <h3><i class="fa-solid fa-chalkboard-user" style="margin-right: 10px;"></i>Teaching readiness</h3>
+          <p>
+            Along with art practice, students develop classroom confidence and a professional approach to mentoring others.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section" id="results">
+    <div class="page-wrap">
+      <div class="section-head">
+        <div>
+          <span class="kicker"><i class="fa-solid fa-chart-line"></i> Academic Performance</span>
+          <h2 class="h1" style="font-size: clamp(28px, 3.2vw, 40px); margin: 10px 0 0;">Strong results. Real outcomes.</h2>
+          <p class="lead" style="margin-top: 10px;">
+            Over the years, the college has maintained consistent performance, with results reported between 90% and 100%
+            from 1993–94 to 2023–24. The goal is not just passing exams.
+            The goal is building educators who can guide the next generation.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="cardx vm-card">
+          <h3>What this performance indicates</h3>
+          <ul class="bullets">
+            <li>Structured teaching and practical evaluation</li>
+            <li>Studio practice supported by faculty feedback</li>
+            <li>Focus on fundamentals before advanced work</li>
+            <li>Preparation that translates into professional confidence</li>
+          </ul>
+        </div>
+
+        <div class="cardx vm-card">
+          <h3>Where students apply their skills</h3>
+          <ul class="bullets">
+            <li>Schools and art education roles</li>
+            <li>Studio-based creative work</li>
+            <li>Community art and cultural programs</li>
+            <li>Professional practice with discipline and method</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section class="section" id="courses">
+    <div class="page-wrap">
+      <div class="section-head">
+        <div>
+          <span class="kicker"><i class="fa-solid fa-graduation-cap"></i> Courses Offered</span>
+          <h2 class="h1" style="font-size: clamp(28px, 3.2vw, 40px); margin: 10px 0 0;">Programs built for skill and teaching</h2>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="cardx course-card">
+          <h3>Foundation Course (1 Year)</h3>
+          <p>
+            Designed for students who have passed 10th standard along with the Intermediate Drawing Examination.
+            This course builds your base.
+          </p>
+          <ul class="bullets">
+            <li>Drawing accuracy and control</li>
+            <li>Visual understanding and composition</li>
+            <li>Creative confidence through practice</li>
+            <li>Preparation for advanced art education</li>
+          </ul>
+        </div>
+
+        <div class="cardx course-card">
+          <h3>Art Teacher’s Diploma (A.T.D.) (2 Years)</h3>
+          <p>
+            For students who have completed 12th standard and the Intermediate Drawing Examination.
+            This program prepares you for a professional career as a trained art teacher.
+          </p>
+          <ul class="bullets">
+            <li>Practical art training with studio discipline</li>
+            <li>Teaching-oriented skill development</li>
+            <li>Assessment preparation and presentation</li>
+            <li>Professional readiness for education roles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision / Purpose / Leadership -->
+  <section class="section" id="vision">
+    <div class="page-wrap">
+      <div class="section-head">
+        <div>
+          <span class="kicker"><i class="fa-solid fa-compass"></i> Vision & Guidance</span>
+          <h2 class="h1" style="font-size: clamp(28px, 3.2vw, 40px); margin: 10px 0 0;">Rooted in values. Moving forward.</h2>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="cardx bento-card">
+          <h3>Vision</h3>
+          <p>
+            To nurture art educators with clarity, creative depth, and professional competence.
+            People who teach art as a skill and as a meaningful form of expression.
+          </p>
+        </div>
+
+        <div class="cardx bento-card">
+          <h3>Educational purpose</h3>
+          <ul class="bullets">
+            <li>Strengthen artistic fundamentals</li>
+            <li>Encourage independent thinking</li>
+            <li>Build teaching confidence</li>
+            <li>Maintain ethical academic discipline</li>
+          </ul>
+        </div>
+
+        <div class="cardx bento-card">
+          <h3>Leadership</h3>
+          <p>
+            The institution operates under the guidance of KUMSS (established in 1951).
+            The executive committee provides stability, direction, and long-term vision.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+            <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img" />
+            <div><span>KUMSS SINCE 1951</span></div>
+          </a>
+          <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+            An educational society focused on overall development of students since 1951.
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Quick Links
+          </h3>
+          <ul class="footer-links">
+            <li><a href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./staff.html">Staff</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Our Institutes
+          </h3>
+          <ul class="footer-links">
+            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+            <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Contact Info
+          </h3>
+          <ul class="footer-links">
+            <li><a href="tel:+919421394242">+91 94213 94242</a></li>
+            <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
+            <li><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2023 Shardabai Pawar Kala Mahavidhyalaya, Karhati. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+          ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS file -->
+  <script src="/assets/js/institute.js"></script>
+
+  <script>
+    // ---------- Helpers ----------
+    function setScrollProgress() {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (currentScroll / docHeight) * 100 : 0;
+      const bar = document.getElementById('scrollProgress');
+      if (bar) bar.style.width = `${progress}%`;
+    }
+
+    // ---------- Mobile Menu ----------
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+
+        if (window.gsap) {
+          gsap.to(navLinks, {
+            x: 0,
+            duration: 0.45,
+            ease: 'power3.out'
+          });
+        }
+
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+    }
+
+    // Close menu when clicking normal links
+    document.querySelectorAll('#navLinks a.gm-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (!navLinks) return;
+        navLinks.classList.remove('active');
+        if (mobileMenuBtn) {
+          mobileMenuBtn.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ---------- Video (HLS) ----------
+    function initHeroVideo() {
+      const video = document.getElementById('heroVideo');
+      if (!video) return;
+
+      // Replace with your own .m3u8 when ready
+      const hlsUrl = 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8';
+
+      if (window.Hls && Hls.isSupported()) {
+        const hls = new Hls({
+          maxBufferLength: 30,
+          maxMaxBufferLength: 60,
+          enableWorker: true,
+          lowLatencyMode: true,
+          backBufferLength: 90
+        });
+
+        hls.loadSource(hlsUrl);
+        hls.attachMedia(video);
+
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          video.play().catch(() => {});
+        });
+
+        hls.on(Hls.Events.ERROR, (event, data) => {
+          if (!data || !data.fatal) return;
+          try {
+            if (data.type === Hls.ErrorTypes.NETWORK_ERROR) hls.startLoad();
+            else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) hls.recoverMediaError();
+            else hls.destroy();
+          } catch (e) {}
+        });
+
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        // Safari
+        video.src = hlsUrl;
+        video.addEventListener('loadedmetadata', () => {
+          video.play().catch(() => {});
+        });
+      } else {
+        // Fallback poster background if needed
+        video.style.display = 'none';
+        const container = document.querySelector('.hero-video-container');
+        if (container) {
+          container.style.background = 'url("https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=1920&q=70") no-repeat center / cover';
+        }
+      }
+    }
+
+    // ---------- Counters ----------
+    function initCounters() {
+      const counters = document.querySelectorAll('.rp-counter');
+      if (!counters.length) return;
+
+      const speed = 180;
+
+      const animateCounters = () => {
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          const start = 0;
+          counter.innerText = String(start);
+
+          const updateCount = () => {
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+              counter.innerText = String(Math.ceil(count + inc));
+              setTimeout(updateCount, 18);
+            } else {
+              counter.innerText = String(target);
+            }
+          };
+
+          updateCount();
+        });
+      };
+
+      const section = document.querySelector('.rp-stats-unique-wrapper');
+      if (!section) {
+        animateCounters();
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35 });
+
+      observer.observe(section);
+    }
+
+    // ---------- Animations ----------
+    function initAnimations() {
+      if (!window.gsap) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero entry
+      gsap.fromTo('.hero-card', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' });
+
+      // Feature cards
+      document.querySelectorAll('.feature-card').forEach((card) => {
+        gsap.fromTo(card,
+          { opacity: 0, y: 30, scale: 0.98 },
+          {
+            opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'power2.out',
+            scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none reverse' }
+          }
+        );
+      });
+
+      // Bento/VM cards
+      document.querySelectorAll('.vm-card, .bento-card, .course-card').forEach((card, i) => {
+        gsap.fromTo(card,
+          { opacity: 0, y: 26 },
+          {
+            opacity: 1, y: 0, duration: 0.65, ease: 'power2.out', delay: i * 0.05,
+            scrollTrigger: { trigger: card, start: 'top 88%', toggleActions: 'play none none reverse' }
+          }
+        );
+      });
+
+      // Parallax on video
+      gsap.to('.hero-video', {
+        y: '10%',
+        scale: 1.1,
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+      });
+
+      // Buttons hover
+      document.querySelectorAll('.btnx').forEach(btn => {
+        btn.addEventListener('mouseenter', () => gsap.to(btn, { scale: 1.03, duration: 0.18 }));
+        btn.addEventListener('mouseleave', () => gsap.to(btn, { scale: 1, duration: 0.18 }));
+      });
+    }
+
+    // ---------- Boot ----------
+    window.addEventListener('load', () => {
+      // Loading screen out
+      const loadingScreen = document.getElementById('loadingScreen');
+      if (window.gsap && loadingScreen) {
+        gsap.to(loadingScreen, {
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.inOut",
+          delay: 0.9,
+          onComplete: () => { loadingScreen.style.display = 'none'; }
+        });
+
+        gsap.to(".loading-logo", { rotation: 360, duration: 18, repeat: -1, ease: "none" });
+        gsap.to(".loading-dot", { y: -10, duration: 0.8, repeat: -1, yoyo: true, stagger: 0.18 });
+      } else if (loadingScreen) {
+        loadingScreen.style.display = 'none';
+      }
+
+      initHeroVideo();
+      initCounters();
+      initAnimations();
+      setScrollProgress();
+    });
+
+    window.addEventListener('scroll', () => {
+      // header behavior (optional)
+      const header = document.getElementById('header');
+      const y = window.pageYOffset || 0;
+      if (header) header.classList.toggle('scrolled', y > 50);
+      setScrollProgress();
+    });
+  </script>
+</body>
+
+</html>
