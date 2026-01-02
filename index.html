@@ -8,25 +8,276 @@
     <!-- CSS Files -->
      <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-     
-
-
+     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/scrollCue.css" />
     <link rel="stylesheet" href="assets/css/remixicon.css" />
-    <link rel="stylesheet" href="assets/css/flaticon.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 
     <link href="assets/kumss_log.png" type="image/x-icon" rel="icon" />
   </head>
+  <style>
+     /* Hero Section Styles */
+    .banner-wrap-area {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full screen height */
+      overflow: hidden;
+    }
+
+    /* Video Background */
+    #hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0; /* Ensure the video stays in the background */
+    }
+
+    /* Overlay to make text more visible (Dark Overlay) */
+    .kumss-video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(247, 247, 247, 0.402); /* Dark overlay with 60% opacity */
+      z-index: 1; /* Place it above the video */
+    }
+
+    /* kumss-banner-wrap-content for Text */
+    .kumss-banner-wrap-content {
+      position: absolute;
+      top: 40%;
+      left: 10%; /* Align text to the left */
+      transform: translateY(-50%);
+      z-index: 2; /* Ensure the content is on top of the overlay */
+      color: white;
+      padding: 20px;
+      max-width: 600px; /* Optional: to avoid text spanning too wide */
+      text-align: left; /* Align the text to the left */
+    }
+
+    .title {
+      font-size: 2rem;
+      margin: 20px 0;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 4rem;
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #000000;
+      font-style: italic;
+    }
+
+       /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      /* Adjust banner content position */
+      .kumss-banner-wrap-content {
+        top: 70%;
+        left: 5%;
+        transform: translateY(-50%);
+        text-align: center;
+        padding: 15px;
+        max-width: 90%;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .kumss-video-overlay {
+        background: rgba(244, 244, 244, 0.7); /* Slightly darker overlay for mobile */
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Further adjust banner content for small screens */
+      .kumss-banner-wrap-content {
+        top: 50%;
+        left: 5%;
+        padding: 10px;
+        max-width: 90%;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .kumss-video-overlay {
+        background: rgba(255, 255, 255, 0.463); /* Darker overlay for very small screens */
+      }
+    }
+    .about-hero-image {
+      padding: 0;
+    }
+       /* --- SECTION STYLING --- */
+    .institute-philosophy-section {
+        background-color: #fff;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* Headings */
+    .main-heading {
+        color: #0a296c;
+        font-weight: 700;
+        font-family: 'Merriweather', serif; /* Serif font for academic feel */
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        color: #606060;
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .heading-divider {
+        width: 80px;
+        height: 4px;
+        background-color: #0a296c;
+        margin: 0 auto;
+        border-radius: 2px;
+    }
+
+    /* --- CARD GENERAL STYLING --- */
+    .philosophy-card {
+        background: #d6e2fa;
+        border: none;
+        border-radius: 8px;
+        padding: 40px 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.614);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .philosophy-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.651);
+    }
+
+    /* Card Specific Colors */
+    .vision-card { border-color: #000000; }
+    .mission-card { border-color: #000000; }
+    .values-card { border-color: #000000;}
+
+    /* Icons floating in background */
+    .card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .vision-card .card-icon { color: var(--primary-color); }
+    .mission-card .card-icon { color: var(--accent-color); }
+    .values-card .card-icon { color: var(--secondary-color); }
+
+    .card-title {
+        text-align: center;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* --- LIST STYLING (Vision & Mission) --- */
+    .custom-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .custom-list li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .list-bullet {
+        margin-right: 12px;
+        margin-top: 5px;
+        font-size: 1rem;
+    }
+
+    .vision-card .list-bullet { color: var(--primary-color); }
+    .mission-card .list-bullet { color: var(--accent-color); }
+
+    /* --- VALUES GRID STYLING --- */
+    .values-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .value-item {
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 50px;
+        padding: 8px 15px;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        color: #444;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        transition: all 0.2s;
+        flex: 1 1 40%; /* 2 items per row roughly */
+        justify-content: center;
+        min-width: 120px;
+    }
+
+    .value-item.full-width {
+        flex: 1 1 100%;
+    }
+
+    .value-item:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        border-color: var(--secondary-color);
+    }
+
+    .value-item i {
+        margin-right: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .value-item:hover i {
+        color: white;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+        .philosophy-card {
+            margin-bottom: 30px;
+        }
+    }
+  </style>
 
   <body>
- <!-- Loader Container -->
-<div id="page-loader" class="loader-wrap">
-  <div id="lottie-loader" class="lottie-loader"></div>
-</div>
+  
 
 
 
@@ -249,75 +500,42 @@
 
     <!-- Start Banner Area -->
     <div class="banner-wrap-area">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="banner-wrap-image">
-              <img
-                src="assets/img/hero/banner-wrap-1.png"
-                alt="banner-wrap-image"
-              />
-              <div class="image-2">
-                
-                <div class="middle-img">
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="banner-wrap-content">
-              <div class="title">
-                <p>Welcome To KUMSS <span>1951</span></p>
-                <h1>Craft Your Career At KUMSS</h1>
-                <p
-                  style="
-                    color: var(--secenderyColor);
-                    font-size: large;
-                    font-style: italic;
-                  "
-                >
-                  "Education opens up the mind Expands it and allows you to
-                  Improve your life in so many ways"
-                </p>
-              </div>
-              <ul
-                class="list-unstyled ps-0 mb-0 d-flex align-items-center btn-list"
-              >
-                <li class="d-inline-block">
-                  <a
-                    class="text-decoration-none default-btn"
-                    href="index.html"
-                  >
-                    KUMSS Overview
-                   <i class="fi fi-sr-arrow-up-right"></i>
+      <!-- Video Background -->
+      <video id="hero-video" autoplay muted loop>
+        <source src="http://13.200.246.130:3000/videos-static/0c7f19cc4101ac9fb5665fb94a6e48d8/landscape/29f0da49-b40a-4bd7-8bfa-f7127fc5f9c5/master.m3u8" type="application/x-mpegURL">
+        Your browser does not support the video tag.
+      </video>
+      <div class="kumss-video-overlay"></div>
 
-                  </a>
-                </li>
-                <li class="d-inline-block">
-                  <ul
-                    class="list-unstyled d-flex align-items-center ps-0 mb-0 play-btn"
-                  >
-                    <li>
-                      <a
-                        class="text-decoration-none arrow-btn"
-                        data-fslightbox="gallery"
-                        href="#"
-                      >
-                        Explore KUMSS
-                        <i class="fi fi-sr-arrow-up-right"></i>
-
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <div class="kumss-banner-wrap-content">
+        <div class="title">
+          <p>Welcome To KUMSS <span>1951</span></p>
+          <h1>Craft Your Career At KUMSS</h1>
+          <p>
+            "Education opens up the mind Expands it and allows you to Improve your life in so many ways"
+          </p>
         </div>
+        <ul class="list-unstyled ps-0 mb-0 d-flex align-items-center btn-list">
+          <li class="d-inline-block">
+            <a class="text-decoration-none default-btn" href="index.html">
+              KUMSS Overview <i class="fi fi-sr-arrow-up-right"></i>
+            </a>
+          </li>
+          <li class="d-inline-block">
+            <ul class="list-unstyled d-flex align-items-center ps-0 mb-0 play-btn">
+              <li>
+                <a class="text-decoration-none arrow-btn" data-fslightbox="gallery" href="#">
+                  Explore KUMSS <i class="fi fi-sr-arrow-up-right"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
     <!-- End Banner Area -->
+
+
 
 
     <!-- STATS SECTION (separate from committee) -->
@@ -413,7 +631,7 @@
 
       <div class="col-lg-6">
         <div class="about-hero-image">
-          <img src="assets/img/about/about-2.jpg" alt="KUMSS Campus" class="img-fluid rounded-3 shadow-lg">
+          <img src="assets/ajit-pawar-about.webp" alt="KUMSS Campus" class="img-fluid rounded-3 shadow-lg">
           <div class="exp-badge">
             <h3>70+</h3>
             <span>Years of Excellence</span>
@@ -427,51 +645,112 @@
 <!-- End kumss About Area -->
 
 
-<!-- PART 2: Mission, Vision, and Values Sections -->
-<div class="container mt-5">
-    <div class="row">
-
-        <!-- Vision Section -->
-        <div class="col-lg-6 col-md-12 mb-4">
-            <div class="vision-section">
-                <h3 class="vision-title">Our Vision</h3>
-                <ul class="vision-list">
-                    <li><strong>Empowering Students:</strong> To empower students through quality education in skill development and technical education to prepare a master and leader in his field.</li>
-                    <li><strong>World-Class Institution:</strong> To empower and position the organization as a world-class progressive, cost-effective, and student-friendly institution providing career-oriented skill development training.</li>
-                    <li><strong>Global Leadership:</strong> To be a leading global organization that provides transformative education to create leaders and innovators, and generates new knowledge for society and industry.</li>
-                    <li><strong>Developing Well-rounded Individuals:</strong> Our vision is to develop well-rounded, confident, and responsible individuals who aspire to achieve their full potential. We will do this by providing a welcoming, happy, safe, and supportive learning environment in which everyone is equal and all achievements are celebrated.</li>
-                </ul>
+<section class="institute-philosophy-section py-5">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="main-heading">Our Core Philosophy</h2>
+                <p class="subtitle">Building leaders through excellence in education and moral integrity.</p>
+                <div class="heading-divider"></div>
             </div>
         </div>
 
-        <!-- Mission Section -->
-        <div class="col-lg-6 col-md-12 mb-4">
-            <div class="mission-section">
-                <h3 class="mission-title">Our Mission</h3>
-                <ul class="mission-list">
-                    <li><strong>Empowering Learners:</strong> To provide our learners with quality learning services that cater to their individual needs and requirements.</li>
-                    <li><strong>Improving Social Well-being:</strong> To improve the economic and social well-being of youth through industrial & skill development training for sustained income-generating activities throughout their lives.</li>
-                    <li><strong>High-Quality Education:</strong> Our Mission is to provide high-quality education, a safe, respectful, and inclusive environment that builds a foundation for life-long learning.</li>
-                    <li><strong>Practical Learning Focus:</strong> Focus on practical aspects of the course material to make learning a meaningful and interesting experience in our intellectually stimulating campus.</li>
-                    <li><strong>Moral and Ethical Values:</strong> Work to inculcate high moral and ethical values amongst the students to make them responsible citizens and good human beings.</li>
-                </ul>
+        <div class="row">
+            <!-- Vision Section -->
+            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="philosophy-card vision-card">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="card-title">Our Vision</h3>
+                    <ul class="custom-list">
+                        <li>
+                            <i class="fas fa-check-circle list-bullet"></i>
+                            <div><strong>Empowering Students:</strong> Developing masters and leaders through skill development.</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle list-bullet"></i>
+                            <div><strong>World-Class Institution:</strong> Providing career-oriented training globally.</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle list-bullet"></i>
+                            <div><strong>Global Leadership:</strong> Leading the way in education and innovation.</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle list-bullet"></i>
+                            <div><strong>Well-rounded Individuals:</strong> Creating a safe, welcoming environment.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mission Section -->
+            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+                <div class="philosophy-card mission-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="card-title">Our Mission</h3>
+                    <ul class="custom-list">
+                        <li>
+                            <i class="fas fa-caret-right list-bullet"></i>
+                            <div><strong>Empowering Learners:</strong> Tailoring quality services to individual needs.</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-caret-right list-bullet"></i>
+                            <div><strong>Social Well-being:</strong> Training for sustainable income generation.</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-caret-right list-bullet"></i>
+                            <div><strong>High-Quality Education:</strong> Safe, inclusive, life-long learning.</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-caret-right list-bullet"></i>
+                            <div><strong>Practical Focus:</strong> Intellectually stimulating practical learning.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Values Section (Restyled as a mini-grid) -->
+            <div class="col-lg-4 col-md-12 mb-4 d-flex align-items-stretch">
+                <div class="philosophy-card values-card">
+                    <div class="card-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="card-title">Our Values</h3>
+                    
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <i class="fas fa-handshake"></i>
+                            <span>Integrity</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-search"></i>
+                            <span>Transparency</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-star"></i>
+                            <span>Excellence</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Ethics & Dignity</span>
+                        </div>
+                        <div class="value-item full-width">
+                            <i class="fas fa-users"></i>
+                            <span>Inspiring Leadership</span>
+                        </div>
+                    </div>
+                    <p class="text-center mt-3 text-muted small">Upholding the highest standards in every interaction.</p>
+                </div>
             </div>
         </div>
-
     </div>
+</section>
 
-    <!-- Values Section -->
-    <div class="values-section">
-        <h3 class="values-title">Our Values</h3>
-        <ul class="values-list">
-            <li><strong>Integrity:</strong> We uphold the highest standards of integrity in all our actions.</li>
-            <li><strong>Transparency:</strong> We are transparent in our dealings and communication, ensuring trust and openness.</li>
-            <li><strong>Quality and Excellence:</strong> We strive for excellence in every aspect of our work and are committed to providing the highest quality in our education and services.</li>
-            <li><strong>Ethics and Dignity:</strong> We foster a culture of respect, ethics, and dignity in all our interactions.</li>
-            <li><strong>Leadership:</strong> We believe in inspiring leadership and encourage everyone to lead by example in both personal and professional spheres.</li>
-        </ul>
-    </div>
-</div>
+
 
 
  <section class="committee-v2">
@@ -504,7 +783,7 @@
     <div class="office-grid">
       <div class="member-card">
         <div class="avatar">
-          <img src="images/committee/dhumal.jpg" alt="Shri. Dasharathrao Babaso Dhumal">
+          <img src="/assets/placeholder-image.jfif" alt="Shri. Dasharathrao Babaso Dhumal">
         </div>
         <div class="meta">
           <span class="role-pill">Vice-Chairman</span>
@@ -514,7 +793,7 @@
 
       <div class="member-card">
         <div class="avatar">
-          <img src="images/committee/taware.jpg" alt="Shri. Prafulla Bhimdeo Taware">
+          <img src="/assets/placeholder-image.jfif" alt="Shri. Prafulla Bhimdeo Taware">
         </div>
         <div class="meta">
           <span class="role-pill">Secretary</span>
@@ -524,7 +803,7 @@
 
       <div class="member-card">
         <div class="avatar">
-          <img src="images/committee/somani.jpg" alt="Shri. Subhash Champalal Somani">
+          <img src="/assets/placeholder-image.jfif" alt="Shri. Subhash Champalal Somani">
         </div>
         <div class="meta">
           <span class="role-pill">Treasurer</span>
@@ -739,13 +1018,11 @@
     <!-- End Back to Top -->
 
     <!-- Js Files -->
-    <script
-      data-cfasync="false"
-      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-    ></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudflare-email-decode/1.0.0/email-decode.min.js"></script>
+
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/fslightbox.js"></script>
+    
     <script src="assets/js/scrollCue.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script
@@ -791,6 +1068,23 @@
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
+
+<script>
+  var video = document.getElementById('hero-video');
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource('http://13.200.246.130:3000/videos-static/0c7f19cc4101ac9fb5665fb94a6e48d8/landscape/29f0da49-b40a-4bd7-8bfa-f7127fc5f9c5/master.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+          video.play();
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = 'http://13.200.246.130:3000/videos-static/0c7f19cc4101ac9fb5665fb94a6e48d8/landscape/29f0da49-b40a-4bd7-8bfa-f7127fc5f9c5/master.m3u8';
+        video.addEventListener('canplay', function() {
+          video.play();
+        });
+      }
+</script>
 
   </body>
 </html>
