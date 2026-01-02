@@ -43,52 +43,40 @@ This files table contents are outlined below>>>>>
 ** - Support Area Style
 ** - Contact Area Style
 */
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Gantari:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap");
 /*================================================
 Default Style
 =================================================*/
- /* Global Page Loader */
-.loader-wrap{
+/* Loader wrapper */
+.loader-wrap {
   position: fixed;
-  inset: 0;
-  z-index: 99999;
-  background: #fff;
-  display: grid;
-  place-items: center;
-  transition: opacity 0.35s ease;
-}
-.octa-ring{
-  width: 80px;
-  height: 80px;
-
-  /* 8-side shape */
-  clip-path: polygon(
-    30% 4%, 70% 4%,
-    96% 30%, 96% 70%,
-    70% 96%, 30% 96%,
-    4% 70%, 4% 30%
-  );
-
-  /* shaded two-tone sweep */
-  background: conic-gradient(
-    #f78f2d 0%,
-    #f29728 30%,
-    #d29443 55%,
-    #f0b238 75%,
-    #e4812f 88%,
-    #f4a732 100%
-  );
-
-  /* make it a ring (hole in center) */
-  -webkit-mask: radial-gradient(farthest-side, transparent 62%, #000 63%);
-  mask: radial-gradient(farthest-side, transparent 62%, #000 63%);
-
-  animation: spin 0.9s linear infinite;
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.12));
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Optional background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden; /* Hide loader initially */
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-@keyframes spin{
-  to { transform: rotate(360deg); }
+/* Show the loader when active */
+.loader-wrap.show {
+  visibility: visible;
+  opacity: 1;
 }
+
+/* Lottie Loader Container */
+.lottie-loader {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+}
+
+
 
 body.loaded #page-loader{ display:none; }
 /* Global Scroll Progress Bar */
@@ -108,7 +96,7 @@ body.loaded #page-loader{ display:none; }
   .scroll-progress{ height: 3px; }
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Gantari:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap");
+
 :root {
   /* --- TYPOGRAPHY --- */
   --heading-font-family: "Gantari", sans-serif;

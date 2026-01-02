@@ -8,6 +8,7 @@
     <!-- CSS Files -->
      <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     
 
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -22,10 +23,12 @@
   </head>
 
   <body>
-    <div id="page-loader" class="loader-wrap">
-  <div class="octa-ring" aria-label="Loading">
-  </div>
+ <!-- Loader Container -->
+<div id="page-loader" class="loader-wrap">
+  <div id="lottie-loader" class="lottie-loader"></div>
 </div>
+
+
 
 <div class="scroll-progress" aria-hidden="true">
   <span class="scroll-progress__bar" id="scrollProgress"></span>
@@ -785,7 +788,9 @@
 
     els.forEach(el => io.observe(el));
   })();
+
 </script>
+<script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
 
   </body>
 </html>

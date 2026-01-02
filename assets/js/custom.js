@@ -1,27 +1,49 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const loaderWrap = document.getElementById('page-loader');
+  const lottieContainer = document.getElementById('lottie-loader');
+
+  // Initialize Lottie animation for the loader
+  function initializeLottie() {
+    const lottieAnimation = lottie.loadAnimation({
+      container: lottieContainer, // The container for the animation
+      renderer: 'svg', // Render as SVG
+      loop: true, // Keep looping
+      autoplay: true, // Start immediately
+      path: '/assets/animation/Blocks loading.json', // Path to your Lottie JSON file
+    });
+
+    return lottieAnimation;
+  }
+
+  // Function to show loader
+  function showLoader() {
+    loaderWrap.classList.add('show'); // Show loader
+    initializeLottie(); // Initialize Lottie animation
+  }
+
+  // Function to hide loader
+  function hideLoader() {
+    loaderWrap.classList.remove('show'); // Hide loader
+  }
+
+  // Show the loader initially
+  showLoader();
+
+  // Hide the loader after 3 seconds (or adjust as needed)
+  setTimeout(function() {
+    hideLoader();
+  }, 3000); // Adjust the timeout based on your needs
+
+  // Optionally, you can call showLoader() or hideLoader() again to toggle visibility
+});
+
+
 (function() {
 	"use strict";
     const yearEl = document.getElementById("yearNow");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-(() => {
-  const MIN_TIME = 800; // change to 1200 if you want slower
-  const start = Date.now();
 
-  function hideLoader() {
-    const loader = document.getElementById("page-loader");
-    if (!loader) return;
 
-    const elapsed = Date.now() - start;
-    const remaining = Math.max(0, MIN_TIME - elapsed);
-
-    setTimeout(() => {
-      loader.style.opacity = "0";
-      loader.style.pointerEvents = "none";
-      setTimeout(() => loader.remove(), 300);
-    }, remaining);
-  }
-
-  window.addEventListener("load", hideLoader);
-})();
 (function initScrollProgressBar(){
   const bar = document.getElementById("scrollProgress");
   if(!bar) return;
