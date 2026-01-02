@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Staff | Shardabai Pawar Kala Mahavidhyalaya</title>
-    <link rel="icon" href="https://kumss.org/assets/kumss_log.png" type="image/x-icon">
+    <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -210,6 +210,11 @@
 </head>
 
 <body>
+ <div id="page-loader" class="loader-wrap">
+  <div class="octa-ring" aria-label="Loading">
+  </div>
+</div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
     <!-- Header -->
     <header class="gm-header" id="header">
@@ -237,7 +242,7 @@
                     </li>
                     <li class="gm-item"><a class="gm-link active" style="color: var(--primary-color); font-weight:600;" href="./staff.html">Staff</a></li>
                     <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
-                    <li class="gm-cta"><a class="gm-btn" href="tel:+919421394242">Contact Us</a></li>
+                    <li class="gm-cta"><a class="ggm-btn" href="tel:+919421394242">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -263,7 +268,8 @@
                 
                 <!-- 1 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/shirke-santosh-sambhaji.jpeg" alt="Mr. Shrike Santosh Sambhaji" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/shirke-santosh-sambhaji.jpeg" alt="Mr. Shrike Santosh Sambhaji"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mr. Shrike Santosh Sambhaji</h3>
                         <p class="faculty-designation">Asst Lecturer/Principle</p>
@@ -275,7 +281,8 @@
 
                 <!-- 2 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/jangam-preetam-suresh.png" alt="Mr. Jangam Preetam Suresh" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/jangam-preetam-suresh.png" alt="Mr. Jangam Preetam Suresh"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mr. Jangam Preetam Suresh</h3>
                         <p class="faculty-designation">Asst. Lecturer</p>
@@ -287,7 +294,8 @@
 
                 <!-- 3 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/dhumal-swapnil-satish.jpeg" alt="Mr. Dhumal Swapnil Satish" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/dhumal-swapnil-satish.jpeg" alt="Mr. Dhumal Swapnil Satish"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mr. Dhumal Swapnil Satish</h3>
                         <p class="faculty-designation">Clerk</p>
@@ -299,7 +307,8 @@
 
                 <!-- 4 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/mr-jagdale-shyam-madhukar.jpeg" alt="Mr. Jagdale Shyam Madhukar" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/mr-jagdale-shyam-madhukar.jpeg" alt="Mr. Jagdale Shyam Madhukar"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mr. Jagdale Shyam Madhukar</h3>
                         <p class="faculty-designation">Peon</p>
@@ -317,11 +326,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="margin-bottom: 2rem; align-items: flex-start;">
-                        <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="logo-img">
+                    <a href="/index.html" class="logo" style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
                         <div>
-                            <div class="logo-text">KUMSS</div>
-                            <div class="logo-year" style="color: var(--primaryColor);">SINCE 1951</div>
+                               <div style="color: #ff9704;">KUMSS SINCE 1951</div>
                         </div>
                     </a>
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
@@ -335,7 +343,7 @@
                         <a href="#" class="social-link" aria-label="Twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="#" class="social-link" aria-label="LinkedIn">
@@ -352,7 +360,7 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
                         <li><a href="../about.html">About Us</a></li>
                         <li><a href="../gallery.html">Gallery</a></li>
                         <li><a href="./staff.html">staff</a></li>
@@ -431,5 +439,6 @@
             );
         });
     </script>
+     <script src="/assets/js/institute.js"></script>
 </body>
 </html>

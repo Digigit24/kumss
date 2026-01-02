@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primary School Karhati Tembha</title>
-    <link rel="icon" href="https://kumss.org/assets/kumss_log.png" type="image/x-icon">
+    <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,27 +39,11 @@
 </head>
 
 <body>
-    <!-- Premium Loading Screen -->
-    <!-- <div class="loading-screen" id="loadingScreen">
-        <div class="loading-container">
-            <div class="loading-orbit"></div>
-            <div class="loading-orbit"></div>
-            <div class="loading-orbit"></div>
-            <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="loading-logo">
-        </div>
-        <div class="loading-text">
-            <div class="loading-title">KUMSS EDUCATION</div>
-            <div class="loading-subtitle">Excellence Since 1951</div>
-            <div class="loading-dots">
-                <div class="loading-dot"></div>
-                <div class="loading-dot"></div>
-                <div class="loading-dot"></div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- Scroll Progress Bar -->
-    <!-- <div class="scroll-progress" id="scrollProgress"></div> -->
+     <div id="page-loader" class="loader-wrap">
+  <div class="octa-ring" aria-label="Loading">
+  </div>
+</div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
     <!-- Header -->
     <header class="gm-header" id="header">
@@ -67,7 +51,7 @@
             <nav class="gm-nav" aria-label="Primary">
                 <!-- Logo -->
                 <a href="/index.html" class="gm-logo">
-                    <img src="https://kumss.org/assets/kumss_log.png" alt="Primary School Karhati Tembha" class="gm-logo-img">
+                    <img src="/assets/kumss_log.png" alt="Primary School Karhati Tembha" class="gm-logo-img">
                 </a>
 
                 <!-- Mobile toggle -->
@@ -80,28 +64,43 @@
 
                 <!-- Links -->
                 <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="/#">Home</a></li>
+                    <li><a class="gm-link" href="#">Home</a></li>
 
                     <li class="gm-item">
-                        <a class="gm-link" href="/#">About Us</a>
+                        <a class="gm-link" href="./about.html">About</a>
                     </li>
 
                     <li class="gm-item">
-                        <a class="gm-link" href="/#">Academics</a>
+                        <a class="gm-link" href="/primary-school-tembha/academics.html">Academics</a>
+                    </li>
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
+                        </button>
+
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala
+                                    Mahavidhyalaya</a></li>
+                        </ul>
                     </li>
 
-                    <li><a class="gm-link" href="#">Admissions</a></li>
 
                     <li class="gm-item">
-                        <a class="gm-link" href="/#">Facilities</a>
-                    </li>
-
-                    <li class="gm-item">
-                        <a class="gm-link" href="/#">Gallery</a>
+                        <a class="gm-link" href="/gallery.html">Gallery</a>
                     </li>
 
                     <li class="gm-cta">
-                        <a class="gm-btn" href="#">Contact Us</a>
+                        <a class="ggm-btn" href="/contact.html">Contact Us</a>
                     </li>
                 </ul>
             </nav>
@@ -166,7 +165,8 @@
                 <div class="course-card">
                     <span class="course-badge">Technical</span>
                     <img src="/assets/img/quality-education.jpg" alt="Draughtsman Mechanical" class="course-image"
-                        loading="lazy">
+                         loading="lazy"
+     decoding="async">
                     <div class="course-content">
                         <h3>Quality Education</h3>
                         <p>
@@ -180,7 +180,8 @@
 
                 <div class="course-card">
                     <span class="course-badge">Agricultural</span>
-                    <img src="/assets/img/agricultural-focus.jpg" alt="Electrician" class="course-image" loading="lazy">
+                    <img src="/assets/img/agricultural-focus.jpg" alt="Electrician" class="course-image"  loading="lazy"
+     decoding="async">
                     <div class="course-content">
                         <h3>Agricultural Focus</h3>
                         <p>
@@ -195,7 +196,8 @@
                 <div class="course-card">
                     <span class="course-badge">Experienced Faculty</span>
                     <img src="/assets/img/experienced-faculty.jpg" alt="Electronics Mechanic" class="course-image"
-                        loading="lazy">
+                         loading="lazy"
+     decoding="async">
                     <div class="course-content">
                         <h3>Experienced Faculty</h3>
                         <p>
@@ -224,7 +226,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Shri. Shrikant Patil" loading="lazy">
+                            alt="Shri. Shrikant Patil"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -238,7 +241,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Sunita Deshmukh" loading="lazy">
+                            alt="Mrs. Sunita Deshmukh"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -252,7 +256,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Rajesh Kumar" loading="lazy">
+                            alt="Mr. Rajesh Kumar"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -266,7 +271,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Meera Joshi" loading="lazy">
+                            alt="Mrs. Meera Joshi"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -283,7 +289,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Dr. Anand Rao" loading="lazy">
+                            alt="Dr. Anand Rao"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -297,7 +304,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Vikram Singh" loading="lazy">
+                            alt="Mr. Vikram Singh"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -315,7 +323,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1551836026-d5c2c5af91f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mrs. Anjali Sharma" loading="lazy">
+                            alt="Mrs. Anjali Sharma"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -329,7 +338,8 @@
                 <div class="faculty-card">
                     <div class="card-image">
                         <img src="https://images.unsplash.com/photo-1556157382-2eda3e8a9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Mr. Ravi Verma" loading="lazy">
+                            alt="Mr. Ravi Verma"  loading="lazy"
+     decoding="async">
                         <div class="image-overlay"></div>
                     </div>
                     <div class="card-content">
@@ -516,12 +526,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="margin-bottom: 2rem; align-items: flex-start;">
-                        <img src="https://kumss.org/assets/kumss_log.png" alt="KUMSS Logo" class="logo-img">
-                        <div>
-                            <div class="logo-text">KUMSS</div>
-                            <div class="logo-year" style="color: var(--primaryColor);">SINCE 1951</div>
-                        </div>
+                      <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+                               <div><span>KUMSS SINCE 1951</span></div>
                     </a>
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
                         An educational society focused on overall development of students since 1951.
@@ -534,7 +541,7 @@
                         <a href="#" class="social-link" aria-label="Twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="#" class="social-link" aria-label="LinkedIn">
@@ -551,12 +558,10 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About KUMSS</a></li>
-                        <li><a href="#vision-mission">Vision & Mission</a></li>
-                        <li><a href="#courses">Programs</a></li>
-                        <li><a href="#leadership">Leadership</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="./primary-school-tembha.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./academics.html">Academics</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -565,10 +570,11 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="#">New English School, Dhakale</a></li>
-                        <li><a href="#">Primary School, Tembha</a></li>
-                        <li><a href="#">KUMSS Private I.T.I</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="primary-school-tembha.htmlp
+                            ">Primary School, Tembha</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">KUMSS Private I.T.I</a></li>
                     </ul>
                 </div>
 

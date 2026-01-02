@@ -19,10 +19,18 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
 
     <link href="assets/kumss_log.png" type="image/x-icon" rel="icon" />
-    </style>
   </head>
 
   <body>
+    <div id="page-loader" class="loader-wrap">
+  <div class="octa-ring" aria-label="Loading">
+  </div>
+</div>
+
+<div class="scroll-progress" aria-hidden="true">
+  <span class="scroll-progress__bar" id="scrollProgress"></span>
+</div>
+
     <!-- Start Top Header Area -->
 
     <!-- End Top Header Area -->
@@ -309,10 +317,6 @@
     <!-- End Banner Area -->
 
 
-
-
-
-
     <!-- STATS SECTION (separate from committee) -->
 <section class="inst-stats-row" aria-label="Institute statistics">
   <div class="inst-stats-row__wrap">
@@ -377,136 +381,47 @@
 </section>
 
 
+    <!-- Start kumss About Area -->
+ <!-- Start kumss About Area -->
+<section class="kumss-about-area section-padding">
+  <div class="container">
 
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6">
+        <div class="section-title-left">
+          <span class="sub-title">
+            <img src="assets/img/title-shape.svg" alt="shape"> About KUMSS
+          </span>
 
+          <h2 class="premium-heading">
+            “Education opens up the mind Expands it and allows you to Improve your life in so many ways”
+          </h2>
 
-    <!-- Start Partner Area -->
-    <!-- <div class="partner-area ptb-100 pb-75">
-      <div class="container">
-        <div class="partner-slider-info">
-          <div class="swiper partner-slider">
-            <div class="swiper-wrapper" data-cues="slideInUp">
-              <div class="swiper-slide">
-                <div class="single-partner-logo">
-                  <img
-                    src="assets/img/partner/partner-1.png"
-                    alt="partner-logo"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="single-partner-logo">
-                  <img
-                    src="assets/img/partner/partner-2.png"
-                    alt="partner-logo"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="single-partner-logo">
-                  <img
-                    src="assets/img/partner/partner-3.png"
-                    alt="partner-logo"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="single-partner-logo">
-                  <img
-                    src="assets/img/partner/partner-4.png"
-                    alt="partner-logo"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="single-partner-logo">
-                  <img
-                    src="assets/img/partner/partner-5.png"
-                    alt="partner-logo"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="single-partner-logo">
-                  <img
-                    src="assets/img/partner/partner-1.png"
-                    alt="partner-logo"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="single-partner-logo">
-                  <img
-                    src="assets/img/partner/partner-2.png"
-                    alt="partner-logo"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="single-partner-logo">
-                  <img
-                    src="assets/img/partner/partner-3.png"
-                    alt="partner-logo"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="single-partner-logo">
-                  <img
-                    src="assets/img/partner/partner-4.png"
-                    alt="partner-logo"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="single-partner-logo">
-                  <img
-                    src="assets/img/partner/partner-5.png"
-                    alt="partner-logo"
-                  />
-                </div>
-              </div>
-            </div>
+          <p class="lead-text">
+            KUMSS is an educational society which mainly focuses upon the overall development of students.
+          </p>
+
+          <p>
+            It established in the year of 1951, Great visionaries founder of the institute late Dr.Shri.A.J.Agarkar plant a seed of an idea.
+            Now, small plant becomes a big tree with great leadership of KUMSS President and Dy.CM of Maharashtra Shri.Ajitdada Pawar from 2004.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="about-hero-image">
+          <img src="assets/img/about/about-2.jpg" alt="KUMSS Campus" class="img-fluid rounded-3 shadow-lg">
+          <div class="exp-badge">
+            <h3>70+</h3>
+            <span>Years of Excellence</span>
           </div>
         </div>
       </div>
-    </div> -->
-    <!-- End Partner Area -->
+    </div>
 
-    <!-- Start kumss About Area -->
-   <section class="kumss-about-area section-padding">
-    <div class="container">
-        
-        <!-- PART 1: Intro Text & Image -->
-        <div class="row align-items-center mb-5" data-cues="slideInUp">
-            <div class="col-lg-6">
-                <div class="section-title-left">
-                    <span class="sub-title">
-                        <img src="assets/img/title-shape.svg" alt="shape"> About KUMSS
-                    </span>
-                    <h2 class="premium-heading">“Education opens up the mind Expands it and allows you to Improve your life in so many ways”</h2>
-                    <p class="lead-text">
-                        KUMSS is an educational society which mainly focuses upon the overall development of students. 
-                    </p>
-                    <p>
-                        It established in the year of 1951, Great visionaries founder of the institute late Dr.Shri.A.J.Agarkar plant a seed of an idea. Now, small plant becomes a big tree with great leadership of KUMSS President and Dy.CM of Maharashtra Shri.Ajitdada Pawar from 2004.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <!-- Using the image here to balance the intro -->
-                <div class="about-hero-image">
-                    <img src="assets/img/about/about-2.jpg" alt="KUMSS Campus" class="img-fluid rounded-3 shadow-lg">
-                    <div class="exp-badge">
-                        <h3>70+</h3>
-                        <span>Years of Excellence</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-</div>
-
+  </div>
 </section>
+<!-- End kumss About Area -->
 
 
 <!-- PART 2: Mission, Vision, and Values Sections -->
@@ -691,7 +606,8 @@
         <iframe
           title="KUMSS Location Map"
           src="https://www.google.com/maps?q=18.249670417662454,74.43023575460906&z=16&output=embed"
-          loading="lazy"
+           loading="lazy"
+     decoding="async"
           referrerpolicy="no-referrer-when-downgrade"
           allowfullscreen>
         </iframe>
@@ -760,7 +676,7 @@
         <div class="social-links">
           <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>

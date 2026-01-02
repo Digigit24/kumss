@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | KUMSS Private ITI Karhati</title>
+    <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- css  -->
+    <link rel="stylesheet" href="/assets/css/institute.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+    <!-- HLS.js for video streaming -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.10/dist/hls.min.js"></script>
+
+    <!-- Lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- Splide Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   <style>
+.about-split {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.about-split-container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #233f92;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-split-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content h2 {
+    font-size: 1.75rem;
+  }
+}
+
+
+   </style>
+
+</head>
+
+<body>
+     <div id="page-loader" class="loader-wrap">
+  <div class="octa-ring" aria-label="Loading">
+  </div>
+</div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <!-- Logo -->
+                <a href="/index.html" class="gm-logo">
+                    <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
+                </a>
+
+                <!-- Mobile toggle -->
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                </button>
+
+                <!-- Links -->
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link" href="./kumss-private-iti-karhati.html">Home</a></li>
+
+                    <li class="gm-item">
+                        <a class="gm-link" href="./about.html">About</a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
+                        </button>
+
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School
+                                    Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="#">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a>
+                            </li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala
+                                    Mahavidhyalaya</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
+
+                    <li class="gm-cta">
+                        <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+  <section class="about-split" id="about">
+  <div class="about-split-container">
+
+    <!-- Left: Image -->
+    <div class="about-image">
+      <img src="/assets/iti-temp.JPG" alt="KUMSS Private ITI Karhati Campus">
+    </div>
+
+    <!-- Right: Content -->
+    <div class="about-content">
+      <h2>About KUMSS Private ITI Karhati</h2>
+
+      <p>
+        KUMSS Private ITI Karhati is committed to delivering quality technical education
+        through modern infrastructure and well-equipped workshops that are regularly upgraded.
+      </p>
+
+      <p>
+        We transform 10th-class students into skilled professionals within a focused
+        two-year training period, emphasizing both technical knowledge and personal growth.
+      </p>
+
+      <p>
+        Our training builds leadership, communication skills, creativity, discipline,
+        and strong moral values. Individual counselling and continuous industry exposure
+        ensure complete personality development.
+      </p>
+
+      <p>
+        Every student at KUMSS Private ITI is a valued member of our family, prepared to
+        contribute positively to society and shape a successful future.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+                        <div><span>KUMSS SINCE 1951</span></div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English Campus,
+                                Dhakale</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary Campus, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+919421394242">+91 94213 94242</a></li>
+                        <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
+                        <li><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- js file  -->
+    <script src="/assets/js/institute.js"></script>
+
+    <!-- JavaScript (kept as you provided; hero video container is hidden but does not break JS) -->
+    <script>
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                gsap.to(loadingScreen, {
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.inOut",
+                    delay: 2,
+                    onComplete: () => {
+                        loadingScreen.style.display = 'none';
+                        initAnimations();
+                    }
+                });
+            } else {
+                initAnimations();
+            }
+
+            gsap.to(".loading-logo", {
+                rotation: 360,
+                duration: 20,
+                repeat: -1,
+                ease: "none"
+            });
+
+            gsap.to(".loading-dot", {
+                y: -20,
+                duration: 1,
+                repeat: -1,
+                yoyo: true,
+                stagger: 0.2
+            });
+        });
+
+        function initHLSVideo() {
+            const video = document.getElementById('heroVideo');
+            if (!video) return;
+
+            if (Hls.isSupported()) {
+                const hls = new Hls({
+                    maxBufferLength: 30,
+                    maxMaxBufferLength: 60,
+                    enableWorker: true,
+                    lowLatencyMode: true,
+                    backBufferLength: 90
+                });
+
+                const hlsUrl = 'https://bitdash-a.akamaihd.net/s/content/media/video/hls/bbb/bbb_1080p_hls.m3u8';
+
+                hls.loadSource(hlsUrl);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                });
+
+                hls.on(Hls.Events.ERROR, (event, data) => {
+                    if (data.fatal) {
+                        switch (data.type) {
+                            case Hls.ErrorTypes.NETWORK_ERROR:
+                                hls.startLoad();
+                                break;
+                            case Hls.ErrorTypes.MEDIA_ERROR:
+                                hls.recoverMediaError();
+                                break;
+                            default:
+                                initFallbackVideo();
+                                break;
+                        }
+                    }
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = 'https://bitdash-a.akamaihd.net/s/content/media/video/hls/bbb/bbb_1080p_hls.m3u8';
+                video.addEventListener('loadedmetadata', () => {
+                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                });
+            } else {
+                initFallbackVideo();
+            }
+        }
+
+        function initFallbackVideo() {
+            const video = document.getElementById('heroVideo');
+            if (!video) return;
+            video.src = 'https://assets.codepen.io/4924623/education-hero-2.mp4';
+            video.load();
+            video.play().catch(e => console.log('Auto-play prevented:', e));
+        }
+
+        function initAnimations() {
+            gsap.registerPlugin(ScrollTrigger);
+            initHLSVideo();
+
+            const header = document.getElementById('header');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+
+                if (header) {
+                    if (currentScroll > 50) {
+                        header.classList.add('scrolled');
+
+                        if (currentScroll > lastScroll && currentScroll > 200) {
+                            gsap.to(header, { y: -100, duration: 0.3 });
+                        } else {
+                            gsap.to(header, { y: 0, duration: 0.3 });
+                        }
+                    } else {
+                        header.classList.remove('scrolled');
+                        gsap.to(header, { y: 0, duration: 0.3 });
+                    }
+                }
+
+                lastScroll = currentScroll;
+
+                const bar = document.getElementById('scrollProgress');
+                if (bar) {
+                    const progress = (currentScroll / (document.body.scrollHeight - window.innerHeight)) * 100;
+                    bar.style.width = `${progress}%`;
+                }
+            });
+
+            const floatingElements = document.querySelectorAll('.floating-element');
+            floatingElements.forEach((el, i) => {
+                gsap.to(el, {
+                    y: 'random(-40, 40)',
+                    x: 'random(-30, 30)',
+                    rotation: 'random(-20, 20)',
+                    duration: 'random(4, 8)',
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut',
+                    delay: i * 0.5
+                });
+            });
+        }
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
+
+                if (navLinks.classList.contains('active')) {
+                    gsap.to(navLinks, { x: 0, duration: 0.5, ease: 'power3.out' });
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    gsap.to(navLinks, { x: 300, duration: 0.5, ease: 'power3.in' });
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
+
+                e.preventDefault();
+                const offset = 100;
+                const targetPosition = targetElement.offsetTop - offset;
+
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

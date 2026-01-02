@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Staff | Gurukul English Medium School</title>
-    <link rel="icon" href="https://kumss.org/assets/kumss_log.png" type="image/x-icon">
+    <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/institute.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +16,13 @@
         rel="stylesheet">
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="/assets/css/institute.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <style>
         /* --- Page Specific Styles --- */
@@ -438,6 +438,9 @@
         z-index: 999;
         overflow-y: auto;
     }
+    .footer-logo-img {
+        margin-left: 0 !important;
+    }
 
     .nav-links.active {
         transform: translateX(0);
@@ -517,6 +520,11 @@
 </head>
 
 <body>
+    <div id="page-loader" class="loader-wrap">
+  <div class="octa-ring" aria-label="Loading">
+  </div>
+</div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
     <!-- Mobile overlay (added) -->
     <div class="gm-overlay" id="gmOverlay" aria-hidden="true"></div>
@@ -543,7 +551,7 @@
 
    <li><a class="nav-link" href="/gurukul-english-medium-school/about.html">About</a></li>
     
-    <li><a class="nav-link" href="#">Academics</a></li>
+    <li><a class="nav-link" href="./academics.html">Academics</a></li>
     
     <li class="nav-item nav-dropdown" data-dropdown>
         <button class="nav-link nav-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
@@ -593,7 +601,8 @@
                 
                 <!-- 1 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/supriya-aherkar-principal.jpeg" alt="Mrs. Supriya Aherkar" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/supriya-aherkar-principal.jpeg" alt="Mrs. Supriya Aherkar"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Supriya Aherkar</h3>
                         <p class="faculty-designation">Principal</p>
@@ -603,7 +612,8 @@
 
                 <!-- 2 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/ashwini-khomane.jpeg" alt="Mrs. Ashwini Khomane" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/ashwini-khomane.jpeg" alt="Mrs. Ashwini Khomane"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Ashwini Khomane</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -613,7 +623,8 @@
 
                 <!-- 3 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/asmita-wabale.jpeg" alt="Mrs. Asmita Wabale" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/asmita-wabale.jpeg" alt="Mrs. Asmita Wabale"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Asmita Wabale</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -623,7 +634,8 @@
 
                 <!-- 4 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/bhagyashri-bhapkar.jpeg" alt="Mrs. Bhagyshri Bhapkar" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/bhagyashri-bhapkar.jpeg" alt="Mrs. Bhagyshri Bhapkar"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Bhagyshri Bhapkar</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -633,7 +645,8 @@
 
                 <!-- 5 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/chaya-jadhav.jpeg" alt="Mrs. Chaya Jadhav" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/chaya-jadhav.jpeg" alt="Mrs. Chaya Jadhav"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Chaya Jadhav</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
@@ -643,7 +656,8 @@
 
                 <!-- 6 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/komal-chandgude.jpeg" alt="Mrs. Komal Chandgude" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/komal-chandgude.jpeg" alt="Mrs. Komal Chandgude"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Komal Chandgude</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
@@ -653,7 +667,8 @@
 
                 <!-- 7 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/vidya-panasare.jpeg" alt="Mrs. Vidya Pansare" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/vidya-panasare.jpeg" alt="Mrs. Vidya Pansare"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Vidya Pansare</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -663,7 +678,8 @@
 
                 <!-- 8 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/lina-jarad.jpeg" alt="Mrs. Lina Jarad" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/lina-jarad.jpeg" alt="Mrs. Lina Jarad"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Lina Jarad</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
@@ -673,7 +689,8 @@
 
                 <!-- 9 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="#" alt="Mrs. Pawar Shital" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/placeholder-image.jfif" alt="Mrs. Pawar Shital"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Pawar Shital</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -683,7 +700,8 @@
 
                 <!-- 10 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/pooja-jagtap.jpeg" alt="pooja jagtap" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/pooja-jagtap.jpeg" alt="pooja jagtap"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Pooja Jagtap</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
@@ -693,7 +711,8 @@
 
                 <!-- 11 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="#" alt="Mrs. Priti Londhe" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/placeholder-image.jfif" alt="Mrs. Priti Londhe"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Priti Londhe</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -703,7 +722,8 @@
 
                 <!-- 12 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/priyanka-parkale.jpeg" alt="Mrs. Priyanaka Parkale" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/priyanka-parkale.jpeg" alt="Mrs. Priyanaka Parkale"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Priyanaka Parkale</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -713,7 +733,8 @@
 
                 <!-- 13 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="#" alt="Miss. Rupali Kaule" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/placeholder-image.jfif" alt="Miss. Rupali Kaule"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Miss. Rupali Kaule</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -723,7 +744,8 @@
 
                 <!-- 14 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/shayra-bagwan.jpeg" alt="Mrs. Shayara Bagwan" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/shayra-bagwan.jpeg" alt="Mrs. Shayara Bagwan"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Shayara Bagwan</h3>
                         <p class="faculty-designation">Care Taker</p>
@@ -733,7 +755,8 @@
 
                 <!-- 15 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/anita-pisal.jpeg" alt="Mrs. Anita Pisal" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/anita-pisal.jpeg" alt="Mrs. Anita Pisal"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Anita Pisal</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -743,7 +766,8 @@
 
                 <!-- 16 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/swati-bhapkar.jpeg" alt="Mrs. Swati Bhapkar" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/swati-bhapkar.jpeg" alt="Mrs. Swati Bhapkar"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Swati Bhapkar</h3>
                         <p class="faculty-designation">Asst. Teacher</p>
@@ -753,7 +777,8 @@
 
                 <!-- 17 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/geetanjali-lonkar.jpeg" alt="Mrs. Geetanjali Lonkar" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/geetanjali-lonkar.jpeg" alt="Mrs. Geetanjali Lonkar"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Geetanjali Lonkar</h3>
                         <p class="faculty-designation">Care Taker</p>
@@ -763,7 +788,8 @@
 
                 <!-- 18 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/aarti-makar.jpeg" alt="Mrs. Arti Makar" loading="lazy"></div>
+                    <div class="card-image"><img src="/assets/aarti-makar.jpeg" alt="Mrs. Arti Makar"  loading="lazy"
+     decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Arti Makar</h3>
                         <p class="faculty-designation">Care Taker</p>
@@ -794,7 +820,7 @@
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -1111,6 +1137,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.mobileNav = mobileNav;
 });
     </script>
+    <!-- JS file -->
+  <script src="/assets/js/institute.js"></script>
 
 </body>
 </html>

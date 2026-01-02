@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasatigruh Vidyalay Karhati | Established in 2021</title>
+    <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- css  -->
+   <link rel="stylesheet" href="/assets/css/institute.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+    <!-- HLS.js for video streaming -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.10/dist/hls.min.js"></script>
+
+    <!-- Lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- Splide Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+ <style>
+               
+   
+*{ box-sizing: border-box; }
+
+html,body{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-container{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.ggm-btn {
+      display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration:none;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.785);
+  background-color: var(--primaryColor);
+}
+.ggm-btn:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px){ 
+    a.ggm-btn {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+.about-hero{
+    min-height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 100px;
+    background:
+  linear-gradient(90deg,
+    rgba(0,0,0,.75) 0%,
+    rgba(0,0,0,.45) 55%,
+    rgba(0,0,0,.25) 100%
+  ),
+  linear-gradient(180deg,
+    rgba(0,0,0,.20) 0%,
+    rgba(0,0,0,.65) 100%
+  ),
+  url('/assets/vvk-history-img.JPG');
+
+background-repeat: no-repeat;
+background-size: cover;
+background-position:top;
+
+}
+.about-content {
+    text-align: center;
+    height: auto;
+}
+
+.about-content h3{
+  margin: 0 0 8px;
+  color: #ffefcb;
+  font-size: clamp(1.4rem, 2.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.about-content h1{
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+/* hero button */
+.hero-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: var(--secenderyColor);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.hero-btn:hover{
+  transform: translateY(-2px);
+}
+
+/* mobile tuning (video still ON) */
+@media (max-width: 768px){
+
+  .about-content{
+    max-width: 100%;
+    padding: 7px 14px;
+    padding-top: 20px;
+  }
+
+  .about-content p{
+    font-size: 0.98rem;
+  }
+}
+
+/* Mission and Vision Section */
+.mission-vision {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #e9f1fb);
+}
+
+/* Vision and Mission Content with Images */
+.mission-vision .vision-content,
+.mission-vision .mission-content {
+    display: flex;
+    align-items: center;
+    margin: 40px 100px 40px 100px; 
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.mission-vision .vision-content:hover,
+.mission-vision .mission-content:hover {
+    background-color: #eaf4ff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.mission-vision .vision-content img,
+.mission-vision .mission-content img {
+    max-width: 70%;
+    height: auto;
+    width: 35%;
+    border-radius: 10px;
+}
+
+.mission-vision .vision .text,
+.mission-vision .mission .text {
+    max-width: 100%;
+}
+
+.mission-vision h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #233f92;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.mission-vision h2::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #233f92;
+    bottom: -10px;
+    left: 0;
+}
+
+.mission-vision p {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.mission-vision ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.mission-vision ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.mission-vision ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #233f92;
+}
+
+.mission-vision .vision p,
+.mission-vision .mission p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mission-vision .vision-content,
+    .mission-vision .mission-content {
+        flex-direction: column;
+        margin-bottom: 10px !important;
+        margin: 0;
+    }
+
+    .mission-vision .vision-content img,
+    .mission-vision .mission-content img {
+        margin-bottom: 20px;
+    }
+
+    .mission-vision h2 {
+        font-size: 24px;
+    }
+
+    .mission-vision p {
+        font-size: 16px;
+    }
+
+    .mission-vision ul li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mission-vision h2 {
+        font-size: 22px;
+    }
+
+    .mission-vision p {
+        font-size: 14px;
+    }
+
+    .mission-vision ul li {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   OPTIONAL: BASIC SECTION SPACING HELPERS
+   (won't break your existing institute.css)
+========================================================= */
+
+section{ width: 100%; }
+
+img{ max-width: 100%; display: block; }
+
+
+@media (max-width: 576px){
+
+   .footer-logo-img {
+                                width: 30%;
+                                height: 30%;
+                                margin-left: 115px !important;
+                            }
+}
+
+
+ .footer-logo-img {
+                                width: 30%;
+                                height: 30%;
+                                margin: 0;
+                            }
+ .contact-link {
+    color:#2f3390;
+    text-decoration:none;
+    }
+.contact-link:hover {
+    color:#d66615;
+    text-decoration:none;
+    } 
+    
+/* --- Variables for easy customization --- */
+:root {
+    --primary-blue: #2f3390;
+    --accent-orange: #ff9704;
+    --bg-color: #f8f9fa;
+    --text-color: #555;
+    --card-bg: #ffffff;
+}
+
+/* --- Global Section --- */
+.classic-timeline {
+    padding: 80px 20px;
+    background-color: #2f3390;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean font */
+    box-sizing: border-box;
+}
+
+/* --- Header --- */
+.timeline-header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: #e9f1fb;
+    margin-bottom: 80px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-header::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-orange);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* --- Container --- */
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* The Vertical Center Line */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #e9ecef; /* Light grey line */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    z-index: 0;
+}
+
+/* --- Timeline Item --- */
+.timeline-items {
+    padding: 10px 40px;
+    position: relative;
+    background-color: transparent;
+    width: 50%;
+    z-index: 1;
+}
+
+/* Left side items */
+.timeline-items:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+/* Right side items */
+.timeline-items:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+/* --- The Dot (Icon) --- */
+.timeline-icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: -12px; /* Position on the center line */
+    background-color: var(--card-bg);
+    border: 4px solid var(--accent-orange);
+    top: 24px; /* Align with card top */
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Fix dot position for right-side items */
+.timeline-items:nth-child(even) .timeline-icon {
+    right: auto;
+    left: -12px;
+}
+
+/* Hover Effect on Dot */
+.timeline-items:hover .timeline-icon {
+    background-color: var(--accent-orange);
+    transform: scale(1.2);
+}
+
+/* --- The Content Card --- */
+.timeline-content {
+    padding: 25px 30px;
+    background-color: var(--card-bg);
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    transition: transform 0.3s ease;
+}
+
+.timeline-items:hover .timeline-content {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 15px;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Mobile Responsiveness --- */
+@media screen and (max-width: 768px) {
+    /* Move line to the left */
+    .timeline-container::after {
+        left: 31px;
+    }
+
+    /* Make items full width */
+    .timeline-items {
+        width: 100%;
+        padding-left: 70px; /* Space for the line/dot */
+        padding-right: 25px;
+        margin-bottom: 30px;
+    }
+
+    /* Reset positioning for all items to left-aligned */
+    .timeline-items:nth-child(odd), 
+    .timeline-items:nth-child(even) {
+        left: 0;
+        text-align: left;
+    }
+
+    /* Move dots to the left line */
+    .timeline-items:nth-child(odd) .timeline-icon, 
+    .timeline-items:nth-child(even) .timeline-icon {
+        left: 19px; /* Align with line */
+        right: auto;
+    }
+    
+    .timeline-header {
+        font-size: 28px;
+        margin-bottom: 50px;
+    }
+} 
+   /* Global Section Styling */
+
+/* History Section */
+.history-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:100%;
+    width:100%;
+    padding: 150px 150px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.history-section .history-content {
+    width: 50%;
+    text-align: left;
+}
+
+.history-section .history-content h2 {
+    font-size: 35px;
+    color: #233f92;
+    line-height: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+        border-bottom: 4px solid #ff9704;  /* Orange line under the heading */
+    padding-bottom: 10px; /* Space between text and line */
+}
+
+.history-section .history-content p {
+    font-size: 16px;
+    color: #101010;
+    line-height: 1.6;
+}
+.history-section .history-content span {
+    color:#d66615;
+    font-weight: 700;
+}
+
+
+.history-section .history-image {
+    width: 40%;
+}
+
+.history-section .history-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* =========================
+   History Section - Responsive CSS
+   (keeps your desktop the same, only adapts for smaller screens)
+   ========================= */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .history-section{
+    padding: 110px 60px;
+  }
+
+  .history-section .history-content{
+    width: 100% !important;
+    padding: 40px;
+  }
+
+  .history-section .history-image{
+   display: none !important;
+  }
+
+  .history-section .history-content h2{
+    font-size: 32px;
+    line-height: 44px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .history-section{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 60px 18px;
+    height: auto;
+    text-align: left;
+    box-shadow: none;
+  }
+
+  .history-section .history-content,
+  .history-section .history-image{
+    width: 100%;
+  }
+
+  .history-section .history-content h2{
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 14px;
+    border-bottom-width: 3px;
+    padding-bottom: 8px;
+  }
+
+  /* Image after heading on mobile */
+  .history-section .history-image{
+    order: 2;
+    margin-top: 10px;
+  }
+
+  .history-section .history-content{
+    order: 1;
+  }
+
+  .history-section .history-content p{
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .history-section .history-image img{
+    border-radius: 12px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .history-section{
+    padding: 48px 14px;
+  }
+
+  .history-section .history-content h2{
+    font-size: 23px;
+    line-height: 32px;
+  }
+
+  .history-section .history-content p{
+    font-size: 14.5px;
+  }
+}
+
+/* Half-diamond bg on right side (guaranteed visible) */
+.history-section{
+  position: relative;
+  overflow: hidden;
+}
+
+.history-section .history-content,
+.history-section .history-image{
+  position: relative;
+  z-index: 2; /* keep content above the shape */
+}
+
+.history-section::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -180px;                 /* shows only half */
+  transform: translateY(-50%) rotate(45deg);
+  width: 360px;
+  height: 360px;
+
+  background: rgba(252, 176, 0, 0.406);
+  border: 1px solid rgba(255, 150, 4, 0.08);
+  border-radius: 14px;
+
+  z-index: 1;                    /* above section bg, below content */
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .history-section::after{
+    width: 300px;
+    height: 300px;
+    right: -150px;
+  }
+}
+@media (max-width: 768px){
+  .history-section::after{
+    width: 240px;
+    height: 240px;
+    right: -120px;
+  }
+}
+@media (max-width: 480px){
+  .history-section::after{
+    width: 210px;
+    height: 210px;
+    right: -105px;
+  }
+}
+
+
+
+/* Academic Excellence Section */
+.academic-excellence-section{
+    background-color: #fff;
+    text-align: left;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 150px; /* desktop padding (adjust if your container already handles padding) */
+}
+
+/* keep content above shape */
+.academic-excellence-section > *{
+  position: relative;
+  z-index: 2;
+}
+  .academic-excellence-section h2 {
+    color: #233f92;
+    line-height: 50px;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #ff9704;  /* Orange line under the heading */
+    padding-bottom: 10px; /* Space between text and line */
+  }
+
+/* Left half-diamond background */
+.academic-excellence-section::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -180px;                 /* shows only half on left */
+  transform: translateY(-50%) rotate(45deg);
+  width: 360px;
+  height: 360px;
+
+  background: rgba(255, 175, 3, 0.422);
+  border: 2px solid rgba(255, 244, 229, 0.123);
+  border-radius: 14px;
+
+  z-index: 1;                   /* above section bg, below content */
+  pointer-events: none;
+}
+
+/* Responsive padding + shape sizing */
+@media (max-width: 1024px){
+  .academic-excellence-section{
+    padding: 70px 60px;
+  }
+  .academic-excellence-section::before{
+    width: 300px;
+    height: 300px;
+    left: -150px;
+  }
+}
+
+@media (max-width: 768px){
+  .academic-excellence-section{
+    padding: 56px 18px;
+  }
+  .academic-excellence-section::before{
+    width: 240px;
+    height: 240px;
+    left: -120px;
+  }
+}
+
+@media (max-width: 480px){
+  .academic-excellence-section{
+    padding: 44px 34px;
+  }
+  .academic-excellence-section h2 {
+    color: #233f92;
+    line-height: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #ff9704;  /* Orange line under the heading */
+    padding-bottom: 10px; /* Space between text and line */
+  }
+   
+}
+
+</style>
+</head>
+
+<body>
+ <div id="page-loader" class="loader-wrap">
+  <div class="octa-ring" aria-label="Loading">
+  </div>
+</div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <!-- Logo -->
+                <a href="/index.html" class="gm-logo">
+                    <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
+                </a>
+
+                <!-- Mobile toggle -->
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                </button>
+
+                <!-- Links -->
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link" href="./vasatigruh-vidyalay-karhati.html">Home</a></li>
+
+                    <li><a class="gm-link" href="/vasatigruh-vidyalay-karhati/about.html">About</a></li>
+                  
+                      <li><a class="gm-link" href="./academics.html">Academics</a></li>
+                    <!-- Dropdown -->
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
+                        </button>
+
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a>
+                            </li>
+                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala
+                                    Mahavidhyalaya</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="gm-link" href="/vasatigruh-vidyalay-karhati/staff.html">Staff</a></li>
+                </ul>
+                 
+                        <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
+                    
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="about-hero" id="home">
+        <div class="hero-container">
+            <div class="about-content">
+                <h3>About</h3>
+                <h1>Vasatigruh Vidyalaya Karhati</h1>
+            </div>
+        </div>
+    </section>
+
+  <section class="mission-vision">
+    <div class="vision">
+        <div class="vision-content">
+            <img src="/assets/our-vision.png" alt="Vision Image">
+            <div class="text">
+                <h2>Our Vision</h2>
+                <p>To establish Vasatigruh Vidyalay Karhati as a premier educational institution that empowers students through quality education, skill development, and ethical values.<br>
+
+We envision a learning environment that fosters innovation, critical thinking, and holistic growth, preparing students to become responsible citizens and lifelong learners.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mission">
+        <div class="mission-content">
+            <div class="text">
+                <h2>Our Mission</h2>
+               <p>
+Our mission is to provide high-quality education in a safe, inclusive, and respectful environment. We are committed to building strong academic foundations, developing practical skills and discipline, and encouraging leadership, creativity, and teamwork among students. By maintaining modern infrastructure and updated learning resources, and through continuous improvement and student-focused teaching, we prepare learners for academic success and meaningful contributions to society.
+</p>
+
+            </div>
+             <img src="/assets/our-mission.png" alt="Mission Image">
+        </div>
+    </div>
+</section>
+
+
+<section class="classic-timeline">
+    <h2 class="timeline-header">Why Choose Vasatigruh Vidyalay Karhati</h2>
+    <div class="timeline-container">
+
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Over 70 Years of Educational Excellence</h3>
+                <p>Serving generations of students with strong academics, discipline, and a trusted legacy in the Karhati community.</p>
+            </div>
+        </div>
+
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Affiliation with MSBSHSE</h3>
+                <p>Following the Maharashtra State Board curriculum for secondary and higher secondary education with structured learning outcomes.</p>
+            </div>
+        </div>
+
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Agricultural & Practical Education</h3>
+                <p>A unique approach that connects students to farming, rural life, and real-world learning through practical exposure.</p>
+            </div>
+        </div>
+
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Experienced & Committed Faculty</h3>
+                <p>Dedicated educators who focus on strong fundamentals, student guidance, and continuous improvement in learning.</p>
+            </div>
+        </div>
+
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Values, Discipline & Holistic Development</h3>
+                <p>Building character alongside academics through values, respectful conduct, and all-round student development.</p>
+            </div>
+        </div>
+
+        <div class="timeline-items">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+                <h3>Deep Roots in the Local Community</h3>
+                <p>Rooted in Karhati’s culture and needs, working closely with families to support students and strengthen the community.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="history-section">
+    <div class="history-content">
+        <h2>Our History</h2>
+        <span>Founded in 1952 </span>under the banner of Krushi Udyog Mul Shikshan Sansthan, VVK has consistently evolved while staying true to its founding vision.
+
+Over the years, the institution has grown in infrastructure, academic offerings, and student strength. Today, it stands as a trusted educational pillar in the Karhati region, serving generations of learners with dedication and integrity.
+
+Leadership transitions and modernization efforts have further strengthened the institution, enabling it to meet contemporary educational standards.
+    </div>
+    <div class="history-image">
+        <img src="/assets/vvk-history-img.JPG" alt="School History Image">
+    </div>
+</section>
+
+<section class="academic-excellence-section">
+    <h2>A Unique Focus on Agricultural Education</h2>
+    <div class="academic-content">
+       <p>
+
+One of the defining strengths of Vasatigruh Vidyalay Karhati is its emphasis on agricultural education.
+
+Students are introduced to the fundamentals of farming, sustainable practices, and the role of agriculture in rural life and environmental balance. This hands-on exposure helps students understand the importance of agriculture in day-to-day living while building respect for the land and the community.
+
+This practical learning approach connects education with real-world relevance, especially for students from rural and semi-rural backgrounds.</p>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+                        <div>
+                            <div style="color: #ff9704;">KUMSS SINCE 1951</div>
+                        </div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./vasatigruh-vidyalay-karhati.html">Home</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/about.html">About</a></li>
+                        <li><a href="./academics.html">Academics</a></li>
+                         <li><a href="/vasatigruh-vidyalay-karhati/staff.html">Staff</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i>
+<a href="tel:+919421394242">+91 94213 94242</a></li>
+                        <li><i class="fas fa-envelope"></i>
+<a href="mailto:info@kumss.org">info@kumss.org</a></li>
+                        <li><i class="fas fa-envelope"></i>
+<a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- js file  -->
+    <script src="/assets/js/institute.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        // Premium Loading Animation
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loadingScreen');
+
+            // Animate loading screen out
+            gsap.to(loadingScreen, {
+                opacity: 0,
+                duration: 1,
+                ease: "power2.inOut",
+                delay: 2,
+                onComplete: () => {
+                    loadingScreen.style.display = 'none';
+                    initAnimations();
+                }
+            });
+
+            // Animate loading elements
+            gsap.to(".loading-logo", {
+                rotation: 360,
+                duration: 20,
+                repeat: -1,
+                ease: "none"
+            });
+
+            gsap.to(".loading-dot", {
+                y: -20,
+                duration: 1,
+                repeat: -1,
+                yoyo: true,
+                stagger: 0.2
+            });
+        });
+
+        // Initialize HLS Video Streaming
+        function initHLSVideo() {
+            const video = document.getElementById('heroVideo');
+
+            if (Hls.isSupported()) {
+                const hls = new Hls({
+                    maxBufferLength: 30,
+                    maxMaxBufferLength: 60,
+                    enableWorker: true,
+                    lowLatencyMode: true,
+                    backBufferLength: 90
+                });
+
+                // HLS stream URL (replace with your actual HLS stream)
+                const hlsUrl = 'https://bitdash-a.akamaihd.net/s/content/media/video/hls/bbb/bbb_1080p_hls.m3u8';
+
+                hls.loadSource(hlsUrl);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                });
+
+                hls.on(Hls.Events.ERROR, (event, data) => {
+                    if (data.fatal) {
+                        switch (data.type) {
+                            case Hls.ErrorTypes.NETWORK_ERROR:
+                                hls.startLoad();
+                                break;
+                            case Hls.ErrorTypes.MEDIA_ERROR:
+                                hls.recoverMediaError();
+                                break;
+                            default:
+                                initFallbackVideo();
+                                break;
+                        }
+                    }
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                // For Safari
+                video.src = 'https://bitdash-a.akamaihd.net/s/content/media/video/hls/bbb/bbb_1080p_hls.m3u8';
+                video.addEventListener('loadedmetadata', () => {
+                    video.play().catch(e => console.log('Auto-play prevented:', e));
+                });
+            } else {
+                initFallbackVideo();
+            }
+        }
+
+        function initFallbackVideo() {
+            const video = document.getElementById('heroVideo');
+            video.src = 'https://assets.codepen.io/4924623/education-hero-2.mp4';
+            video.load();
+            video.play().catch(e => console.log('Auto-play prevented:', e));
+        }
+
+        // Initialize all animations and interactions
+        function initAnimations() {
+            // Initialize GSAP with ScrollTrigger
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Initialize HLS video
+            initHLSVideo();
+
+            // Header scroll effect
+            const header = document.getElementById('header');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+
+                // Header effect
+                if (currentScroll > 50) {
+                    header.classList.add('scrolled');
+
+                    if (currentScroll > lastScroll && currentScroll > 200) {
+                        gsap.to(header, { y: -100, duration: 0.3 });
+                    } else {
+                        gsap.to(header, { y: 0, duration: 0.3 });
+                    }
+                } else {
+                    header.classList.remove('scrolled');
+                    gsap.to(header, { y: 0, duration: 0.3 });
+                }
+
+                lastScroll = currentScroll;
+
+                // Scroll progress bar
+                const progress = (currentScroll / (document.body.scrollHeight - window.innerHeight)) * 100;
+                document.getElementById('scrollProgress').style.width = `${progress}%`;
+
+                // Update active nav link
+                updateActiveNavLink();
+            });
+
+            // Tab system
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+
+                    // Update active button
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Update active content
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                            gsap.fromTo(content,
+                                { opacity: 0, y: 20 },
+                                { opacity: 1, y: 0, duration: 0.5 }
+                            );
+                        }
+                    });
+                });
+            });
+
+            // Course card hover effects
+            const courseCards = document.querySelectorAll('.course-card');
+            courseCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        y: -20,
+                        rotationY: 5,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                    });
+
+                    const image = card.querySelector('.course-image');
+                    gsap.to(image, {
+                        scale: 1.1,
+                        duration: 0.8,
+                        ease: 'power2.out'
+                    });
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        y: 0,
+                        rotationY: 0,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                    });
+
+                    const image = card.querySelector('.course-image');
+                    gsap.to(image, {
+                        scale: 1,
+                        duration: 0.8,
+                        ease: 'power2.out'
+                    });
+                });
+            });
+
+            // Feature card animations
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                gsap.fromTo(card,
+                    {
+                        opacity: 0,
+                        y: 50,
+                        scale: 0.9
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.8,
+                        ease: 'back.out(1.2)',
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 85%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            });
+
+            // Vision & Mission cards animation
+            const vmCards = document.querySelectorAll('.vm-card');
+            vmCards.forEach((card, i) => {
+                gsap.fromTo(card,
+                    {
+                        opacity: 0,
+                        y: 50,
+                        scale: 0.95
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.8,
+                        delay: i * 0.2,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 85%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            });
+
+            // Bento cards animation
+            const bentoCards = document.querySelectorAll('.bento-card');
+            bentoCards.forEach((card, i) => {
+                gsap.fromTo(card,
+                    {
+                        opacity: 0,
+                        y: 30,
+                        scale: 0.98
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.6,
+                        delay: i * 0.1,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 90%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            });
+
+            // Parallax effect for video
+            gsap.to('.hero-video', {
+                y: '20%',
+                scale: 1.1,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.hero',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+
+            // Floating elements animation
+            const floatingElements = document.querySelectorAll('.floating-element');
+            floatingElements.forEach((el, i) => {
+                gsap.to(el, {
+                    y: 'random(-40, 40)',
+                    x: 'random(-30, 30)',
+                    rotation: 'random(-20, 20)',
+                    duration: 'random(4, 8)',
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'sine.inOut',
+                    delay: i * 0.5
+                });
+            });
+
+            // Button hover effects
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    gsap.to(btn, {
+                        scale: 1.05,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    gsap.to(btn, {
+                        scale: 1,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+            });
+        }
+
+        // Update active navigation link
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.gm-link');
+            const gmmBtn = document.queryselectorAll('gmm-btn');
+
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const gmmBtn = document.queryselectorAll('gmmBtn');
+
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+
+            if (navLinks.classList.contains('active')) {
+                gsap.to(navLinks, {
+                    x: 0,
+                    duration: 0.5,
+                    ease: 'power3.out'
+                });
+                document.body.style.overflow = 'hidden';
+            } else {
+                gsap.to(navLinks, {
+                    x: 300,
+                    duration: 0.5,
+                    ease: 'power3.in'
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Smooth scrolling with offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offset = 100;
+                    const targetPosition = targetElement.offsetTop - offset;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Lazy loading images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const src = img.getAttribute('data-src');
+
+                        if (src) {
+                            img.src = src;
+                            img.removeAttribute('data-src');
+
+                            img.onload = () => {
+                                gsap.fromTo(img,
+                                    { opacity: 0, scale: 1.2 },
+                                    { opacity: 1, scale: 1, duration: 1, ease: 'power2.out' }
+                                );
+                            };
+                        }
+
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '100px 0px',
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start loading animation immediately
+            const loadingScreen = document.getElementById('loadingScreen');
+            gsap.set(loadingScreen, { opacity: 1 });
+
+            // Initialize animations after slight delay to ensure DOM is ready
+            setTimeout(() => {
+                if (document.readyState === 'complete') {
+                    // Page is already loaded
+                    window.dispatchEvent(new Event('load'));
+                }
+            }, 100);
+        });
+
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            const perfEntries = performance.getEntriesByType('navigation');
+            if (perfEntries.length > 0) {
+                const navTiming = perfEntries[0];
+                const loadTime = navTiming.loadEventEnd - navTiming.loadEventStart;
+                console.log(`Page loaded in ${loadTime}ms`);
+
+                if (loadTime > 3000) {
+                    console.log('Performance tip: Consider optimizing images and reducing animation complexity');
+                }
+            }
+        });
+    </script>
+    <script>
+        const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting || e.target.dataset.done) return;
+    e.target.dataset.done = "1";
+
+    const el = e.target;
+    const target = +el.dataset.target;
+    const suffix = el.dataset.suffix || "";
+
+    const durationMs = 2000;  // ✅ change this: 800 fast, 1500 normal, 2500 slow
+    const intervalMs = 20;
+
+    const steps = Math.max(1, Math.floor(durationMs / intervalMs));
+    const step = Math.max(1, Math.ceil(target / steps));
+
+    let n = 0;
+    const t = setInterval(() => {
+      n += step;
+      if (n >= target) { n = target; clearInterval(t); }
+      el.textContent = n.toLocaleString("en-IN") + suffix;
+    }, intervalMs);
+  });
+}, { threshold: 0.4 });
+
+document.querySelectorAll(".num[data-target]").forEach(el => io.observe(el));
+
+
+    </script>
+</body>
+
+</html>
