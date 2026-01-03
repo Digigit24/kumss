@@ -17,253 +17,351 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+  <!-- AOS Animation Library CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
+    /* Global Reset & Base */
     *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; font-family:"Poppins",sans-serif; }
+    html,body{ margin:0; padding:0; font-family:"Poppins",sans-serif; overflow-x: hidden; }
 
-    /* =========================
-       SIMPLE HERO (changed)
-       ========================= */
-    .acad-hero-simple{
+    /* =========================================
+       PREMIUM LAYOUT STYLES
+       ========================================= */
+    
+    :root {
+      --brand-blue: #233f92;
+      --brand-orange: #ff9704;
+      --bg-soft: #f4f7fc;
+      --glass-white: rgba(255, 255, 255, 0.95);
+    }
+
+    /* --- Animated Background Elements --- */
+    .bg-shape {
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+    }
+    .shape-1 {
+      top: -100px; right: -100px; width: 400px; height: 400px;
+      background: rgba(35, 63, 146, 0.15);
+    }
+    .shape-2 {
+      bottom: 100px; left: -100px; width: 300px; height: 300px;
+      background: rgba(255, 151, 4, 0.1);
+    }
+
+    /* --- Hero Section --- */
+    .prem-hero {
       position: relative;
-      padding: 110px 0 52px; /* respects your fixed header spacing */
-      background: #f7f9ff;
+      padding: 140px 0 80px; /* Header spacing */
+      background: linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%);
       overflow: hidden;
-      border-bottom: 1px solid rgba(0,0,0,.06);
     }
 
-    .acad-hero-simple .hero-container{
-      width: min(1100px, 92%);
+    .prem-container {
+      width: min(1200px, 90%);
       margin: 0 auto;
-      display: flex;
+    }
+
+    .prem-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
-      justify-content: space-between;
-      gap: 22px;
+      gap: 50px;
     }
 
-    .acad-hero-left{
-      flex: 1;
-      min-width: 260px;
-    }
-
-    .acad-tag{
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(47,51,144,.08);
-      color: #233f92;
-      font-weight: 800;
-      border: 1px solid rgba(47,51,144,.16);
-      margin-bottom: 12px;
-    }
-
-    .acad-hero-title{
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 3.2vw, 3rem);
-      line-height: 1.08;
-      font-weight: 900;
-      color: #233f92;
-    }
-
-    .acad-hero-sub{
-      margin: 0;
-      max-width: 70ch;
-      line-height: 1.75;
-      font-size: 16px;
-      color: #333;
-    }
-
-    .acad-hero-right{
-      flex: 0 0 360px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    .acad-hero-box{
-      width: 100%;
-      border-radius: 16px;
-      background: #ffffff;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,.08);
-      padding: 18px;
-    }
-
-    .acad-hero-box h4{
-      margin: 0 0 10px;
-      font-size: 16px;
-      font-weight: 800;
-      color: #233f92;
-    }
-
-    .acad-hero-links{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .acad-pill-link{
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 14px;
-      color: #0b0b0b;
-      background: rgba(255,151,4,.20);
-      border: 1px solid rgba(255,151,4,.35);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .acad-pill-link:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 10px 18px rgba(0,0,0,.10);
-    }
-
-    /* =========================
-       SIMPLE HORIZONTAL LAYOUT
-       ========================= */
-    .acad-wrap-simple{
-      width: min(1100px, 92%);
-      margin: 0 auto;
-      padding: 52px 0;
-    }
-
-    .acad-row{
-      display: flex;
-      gap: 18px;
-      align-items: stretch;
-      margin-bottom: 18px;
-    }
-
-    .acad-panel{
-      flex: 1;
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,.07);
-      padding: 22px;
-    }
-
-    .acad-panel h2{
-      margin: 0 0 10px;
-      font-size: 22px;
-      font-weight: 900;
-      color: #233f92;
-      border-bottom: 4px solid #ff9704;
+    .prem-tag {
       display: inline-block;
-      padding-bottom: 8px;
+      padding: 8px 16px;
+      background: rgba(255, 151, 4, 0.15);
+      color: #d67d00;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .acad-panel p{
-      margin: 12px 0 0;
-      color: #222;
+    .prem-title {
+      font-family: 'Gantari', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      color: var(--brand-blue);
+      margin: 0 0 20px;
+      font-weight: 800;
+    }
+
+    .prem-subtitle {
+      font-size: 1.125rem;
       line-height: 1.8;
-      font-size: 15.5px;
+      color: #555;
+      margin-bottom: 30px;
+      max-width: 90%;
     }
 
-    .acad-miniList{
-      margin: 12px 0 0;
-      padding: 0;
-      list-style: none;
+    /* Premium Image Styles */
+    .prem-img-hero {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+      box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+      transform: rotate(2deg);
+      transition: transform 0.4s ease;
+      object-fit: cover;
     }
-    .acad-miniList li{
+    .prem-img-hero:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .prem-img-content {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      object-fit: cover;
+    }
+
+    /* --- Features Grid (Glass Cards) --- */
+    .prem-features {
+      padding: 80px 0;
+      background: #fff;
+      position: relative;
+    }
+
+    .prem-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: -80px; /* Negative margin to overlap hero */
+    }
+
+    .prem-card {
+      background: var(--glass-white);
+      border: 1px solid rgba(255,255,255,0.8);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prem-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 0;
+      background: var(--brand-orange);
+      transition: height 0.4s ease;
+    }
+
+    .prem-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(35, 63, 146, 0.15);
+    }
+    .prem-card:hover::before { height: 100%; }
+
+    .card-icon {
+      width: 60px; height: 60px;
+      background: rgba(35, 63, 146, 0.08);
+      border-radius: 14px;
       display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 10px 0;
-      border-top: 1px dashed rgba(0,0,0,.10);
-      color: #222;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-    .acad-miniList li:first-child{ border-top: 0; padding-top: 0; }
-    .acad-miniList i{ color:#ff9704; margin-top: 3px; }
-
-    .acad-ctaBar{
-      background: linear-gradient(135deg, #ffffff, #e9f1fb);
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,.08);
-      padding: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .acad-ctaBar strong{ color:#233f92; font-weight: 900; }
-    .acad-ctaBar span{ color:#222; font-size: 14.5px; }
-
-    .acad-ctaBtns{
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .acad-btn{
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 16px;
-      border-radius: 14px;
+      font-size: 24px;
+      color: var(--brand-blue);
+      margin-bottom: 20px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .prem-card:hover .card-icon {
+      background: var(--brand-blue);
+      color: #fff;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 15px;
+    }
+
+    .card-text {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* --- Zig Zag Section --- */
+    .prem-zigzag {
+      padding: 100px 0;
+      background: var(--bg-soft);
+    }
+
+    .zigzag-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 100px;
+    }
+    .zigzag-row:last-child { margin-bottom: 0; }
+    
+    .zigzag-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .zigzag-content { flex: 1; }
+    .zigzag-visual { flex: 1; display: flex; justify-content: center; position: relative; }
+
+    /* Decorative border for images */
+    .zigzag-visual::after {
+      content: '';
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      border: 2px dashed var(--brand-orange);
+      border-radius: 20px;
+      bottom: -15px;
+      right: -15px;
+      z-index: 0;
+    }
+    .zigzag-row.reverse .zigzag-visual::after {
+       right: auto; left: -15px;
+    }
+    .zigzag-visual img { position: relative; z-index: 1; }
+
+    .sec-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--brand-blue);
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    .sec-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--brand-orange);
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 25px;
+    }
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 15px;
+      color: #444;
+      line-height: 1.5;
+    }
+    .check-list i {
+      color: var(--brand-orange);
+      margin-top: 4px;
+      background: rgba(255, 151, 4, 0.1);
+      padding: 4px;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+
+    /* --- CTA Section --- */
+    .prem-cta {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--brand-blue) 0%, #1a2f70 100%);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .prem-cta::before, .prem-cta::after {
+      content:''; position: absolute; border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+    .prem-cta::before { width: 300px; height: 300px; top: -100px; left: -50px; }
+    .prem-cta::after { width: 200px; height: 200px; bottom: -50px; right: -50px; }
+
+    .cta-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+    .cta-content p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    
+    .cta-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: 900;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      transition: all 0.3s ease;
+      font-size: 1rem;
     }
-    .acad-btn--primary{
-      background: rgba(255,151,4,.95);
-      color: #0b0b0b;
-      box-shadow: 0 14px 26px rgba(0,0,0,.18);
+
+    .cta-btn-orange {
+      background: var(--brand-orange);
+      color: #000;
+      box-shadow: 0 10px 20px rgba(255, 151, 4, 0.3);
     }
-    .acad-btn--ghost{
+    .cta-btn-orange:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(255, 151, 4, 0.4);
+      background: #ffaa33;
+    }
+
+    .cta-btn-white {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.3);
+      color: #fff;
+    }
+    .cta-btn-white:hover {
       background: #fff;
-      color: #233f92;
-      border: 1px solid rgba(35,63,146,.18);
+      color: var(--brand-blue);
+      border-color: #fff;
     }
-    .acad-btn:hover{ transform: translateY(-2px); }
 
     /* Responsive */
-    @media (max-width: 900px){
-      .acad-hero-simple .hero-container{
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .acad-hero-right{
-        flex: 1;
-        width: 100%;
-      }
-      .acad-row{
-        flex-direction: column;
-      }
+    @media (max-width: 900px) {
+      .prem-hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .prem-subtitle { margin-left: auto; margin-right: auto; }
+      .zigzag-row, .zigzag-row.reverse { flex-direction: column; text-align: left; }
+      .zigzag-visual { width: 100%; justify-content: center; margin-top: 20px; }
+      .prem-grid-3 { margin-top: 0; }
+      .prem-img-hero { transform: rotate(0); margin-top: 30px; }
     }
-
-    /* Keep your existing CTA button style (unchanged) */
-    .ggm-btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 16px; border-radius:999px; text-decoration:none;
-      font-weight:700; color: rgba(0,0,0,.785);
-      background-color: var(--primaryColor);
-    }
-    .ggm-btn:hover{ box-shadow:0 10px 20px rgba(0,0,0,.2); }
+    
+    a.ggm-btn { display: inline-flex !important; }
     @media (max-width: 768px){
-      a.ggm-btn{ display:none !important; visibility:hidden !important; opacity:0 !important; pointer-events:none !important; }
+       a.ggm-btn{ display:none !important; }
     }
   </style>
 </head>
 
 <body>
 
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-
-
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <!-- Header (same as your existing structure) -->
+  <!-- Header -->
   <header class="gm-header" id="header">
     <div class="gm-container">
       <nav class="gm-nav" aria-label="Primary">
@@ -306,165 +404,213 @@
     </div>
   </header>
 
- <!-- HERO (updated content) -->
-<section class="acad-hero-simple" id="home">
-  <div class="hero-container">
-    <div class="acad-hero-left">
-      <div class="acad-tag"><i class="fa-solid fa-graduation-cap"></i> Academics</div>
-      <h1 class="acad-hero-title">Academics at Vasatigruh Vidyalay Karhati</h1>
-      <p class="acad-hero-sub">
-        At Vasatigruh Vidyalay Karhati, we focus on strong basics, disciplined learning, and steady improvement.
-        Teaching is planned class-wise with daily practice, revision, and clear guidance from teachers.
-        Our goal is simple: children should understand concepts well, write neatly, and build confidence in every subject.
-      </p>
-    </div>
-  </div>
-</section>
+  <!-- =========================================
+       PREMIUM ACADEMIC CONTENT START
+       ========================================= -->
 
-<!-- SIMPLE HORIZONTAL CONTENT (updated content) -->
-<section>
-  <div class="acad-wrap-simple">
-
-    <div class="acad-row">
-      <div class="acad-panel">
-        <h2>Academic Overview</h2>
-        <p>
-          Our academic approach builds a strong foundation in reading, writing, and basic mathematics from the early classes.
-          Students learn through regular classwork, homework practice, and revision, so concepts become clear and permanent.
-          We encourage discipline, attentive learning, and consistent effort to help students progress step-by-step.
-        </p>
-      </div>
-
-      <div class="acad-panel">
-        <h2>Curriculum Framework</h2>
-        <p>
-          We follow a structured curriculum based on grade-wise learning outcomes and exam preparation.
-          Lesson planning is done term-wise, and teachers maintain a balance of explanation, written practice, and revision.
-          Regular worksheets and classroom work help students strengthen fundamentals and improve performance in assessments.
-        </p>
+  <!-- Hero Section -->
+  <section class="prem-hero">
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    
+    <div class="prem-container">
+      <div class="prem-hero-grid">
+        <div data-aos="fade-right" data-aos-duration="1000">
+          <span class="prem-tag">Excellence in Education</span>
+          <h1 class="prem-title">Building a Strong <br>Academic Foundation</h1>
+          <p class="prem-subtitle">
+            At Vasatigruh Vidyalay Karhati, we focus on disciplined learning, strong basics, and steady improvement. Our goal is simple: children should understand concepts well, write neatly, and build confidence.
+          </p>
+          <div style="display:flex; gap:15px;">
+             <a href="#curriculum" class="cta-btn cta-btn-orange">Explore Curriculum</a>
+          </div>
+        </div>
+        <div data-aos="fade-left" data-aos-duration="1000">
+           <!-- Replaced Lottie with Premium Image -->
+           <img src="/assets/vasatigruh-academics.jfif" 
+                alt="Students studying in library" 
+                class="prem-img-hero">
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="acad-row">
-      <div class="acad-panel">
-        <h2>Subjects & Learning Areas</h2>
-        <ul class="acad-miniList">
-          <li><i class="fa-solid fa-book-open"></i> Languages (English, Marathi/Hindi as applicable) with focus on reading, writing, and grammar.</li>
-          <li><i class="fa-solid fa-square-root-variable"></i> Mathematics with daily practice to improve accuracy, speed, and problem-solving.</li>
-          <li><i class="fa-solid fa-flask"></i> EVS/Science and Social Studies with simple activities and examples to improve understanding.</li>
-        </ul>
-      </div>
-
-      <div class="acad-panel">
-        <h2>Student Support</h2>
-        <ul class="acad-miniList">
-          <li><i class="fa-solid fa-user-check"></i> Teacher guidance for weak areas, with special attention to basics and written work.</li>
-          <li><i class="fa-solid fa-clipboard-check"></i> Unit tests, oral work, and written assessments to track learning and improvement.</li>
-          <li><i class="fa-solid fa-people-group"></i> Supportive discipline, good habits, and positive classroom environment for confidence-building.</li>
-        </ul>
+  <!-- Feature Cards (Overlapping Hero) -->
+  <section class="prem-features">
+    <div class="prem-container">
+      <div class="prem-grid-3">
+        <!-- Card 1 -->
+        <div class="prem-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3 class="card-title">Structured Learning</h3>
+          <p class="card-text">
+            Our curriculum is planned class-wise with daily practice and clear guidance, ensuring every student masters the basics before moving forward.
+          </p>
+        </div>
+        <!-- Card 2 -->
+        <div class="prem-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <h3 class="card-title">Written Practice</h3>
+          <p class="card-text">
+            We emphasize neat handwriting and regular worksheets. Writing reinforces memory and helps in better expression of thoughts.
+          </p>
+        </div>
+        <!-- Card 3 -->
+        <div class="prem-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <h3 class="card-title">Personal Attention</h3>
+          <p class="card-text">
+            Teachers identify weak areas in students and provide extra support to build confidence and improve academic performance.
+          </p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="acad-ctaBar">
-      <div>
-        <strong>Need more information?</strong><br />
-        <span>Call us to know about admissions, syllabus details, school timings, and to schedule a school visit.</span>
+  <!-- Detailed Sections (Zig Zag) -->
+  <section class="prem-zigzag" id="curriculum">
+    <div class="prem-container">
+      
+      <!-- Row 1 -->
+      <div class="zigzag-row">
+        <div class="zigzag-content" data-aos="fade-right">
+          <h2 class="sec-title">Core Subjects & Focus</h2>
+          <p style="color:#555; line-height:1.7;">
+            We provide a balanced education covering languages, sciences, and social studies. Our approach transforms complex textbook theories into simple, understandable concepts.
+          </p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-check"></i> <strong>Languages:</strong> Mastery in Marathi, Hindi & English with grammar focus.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Mathematics:</strong> Daily problem solving to improve speed and accuracy.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Science/EVS:</strong> Practical examples to understand the world around us.</li>
+          </ul>
+        </div>
+        <div class="zigzag-visual" data-aos="fade-left">
+           <!-- Image Replacement -->
+           <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800" 
+                alt="Stack of books and glasses" 
+                class="prem-img-content">
+        </div>
       </div>
-      <div class="acad-ctaBtns">
-        <a class="acad-btn acad-btn--primary" href="/contact.html">Schedule a Visit</a>
-        <a class="acad-btn acad-btn--ghost" href="tel:+919421394242">Call Now</a>
+
+      <!-- Row 2 -->
+      <div class="zigzag-row reverse">
+        <div class="zigzag-content" data-aos="fade-left">
+          <h2 class="sec-title">Assessment & Growth</h2>
+          <p style="color:#555; line-height:1.7;">
+            Education is a journey of continuous improvement. We use various methods to track student progress and ensure they are ready for future challenges.
+          </p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-check"></i> <strong>Unit Tests:</strong> Regular intervals to check concept retention.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Oral & Written Work:</strong> Balancing speaking confidence with writing skills.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Parent Updates:</strong> Keeping parents informed about their child's progress.</li>
+          </ul>
+        </div>
+        <div class="zigzag-visual" data-aos="fade-right">
+           <!-- Image Replacement -->
+           <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&q=80&w=800" 
+                alt="Teacher helping student" 
+                class="prem-img-content">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="prem-cta">
+    <div class="prem-container">
+      <div class="cta-content" data-aos="zoom-in">
+        <h2>Join Our Learning Community</h2>
+        <p>Admissions are open. Give your child the gift of disciplined education and a bright future at Vasatigruh Vidyalay Karhati.</p>
+        <div class="cta-btn-group">
+          <a href="/contact.html" class="cta-btn cta-btn-orange">Schedule a Visit</a>
+          <a href="tel:+919421394242" class="cta-btn cta-btn-white"><i class="fa-solid fa-phone"></i> Call Now</a>
+        </div>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- =========================================
+       PREMIUM ACADEMIC CONTENT END
+       ========================================= -->
 
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="/index.html" class="logo" style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
-                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
-                        <div>
-                            <div style="color: #ff9704;">KUMSS SINCE 1951</div>
-                        </div>
-                    </a>
-                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
-                        An educational society focused on overall development of students since 1951.
-                    </p>
-
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="/index.html" class="logo" style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+                    <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+                    <div>
+                        <div style="color: #ff9704;">KUMSS SINCE 1951</div>
                     </div>
-                </div>
+                </a>
+                <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                    An educational society focused on overall development of students since 1951.
+                </p>
 
-                <div class="footer-col">
-                    <h3
-                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
-                        <li><a href="/gurukul-english-medium-school/about.html">About</a></li>
-                        <li><a href="#">Academics</a></li>
-                         <li><a href="/gurukul-english-medium-school/staff.html">Staff</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h3
-                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Our Institutes</h3>
-                    <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
-                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h3
-                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-phone"></i>
-<a href="tel:+919421394242">+91 94213 94242</a></li>
-                        <li><i class="fas fa-envelope"></i>
-<a href="mailto:info@kumss.org">info@kumss.org</a></li>
-                        <li><i class="fas fa-envelope"></i>
-<a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
-                    </ul>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
-                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
-                </p>
+            <div class="footer-col">
+                <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
+                    <li><a href="/gurukul-english-medium-school/about.html">About</a></li>
+                    <li><a href="#">Academics</a></li>
+                     <li><a href="/gurukul-english-medium-school/staff.html">Staff</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
+                <ul class="footer-links">
+                    <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                    <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                    <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                    <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i><a href="tel:+919421394242">+91 94213 94242</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:info@kumss.org">info@kumss.org</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
 
+        <div class="footer-bottom">
+            <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+                ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+            </p>
+        </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
   <script src="/assets/js/institute.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
+  <!-- AOS JS (Animations on Scroll) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS (Scroll Animations)
+    AOS.init({
+      once: true, // Whether animation should happen only once - while scrolling down
+      offset: 100, // Offset (in px) from the original trigger point
+      duration: 800, // Duration of animation
+      easing: 'ease-out-cubic',
+    });
+  </script>
 </body>
 </html>
