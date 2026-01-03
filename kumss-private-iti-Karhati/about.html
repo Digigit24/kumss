@@ -10,194 +10,360 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
 
-    <!-- css  -->
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Existing CSS -->
     <link rel="stylesheet" href="/assets/css/institute.css">
-
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-
-    <!-- HLS.js for video streaming -->
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.10/dist/hls.min.js"></script>
-
-    <!-- Lottie -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-    <!-- Splide Carousel -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-   <style>
-.about-split {
-  padding: 100px 20px;
-  background: #ffffff;
-}
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-.about-split-container {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: center;
-}
+    <style>
+        /* ==================== THEME CONFIG ==================== */
+        :root {
+            --blue: #003366;
+            --orange: #ff6700;
+            --dark: #111;
+            --light: #f9f9f9;
+        }
 
-.about-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #444;
+            background: #fff;
+            overflow-x: hidden;
+        }
 
-.about-content h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #233f92;
-  margin-bottom: 20px;
-}
+        h1, h2, h3, h4 {
+            font-family: 'Gantari', sans-serif;
+            color: var(--blue);
+            font-weight: 700;
+        }
 
-.about-content p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #333;
-  margin-bottom: 14px;
-}
+        .text-orange { color: var(--orange) !important; }
+        .bg-blue { background-color: var(--blue) !important; }
+        
+        /* ==================== MAGAZINE HERO ==================== */
+        .mag-hero {
+            padding-top: 180px;
+            padding-bottom: 80px;
+            text-align: center;
+            background: #fff;
+            position: relative;
+        }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .about-split-container {
-    grid-template-columns: 1fr;
-  }
+        .mag-hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
 
-  .about-content h2 {
-    font-size: 1.75rem;
-  }
-}
+        .mag-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+        }
 
+        .hero-banner-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            margin-top: 50px;
+            border-radius: 20px;
+            filter: brightness(0.9);
+            transform: scale(0.95);
+            transition: 1s ease-out;
+        }
 
-   </style>
+        /* ==================== THE STORY (Legacy) ==================== */
+        .story-section {
+            padding: 100px 0;
+            position: relative;
+        }
 
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: -50px;
+            transform: translateY(-50%);
+            font-size: 15rem;
+            font-weight: 900;
+            color: rgba(0,0,0,0.03);
+            font-family: 'Gantari', sans-serif;
+            line-height: 1;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 3.5rem;
+            line-height: 0.8;
+            font-weight: 700;
+            color: var(--orange);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        .story-collage {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            grid-template-rows: 200px 200px;
+            gap: 15px;
+        }
+
+        .collage-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .c-img-1 { grid-row: 1 / 3; } /* Tall image */
+        .c-img-2 { grid-column: 2; }
+        .c-img-3 { grid-column: 2; }
+
+        /* ==================== DARK PHILOSOPHY SECTION ==================== */
+        .philosophy-dark {
+            background-color: var(--blue);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-dark h2 { color: white; font-size: 2.5rem; }
+        .philosophy-dark p { color: rgba(255,255,255,0.7); }
+
+        .philo-box {
+            border-left: 1px solid rgba(255,255,255,0.2);
+            padding-left: 30px;
+            height: 100%;
+            transition: 0.3s;
+        }
+        .philo-box:hover { border-left-color: var(--orange); padding-left: 40px; }
+
+        .philo-icon {
+            font-size: 2rem;
+            color: var(--orange);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* ==================== LEADERSHIP PROFILE ==================== */
+        .leadership-section { padding: 100px 0; }
+
+        .leader-card {
+            background: #f4f7f6;
+            padding: 50px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .leader-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .leader-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--blue);
+            line-height: 1.6;
+            margin: 30px 0;
+        }
+
+        .signature {
+            font-family: 'Playfair Display', serif; /* Or use a script font if available */
+            font-size: 1.5rem;
+            color: var(--orange);
+            margin-top: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .mag-hero h1 { font-size: 2.5rem; }
+            .hero-banner-img { height: 250px; }
+            .story-collage { grid-template-columns: 1fr; grid-template-rows: auto; }
+            .c-img-1 { height: 300px; }
+            .philo-box { border-left: none; border-top: 1px solid rgba(255,255,255,0.2); padding-left: 0; padding-top: 30px; margin-bottom: 40px; }
+        }
+    </style>
 </head>
 
 <body>
-   
 
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true" style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999; width: 0%;"></div>
 
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-    <!-- Header -->
+    <!-- ==================== HEADER (PRESERVED) ==================== -->
     <header class="gm-header" id="header">
         <div class="gm-container">
             <nav class="gm-nav" aria-label="Primary">
-                <!-- Logo -->
                 <a href="/index.html" class="gm-logo">
                     <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
                 </a>
-
-                <!-- Mobile toggle -->
-                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
-                    aria-controls="navLinks" aria-expanded="false">
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
                     <span class="gm-burger-line"></span>
                     <span class="gm-burger-line"></span>
                     <span class="gm-burger-line"></span>
                 </button>
-
-                <!-- Links -->
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link" href="./kumss-private-iti-karhati.html">Home</a></li>
-
-                    <li class="gm-item">
-                        <a class="gm-link" href="./about.html">About</a>
-                    </li>
-
-                    <!-- Dropdown -->
+                    <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
                     <li class="gm-item gm-dropdown" data-dropdown>
-                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
-                            aria-controls="institutesMenu">
-                            Our Educational Institutes
-                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
-                        </button>
-
-                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem"
-                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
-                                    Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School
-                                    Dhakale</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
-                                    Tembha</a>
-                            </li>
-                            <li role="none"><a role="menuitem" href="#">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
-                                    English Medium School</a>
-                            </li>
-                            <li role="none"><a role="menuitem"
-                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
-                                    Pawar Kala
-                                    Mahavidhyalaya</a></li>
+                        <button class="gm-link gm-dropbtn" type="button">Our Educational Institutes <i class="fas fa-chevron-down gm-chevron"></i></button>
+                        <ul class="gm-submenu" id="institutesMenu">
+                            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+                            <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
+                            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
+                            <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
                         </ul>
                     </li>
-
                     <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
-
-                    <li class="gm-cta">
-                        <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
-                    </li>
+                    <li class="gm-cta"><a class="ggm-btn" href="tel:+919421394242">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-  <section class="about-split" id="about">
-  <div class="about-split-container">
+    <!-- ==================== MAGAZINE HERO ==================== -->
+    <section class="mag-hero">
+        <div class="container gs-hero">
+            <span class="text-orange fw-bold text-uppercase ls-2 mb-2 d-block">Established 2000</span>
+            <h1>Legacy of <br> <span class="text-decoration-underline" style="text-decoration-color: var(--orange) !important;">Excellence</span></h1>
+            <p class="mt-4">Bridging the gap between rural ambition and industrial reality through world-class technical education.</p>
+        </div>
+        <div class="container-fluid px-lg-5">
+            <img src="/assets/iti-temp.JPG" alt="Institute Wide Shot" class="hero-banner-img gs-img-scale">
+        </div>
+    </section>
 
-    <!-- Left: Image -->
-    <div class="about-image">
-      <img src="/assets/iti-temp.JPG" alt="KUMSS Private ITI Karhati Campus">
-    </div>
+    <!-- ==================== THE STORY (LEGACY) ==================== -->
+    <section class="story-section">
+        <div class="watermark">2000</div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 pe-lg-5 mb-5 mb-lg-0 gs-reveal-left">
+                    <h2 class="mb-4" style="font-size: 2.5rem;">Our Journey</h2>
+                    <p class="lead text-dark mb-4">Empowering the rural youth of Baramati since the turn of the millennium.</p>
+                    
+                    <p class="drop-cap text-muted">
+                        KUMSS Private ITI Karhati was born from a singular vision: to bring industrial-grade technical training to the heart of rural Pune. Established in 2000 under the Krushi Udyog Mul Shikshan Sanstha (est. 1951), we have spent over two decades refining our methodology.
+                    </p>
+                    <p class="text-muted">
+                        We don't just teach trades; we forge professionals. Our 2-year intensive programs in Electrician, Fitter, and Electronics are designed not just to pass exams, but to thrive in high-pressure industrial environments.
+                    </p>
 
-    <!-- Right: Content -->
-    <div class="about-content">
-      <h2>About KUMSS Private ITI Karhati</h2>
+                    <div class="mt-4 d-flex align-items-center gap-4">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-certificate text-orange fs-3"></i>
+                            <div style="line-height: 1.2;">
+                                <strong>ISO 9001:2015</strong><br>
+                                <small>Certified</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fas fa-university text-orange fs-3"></i>
+                            <div style="line-height: 1.2;">
+                                <strong>Govt. Recog.</strong><br>
+                                <small>Maharashtra</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      <p>
-        KUMSS Private ITI Karhati is committed to delivering quality technical education
-        through modern infrastructure and well-equipped workshops that are regularly upgraded.
-      </p>
+                <div class="col-lg-6 gs-reveal-right">
+                    <div class="story-collage">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80" class="collage-img c-img-1" alt="Student Working">
+                        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=400&q=80" class="collage-img c-img-2" alt="Circuit Board">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" class="collage-img c-img-3" alt="Welding">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <p>
-        We transform 10th-class students into skilled professionals within a focused
-        two-year training period, emphasizing both technical knowledge and personal growth.
-      </p>
+    <!-- ==================== DARK PHILOSOPHY ==================== -->
+    <section class="philosophy-dark">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8">
+                    <h2>Core Philosophy</h2>
+                    <p class="lead">Guided by integrity, driven by innovation.</p>
+                </div>
+            </div>
 
-      <p>
-        Our training builds leadership, communication skills, creativity, discipline,
-        and strong moral values. Individual counselling and continuous industry exposure
-        ensure complete personality development.
-      </p>
+            <div class="row g-5">
+                <!-- Vision -->
+                <div class="col-md-4 gs-fade-up">
+                    <div class="philo-box">
+                        <i class="fas fa-eye philo-icon"></i>
+                        <h4 class="text-white">Our Vision</h4>
+                        <p>To be a world-class, student-friendly institution providing career-oriented skill development training. We aim to prepare masters and leaders in their respective fields.</p>
+                    </div>
+                </div>
 
-      <p>
-        Every student at KUMSS Private ITI is a valued member of our family, prepared to
-        contribute positively to society and shape a successful future.
-      </p>
-    </div>
+                <!-- Mission -->
+                <div class="col-md-4 gs-fade-up" style="transition-delay: 0.2s">
+                    <div class="philo-box">
+                        <i class="fas fa-bullseye philo-icon"></i>
+                        <h4 class="text-white">Our Mission</h4>
+                        <p>To improve social well-being by providing industrial & skill development training for sustainable income generation. We tailor learning to individual student needs.</p>
+                    </div>
+                </div>
 
-  </div>
-</section>
+                <!-- Values -->
+                <div class="col-md-4 gs-fade-up" style="transition-delay: 0.4s">
+                    <div class="philo-box">
+                        <i class="fas fa-gem philo-icon"></i>
+                        <h4 class="text-white">Our Values</h4>
+                        <p>Transparency, Integrity, and Concern for the Environment. We believe in instilling high moral values to produce responsible citizens for rural society.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ==================== LEADERSHIP PROFILE ==================== -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="leader-card gs-zoom-in">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 text-center text-lg-start">
+                        <img src="/assets/vikas-nirmal-iti-principal.jpg" alt="Principal" class="leader-img">
+                        <h4 class="mb-0">Mr. Vikas Nirmal</h4>
+                        <small class="text-muted text-uppercase fw-bold">Principal</small>
+                    </div>
+                    <div class="col-lg-9 ps-lg-5 border-start-lg">
+                        <span class="text-orange fw-bold text-uppercase">Leadership Message</span>
+                        <div class="leader-quote">
+                            "We realize that we have to transform 10th class students into professionals within a period of 2 years. We want our students to be committed, dedicated to their goals along with integrity and concern for the environment and rural society they live in. Each student studying in KUMSS Private ITI will be a young star of our family."
+                        </div>
+                        <div class="signature">Vikas Nirmal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
+    <!-- ==================== FOOTER (PRESERVED) ==================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -211,43 +377,36 @@
                     </p>
 
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Quick Links</h3>
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="./about.html">About</a></li>
                         <li><a href="/gallery.html">Gallery</a></li>
                         <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Our Institutes</h3>
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
-                                Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English Campus,
-                                Dhakale</a></li>
-                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary Campus, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
-                        </li>
+                        <li><a href="#">Vasatigruh Vidyalay Karhati</a></li>
+                        <li><a href="#">New English Campus, Dhakale</a></li>
+                        <li><a href="#">Primary Campus, Tembha</a></li>
+                        <li><a href="#">KUMSS Private I.T.I</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Contact Info</h3>
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
                     <ul class="footer-links">
                         <li><a href="tel:+919421394242">+91 94213 94242</a></li>
                         <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
@@ -265,182 +424,62 @@
         </div>
     </footer>
 
-    <!-- js file  -->
+    <!-- JS Files -->
     <script src="/assets/js/institute.js"></script>
 
-    <!-- JavaScript (kept as you provided; hero video container is hidden but does not break JS) -->
     <script>
-        window.addEventListener('load', () => {
-            const loadingScreen = document.getElementById('loadingScreen');
-            if (loadingScreen) {
-                gsap.to(loadingScreen, {
-                    opacity: 0,
-                    duration: 1,
-                    ease: "power2.inOut",
-                    delay: 2,
-                    onComplete: () => {
-                        loadingScreen.style.display = 'none';
-                        initAnimations();
-                    }
-                });
-            } else {
-                initAnimations();
-            }
-
-            gsap.to(".loading-logo", {
-                rotation: 360,
-                duration: 20,
-                repeat: -1,
-                ease: "none"
-            });
-
-            gsap.to(".loading-dot", {
-                y: -20,
-                duration: 1,
-                repeat: -1,
-                yoyo: true,
-                stagger: 0.2
-            });
-        });
-
-        function initHLSVideo() {
-            const video = document.getElementById('heroVideo');
-            if (!video) return;
-
-            if (Hls.isSupported()) {
-                const hls = new Hls({
-                    maxBufferLength: 30,
-                    maxMaxBufferLength: 60,
-                    enableWorker: true,
-                    lowLatencyMode: true,
-                    backBufferLength: 90
-                });
-
-                const hlsUrl = 'https://bitdash-a.akamaihd.net/s/content/media/video/hls/bbb/bbb_1080p_hls.m3u8';
-
-                hls.loadSource(hlsUrl);
-                hls.attachMedia(video);
-                hls.on(Hls.Events.MANIFEST_PARSED, () => {
-                    video.play().catch(e => console.log('Auto-play prevented:', e));
-                });
-
-                hls.on(Hls.Events.ERROR, (event, data) => {
-                    if (data.fatal) {
-                        switch (data.type) {
-                            case Hls.ErrorTypes.NETWORK_ERROR:
-                                hls.startLoad();
-                                break;
-                            case Hls.ErrorTypes.MEDIA_ERROR:
-                                hls.recoverMediaError();
-                                break;
-                            default:
-                                initFallbackVideo();
-                                break;
-                        }
-                    }
-                });
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = 'https://bitdash-a.akamaihd.net/s/content/media/video/hls/bbb/bbb_1080p_hls.m3u8';
-                video.addEventListener('loadedmetadata', () => {
-                    video.play().catch(e => console.log('Auto-play prevented:', e));
-                });
-            } else {
-                initFallbackVideo();
-            }
-        }
-
-        function initFallbackVideo() {
-            const video = document.getElementById('heroVideo');
-            if (!video) return;
-            video.src = 'https://assets.codepen.io/4924623/education-hero-2.mp4';
-            video.load();
-            video.play().catch(e => console.log('Auto-play prevented:', e));
-        }
-
-        function initAnimations() {
+        document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
-            initHLSVideo();
 
-            const header = document.getElementById('header');
-            let lastScroll = 0;
-
-            window.addEventListener('scroll', () => {
-                const currentScroll = window.pageYOffset;
-
-                if (header) {
-                    if (currentScroll > 50) {
-                        header.classList.add('scrolled');
-
-                        if (currentScroll > lastScroll && currentScroll > 200) {
-                            gsap.to(header, { y: -100, duration: 0.3 });
-                        } else {
-                            gsap.to(header, { y: 0, duration: 0.3 });
-                        }
-                    } else {
-                        header.classList.remove('scrolled');
-                        gsap.to(header, { y: 0, duration: 0.3 });
-                    }
-                }
-
-                lastScroll = currentScroll;
-
-                const bar = document.getElementById('scrollProgress');
-                if (bar) {
-                    const progress = (currentScroll / (document.body.scrollHeight - window.innerHeight)) * 100;
-                    bar.style.width = `${progress}%`;
-                }
+            // 1. Hero Text Reveal
+            gsap.from(".gs-hero > *", {
+                y: 50, opacity: 0, duration: 1, stagger: 0.2, ease: "power3.out"
             });
 
-            const floatingElements = document.querySelectorAll('.floating-element');
-            floatingElements.forEach((el, i) => {
-                gsap.to(el, {
-                    y: 'random(-40, 40)',
-                    x: 'random(-30, 30)',
-                    rotation: 'random(-20, 20)',
-                    duration: 'random(4, 8)',
-                    repeat: -1,
-                    yoyo: true,
-                    ease: 'sine.inOut',
-                    delay: i * 0.5
+            // 2. Hero Image Scale
+            gsap.to(".gs-img-scale", {
+                scale: 1, duration: 1.5, ease: "power2.out"
+            });
+
+            // 3. Story Section
+            gsap.from(".gs-reveal-left", {
+                x: -50, opacity: 0, duration: 1,
+                scrollTrigger: { trigger: ".story-section", start: "top 70%" }
+            });
+            gsap.from(".gs-reveal-right", {
+                x: 50, opacity: 0, duration: 1, delay: 0.2,
+                scrollTrigger: { trigger: ".story-section", start: "top 70%" }
+            });
+
+            // 4. Philosophy Items
+            gsap.utils.toArray('.gs-fade-up').forEach((el, i) => {
+                gsap.from(el, {
+                    y: 30, opacity: 0, duration: 0.8, delay: i * 0.1,
+                    scrollTrigger: { trigger: el, start: "top 85%" }
                 });
             });
-        }
 
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        if (mobileMenuBtn && navLinks) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenuBtn.classList.toggle('active');
-                navLinks.classList.toggle('active');
-
-                if (navLinks.classList.contains('active')) {
-                    gsap.to(navLinks, { x: 0, duration: 0.5, ease: 'power3.out' });
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    gsap.to(navLinks, { x: 300, duration: 0.5, ease: 'power3.in' });
-                    document.body.style.overflow = '';
-                }
+            // 5. Leader Card
+            gsap.from(".gs-zoom-in", {
+                scale: 0.95, opacity: 0, duration: 0.8,
+                scrollTrigger: { trigger: ".leadership-section", start: "top 80%" }
             });
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-                if (!targetId || targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (!targetElement) return;
-
-                e.preventDefault();
-                const offset = 100;
-                const targetPosition = targetElement.offsetTop - offset;
-
-                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-            });
+            
+             // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    if (navLinks.classList.contains('active')) {
+                        gsap.to(navLinks, { x: 0, duration: 0.5, ease: 'power3.out' });
+                    } else {
+                        gsap.to(navLinks, { x: 300, duration: 0.5, ease: 'power3.in' });
+                    }
+                });
+            }
         });
     </script>
-<script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
 </body>
-
 </html>
