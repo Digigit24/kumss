@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Educational Institutes | Krushi Udyog Mul Shikshan Sansthan (KUMSS)</title>
+    <title>Gallery | Krushi Udyog Mul Shikshan Sansthan (KUMSS)</title>
 
     <!-- Icons -->
     <link
@@ -15,7 +15,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-    <!-- CSS Files (same as index) -->
+    <!-- AOS ANIMATION CSS (Added) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/scrollCue.css" />
@@ -26,64 +29,150 @@
 
     <link href="assets/kumss_log.png" type="image/x-icon" rel="icon" />
 
-    <!-- Page-only CSS (kept minimal, won't break your existing theme) -->
     <style>
- /* Basic Styles for the Gallery Section */
-.gallery-section {
-  padding: 60px 0;
-  background-color: #f9f9f9;
-}
+      /* --- NEW PAGE HERO --- */
+      .page-hero {
+        background: linear-gradient(135deg, #0b2a5b 0%, #061938 100%);
+        padding: 80px 0;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 40px;
+      }
+      .page-hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+      .page-hero p {
+        font-size: 1.2rem;
+        color: #ddd;
+        max-width: 600px;
+        margin: 0 auto;
+      }
 
-.gallery-section .section-head {
-  text-align: center;
-  margin-bottom: 30px;
-}
+      /* --- GENERAL SECTION STYLES --- */
+      .gallery-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+        overflow: hidden; /* For animations */
+      }
+      .gallery-section:nth-child(even) {
+        background-color: #ffffff;
+      }
+      
+      .section-head {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+      }
+      .section-head h2 {
+        font-size: 2.5rem;
+        color: #0b2a5b;
+        font-weight: 800;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+      }
+      .section-head h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: #f7941d;
+        border-radius: 2px;
+      }
 
-.gallery-section h2 {
-  font-size: 2rem;
-  color: #333;
-  font-weight: bold;
-}
+      /* --- LAYOUT 1: STANDARD GRID (For Single/Few Images) --- */
+      .std-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        justify-content: center;
+      }
+      
+      /* --- LAYOUT 2: MASONRY (Pinterest Style for Photos) --- */
+      .masonry-grid {
+        column-count: 4;
+        column-gap: 20px;
+      }
+      
+      /* --- GALLERY ITEM CARD --- */
+      .gallery-item {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 20px; /* For Masonry spacing */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        transition: all 0.4s ease;
+        position: relative;
+        break-inside: avoid; /* Prevents masonry breaking images */
+      }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
+      .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      }
 
-.gallery-item {
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
 
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease-in-out;
-}
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
 
-.gallery-item img:hover {
-  transform: scale(1.1);
-}
+      /* Overlay Effect */
+      .gallery-item::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(11, 42, 91, 0.4);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      }
+      .gallery-item::after {
+        content: '\f00e'; /* FontAwesome Search Icon */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        color: #fff;
+        font-size: 2rem;
+        z-index: 2;
+        transition: transform 0.3s ease;
+      }
 
-/* Add spacing between sections */
-.gallery-section + .gallery-section {
-  margin-top: 50px;
-}
+      .gallery-item:hover::before { opacity: 1; }
+      .gallery-item:hover::after { transform: translate(-50%, -50%) scale(1); }
 
 
-        </style>
+      /* --- RESPONSIVE ADJUSTMENTS --- */
+      @media (max-width: 991px) {
+        .masonry-grid { column-count: 3; }
+      }
+      @media (max-width: 768px) {
+        .masonry-grid { column-count: 2; }
+        .page-hero h1 { font-size: 2.2rem; }
+      }
+      @media (max-width: 480px) {
+        .masonry-grid { column-count: 1; }
+      }
+    </style>
   </head>
 
   <body>
-   
 
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-    <!-- Top Header (same as index) -->
+    <!-- Top Header -->
     <div class="top-header-area style-3">
       <div class="container-fluid">
         <div class="row align-items-center">
@@ -110,7 +199,7 @@
       </div>
     </div>
 
-    <!-- Navbar (same as index, only About marked active) -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg style-3" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
@@ -153,13 +242,8 @@
               </ul>
             </li>
 
-           
             <li class="nav-item"><a href="/gallery.html" class="nav-link active">Gallery</a></li>
-
-
-               <li class="nav-item"><a href="/careers.html" class="nav-link">Careers</a></li>
-            
-
+            <li class="nav-item"><a href="/careers.html" class="nav-link">Careers</a></li>
             <li class="nav-item">
               <a href="contact.html" class="nav-link">Contact <span>Us</span></a>
             </li>
@@ -172,20 +256,13 @@
                   Donate Now <i class="fi fi-sr-hand-holding-heart"></i>
                 </a>
               </div>
-              <div class="option-item">
-                <div class="responsive-icon d-none">
-                  <a class="text-decoration-none" href="#">
-                    <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
 
-    <!-- Responsive Navbar (same as index, About active) -->
+    <!-- Responsive Navbar -->
     <div
       class="responsive-navbar offcanvas offcanvas-end border-0"
       data-bs-backdrop="static"
@@ -227,18 +304,12 @@
             </ul>
           </li>
 
-          
-
           <li class="responsive-menu-list without-icon">
             <a href="/gallery.html" class="nav-link active">Gallery</a>
           </li>
-
            <li class="responsive-menu-list without-icon">
             <a href="/careers.html" class="nav-link">Careers</a>
           </li>
-
-         
-
           <li class="responsive-menu-list without-icon">
             <a href="contact.html" class="nav-link">Contact <span>Us</span></a>
           </li>
@@ -254,98 +325,110 @@
       </div>
     </div>
 
-
-<section class="gallery-section" id="private-iti-karhati">
-  <div class="container">
-    <div class="section-head">
-      <h2>Private ITI Karhati</h2>
-    </div>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="assets/institute5.avif" alt="ITI Image 1" />
+    <!-- NEW HERO BANNER -->
+    <div class="page-hero">
+      <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <h1>Gallery & Archives</h1>
+        <p>Glimpses of events, news, and infrastructure at KUMSS</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="gallery-section" id="news">
-  <div class="container">
-    <div class="section-head">
-      <h2>News</h2>
-    </div>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="assets/news-one.png" alt="News Image 1" />
-      </div>
-      <div class="gallery-item">
-        <img src="assets/news-two.png" alt="News Image 2" />
-      </div>
-      <div class="gallery-item">
-        <img src="assets/news-three.png" alt="News Image 3" />
-      </div>
-      <div class="gallery-item">
-        <img src="assets/news-four.png" alt="News Image 4" />
-      </div>
-      <div class="gallery-item">
-        <img src="assets/news-five.png" alt="News Image 5" />
-      </div>
-       <div class="gallery-item">
-        <img src="assets/news-six.png" alt="News Image 5" />
-      </div>
-       <div class="gallery-item">
-        <img src="assets/news-seven.png" alt="News Image 5" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="gallery-section" id="lalitosh2024">
-  <div class="container">
-    <div class="section-head">
-      <h2>ललितोत्सव 2024</h2>
-    </div>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="assets/l2.jpeg" alt="Lalitosh 2024 Image 1" />
-      </div>
-      <div class="gallery-item">
-        <img src="assets/l3.jpeg" alt="Lalitosh 2024 Image 2" />
-      </div>
-      <div class="gallery-item">
-        <img src="assets/l4.jpeg" alt="Lalitosh 2024 Image 3" />
-      </div>
-      <div class="gallery-item">
-        <img src="assets/l5.jpeg" alt="Lalitosh 2024 Image 4" />
-      </div>
-      <div class="gallery-item">
-        <img src="assets/l6.jpeg" alt="Lalitosh 2024 Image 5" />
-      </div>
-       <div class="gallery-item">
-        <img src="assets/l7.jpeg" alt="Lalitosh 2024 Image 5" />
-      </div>
-       <div class="gallery-item">
-        <img src="assets/l1.jpeg" alt="Lalitosh 2024 Image 5" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="gallery-section" id="recruitments">
-  <div class="container">
-    <div class="section-head">
-      <h2>Recruitments</h2>
-    </div>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="assets/r1.jpg" alt="Recruitment Image 1" />
-      </div>
-    </div>
-  </div>
-</section>
 
 
+    <!-- SECTION 1: PRIVATE ITI -->
+    <section class="gallery-section" id="private-iti-karhati">
+      <div class="container">
+        <div class="section-head" data-aos="fade-down">
+          <h2>Private ITI Karhati</h2>
+        </div>
+        <!-- Standard Grid for single feature images -->
+        <div class="std-grid">
+          <div class="gallery-item" data-aos="zoom-in">
+            <img src="assets/institute5.avif" alt="ITI Image 1" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-     <!-- Footer (same as index) -->
+    <!-- SECTION 2: NEWS (Masonry Layout) -->
+    <section class="gallery-section" id="news">
+      <div class="container">
+        <div class="section-head" data-aos="fade-down">
+          <h2>News & Coverage</h2>
+        </div>
+        <div class="masonry-grid">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="0">
+            <img src="assets/news-one.png" alt="News Image 1" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/news-two.png" alt="News Image 2" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/news-three.png" alt="News Image 3" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/news-four.png" alt="News Image 4" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/news-five.png" alt="News Image 5" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+            <img src="assets/news-six.png" alt="News Image 6" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+            <img src="assets/news-seven.png" alt="News Image 7" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: LALITOSH (Masonry Layout) -->
+    <section class="gallery-section" id="lalitosh2024">
+      <div class="container">
+        <div class="section-head" data-aos="fade-down">
+          <h2>ललितोत्सव 2024</h2>
+        </div>
+        <div class="masonry-grid">
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="0">
+            <img src="assets/l2.jpeg" alt="Lalitosh 2024 Image 1" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/l3.jpeg" alt="Lalitosh 2024 Image 2" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/l4.jpeg" alt="Lalitosh 2024 Image 3" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/l5.jpeg" alt="Lalitosh 2024 Image 4" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/l6.jpeg" alt="Lalitosh 2024 Image 5" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+            <img src="assets/l7.jpeg" alt="Lalitosh 2024 Image 6" />
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+            <img src="assets/l1.jpeg" alt="Lalitosh 2024 Image 7" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: RECRUITMENTS -->
+    <section class="gallery-section" id="recruitments">
+      <div class="container">
+        <div class="section-head" data-aos="fade-down">
+          <h2>Recruitments</h2>
+        </div>
+        <div class="std-grid">
+          <div class="gallery-item" data-aos="flip-left" data-aos-duration="1200">
+            <img src="assets/r1.jpg" alt="Recruitment Image 1" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
     <footer class="footer" id="footer">
       <div class="container">
         <div class="footer-grid">
@@ -422,12 +505,23 @@
       <i class="ri-arrow-up-double-fill"></i>
     </button>
 
-    <!-- JS Files (same as index) -->
+    <!-- JS Files -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     
     <script src="assets/js/scrollCue.min.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
+    
+    <!-- AOS ANIMATION SCRIPT (Added) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        offset: 100,
+        duration: 800,
+        easing: 'ease-out-cubic',
+      });
+    </script>
+
   </body>
 </html>

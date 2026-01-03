@@ -8,6 +8,10 @@
     <!-- CSS Files -->
      <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     
+     <!-- Added AOS Animation Library CSS -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     
      <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
@@ -52,7 +56,7 @@
     /* kumss-banner-wrap-content for Text */
     .kumss-banner-wrap-content {
       position: absolute;
-      top: 40%;
+      top: 20%;
       left: 10%; /* Align text to the left */
       transform: translateY(-50%);
       z-index: 2; /* Ensure the content is on top of the overlay */
@@ -84,7 +88,7 @@
     @media (max-width: 768px) {
       /* Adjust banner content position */
       .kumss-banner-wrap-content {
-        top: 70%;
+        top: 40%;
         left: 5%;
         transform: translateY(-50%);
         text-align: center;
@@ -108,7 +112,7 @@
     @media (max-width: 480px) {
       /* Further adjust banner content for small screens */
       .kumss-banner-wrap-content {
-        top: 50%;
+        top: 20%;
         left: 5%;
         padding: 10px;
         max-width: 90%;
@@ -128,7 +132,12 @@
     }
     .about-hero-image {
       padding: 0;
+      transition: transform 0.5s ease; /* Animation Added */
     }
+    .about-hero-image:hover {
+        transform: scale(1.02);
+    }
+
        /* --- SECTION STYLING --- */
     .institute-philosophy-section {
         background-color: #fff;
@@ -164,15 +173,15 @@
         border-radius: 8px;
         padding: 40px 30px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.614);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth hover animation */
         position: relative;
         overflow: hidden;
         width: 100%;
     }
 
     .philosophy-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.651);
+        transform: translateY(-10px); /* Lift up on hover */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
     /* Card Specific Colors */
@@ -185,6 +194,11 @@
         font-size: 2.5rem;
         margin-bottom: 20px;
         text-align: center;
+        transition: transform 0.5s ease; /* Icon spin/move */
+    }
+
+    .philosophy-card:hover .card-icon {
+        transform: scale(1.2) rotate(5deg);
     }
     
     .vision-card .card-icon { color: var(--primary-color); }
@@ -243,7 +257,7 @@
         font-weight: 600;
         color: #444;
         box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-        transition: all 0.2s;
+        transition: all 0.3s ease;
         flex: 1 1 40%; /* 2 items per row roughly */
         justify-content: center;
         min-width: 120px;
@@ -257,6 +271,7 @@
         background-color: var(--secondary-color);
         color: white;
         border-color: var(--secondary-color);
+        transform: translateY(-3px); /* Subtle popup */
     }
 
     .value-item i {
@@ -266,6 +281,31 @@
     
     .value-item:hover i {
         color: white;
+    }
+
+    /* Stats Card Animation */
+    .stat-row-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .stat-row-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .stat-row-card__icon {
+        transition: transform 0.5s ease;
+    }
+    .stat-row-card:hover .stat-row-card__icon {
+        transform: rotateY(360deg);
+    }
+
+    /* Institute Tile Animation */
+    .inst-tile {
+        transition: all 0.3s ease;
+        display: block; /* Ensure block for transform */
+    }
+    .inst-tile:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
     /* Responsive adjustments */
@@ -289,7 +329,7 @@
 
     <!-- End Top Header Area -->
 
-    <!-- Start Navbar Area -->
+    <!-- Start Navbar Area - REMOVED ANIMATION -->
     <nav class="navbar navbar-expand-lg style-3" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
@@ -507,7 +547,8 @@
       </video>
       <div class="kumss-video-overlay"></div>
 
-      <div class="kumss-banner-wrap-content">
+      <!-- ANIMATED CONTENT HERE: Fade Up -->
+      <div class="kumss-banner-wrap-content" data-aos="fade-up" data-aos-duration="1500">
         <div class="title">
           <p>Welcome To KUMSS <span>1951</span></p>
           <h1>Craft Your Career At KUMSS</h1>
@@ -542,12 +583,13 @@
 <section class="inst-stats-row" aria-label="Institute statistics">
   <div class="inst-stats-row__wrap">
 
-    <header class="inst-stats-row__head">
+    <header class="inst-stats-row__head" data-aos="fade-down">
       <h2 class="inst-stats-row__title">Our Family</h2>
     </header>
 
     <div class="inst-stats-row__grid">
-      <article class="stat-row-card">
+      <!-- ANIMATED STATS: Zoom In Staggered -->
+      <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="0">
         <div class="stat-row-card__icon">
           <i class="fi fi-sr-school" aria-hidden="true"></i>
 
@@ -560,7 +602,7 @@
         </div>
       </article>
 
-      <article class="stat-row-card">
+      <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="100">
         <div class="stat-row-card__icon">
           <i class="fa-solid fa-person-dress" aria-hidden="true"></i>
         </div>
@@ -572,7 +614,7 @@
         </div>
       </article>
 
-      <article class="stat-row-card">
+      <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="200">
         <div class="stat-row-card__icon">
           <i class="fa-solid fa-person" aria-hidden="true"></i>
         </div>
@@ -584,7 +626,7 @@
         </div>
       </article>
 
-      <article class="stat-row-card">
+      <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="300">
         <div class="stat-row-card__icon">
           <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
 
@@ -608,7 +650,7 @@
   <div class="container">
 
     <div class="row align-items-center mb-5">
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1200">
         <div class="section-title-left">
           <span class="sub-title">
             <img src="assets/img/title-shape.svg" alt="shape"> About KUMSS
@@ -629,10 +671,10 @@
         </div>
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1200">
         <div class="about-hero-image">
           <img src="assets/ajit-pawar-about.webp" alt="KUMSS Campus" class="img-fluid rounded-3 shadow-lg">
-          <div class="exp-badge">
+          <div class="exp-badge" data-aos="flip-up" data-aos-delay="400">
             <h3>70+</h3>
             <span>Years of Excellence</span>
           </div>
@@ -649,7 +691,7 @@
     <div class="container">
         <!-- Section Header -->
         <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
                 <h2 class="main-heading">Our Core Philosophy</h2>
                 <p class="subtitle">Building leaders through excellence in education and moral integrity.</p>
                 <div class="heading-divider"></div>
@@ -657,8 +699,8 @@
         </div>
 
         <div class="row">
-            <!-- Vision Section -->
-            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+            <!-- Vision Section (Animated) -->
+            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="0">
                 <div class="philosophy-card vision-card">
                     <div class="card-icon">
                         <i class="fas fa-eye"></i>
@@ -685,8 +727,8 @@
                 </div>
             </div>
 
-            <!-- Mission Section -->
-            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
+            <!-- Mission Section (Animated) -->
+            <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
                 <div class="philosophy-card mission-card">
                     <div class="card-icon">
                         <i class="fas fa-bullseye"></i>
@@ -713,8 +755,8 @@
                 </div>
             </div>
 
-            <!-- Values Section (Restyled as a mini-grid) -->
-            <div class="col-lg-4 col-md-12 mb-4 d-flex align-items-stretch">
+            <!-- Values Section (Animated) -->
+            <div class="col-lg-4 col-md-12 mb-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
                 <div class="philosophy-card values-card">
                     <div class="card-icon">
                         <i class="fas fa-gem"></i>
@@ -756,14 +798,14 @@
  <section class="committee-v2">
   <div class="container">
 
-    <div class="sec-head">
+    <div class="sec-head" data-aos="fade-down">
       <div class="sec-line"></div>
       <h2>The Executive Committee</h2>
       <p>Leadership team guiding the institute’s vision and governance.</p>
     </div>
 
     <!-- Chairman Spotlight (Vertical Layout) -->
-    <div class="chairman-spotlight-vertical">
+    <div class="chairman-spotlight-vertical" data-aos="zoom-in">
       <div class="photo">
         <img src="/assets/ajit-pawar.jfif" alt="Shri. Ajit Anantrao Pawar">
       </div>
@@ -775,13 +817,13 @@
     </div>
 
     <!-- Office Bearers (3 cards) -->
-    <div class="section-title">
+    <div class="section-title" data-aos="fade-right">
       <h3>Office Bearers</h3>
       <span></span>
     </div>
 
     <div class="office-grid">
-      <div class="member-card">
+      <div class="member-card" data-aos="fade-up" data-aos-delay="0">
         <div class="avatar">
           <img src="/assets/placeholder-image.jfif" alt="Shri. Dasharathrao Babaso Dhumal">
         </div>
@@ -791,7 +833,7 @@
         </div>
       </div>
 
-      <div class="member-card">
+      <div class="member-card" data-aos="fade-up" data-aos-delay="100">
         <div class="avatar">
           <img src="/assets/placeholder-image.jfif" alt="Shri. Prafulla Bhimdeo Taware">
         </div>
@@ -801,7 +843,7 @@
         </div>
       </div>
 
-      <div class="member-card">
+      <div class="member-card" data-aos="fade-up" data-aos-delay="200">
         <div class="avatar">
           <img src="/assets/placeholder-image.jfif" alt="Shri. Subhash Champalal Somani">
         </div>
@@ -813,12 +855,12 @@
     </div>
 
     <!-- Trustees -->
-    <div class="section-title">
+    <div class="section-title" data-aos="fade-right">
       <h3>Trustees</h3>
       <span></span>
     </div>
 
-    <div class="trustee-grid">
+    <div class="trustee-grid" data-aos="fade-up">
       <div class="trustee-item"><span class="dot"></span> <span>Sau. Sunetra Ajit Pawar</span></div>
       <div class="trustee-item"><span class="dot"></span> <span>Shri. Narendra Punamchand Gujrathi</span></div>
       <div class="trustee-item"><span class="dot"></span> <span>Shri. Milind Khasherao Jagtap</span></div>
@@ -835,34 +877,34 @@
 <section class="institutes-toplogo" id="institutes">
   <div class="container">
 
-    <div class="institutes-toplogo__head">
+    <div class="institutes-toplogo__head" data-aos="fade-down">
       <h2>Our Educational Institutes</h2>
     </div>
 
     <div class="institutes-toplogo__grid">
 
-      <a class="inst-tile" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" target="_blank" rel="noopener">
+      <a class="inst-tile" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" target="_blank" rel="noopener" data-aos="flip-left" data-aos-delay="0">
         <img class="inst-tile__logo" src="/assets/kumss_log.png" alt="Institute 1 Logo">
         <h3 class="inst-tile__name">Vasatigruh Vidyalay Karhati</h3>
         <p class="inst-tile__desc">Established in 1982</p>
         <p class="inst-tile__desc">(Marathi & Semi-English Medium School)</p>
       </a>
 
-      <a class="inst-tile" href="/new-english-school-dhakale/new-english-school-dhakale.html" target="_blank" rel="noopener">
+      <a class="inst-tile" href="/new-english-school-dhakale/new-english-school-dhakale.html" target="_blank" rel="noopener" data-aos="flip-left" data-aos-delay="150">
         <img class="inst-tile__logo" src="/assets/kumss_log.png" alt="Institute 2 Logo">
         <h3 class="inst-tile__name">New English School, Dhakale</h3>
         <p class="inst-tile__desc">Established in 2000</p>
         <p class="inst-tile__desc">English Medium School</p>
       </a>
 
-      <a class="inst-tile" id="int3" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html" target="_blank" rel="noopener">
+      <a class="inst-tile" id="int3" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html" target="_blank" rel="noopener" data-aos="flip-left" data-aos-delay="300">
         <img class="inst-tile__logo" src="/assets/kumss_log.png" alt="Institute 3 Logo">
         <h3 class="inst-tile__name">KUMSS Private I.T.I Karhati</h3>
         <p class="inst-tile__desc">Establishing in 2021</p>
         <p class="inst-tile__desc">Private Industrial Training Institute</p>
       </a>
     </div>
-    <div class="institutes-toplogo__footer">
+    <div class="institutes-toplogo__footer" data-aos="fade-up">
   <a href="/all-institutes.html" class="view-all-btn">
     View All Institutes
   </a>
@@ -877,14 +919,14 @@
  <section class="contact-split" id="contact">
   <div class="container">
 
-    <div class="contact-split__head">
+    <div class="contact-split__head" data-aos="fade-down">
       <h2>Contact Us</h2>
     </div>
 
     <div class="contact-split__wrap">
 
       <!-- LEFT: Map -->
-      <div class="contact-split__map">
+      <div class="contact-split__map" data-aos="fade-right">
         <iframe
           title="KUMSS Location Map"
           src="https://www.google.com/maps?q=18.249670417662454,74.43023575460906&z=16&output=embed"
@@ -896,7 +938,7 @@
       </div>
 
       <!-- RIGHT: Contact info -->
-      <div class="contact-split__info">
+      <div class="contact-split__info" data-aos="fade-left">
 
         <div class="contact-block">
           <h3>Call us</h3>
@@ -936,7 +978,7 @@
   </div>
 </section>
 
-    <!-- Footer -->
+    <!-- Footer - REMOVED ANIMATION -->
 <footer class="footer" id="footer">
   <div class="container">
 
@@ -1025,6 +1067,19 @@
     
     <script src="assets/js/scrollCue.min.js"></script>
     <script src="assets/js/custom.js"></script>
+
+    <!-- Initialized AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true, /* Animations happen only once - smooth feel */
+        offset: 100, /* Trigger animation 100px before element is visible */
+        duration: 800, /* Default animation speed */
+        easing: 'ease-out-cubic',
+      });
+    </script>
+
+
     <script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"

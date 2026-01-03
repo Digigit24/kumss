@@ -236,7 +236,7 @@
   background:
      linear-gradient(90deg,
       rgba(255,255,255,.82) 0%,
-      rgba(255, 255, 255, 0.24) 55%,
+      rgba(255, 255, 255, 0.626) 55%,
       rgba(255,255,255,.25) 100%
     ),
     linear-gradient(180deg,
@@ -253,9 +253,9 @@
 @media (max-width: 640px){
   .kvk-heroVideoOverlay{
     background: linear-gradient(180deg,
-      rgba(0,0,0,.70) 0%,
-      rgba(0,0,0,.55) 60%,
-      rgba(0,0,0,.62) 100%
+      rgba(253, 253, 253, 0.7) 0%,
+      rgba(252, 252, 252, 0.55) 60%,
+      rgba(255, 255, 255, 0.62) 100%
     );
   }
 }
@@ -438,6 +438,9 @@
             .about-media img {
                 aspect-ratio: 16 / 10;
             }
+            .footer-logo-img {
+                margin-left: 0 !important;
+            }
         }
         
 
@@ -446,6 +449,301 @@
                                 height: 30%;
                             }
 
+                            /* ==============================
+   New Content Sections Styling
+   ============================== */
+
+/* Agricultural Focus Section */
+.agri-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%); /* Light Green to White */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative leaf pattern background */
+.agri-section::before {
+    content: '\f06c'; /* FontAwesome Leaf */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    font-size: 400px;
+    color: rgba(15, 128, 66, 0.03);
+    z-index: 0;
+    transform: rotate(20deg);
+}
+
+.agri-container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.agri-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.agri-content .badge {
+    background: rgba(15, 128, 66, 0.1);
+    color: #0f8042;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.agri-content h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    color: #1e3a8a; /* School Blue */
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.agri-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+.agri-stat-box {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 5px solid #0f8042;
+    margin-top: 30px;
+}
+
+.agri-stat-box p {
+    margin: 0;
+    font-weight: 500;
+    color: #334155;
+    font-style: italic;
+}
+
+/* Right side cards/visuals */
+.agri-visual-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.agri-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.agri-card:hover {
+    transform: translateY(-5px);
+}
+
+.agri-icon {
+    width: 50px;
+    height: 50px;
+    background: #ecfdf5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #059669;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.agri-card h4 {
+    margin: 0 0 8px 0;
+    color: #0f172a;
+    font-size: 18px;
+}
+
+.agri-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* New Features Section */
+.new-features-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.section-head-centered {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+.section-head-centered h2 {
+    font-size: 36px;
+    color: #1e3a8a;
+    margin-bottom: 16px;
+}
+
+.features-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+/* --- Feature Box Hover Image Styles --- */
+
+.feature-box {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Crucial to keep image inside corners */
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+/* Ensure content stays above the image */
+.f-content-relative {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* The Image Container - Absolute Positioned */
+.f-hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0; /* Hidden by default */
+    transform: scale(1.1); /* Zoomed in slightly initially */
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.f-hover-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dark Overlay to make text readable */
+.f-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(30, 59, 138, 0.468) 0%, rgba(15, 23, 42, 0.747) 100%);
+}
+
+/* --- HOVER STATES --- */
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-color: transparent;
+}
+
+/* Show Image */
+.feature-box:hover .f-hover-img {
+    opacity: 1;
+    transform: scale(1); /* Zoom out effect */
+}
+
+/* Change Text Color to White */
+.feature-box:hover h3,
+.feature-box:hover p {
+    color: #ffffff;
+}
+
+/* Icon Styling Changes on Hover */
+.f-icon-circle {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 24px auto;
+    background: #f8fafc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #1e3a8a;
+    transition: 0.3s;
+}
+
+.feature-box:hover .f-icon-circle {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    color: #ffffff;
+    backdrop-filter: blur(5px);
+}
+
+/* Faculty Intro Text */
+.faculty-text-intro {
+    background: #f8fafc;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.faculty-text-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.faculty-text-wrap h2 {
+    color: #1e3a8a;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.faculty-text-wrap p {
+    font-size: 18px;
+    color: #475569;
+    line-height: 1.8;
+}
+.f-img-main {
+    width: 70%;
+    height: auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .agri-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .agri-section::before {
+        font-size: 250px;
+        top: -20px;
+        right: -80px;
+    }
+}
+/* Prevent GSAP Glitch/Flash */
+.gs-reveal-left, 
+.agri-card, 
+.feature-box, 
+.faculty-text-intro {
+    visibility: hidden; /* Hides them initially */
+}
     </style>
 
 
@@ -604,513 +902,173 @@
         </div>
     </section>
 
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="section-title">
-                <span class="subtitle">Our Legacy</span>
-                <h2>Seven Decades of Excellence</h2>
-                <p class="lead-text">
-                    Established in 1952, Vastigruh Vidyalay Karhati has been serving the educational needs of the
-                    Karhati community
-                    for over 70 years. Our school was founded with the vision of providing quality education while
-                    preserving and
-                    promoting agricultural traditions.
-                </p>
-            </div>
+  <!-- ==============================================
+       NEW SECTION: Agricultural Approach (Replaces Vision/History)
+    ================================================ -->
+    <section class="agri-section" id="unique-approach">
+        <div class="agri-container">
+            <div class="agri-grid">
+                <!-- Text Content -->
+                <div class="agri-content gs-reveal-left">
+                    <span class="badge"><i class="fas fa-leaf"></i> Our Unique Approach</span>
+                    <h2>Agricultural Education & Holistic Growth</h2>
+                    <p>
+                        The highlight of our school is its agricultural education program. We teach students about
+                        farming, its importance, and its impact on the day-to-day life of villagers as well as the
+                        surrounding environment.
+                    </p>
+                    <p>
+                        Research shows that learning experiences that usually take place outside the classroom
+                        have a long-lasting and positive impact on children. These experiences have the potential
+                        to develop a range of skills such as teamwork, collaboration, communication, and leadership.
+                    </p>
 
-            <div class="about-tabs">
-                <button class="tab-btn active" data-tab="history">
-                    <i class="fas fa-history"></i> History
-                </button>
-            </div>
-
-            <div class="tab-content active" id="history">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">1951</div>
-                        <h3>Foundation</h3>
-                        <p>Krushi Udyog Mul Shikshan Sansthan established by visionary founder late Dr. Shri A.J.
-                            Agarkar</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2004</div>
-                        <h3>New Leadership</h3>
-                        <p>Shri Ajitdada Pawar becomes President, marking a new era of growth and development</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">Present</div>
-                        <h3>Modern Excellence</h3>
-                        <p>6 institutions serving 2000+ students with state-of-the-art facilities</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="mission">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3>Our Vision</h3>
-                        <p>To empower students through quality education in skill development and technical education
+                    <div class="agri-stat-box">
+                        <p>
+                            "The children at our school learn to give a helping hand to their parents who mainly
+                            work in the fields, creating a strong connection between education and practical life skills."
                         </p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3>Our Mission</h3>
-                        <p>Provide high-quality education in a safe, respectful, and inclusive environment</p>
-                    </div>
                 </div>
-            </div>
 
-            <div class="tab-content" id="values">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <h3>Excellence</h3>
-                        <p>Commitment to highest standards in education and character building</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Community</h3>
-                        <p>Building strong relationships and supporting each other's growth</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Innovation</h3>
-                        <p>Embracing new technologies and teaching methodologies</p>
-                    </div>
-                </div>
-            </div>
+               <!-- Visual Content (Numbered Steps) -->
+<div class="agri-visual-grid gs-reveal-right">
+    
+    <div class="agri-card number-style">
+        <span class="big-num">01</span>
+        <div class="card-txt">
+            <h4>Practical Life Skills</h4>
+            <p>Connecting classroom knowledge with real-world farming applications.</p>
         </div>
-    </section>
+    </div>
+    
+    <div class="agri-card number-style">
+        <span class="big-num">02</span>
+        <div class="card-txt">
+            <h4>Skill Development</h4>
+            <p>Fostering teamwork, collaboration, and leadership through outdoor activities.</p>
+        </div>
+    </div>
 
-    <!-- Vision & Mission Section -->
-    <section class="vision-mission-section" id="vision-mission">
-        <div class="container">
-            <div class="section-title">
-                <span class="subtitle">Our Guiding Principles</span>
-                <h2>Vision & Mission</h2>
-                <p class="lead-text">
-                    The foundation upon which we build excellence in education and character development
-                </p>
-            </div>
+    <div class="agri-card number-style">
+        <span class="big-num">03</span>
+        <div class="card-txt">
+            <h4>Environmental Impact</h4>
+            <p>Understanding the ecosystem and sustainable practices for a better future.</p>
+        </div>
+    </div>
 
-            <div class="vision-mission-grid">
-                <div class="vm-card">
-                    <div class="vm-head">
-                        <span class="vm-icon">
-                            <i class="fas fa-eye"></i>
-                        </span>
-                        <h3 class="vm-title">Our Vision</h3>
-                    </div>
-                    <div class="vm-text">
-                        <p>To establish ourselves as a premier institution that empowers students through quality
-                            education in skill development and technical education. We envision creating a learning
-                            ecosystem that fosters innovation, critical thinking, and holistic development.</p>
-                        <p style="margin-top: 1rem;">Our vision extends beyond academic excellence to developing
-                            responsible citizens who contribute meaningfully to society while maintaining the highest
-                            ethical standards.</p>
-                    </div>
-                </div>
-
-                <div class="vm-card">
-  <div class="vm-head">
-    <span class="vm-icon">
-      <i class="fas fa-bullseye"></i>
-    </span>
-    <h3 class="vm-title">Our Mission</h3>
-  </div>
-
-  <div class="vm-text">
-    <p>To provide high-quality education in a safe, respectful, and inclusive environment that
-      builds a foundation for lifelong learning. We are committed to developing excellent
-      infrastructure with well-equipped workshops that are regularly updated.</p>
-    <p style="margin-top: 1rem;">Through our comprehensive programs, we aim to develop leadership
-      qualities, interpersonal skills, creativity, and strong values in every student, preparing
-      them for success in their chosen fields and in life.</p>
-  </div>
 </div>
-
             </div>
         </div>
     </section>
 
-
-
-
-    <!-- Courses Section -->
-    <section class="courses-section" id="courses">
-        <div class="container">
-            <div class="section-title">
-                <!-- <span class="subtitle">School Features</span> -->
-                <h2>School Features</h2>
-                <p class="lead-text">
-                    Industry-focused learning that builds strong basics, real skills, and confident communication for
-                    your
-                    child’s
-                    future.
-                </p>
-            </div>
-
-            <div class="courses-grid">
-                <div class="course-card">
-                    <span class="course-badge">Technical</span>
-                    <img src="/assets/img/quality-education.jpg" alt="Draughtsman Mechanical" class="course-image"
-                         loading="lazy"
-     decoding="async">
-                    <div class="course-content">
-                        <h3>Quality Education</h3>
-                        <p>
-                            Affiliated with MSBSHSE, offering comprehensive secondary and higher secondary education
-                            with a
-                            focus on
-                            holistic development.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <span class="course-badge">Agricultural</span>
-                    <img src="/assets/img/agricultural-focus.jpg" alt="Electrician" class="course-image"  loading="lazy"
-     decoding="async">
-                    <div class="course-content">
-                        <h3>Agricultural Focus</h3>
-                        <p>
-                            Unique curriculum that integrates agricultural education with traditional academics,
-                            providing
-                            practical
-                            learning experiences.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <span class="course-badge">Experienced Faculty</span>
-                    <img src="/assets/img/experienced-faculty.jpg" alt="Electronics Mechanic" class="course-image"
-                         loading="lazy"
-     decoding="async">
-                    <div class="course-content">
-                        <h3>Experienced Faculty</h3>
-                        <p>
-                            Dedicated and highly qualified teaching staff committed to student success and development.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <!-- ==============================================
+       NEW SECTION: School Features (Replaces Courses)
+    ================================================ -->
+    <section class="new-features-section" id="features">
+        <div class="section-head-centered gs-fade-up">
+            <h2>School Features</h2>
+            <p style="color: #64748b; font-size: 18px;">
+                Comprehensive education designed to build strong foundations and bright futures.
+            </p>
         </div>
+
+       <div class="features-row">
+    <!-- Feature 1 -->
+    <div class="feature-box gs-fade-up">
+        <!-- The Image (Hidden by default) -->
+        <div class="f-hover-img">
+            <img src="/assets/img/quality-education.jpg" alt="Quality Education">
+            <div class="f-overlay"></div>
+        </div>
+        
+        <!-- The Content -->
+        <div class="f-content-relative">
+            <div class="f-icon-circle">
+                <i class="fas fa-award"></i>
+            </div>
+            <h3>Quality Education</h3>
+            <p>
+                Affiliated with MSBSHSE, offering comprehensive secondary and higher secondary education
+                with a focus on holistic development.
+            </p>
+        </div>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="feature-box gs-fade-up">
+        <div class="f-hover-img">
+            <img src="/assets/img/agricultural-focus.jpg" alt="Agricultural Focus">
+            <div class="f-overlay"></div>
+        </div>
+
+        <div class="f-content-relative">
+            <div class="f-icon-circle">
+                <i class="fas fa-tractor"></i>
+            </div>
+            <h3>Agricultural Focus</h3>
+            <p>
+                Unique curriculum that integrates agricultural education with traditional academics,
+                providing practical learning experiences.
+            </p>
+        </div>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="feature-box gs-fade-up">
+        <div class="f-hover-img">
+            <img src="/assets/img/experienced-faculty.jpg" alt="Experienced Faculty">
+            <div class="f-overlay"></div>
+        </div>
+
+        <div class="f-content-relative">
+            <div class="f-icon-circle">
+                <i class="fas fa-chalkboard-user"></i>
+            </div>
+            <h3>Experienced Faculty</h3>
+            <p>
+                Dedicated and highly qualified teaching staff committed to student success and development.
+            </p>
+        </div>
+    </div>
+</div>
     </section>
 
-    <!-- Perfect Faculty Section -->
-    <section class="perfect-faculty-section" id="faculty">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Meet Our Team</span>
-                <h2 class="section-title">Our Dedicated Faculty</h2>
-                <p class="section-description">
-                    Experienced educators committed to student success and holistic development.
-                </p>
-            </div>
-
-            <!-- Visible Faculty Grid - 4 Cards -->
-            <div class="faculty-grid" id="visibleFacultyGrid">
-                <!-- Faculty 1 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="/assets/anita-ravindra-chavan.jpg"
-                            alt="Mrs- Anita Ravindra Chavan"  loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs- Anita Ravindra Chavan</h3>
-                        <p class="faculty-designation">Principal</p>
-                        <p class="faculty-qualification">M.A., M.Ed., Ph.D.</p>
-                    </div>
-                </div>
-
-                <!-- Faculty 2 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="/assets/bhausaheb-pandurang-pisal.jpg"
-                            alt="Mrs. Sunita Deshmukh"  loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Bhausaheb Pandurang Pisal</h3>
-                        <p class="faculty-designation">Supervisor</p>
-                        <p class="faculty-qualification">B.A.B.P.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- Faculty 3 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="/assets/abasaheb-malhari-kokare.jpg"
-                            alt="Mr. Abasaheb Malhari Kokare"  loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Abasaheb Malhari Kokare</h3>
-                        <p class="faculty-designation">Asst.Teacher</p>
-                        <p class="faculty-qualification">M.A. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- Faculty 4 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="/assets/bhapkar-manjushri-lalasaheb.jpg"
-                            alt="Mrs. Meera Joshi"  loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Bhapkar Manjushri Lalasaheb</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.sc(math's),B.ed,DSM</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hidden Faculty Grid - 4 More Cards -->
-            <div class="faculty-grid hidden" id="hiddenFacultyGrid">
-                <!-- Faculty 5 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="/assets/khaire-reshma-vyankat.jpg"
-                            alt="Dr. Anand Rao"  loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">KHAIRE RESHMA VYANKAT</h3>
-                        <p class="faculty-designation">ASSISTANT TEACHER</p>
-                        <p class="faculty-qualification">M.Sc.B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- Faculty 6 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="/assets/komal-chandgude.jpg"
-                            alt="Mr. Vikram Singh"  loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Komal Chandgude</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">B.C.S(Computer Science) B.Ed (Appear)</p>
-                        <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>10+ Years Experience</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Faculty 7 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="/assets/amol-subhash-kambale.jpg"
-                            alt="Mr. Amol Subhash Kambale"  loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Amol Subhash Kambale</h3>
-                        <p class="faculty-designation">ASSISTANT TEACHER</p>
-                        <p class="faculty-qualification">A.T.D.A.M.G , D Art & Painting.D.S.M</p>
-                    </div>
-                </div>
-
-                <!-- Faculty 8 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="/assets/allabaksh-husen-shaikh.jpg"
-                            alt="Mr. Ravi Verma"  loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. ALLABAKSH HUSEN SHAIKH</h3>
-                        <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.COM,B.P.ED.,D.S.M.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- View More Button -->
-            <div class="view-more-wrapper">
-                <a href="./staff.html"><button class="view-more-btn" id="viewMoreBtn">
-                    <span class="btn-text">View All Faculty</span>
-                    <i class="fas fa-chevron-down btn-icon"></i>
-                </button></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership with Flip Cards -->
-    <section class="leadership-section" id="leadership">
-        <div class="container">
-            <div class="section-title">
-                <span class="subtitle">Our Leaders</span>
-                <h2>Executive Committee</h2>
-            </div>
-
-            <div class="leadership-grid">
-                <div class="leader-card">
-                    <div class="leader-front">
-                        <div class="leader-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h3 class="leader-role">Chairman</h3>
-                        <h4>Shri. Ajit Anantrao Pawar</h4>
-                    </div>
-                    <div class="leader-back">
-                        <img src="/assets/ajit-pawar.jfif" alt="chairman">
-                        <h3>Deputy Chief Minister of Maharashtra</h3>
-                        <p>Leading KUMSS since 2004 with visionary leadership and commitment to education</p>
-                    </div>
-                </div>
-
-                <div class="leader-card">
-                    <div class="leader-front">
-                        <div class="leader-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <h3 class="leader-role">Vice-Chairman</h3>
-                        <h4>Shri. Dasharathrao Babaso Dhumal</h4>
-                    </div>
-                    <div class="leader-back">
-                        <h3>Educational Visionary</h3>
-                        <p>Dedicated to providing quality education and skill development opportunities</p>
-                    </div>
-                </div>
-
-                <div class="leader-card">
-                    <div class="leader-front">
-                        <div class="leader-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <h3 class="leader-role">Secretary</h3>
-                        <h4>Shri. Prafulla Bhimdeo Taware</h4>
-                    </div>
-                    <div class="leader-back">
-                        <h3>Administrative Head</h3>
-                        <p>Managing day-to-day operations and strategic planning</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <span class="subtitle">Success Stories</span>
-                <h2>What Our Community Says</h2>
-                <p class="lead-text">
-                    Hear from students, parents, and faculty about their experiences at KUMSS
-                </p>
-            </div>
-
-            <div class="bento-grid">
-                <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "The institute develops excellent infrastructure facilities with well-equipped workshops
-                        which are updated regularly. All efforts are pooled into developing leadership qualities,
-                        interpersonal skills, creativity, and strong values."
+    <!-- ==============================================
+       NEW SECTION: Faculty Intro Text
+    ================================================ -->
+    <!-- ==============================================
+       UPDATED SECTION: Faculty Intro with Image
+    ================================================ -->
+    <section class="faculty-text-intro" id="faculty-intro">
+        <div class="faculty-intro-container">
+            <div class="faculty-intro-grid">
+                
+                <!-- Text Column -->
+                <div class="f-text-col gs-reveal-left">
+                    <div class="f-accent-line"></div>
+                    <h2>Our Faculty</h2>
+                    <p class="lead-p">
+                        The teachers of our school are well qualified and professionally trained, with many holding qualifications well above degree requirements.
                     </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Mr. Vikas Nirmal</h4>
-                            <p class="author-role">Principal, KUMSS Private I.T.I</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "KUMSS transformed my career completely. The hands-on training and industry exposure
-                        I received during my Draughtsman Mechanical course gave me the confidence to start my
-                        own technical consultancy."
+                    <p>
+                        The school has a regular Head Master who provides strong leadership and vision for our educational community, ensuring that every student receives the guidance they need to succeed.
                     </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Rahul Sharma</h4>
-                            <p class="author-role">Alumni, Class of 2018</p>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="bento-card">
-                    <div class="testimonial-avatar">
+                <!-- Image Column -->
+                <div class="f-img-col gs-reveal-right">
+                    <!-- Replace src with your actual faculty group photo -->
+                    <img src="/assets/vasatigruha-faculty.jpg" alt="Our Faculty Team" class="f-img-main">
+                    
+                    <!-- Optional decorative floating badge -->
+                    <div class="f-badge">
                         <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "Teaching at KUMSS has been incredibly rewarding. The institute provides all the
-                        necessary resources and maintains an environment that fosters both teaching and
-                        learning excellence."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Prof. Meena Deshpande</h4>
-                            <p class="author-role">Faculty, Electrical Department</p>
-                        </div>
+                        <span>Qualified Staff</span>
                     </div>
                 </div>
 
-                <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "As a parent, I appreciate the emphasis on both technical skills and character
-                        building. My son has grown into a responsible and skilled professional, thanks
-                        to the holistic education at KUMSS."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Mrs. Sunita Patil</h4>
-                            <p class="author-role">Parent of Alumni</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "We regularly hire from KUMSS because their graduates come with practical skills
-                        and strong work ethics. They require minimal training and contribute immediately
-                        to our projects."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Mr. Rajesh Kumar</h4>
-                            <p class="author-role">HR Manager, Tech Solutions Inc.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1260,7 +1218,68 @@
 
     <!-- JavaScript -->
     <script>
-       
+        
+       // Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// 1. Agri Section - Left Text
+gsap.fromTo(".gs-reveal-left", 
+  { autoAlpha: 0, x: -50 }, // Starting state
+  { 
+    duration: 1, 
+    autoAlpha: 1, 
+    x: 0, 
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".agri-section",
+      start: "top 80%", // Triggers when top of section hits 80% of viewport
+      toggleActions: "play none none reverse" // Optional: Reverses when scrolling up
+    }
+  }
+);
+
+// 2. Agri Section - Right Cards (Staggered)
+gsap.fromTo(".agri-card", 
+  { autoAlpha: 0, x: 50 }, 
+  { 
+    duration: 0.8, 
+    autoAlpha: 1, 
+    x: 0, 
+    stagger: 0.2, 
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".agri-section",
+      start: "top 80%",
+    }
+  }
+);
+
+// 3. Features Section (Using Batch for better performance)
+// This fixes the issue where generic classes might trigger too early
+ScrollTrigger.batch(".feature-box", {
+  start: "top 85%",
+  onEnter: batch => gsap.fromTo(batch, 
+    { autoAlpha: 0, y: 40 }, 
+    { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power3.out" }
+  ),
+  // Optional: Reset opacity if you scroll back up, so they animate again
+  // onLeaveBack: batch => gsap.set(batch, { autoAlpha: 0, y: 40 }) 
+});
+
+// 4. Faculty Text Intro
+gsap.fromTo(".faculty-text-intro", 
+  { autoAlpha: 0, y: 30 }, 
+  { 
+    duration: 1, 
+    autoAlpha: 1, 
+    y: 0, 
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".faculty-text-intro",
+      start: "top 90%",
+    }
+  }
+);
 
         // Update active navigation link
         function updateActiveNavLink() {
@@ -1402,6 +1421,7 @@
                 }
             }
         });
+        
     </script>
     <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
 </body>
