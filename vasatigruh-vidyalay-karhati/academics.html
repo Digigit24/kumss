@@ -126,74 +126,108 @@
     }
 
     /* --- Features Grid (Glass Cards) --- */
-    .prem-features {
-      padding: 80px 0;
-      background: #fff;
-      position: relative;
-    }
+   /* --- Variables for easy color changes --- */
+:root {
+  --prem-primary: #2563eb;       /* Main Blue */
+  --prem-secondary: #1e40af;     /* Darker Blue */
+  --prem-accent: #3b82f6;        /* Light Blue */
+  --prem-bg-card: #ffffff;       /* Card Background */
+  --prem-text-head: #1f2937;     /* Dark Heading */
+  --prem-text-body: #6b7280;     /* Grey Text */
+}
 
-    .prem-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: -80px; /* Negative margin to overlap hero */
-    }
+/* --- Section Layout --- */
+.prem-features {
+  position: relative;
+  z-index: 10; /* Ensures it sits on top of the hero */
+  padding-bottom: 4rem;
+  /* IMPORTANT: This creates the overlap effect */
+}
 
-    .prem-card {
-      background: var(--glass-white);
-      border: 1px solid rgba(255,255,255,0.8);
-      padding: 40px 30px;
-      border-radius: 20px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
+.prem-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
 
-    .prem-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 4px; height: 0;
-      background: var(--brand-orange);
-      transition: height 0.4s ease;
-    }
+/* --- Card Style --- */
+.prem-card {
+  background: var(--prem-bg-card);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  /* Soft Shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid transparent; /* Prepare for hover effect */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns content to left, change to center if preferred */
+  text-align: left;
+}
 
-    .prem-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 30px 60px rgba(35, 63, 146, 0.15);
-    }
-    .prem-card:hover::before { height: 100%; }
+/* Hover Effects */
+.prem-card:hover {
+  transform: translateY(-10px); /* Lifts up */
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15); /* Blue glow shadow */
+  background-color: #a0beff;
+  color: #122946;
+}
 
-    .card-icon {
-      width: 60px; height: 60px;
-      background: rgba(35, 63, 146, 0.08);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: var(--brand-blue);
-      margin-bottom: 20px;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
+/* --- Icon Styling --- */
+.card-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: var(--prem-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
 
-    .prem-card:hover .card-icon {
-      background: var(--brand-blue);
-      color: #fff;
-    }
+.prem-card:hover .card-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--prem-primary);
+  color: #fff;
+}
 
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #222;
-      margin-bottom: 15px;
-    }
+/* --- Typography --- */
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--prem-text-head);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
 
-    .card-text {
-      color: #666;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
+.card-text {
+  font-size: 1rem;
+  color: var(--prem-text-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .prem-features {
+    margin-top: -40px; /* Less overlap on mobile */
+  }
+  
+  .prem-grid-3 {
+    grid-template-columns: 1fr; /* Stack vertically on phone */
+    gap: 1.5rem;
+  }
+
+  .prem-card {
+    align-items: center; /* Center align on mobile for better balance */
+    text-align: center;
+  }
+}
 
     /* --- Zig Zag Section --- */
     .prem-zigzag {
@@ -561,10 +595,10 @@
             <div class="footer-col">
                 <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
-                    <li><a href="/gurukul-english-medium-school/about.html">About</a></li>
-                    <li><a href="#">Academics</a></li>
-                     <li><a href="/gurukul-english-medium-school/staff.html">Staff</a></li>
+                    <li><a href="./vasatigruh-vidyalay-karhati.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./academics.html">Academics</a></li>
+                     <li><a href="./staff.html">Staff</a></li>
                     <li><a href="/contact.html">Contact Us</a></li>
                 </ul>
             </div>

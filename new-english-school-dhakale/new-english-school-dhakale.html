@@ -10,49 +10,364 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- css  -->
+    <!-- Existing CSS -->
     <link rel="stylesheet" href="/assets/css/institute.css">
 
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-
-    <!-- HLS.js for video streaming -->
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.10/dist/hls.min.js"></script>
-
-    <!-- Lottie -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-    <!-- Splide Carousel -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<Style>
-    .footer-logo-img {
-                                width: 30%;
-                                height: 30%;
-                            }
 
-</Style>
+    <style>
+        /* --- GLOBAL VARIABLES & RESET --- */
+        :root {
+            --brand-blue: #233f92;
+            --brand-orange: #ff9704;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        /* Footer Logo Fix */
+        .footer-logo-img { width: 30%; height: 30%; }
+
+        /* General Layout Helpers */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding { padding: 100px 0; }
+        
+        /* Badges & Titles */
+        .section-badge {
+            display: inline-block;
+            background: rgba(35, 63, 146, 0.1);
+            color: #233f92;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Gantari', sans-serif;
+            font-size: 2.5rem;
+            color: #1f2937;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        /* --- 1. HERO SECTION (WITH VIDEO) --- */
+        .modern-hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            overflow: hidden;
+            background-color: #000; /* Fallback color */
+        }
+
+        .hero-video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(35, 63, 146, 0.7), rgba(15, 23, 42, 0.85));
+            z-index: 1;
+        }
+
+        .hero-inner { 
+            position: relative;
+            z-index: 2; 
+            max-width: 900px; 
+        }
+
+        .hero-inner h1 {
+            font-family: 'Gantari', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+
+        .hero-inner p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* --- 2. ACADEMIC PHILOSOPHY --- */
+        .academic-section {
+            text-align: center;
+            background: #ffffff;
+        }
+        .academic-card {
+            background: #f8fafc;
+            padding: 60px;
+            border-radius: 20px;
+            margin-top: 40px;
+            border-bottom: 4px solid #ff9704;
+        }
+
+        /* --- 3. ZIG-ZAG SECTIONS --- */
+        .zigzag-section { background: #ffffff; overflow: hidden; }
+        
+        .zigzag-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+        
+        .zigzag-row:last-child { margin-bottom: 0; }
+        .zigzag-row.reverse { flex-direction: row-reverse; }
+
+        .zigzag-content { flex: 1; }
+        
+        .zigzag-visual {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* --- 4. FACULTY SECTION (Background) --- */
+        .faculty-section { 
+            position: relative;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(35, 63, 146, 0.8)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
+        }
+
+        .faculty-section .section-title { color: #ffffff; }
+        .faculty-section .section-text { color: rgba(255, 255, 255, 0.9); }
+
+        .faculty-section .section-badge {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ff9704;
+            backdrop-filter: blur(5px);
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .mentor-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+
+        .mentor-card:hover { transform: translateY(-10px); }
+
+        .mentor-card h3 { 
+            color: #233f92; 
+            font-size: 1.25rem; 
+            margin: 15px 0 10px 0; 
+            font-weight: 700;
+        }
+        
+        .mentor-card .section-text { 
+            color: #6b7280; 
+            font-size: 0.95rem;
+        }
+
+        .mentor-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(35, 63, 146, 0.1);
+            color: #233f92;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        /* --- 5. VALUES BANNER --- */
+        .values-section {
+            background: #233f92;
+            color: white;
+            padding: 80px 0;
+            position: relative;
+        }
+        .values-content { text-align: center; max-width: 800px; margin: 0 auto; }
+        .values-content h2 { color: white; margin-bottom: 20px;}
+        .values-content p { color: rgba(255,255,255,0.9); }
+
+        /* --- 6. WHY CHOOSE US (MOSAIC LAYOUT FIXED) --- */
+        .why-us-section {
+            padding: 100px 0;
+            background-color: #f0f4f8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mosaic-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto;
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mosaic-card {
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .mosaic-card:hover { transform: translateY(-5px); }
+
+        .mosaic-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .mosaic-bg-num {
+            position: absolute;
+            right: -10px;
+            bottom: -20px;
+            font-size: 8rem;
+            font-weight: 900;
+            opacity: 0.1;
+            font-family: 'Gantari', sans-serif;
+            line-height: 1;
+        }
+
+        .mosaic-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; position: relative; z-index: 2; }
+        .mosaic-card p { font-size: 0.95rem; line-height: 1.6; position: relative; z-index: 2; }
+
+        /* -- Mosaic Colors & Spans -- */
+        
+        /* 1. English Fluency (Large Blue) */
+        .card-1 {
+            grid-column: span 7;
+            background-color: #233f92; /* Brand Blue */
+            color: #ffffff;
+        }
+        .card-1 h3, .card-1 p { color: #ffffff; }
+        .card-1 .mosaic-icon { color: #ff9704; } /* Orange Icon */
+        .card-1 .mosaic-bg-num { color: #ffffff; opacity: 0.1; }
+
+        /* 2. Individual Attention (Small White) */
+        .card-2 {
+            grid-column: span 5;
+            background-color: #ffffff;
+            color: #1f2937;
+        }
+        .card-2 h3 { color: #1f2937; }
+        .card-2 p { color: #6b7280; }
+        .card-2 .mosaic-icon { color: #233f92; }
+        .card-2 .mosaic-bg-num { color: #233f92; opacity: 0.05; }
+
+        /* 3. Digital Integration (Small Orange) */
+        .card-3 {
+            grid-column: span 5;
+            background-color: #ff9704; /* Brand Orange */
+            color: #ffffff;
+        }
+        .card-3 h3, .card-3 p { color: #ffffff; }
+        .card-3 .mosaic-icon { color: #ffffff; }
+        .card-3 .mosaic-bg-num { color: #ffffff; opacity: 0.2; }
+
+        /* 4. Trusted Legacy (Large White) */
+        .card-4 {
+            grid-column: span 7;
+            background-color: #ffffff;
+            color: #1f2937;
+        }
+        .card-4 h3 { color: #1f2937; }
+        .card-4 p { color: #6b7280; }
+        .card-4 .mosaic-icon { color: #ff9704; }
+        .card-4 .mosaic-bg-num { color: #ff9704; opacity: 0.1; }
 
 
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .mosaic-grid { display: flex; flex-direction: column; gap: 20px; }
+            .card-1, .card-2, .card-3, .card-4 { grid-column: auto; min-height: 250px; }
+            
+            .zigzag-row, .zigzag-row.reverse { flex-direction: column; text-align: left; gap: 30px; }
+            .zigzag-visual { width: 100%; height: 250px; }
+            .section-title { font-size: 2rem; }
+            .modern-hero { height: auto; padding: 150px 20px 100px 20px; }
+        }
+        .span-sentence {
+            color: #ff9704;
+            font-weight: 800;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-
-
-
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-    <!-- Glassmorphism Header -->
+    <!-- HEADER (Preserved) -->
     <header class="gm-header" id="header">
         <div class="gm-container">
             <nav class="gm-nav" aria-label="Primary">
@@ -72,773 +387,231 @@
                 <!-- Links -->
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link" href="./new-english-school-dhakale.html">Home</a></li>
-
-                    <li class="gm-item">
-                        <a class="gm-link" href="./about.html">About</a>
-                    </li>
+                    <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
 
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
-                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
                         <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
                             aria-controls="institutesMenu">
                             Our Educational Institutes
                             <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
                         </button>
-
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem"
-                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
-                                    Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
-                                    School Dhakale</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
-                                    Tembha</a>
-                            </li>
-                            <li role="none"><a role="menuitem"
-                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
-                                    Karhati</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
-                                    English Medium School</a>
-                            </li>
-                            <li role="none"><a role="menuitem"
-                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
-                                    Pawar Kala
-                                    Mahavidhyalaya</a></li>
+                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
+                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
+                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
                         </ul>
                     </li>
 
                     <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
-
-                    <li class="gm-cta">
-                        <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
-                    </li>
+                    <li class="gm-cta"><a class="ggm-btn" href="tel:+919421394242">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Premium Hero with HLS Video -->
-    <section class="hero" id="home">
-        <div class="floating-elements">
-            <div class="floating-element floating-1"></div>
-            <div class="floating-element floating-2"></div>
-            <div class="floating-element floating-3"></div>
+    <!-- ==============================================
+         CONTENT START
+         ============================================== -->
+
+    <!-- 1. Hero Section (WITH VIDEO) -->
+    <section class="modern-hero" id="home">
+        <!-- Background Video -->
+        <div class="hero-video-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="/assets/vvk-bg.mp4" type="video/mp4">
+            </video>
         </div>
+        
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
 
-        <div class="hero-video-container">
-            <div class="youtube-background">
-                <iframe
-                    src="https://www.youtube.com/embed/kcfs1-ryKWE?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&playlist=kcfs1-ryKWE&enablejsapi=1&showinfo=0&modestbranding=1"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="video-overlay"></div>
-        </div>
-
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">New English Medium School Dhakale</h1>
-                <p class="hero-description">
-                    For over seven decades, we've been transforming lives through exceptional education.
-                    We blend traditional values with cutting-edge technology to create leaders who shape tomorrow.
-                </p>
-
-                <div class="hero-quote">
-                    "Education opens up the mind, expands it and allows you to improve your life in so many ways."
-                </div>
-
-            </div>
+        <!-- Content -->
+        <div class="hero-inner">
+            <h1 class="gs_hero">Nurturing Curious Minds<br>Since 1951</h1>
+            <p class="gs_hero"><span class="span-sentence">New English Medium School Dhakale</span> combines traditional values with modern learning to shape the leaders of tomorrow.</p>
         </div>
     </section>
 
-    <!-- About Section with Tabs -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="section-title">
-                <span class="subtitle">Our Legacy</span>
-                <h2>Years of Trust & Quality Education</h2>
-                <p class="lead-text">
-                    New English Medium School Dhakale is committed to delivering strong academics with a value-based
-                    foundation.
-                    We focus on clear concepts, confident communication, and overall personality development—so every
-                    child grows
-                    ready for tomorrow.
+    <!-- 2. Academic Philosophy -->
+    <section class="academic-section section-padding">
+        <div class="page-container">
+            <span class="section-badge gs_reveal">Academic Philosophy</span>
+            <h2 class="section-title gs_reveal">Education Beyond Textbooks</h2>
+            
+            <div class="academic-card gs_reveal">
+                <p class="section-text">
+                    At New English Medium School Dhakale, education extends far beyond the four walls of a classroom. Our academic curriculum is designed to move away from rote memorization and towards concept-based learning. By integrating modern teaching aids with traditional values, we encourage students to ask questions, explore new ideas, and develop critical thinking skills. Our goal is to build a strong foundation in English, Mathematics, and Sciences while ensuring every child feels confident to express themselves globally.
                 </p>
             </div>
-
-            <div class="about-tabs">
-                <button class="tab-btn active" data-tab="history">
-                    <i class="fas fa-history"></i> History
-                </button>
-            </div>
-
-            <div class="tab-content active" id="history">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">Foundation</div>
-                        <h3>Our Beginning</h3>
-                        <p>
-                            New English Medium School Dhakale was started with a simple purpose—provide quality
-                            English-medium education
-                            with strong discipline, values, and a supportive learning environment.
-                        </p>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">Growth</div>
-                        <h3>Building Strong Learners</h3>
-                        <p>
-                            Over the years, we strengthened our academic approach with activity-based learning, better
-                            classroom
-                            engagement, and a focus on reading, writing, and communication skills.
-                        </p>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">Today</div>
-                        <h3>Future-Ready Learning</h3>
-                        <p>
-                            We continue to evolve with modern teaching methods, student-centered guidance, and a
-                            goal-driven system that
-                            supports both academic excellence and character development.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="mission">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3>Our Vision</h3>
-                        <p>
-                            To nurture confident, responsible, and capable students through quality education, strong
-                            values, and a
-                            future-focused mindset.
-                        </p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3>Our Mission</h3>
-                        <p>
-                            To provide a safe, disciplined, and supportive learning environment that strengthens
-                            academics, communication,
-                            and life skills for every child.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="values">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <h3>Excellence</h3>
-                        <p>
-                            We set high standards in teaching and learning—so students build strong basics and achieve
-                            consistent results.
-                        </p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Care & Community</h3>
-                        <p>
-                            A school should feel like a second home. We support students with respect, guidance, and
-                            positive discipline.
-                        </p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Modern Learning</h3>
-                        <p>
-                            We use practical activities and smart teaching methods to make learning engaging,
-                            meaningful, and effective.
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-
-    <!-- Vision & Mission Section -->
-    <!-- Vision & Mission Section (Premium Redesign) -->
-    <!-- Vision & Mission Section (Modern Asymmetric) -->
-    <section class="vm-section-modern" id="vision-mission" aria-label="Vision and Mission">
-        <div class="vm-bg-blobs">
-            <div class="vm-blob vm-blob-1"></div>
-            <div class="vm-blob vm-blob-2"></div>
-        </div>
-
-        <div class="container">
-            <div class="vm-header-modern" data-reveal="fade-up">
-                <span class="vm-badge-modern">Our Guiding Principles</span>
-                <h2 class="vm-title-modern">Vision & Mission</h2>
-                <div class="vm-subtitle-modern">
-                    <p>The values that shape our teaching, student growth, and everyday learning at New English Medium
-                        School Dhakale</p>
+    <!-- 3. Zig-Zag: Co-Curriculars & Infrastructure -->
+    <section class="zigzag-section section-padding">
+        <div class="page-container">
+            
+            <!-- Row 1: Beyond Academics -->
+            <div class="zigzag-row">
+                <div class="zigzag-content gs_slide_right">
+                    <span class="section-badge">Holistic Development</span>
+                    <h2 class="section-title">Beyond Academics</h2>
+                    <p class="section-text">
+                        We recognize that every child has a unique talent waiting to be discovered. Our campus buzzes with activity beyond school hours, ranging from sports and athletics to cultural arts and public speaking. Whether it’s competing on the playground, performing on stage during our annual gathering, or participating in science exhibitions, our students are given ample opportunities to build leadership skills, teamwork, and resilience.
+                    </p>
+                </div>
+                <div class="zigzag-visual gs_slide_left">
+                    <img src="/assets/beyond-academics.png" alt="beyond-academics">
                 </div>
             </div>
 
-            <div class="vm-grid-modern">
-                <!-- Vision Card (Light & Clean) -->
-                <div class="vm-card-modern vm-card-light" data-reveal="fade-up" data-delay="100">
-                    <div class="vm-card-inner">
-                        <div class="vm-icon-modern">
-                            <!-- Vision SVG: Detailed Premium Iris -->
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" stroke-opacity="0.1" />
-                                <path
-                                    d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
-                                    stroke-width="1.5" />
-                                <circle cx="12" cy="12" r="3.5" stroke-width="1.5" />
-                                <circle cx="12" cy="12" r="1.5" fill="currentColor" fill-opacity="0.2" />
-                                <path
-                                    d="M12 5V3M12 21v-2M5 12H3M21 12h-2M17 17l1.5 1.5M5.5 5.5L7 7M17 7l1.5-1.5M5.5 18.5L7 17"
-                                    stroke-opacity="0.4" />
-                            </svg>
-                        </div>
-                        <h3 class="vm-card-title-modern">Our Vision</h3>
-                        <div class="vm-card-text-modern">
-                            <p>To be a trusted English medium school in Dhakale that builds confident, capable, and
-                                responsible learners through modern education, strong values, and clear communication
-                                skills.</p>
-                            <p>We aim to create a learning environment where students think independently, express
-                                themselves with confidence, and grow into future-ready individuals who contribute
-                                positively to society.</p>
-                        </div>
-                    </div>
+            <!-- Row 2: Infrastructure (Reversed) -->
+            <div class="zigzag-row reverse">
+                <div class="zigzag-content gs_slide_left">
+                    <span class="section-badge">Infrastructure</span>
+                    <h2 class="section-title">Safe & Modern Learning</h2>
+                    <p class="section-text">
+                        We take pride in providing a campus that feels like a second home. Our infrastructure is designed to be safe, inclusive, and conducive to learning. We feature spacious, well-ventilated classrooms, a dedicated computer lab for digital literacy, and a well-stocked library to foster a love for reading. The school premises are secure and monitored, ensuring that parents can have peace of mind.
+                    </p>
                 </div>
-
-                <!-- Mission Card (Bold & Brand Color) -->
-                <div class="vm-card-modern vm-card-dark" data-reveal="fade-up" data-delay="200">
-                    <div class="vm-card-inner">
-                        <div class="vm-icon-modern">
-                            <!-- Mission SVG: Premium Target & Flag -->
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" stroke-opacity="0.2" />
-                                <path d="M12 2v20M2 12h20" stroke-opacity="0.2" stroke-dasharray="2 2" />
-                                <path d="M12 17l-3-3M12 17l3-3M12 7l-3 3M12 7l3 3" stroke-opacity="0.4" />
-                                <circle cx="12" cy="12" r="2" fill="currentColor" />
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="1.5" />
-                            </svg>
-                        </div>
-                        <h3 class="vm-card-title-modern">Our Mission</h3>
-                        <div class="vm-card-text-modern">
-                            <p>To deliver quality education at New English Medium School Dhakale through skilled
-                                teaching, disciplined learning, and engaging classroom activities that strengthen
-                                academics and overall personality development.</p>
-                            <p>We focus on a safe, respectful, and supportive school culture—helping every child improve
-                                in studies, communication, values, and life skills for long-term success.</p>
-                        </div>
-                    </div>
+                <div class="zigzag-visual gs_slide_right">
+                   <img src="/assets/modern-learning.png" alt="modern-learning">
                 </div>
             </div>
+
         </div>
     </section>
 
-
-
-
-    <!-- Perfect Faculty Section -->
-    <section class="perfect-faculty-section" id="faculty">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Meet Our Team</span>
-                <h2 class="section-title">Our Dedicated Faculty</h2>
-                <p class="section-description">
-                    Experienced educators committed to student success and holistic development.
+    <!-- 4. Faculty & Mentorship (WITH BACKGROUND IMAGE) -->
+    <section class="faculty-section">
+        <div class="page-container">
+            <div style="text-align: center;">
+                <span class="section-badge gs_reveal">Our Team</span>
+                <h2 class="section-title gs_reveal">Guided by Experts</h2>
+                <p class="section-text gs_reveal" style="max-width: 700px; margin: 0 auto; color: rgba(255,255,255,0.9);">
+                    Our greatest asset is our team of dedicated educators who act as mentors and guides rather than just instructors.
                 </p>
             </div>
 
-            <!-- Visible Faculty Grid - 4 Cards -->
-            <div class="faculty-grid" id="visibleFacultyGrid">
-                <!-- Faculty 1 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-kumbhar-girish-shivaji.jpeg" alt="Mr. Kumbhar Girish Shivaji"
-                             loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Kumbhar Girish Shivaji</h3>
-                        <p class="faculty-designation">Hekumssster</p>
-                        <p class="faculty-qualification">B.Sc.B.Ed, D.S.M</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>25+ Years Experience</span>
-                        </div> -->
-                    </div>
+            <div class="faculty-grid">
+                <!-- Card 1 -->
+                <div class="mentor-card gs_card">
+                    <div class="mentor-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Expert Faculty</h3>
+                    <p class="section-text">
+                        With years of experience and a passion for teaching, our faculty focuses on the individual progress of every student.
+                    </p>
                 </div>
-
-                <!-- Faculty 2 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-paithankar-rajendra-uttam.jpeg" alt="Mr. Paithankar rajendra Uttam"
-                             loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Paithankar rajendra Uttam</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">M.E.B.Ed.</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>20+ Years Experience</span>
-                        </div> -->
-                    </div>
+                 <!-- Card 2 -->
+                 <div class="mentor-card gs_card">
+                    <div class="mentor-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h3>Personalized Mentorship</h3>
+                    <p class="section-text">
+                        They identify the strengths and weaknesses of each learner, providing the extra support needed to turn challenges into achievements.
+                    </p>
                 </div>
-
-                <!-- Faculty 3 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-ejgar-pintu-sambhaji.jpeg" alt="Mr. Ejgar Pintu Sambhaji"
-                             loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Ejgar Pintu Sambhaji</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <!-- <p class="faculty-qualification">M.Sc. Mathematics</p> -->
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>15+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-
-                <!-- Faculty 4 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/miss-jagtap-geetanjali-vijay.jpeg" alt="Miss. Jagtap geetanjali Vijay"
-                             loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Miss. Jagtap geetanjali Vijay</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B.Sc.B.Ed</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>12+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hidden Faculty Grid - 4 More Cards -->
-            <div class="faculty-grid hidden" id="hiddenFacultyGrid">
-                <!-- Faculty 5 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-lonkar-sandip-bhauso.jpeg" alt="Mr. Lonkar Sandip Bhauso"
-                             loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Lonkar Sandip Bhauso</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">M.A.M.ED .Set</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>18+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-
-                <!-- Faculty 6 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/miss-kumbhar-bharati-girish.jpeg" alt="Miss. Kumbhar Bharati Girish"
-                             loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Miss. Kumbhar Bharati Girish</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B.A.Bed</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>10+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-
-                <!-- Faculty 7 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/miss-survekar-savita-shahaji.jpeg" alt="Miss. Survekar Savita Shahaji"
-                             loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Miss. Survekar Savita Shahaji</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B.A.Bed</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>14+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-
-                <!-- Faculty 8 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-deshmane-rushikesh-rajendra.jpeg"
-                            alt="Mr. Deshmane Rushikesh Rajendra"  loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Deshmane Rushikesh Rajendra</h3>
-                        <p class="faculty-designation">Clerk</p>
-                        <p class="faculty-qualification">TY.b.Com</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>16+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-                <!-- Faculty 9 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-soumitra-malhari-jagtap.jpeg" alt="Mr.Soumitra Malhari Jagtap"
-                             loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr.Soumitra Malhari Jagtap</h3>
-                        <p class="faculty-designation">Peon</p>
-                        <p class="faculty-qualification">12th Pass</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>16+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-                <!-- Faculty 10 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <img src="../assets/img/mr-chavan-gajanan-balaso.jpeg" alt="Mr. Chavan Gajanan Balaso"
-                             loading="lazy"
-     decoding="async">
-                        <div class="image-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Chavan Gajanan Balaso</h3>
-                        <p class="faculty-designation">Peon</p>
-                        <p class="faculty-qualification">7th Pass</p>
-                        <!-- <div class="faculty-experience">
-                            <i class="fas fa-clock"></i>
-                            <span>16+ Years Experience</span>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- View More Button -->
-            <div class="view-more-wrapper">
-                <button class="view-more-btn" id="viewMoreBtn">
-                    <span class="btn-text">View All Faculty</span>
-                    <i class="fas fa-chevron-down btn-icon"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership Section (Premium Redesign) -->
-    <section class="leadership-section-premium" id="leadership">
-        <div class="container">
-            <div class="vm-header-modern" data-reveal="fade-up">
-                <span class="vm-badge-modern">Executive Committee</span>
-                <h2 class="vm-title-modern">Our Leaders</h2>
-                <div class="vm-subtitle-modern">
-                    <p>The visionaries guiding our institution towards excellence and future-ready education.</p>
-                </div>
-            </div>
-
-            <div class="leadership-grid-premium">
-                <!-- Leader 1: Chairman -->
-                <div class="leader-card-premium" data-reveal="fade-up" data-delay="100">
-                    <div class="leader-card-header">
-                        <div class="leader-image-box">
-                            <img src="../assets/ajit-pawar.jfif" alt="Shri. Ajit Anantrao Pawar"
-                                class="leader-img">
-                        </div>
-                    </div>
-                    <div class="leader-card-body">
-                        <div class="leader-role-badge">Chairman</div>
-                        <h3 class="leader-name">Shri. Ajit Anantrao Pawar</h3>
-                        <div class="leader-designation">Deputy Chief Minister of Maharashtra</div>
-                        <p class="leader-bio">Leading KUMSS since 2004 with visionary leadership and commitment to
-                            education.</p>
-                    </div>
-                </div>
-
-                <!-- Leader 2: Vice-Chairman -->
-                <div class="leader-card-premium" data-reveal="fade-up" data-delay="200">
-                    <div class="leader-card-header">
-                        <div class="leader-image-box">
-                            <img src="#" alt="Shri. Dasharathrao Babaso Dhumal"
-                                class="leader-img">
-                        </div>
-                    </div>
-                    <div class="leader-card-body">
-                        <div class="leader-role-badge">Vice-Chairman</div>
-                        <h3 class="leader-name">Shri. Dasharathrao Babaso Dhumal</h3>
-                        <div class="leader-designation">Educational Visionary</div>
-                        <p class="leader-bio">Dedicated to providing quality education and skill development
-                            opportunities.</p>
-                    </div>
-                </div>
-
-                <!-- Leader 3: Secretary -->
-                <div class="leader-card-premium" data-reveal="fade-up" data-delay="300">
-                    <div class="leader-card-header">
-                        <div class="leader-image-box">
-                            <img src="
-                            #" alt="Shri. Prafulla Bhimdeo Taware"
-                                class="leader-img">
-                        </div>
-                    </div>
-                    <div class="leader-card-body">
-                        <div class="leader-role-badge">Secretary</div>
-                        <h3 class="leader-name">Shri. Prafulla Bhimdeo Taware</h3>
-                        <div class="leader-designation">Administrative Head</div>
-                        <p class="leader-bio">Managing day-to-day operations and strategic planning.</p>
-                    </div>
+                 <!-- Card 3 -->
+                 <div class="mentor-card gs_card">
+                    <div class="mentor-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Student Success</h3>
+                    <p class="section-text">
+                        Our teachers are committed to shaping not just academically bright students, but well-rounded personalities ready for the world.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <span class="subtitle">Success Stories</span>
-                <h2>What Our Community Says</h2>
-                <p class="lead-text">
-                    Hear from students, parents, and faculty about their experiences at KUMSS
+    <!-- 5. Values Banner -->
+    <section class="values-section">
+        <div class="page-container">
+            <div class="values-content gs_reveal">
+                <i class="fas fa-hand-holding-heart" style="font-size: 3rem; margin-bottom: 20px; color: #ff9704;"></i>
+                <h2>Rooted in Values, Ready for the World</h2>
+                <p>
+                    While we prepare our students for a modern future, we remain deeply rooted in our local culture. Discipline, respect for elders, and social responsibility are woven into our daily school life. We actively encourage students to participate in community service and environmental awareness programs.
                 </p>
             </div>
+        </div>
+    </section>
 
-            <div class="bento-grid">
-                <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "The institute develops excellent infrastructure facilities with well-equipped workshops
-                        which are updated regularly. All efforts are pooled into developing leadership qualities,
-                        interpersonal skills, creativity, and strong values."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Mr. Vikas Nirmal</h4>
-                            <p class="author-role">Principal, KUMSS Private I.T.I</p>
-                        </div>
-                    </div>
+    <!-- 6. Why Choose Us (FIXED VISIBILITY MOSAIC) -->
+    <section class="why-us-section">
+        <div class="page-container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <span class="section-badge gs_reveal">Distinguishing Features</span>
+                <h2 class="section-title gs_reveal">Why Choose Us?</h2>
+            </div>
+
+            <div class="mosaic-grid">
+                
+                <!-- 01: Large Blue -->
+                <div class="mosaic-card card-1 gs_card">
+                    <div class="mosaic-bg-num">01</div>
+                    <i class="fas fa-language mosaic-icon"></i>
+                    <h3>English Fluency</h3>
+                    <p>We place special emphasis on spoken English and communication skills, ensuring students are confident global citizens.</p>
                 </div>
 
-                <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "KUMSS transformed my career completely. The hands-on training and industry exposure
-                        I received during my Draughtsman Mechanical course gave me the confidence to start my
-                        own technical consultancy."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Rahul Sharma</h4>
-                            <p class="author-role">Alumni, Class of 2018</p>
-                        </div>
-                    </div>
+                <!-- 02: Small White -->
+                <div class="mosaic-card card-2 gs_card">
+                    <div class="mosaic-bg-num">02</div>
+                    <i class="fas fa-child mosaic-icon"></i>
+                    <h3>Individual Attention</h3>
+                    <p>Small class sizes allow our teachers to focus on every child’s unique needs.</p>
                 </div>
 
-                <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "Teaching at KUMSS has been incredibly rewarding. The institute provides all the
-                        necessary resources and maintains an environment that fosters both teaching and
-                        learning excellence."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Prof. Meena Deshpande</h4>
-                            <p class="author-role">Faculty, Electrical Department</p>
-                        </div>
-                    </div>
+                <!-- 03: Small Orange -->
+                <div class="mosaic-card card-3 gs_card">
+                    <div class="mosaic-bg-num">03</div>
+                    <i class="fas fa-laptop-code mosaic-icon"></i>
+                    <h3>Digital Integration</h3>
+                    <p>From smart classes to computer labs, we integrate technology from a young age.</p>
                 </div>
 
-                <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "As a parent, I appreciate the emphasis on both technical skills and character
-                        building. My son has grown into a responsible and skilled professional, thanks
-                        to the holistic education at KUMSS."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Mrs. Sunita Patil</h4>
-                            <p class="author-role">Parent of Alumni</p>
-                        </div>
-                    </div>
+                <!-- 04: Large White -->
+                <div class="mosaic-card card-4 gs_card">
+                    <div class="mosaic-bg-num">04</div>
+                    <i class="fas fa-history mosaic-icon"></i>
+                    <h3>Trusted Legacy</h3>
+                    <p>Part of the KUMSS family, we have been delivering excellence in education since 1951, building trust across generations.</p>
                 </div>
 
-                <div class="bento-card">
-                    <div class="testimonial-avatar">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "We regularly hire from KUMSS because their graduates come with practical skills
-                        and strong work ethics. They require minimal training and contribute immediately
-                        to our projects."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Mr. Rajesh Kumar</h4>
-                            <p class="author-role">HR Manager, Tech Solutions Inc.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p class="lead-text">
-                    Ready to begin your educational journey? Contact us today for more information about
-                    admissions, programs, or campus visits.
-                </p>
-            </div>
+    <!-- ==============================================
+         CONTENT END
+         ============================================== -->
 
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Address</h3>
-                            <p>Krushi Udyog Mul Shikshan Sanstha,<br>
-                                A/p - Karhati, Tal – Baramati,<br>
-                                Dist - Pune, 412204</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+91 94213 94242<br>
-                                +91 94236 84242<br>
-                                +91 94236 94242</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>info@kumss.org<br>
-                                iti@kumss.org</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modern-card">
-                    <h3>Schedule a Visit</h3>
-                    <p>Book a campus tour to experience our facilities firsthand.</p>
-                    <a href="tel:+919421394242" class="btn btn-primary" style="margin-top: 2rem;">
-                        <i class="fas fa-phone-alt"></i>
-                        <span>Call Now</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- FOOTER (Preserved) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
                         <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
-                               <div><span>KUMSS SINCE 1951</span></div>
+                        <div><span>KUMSS SINCE 1951</span></div>
                     </a>
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
                         An educational society focused on overall development of students since 1951.
                     </p>
 
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Quick Links</h3>
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="./new-english-school-dhakale.html">Home</a></li>
                         <li><a href="./about.html">About</a></li>
@@ -848,24 +621,17 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Our Institutes</h3>
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
-                                Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
-                                Dhakale</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
-                        </li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Contact Info</h3>
+                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
                     <ul class="footer-links">
                         <li><a href="tel:+919421394242">+91 94213 94242</a></li>
                         <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
@@ -883,428 +649,97 @@
         </div>
     </footer>
 
-
-    <!-- js file  -->
+    <!-- Scripts -->
     <script src="/assets/js/institute.js"></script>
 
-    <!-- JavaScript -->
     <script>
-        // Premium Loading Animation
-        window.addEventListener('load', () => {
-            const loadingScreen = document.getElementById('loadingScreen');
-
-            // Animate loading screen out
-            gsap.to(loadingScreen, {
-                opacity: 0,
-                duration: 1,
-                ease: "power2.inOut",
-                delay: 2,
-                onComplete: () => {
-                    loadingScreen.style.display = 'none';
-                    initAnimations();
-                }
-            });
-
-            // Animate loading elements
-            gsap.to(".loading-logo", {
-                rotation: 360,
-                duration: 20,
-                repeat: -1,
-                ease: "none"
-            });
-
-            gsap.to(".loading-dot", {
-                y: -20,
-                duration: 1,
-                repeat: -1,
-                yoyo: true,
-                stagger: 0.2
-            });
-        });
-
-        // Initialize HLS Video Streaming
-        // Initialize Video (using standard MP4 for now)
-        // Initialize all animations and interactions
-        function initAnimations() {
-            // Initialize GSAP with ScrollTrigger
+        document.addEventListener("DOMContentLoaded", (event) => {
             gsap.registerPlugin(ScrollTrigger);
 
-            // Header scroll effect
-            const header = document.getElementById('header');
-            let lastScroll = 0;
-
-            window.addEventListener('scroll', () => {
-                const currentScroll = window.pageYOffset;
-
-                // Header effect
-                if (currentScroll > 50) {
-                    header.classList.add('scrolled');
-
-                    if (currentScroll > lastScroll && currentScroll > 200) {
-                        gsap.to(header, { y: -100, duration: 0.3 });
-                    } else {
-                        gsap.to(header, { y: 0, duration: 0.3 });
-                    }
-                } else {
-                    header.classList.remove('scrolled');
-                    gsap.to(header, { y: 0, duration: 0.3 });
-                }
-
-                lastScroll = currentScroll;
-
-                // Scroll progress bar
-                const progress = (currentScroll / (document.body.scrollHeight - window.innerHeight)) * 100;
-                document.getElementById('scrollProgress').style.width = `${progress}%`;
-
-                // Update active nav link
-                updateActiveNavLink();
+            // 1. Hero Animations
+            gsap.from(".gs_hero", {
+                y: 50,
+                opacity: 0,
+                duration: 1.5,
+                stagger: 0.3,
+                ease: "power3.out"
             });
 
-            // Tab system
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tabId = btn.getAttribute('data-tab');
-
-                    // Update active button
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    // Update active content
-                    tabContents.forEach(content => {
-                        content.classList.remove('active');
-                        if (content.id === tabId) {
-                            content.classList.add('active');
-                            gsap.fromTo(content,
-                                { opacity: 0, y: 20 },
-                                { opacity: 1, y: 0, duration: 0.5 }
-                            );
-                        }
-                    });
+            // 2. Fade Up Generic
+            gsap.utils.toArray('.gs_reveal').forEach(element => {
+                gsap.from(element, {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    },
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power2.out"
                 });
             });
 
-            // Course card hover effects
-            const courseCards = document.querySelectorAll('.course-card');
-            courseCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    gsap.to(card, {
-                        y: -20,
-                        rotationY: 5,
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    });
-
-                    const image = card.querySelector('.course-image');
-                    gsap.to(image, {
-                        scale: 1.1,
-                        duration: 0.8,
-                        ease: 'power2.out'
-                    });
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    gsap.to(card, {
-                        y: 0,
-                        rotationY: 0,
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    });
-
-                    const image = card.querySelector('.course-image');
-                    gsap.to(image, {
-                        scale: 1,
-                        duration: 0.8,
-                        ease: 'power2.out'
-                    });
+            // 3. Zig Zag Left
+            gsap.utils.toArray('.gs_slide_left').forEach(element => {
+                gsap.from(element, {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    },
+                    x: -50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.out"
                 });
             });
 
-            // Feature card animations
-            const featureCards = document.querySelectorAll('.feature-card');
-            featureCards.forEach(card => {
-                gsap.fromTo(card,
-                    {
-                        opacity: 0,
-                        y: 50,
-                        scale: 0.9
+            // 4. Zig Zag Right
+            gsap.utils.toArray('.gs_slide_right').forEach(element => {
+                gsap.from(element, {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
                     },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.8,
-                        ease: 'back.out(1.2)',
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 85%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
+                    x: 50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.out"
+                });
             });
 
-            // Vision & Mission cards animation (Premium Redesign)
-            const vmHeader = document.querySelector('.vm-header-premium');
-            if (vmHeader) {
-                gsap.fromTo(vmHeader,
-                    { opacity: 0, y: 30 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.8,
-                        ease: 'power2.out',
-                        scrollTrigger: {
-                            trigger: vmHeader,
-                            start: 'top 85%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
-            }
-
-            const vmCards = document.querySelectorAll('.vm-card-premium');
-            vmCards.forEach((card, i) => {
-                gsap.fromTo(card,
-                    {
-                        opacity: 0,
-                        y: 50,
-                        scale: 0.95
-                    },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 1,
-                        delay: i * 0.2, // Stagger effect
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 85%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
-            });
-
-            // Bento cards animation
-            const bentoCards = document.querySelectorAll('.bento-card');
-            bentoCards.forEach((card, i) => {
-                gsap.fromTo(card,
-                    {
-                        opacity: 0,
-                        y: 30,
-                        scale: 0.98
-                    },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                        duration: 0.6,
-                        delay: i * 0.1,
-                        ease: 'power2.out',
-                        scrollTrigger: {
-                            trigger: card,
-                            start: 'top 90%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
-            });
-
-            // Parallax effect for video
-            gsap.to('.hero-video', {
-                y: '20%',
-                scale: 1.1,
-                ease: 'none',
+            // 5. Card Stagger
+            gsap.from(".gs_card", {
                 scrollTrigger: {
-                    trigger: '.hero',
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: true
-                }
+                    trigger: ".mosaic-grid, .faculty-grid",
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.15,
+                ease: "power2.out"
             });
 
-            // Floating elements animation
-            const floatingElements = document.querySelectorAll('.floating-element');
-            floatingElements.forEach((el, i) => {
-                gsap.to(el, {
-                    y: 'random(-40, 40)',
-                    x: 'random(-30, 30)',
-                    rotation: 'random(-20, 20)',
-                    duration: 'random(4, 8)',
-                    repeat: -1,
-                    yoyo: true,
-                    ease: 'sine.inOut',
-                    delay: i * 0.5
+            // Header & Mobile Menu (Preserved)
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { header.classList.add('scrolled'); } 
+                else { header.classList.remove('scrolled'); }
+            });
+
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            if(mobileMenuBtn){
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
                 });
-            });
-
-            // Button hover effects
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(btn => {
-                btn.addEventListener('mouseenter', () => {
-                    gsap.to(btn, {
-                        scale: 1.05,
-                        duration: 0.3,
-                        ease: 'power2.out'
-                    });
-                });
-
-                btn.addEventListener('mouseleave', () => {
-                    gsap.to(btn, {
-                        scale: 1,
-                        duration: 0.3,
-                        ease: 'power2.out'
-                    });
-                });
-            });
-        }
-
-        // Update active navigation link
-        function updateActiveNavLink() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            navLinks.classList.toggle('active');
-
-            if (navLinks.classList.contains('active')) {
-                gsap.to(navLinks, {
-                    x: 0,
-                    duration: 0.5,
-                    ease: 'power3.out'
-                });
-                document.body.style.overflow = 'hidden';
-            } else {
-                gsap.to(navLinks, {
-                    x: 300,
-                    duration: 0.5,
-                    ease: 'power3.in'
-                });
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                navLinks.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-
-        // Smooth scrolling with offset
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const offset = 100;
-                    const targetPosition = targetElement.offsetTop - offset;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Lazy loading images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        const src = img.getAttribute('data-src');
-
-                        if (src) {
-                            img.src = src;
-                            img.removeAttribute('data-src');
-
-                            img.onload = () => {
-                                gsap.fromTo(img,
-                                    { opacity: 0, scale: 1.2 },
-                                    { opacity: 1, scale: 1, duration: 1, ease: 'power2.out' }
-                                );
-                            };
-                        }
-
-                        imageObserver.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '100px 0px',
-                threshold: 0.1
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // Initialize everything when DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            // Start loading animation immediately
-            const loadingScreen = document.getElementById('loadingScreen');
-            gsap.set(loadingScreen, { opacity: 1 });
-
-            // Initialize animations after slight delay to ensure DOM is ready
-            setTimeout(() => {
-                if (document.readyState === 'complete') {
-                    // Page is already loaded
-                    window.dispatchEvent(new Event('load'));
-                }
-            }, 100);
-        });
-
-        // Performance monitoring
-        window.addEventListener('load', () => {
-            const perfEntries = performance.getEntriesByType('navigation');
-            if (perfEntries.length > 0) {
-                const navTiming = perfEntries[0];
-                const loadTime = navTiming.loadEventEnd - navTiming.loadEventStart;
-                console.log(`Page loaded in ${loadTime}ms`);
-
-                if (loadTime > 3000) {
-                    console.log('Performance tip: Consider optimizing images and reducing animation complexity');
-                }
             }
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
 </body>
-
 </html>
