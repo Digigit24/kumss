@@ -131,7 +131,22 @@
       background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.40));
     }
 
+    /* --- Scoped CSS for Institution Section --- */
+.inst-section {
+  /* Local Variables - Change colors here */
+  --inst-primary: #D84315; /* Burnt Orange */
+  --inst-dark: #2c2c2c;
+  --inst-light: #f4f1ea;   /* Warm Canvas White */
+  --inst-white: #ffffff;
+  --inst-shadow: 0 15px 40px -10px rgba(0,0,0,0.08);
+  
+  padding: 80px 20px;
+  background-color: var(--inst-light);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden; /* Prevents scrollbars from animations */
+}
     /* Layout helpers */
+    
     .page-wrap {
       max-width: var(--page-max);
       margin: 0 auto;
@@ -387,7 +402,603 @@
     linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.75) 100%);
 }
 .hero-inner{ position:relative; z-index:2; }
+.inst-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
+/* Header Styling */
+.inst-header {
+  margin-bottom: 50px;
+  max-width: 700px;
+}
+
+.inst-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--inst-primary);
+  border: 1px solid rgba(216, 67, 21, 0.3);
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.5);
+}
+
+.inst-title {
+  font-size: clamp(32px, 4vw, 48px);
+  color: var(--inst-dark);
+  margin: 0;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+/* Grid Layout */
+.inst-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* Desktop: 2 columns with Offset */
+@media (min-width: 900px) {
+  .inst-grid {
+    grid-template-columns: 1.2fr 1fr; /* First card slightly wider */
+    gap: 60px;
+    align-items: flex-start;
+  }
+  
+  /* The Innovation: Push the second card down to create asymmetry */
+  .inst-card-secondary {
+    margin-top: 80px; 
+  }
+}
+
+/* Card Styling */
+.inst-card {
+  background: var(--inst-white);
+  padding: 45px;
+  border-radius: 20px; /* Soft modern corners */
+  box-shadow: var(--inst-shadow);
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.inst-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+}
+
+.inst-card-title {
+  font-size: 24px;
+  color: var(--inst-dark);
+  margin-top: 0;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+/* Underline decoration for titles */
+.inst-card-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--inst-primary);
+}
+
+.inst-text {
+  color: #555;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+/* List Styling */
+.inst-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inst-list li {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 18px;
+  color: #555;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* Custom Bullet Icon */
+.inst-list li::before {
+  content: '\2713'; /* Unicode checkmark */
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 24px;
+  width: 24px;
+  background: rgba(216, 67, 21, 0.1);
+  color: var(--inst-primary);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Decorative Corner (Artistic Touch) */
+.inst-deco-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, transparent 50%, rgba(216, 67, 21, 0.05) 50%);
+  pointer-events: none;
+}
+
+/* --- Animations --- */
+.inst-anim {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.inst-anim.inst-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  /* --- MAIN SECTION WITH BACKGROUND --- */
+  #culture {
+    padding: 80px 20px;
+    /* Dark overlay + Artistic Background Image */
+    background: linear-gradient(to bottom, rgba(20, 20, 20, 0.85), rgba(40, 40, 40, 0.9)), 
+                url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a nice 3D parallax effect */
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+  }
+
+  .library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-items: center;
+  }
+
+  /* --- 3D SCENE CONTAINER --- */
+  .book-scene {
+    width: 220px;
+    height: 300px;
+    perspective: 1200px; /* Deep perspective for 3D feel */
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* --- THE BOOK OBJECT --- */
+  .book {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* --- INSIDE PAGE (FIXED RIGHT SIDE) --- */
+  /* Contains Background Image + Text */
+  .book-inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px 6px 6px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 25px;
+    z-index: 1; 
+    
+    /* Paper/Content Styling */
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 10px 0 20px rgba(0,0,0,0.5); /* Inner shadow for depth */
+    border-right: 2px solid #ccc; /* Page edge */
+  }
+
+  .book-inside p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-weight: 500;
+    margin: 0;
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.9); /* Strong text shadow for readability */
+  }
+
+  /* --- THE COVER (ANIMATED PART) --- */
+  .book-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 2;
+    border-radius: 2px 6px 6px 2px;
+    
+    /* 3D UI Shadow when closed */
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.6); 
+  }
+
+  /* Common styles for Front and Back faces of the cover */
+  .cover-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 2px 6px 6px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  /* FRONT FACE (Icon + Title) */
+  .front {
+    color: white;
+    /* Subtle gloss texture */
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  /* Spine groove */
+  .front::before {
+    content: '';
+    position: absolute; left: 10px; top: 0; height: 100%; width: 2px;
+    background: rgba(0,0,0,0.2);
+  }
+
+  .cover-icon { 
+    font-size: 42px; 
+    margin-bottom: 20px; 
+    color: #ffecd1; 
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  }
+  
+  .cover-title { 
+    font-size: 1.3rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    border-top: 1px solid rgba(255,255,255,0.4); 
+    border-bottom: 1px solid rgba(255,255,255,0.4); 
+    padding: 12px 0; 
+    margin: 0; 
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  }
+
+  /* BACK FACE (Inside of Cover) */
+  .back {
+    background-color: #fdfbf7;
+    transform: rotateY(180deg);
+    border: 1px solid #ccc;
+    box-shadow: inset -5px 0 20px rgba(0,0,0,0.1);
+  }
+
+  .inside-img {
+    width: 90%; 
+    height: 120px; 
+    object-fit: cover;
+    border-radius: 4px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .inside-label { 
+    font-size: 0.75rem; 
+    color: #444; 
+    text-transform: uppercase; 
+    font-weight: 800; 
+    letter-spacing: 1.5px; 
+  }
+
+  /* --- HOVER ANIMATION STATES --- */
+  
+  /* 1. Open the cover */
+  .book-scene:hover .book-cover { 
+    transform: rotateY(-180deg); 
+    box-shadow: -5px 5px 20px rgba(0,0,0,0.3); /* Shadow shifts to left */
+  }
+  
+  /* 2. Slide book slightly to keep centered */
+  .book-scene:hover .book { 
+    transform: translateX(60px) translateZ(20px); /* Move right and pop forward slightly */
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    .library-grid { gap: 40px; }
+    .book-scene:hover .book { transform: translateX(10px); } /* Less movement on mobile */
+    .book-scene:hover .book-cover { transform: rotateY(-160deg); } /* Keeps it accessible */
+  }
+
+   .ap-section {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333333;
+  }
+
+  .ap-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Header Area */
+  .ap-header {
+    margin-bottom: 50px;
+    max-width: 800px;
+  }
+
+  .ap-kicker {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0056b3; /* Classic Academic Blue */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+  }
+
+  .ap-lead {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-top: 15px;
+  }
+
+  /* Grid Layout */
+  .ap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Columns equal width */
+    gap: 40px;
+  }
+
+  /* Card Design - Clean & Professional */
+  .ap-card {
+    background-color: #f8f9fa; /* Very light grey background */
+    padding: 35px;
+    border-top: 4px solid #0056b3; /* Solid color accent bar */
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    /* Subtle animation */
+    transition: transform 0.3s ease;
+  }
+
+  /* Hover effect - Minimal lift */
+  .ap-card:hover {
+    transform: translateY(-5px);
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+
+  .ap-card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.35rem;
+    color: #222;
+    font-weight: 600;
+  }
+
+  /* List Styling */
+  .ap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ap-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  /* Custom Arrow Icon for List */
+  .ap-list li::before {
+    content: "\f105"; /* FontAwesome angle-right */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #0056b3;
+    font-size: 16px;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .ap-section {
+      padding: 40px 15px;
+    }
+    
+    .ap-grid {
+      grid-template-columns: 1fr; /* Stack vertically */
+      gap: 20px;
+    }
+
+    .ap-card {
+      padding: 25px;
+    }
+    
+    .ap-header h2 {
+      font-size: 28px !important; /* Ensure readable size on small screens */
+    }
+  }
+   /* --- SCOPED SCHOOL SECTION STYLES (Prefix: sch-) --- */
+
+  /* Section Wrapper */
+  .sch-section {
+    background-color: #f4f6f9; /* Light academic gray background */
+    padding: 70px 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    box-sizing: border-box;
+  }
+
+  .sch-container {
+    max-width: 1000px; /* Slightly tighter width for reading focus */
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Header Styles */
+  .sch-head {
+    margin-bottom: 45px;
+    border-left: 5px solid #1a4a8d; /* "School Blue" Accent Bar */
+    padding-left: 25px;
+    background: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  .sch-kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a4a8d; /* Matches accent */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+  }
+
+  .sch-lead {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 12px;
+    max-width: 90%;
+  }
+
+  /* Grid Layout */
+  .sch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 30px;
+  }
+
+  /* Card Styles - "Official Document" Look */
+  .sch-card {
+    background: #ffffff;
+    border: 1px solid #d1d9e6; /* Crisp border */
+    border-radius: 6px;
+    padding: 0; /* Content padding handled inside */
+    height: 100%; /* Equal height cards */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Card Title Area */
+  .sch-card-header {
+    background-color: #eef2f7; /* Subtle blue-gray header */
+    padding: 20px 25px;
+    border-bottom: 1px solid #d1d9e6;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .sch-card h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #1a4a8d;
+    font-weight: 700;
+  }
+
+  /* Card Body */
+  .sch-card-body {
+    padding: 25px;
+  }
+
+  /* List Styles */
+  .sch-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sch-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #444;
+    border-bottom: 1px dashed #eee; /* Lined paper feel */
+    padding-bottom: 8px;
+  }
+
+  .sch-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  /* Icon for List */
+  .sch-list li::before {
+    content: "\f00c"; /* Checkmark */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: #27ae60; /* Success Green for "Results" */
+    font-size: 0.9rem;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .sch-section {
+      padding: 50px 15px;
+    }
+    .sch-grid {
+      grid-template-columns: 1fr; /* Stack on mobile */
+      gap: 20px;
+    }
+    .sch-head {
+      padding-left: 20px;
+      border-left-width: 4px;
+    }
+    .sch-lead {
+      max-width: 100%;
+    }
+  }
   </style>
 </head>
 
@@ -485,78 +1096,159 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section class="section" id="about">
-    <div class="page-wrap">
-      <div class="section-head">
-        <div>
-          <span class="kicker"><i class="fa-solid fa-landmark"></i> Institution Overview</span>
-          <h2 class="h1" style="font-size: clamp(28px, 3.2vw, 40px); margin: 10px 0 0;">A trusted centre for structured art training</h2>
-        </div>
+<!-- About Section with Unique 'inst-' Classes -->
+<section class="inst-section" id="about">
+  <div class="inst-container">
+    
+    <!-- Section Header -->
+    <div class="inst-header inst-anim">
+      <div class="inst-badge">
+        <i class="fa-solid fa-landmark"></i> Institution Overview
       </div>
-
-      <div class="grid-2">
-        <div class="cardx">
-          <h3>Who we are</h3>
-          <p>
-            Shardabai Pawar Kala Mahavidyalaya is located in Karhati and operates under the Directorate of Art,
-            Maharashtra State, Mumbai. That means your academic standards and certification remain recognized and reliable.
-          </p>
-          <p style="margin-top: 10px;">
-            Since 1993–1994, the college has built a learning culture where imagination is respected, but craft comes first.
-            Students learn how to see, how to draw, how to build form, and how to teach art with confidence.
-          </p>
-        </div>
-
-        <div class="cardx">
-          <h3>What students gain</h3>
-          <ul class="bullets">
-            <li>Studio discipline and regular practice habits</li>
-            <li>Stronger observation, form, and composition</li>
-            <li>Feedback-driven improvement and evaluation readiness</li>
-            <li>Confidence for classrooms, studios, and professional work</li>
-          </ul>
-        </div>
-      </div>
+      <h2 class="inst-title">
+        A trusted centre for <br>structured art training
+      </h2>
     </div>
-  </section>
+
+    <!-- Content Grid -->
+    <div class="inst-grid">
+      
+      <!-- Card 1 -->
+      <div class="inst-card inst-card-primary inst-anim">
+        <h3 class="inst-card-title">Who we are</h3>
+        <p class="inst-text">
+          Shardabai Pawar Kala Mahavidyalaya is located in Karhati and operates under the Directorate of Art,
+          Maharashtra State, Mumbai. That means your academic standards and certification remain recognized and reliable.
+        </p>
+        <p class="inst-text" style="margin-top: 15px;">
+          Since 1993–1994, the college has built a learning culture where imagination is respected, but craft comes first.
+          Students learn how to see, how to draw, how to build form, and how to teach art with confidence.
+        </p>
+        <!-- Decorative corner stroke -->
+        <div class="inst-deco-corner"></div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="inst-card inst-card-secondary inst-anim" style="transition-delay: 0.2s;">
+        <h3 class="inst-card-title">What students gain</h3>
+        <ul class="inst-list">
+          <li>Studio discipline and regular practice habits</li>
+          <li>Stronger observation, form, and composition</li>
+          <li>Feedback-driven improvement and evaluation readiness</li>
+          <li>Confidence for classrooms, studios, and professional work</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- Culture -->
-  <section class="section" id="culture" style="padding-top: 0;">
-    <div class="page-wrap">
-      <div class="grid-3">
-        <div class="cardx feature-card">
-          <h3><i class="fa-solid fa-stopwatch" style="margin-right: 10px;"></i>Discipline</h3>
+<section class="section" id="culture">
+  <div class="library-grid">
+
+    <!-- Book 1: Discipline -->
+    <div class="book-scene">
+      <div class="book">
+        
+        <!-- INSIDE PAGE: Text on Image -->
+        <div class="book-inside" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=400&q=80');">
           <p>
             Art improves when your routine is steady. We train students to respect time, process, and consistency.
           </p>
         </div>
-
-        <div class="cardx feature-card">
-          <h3><i class="fa-solid fa-eye" style="margin-right: 10px;"></i>Observation</h3>
-          <p>
-            Students learn to see details, proportions, and form. This becomes the base for every artwork and every lesson they teach.
-          </p>
+        
+        <!-- COVER -->
+        <div class="book-cover">
+          <!-- Front -->
+          <div class="cover-face front" style="background-color: #d94e35; background: linear-gradient(135deg, #d94e35 0%, #8f2b1b 100%);">
+            <i class="fa-solid fa-stopwatch cover-icon"></i>
+            <h3 class="cover-title">Discipline</h3>
+          </div>
+          <!-- Back (Inside Cover) -->
+          <div class="cover-face back">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=300&q=80" alt="Process" class="inside-img">
+            <span class="inside-label">The Process</span>
+          </div>
         </div>
 
-        <div class="cardx feature-card">
-          <h3><i class="fa-solid fa-chalkboard-user" style="margin-right: 10px;"></i>Teaching readiness</h3>
-          <p>
-            Along with art practice, students develop classroom confidence and a professional approach to mentoring others.
-          </p>
-        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Results -->
-  <section class="section" id="results">
-    <div class="page-wrap">
-      <div class="section-head">
+    <!-- Book 2: Observation -->
+    <div class="book-scene">
+      <div class="book">
+        
+        <!-- INSIDE PAGE -->
+        <div class="book-inside" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1515405295579-ba7b45498955?auto=format&fit=crop&w=400&q=80');">
+          <p>
+            Students learn to see details, proportions, and form. This becomes the base for every artwork.
+          </p>
+        </div>
+        
+        <!-- COVER -->
+        <div class="book-cover">
+          <div class="cover-face front" style="background-color: #c2402a; background: linear-gradient(135deg, #c2402a 0%, #752214 100%);">
+            <i class="fa-solid fa-eye cover-icon"></i>
+            <h3 class="cover-title">Observation</h3>
+          </div>
+          <div class="cover-face back">
+            <img src="https://images.unsplash.com/photo-1452802442853-4695379c1da1?auto=format&fit=crop&w=300&q=80" alt="Focus" class="inside-img">
+            <span class="inside-label">Visual Focus</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Book 3: Teaching -->
+    <div class="book-scene">
+      <div class="book">
+        
+        <!-- INSIDE PAGE -->
+        <div class="book-inside" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=400&q=80');">
+          <p>
+            Along with art practice, students develop classroom confidence and a professional approach to mentoring.
+          </p>
+        </div>
+        
+        <!-- COVER -->
+        <div class="book-cover">
+          <div class="cover-face front" style="background-color: #e35d45; background: linear-gradient(135deg, #e35d45 0%, #a83622 100%);">
+            <i class="fa-solid fa-chalkboard-user cover-icon"></i>
+            <h3 class="cover-title">Teaching</h3>
+          </div>
+          <div class="cover-face back">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=300&q=80" alt="Mentorship" class="inside-img">
+            <span class="inside-label">Mentorship</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+ <!-- Results Section -->
+  <section class="section sch-section" id="results">
+    <div class="page-wrap sch-container">
+      
+      <!-- Header Block -->
+      <div class="section-head sch-head">
         <div>
-          <span class="kicker"><i class="fa-solid fa-chart-line"></i> Academic Performance</span>
-          <h2 class="h1" style="font-size: clamp(28px, 3.2vw, 40px); margin: 10px 0 0;">Strong results. Real outcomes.</h2>
-          <p class="lead" style="margin-top: 10px;">
+          <span class="kicker sch-kicker">
+            <i class="fa-solid fa-chart-line"></i> Academic Performance
+          </span>
+          
+          <h2 class="h1" style="font-size: clamp(24px, 2.5vw, 36px); margin: 5px 0 0; color: #222;">
+            Strong results. Real outcomes.
+          </h2>
+          
+          <p class="lead sch-lead">
             Over the years, the college has maintained consistent performance, with results reported between 90% and 100%
             from 1993–94 to 2023–24. The goal is not just passing exams.
             The goal is building educators who can guide the next generation.
@@ -564,29 +1256,43 @@
         </div>
       </div>
 
-      <div class="grid-2">
-        <div class="cardx vm-card">
-          <h3>What this performance indicates</h3>
-          <ul class="bullets">
-            <li>Structured teaching and practical evaluation</li>
-            <li>Studio practice supported by faculty feedback</li>
-            <li>Focus on fundamentals before advanced work</li>
-            <li>Preparation that translates into professional confidence</li>
-          </ul>
+      <!-- Grid Content -->
+      <div class="grid-2 sch-grid">
+        
+        <!-- Card 1 -->
+        <div class="cardx vm-card sch-card">
+          <div class="sch-card-header">
+            <h3>What this performance indicates</h3>
+          </div>
+          <div class="sch-card-body">
+            <ul class="bullets sch-list">
+              <li>Structured teaching and practical evaluation</li>
+              <li>Studio practice supported by faculty feedback</li>
+              <li>Focus on fundamentals before advanced work</li>
+              <li>Preparation that translates into professional confidence</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="cardx vm-card">
-          <h3>Where students apply their skills</h3>
-          <ul class="bullets">
-            <li>Schools and art education roles</li>
-            <li>Studio-based creative work</li>
-            <li>Community art and cultural programs</li>
-            <li>Professional practice with discipline and method</li>
-          </ul>
+        <!-- Card 2 -->
+        <div class="cardx vm-card sch-card">
+          <div class="sch-card-header">
+            <h3>Where students apply their skills</h3>
+          </div>
+          <div class="sch-card-body">
+            <ul class="bullets sch-list">
+              <li>Schools and art education roles</li>
+              <li>Studio-based creative work</li>
+              <li>Community art and cultural programs</li>
+              <li>Professional practice with discipline and method</li>
+            </ul>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
+
 
   <!-- Courses -->
   <section class="section" id="courses">
@@ -953,15 +1659,33 @@
       setScrollProgress();
     });
 
-    window.addEventListener('scroll', () => {
-      // header behavior (optional)
-      const header = document.getElementById('header');
-      const y = window.pageYOffset || 0;
-      if (header) header.classList.toggle('scrolled', y > 50);
-      setScrollProgress();
-    });
-    document.getElementById("yearNow")?.textContent = new Date().getFullYear();
+    document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('inst-visible');
+        }
+      });
+    }, { threshold: 0.15 }); // Triggers when 15% of the element is visible
 
+    document.querySelectorAll('.inst-anim').forEach((el) => {
+      observer.observe(el);
+    });
+  });
+  <!-- Animation Script -->
+ 
+    document.addEventListener("DOMContentLoaded", function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.pop-in').forEach(el => observer.observe(el));
+    });
+  
   </script>
   <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
 </body>
