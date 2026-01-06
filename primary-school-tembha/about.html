@@ -22,7 +22,7 @@
 
   <style>
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; font-family: "Poppins", sans-serif; }
+    html, body { margin: 0; padding: 0; font-family: "Poppins", sans-serif; overflow-x: hidden; }
     img { max-width: 100%; display: block; }
     a { text-decoration: none; }
 
@@ -41,6 +41,9 @@
     .ggm-btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.2); filter: brightness(1.02); }
     @media (max-width: 768px){
       a.ggm-btn{ display:none !important; visibility:hidden !important; opacity:0 !important; pointer-events:none !important; }
+      .footer-logo-img {
+  margin-left: 120px;
+}
     }
 
     /* =========================
@@ -340,7 +343,7 @@
       position: relative;
       overflow: hidden;
       transform: translateZ(0);
-      animation: psFadeUp .55s ease both;
+      /* animation: psFadeUp .55s ease both;  <-- REMOVED to use Scroll Trigger instead */
     }
     .ps-card::before{
       content:"";
@@ -368,7 +371,7 @@
       box-shadow: var(--ps-shadow-soft);
       background: #fff;
       position: relative;
-      animation: psFadeUp .65s ease both;
+      /* animation: psFadeUp .65s ease both; <-- REMOVED to use Scroll Trigger */
     }
     .ps-photo::after{
       content:"";
@@ -508,10 +511,10 @@
     }
 
     /* Micro animation */
-    @keyframes psFadeUp{
+    /* @keyframes psFadeUp{
       from{ opacity: 0; transform: translateY(10px); }
       to{ opacity: 1; transform: translateY(0); }
-    }
+    } */
 
     @media (prefers-reduced-motion: reduce){
       .ps-card, .ps-photo, .ps-miniCard{ animation: none !important; }
@@ -535,14 +538,43 @@
       .ps-actions{ justify-content: flex-start; }
       .ps-photo img{ height: 300px; }
     }
+
+    /* =========================================
+       NEW ANIMATION CLASSES (Scroll Trigger)
+    ========================================= */
+    
+    /* Base reveal state */
+    .reveal, .reveal-left, .reveal-right, .zoom-in {
+      opacity: 0;
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+
+    /* Upward Reveal */
+    .reveal { transform: translateY(40px); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* Side Slide Reveals */
+    .reveal-left { transform: translateX(-40px); }
+    .reveal-left.active { opacity: 1; transform: translateX(0); }
+
+    .reveal-right { transform: translateX(40px); }
+    .reveal-right.active { opacity: 1; transform: translateX(0); }
+
+    /* Zoom Effect */
+    .zoom-in { transform: scale(0.92); }
+    .zoom-in.active { opacity: 1; transform: scale(1); }
+
+    /* Stagger Delays */
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
+
   </style>
 
 </head>
 
 <body>
-
-
-
 
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
@@ -592,18 +624,31 @@
     </div>
   </header>
 
-  <!-- HERO (same content, new layout) -->
+  <!-- HERO -->
   <section class="ps-hero" id="home">
     <div class="ps-wrap ps-heroGrid">
 
       <div class="ps-heroText">
+        <!-- Added reveal class -->
+        <h1 class="reveal">Primary School Karhati Tembha</h1>
+        <!-- Added reveal with delay -->
+        <p class="reveal delay-100">A warm place for early learning. Strong basics, good habits, and confident kids.</p>
+        
+        <!-- Added reveal with delay -->
+        <div class="ps-heroChips reveal delay-200">
+             <!-- Chips content (optional addition if needed, empty in source) -->
+        </div>
 
-        <h1>Primary School Karhati Tembha</h1>
-
-        <p>A warm place for early learning. Strong basics, good habits, and confident kids.</p>
+        <div class="ps-heroActions reveal delay-300">
+           <!-- No buttons in original snippet here, but wrapper is animated -->
+        </div>
       </div>
 
-      <div class="ps-heroMedia" aria-hidden="true">
+      <div class="ps-heroMedia reveal-right" aria-hidden="true">
+        <div class="ps-heroFrame">
+             <img src="/assets/primary-school-bg-hero.JPG" alt="Primary School Kids">
+        </div>
+        
         <div class="ps-miniCard ps-miniCard--1">
           <i class="fa-solid fa-face-smile"></i>
           Friendly Teachers
@@ -621,68 +666,68 @@
     </div>
   </section>
 
-  <!-- About (same content) -->
+  <!-- About -->
   <section class="ps-section ps-section--soft" id="about">
     <div class="ps-wrap">
-      <div class="ps-head">
+      <div class="ps-head reveal">
         <h2>About the School</h2>
         <div class="ps-bar"></div>
         <p>Established in 2000. We focus on a safe, caring routine and strong primary foundation.</p>
       </div>
 
       <div class="ps-grid">
-        <div class="ps-card">
+        <div class="ps-card reveal-left">
           <p class="ps-text">
             We help children learn step by step with daily practice and simple activities.
             Along with studies, we build good habits like cleanliness, respect, and teamwork.
           </p>
 
           <div class="ps-features">
-            <div class="ps-feature">
+            <div class="ps-feature reveal delay-100">
               <h3><i class="fa-solid fa-book-open"></i> Strong Basics</h3>
               <p>Reading, writing, and numbers with daily practice.</p>
             </div>
 
-            <div class="ps-feature">
+            <div class="ps-feature reveal delay-200">
               <h3><i class="fa-solid fa-shield-heart"></i> Safe Campus</h3>
               <p>A supportive environment where children feel secure.</p>
             </div>
 
-            <div class="ps-feature">
+            <div class="ps-feature reveal delay-300">
               <h3><i class="fa-solid fa-children"></i> Good Habits</h3>
               <p>Respect, punctuality, and discipline through routine.</p>
             </div>
           </div>
         </div>
 
-        <div class="ps-photo" aria-hidden="true">
+        <div class="ps-photo reveal-right delay-200" aria-hidden="true">
           <img src="/assets/primary-school-history.jpeg" alt="Primary School Karhati Tembha" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Academics (same content) -->
+  <!-- Academics -->
   <section class="ps-section" id="academics">
     <div class="ps-wrap">
-      <div class="ps-head">
+      <div class="ps-head reveal">
         <h2>Learning Focus</h2>
         <div class="ps-bar"></div>
         <p>Simple structure. Daily improvement. Better confidence.</p>
       </div>
 
       <div class="ps-features">
-        <div class="ps-feature">
+        <div class="ps-feature reveal delay-100">
           <h3><i class="fa-solid fa-pen-nib"></i> Literacy</h3>
           <p>Reading practice, neat writing, and vocabulary building.</p>
         </div>
 
-        <div class="ps-feature">
+        <div class="ps-feature reveal delay-200">
           <h3><i class="fa-solid fa-calculator"></i> Numeracy</h3>
           <p>Number confidence with simple examples and practice.</p>
         </div>
 
-        <div class="ps-feature">
+        <div class="ps-feature reveal delay-300">
           <h3><i class="fa-solid fa-seedling"></i> Life Skills</h3>
           <p>Communication, teamwork, attention, and responsibility.</p>
         </div>
@@ -690,10 +735,11 @@
     </div>
   </section>
 
-  <!-- CTA (same content) -->
+  <!-- CTA -->
   <section class="ps-cta" aria-label="Contact call to action">
     <div class="ps-wrap">
-      <div class="ps-ctaBox">
+      <!-- Added zoom-in animation -->
+      <div class="ps-ctaBox zoom-in">
         <div>
           <h3>Need admission details?</h3>
           <p>Call us for timings, guidance, and admission information.</p>
@@ -781,6 +827,29 @@
 
   <script src="/assets/js/institute.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
-</body>
 
+  <!-- ANIMATION OBSERVER SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        threshold: 0.15, // Trigger when 15% of the element is visible
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Run once
+          }
+        });
+      }, observerOptions);
+
+      // Select all elements to animate
+      const animElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .zoom-in');
+      animElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
 </html>

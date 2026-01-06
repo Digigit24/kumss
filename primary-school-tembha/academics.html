@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Primary School Karhati Tembha | Academics</title>
+  <title>Academics | Primary School Karhati Tembha</title>
   <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/institute.css" />
@@ -18,231 +21,320 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; font-family:"Poppins",sans-serif; }
+    /* =========================================
+       GLOBAL & UTILITIES
+    ========================================= */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: "Poppins", sans-serif; overflow-x: hidden; }
 
-    /* =========================
-       SIMPLE HERO (changed)
-       ========================= */
-    .acad-hero-simple{
-      position: relative;
-      padding: 110px 0 52px; /* respects your fixed header spacing */
-      background: #f7f9ff;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(0,0,0,.06);
+    :root {
+      --ac-blue: #233f92;
+      --ac-orange: #ff9704;
+      --ac-soft-bg: #f8fbff;
+      --ac-text: #334155;
+      --ac-card-bg: #ffffff;
+      --ac-radius: 24px;
     }
 
-    .acad-hero-simple .hero-container{
-      width: min(1100px, 92%);
+    /* Animation Classes (Scroll Trigger) */
+    .reveal-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+    .scale-in { opacity: 0; transform: scale(0.9); transition: all 0.8s ease; }
+
+    .active { opacity: 1 !important; transform: translate(0) scale(1) !important; }
+
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+
+    /* Layout Wrapper */
+    .ac-container {
+      max-width: 1150px;
       margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
+      padding: 0 20px;
     }
 
-    .acad-hero-left{
-      flex: 1;
-      min-width: 260px;
+    /* =========================================
+       HERO SECTION
+    ========================================= */
+    .ac-hero {
+      position: relative;
+      padding: 140px 0 80px; /* Top padding accounts for fixed header */
+      background: radial-gradient(circle at 10% 20%, rgba(255, 151, 4, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 80%, rgba(35, 63, 146, 0.08) 0%, transparent 40%),
+                  #ffffff;
+      text-align: center;
+      overflow: hidden;
     }
 
-    .acad-tag{
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(47,51,144,.08);
-      color: #233f92;
-      font-weight: 800;
-      border: 1px solid rgba(47,51,144,.16);
-      margin-bottom: 12px;
-    }
-
-    .acad-hero-title{
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 3.2vw, 3rem);
-      line-height: 1.08;
-      font-weight: 900;
-      color: #233f92;
-    }
-
-    .acad-hero-sub{
-      margin: 0;
-      max-width: 70ch;
-      line-height: 1.75;
-      font-size: 16px;
-      color: #333;
-    }
-
-    .acad-hero-right{
-      flex: 0 0 360px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    .acad-hero-box{
-      width: 100%;
-      border-radius: 16px;
-      background: #ffffff;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,.08);
-      padding: 18px;
-    }
-
-    .acad-hero-box h4{
-      margin: 0 0 10px;
-      font-size: 16px;
-      font-weight: 800;
-      color: #233f92;
-    }
-
-    .acad-hero-links{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .acad-pill-link{
+    .ac-hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      text-decoration: none;
+      padding: 8px 16px;
+      background: #eef2ff;
+      color: var(--ac-blue);
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      border: 1px solid rgba(35, 63, 146, 0.1);
+    }
+
+    .ac-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
       font-weight: 800;
-      font-size: 14px;
-      color: #0b0b0b;
-      background: rgba(255,151,4,.20);
-      border: 1px solid rgba(255,151,4,.35);
-      transition: transform .2s ease, box-shadow .2s ease;
+      color: var(--ac-blue);
+      margin: 0 0 16px;
+      line-height: 1.1;
     }
 
-    .acad-pill-link:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 10px 18px rgba(0,0,0,.10);
+    .ac-hero p {
+      font-size: 1.15rem;
+      color: var(--ac-text);
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
     }
 
-    /* =========================
-       SIMPLE HORIZONTAL LAYOUT
-       ========================= */
-    .acad-wrap-simple{
-      width: min(1100px, 92%);
-      margin: 0 auto;
-      padding: 52px 0;
+    /* Decorative blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      z-index: 0;
+      opacity: 0.6;
+    }
+    .blob-1 { width: 300px; height: 300px; background: #fff4d6; top: -50px; left: -100px; }
+    .blob-2 { width: 250px; height: 250px; background: #e0e7ff; bottom: 20px; right: -50px; }
+
+    /* =========================================
+       PHILOSOPHY SECTION
+    ========================================= */
+    .ac-philo {
+      padding: 80px 0;
+      background: var(--ac-soft-bg);
     }
 
-    .acad-row{
-      display: flex;
-      gap: 18px;
-      align-items: stretch;
-      margin-bottom: 18px;
-    }
-
-    .acad-panel{
-      flex: 1;
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,.07);
-      padding: 22px;
-    }
-
-    .acad-panel h2{
-      margin: 0 0 10px;
-      font-size: 22px;
-      font-weight: 900;
-      color: #233f92;
-      border-bottom: 4px solid #ff9704;
-      display: inline-block;
-      padding-bottom: 8px;
-    }
-
-    .acad-panel p{
-      margin: 12px 0 0;
-      color: #222;
-      line-height: 1.8;
-      font-size: 15.5px;
-    }
-
-    .acad-miniList{
-      margin: 12px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-    .acad-miniList li{
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 10px 0;
-      border-top: 1px dashed rgba(0,0,0,.10);
-      color: #222;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-    .acad-miniList li:first-child{ border-top: 0; padding-top: 0; }
-    .acad-miniList i{ color:#ff9704; margin-top: 3px; }
-
-    .acad-ctaBar{
-      background: linear-gradient(135deg, #ffffff, #e9f1fb);
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,.08);
-      padding: 18px;
-      display: flex;
+    .ac-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
       align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
     }
-    .acad-ctaBar strong{ color:#233f92; font-weight: 900; }
-    .acad-ctaBar span{ color:#222; font-size: 14.5px; }
 
-    .acad-ctaBtns{
+    .ac-philo-img {
+      position: relative;
+      overflow: hidden;
+      transform: rotate(-2deg);
+    }
+
+    .ac-philo-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .ac-philo-img:hover img { transform: scale(1.05); }
+
+    .ac-philo-content h2 {
+      font-size: 2.2rem;
+      color: var(--ac-blue);
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .ac-philo-content p {
+      color: var(--ac-text);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+
+    .check-list { list-style: none; padding: 0; }
+    .check-list li {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-weight: 500;
+      color: #1e293b;
+    }
+    .check-list i {
+      color: var(--ac-orange);
+      margin-top: 4px;
+      background: #fff8e6;
+      padding: 6px;
+      border-radius: 50%;
+      font-size: 0.8rem;
     }
 
-    .acad-btn{
-      display: inline-flex;
+/* =========================================
+   LARGE CENTERED HEADER STYLES
+========================================= */
+.ac-subjects {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+/* Specific Header Styling for this Section */
+.ac-subjects .section-head {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 80px auto; /* Centered with bottom spacing */
+}
+
+.ac-subjects .section-head h2 {
+  font-size: 3.8rem; /* Very Large Size */
+  line-height: 1.1;
+  font-weight: 900;
+  color: #233f92; /* School Blue */
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.ac-subjects .section-head p {
+  font-size: 1.5rem; /* Large Subtext */
+  color: #555;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .ac-subjects .section-head h2 { font-size: 2.5rem; }
+  .ac-subjects .section-head p { font-size: 1.15rem; }
+}
+
+/* --- Keep the previous No-Card List Styles below --- */
+.subject-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  column-gap: 60px;
+  row-gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sub-item { display: flex; align-items: flex-start; gap: 20px; }
+
+.sub-icon-circle {
+  flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(35, 63, 146, 0.1); color: #233f92;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; transition: all 0.3s ease;
+}
+
+.sub-item:nth-child(even) .sub-icon-circle {
+  background: rgba(255, 151, 4, 0.1); color: #d97706;
+}
+
+.sub-item:hover .sub-icon-circle { transform: scale(1.1); background: #233f92; color: #fff; }
+.sub-item:nth-child(even):hover .sub-icon-circle { background: #ff9704; color: #fff; }
+
+.sub-content h3 { font-size: 1.35rem; font-weight: 800; color: #1e293b; margin: 0 0 10px; }
+.sub-content p { font-size: 1rem; line-height: 1.7; color: #64748b; margin: 0; }
+
+@media (max-width: 768px) {
+  .subject-list { grid-template-columns: 1fr; gap: 40px; }
+}
+
+    /* =========================================
+       METHODOLOGY (TIMELINE STYLE)
+    ========================================= */
+    .ac-method {
+      padding: 90px 0;
+      background: radial-gradient(circle at top right, #fff4e3 0%, #fff 40%);
+    }
+
+    .method-item {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+      align-items: flex-start;
+    }
+    .method-number {
+      flex-shrink: 0;
+      width: 50px; height: 50px;
+      background: var(--ac-orange);
+      color: #fff;
+      border-radius: 50%;
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 16px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 900;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      box-shadow: 0 8px 16px rgba(255, 151, 4, 0.3);
     }
-    .acad-btn--primary{
-      background: rgba(255,151,4,.95);
-      color: #0b0b0b;
-      box-shadow: 0 14px 26px rgba(0,0,0,.18);
+    .method-text h3 {
+      margin: 0 0 8px;
+      color: var(--ac-blue);
+      font-size: 1.3rem;
     }
-    .acad-btn--ghost{
+    .method-text p {
+      margin: 0;
+      color: var(--ac-text);
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       CTA SECTION
+    ========================================= */
+    .ac-cta {
+      padding: 80px 0;
       background: #fff;
-      color: #233f92;
-      border: 1px solid rgba(35,63,146,.18);
     }
-    .acad-btn:hover{ transform: translateY(-2px); }
+    .ac-cta-box {
+      background: linear-gradient(135deg, var(--ac-blue) 0%, #1a2e6e 100%);
+      border-radius: 30px;
+      padding: 50px 30px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(35, 63, 146, 0.25);
+    }
+    /* Background pattern */
+    .ac-cta-box::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.5;
+    }
+    .ac-cta-content { position: relative; z-index: 2; }
 
-    /* Responsive */
-    @media (max-width: 900px){
-      .acad-hero-simple .hero-container{
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .acad-hero-right{
-        flex: 1;
-        width: 100%;
-      }
-      .acad-row{
-        flex-direction: column;
-      }
+    .ac-cta h2 { font-size: 2rem; margin-bottom: 15px; }
+    .ac-cta p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+    .ac-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ac-orange);
+      color: #000;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .ac-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
-    /* Keep your existing CTA button style (unchanged) */
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media (max-width: 768px) {
+      .ac-hero { padding-top: 120px; }
+      .ac-grid-2 { grid-template-columns: 1fr; }
+      .ac-philo-img { order: -1; margin-bottom: 20px; transform: rotate(0); }
+      .ac-hero h1 { font-size: 2.2rem; }
+    }
+    
+    /* Keep your existing CTA button style for header */
     .ggm-btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:10px 16px; border-radius:999px; text-decoration:none;
@@ -258,12 +350,9 @@
 
 <body>
 
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-
-
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <!-- Header (same as your existing structure) -->
+  <!-- Header (Maintained Exactly as Requested) -->
   <header class="gm-header" id="header">
     <div class="gm-container">
       <nav class="gm-nav" aria-label="Primary">
@@ -306,163 +395,271 @@
     </div>
   </header>
 
-  <!-- HERO (changed to simple horizontal layout) -->
-  <section class="acad-hero-simple" id="home">
-    <div class="hero-container">
-      <div class="acad-hero-left">
-        <div class="acad-tag"><i class="fa-solid fa-graduation-cap"></i> Academics</div>
-        <h1 class="acad-hero-title">Academics at Primary School Karhati Tembha</h1>
-        <p class="acad-hero-sub">
-          Demo content for the academics page. Use this space to explain your curriculum structure, learning approach,
-          practical exposure, and the support system for students.
+  <!-- =========================================
+       NEW HERO SECTION
+  ========================================= -->
+  <section class="ac-hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="ac-container">
+      <div class="ac-hero-badge reveal-up">
+        <i class="fa-solid fa-graduation-cap"></i> Academics
+      </div>
+      <h1 class="reveal-up delay-100">Building a Strong Foundation<br>for Future Leaders</h1>
+      <p class="reveal-up delay-200">
+        At Karhati Tembha Primary School, we combine traditional values with modern learning techniques to foster curiosity, confidence, and character in every child.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================
+       PHILOSOPHY / OVERVIEW
+  ========================================= -->
+  <section class="ac-philo">
+    <div class="ac-container">
+      <div class="ac-grid-2">
+        <!-- Content -->
+        <div class="ac-philo-content reveal-left">
+          <h2>Our Academic Philosophy</h2>
+          <p>
+            We believe that primary education is the stepping stone for lifelong learning. Our curriculum is designed not just to teach subjects, but to teach children <strong>how to learn</strong>.
+          </p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-check"></i> Focus on strong literacy and numeracy skills.</li>
+            <li><i class="fa-solid fa-check"></i> Activity-based learning to keep engagement high.</li>
+            <li><i class="fa-solid fa-check"></i> Personalized attention to ensure no child is left behind.</li>
+            <li><i class="fa-solid fa-check"></i> Integrating moral values into daily lessons.</li>
+          </ul>
+        </div>
+        
+        <!-- Image -->
+        <div class="ac-philo-img reveal-right">
+          <!-- Placeholder for class activity image -->
+          <img src="/assets/how-to-learn.png" alt="Students learning in class" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- =========================================
+       SUBJECTS / CURRICULUM (NO CARDS)
+  ========================================= -->
+  <section class="ac-subjects" id="curriculum">
+    <div class="ac-container">
+      
+      <!-- Header -->
+      <div class="section-head reveal-up">
+        <h2>What We Teach</h2>
+        <p>A structured approach to holistic development.</p>
+      </div>
+
+      <!-- Clean List Grid -->
+      <div class="subject-list">
+        
+        <!-- 1. Language -->
+        <div class="sub-item reveal-up delay-100">
+          <div class="sub-icon-circle"><i class="fa-solid fa-book-open-reader"></i></div>
+          <div class="sub-content">
+            <h3>Language Proficiency</h3>
+            <p>We focus on <strong>Marathi & English</strong> fluency. Students engage in daily reading, phonics, and poetry recitation to build strong communication skills.</p>
+          </div>
+        </div>
+
+        <!-- 2. Math -->
+        <div class="sub-item reveal-up delay-200">
+          <div class="sub-icon-circle"><i class="fa-solid fa-calculator"></i></div>
+          <div class="sub-content">
+            <h3>Mathematics & Logic</h3>
+            <p>Learning numbers without fear. We use objects, beads, and games to make addition, subtraction, and tables easy to understand and apply.</p>
+          </div>
+        </div>
+
+        <!-- 3. EVS -->
+        <div class="sub-item reveal-up delay-300">
+          <div class="sub-icon-circle"><i class="fa-solid fa-leaf"></i></div>
+          <div class="sub-content">
+            <h3>Nature & Environment</h3>
+            <p>Students explore the world around them through simple science experiments, garden visits, and learning about hygiene and seasons.</p>
+          </div>
+        </div>
+
+        <!-- 4. Art -->
+        <div class="sub-item reveal-up delay-100">
+          <div class="sub-icon-circle"><i class="fa-solid fa-palette"></i></div>
+          <div class="sub-content">
+            <h3>Art & Creativity</h3>
+            <p>We nurture imagination through drawing, craft, clay modeling, and music, helping children express themselves freely.</p>
+          </div>
+        </div>
+
+        <!-- 5. Sports -->
+        <div class="sub-item reveal-up delay-200">
+          <div class="sub-icon-circle"><i class="fa-solid fa-person-running"></i></div>
+          <div class="sub-content">
+            <h3>Physical Fitness</h3>
+            <p>Daily routines include Mass P.T., Yoga, and structured playground games (Kho-Kho, Running) to build stamina and discipline.</p>
+          </div>
+        </div>
+
+        <!-- 6. Values -->
+        <div class="sub-item reveal-up delay-300">
+          <div class="sub-icon-circle"><i class="fa-solid fa-hands-praying"></i></div>
+          <div class="sub-content">
+            <h3>Sanskar (Values)</h3>
+            <p>Character building is key. We teach respect for elders, honesty, and punctuality through morning prayers and moral stories.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       METHODOLOGY / APPROACH
+  ========================================= -->
+  <section class="ac-method">
+    <div class="ac-container">
+      <div class="ac-grid-2">
+        
+        <div class="reveal-left">
+           <div class="section-head">
+              <h2 style=" font-size: 2rem;">How We Teach</h2>
+              <p style="padding: 40px;">Our teaching method is simple, consistent, and child-centric.</p>
+           </div>
+           
+           <!-- Timeline Items -->
+           <div class="method-item">
+             <div class="method-number">1</div>
+             <div class="method-text">
+               <h3>Concept Introduction</h3>
+               <p>Teachers introduce new topics using real-life objects, charts, or stories to create interest.</p>
+             </div>
+           </div>
+
+           <div class="method-item">
+            <div class="method-number">2</div>
+            <div class="method-text">
+              <h3>Guided Practice</h3>
+              <p>Students practice the concept in class with the teacher's help to build confidence.</p>
+            </div>
+          </div>
+
+          <div class="method-item">
+            <div class="method-number">3</div>
+            <div class="method-text">
+              <h3>Independent Application</h3>
+              <p>Homework and activities allow students to apply what they learned on their own.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ac-philo-img reveal-right" style="transform: rotate(2deg);">
+           <img src="/assets/how-we-teach.png" alt="School Activities" style="height: 400px; object-fit: cover;">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       CTA SECTION
+  ========================================= -->
+  <section class="ac-cta">
+    <div class="ac-container">
+      <div class="ac-cta-box scale-in">
+        <div class="ac-cta-content">
+          <h2>Ready to Join Us?</h2>
+          <p>Give your child the best start in life. Contact us to learn more about the admission process or to schedule a school visit.</p>
+          <a href="/contact.html" class="ac-btn">
+            Contact Us <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (Maintained Exactly as Requested) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/index.html" class="logo" style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+            <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+            <div>
+              <div style="color: #ff9704;">KUMSS SINCE 1951</div>
+            </div>
+          </a>
+          <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+            An educational society focused on overall development of students since 1951.
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="./primary-school-tembha.html">Home</a></li>
+            <li><a href="/primary-school-tembha/about.html">About</a></li>
+            <li><a href="/primary-school-tembha/academics.html">Academics</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
+          <ul class="footer-links">
+            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+            <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone"></i> <a href="tel:+919421394242">+91 94213 94242</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:info@kumss.org">info@kumss.org</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+          ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
         </p>
       </div>
-
     </div>
-  </section>
-
-  <!-- SIMPLE HORIZONTAL CONTENT -->
-  <section>
-    <div class="acad-wrap-simple">
-
-      <div class="acad-row">
-        <div class="acad-panel">
-          <h2>Academic Overview</h2>
-          <p>
-            This section can describe how learning is planned and delivered across grade levels.
-            Keep it clear and parent-friendly. Focus on routine, clarity in concepts, and a steady pace of learning.
-          </p>
-        </div>
-
-        <div class="acad-panel">
-          <h2>Curriculum Framework</h2>
-          <p>
-            Use this space to mention your curriculum framework in a neutral way. You can add syllabus structure,
-            classroom planning, and how learning goals are followed.
-          </p>
-        </div>
-      </div>
-
-      <div class="acad-row">
-        <div class="acad-panel">
-          <h2>Subjects & Learning Areas</h2>
-          <ul class="acad-miniList">
-            <li><i class="fa-solid fa-book-open"></i> Core subjects like Language, Mathematics, Science, and Social Studies.</li>
-            <li><i class="fa-solid fa-flask"></i> Activity-based learning to support understanding and application.</li>
-            <li><i class="fa-solid fa-seedling"></i> Basic practical and agricultural concepts as demo content highlights.</li>
-          </ul>
-        </div>
-
-        <div class="acad-panel">
-          <h2>Student Support</h2>
-          <ul class="acad-miniList">
-            <li><i class="fa-solid fa-user-check"></i> Classroom feedback and guidance to support steady progress.</li>
-            <li><i class="fa-solid fa-clipboard-check"></i> Periodic assessments for learning review.</li>
-            <li><i class="fa-solid fa-people-group"></i> Encouraging routines, discipline, teamwork, and respectful behaviour.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="acad-ctaBar">
-        <div>
-          <strong>Need more information?</strong><br />
-          <span>Use this demo CTA to guide visitors to contact or visit scheduling.</span>
-        </div>
-        <div class="acad-ctaBtns">
-          <a class="acad-btn acad-btn--primary" href="/contact.html">Schedule a Visit</a>
-          <a class="acad-btn acad-btn--ghost" href="tel:+919421394242">Call Now</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="/index.html" class="logo" style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
-                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
-                        <div>
-                            <div style="color: #ff9704;">KUMSS SINCE 1951</div>
-                        </div>
-                    </a>
-                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
-                        An educational society focused on overall development of students since 1951.
-                    </p>
-
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h3
-                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="./primary-school-tembha.html">Home</a></li>
-                        <li><a href="/primary-school-tembha/about.html">About</a></li>
-                        <li><a href="/primary-school-tembha/academics.html">Academics</a></li>
-                         <li><a href="/gallery.html">Gallery</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h3
-                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Our Institutes</h3>
-                    <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
-                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h3
-                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-phone"></i>
-<a href="tel:+919421394242">+91 94213 94242</a></li>
-                        <li><i class="fas fa-envelope"></i>
-<a href="mailto:info@kumss.org">info@kumss.org</a></li>
-                        <li><i class="fas fa-envelope"></i>
-<a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
-                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
-                </p>
-            </div>
-        </div>
-    </footer>
+  </footer>
 
   <script src="/assets/js/institute.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      const animElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .scale-in');
+      animElements.forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
