@@ -15,17 +15,31 @@
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Existing CSS -->
+    <!-- Existing CSS (Your main file) -->
     <link rel="stylesheet" href="/assets/css/institute.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- GSAP -->
+    <!-- GSAP (Animations) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <style>
+        /* ==================== CRITICAL FIXES ==================== */
+        /* This fixes the white space on the right side of mobile view */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        /* Ensure Bootstrap rows don't cause overflow */
+        .row {
+            margin-right: 0;
+            margin-left: 0;
+        }
+        
         /* ==================== THEME CONFIG ==================== */
         :root {
             --blue: #003366;
@@ -38,7 +52,6 @@
             font-family: 'Poppins', sans-serif;
             color: #444;
             background: #fff;
-            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
@@ -50,9 +63,17 @@
         .text-orange { color: var(--orange) !important; }
         .bg-blue { background-color: var(--blue) !important; }
         
+        /* ==================== HEADER Z-INDEX FIX ==================== */
+        /* Ensures header stays on top but menu works correctly */
+        .gm-header {
+            position: relative;
+            z-index: 1000;
+            background: #fff;
+        }
+
         /* ==================== MAGAZINE HERO ==================== */
         .mag-hero {
-            padding-top: 180px;
+            padding-top: 50px; /* Reduced top padding to fit better */
             padding-bottom: 80px;
             text-align: center;
             background: #fff;
@@ -60,8 +81,8 @@
         }
 
         .mag-hero h1 {
-            font-size: clamp(3rem, 6vw, 5rem);
-            line-height: 1;
+            font-size: clamp(2.5rem, 6vw, 5rem); /* Responsive font size */
+            line-height: 1.1;
             margin-bottom: 20px;
             position: relative;
             z-index: 2;
@@ -72,6 +93,7 @@
             max-width: 600px;
             margin: 0 auto;
             color: #666;
+            padding: 0 15px; /* Prevent text touching edges */
         }
 
         .hero-banner-img {
@@ -87,7 +109,7 @@
 
         /* ==================== THE STORY (Legacy) ==================== */
         .story-section {
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
         }
 
@@ -96,7 +118,7 @@
             top: 50%;
             left: -50px;
             transform: translateY(-50%);
-            font-size: 15rem;
+            font-size: 15rem; /* Large background text */
             font-weight: 900;
             color: rgba(0,0,0,0.03);
             font-family: 'Gantari', sans-serif;
@@ -128,7 +150,7 @@
             object-fit: cover;
             border-radius: 8px;
         }
-        .c-img-1 { grid-row: 1 / 3; } /* Tall image */
+        .c-img-1 { grid-row: 1 / 3; } 
         .c-img-2 { grid-column: 2; }
         .c-img-3 { grid-column: 2; }
 
@@ -189,7 +211,7 @@
         }
 
         .signature {
-            font-family: 'Playfair Display', serif; /* Or use a script font if available */
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             color: var(--orange);
             margin-top: 10px;
@@ -197,18 +219,33 @@
 
         /* Responsive */
         @media (max-width: 991px) {
+            .mag-hero { padding-top: 30px; }
             .mag-hero h1 { font-size: 2.5rem; }
-            .hero-banner-img { height: 250px; }
-            .story-collage { grid-template-columns: 1fr; grid-template-rows: auto; }
-            .c-img-1 { height: 300px; }
-            .philo-box { border-left: none; border-top: 1px solid rgba(255,255,255,0.2); padding-left: 0; padding-top: 30px; margin-bottom: 40px; }
+            .hero-banner-img { height: 250px; margin-top: 30px; }
+            
+            .story-collage { grid-template-columns: 1fr; grid-template-rows: auto; gap: 10px; }
+            .c-img-1 { height: 300px; grid-row: auto; }
+            .c-img-2, .c-img-3 { grid-column: auto; height: 200px; }
+            
+            .philo-box { 
+                border-left: none; 
+                border-top: 1px solid rgba(255,255,255,0.2); 
+                padding-left: 0; 
+                padding-top: 30px; 
+                margin-bottom: 40px; 
+            }
+
+            /* Fix header/menu collision in mobile if needed */
+            .gm-links {
+                z-index: 1001; /* Ensure mobile menu is on top */
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true" style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999; width: 0%;"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true" style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999;"></div>
 
     <!-- ==================== HEADER (PRESERVED) ==================== -->
     <header class="gm-header" id="header">
@@ -251,7 +288,8 @@
             <p class="mt-4">Bridging the gap between rural ambition and industrial reality through world-class technical education.</p>
         </div>
         <div class="container-fluid px-lg-5">
-            <img src="/assets/iti-temp.JPG" alt="Institute Wide Shot" class="hero-banner-img gs-img-scale">
+            <!-- Ensure this image path is correct -->
+            <img src="/assets/iti-temp.JPG" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80'" alt="Institute Wide Shot" class="hero-banner-img gs-img-scale">
         </div>
     </section>
 
@@ -347,7 +385,8 @@
             <div class="leader-card gs-zoom-in">
                 <div class="row align-items-center">
                     <div class="col-lg-3 text-center text-lg-start">
-                        <img src="/assets/vikas-nirmal-iti-principal.jpg" alt="Principal" class="leader-img">
+                        <!-- Ensure image path is correct -->
+                        <img src="/assets/vikas-nirmal-iti-principal.jpg" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" alt="Principal" class="leader-img">
                         <h4 class="mb-0">Mr. Vikas Nirmal</h4>
                         <small class="text-muted text-uppercase fw-bold">Principal</small>
                     </div>
@@ -388,7 +427,7 @@
                 <div class="footer-col">
                     <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="./kumss-private-iti-karhati.html">Home</a></li>
                         <li><a href="./about.html">About</a></li>
                         <li><a href="/gallery.html">Gallery</a></li>
                         <li><a href="/contact.html">Contact Us</a></li>
@@ -398,10 +437,10 @@
                 <div class="footer-col">
                     <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="#">New English Campus, Dhakale</a></li>
-                        <li><a href="#">Primary Campus, Tembha</a></li>
-                        <li><a href="#">KUMSS Private I.T.I</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English Campus, Dhakale</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary Campus, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
                     </ul>
                 </div>
 
@@ -425,6 +464,7 @@
     </footer>
 
     <!-- JS Files -->
+    <!-- Assuming you have this file for your header functionality -->
     <script src="/assets/js/institute.js"></script>
 
     <script>
@@ -465,7 +505,7 @@
                 scrollTrigger: { trigger: ".leadership-section", start: "top 80%" }
             });
             
-             // Mobile Menu Logic
+             // Mobile Menu Logic (Fallback if institute.js doesn't load)
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
             if (mobileMenuBtn && navLinks) {
@@ -475,7 +515,7 @@
                     if (navLinks.classList.contains('active')) {
                         gsap.to(navLinks, { x: 0, duration: 0.5, ease: 'power3.out' });
                     } else {
-                        gsap.to(navLinks, { x: 300, duration: 0.5, ease: 'power3.in' });
+                        gsap.to(navLinks, { x: '100%', duration: 0.5, ease: 'power3.in' });
                     }
                 });
             }
