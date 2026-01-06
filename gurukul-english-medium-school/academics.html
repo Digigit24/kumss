@@ -11,245 +11,471 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Main CSS -->
+  <!-- Main CSS (keeps your header/footer styles) -->
   <link rel="stylesheet" href="/assets/css/institute.css" />
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome (kept, but used minimally) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
   <style>
+    :root{
+      --primary:#2f3390;
+      --secondary:#ff9704;
+
+      --ink:#0b1220;
+      --muted:#526071;
+
+      --bg:#f6f8ff;
+      --card:#ffffff;
+
+      --line:rgba(16,24,40,.10);
+      --shadow:0 18px 40px rgba(16,24,40,.10);
+      --shadow-soft:0 10px 26px rgba(16,24,40,.08);
+
+      --radius:18px;
+      --container:min(1120px, 92%);
+      --header-offset: 90px;
+
+      /* Dark section tokens */
+      --dark:#0b1220;
+      --dark2:#0f1a32;
+      --darkLine:rgba(255,255,255,.12);
+      --darkText:rgba(255,255,255,.90);
+      --darkMuted:rgba(255,255,255,.70);
+    }
+
     *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; font-family:"Poppins",sans-serif; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:#fff;
+      overflow-x:hidden;
+    }
+
+    section[id], [id]{ scroll-margin-top: var(--header-offset); }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *{ animation:none !important; transition:none !important; }
+    }
+
+    /* Progress bar */
+    .scroll-progress{
+      position:fixed;
+      top:0; left:0;
+      height:4px;
+      width:0%;
+      background:var(--secondary);
+      z-index:9999;
+    }
 
     /* =========================
-       SIMPLE HERO (changed)
+       HERO (more whitespace + subtle)
        ========================= */
-    .acad-hero-simple{
-      position: relative;
-      padding: 110px 0 52px; /* respects your fixed header spacing */
-      background: #f7f9ff;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(0,0,0,.06);
+    .acad-hero{
+      position:relative;
+      padding: 132px 0 84px; /* more space */
+      background: #091743;
+      border-bottom:1px solid var(--line);
+      overflow:hidden;
     }
 
-    .acad-hero-simple .hero-container{
-      width: min(1100px, 92%);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
+    .acad-hero .wrap{
+      width:var(--container);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 34px; /* more air */
+      align-items:center;
     }
 
-    .acad-hero-left{
-      flex: 1;
-      min-width: 260px;
+   
+
+    .hero-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255, 255, 255, 0.457);
+      background:rgba(1, 1, 10, 0);
+      color:#ffffff;
+      font-weight:900;
+      letter-spacing:.02em;
+      width:fit-content;
     }
 
-    .acad-tag{
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(47,51,144,.08);
-      color: #233f92;
-      font-weight: 800;
-      border: 1px solid rgba(47,51,144,.16);
-      margin-bottom: 12px;
+    .acad-hero h1{
+      font-family:"Gantari",sans-serif;
+      margin:14px 0 12px;
+      font-size: clamp(2.15rem, 3.25vw, 3.25rem);
+      line-height:1.05;
+      letter-spacing:-.02em;
+      font-weight:900;
+      color:#ffffff;
     }
 
-    .acad-hero-title{
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 3.2vw, 3rem);
-      line-height: 1.08;
-      font-weight: 900;
-      color: #233f92;
+    .acad-hero p{
+      margin:0;
+      max-width: 72ch;
+      color: #eef2ff;
+      line-height:1.8;
+      font-size: 1rem;
     }
 
-    .acad-hero-sub{
-      margin: 0;
-      max-width: 70ch;
-      line-height: 1.75;
-      font-size: 16px;
-      color: #333;
+    /* subtle chips */
+    .hero-stats{
+      margin-top: 18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .chip{
+      background:#fff;
+      border:1px solid rgba(16,24,40,.08);
+      border-radius:999px;
+      padding:10px 12px;
+      box-shadow: 0 10px 22px rgba(16,24,40,.05);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:.92rem;
+      color: var(--muted);
+    }
+    .chip b{
+      color: var(--ink);
+      font-weight:900;
     }
 
-    .acad-hero-right{
-      flex: 0 0 360px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+    /* right side image stack */
+    .hero-media{
+      position:relative;
+      min-height: 400px;
     }
 
-    .acad-hero-box{
-      width: 100%;
+    .hero-card{
+      position:absolute;
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.7);
+      background:#fff;
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent 45%, rgba(11,18,32,.10));
+      pointer-events:none;
+    }
+    .hero-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform: scale(1.02);
+    }
+
+    .hc-1{ width: 74%; height: 258px; top: 0; right: 0; }
+    .hc-2{ width: 60%; height: 212px; bottom: 0; left: 0; }
+    .hc-3{
+      width: 46%;
+      height: 168px;
+      bottom: 14px;
+      right: 6px;
       border-radius: 16px;
-      background: #ffffff;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,.08);
-      padding: 18px;
-    }
-
-    .acad-hero-box h4{
-      margin: 0 0 10px;
-      font-size: 16px;
-      font-weight: 800;
-      color: #233f92;
-    }
-
-    .acad-hero-links{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .acad-pill-link{
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 14px;
-      color: #0b0b0b;
-      background: rgba(255,151,4,.20);
-      border: 1px solid rgba(255,151,4,.35);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .acad-pill-link:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 10px 18px rgba(0,0,0,.10);
+      box-shadow: 0 14px 28px rgba(16,24,40,.12);
     }
 
     /* =========================
-       SIMPLE HORIZONTAL LAYOUT
+       SECTIONS (more whitespace)
        ========================= */
-    .acad-wrap-simple{
-      width: min(1100px, 92%);
-      margin: 0 auto;
-      padding: 52px 0;
+    .section{
+      padding: 86px 0; /* more breathing */
+      background:#fff;
+    }
+    .section.alt{
+      background: var(--bg);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
 
-    .acad-row{
-      display: flex;
+    .container{
+      width:var(--container);
+      margin:0 auto;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:18px;
+      margin-bottom: 28px; /* more space */
+    }
+
+    .section-title{
+      font-family:"Gantari",sans-serif;
+      margin:0;
+      font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+      font-weight: 900;
+      color: var(--primary);
+      text-align: left;
+    }
+
+    .section-sub{
+      margin:12px 0 0;
+      color: var(--muted);
+      line-height:1.75;
+      max-width: 64ch;
+      font-size:.98rem;
+    }
+
+    /* Highlights cards */
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-      align-items: stretch;
-      margin-bottom: 18px;
     }
 
-    .acad-panel{
-      flex: 1;
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,.07);
-      padding: 22px;
+    .card{
+      background: var(--card);
+      border:1px solid rgba(16,24,40,.10);
+      border: radius 4px;
+      overflow:hidden;
+      box-shadow: var(--shadow-soft);
+      transition: transform .25s ease, box-shadow .25s ease;
+      will-change: transform;
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 20px 44px rgba(16,24,40,.12);
     }
 
-    .acad-panel h2{
-      margin: 0 0 10px;
-      font-size: 22px;
+    .card-media{
+      height: 186px;
+      position:relative;
+      overflow:hidden;
+      background: #eef2ff;
+    }
+    .card-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform: scale(1.04);
+    }
+
+    .card-badge{
+      position:absolute;
+      left:12px;
+      top:12px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(16,24,40,.10);
+      color: var(--primary);
+      border-radius: 9px;
+      padding: 8px 10px;
       font-weight: 900;
-      color: #233f92;
-      border-bottom: 4px solid #ff9704;
-      display: inline-block;
-      padding-bottom: 8px;
+      font-size: .78rem;
+      letter-spacing: .02em;
+      backdrop-filter: blur(6px);
     }
 
-    .acad-panel p{
-      margin: 12px 0 0;
-      color: #222;
-      line-height: 1.8;
-      font-size: 15.5px;
+    .card-body{
+      padding: 18px 18px 22px; /* more air */
+    }
+    .card-body h3{
+      margin:0 0 8px;
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing:-.01em;
+    }
+    .card-body p{
+      margin:0;
+      color: var(--muted);
+      line-height:1.75;
+      font-size:.95rem;
     }
 
-    .acad-miniList{
-      margin: 12px 0 0;
-      padding: 0;
-      list-style: none;
+    /* =========================
+       DARK SECTION (one section as requested)
+       ========================= */
+    .section.dark{
+      background:#ffffff;
+      color:#091743;
+      border-top:1px solid var(--darkLine);
+      border-bottom:1px solid var(--darkLine);
     }
-    .acad-miniList li{
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 10px 0;
-      border-top: 1px dashed rgba(0,0,0,.10);
-      color: #222;
-      font-size: 15px;
-      line-height: 1.6;
+    .section.dark .section-title{ color:#091743; }
+    .section.dark .section-sub{ color: #000000; }
+    .section.dark .panel,
+    .section.dark .card{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: none;
     }
-    .acad-miniList li:first-child{ border-top: 0; padding-top: 0; }
-    .acad-miniList i{ color:#ff9704; margin-top: 3px; }
+    .section.dark .card:hover{ box-shadow: 0 20px 44px rgba(0,0,0,.30); }
+    .section.dark .card-badge{
+      background: rgba(255,255,255,.12);
+      color: #171515;
+      border-color: rgba(255,255,255,.18);
+    }
+    .section.dark .card-body h3{ color:#110000; }
+    .section.dark .card-body p{ color: #0f1a32 }
 
-    .acad-ctaBar{
-      background: linear-gradient(135deg, #ffffff, #e9f1fb);
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 10px 22px rgba(0,0,0,.08);
-      padding: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .acad-ctaBar strong{ color:#233f92; font-weight: 900; }
-    .acad-ctaBar span{ color:#222; font-size: 14.5px; }
-
-    .acad-ctaBtns{
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+    /* Two-column content block */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items:stretch;
     }
 
-    .acad-btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 16px;
+    .panel{
+      background:#fff;
+      border:1px solid rgba(16,24,40,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      overflow:hidden;
+    }
+
+    .panel .panel-head{
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(16,24,40,.08);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+    .panel .panel-head h3{
+      margin:0;
+      font-size:1.05rem;
+      font-weight:900;
+      color: var(--primary);
+    }
+    .panel .panel-head span{
+      font-size:.9rem;
+      color: var(--muted);
+      font-weight:700;
+    }
+
+    .panel .panel-body{
+      padding: 18px 18px 18px;
+    }
+
+    .list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap: 12px;
+    }
+
+    .li{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding: 12px;
+      border: 1px solid rgba(16,24,40,.08);
       border-radius: 14px;
-      text-decoration: none;
-      font-weight: 900;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
-    }
-    .acad-btn--primary{
-      background: rgba(255,151,4,.95);
-      color: #0b0b0b;
-      box-shadow: 0 14px 26px rgba(0,0,0,.18);
-    }
-    .acad-btn--ghost{
       background: #fff;
-      color: #233f92;
-      border: 1px solid rgba(35,63,146,.18);
     }
-    .acad-btn:hover{ transform: translateY(-2px); }
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background: rgba(47,51,144,.25);
+      margin-top:6px;
+      flex: 0 0 auto;
+    }
+    .li b{
+      display:block;
+      font-weight:900;
+      color:#000000;
+      margin-bottom: 2px;
+    }
+    .li p{
+      margin:0;
+      color: #000000;
+      line-height:1.65;
+      font-size:.95rem;
+    }
+
+    /* Dark list overrides */
+    .section.dark .panel .panel-head{
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .section.dark .panel .panel-head h3{ color:#000000; }
+    .section.dark .panel .panel-head span{ color: rgba(0, 0, 0, 0.7); }
+    .section.dark .li{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.14);
+    }
+    .section.dark .dot{ background: rgba(255,151,4,.55); }
+    .section.dark .li b{ color:#1d0f0f; }
+    .section.dark .li p{ color: rgba(0, 0, 0, 0.7); }
+
+    .photo-frame{
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(16,24,40,.10);
+      background:#e5dfdf;
+      height: 100%;
+      min-height: 360px;
+    }
+    .photo-frame img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* CTA band (kept light) */
+    .cta-band{
+      background:#ffffff;
+      border:1px solid rgba(16,24,40,.10);
+      border-radius: calc(var(--radius) + 4px);
+      padding: 26px; /* more space */
+      box-shadow: 0 14px 34px rgba(16,24,40,.10);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 18px;
+      flex-wrap:wrap;
+    }
+    .cta-band strong{
+      display:block;
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 1.08rem;
+      margin-bottom: 6px;
+    }
+    .cta-band span{
+      color: var(--muted);
+      line-height:1.7;
+      font-size: .95rem;
+    }
 
     /* Responsive */
-    @media (max-width: 900px){
-      .acad-hero-simple .hero-container{
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .acad-hero-right{
-        flex: 1;
-        width: 100%;
-      }
-      .acad-row{
-        flex-direction: column;
-      }
+    @media (max-width: 980px){
+      .acad-hero{ padding: 122px 0 72px; }
+      .acad-hero .wrap{ grid-template-columns: 1fr; gap: 26px; }
+      .hero-media{ min-height: 340px; }
+      .hc-1{ width: 78%; right: 0; }
+      .hc-2{ width: 64%; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+      .photo-frame{ min-height: 300px; }
+      .section{ padding: 72px 0; }
     }
 
-    /* Keep your existing CTA button style (unchanged) */
-    .ggm-btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 16px; border-radius:999px; text-decoration:none;
-      font-weight:700; color: rgba(0,0,0,.785);
-      background-color: var(--primaryColor);
-    }
-    .ggm-btn:hover{ box-shadow:0 10px 20px rgba(0,0,0,.2); }
+    /* keep your existing CTA button in header untouched */
     @media (max-width: 768px){
       a.ggm-btn{ display:none !important; visibility:hidden !important; opacity:0 !important; pointer-events:none !important; }
     }
@@ -257,13 +483,9 @@
 </head>
 
 <body>
- 
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-
-  <!-- Header (same as your existing structure) -->
+  <!-- HEADER (UNCHANGED) -->
   <header class="gm-header" id="header">
     <div class="gm-container">
       <nav class="gm-nav" aria-label="Primary">
@@ -306,81 +528,153 @@
     </div>
   </header>
 
- <!-- HERO (updated content) -->
-<section class="acad-hero-simple" id="home">
-  <div class="hero-container">
-    <div class="acad-hero-left">
-      <div class="acad-tag"><i class="fa-solid fa-graduation-cap"></i> Academics</div>
-      <h1 class="acad-hero-title">Academics at Gurukul English Medium School</h1>
-      <p class="acad-hero-sub">
-        At Gurukul English Medium School, we focus on strong fundamentals, clear concepts, and steady progress.
-        Learning is planned grade-wise with regular practice, classroom activities, and supportive guidance.
-        We keep teaching structured, interactive, and student-friendly so children build confidence in every subject.
-      </p>
-    </div>
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="acad-hero" id="home">
+    <div class="wrap">
+      <div class="hero-copy">
 
-<!-- SIMPLE HORIZONTAL CONTENT (updated content) -->
-<section>
-  <div class="acad-wrap-simple">
+        <div class="hero-tag">GURUKUL</div>
 
-    <div class="acad-row">
-      <div class="acad-panel">
-        <h2>Academic Overview</h2>
+        <h1>Academics that build strong fundamentals</h1>
+
         <p>
-          Our academics are designed to build a strong base in reading, writing, communication, and problem-solving.
-          Each class follows a planned routine with concept teaching, guided practice, revision, and daily homework support.
-          Teachers focus on improving understanding, accuracy, and confidence through regular classwork and disciplined learning habits.
+          You want clarity, consistency, and visible improvement.
+          We keep learning structured with concept teaching, daily practice, and regular checks—so students progress steadily.
         </p>
       </div>
 
-      <div class="acad-panel">
-        <h2>Curriculum Framework</h2>
-        <p>
-          We follow a structured curriculum aligned with grade-wise learning outcomes and exam preparation.
-          Lesson plans are organized term-wise and supported with worksheets, reading practice, and revision schedules.
-          Students improve step-by-step with focus on language skills, mathematics accuracy, and concept clarity.
-        </p>
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-card hc-1">
+          <img src="/assets/gurukul-ac-three.jpg" alt="Classroom environment">
+        </div>
+        <div class="hero-card hc-2">
+          <img src="/assets/gurukul-ac-one.jpg" alt="Science learning">
+        </div>
+        <div class="hero-card hc-3">
+          <img src="/assets/gurukul-ac-two.jpg" alt="Library study">
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="acad-row">
-      <div class="acad-panel">
-        <h2>Subjects & Learning Areas</h2>
-        <ul class="acad-miniList">
-          <li><i class="fa-solid fa-book-open"></i> English, Marathi/Hindi (as applicable), Mathematics, EVS/Science, and Social Studies.</li>
-          <li><i class="fa-solid fa-flask"></i> Activity-based learning, models, and simple experiments to improve understanding.</li>
-          <li><i class="fa-solid fa-laptop"></i> Computer basics and practical learning support as per class level.</li>
-        </ul>
+  <!-- DARK SECTION (Approach) -->
+  <section class="section dark" id="approach">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">How learning stays on track</h2>
+          <p class="section-sub">A simple system that keeps students steady—without pressure chaos.</p>
+        </div>
       </div>
 
-      <div class="acad-panel">
-        <h2>Student Support</h2>
-        <ul class="acad-miniList">
-          <li><i class="fa-solid fa-user-check"></i> Teacher guidance with focus on concept clarity, neat work, and regular practice.</li>
-          <li><i class="fa-solid fa-clipboard-check"></i> Unit tests, worksheets, and revision to track progress and improve performance.</li>
-          <li><i class="fa-solid fa-people-group"></i> A disciplined and supportive environment that builds confidence and good learning habits.</li>
-        </ul>
+      <div class="split">
+        <div class="photo-frame reveal">
+          <img src="/assets/gurukul-ac-four.jpg" alt="Study and reading environment">
+        </div>
+
+        <div class="panel reveal">
+          <div class="panel-head">
+            <h3>Our academic system</h3>
+            <span>Plan → Practice → Test → Improve</span>
+          </div>
+          <div class="panel-body">
+            <ul class="list">
+              <li class="li">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <b>Grade-wise planning</b>
+                  <p>Clear month-wise coverage so the syllabus stays controlled.</p>
+                </div>
+              </li>
+              <li class="li">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <b>Revision cycles</b>
+                  <p>Repeated reinforcement improves accuracy and speed over time.</p>
+                </div>
+              </li>
+              <li class="li">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <b>Unit tests + review</b>
+                  <p>Progress checks that convert weak topics into strong ones.</p>
+                </div>
+              </li>
+              <li class="li">
+                <span class="dot" aria-hidden="true"></span>
+                <div>
+                  <b>Teacher guidance</b>
+                  <p>Support that builds confidence—especially for slow learners.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="acad-ctaBar">
-      <div>
-        <strong>Need more information?</strong><br />
-        <span>Call us to know about admissions, curriculum details, and school timings. You can also schedule a campus visit.</span>
+  <!-- LEARNING SPACES -->
+  <section class="section" id="spaces">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Learning spaces</h2>
+          <p class="section-sub">Clean, calm, and organized spaces that help students focus and learn better.</p>
+        </div>
       </div>
-      <div class="acad-ctaBtns">
-        <a class="acad-btn acad-btn--primary" href="/contact.html">Schedule a Visit</a>
-        <a class="acad-btn acad-btn--ghost" href="tel:+919421394242">Call Now</a>
+
+      <div class="grid-3">
+        <article class="card reveal">
+          <div class="card-media">
+            <span class="card-badge">Classrooms</span>
+            <img src="/assets/structured-classrooms.jpg" alt="Classroom">
+          </div>
+          <div class="card-body">
+            <h3>Structured classrooms</h3>
+            <p>Comfortable seating and a focused setup for daily teaching and practice.</p>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-media">
+            <span class="card-badge">Science</span>
+            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1400&q=70" alt="Science lab">
+          </div>
+          <div class="card-body">
+            <h3>Hands-on learning</h3>
+            <p>Demonstrations and activities that make concepts easier to understand.</p>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card-media">
+            <span class="card-badge">Library</span>
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1400&q=70" alt="Library">
+          </div>
+          <div class="card-body">
+            <h3>Reading culture</h3>
+            <p>A quiet environment that supports concentration and self-learning habits.</p>
+          </div>
+        </article>
+      </div>
+
+      <div style="height:22px;"></div>
+
+      <div class="cta-band reveal">
+        <div>
+          <strong>Want academics + admission details?</strong>
+          <span>Call us or schedule a campus visit. We’ll share curriculum, timings, and the process.</span>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="/contact.html">Schedule a Visit</a>
+          <a class="btn btn-ghost" href="tel:+919421394242">Call Now</a>
+        </div>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-
-  <!-- Footer -->
+  <!-- FOOTER (UNCHANGED) -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -396,21 +690,11 @@
           </p>
 
           <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="YouTube">
-              <i class="fab fa-youtube"></i>
-            </a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
@@ -444,15 +728,9 @@
             Contact Info
           </h3>
           <ul class="footer-links">
-            <li><i class="fas fa-phone"></i>
-              <a href="tel:+919421394242">+91 94213 94242</a>
-            </li>
-            <li><i class="fas fa-envelope"></i>
-              <a href="mailto:info@kumss.org">info@kumss.org</a>
-            </li>
-            <li><i class="fas fa-envelope"></i>
-              <a href="mailto:iti@kumss.org">iti@kumss.org</a>
-            </li>
+            <li><i class="fas fa-phone"></i><a href="tel:+919421394242">+91 94213 94242</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:info@kumss.org">info@kumss.org</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
           </ul>
         </div>
       </div>
@@ -466,7 +744,100 @@
     </div>
   </footer>
 
+  <!-- Keep your existing JS -->
   <script src="/assets/js/institute.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
+
+  <script>
+    // Smooth scroll offset: set based on header height (so anchors land correctly)
+    (function setHeaderOffset(){
+      const header = document.getElementById('header');
+      const root = document.documentElement;
+      const apply = () => {
+        const h = header ? header.offsetHeight : 90;
+        root.style.setProperty('--header-offset', (h + 10) + 'px');
+      };
+      apply();
+      window.addEventListener('resize', apply);
+    })();
+
+    // Scroll progress
+    (function(){
+      const bar = document.getElementById("scrollProgress");
+      const onScroll = () => {
+        const st = document.documentElement.scrollTop || document.body.scrollTop;
+        const h = (document.documentElement.scrollHeight - document.documentElement.clientHeight) || 1;
+        bar.style.width = ((st / h) * 100).toFixed(2) + "%";
+      };
+      window.addEventListener("scroll", onScroll, { passive:true });
+      onScroll();
+    })();
+
+    // GSAP animations (unchanged)
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.gsap) return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".hero-tag", { autoAlpha: 0, y: 16, duration: 0.7, ease: "power2.out", clearProps: "opacity,visibility,transform" });
+      gsap.from(".hero-copy h1", { autoAlpha: 0, y: 18, duration: 0.8, delay: 0.08, ease: "power2.out", clearProps: "opacity,visibility,transform" });
+      gsap.from(".hero-copy p", { autoAlpha: 0, y: 14, duration: 0.75, delay: 0.16, ease: "power2.out", clearProps: "opacity,visibility,transform" });
+      gsap.from(".hero-cta .btn", { autoAlpha: 0, y: 12, duration: 0.6, delay: 0.22, stagger: 0.08, ease: "power2.out", clearProps: "opacity,visibility,transform" });
+
+      gsap.from(".hc-1", { autoAlpha: 0, x: 22, duration: 0.9, delay: 0.05, ease: "power2.out", clearProps: "opacity,visibility,transform" });
+      gsap.from(".hc-2", { autoAlpha: 0, x: -22, duration: 0.9, delay: 0.10, ease: "power2.out", clearProps: "opacity,visibility,transform" });
+      gsap.from(".hc-3", { autoAlpha: 0, y: 18, duration: 0.9, delay: 0.15, ease: "power2.out", clearProps: "opacity,visibility,transform" });
+
+      const grids = document.querySelectorAll(".grid-3");
+      grids.forEach((grid) => {
+        const cards = grid.querySelectorAll(".card.reveal");
+        if (!cards.length) return;
+
+        gsap.from(cards, {
+          scrollTrigger: {
+            trigger: grid,
+            start: "top 85%",
+            toggleActions: "play none none none",
+            once: true
+          },
+          autoAlpha: 0,
+          y: 26,
+          duration: 0.7,
+          stagger: 0.10,
+          ease: "power2.out",
+          clearProps: "opacity,visibility,transform"
+        });
+      });
+
+      const nonGridReveals = Array.from(document.querySelectorAll(".reveal"))
+        .filter(el => !el.closest(".grid-3"));
+
+      nonGridReveals.forEach((el) => {
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none none",
+            once: true
+          },
+          autoAlpha: 0,
+          y: 26,
+          duration: 0.75,
+          ease: "power2.out",
+          clearProps: "opacity,visibility,transform"
+        });
+      });
+
+      window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+      });
+
+      setTimeout(() => {
+        document.querySelectorAll(".reveal, .hero-tag, .hero-copy h1, .hero-copy p, .hero-cta .btn, .hc-1, .hc-2, .hc-3")
+          .forEach(el => {
+            el.style.opacity = "1";
+            el.style.visibility = "visible";
+          });
+      }, 1800);
+    });
+  </script>
 </body>
 </html>

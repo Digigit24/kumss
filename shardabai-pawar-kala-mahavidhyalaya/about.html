@@ -861,144 +861,231 @@
       font-size: 28px !important; /* Ensure readable size on small screens */
     }
   }
-   /* --- SCOPED SCHOOL SECTION STYLES (Prefix: sch-) --- */
+  /* =========================
+   SPK (Results / Courses / Vision)
+   Safe: New classes only
+========================= */
 
-  /* Section Wrapper */
-  .sch-section {
-    background-color: #f4f6f9; /* Light academic gray background */
-    padding: 70px 20px;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    color: #333;
-    box-sizing: border-box;
-  }
+:root{
+  --spk-ink:#0f172a;
+  --spk-text:#334155;
+  --spk-muted:#64748b;
 
-  .sch-container {
-    max-width: 1000px; /* Slightly tighter width for reading focus */
-    margin: 0 auto;
-    width: 100%;
-  }
+  --spk-card:#ffffff;
+  --spk-soft:#f8fafc;
+  --spk-line:rgba(15,23,42,.12);
 
-  /* Header Styles */
-  .sch-head {
-    margin-bottom: 45px;
-    border-left: 5px solid #1a4a8d; /* "School Blue" Accent Bar */
-    padding-left: 25px;
-    background: #fff;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
+  --spk-accent:#4f46e5;
+  --spk-gold:#ffab0e;
 
-  .sch-kicker {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #1a4a8d; /* Matches accent */
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 5px;
-  }
+  --spk-radius:22px;
+  --spk-shadow: 0 18px 55px rgba(15,23,42,.10);
+  --spk-shadowSoft: 0 10px 28px rgba(15,23,42,.08);
+}
 
-  .sch-lead {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #555;
-    margin-top: 12px;
-    max-width: 90%;
-  }
+/* Section wrapper */
+.spk-sec{
+  padding: clamp(64px, 7vw, 110px) 0;
+  background: #fff;
+}
 
-  /* Grid Layout */
-  .sch-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 30px;
-  }
+.spk-wrap{
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
 
-  /* Card Styles - "Official Document" Look */
-  .sch-card {
-    background: #ffffff;
-    border: 1px solid #d1d9e6; /* Crisp border */
-    border-radius: 6px;
-    padding: 0; /* Content padding handled inside */
-    height: 100%; /* Equal height cards */
-    display: flex;
-    flex-direction: column;
-  }
+/* Head */
+.spk-head{
+  max-width: 900px;
+  margin: 0 0 clamp(22px, 3vw, 40px);
+}
 
-  /* Card Title Area */
-  .sch-card-header {
-    background-color: #eef2f7; /* Subtle blue-gray header */
-    padding: 20px 25px;
-    border-bottom: 1px solid #d1d9e6;
-    border-radius: 6px 6px 0 0;
-  }
+.spk-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(233, 129, 10, 0.1);
+  border: 1px solid rgba(79,70,229,.18);
+  color: rgba(117, 59, 8, 0.95);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  box-shadow: var(--spk-shadowSoft);
+}
+.spk-badge i{ color: var(--spk-accent); }
 
-  .sch-card h3 {
-    margin: 0;
-    font-size: 1.25rem;
-    color: #1a4a8d;
-    font-weight: 700;
-  }
+.spk-title{
+  margin: 14px 0 10px;
+  font-family: "Gantari", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  color: #194676;
+  font-size: clamp(28px, 3.2vw, 42px);
+}
 
-  /* Card Body */
-  .sch-card-body {
-    padding: 25px;
-  }
+.spk-sub{
+  margin: 0;
+  color: var(--spk-muted);
+  line-height: 1.8;
+  font-size: 16px;
+  max-width: 78ch;
+}
 
-  /* List Styles */
-  .sch-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+/* Grid */
+.spk-grid{
+  display: grid;
+  gap: 18px;
+  align-items: stretch;
+}
+.spk-grid-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.spk-grid-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 
-  .sch-list li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 12px;
-    line-height: 1.5;
-    color: #444;
-    border-bottom: 1px dashed #eee; /* Lined paper feel */
-    padding-bottom: 8px;
-  }
+@media (max-width: 920px){
+  .spk-grid-2{ grid-template-columns: 1fr; }
+  .spk-grid-3{ grid-template-columns: 1fr; }
+}
 
-  .sch-list li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-  }
+/* Cards */
+.spk-card{
+  background: #12244d;
+  border: 1px solid var(--spk-line);
+  border-radius: var(--spk-radius);
+  box-shadow: var(--spk-shadowSoft);
+  padding: 26px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .26s ease, box-shadow .26s ease, border-color .26s ease;
+}
 
-  /* Icon for List */
-  .sch-list li::before {
-    content: "\f00c"; /* Checkmark */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    top: 3px;
-    color: #27ae60; /* Success Green for "Results" */
-    font-size: 0.9rem;
-  }
+.spk-card:hover{
+  transform: translateY(-8px);
+  box-shadow: var(--spk-shadow);
+  border-color: rgba(255,171,14,.25);
+}
 
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .sch-section {
-      padding: 50px 15px;
-    }
-    .sch-grid {
-      grid-template-columns: 1fr; /* Stack on mobile */
-      gap: 20px;
-    }
-    .sch-head {
-      padding-left: 20px;
-      border-left-width: 4px;
-    }
-    .sch-lead {
-      max-width: 100%;
-    }
-  }
+/* Card top line + title */
+.spk-card-top{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(15,23,42,.08);
+}
+
+.spk-card h3{
+  margin: 0;
+  font-family: "Gantari", sans-serif;
+  font-weight: 800;
+  color:#ffffff;
+  letter-spacing: -0.01em;
+  font-size: 20px;
+}
+
+/* Text */
+.spk-text{
+  margin: 0 0 14px;
+  color: #fffcfc;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* List */
+.spk-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.spk-list li{
+  position: relative;
+  padding-left: 28px;
+  color: #fffcfc;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.spk-list li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .45em;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(209, 209, 219, 0.934);
+  box-shadow: 0 0 0 4px rgba(79,70,229,.08);
+}
+
+/* Premium image overlays */
+.spk-card--img::after{
+  content:"";
+  position:absolute;
+  inset:0;
+ background: #12244d;
+  pointer-events:none;
+}
+
+.spk-card--img::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.14;
+  pointer-events:none;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.1) contrast(1.05);
+}
+
+
+
+/* Make the image subtle and keep text readable */
+.spk-card--img{
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.98));
+}
+.spk-card--img *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Vision mini cards */
+.spk-mini{
+  padding: 24px;
+}
+.spk-mini-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(79,70,229,.10);
+  border: 1px solid rgba(79,70,229,.18);
+  color: var(--spk-accent);
+  box-shadow: var(--spk-shadowSoft);
+  margin-bottom: 12px;
+}
+.spk-mini h3{
+  margin-bottom: 10px;
+}
+
+/* Section-specific soft backgrounds */
+.spk-results{ background: #fff; }
+.spk-courses{ background: var(--spk-soft); }
+.spk-vision{ background: #fff; }
+
+
   </style>
 </head>
 
@@ -1233,148 +1320,162 @@
 
 
 
- <!-- Results Section -->
-  <section class="section sch-section" id="results">
-    <div class="page-wrap sch-container">
-      
-      <!-- Header Block -->
-      <div class="section-head sch-head">
-        <div>
-          <span class="kicker sch-kicker">
-            <i class="fa-solid fa-chart-line"></i> Academic Performance
-          </span>
-          
-          <h2 class="h1" style="font-size: clamp(24px, 2.5vw, 36px); margin: 5px 0 0; color: #222;">
-            Strong results. Real outcomes.
-          </h2>
-          
-          <p class="lead sch-lead">
-            Over the years, the college has maintained consistent performance, with results reported between 90% and 100%
-            from 1993–94 to 2023–24. The goal is not just passing exams.
-            The goal is building educators who can guide the next generation.
-          </p>
-        </div>
-      </div>
+ <!-- =========================
+     RESULTS SECTION (NEW)
+========================= -->
+<section class="spk-sec spk-results" id="results">
+  <div class="spk-wrap">
 
-      <!-- Grid Content -->
-      <div class="grid-2 sch-grid">
-        
-        <!-- Card 1 -->
-        <div class="cardx vm-card sch-card">
-          <div class="sch-card-header">
-            <h3>What this performance indicates</h3>
-          </div>
-          <div class="sch-card-body">
-            <ul class="bullets sch-list">
-              <li>Structured teaching and practical evaluation</li>
-              <li>Studio practice supported by faculty feedback</li>
-              <li>Focus on fundamentals before advanced work</li>
-              <li>Preparation that translates into professional confidence</li>
-            </ul>
-          </div>
-        </div>
+    <div class="spk-head">
+      <span class="spk-badge">
+        <i class="fa-solid fa-chart-line"></i> Academic Performance
+      </span>
 
-        <!-- Card 2 -->
-        <div class="cardx vm-card sch-card">
-          <div class="sch-card-header">
-            <h3>Where students apply their skills</h3>
-          </div>
-          <div class="sch-card-body">
-            <ul class="bullets sch-list">
-              <li>Schools and art education roles</li>
-              <li>Studio-based creative work</li>
-              <li>Community art and cultural programs</li>
-              <li>Professional practice with discipline and method</li>
-            </ul>
-          </div>
-        </div>
+      <h2 class="spk-title">Strong results. Real outcomes.</h2>
 
-      </div>
+      <p class="spk-sub">
+        Over the years, the college has maintained consistent performance, with results reported between 90% and 100%
+        from 1993–94 to 2023–24. The goal is not just passing exams.
+        The goal is building educators who can guide the next generation.
+      </p>
     </div>
-  </section>
 
-
-  <!-- Courses -->
-  <section class="section" id="courses">
-    <div class="page-wrap">
-      <div class="section-head">
-        <div>
-          <span class="kicker"><i class="fa-solid fa-graduation-cap"></i> Courses Offered</span>
-          <h2 class="h1" style="font-size: clamp(28px, 3.2vw, 40px); margin: 10px 0 0;">Programs built for skill and teaching</h2>
+    <div class="spk-grid spk-grid-2">
+      <article class="spk-card spk-card--img spk-card--results-1">
+        <div class="spk-card-top">
+          <h3>What this performance indicates</h3>
         </div>
-      </div>
 
-      <div class="grid-2">
-        <div class="cardx course-card">
+        <ul class="spk-list">
+          <li>Structured teaching and practical evaluation</li>
+          <li>Studio practice supported by faculty feedback</li>
+          <li>Focus on fundamentals before advanced work</li>
+          <li>Preparation that translates into professional confidence</li>
+        </ul>
+      </article>
+
+      <article class="spk-card spk-card--img spk-card--results-2">
+        <div class="spk-card-top">
+          <h3>Where students apply their skills</h3>
+        </div>
+
+        <ul class="spk-list">
+          <li>Schools and art education roles</li>
+          <li>Studio-based creative work</li>
+          <li>Community art and cultural programs</li>
+          <li>Professional practice with discipline and method</li>
+        </ul>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================
+     COURSES SECTION (NEW)
+========================= -->
+<section class="spk-sec spk-courses" id="courses">
+  <div class="spk-wrap">
+
+    <div class="spk-head">
+      <span class="spk-badge">
+        <i class="fa-solid fa-graduation-cap"></i> Courses Offered
+      </span>
+
+      <h2 class="spk-title">Programs built for skill and teaching</h2>
+    </div>
+
+    <div class="spk-grid spk-grid-2">
+      <article class="spk-card spk-card--img spk-card--course-1">
+        <div class="spk-card-top">
           <h3>Foundation Course (1 Year)</h3>
-          <p>
-            Designed for students who have passed 10th standard along with the Intermediate Drawing Examination.
-            This course builds your base.
-          </p>
-          <ul class="bullets">
-            <li>Drawing accuracy and control</li>
-            <li>Visual understanding and composition</li>
-            <li>Creative confidence through practice</li>
-            <li>Preparation for advanced art education</li>
-          </ul>
         </div>
 
-        <div class="cardx course-card">
+        <p class="spk-text">
+          Designed for students who have passed 10th standard along with the Intermediate Drawing Examination.
+          This course builds your base.
+        </p>
+
+        <ul class="spk-list">
+          <li>Drawing accuracy and control</li>
+          <li>Visual understanding and composition</li>
+          <li>Creative confidence through practice</li>
+          <li>Preparation for advanced art education</li>
+        </ul>
+      </article>
+
+      <article class="spk-card spk-card--img spk-card--course-2">
+        <div class="spk-card-top">
           <h3>Art Teacher’s Diploma (A.T.D.) (2 Years)</h3>
-          <p>
-            For students who have completed 12th standard and the Intermediate Drawing Examination.
-            This program prepares you for a professional career as a trained art teacher.
-          </p>
-          <ul class="bullets">
-            <li>Practical art training with studio discipline</li>
-            <li>Teaching-oriented skill development</li>
-            <li>Assessment preparation and presentation</li>
-            <li>Professional readiness for education roles</li>
-          </ul>
         </div>
-      </div>
+
+        <p class="spk-text">
+          For students who have completed 12th standard and the Intermediate Drawing Examination.
+          This program prepares you for a professional career as a trained art teacher.
+        </p>
+
+        <ul class="spk-list">
+          <li>Practical art training with studio discipline</li>
+          <li>Teaching-oriented skill development</li>
+          <li>Assessment preparation and presentation</li>
+          <li>Professional readiness for education roles</li>
+        </ul>
+      </article>
     </div>
-  </section>
 
-  <!-- Vision / Purpose / Leadership -->
-  <section class="section" id="vision">
-    <div class="page-wrap">
-      <div class="section-head">
-        <div>
-          <span class="kicker"><i class="fa-solid fa-compass"></i> Vision & Guidance</span>
-          <h2 class="h1" style="font-size: clamp(28px, 3.2vw, 40px); margin: 10px 0 0;">Rooted in values. Moving forward.</h2>
-        </div>
-      </div>
+  </div>
+</section>
 
-      <div class="grid-3">
-        <div class="cardx bento-card">
-          <h3>Vision</h3>
-          <p>
-            To nurture art educators with clarity, creative depth, and professional competence.
-            People who teach art as a skill and as a meaningful form of expression.
-          </p>
-        </div>
 
-        <div class="cardx bento-card">
-          <h3>Educational purpose</h3>
-          <ul class="bullets">
-            <li>Strengthen artistic fundamentals</li>
-            <li>Encourage independent thinking</li>
-            <li>Build teaching confidence</li>
-            <li>Maintain ethical academic discipline</li>
-          </ul>
-        </div>
+<!-- =========================
+     VISION SECTION (NEW)
+========================= -->
+<section class="spk-sec spk-vision" id="vision">
+  <div class="spk-wrap">
 
-        <div class="cardx bento-card">
-          <h3>Leadership</h3>
-          <p>
-            The institution operates under the guidance of KUMSS (established in 1951).
-            The executive committee provides stability, direction, and long-term vision.
-          </p>
-        </div>
-      </div>
+    <div class="spk-head">
+      <span class="spk-badge">
+        <i class="fa-solid fa-compass"></i> Vision & Guidance
+      </span>
+
+      <h2 class="spk-title">Rooted in values. Moving forward.</h2>
     </div>
-  </section>
+
+    <div class="spk-grid spk-grid-3">
+      <article class="spk-card spk-mini">
+        <div class="spk-mini-icon"><i class="fa-solid fa-eye"></i></div>
+        <h3>Vision</h3>
+        <p class="spk-text">
+          To nurture art educators with clarity, creative depth, and professional competence.
+          People who teach art as a skill and as a meaningful form of expression.
+        </p>
+      </article>
+
+      <article class="spk-card spk-mini">
+        <div class="spk-mini-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>Educational purpose</h3>
+        <ul class="spk-list">
+          <li>Strengthen artistic fundamentals</li>
+          <li>Encourage independent thinking</li>
+          <li>Build teaching confidence</li>
+          <li>Maintain ethical academic discipline</li>
+        </ul>
+      </article>
+
+      <article class="spk-card spk-mini">
+        <div class="spk-mini-icon"><i class="fa-solid fa-people-group"></i></div>
+        <h3>Leadership</h3>
+        <p class="spk-text">
+          The institution operates under the guidance of KUMSS (established in 1951).
+          The executive committee provides stability, direction, and long-term vision.
+        </p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer class="footer">
