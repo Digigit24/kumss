@@ -9,7 +9,7 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
@@ -21,158 +21,210 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; font-family: "Poppins", sans-serif; overflow-x: hidden; }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
 
     /* reuse your existing container style */
-    .hero-container { width: 100%; margin: 0 auto; padding: 0 16px; }
+    .hero-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
 
-    .ggm-btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 16px; border-radius:999px; text-decoration:none;
-      font-weight:800; letter-spacing:.2px;
-      color:#0b1220;
-      background: linear-gradient(135deg, rgba(255,151,4,.95), rgba(255,205,92,.95));
-      box-shadow: 0 10px 20px rgba(0,0,0,.16);
+    .ggm-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .2px;
+      color: #0b1220;
+      background: linear-gradient(135deg, rgba(255, 151, 4, .95), rgba(255, 205, 92, .95));
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .16);
       transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
     }
-    .ggm-btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.2); filter: brightness(1.02); }
-    @media (max-width: 768px){
-      a.ggm-btn{ display:none !important; visibility:hidden !important; opacity:0 !important; pointer-events:none !important; }
+
+    .ggm-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, .2);
+      filter: brightness(1.02);
+    }
+
+    @media (max-width: 768px) {
+      a.ggm-btn {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+
       .footer-logo-img {
-  margin-left: 120px;
-}
+        margin-left: 120px;
+      }
     }
 
     /* =========================
       PRIMARY SCHOOL – KIDS FRIENDLY THEME
     ========================= */
-    :root{
-      --ps-blue:#233f92;
-      --ps-accent:#ff9704;
+    :root {
+      --ps-blue: #233f92;
+      --ps-accent: #ff9704;
 
-      --ps-ink:#0b1220;
-      --ps-text:#111827;
-      --ps-muted:#5b6474;
+      --ps-ink: #0b1220;
+      --ps-text: #111827;
+      --ps-muted: #5b6474;
 
       --ps-border: rgba(16, 24, 40, .10);
 
-      --ps-bg:#ffffff;
-      --ps-soft:#f7fbff;
+      --ps-bg: #ffffff;
+      --ps-soft: #f7fbff;
 
-      --ps-card: rgba(255,255,255,.80);
-      --ps-shadow: 0 18px 40px rgba(16,24,40,.12);
-      --ps-shadow-soft: 0 12px 26px rgba(16,24,40,.10);
+      --ps-card: rgba(255, 255, 255, .80);
+      --ps-shadow: 0 18px 40px rgba(16, 24, 40, .12);
+      --ps-shadow-soft: 0 12px 26px rgba(16, 24, 40, .10);
 
       --ps-radius: 26px;
 
       /* playful accents */
-      --ps-kid-yellow:#fff3b0;
-      --ps-kid-pink:#ffe1ef;
-      --ps-kid-mint:#dff7ef;
-      --ps-kid-sky:#e6f1ff;
+      --ps-kid-yellow: #fff3b0;
+      --ps-kid-pink: #ffe1ef;
+      --ps-kid-mint: #dff7ef;
+      --ps-kid-sky: #e6f1ff;
     }
 
-    .ps-wrap{
+    .ps-wrap {
       max-width: 1120px;
       margin: 0 auto;
       padding: 0 18px;
     }
 
     /* Section base */
-    .ps-section{
+    .ps-section {
       padding: 72px 0;
       background: var(--ps-bg);
       position: relative;
       overflow: hidden;
     }
-    .ps-section--soft{
+
+    .ps-section--soft {
       background:
-        radial-gradient(700px 320px at 18% 0%, rgba(255,151,4,.12), transparent 60%),
-        radial-gradient(700px 320px at 82% 10%, rgba(35,63,146,.12), transparent 60%),
+        radial-gradient(700px 320px at 18% 0%, rgba(255, 151, 4, .12), transparent 60%),
+        radial-gradient(700px 320px at 82% 10%, rgba(35, 63, 146, .12), transparent 60%),
         var(--ps-soft);
     }
 
     /* subtle blobs */
     .ps-section::before,
-    .ps-section::after{
-      content:"";
-      position:absolute;
+    .ps-section::after {
+      content: "";
+      position: absolute;
       width: 520px;
       height: 520px;
       border-radius: 999px;
       filter: blur(46px);
       opacity: .45;
-      pointer-events:none;
+      pointer-events: none;
       z-index: 0;
     }
-    .ps-section::before{
-      top: -280px; left: -260px;
-      background: radial-gradient(circle at 30% 30%, rgba(35,63,146,.20), transparent 60%);
+
+    .ps-section::before {
+      top: -280px;
+      left: -260px;
+      background: radial-gradient(circle at 30% 30%, rgba(35, 63, 146, .20), transparent 60%);
     }
-    .ps-section::after{
-      bottom: -340px; right: -300px;
-      background: radial-gradient(circle at 40% 40%, rgba(255,151,4,.18), transparent 60%);
+
+    .ps-section::after {
+      bottom: -340px;
+      right: -300px;
+      background: radial-gradient(circle at 40% 40%, rgba(255, 151, 4, .18), transparent 60%);
     }
-    .ps-wrap, .ps-head, .ps-grid, .ps-features, .ps-ctaBox{ position: relative; z-index: 1; }
+
+    .ps-wrap,
+    .ps-head,
+    .ps-grid,
+    .ps-features,
+    .ps-ctaBox {
+      position: relative;
+      z-index: 1;
+    }
 
     /* =========================
       HERO – REAL + KIDS FRIENDLY (2 column)
     ========================= */
-   .ps-hero{
-  padding: 118px 0 64px;
-  position: relative;
-  overflow: hidden;
+    .ps-hero {
+      padding: 118px 0 64px;
+      position: relative;
+      overflow: hidden;
 
-  /* Background image + overlay for readability */
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.461) 0%, rgba(245, 251, 255, 0.644) 45%, rgba(245, 247, 255, 0.731) 100%),
-    radial-gradient(900px 420px at 15% 10%, rgba(255,151,4,.18), transparent 60%),
-    radial-gradient(900px 420px at 80% 25%, rgba(35,63,146,.18), transparent 60%),
-    url("/assets/primary-school-bg-hero.JPG");
+      /* Background image + overlay for readability */
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.461) 0%, rgba(245, 251, 255, 0.644) 45%, rgba(245, 247, 255, 0.731) 100%),
+        radial-gradient(900px 420px at 15% 10%, rgba(255, 151, 4, .18), transparent 60%),
+        radial-gradient(900px 420px at 80% 25%, rgba(35, 63, 146, .18), transparent 60%),
+        url("/assets/primary-school-bg-hero.JPG");
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
 
     /* fun dots without extra HTML */
-    .ps-hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      opacity:.9;
+    .ps-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .9;
       background:
-        radial-gradient(circle at 12% 25%, rgba(255,151,4,.20) 0 10px, transparent 11px),
-        radial-gradient(circle at 22% 70%, rgba(35,63,146,.16) 0 14px, transparent 15px),
-        radial-gradient(circle at 78% 18%, rgba(255,151,4,.16) 0 12px, transparent 13px),
-        radial-gradient(circle at 88% 65%, rgba(35,63,146,.14) 0 16px, transparent 17px);
+        radial-gradient(circle at 12% 25%, rgba(255, 151, 4, .20) 0 10px, transparent 11px),
+        radial-gradient(circle at 22% 70%, rgba(35, 63, 146, .16) 0 14px, transparent 15px),
+        radial-gradient(circle at 78% 18%, rgba(255, 151, 4, .16) 0 12px, transparent 13px),
+        radial-gradient(circle at 88% 65%, rgba(35, 63, 146, .14) 0 16px, transparent 17px);
     }
 
-    .ps-heroGrid{
-      display:grid;
+    .ps-heroGrid {
+      display: grid;
       grid-template-columns: 1.05fr .95fr;
       gap: 26px;
-      align-items:center;
+      align-items: center;
     }
 
-    .ps-heroText{ text-align:left; }
+    .ps-heroText {
+      text-align: left;
+    }
 
-    .ps-hero h1{
+    .ps-hero h1 {
       margin: 0;
       font-size: clamp(2.2rem, 3.6vw, 3.45rem);
       font-weight: 900;
       letter-spacing: -0.02em;
       color: var(--ps-blue);
       line-height: 1.05;
-      text-shadow: 0 10px 30px rgba(35,63,146,.10);
+      text-shadow: 0 10px 30px rgba(35, 63, 146, .10);
     }
 
-    .ps-hero p{
+    .ps-hero p {
       margin: 12px 0 0;
       max-width: 56ch;
       color: var(--ps-muted);
@@ -180,160 +232,200 @@
       line-height: 1.85;
     }
 
-    .ps-heroChips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
+    .ps-heroChips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-top: 16px;
     }
-    .ps-chip{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
+
+    .ps-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       padding: 10px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(16,24,40,.10);
-      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(16, 24, 40, .10);
+      background: rgba(255, 255, 255, .78);
       font-weight: 900;
       color: var(--ps-text);
-      box-shadow: 0 10px 20px rgba(16,24,40,.07);
+      box-shadow: 0 10px 20px rgba(16, 24, 40, .07);
       font-size: 14px;
     }
-    .ps-chip i{ color: var(--ps-blue); }
 
-    .ps-heroActions{
-      display:flex;
+    .ps-chip i {
+      color: var(--ps-blue);
+    }
+
+    .ps-heroActions {
+      display: flex;
       gap: 10px;
       margin-top: 18px;
       flex-wrap: wrap;
     }
 
     /* Buttons */
-    .ps-btn{
+    .ps-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       padding: 12px 14px;
       border-radius: 14px;
-      border: 1px solid rgba(16,24,40,.10);
-      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(16, 24, 40, .10);
+      background: rgba(255, 255, 255, .78);
       color: var(--ps-blue);
       font-weight: 900;
       font-size: 14px;
       transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-      box-shadow: 0 12px 22px rgba(16,24,40,.10);
+      box-shadow: 0 12px 22px rgba(16, 24, 40, .10);
     }
-    .ps-btn:hover{
+
+    .ps-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 16px 28px rgba(16,24,40,.14);
-      background: rgba(255,255,255,.92);
+      box-shadow: 0 16px 28px rgba(16, 24, 40, .14);
+      background: rgba(255, 255, 255, .92);
     }
-    .ps-btn--accent{
-      background: linear-gradient(135deg, rgba(255,151,4,.92), rgba(255,205,92,.92));
+
+    .ps-btn--accent {
+      background: linear-gradient(135deg, rgba(255, 151, 4, .92), rgba(255, 205, 92, .92));
       color: #0b1220;
-      border-color: rgba(255,255,255,.22);
+      border-color: rgba(255, 255, 255, .22);
     }
-    .ps-btn--ghost{
-      background: rgba(255,255,255,.72);
-      border-color: rgba(35,63,146,.18);
+
+    .ps-btn--ghost {
+      background: rgba(255, 255, 255, .72);
+      border-color: rgba(35, 63, 146, .18);
     }
 
     /* Hero media */
-    .ps-heroMedia{
-      position:relative;
+    .ps-heroMedia {
+      position: relative;
       min-height: 420px;
     }
-    .ps-heroFrame{
+
+    .ps-heroFrame {
       border-radius: 30px;
-      overflow:hidden;
-      border: 1px solid rgba(16,24,40,.10);
+      overflow: hidden;
+      border: 1px solid rgba(16, 24, 40, .10);
       box-shadow: var(--ps-shadow);
       background: #fff;
       transform: rotate(-1deg);
     }
-    .ps-heroFrame img{
-      width:100%;
+
+    .ps-heroFrame img {
+      width: 100%;
       height: 420px;
       object-fit: cover;
-      display:block;
+      display: block;
       transition: transform .5s ease;
     }
-    .ps-heroFrame:hover img{ transform: scale(1.04); }
 
-    .ps-miniCard{
-      position:absolute;
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .ps-heroFrame:hover img {
+      transform: scale(1.04);
+    }
+
+    .ps-miniCard {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       padding: 12px 14px;
       border-radius: 16px;
-      border: 1px solid rgba(16,24,40,.10);
-      box-shadow: 0 12px 22px rgba(16,24,40,.10);
+      border: 1px solid rgba(16, 24, 40, .10);
+      box-shadow: 0 12px 22px rgba(16, 24, 40, .10);
       font-weight: 900;
       color: var(--ps-text);
       backdrop-filter: blur(10px);
       animation: psFloat 3.2s ease-in-out infinite;
     }
-    .ps-miniCard i{
+
+    .ps-miniCard i {
       width: 34px;
       height: 34px;
-      display:grid;
-      place-items:center;
+      display: grid;
+      place-items: center;
       border-radius: 12px;
-      background: rgba(35,63,146,.12);
+      background: rgba(35, 63, 146, .12);
       color: var(--ps-blue);
     }
 
-    .ps-miniCard--1{ top: 16px; left: -10px; background: rgba(255,225,239,.82); }
-    .ps-miniCard--2{ bottom: 20px; right: -12px; background: rgba(223,247,239,.84); animation-delay: .3s; }
-    .ps-miniCard--3{ top: 55%; left: -4px; transform: translateY(-50%); background: rgba(255,243,176,.84); animation-delay: .6s; }
+    .ps-miniCard--1 {
+      top: 16px;
+      left: -10px;
+      background: rgba(255, 225, 239, .82);
+    }
 
-    @keyframes psFloat{
-      0%,100%{ transform: translateY(0); }
-      50%{ transform: translateY(-6px); }
+    .ps-miniCard--2 {
+      bottom: 20px;
+      right: -12px;
+      background: rgba(223, 247, 239, .84);
+      animation-delay: .3s;
+    }
+
+    .ps-miniCard--3 {
+      top: 55%;
+      left: -4px;
+      transform: translateY(-50%);
+      background: rgba(255, 243, 176, .84);
+      animation-delay: .6s;
+    }
+
+    @keyframes psFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
     }
 
     /* =========================
       SECTION HEAD
     ========================= */
-    .ps-head{
+    .ps-head {
       display: grid;
       gap: 10px;
       margin-bottom: 22px;
     }
-    .ps-head h2{
+
+    .ps-head h2 {
       margin: 0;
       font-size: 28px;
       font-weight: 900;
       letter-spacing: -0.01em;
       color: var(--ps-blue);
     }
-    .ps-head p{
+
+    .ps-head p {
       margin: 0;
       color: var(--ps-muted);
       line-height: 1.8;
       max-width: 78ch;
     }
-    .ps-bar{
+
+    .ps-bar {
       width: 86px;
       height: 5px;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--ps-accent), rgba(35,63,146,.85));
+      background: linear-gradient(90deg, var(--ps-accent), rgba(35, 63, 146, .85));
       margin-top: 2px;
     }
 
     /* =========================
       GRID
     ========================= */
-    .ps-grid{
+    .ps-grid {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
       gap: 18px;
       align-items: start;
     }
 
-    .ps-card{
+    .ps-card {
       background: var(--ps-card);
       border: 1px solid var(--ps-border);
       border-radius: var(--ps-radius);
@@ -345,26 +437,31 @@
       transform: translateZ(0);
       /* animation: psFadeUp .55s ease both;  <-- REMOVED to use Scroll Trigger instead */
     }
-    .ps-card::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:
-        radial-gradient(600px 240px at 10% 0%, rgba(255,151,4,.14), transparent 60%),
-        radial-gradient(700px 260px at 85% 10%, rgba(35,63,146,.14), transparent 60%);
-      opacity:.9;
-      pointer-events:none;
-    }
-    .ps-card > *{ position: relative; z-index: 1; }
 
-    .ps-text{
+    .ps-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background:
+        radial-gradient(600px 240px at 10% 0%, rgba(255, 151, 4, .14), transparent 60%),
+        radial-gradient(700px 260px at 85% 10%, rgba(35, 63, 146, .14), transparent 60%);
+      opacity: .9;
+      pointer-events: none;
+    }
+
+    .ps-card>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ps-text {
       margin: 0;
       color: var(--ps-text);
       line-height: 1.95;
       font-size: 15.6px;
     }
 
-    .ps-photo{
+    .ps-photo {
       border-radius: var(--ps-radius);
       overflow: hidden;
       border: 1px solid var(--ps-border);
@@ -373,53 +470,66 @@
       position: relative;
       /* animation: psFadeUp .65s ease both; <-- REMOVED to use Scroll Trigger */
     }
-    .ps-photo::after{
-      content:"";
-      position:absolute;
-      inset:0;
+
+    .ps-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
       background:
-        linear-gradient(180deg, rgba(11,18,32,.06) 0%, rgba(11,18,32,0) 50%, rgba(11,18,32,.08) 100%);
-      pointer-events:none;
+        linear-gradient(180deg, rgba(11, 18, 32, .06) 0%, rgba(11, 18, 32, 0) 50%, rgba(11, 18, 32, .08) 100%);
+      pointer-events: none;
     }
-    .ps-photo img{
+
+    .ps-photo img {
       width: 100%;
       height: 336px;
       object-fit: cover;
       display: block;
       transition: transform .5s ease;
     }
-    .ps-photo:hover img{ transform: scale(1.05); }
+
+    .ps-photo:hover img {
+      transform: scale(1.05);
+    }
 
     /* FEATURES */
-    .ps-features{
+    .ps-features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       margin-top: 16px;
     }
 
-    .ps-feature{
-      background: rgba(255,255,255,.90);
+    .ps-feature {
+      background: rgba(255, 255, 255, .90);
       border: 1px solid var(--ps-border);
       border-radius: 20px;
       padding: 16px 16px 15px;
-      box-shadow: 0 10px 22px rgba(16,24,40,.08);
+      box-shadow: 0 10px 22px rgba(16, 24, 40, .08);
       position: relative;
       overflow: hidden;
       transition: transform .22s ease, box-shadow .22s ease;
     }
 
     /* small playful tint per card */
-    .ps-feature:nth-child(1){ background: rgba(230,241,255,.70); }
-    .ps-feature:nth-child(2){ background: rgba(223,247,239,.70); }
-    .ps-feature:nth-child(3){ background: rgba(255,225,239,.70); }
-
-    .ps-feature:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 18px 34px rgba(16,24,40,.14);
+    .ps-feature:nth-child(1) {
+      background: rgba(230, 241, 255, .70);
     }
 
-    .ps-feature h3{
+    .ps-feature:nth-child(2) {
+      background: rgba(223, 247, 239, .70);
+    }
+
+    .ps-feature:nth-child(3) {
+      background: rgba(255, 225, 239, .70);
+    }
+
+    .ps-feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(16, 24, 40, .14);
+    }
+
+    .ps-feature h3 {
       margin: 0 0 8px;
       font-size: 16px;
       font-weight: 900;
@@ -431,16 +541,18 @@
       position: relative;
       z-index: 1;
     }
-    .ps-feature h3 i{
+
+    .ps-feature h3 i {
       width: 38px;
       height: 38px;
       display: inline-grid;
       place-items: center;
       border-radius: 14px;
-      background: rgba(255,255,255,.70);
-      border: 1px solid rgba(16,24,40,.10);
+      background: rgba(255, 255, 255, .70);
+      border: 1px solid rgba(16, 24, 40, .10);
     }
-    .ps-feature p{
+
+    .ps-feature p {
       margin: 0;
       color: var(--ps-text);
       line-height: 1.75;
@@ -450,60 +562,61 @@
     }
 
     /* CTA */
-    .ps-cta{
+    .ps-cta {
       padding: 42px 0;
       background:
-        radial-gradient(900px 380px at 20% 10%, rgba(255,151,4,.22), transparent 60%),
-        radial-gradient(900px 420px at 80% 20%, rgba(255,255,255,.14), transparent 60%),
+        radial-gradient(900px 380px at 20% 10%, rgba(255, 151, 4, .22), transparent 60%),
+        radial-gradient(900px 420px at 80% 20%, rgba(255, 255, 255, .14), transparent 60%),
         linear-gradient(135deg, #1a2f74, #233f92);
       position: relative;
       overflow: hidden;
     }
-    .ps-cta::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
+
+    .ps-cta::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
       background:
-        repeating-linear-gradient(
-          135deg,
-          rgba(255,255,255,.06) 0px,
-          rgba(255,255,255,.06) 1px,
+        repeating-linear-gradient(135deg,
+          rgba(255, 255, 255, .06) 0px,
+          rgba(255, 255, 255, .06) 1px,
           transparent 1px,
-          transparent 22px
-        );
-      opacity:.55;
-      pointer-events:none;
+          transparent 22px);
+      opacity: .55;
+      pointer-events: none;
     }
 
-    .ps-ctaBox{
+    .ps-ctaBox {
       border-radius: var(--ps-radius);
       padding: 22px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(255, 255, 255, .18);
       display: grid;
       grid-template-columns: 1.2fr .8fr;
       gap: 14px;
       align-items: center;
-      box-shadow: 0 18px 40px rgba(0,0,0,.20);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .20);
       backdrop-filter: blur(10px);
       position: relative;
       z-index: 1;
     }
-    .ps-ctaBox h3{
+
+    .ps-ctaBox h3 {
       margin: 0 0 6px;
       color: #fff;
       font-size: 20px;
       font-weight: 900;
       letter-spacing: -0.01em;
     }
-    .ps-ctaBox p{
+
+    .ps-ctaBox p {
       margin: 0;
-      color: rgba(255,255,255,.86);
+      color: rgba(255, 255, 255, .86);
       line-height: 1.7;
       font-size: 14.6px;
     }
 
-    .ps-actions{
+    .ps-actions {
       display: flex;
       gap: 10px;
       justify-content: flex-end;
@@ -516,67 +629,154 @@
       to{ opacity: 1; transform: translateY(0); }
     } */
 
-    @media (prefers-reduced-motion: reduce){
-      .ps-card, .ps-photo, .ps-miniCard{ animation: none !important; }
-      .ps-feature, .ps-btn, .ps-photo img, .ggm-btn, .ps-heroFrame img{ transition: none !important; }
+    @media (prefers-reduced-motion: reduce) {
+
+      .ps-card,
+      .ps-photo,
+      .ps-miniCard {
+        animation: none !important;
+      }
+
+      .ps-feature,
+      .ps-btn,
+      .ps-photo img,
+      .ggm-btn,
+      .ps-heroFrame img {
+        transition: none !important;
+      }
     }
 
     /* Responsive */
-    @media (max-width: 980px){
-      .ps-heroGrid{ grid-template-columns: 1fr; }
-      .ps-heroText{ text-align: center; }
-      .ps-hero p{ margin-left:auto; margin-right:auto; }
-      .ps-heroChips{ justify-content: center; }
-      .ps-heroActions{ justify-content: center; }
-      .ps-miniCard{ display: none; }
-      .ps-heroMedia{ min-height: auto; }
-      .ps-heroFrame img{ height: 320px; }
+    @media (max-width: 980px) {
+      .ps-heroGrid {
+        grid-template-columns: 1fr;
+      }
 
-      .ps-grid{ grid-template-columns: 1fr; }
-      .ps-features{ grid-template-columns: 1fr; }
-      .ps-ctaBox{ grid-template-columns: 1fr; }
-      .ps-actions{ justify-content: flex-start; }
-      .ps-photo img{ height: 300px; }
+      .ps-heroText {
+        text-align: center;
+      }
+
+      .ps-hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .ps-heroChips {
+        justify-content: center;
+      }
+
+      .ps-heroActions {
+        justify-content: center;
+      }
+
+      .ps-miniCard {
+        display: none;
+      }
+
+      .ps-heroMedia {
+        min-height: auto;
+      }
+
+      .ps-heroFrame img {
+        height: 320px;
+      }
+
+      .ps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ps-features {
+        grid-template-columns: 1fr;
+      }
+
+      .ps-ctaBox {
+        grid-template-columns: 1fr;
+      }
+
+      .ps-actions {
+        justify-content: flex-start;
+      }
+
+      .ps-photo img {
+        height: 300px;
+      }
     }
 
     /* =========================================
        NEW ANIMATION CLASSES (Scroll Trigger)
     ========================================= */
-    
+
     /* Base reveal state */
-    .reveal, .reveal-left, .reveal-right, .zoom-in {
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .zoom-in {
       opacity: 0;
       transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
     }
 
     /* Upward Reveal */
-    .reveal { transform: translateY(40px); }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal {
+      transform: translateY(40px);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* Side Slide Reveals */
-    .reveal-left { transform: translateX(-40px); }
-    .reveal-left.active { opacity: 1; transform: translateX(0); }
+    .reveal-left {
+      transform: translateX(-40px);
+    }
 
-    .reveal-right { transform: translateX(40px); }
-    .reveal-right.active { opacity: 1; transform: translateX(0); }
+    .reveal-left.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      transform: translateX(40px);
+    }
+
+    .reveal-right.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
     /* Zoom Effect */
-    .zoom-in { transform: scale(0.92); }
-    .zoom-in.active { opacity: 1; transform: scale(1); }
+    .zoom-in {
+      transform: scale(0.92);
+    }
+
+    .zoom-in.active {
+      opacity: 1;
+      transform: scale(1);
+    }
 
     /* Stagger Delays */
-    .delay-100 { transition-delay: 0.1s; }
-    .delay-200 { transition-delay: 0.2s; }
-    .delay-300 { transition-delay: 0.3s; }
-    .delay-400 { transition-delay: 0.4s; }
+    .delay-100 {
+      transition-delay: 0.1s;
+    }
 
+    .delay-200 {
+      transition-delay: 0.2s;
+    }
+
+    .delay-300 {
+      transition-delay: 0.3s;
+    }
+
+    .delay-400 {
+      transition-delay: 0.4s;
+    }
   </style>
 
 </head>
 
 <body>
 
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- Header (same as your main) -->
   <header class="gm-header" id="header">
@@ -587,8 +787,8 @@
           <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
         </a>
 
-        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
-          aria-controls="navLinks" aria-expanded="false">
+        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks"
+          aria-expanded="false">
           <span class="gm-burger-line"></span>
           <span class="gm-burger-line"></span>
           <span class="gm-burger-line"></span>
@@ -607,12 +807,21 @@
             </button>
 
             <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-              <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
-              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
-              <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
-              <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+              </li>
+              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New
+                  English School Dhakale</a></li>
+              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School
+                  Karhati Tembha</a></li>
+              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS
+                  Private I.T.I Karhati</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium
+                  School</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar
+                  Kala Mahavidhyalaya</a></li>
             </ul>
           </li>
 
@@ -633,22 +842,22 @@
         <h1 class="reveal">Primary School Karhati Tembha</h1>
         <!-- Added reveal with delay -->
         <p class="reveal delay-100">A warm place for early learning. Strong basics, good habits, and confident kids.</p>
-        
+
         <!-- Added reveal with delay -->
         <div class="ps-heroChips reveal delay-200">
-             <!-- Chips content (optional addition if needed, empty in source) -->
+          <!-- Chips content (optional addition if needed, empty in source) -->
         </div>
 
         <div class="ps-heroActions reveal delay-300">
-           <!-- No buttons in original snippet here, but wrapper is animated -->
+          <!-- No buttons in original snippet here, but wrapper is animated -->
         </div>
       </div>
 
       <div class="ps-heroMedia reveal-right" aria-hidden="true">
         <div class="ps-heroFrame">
-             <img src="/assets/primary-school-bg-hero.JPG" alt="Primary School Kids">
+          <img src="/assets/primary-school-bg-hero.JPG" alt="Primary School Kids">
         </div>
-        
+
         <div class="ps-miniCard ps-miniCard--1">
           <i class="fa-solid fa-face-smile"></i>
           Friendly Teachers
@@ -773,15 +982,17 @@
 
           <div class="social-links">
             <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+
             <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+          <h3
+            style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
             Quick Links
           </h3>
           <ul class="footer-links">
@@ -793,19 +1004,23 @@
         </div>
 
         <div class="footer-col">
-          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+          <h3
+            style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
             Our Institutes
           </h3>
           <ul class="footer-links">
-            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+            </li>
+            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
+            </li>
             <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
             <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+          <h3
+            style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
             Contact Info
           </h3>
           <ul class="footer-links">
@@ -852,4 +1067,5 @@
   </script>
 
 </body>
+
 </html>

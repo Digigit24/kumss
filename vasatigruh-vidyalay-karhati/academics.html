@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,10 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
-  <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/institute.css">
@@ -22,13 +25,22 @@
 
   <style>
     /* Global Reset & Base */
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; font-family:"Poppins",sans-serif; overflow-x: hidden; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+    }
 
     /* =========================================
        PREMIUM LAYOUT STYLES
        ========================================= */
-    
+
     :root {
       --brand-blue: #233f92;
       --brand-orange: #ff9704;
@@ -44,19 +56,28 @@
       filter: blur(80px);
       opacity: 0.5;
     }
+
     .shape-1 {
-      top: -100px; right: -100px; width: 400px; height: 400px;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
       background: rgba(35, 63, 146, 0.15);
     }
+
     .shape-2 {
-      bottom: 100px; left: -100px; width: 300px; height: 300px;
+      bottom: 100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
       background: rgba(255, 151, 4, 0.1);
     }
 
     /* --- Hero Section --- */
     .prem-hero {
       position: relative;
-      padding: 140px 0 80px; /* Header spacing */
+      padding: 140px 0 80px;
+      /* Header spacing */
       background: linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%);
       overflow: hidden;
     }
@@ -108,11 +129,12 @@
       width: 100%;
       height: auto;
       border-radius: 24px;
-      box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+      box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
       transform: rotate(2deg);
       transition: transform 0.4s ease;
       object-fit: cover;
     }
+
     .prem-img-hero:hover {
       transform: rotate(0deg) scale(1.02);
     }
@@ -121,113 +143,127 @@
       width: 100%;
       height: auto;
       border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
       object-fit: cover;
     }
 
     /* --- Features Grid (Glass Cards) --- */
-   /* --- Variables for easy color changes --- */
-:root {
-  --prem-primary: #2563eb;       /* Main Blue */
-  --prem-secondary: #1e40af;     /* Darker Blue */
-  --prem-accent: #3b82f6;        /* Light Blue */
-  --prem-bg-card: #ffffff;       /* Card Background */
-  --prem-text-head: #1f2937;     /* Dark Heading */
-  --prem-text-body: #6b7280;     /* Grey Text */
-}
+    /* --- Variables for easy color changes --- */
+    :root {
+      --prem-primary: #2563eb;
+      /* Main Blue */
+      --prem-secondary: #1e40af;
+      /* Darker Blue */
+      --prem-accent: #3b82f6;
+      /* Light Blue */
+      --prem-bg-card: #ffffff;
+      /* Card Background */
+      --prem-text-head: #1f2937;
+      /* Dark Heading */
+      --prem-text-body: #6b7280;
+      /* Grey Text */
+    }
 
-/* --- Section Layout --- */
-.prem-features {
-  position: relative;
-  z-index: 10; /* Ensures it sits on top of the hero */
-  padding-bottom: 4rem;
-  /* IMPORTANT: This creates the overlap effect */
-}
+    /* --- Section Layout --- */
+    .prem-features {
+      position: relative;
+      z-index: 10;
+      /* Ensures it sits on top of the hero */
+      padding-bottom: 4rem;
+      /* IMPORTANT: This creates the overlap effect */
+    }
 
-.prem-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
+    .prem-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
 
-/* --- Card Style --- */
-.prem-card {
-  background: var(--prem-bg-card);
-  padding: 2.5rem 2rem;
-  border-radius: 16px;
-  /* Soft Shadow */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 4px solid transparent; /* Prepare for hover effect */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Aligns content to left, change to center if preferred */
-  text-align: left;
-}
+    /* --- Card Style --- */
+    .prem-card {
+      background: var(--prem-bg-card);
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      /* Soft Shadow */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 4px solid transparent;
+      /* Prepare for hover effect */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* Aligns content to left, change to center if preferred */
+      text-align: left;
+    }
 
-/* Hover Effects */
-.prem-card:hover {
-  transform: translateY(-10px); /* Lifts up */
-  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15); /* Blue glow shadow */
-  background-color: #a0beff;
-  color: #122946;
-}
+    /* Hover Effects */
+    .prem-card:hover {
+      transform: translateY(-10px);
+      /* Lifts up */
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+      /* Blue glow shadow */
+      background-color: #a0beff;
+      color: #122946;
+    }
 
-/* --- Icon Styling --- */
-.card-icon-wrapper {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-  color: var(--prem-primary);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease;
-}
+    /* --- Icon Styling --- */
+    .card-icon-wrapper {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      color: var(--prem-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
 
-.prem-card:hover .card-icon-wrapper {
-  transform: scale(1.1) rotate(5deg);
-  background: var(--prem-primary);
-  color: #fff;
-}
+    .prem-card:hover .card-icon-wrapper {
+      transform: scale(1.1) rotate(5deg);
+      background: var(--prem-primary);
+      color: #fff;
+    }
 
-/* --- Typography --- */
-.card-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--prem-text-head);
-  margin: 0 0 1rem 0;
-  line-height: 1.2;
-}
+    /* --- Typography --- */
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--prem-text-head);
+      margin: 0 0 1rem 0;
+      line-height: 1.2;
+    }
 
-.card-text {
-  font-size: 1rem;
-  color: var(--prem-text-body);
-  line-height: 1.6;
-  margin: 0;
-}
+    .card-text {
+      font-size: 1rem;
+      color: var(--prem-text-body);
+      line-height: 1.6;
+      margin: 0;
+    }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-  .prem-features {
-    margin-top: -40px; /* Less overlap on mobile */
-  }
-  
-  .prem-grid-3 {
-    grid-template-columns: 1fr; /* Stack vertically on phone */
-    gap: 1.5rem;
-  }
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 768px) {
+      .prem-features {
+        margin-top: -40px;
+        /* Less overlap on mobile */
+      }
 
-  .prem-card {
-    align-items: center; /* Center align on mobile for better balance */
-    text-align: center;
-  }
-}
+      .prem-grid-3 {
+        grid-template-columns: 1fr;
+        /* Stack vertically on phone */
+        gap: 1.5rem;
+      }
+
+      .prem-card {
+        align-items: center;
+        /* Center align on mobile for better balance */
+        text-align: center;
+      }
+    }
 
     /* --- Zig Zag Section --- */
     .prem-zigzag {
@@ -241,14 +277,25 @@
       gap: 60px;
       margin-bottom: 100px;
     }
-    .zigzag-row:last-child { margin-bottom: 0; }
-    
+
+    .zigzag-row:last-child {
+      margin-bottom: 0;
+    }
+
     .zigzag-row.reverse {
       flex-direction: row-reverse;
     }
 
-    .zigzag-content { flex: 1; }
-    .zigzag-visual { flex: 1; display: flex; justify-content: center; position: relative; }
+    .zigzag-content {
+      flex: 1;
+    }
+
+    .zigzag-visual {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
 
     /* Decorative border for images */
     .zigzag-visual::after {
@@ -262,10 +309,16 @@
       right: -15px;
       z-index: 0;
     }
+
     .zigzag-row.reverse .zigzag-visual::after {
-       right: auto; left: -15px;
+      right: auto;
+      left: -15px;
     }
-    .zigzag-visual img { position: relative; z-index: 1; }
+
+    .zigzag-visual img {
+      position: relative;
+      z-index: 1;
+    }
 
     .sec-title {
       font-size: 2rem;
@@ -275,6 +328,7 @@
       position: relative;
       display: inline-block;
     }
+
     .sec-title::after {
       content: '';
       display: block;
@@ -290,6 +344,7 @@
       padding: 0;
       margin-top: 25px;
     }
+
     .check-list li {
       display: flex;
       align-items: flex-start;
@@ -298,6 +353,7 @@
       color: #444;
       line-height: 1.5;
     }
+
     .check-list i {
       color: var(--brand-orange);
       margin-top: 4px;
@@ -316,26 +372,42 @@
       position: relative;
       overflow: hidden;
     }
-    
-    .prem-cta::before, .prem-cta::after {
-      content:''; position: absolute; border-radius: 50%;
-      background: rgba(255,255,255,0.05);
+
+    .prem-cta::before,
+    .prem-cta::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
     }
-    .prem-cta::before { width: 300px; height: 300px; top: -100px; left: -50px; }
-    .prem-cta::after { width: 200px; height: 200px; bottom: -50px; right: -50px; }
+
+    .prem-cta::before {
+      width: 300px;
+      height: 300px;
+      top: -100px;
+      left: -50px;
+    }
+
+    .prem-cta::after {
+      width: 200px;
+      height: 200px;
+      bottom: -50px;
+      right: -50px;
+    }
 
     .cta-content h2 {
       font-size: 2.5rem;
       margin-bottom: 15px;
       font-weight: 800;
     }
+
     .cta-content p {
       font-size: 1.1rem;
       opacity: 0.9;
       max-width: 600px;
       margin: 0 auto 30px;
     }
-    
+
     .cta-btn-group {
       display: flex;
       justify-content: center;
@@ -357,6 +429,7 @@
       color: #000;
       box-shadow: 0 10px 20px rgba(255, 151, 4, 0.3);
     }
+
     .cta-btn-orange:hover {
       transform: translateY(-3px);
       box-shadow: 0 15px 30px rgba(255, 151, 4, 0.4);
@@ -365,9 +438,10 @@
 
     .cta-btn-white {
       background: transparent;
-      border: 2px solid rgba(255,255,255,0.3);
+      border: 2px solid rgba(255, 255, 255, 0.3);
       color: #fff;
     }
+
     .cta-btn-white:hover {
       background: #fff;
       color: var(--brand-blue);
@@ -376,17 +450,46 @@
 
     /* Responsive */
     @media (max-width: 900px) {
-      .prem-hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .prem-subtitle { margin-left: auto; margin-right: auto; }
-      .zigzag-row, .zigzag-row.reverse { flex-direction: column; text-align: left; }
-      .zigzag-visual { width: 100%; justify-content: center; margin-top: 20px; }
-      .prem-grid-3 { margin-top: 0; }
-      .prem-img-hero { transform: rotate(0); margin-top: 30px; }
+      .prem-hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .prem-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .zigzag-row,
+      .zigzag-row.reverse {
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .zigzag-visual {
+        width: 100%;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .prem-grid-3 {
+        margin-top: 0;
+      }
+
+      .prem-img-hero {
+        transform: rotate(0);
+        margin-top: 30px;
+      }
     }
-    
-    a.ggm-btn { display: inline-flex !important; }
-    @media (max-width: 768px){
-       a.ggm-btn{ display:none !important; }
+
+    a.ggm-btn {
+      display: inline-flex !important;
+    }
+
+    @media (max-width: 768px) {
+      a.ggm-btn {
+        display: none !important;
+      }
     }
   </style>
 </head>
@@ -403,7 +506,8 @@
           <img src="/assets/gurukul-logo.png" alt="KUMSS Logo" class="gm-logo-img">
         </a>
 
-        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks"
+          aria-expanded="false">
           <span class="gm-burger-line"></span>
           <span class="gm-burger-line"></span>
           <span class="gm-burger-line"></span>
@@ -415,18 +519,28 @@
           <li><a class="gm-link" href="/vasatigruh-vidyalay-karhati/academics.html">Academics</a></li>
 
           <li class="gm-item gm-dropdown" data-dropdown>
-            <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="institutesMenu">
+            <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+              aria-controls="institutesMenu">
               Our Educational Institutes
               <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
             </button>
 
             <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-              <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
-              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
-              <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
-              <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+              </li>
+              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New
+                  English School Dhakale</a></li>
+              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School
+                  Karhati Tembha</a></li>
+              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS
+                  Private I.T.I Karhati</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium
+                  School</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar
+                  Kala Mahavidhyalaya</a></li>
             </ul>
           </li>
 
@@ -446,24 +560,23 @@
   <section class="prem-hero">
     <div class="bg-shape shape-1"></div>
     <div class="bg-shape shape-2"></div>
-    
+
     <div class="prem-container">
       <div class="prem-hero-grid">
         <div data-aos="fade-right" data-aos-duration="1000">
           <span class="prem-tag">Excellence in Education</span>
           <h1 class="prem-title">Building a Strong <br>Academic Foundation</h1>
           <p class="prem-subtitle">
-            At Vasatigruh Vidyalay Karhati, we focus on disciplined learning, strong basics, and steady improvement. Our goal is simple: children should understand concepts well, write neatly, and build confidence.
+            At Vasatigruh Vidyalay Karhati, we focus on disciplined learning, strong basics, and steady improvement. Our
+            goal is simple: children should understand concepts well, write neatly, and build confidence.
           </p>
           <div style="display:flex; gap:15px;">
-             <a href="#curriculum" class="cta-btn cta-btn-orange">Explore Curriculum</a>
+            <a href="#curriculum" class="cta-btn cta-btn-orange">Explore Curriculum</a>
           </div>
         </div>
         <div data-aos="fade-left" data-aos-duration="1000">
-           <!-- Replaced Lottie with Premium Image -->
-           <img src="/assets/vasatigruh-academics.jfif" 
-                alt="Students studying in library" 
-                class="prem-img-hero">
+          <!-- Replaced Lottie with Premium Image -->
+          <img src="/assets/vasatigruh-academics.jfif" alt="Students studying in library" class="prem-img-hero">
         </div>
       </div>
     </div>
@@ -478,7 +591,8 @@
           <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
           <h3 class="card-title">Structured Learning</h3>
           <p class="card-text">
-            Our curriculum is planned class-wise with daily practice and clear guidance, ensuring every student masters the basics before moving forward.
+            Our curriculum is planned class-wise with daily practice and clear guidance, ensuring every student masters
+            the basics before moving forward.
           </p>
         </div>
         <!-- Card 2 -->
@@ -486,7 +600,8 @@
           <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
           <h3 class="card-title">Written Practice</h3>
           <p class="card-text">
-            We emphasize neat handwriting and regular worksheets. Writing reinforces memory and helps in better expression of thoughts.
+            We emphasize neat handwriting and regular worksheets. Writing reinforces memory and helps in better
+            expression of thoughts.
           </p>
         </div>
         <!-- Card 3 -->
@@ -494,7 +609,8 @@
           <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
           <h3 class="card-title">Personal Attention</h3>
           <p class="card-text">
-            Teachers identify weak areas in students and provide extra support to build confidence and improve academic performance.
+            Teachers identify weak areas in students and provide extra support to build confidence and improve academic
+            performance.
           </p>
         </div>
       </div>
@@ -504,25 +620,28 @@
   <!-- Detailed Sections (Zig Zag) -->
   <section class="prem-zigzag" id="curriculum">
     <div class="prem-container">
-      
+
       <!-- Row 1 -->
       <div class="zigzag-row">
         <div class="zigzag-content" data-aos="fade-right">
           <h2 class="sec-title">Core Subjects & Focus</h2>
           <p style="color:#555; line-height:1.7;">
-            We provide a balanced education covering languages, sciences, and social studies. Our approach transforms complex textbook theories into simple, understandable concepts.
+            We provide a balanced education covering languages, sciences, and social studies. Our approach transforms
+            complex textbook theories into simple, understandable concepts.
           </p>
           <ul class="check-list">
-            <li><i class="fa-solid fa-check"></i> <strong>Languages:</strong> Mastery in Marathi, Hindi & English with grammar focus.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Mathematics:</strong> Daily problem solving to improve speed and accuracy.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Science/EVS:</strong> Practical examples to understand the world around us.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Languages:</strong> Mastery in Marathi, Hindi & English with
+              grammar focus.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Mathematics:</strong> Daily problem solving to improve speed
+              and accuracy.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Science/EVS:</strong> Practical examples to understand the
+              world around us.</li>
           </ul>
         </div>
         <div class="zigzag-visual" data-aos="fade-left">
-           <!-- Image Replacement -->
-           <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800" 
-                alt="Stack of books and glasses" 
-                class="prem-img-content">
+          <!-- Image Replacement -->
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800"
+            alt="Stack of books and glasses" class="prem-img-content">
         </div>
       </div>
 
@@ -531,19 +650,22 @@
         <div class="zigzag-content" data-aos="fade-left">
           <h2 class="sec-title">Assessment & Growth</h2>
           <p style="color:#555; line-height:1.7;">
-            Education is a journey of continuous improvement. We use various methods to track student progress and ensure they are ready for future challenges.
+            Education is a journey of continuous improvement. We use various methods to track student progress and
+            ensure they are ready for future challenges.
           </p>
           <ul class="check-list">
-            <li><i class="fa-solid fa-check"></i> <strong>Unit Tests:</strong> Regular intervals to check concept retention.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Oral & Written Work:</strong> Balancing speaking confidence with writing skills.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Parent Updates:</strong> Keeping parents informed about their child's progress.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Unit Tests:</strong> Regular intervals to check concept
+              retention.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Oral & Written Work:</strong> Balancing speaking confidence
+              with writing skills.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Parent Updates:</strong> Keeping parents informed about their
+              child's progress.</li>
           </ul>
         </div>
         <div class="zigzag-visual" data-aos="fade-right">
-           <!-- Image Replacement -->
-           <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&q=80&w=800" 
-                alt="Teacher helping student" 
-                class="prem-img-content">
+          <!-- Image Replacement -->
+          <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&q=80&w=800"
+            alt="Teacher helping student" class="prem-img-content">
         </div>
       </div>
 
@@ -555,7 +677,8 @@
     <div class="prem-container">
       <div class="cta-content" data-aos="zoom-in">
         <h2>Join Our Learning Community</h2>
-        <p>Admissions are open. Give your child the gift of disciplined education and a bright future at Vasatigruh Vidyalay Karhati.</p>
+        <p>Admissions are open. Give your child the gift of disciplined education and a bright future at Vasatigruh
+          Vidyalay Karhati.</p>
         <div class="cta-btn-group">
           <a href="/contact.html" class="cta-btn cta-btn-orange">Schedule a Visit</a>
           <a href="tel:+919421394242" class="cta-btn cta-btn-white"><i class="fa-solid fa-phone"></i> Call Now</a>
@@ -571,64 +694,74 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <a href="/index.html" class="logo" style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
-                    <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
-                    <div>
-                        <div style="color: #ff9704;">KUMSS SINCE 1951</div>
-                    </div>
-                </a>
-                <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
-                    An educational society focused on overall development of students since 1951.
-                </p>
-
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/index.html" class="logo"
+            style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+            <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+            <div>
+              <div style="color: #ff9704;">KUMSS SINCE 1951</div>
             </div>
+          </a>
+          <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+            An educational society focused on overall development of students since 1951.
+          </p>
 
-            <div class="footer-col">
-                <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="./vasatigruh-vidyalay-karhati.html">Home</a></li>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a href="./academics.html">Academics</a></li>
-                     <li><a href="./staff.html">Staff</a></li>
-                    <li><a href="/contact.html">Contact Us</a></li>
-                </ul>
-            </div>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
 
-            <div class="footer-col">
-                <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
-                <ul class="footer-links">
-                    <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                    <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
-                    <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
-                    <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
-                </ul>
-            </div>
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
 
-            <div class="footer-col">
-                <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-phone"></i><a href="tel:+919421394242">+91 94213 94242</a></li>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:info@kumss.org">info@kumss.org</a></li>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
-                </ul>
-            </div>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
-                ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
-            </p>
+        <div class="footer-col">
+          <h3
+            style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="./vasatigruh-vidyalay-karhati.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./academics.html">Academics</a></li>
+            <li><a href="./staff.html">Staff</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
         </div>
+
+        <div class="footer-col">
+          <h3
+            style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Our Institutes</h3>
+          <ul class="footer-links">
+            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+            </li>
+            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
+            </li>
+            <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Contact Info</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone"></i><a href="tel:+919421394242">+91 94213 94242</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:info@kumss.org">info@kumss.org</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+          ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+        </p>
+      </div>
     </div>
   </footer>
 
@@ -647,4 +780,5 @@
     });
   </script>
 </body>
+
 </html>

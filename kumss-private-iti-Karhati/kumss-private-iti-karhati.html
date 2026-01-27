@@ -10,7 +10,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,19 +35,27 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Gantari', sans-serif;
             font-weight: 700;
         }
 
-        a { text-decoration: none; }
+        a {
+            text-decoration: none;
+        }
 
         /* ==================== MODERN HERO SECTION ==================== */
         .hero-modern {
             position: relative;
             padding-top: 160px;
             padding-bottom: 120px;
-            background-color: #003366; /* KUMSS Blue */
+            background-color: #003366;
+            /* KUMSS Blue */
             overflow: hidden;
         }
 
@@ -55,7 +65,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 80% 20%, #004080 0%, transparent 40%),
                 linear-gradient(135deg, #002244 0%, #003366 100%);
             z-index: 0;
@@ -67,14 +77,18 @@
             right: -5%;
             width: 500px;
             height: 500px;
-            background: #ff6700; /* KUMSS Orange */
+            background: #ff6700;
+            /* KUMSS Orange */
             border-radius: 50%;
             filter: blur(100px);
             opacity: 0.15;
             z-index: 0;
         }
 
-        .hero-container { position: relative; z-index: 2; }
+        .hero-container {
+            position: relative;
+            z-index: 2;
+        }
 
         .hero-badge-modern {
             display: inline-flex;
@@ -105,11 +119,12 @@
             -webkit-text-stroke: 1px #ffffff;
             position: relative;
         }
-        
+
         .hero-heading span::after {
             content: 'Skills';
             position: absolute;
-            left: 0; top: 0;
+            left: 0;
+            top: 0;
             color: #ff6700;
             -webkit-text-stroke: 0;
             width: 100%;
@@ -137,6 +152,7 @@
             box-shadow: 0 10px 20px rgba(255, 103, 0, 0.3);
             border: 2px solid #ff6700;
         }
+
         .btn-premium:hover {
             transform: translateY(-3px);
             background: transparent;
@@ -155,6 +171,7 @@
             gap: 10px;
             transition: 0.3s;
         }
+
         .btn-premium-outline:hover {
             border-color: #ffffff;
             background: #ffffff;
@@ -179,8 +196,15 @@
             transform: perspective(1000px) rotateY(-5deg);
             transition: transform 0.5s ease;
         }
-        .hero-img-box:hover .main-img-wrap { transform: perspective(1000px) rotateY(0deg); }
-        .main-hero-img { width: 100%; display: block; }
+
+        .hero-img-box:hover .main-img-wrap {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .main-hero-img {
+            width: 100%;
+            display: block;
+        }
 
         .float-card {
             position: absolute;
@@ -196,16 +220,28 @@
             z-index: 5;
             animation: floatCard 4s ease-in-out infinite;
         }
+
         @keyframes floatCard {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
+
         .fc-icon {
-            width: 40px; height: 40px;
+            width: 40px;
+            height: 40px;
             background: #003366;
             color: #ffffff;
             border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* ==================== OVERLAPPING STATS ==================== */
@@ -231,105 +267,241 @@
             border-right: 1px solid #eeeeee;
             transition: 0.3s;
         }
-        .stat-box-modern:last-child { border-right: none; }
-        .stat-box-modern:hover { background: #ff6700; }
-        .stat-box-modern:hover * { color: #ffffff !important; }
 
-        .stat-icon-m { font-size: 2rem; color: #ff6700; margin-bottom: 15px; transition: 0.3s; }
-        .stat-num-m { display: block; font-size: 2.2rem; font-weight: 800; color: #003366; font-family: 'Gantari', sans-serif; line-height: 1; }
-        .stat-label-m { font-size: 0.85rem; text-transform: uppercase; font-weight: 600; color: #666666; letter-spacing: 1px; }
+        .stat-box-modern:last-child {
+            border-right: none;
+        }
+
+        .stat-box-modern:hover {
+            background: #ff6700;
+        }
+
+        .stat-box-modern:hover * {
+            color: #ffffff !important;
+        }
+
+        .stat-icon-m {
+            font-size: 2rem;
+            color: #ff6700;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .stat-num-m {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #003366;
+            font-family: 'Gantari', sans-serif;
+            line-height: 1;
+        }
+
+        .stat-label-m {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #666666;
+            letter-spacing: 1px;
+        }
 
         /* ==================== GENERAL SECTIONS ==================== */
-        .section-padding { padding: 80px 0; }
-        
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-subtitle { 
-            color: #ff6700; 
-            font-weight: 700; 
-            letter-spacing: 2px; 
-            text-transform: uppercase; 
-            display: block; 
-            margin-bottom: 10px; 
-            font-size: 0.9rem; 
+        .section-padding {
+            padding: 80px 0;
         }
-        .section-title h2 { font-size: 2.5rem; color: #003366; font-weight: 800; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: #ff6700;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #003366;
+            font-weight: 800;
+        }
 
         /* Mission Cards */
-        .philo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .philo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
         .philo-card {
-            background: #ffffff; padding: 40px 30px; border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: 0.4s;
             border-bottom: 4px solid transparent;
         }
-        .philo-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-bottom-color: #ff6700; }
-        
-        .card-icon { 
-            width: 70px; height: 70px; 
-            background: rgba(0,51,102,0.05); 
-            color: #003366; 
-            border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center; 
-            font-size: 2rem; margin-bottom: 20px; transition: 0.3s; 
+
+        .philo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-bottom-color: #ff6700;
         }
-        .philo-card:hover .card-icon { background: #ff6700; color: #ffffff; }
-        
-        .philo-title { color: #003366; margin-bottom: 15px; }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 51, 102, 0.05);
+            color: #003366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .philo-card:hover .card-icon {
+            background: #ff6700;
+            color: #ffffff;
+        }
+
+        .philo-title {
+            color: #003366;
+            margin-bottom: 15px;
+        }
 
         /* ==================== PRINCIPAL SECTION ==================== */
-        .principal-wrapper { 
-            display: flex; 
-            align-items: center; 
-            gap: 50px; 
+        .principal-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
             justify-content: center;
         }
-        
+
         .principal-img-box {
             position: relative;
-            flex: 0.7; 
+            flex: 0.7;
             display: flex;
             justify-content: flex-end;
         }
 
-        .principal-img-box img { 
-            width: 100%; 
-            max-width: 350px; /* Reduced Size */
-            height: auto; 
-            border-radius: 12px; 
-            box-shadow: 15px 15px 0 rgba(255,103,0,0.1); 
+        .principal-img-box img {
+            width: 100%;
+            max-width: 350px;
+            /* Reduced Size */
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 15px 15px 0 rgba(255, 103, 0, 0.1);
         }
 
-        .principal-content { flex: 1.3; }
-        
+        .principal-content {
+            flex: 1.3;
+        }
+
         /* Trades */
-        .trades-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .trade-card { background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eeeeee; }
-        .trade-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .trade-thumb { height: 180px; position: relative; overflow: hidden; }
-        .trade-thumb img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .trade-card:hover .trade-thumb img { transform: scale(1.1); }
-        .trade-body { padding: 25px; }
-        .trade-title { color: #003366; }
-        
+        .trades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .trade-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border: 1px solid #eeeeee;
+        }
+
+        .trade-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .trade-thumb {
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trade-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .trade-card:hover .trade-thumb img {
+            transform: scale(1.1);
+        }
+
+        .trade-body {
+            padding: 25px;
+        }
+
+        .trade-title {
+            color: #003366;
+        }
+
         /* Contact CTA */
         .contact-cta {
             background: linear-gradient(135deg, #003366, #002244);
-            color: #ffffff; border-radius: 15px; padding: 50px;
+            color: #ffffff;
+            border-radius: 15px;
+            padding: 50px;
         }
 
         /* Responsive */
         @media (max-width: 991px) {
-            .hero-img-box { margin-top: 50px; }
-            .stats-grid-modern { grid-template-columns: 1fr 1fr; }
-            .stat-box-modern { border-bottom: 1px solid #eeeeee; }
-            
-            .principal-wrapper { flex-direction: column; text-align: center; gap: 30px; }
-            .principal-img-box { justify-content: center; flex: 1; }
-            .principal-img-box img { max-width: 300px; box-shadow: 10px 10px 0 rgba(255,103,0,0.1); }
+            .hero-img-box {
+                margin-top: 50px;
+            }
+
+            .stats-grid-modern {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat-box-modern {
+                border-bottom: 1px solid #eeeeee;
+            }
+
+            .principal-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .principal-img-box {
+                justify-content: center;
+                flex: 1;
+            }
+
+            .principal-img-box img {
+                max-width: 300px;
+                box-shadow: 10px 10px 0 rgba(255, 103, 0, 0.1);
+            }
         }
+
         @media (max-width: 576px) {
-            .stats-grid-modern { grid-template-columns: 1fr; }
-            .stat-box-modern { border-right: none; }
-            .float-card { display: none; }
+            .stats-grid-modern {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-box-modern {
+                border-right: none;
+            }
+
+            .float-card {
+                display: none;
+            }
+
             .footer-logo-img {
                 margin-left: 0 !important;
             }
@@ -339,7 +511,8 @@
 
 <body>
 
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true" style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999; width: 0%;"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999; width: 0%;"></div>
 
     <!-- ==================== HEADER (PRESERVED) ==================== -->
     <header class="gm-header" id="header">
@@ -364,16 +537,28 @@
                     <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
-                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="institutesMenu">
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
                             Our Educational Institutes <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
                         </button>
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
-                            <li role="none"><a role="menuitem" href="kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
-                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
+                            <li role="none"><a role="menuitem" href="kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala Mahavidhyalaya</a></li>
                         </ul>
                     </li>
                     <li><a class="gm-link" href="#trades">Trades</a></li>
@@ -390,7 +575,7 @@
 
         <div class="container hero-container">
             <div class="row align-items-center">
-                
+
                 <!-- Left Text Content -->
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="gs-hero-text">
@@ -401,7 +586,8 @@
                             Master Industrial <br> <span>Skills</span> Today.
                         </h1>
                         <p class="hero-lead">
-                            Transforming 10th-grade students into skilled industry professionals in just 2 years. Join KUMSS ITI Karhati – A leader in technical education since 2000.
+                            Transforming 10th-grade students into skilled industry professionals in just 2 years. Join
+                            KUMSS ITI Karhati – A leader in technical education since 2000.
                         </p>
                         <div class="d-flex flex-wrap gap-3">
                             <a href="tel:+919421394242" class="btn-premium">
@@ -421,7 +607,7 @@
                             <!-- Placeholder Image -->
                             <img src="/assets/iti-temp.JPG" alt="ITI Workshop" class="main-hero-img">
                         </div>
-                        
+
                         <!-- Floating 3D Card -->
                         <div class="float-card">
                             <div class="fc-icon">
@@ -442,7 +628,7 @@
     <div class="stats-overlap-section">
         <div class="container">
             <div class="stats-grid-modern gs-stats">
-                
+
                 <div class="stat-box-modern">
                     <i class="fas fa-calendar-alt stat-icon-m"></i>
                     <span class="stat-num-m" data-target="24">0</span>
@@ -479,7 +665,8 @@
                 <div class="section-title">
                     <h2>Building Character & Skill</h2>
                 </div>
-                <p class="mt-3 text-muted" style="max-width: 600px; margin: 0 auto;">We believe in total personality development through individual counseling and industrial guidance.</p>
+                <p class="mt-3 text-muted" style="max-width: 600px; margin: 0 auto;">We believe in total personality
+                    development through individual counseling and industrial guidance.</p>
             </div>
 
             <div class="philo-grid">
@@ -487,10 +674,13 @@
                 <div class="philo-card gs-card">
                     <div class="card-icon"><i class="fas fa-eye"></i></div>
                     <h3 class="philo-title">Our Vision</h3>
-                    <p class="text-muted mb-3">To be a world-class institution providing career-oriented skill development training.</p>
+                    <p class="text-muted mb-3">To be a world-class institution providing career-oriented skill
+                        development training.</p>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i> Empowering students through quality education.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i> Creating global leaders in technical fields.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i>
+                            Empowering students through quality education.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i>
+                            Creating global leaders in technical fields.</li>
                     </ul>
                 </div>
 
@@ -498,10 +688,13 @@
                 <div class="philo-card gs-card" style="transition-delay: 0.1s;">
                     <div class="card-icon"><i class="fas fa-bullseye"></i></div>
                     <h3 class="philo-title">Our Mission</h3>
-                    <p class="text-muted mb-3">To improve social well-being by providing industrial training for sustainable income.</p>
+                    <p class="text-muted mb-3">To improve social well-being by providing industrial training for
+                        sustainable income.</p>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i> Tailoring learning to individual needs.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i> Improving rural economic stability.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i>
+                            Tailoring learning to individual needs.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i>
+                            Improving rural economic stability.</li>
                     </ul>
                 </div>
 
@@ -509,10 +702,13 @@
                 <div class="philo-card gs-card" style="transition-delay: 0.2s;">
                     <div class="card-icon"><i class="fas fa-gem"></i></div>
                     <h3 class="philo-title">Our Values</h3>
-                    <p class="text-muted mb-3">Upholding the highest standards of integrity and ethics in all our actions.</p>
+                    <p class="text-muted mb-3">Upholding the highest standards of integrity and ethics in all our
+                        actions.</p>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i> Transparency & Integrity.</li>
-                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i> Inspiring Leadership.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i>
+                            Transparency & Integrity.</li>
+                        <li class="mb-2"><i class="fas fa-check-circle" style="color: #ff6700; margin-right: 8px;"></i>
+                            Inspiring Leadership.</li>
                     </ul>
                 </div>
             </div>
@@ -532,7 +728,11 @@
                     <h2 class="mb-4" style="color: #003366;">Transforming Potential into Performance</h2>
                     <i class="fas fa-quote-left" style="font-size: 3rem; color: #ff6700; opacity: 0.3;"></i>
                     <p class="fst-italic fs-5 text-muted my-4" style="line-height: 1.8;">
-                        "The institute is developing excellent infrastructure facilities with well-equipped workshops which are updated regularly. We realize that we have to transform 10th class students into professionals within a period of 2 years. We want our students to be committed, dedicated to their goals along with integrity and concern for the environment and rural society they live in."
+                        "The institute is developing excellent infrastructure facilities with well-equipped workshops
+                        which are updated regularly. We realize that we have to transform 10th class students into
+                        professionals within a period of 2 years. We want our students to be committed, dedicated to
+                        their goals along with integrity and concern for the environment and rural society they live
+                        in."
                     </p>
                     <div>
                         <h4 class="mb-0 fw-bold" style="color: #003366;">Mr. Vikas Nirmal</h4>
@@ -558,39 +758,51 @@
                 <!-- Electrician -->
                 <div class="trade-card gs-card">
                     <div class="trade-thumb">
-                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2 YEARS</span>
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Electrician">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2
+                            YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="Electrician">
                     </div>
                     <div class="trade-body">
                         <h3 class="trade-title">Electrician</h3>
-                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Wiring, safety standards, fire extinguishers, conductors, cabling, and industrial electrical maintenance.</p>
-                        <a href="#" class="text-decoration-none fw-bold" style="color: #ff6700;">View Syllabus <i class="fas fa-arrow-right"></i></a>
+                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Wiring, safety standards, fire
+                            extinguishers, conductors, cabling, and industrial electrical maintenance.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color: #ff6700;">View Syllabus <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- Fitter -->
                 <div class="trade-card gs-card">
                     <div class="trade-thumb">
-                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2 YEARS</span>
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fitter">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2
+                            YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="Fitter">
                     </div>
                     <div class="trade-body">
                         <h3 class="trade-title">Fitter</h3>
-                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Training in sawing, filing, drilling, brazing, and allied trades like Welding (Gas & Arc) with safety aspects.</p>
-                        <a href="#" class="text-decoration-none fw-bold" style="color: #ff6700;">View Syllabus <i class="fas fa-arrow-right"></i></a>
+                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Training in sawing, filing, drilling,
+                            brazing, and allied trades like Welding (Gas & Arc) with safety aspects.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color: #ff6700;">View Syllabus <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- Electronics -->
                 <div class="trade-card gs-card">
                     <div class="trade-thumb">
-                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2 YEARS</span>
-                        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Electronics">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2
+                            YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="Electronics">
                     </div>
                     <div class="trade-body">
                         <h3 class="trade-title">Electronics Mech</h3>
-                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Includes Solar panel installation, Radio Tech, Optical fiber, TV installation, and industrial controls repair.</p>
-                        <a href="#" class="text-decoration-none fw-bold" style="color: #ff6700;">View Syllabus <i class="fas fa-arrow-right"></i></a>
+                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Includes Solar panel installation, Radio
+                            Tech, Optical fiber, TV installation, and industrial controls repair.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color: #ff6700;">View Syllabus <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -598,18 +810,23 @@
                 <div class="trade-card gs-card">
                     <div class="trade-thumb">
                         <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Interior Design">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="Interior Design">
                     </div>
                     <div class="trade-body">
                         <h3 class="trade-title">Interior Design</h3>
-                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Learn 2D Software designs, layout designs for plumbing/lighting, and analysis of paints, polish, and varnish.</p>
-                        <a href="#" class="text-decoration-none fw-bold" style="color: #ff6700;">View Syllabus <i class="fas fa-arrow-right"></i></a>
+                        <p class="text-muted mb-3" style="font-size: 0.9rem;">Learn 2D Software designs, layout designs
+                            for plumbing/lighting, and analysis of paints, polish, and varnish.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color: #ff6700;">View Syllabus <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-5">
-                <a href="#" class="ggm-btn" style="background: #003366; color: white; display: inline-block; padding: 12px 30px; border-radius: 50px;">View All Courses</a>
+                <a href="#" class="ggm-btn"
+                    style="background: #003366; color: white; display: inline-block; padding: 12px 30px; border-radius: 50px;">View
+                    All Courses</a>
             </div>
         </div>
     </section>
@@ -621,7 +838,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8 mb-4 mb-lg-0">
                         <h2 class="text-white mb-2">Ready to Start Your Career?</h2>
-                        <p class="mb-0 opacity-75">Admissions Open for Academic Year 2026-27. Limited seats available for Fitter & Electrician.</p>
+                        <p class="mb-0 opacity-75">Admissions Open for Academic Year 2026-27. Limited seats available
+                            for Fitter & Electrician.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a href="tel:+919421394242" class="btn bg-white text-dark fw-bold rounded-pill px-4 py-3">
@@ -638,7 +856,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+                    <a href="/index.html" class="logo kumss-since"
+                        style="margin-bottom: 2rem; align-items: flex-start;">
                         <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
                         <div><span>KUMSS SINCE 1951</span></div>
                     </a>
@@ -648,16 +867,17 @@
 
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
                         <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
@@ -668,7 +888,8 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
                         <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
@@ -682,7 +903,8 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Contact Info</h3>
                     <ul class="footer-links">
                         <li><a href="tel:+919421394242">+91 94213 94242</a></li>
@@ -734,11 +956,11 @@
                     onEnter: () => {
                         gsap.to(counter, {
                             innerHTML: target, duration: 2, snap: { innerHTML: 1 }, ease: "power1.inOut",
-                            onUpdate: function() {
+                            onUpdate: function () {
                                 let val = Math.ceil(this.targets()[0].innerHTML);
                                 if (target >= 1000) {
                                     counter.innerText = (val / 1000).toFixed(1) + 'k+';
-                                    if(val >= 5000) counter.innerText = '5k+';
+                                    if (val >= 5000) counter.innerText = '5k+';
                                 } else {
                                     counter.innerText = val + '+';
                                 }
@@ -792,4 +1014,5 @@
         });
     </script>
 </body>
+
 </html>

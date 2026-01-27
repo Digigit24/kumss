@@ -10,7 +10,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +30,8 @@
     <style>
         /* ==================== CRITICAL FIXES ==================== */
         /* This fixes the white space on the right side of mobile view */
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             width: 100%;
             position: relative;
@@ -39,7 +42,7 @@
             margin-right: 0;
             margin-left: 0;
         }
-        
+
         /* ==================== THEME CONFIG ==================== */
         :root {
             --blue: #003366;
@@ -54,15 +57,23 @@
             background: #fff;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'Gantari', sans-serif;
             color: var(--blue);
             font-weight: 700;
         }
 
-        .text-orange { color: var(--orange) !important; }
-        .bg-blue { background-color: var(--blue) !important; }
-        
+        .text-orange {
+            color: var(--orange) !important;
+        }
+
+        .bg-blue {
+            background-color: var(--blue) !important;
+        }
+
         /* ==================== HEADER Z-INDEX FIX ==================== */
         /* Ensures header stays on top but menu works correctly */
         .gm-header {
@@ -73,7 +84,8 @@
 
         /* ==================== MAGAZINE HERO ==================== */
         .mag-hero {
-            padding-top: 50px; /* Reduced top padding to fit better */
+            padding-top: 50px;
+            /* Reduced top padding to fit better */
             padding-bottom: 80px;
             text-align: center;
             background: #fff;
@@ -81,7 +93,8 @@
         }
 
         .mag-hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem); /* Responsive font size */
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            /* Responsive font size */
             line-height: 1.1;
             margin-bottom: 20px;
             position: relative;
@@ -93,12 +106,13 @@
             max-width: 600px;
             margin: 0 auto;
             color: #666;
-            padding: 0 15px; /* Prevent text touching edges */
+            padding: 0 15px;
+            /* Prevent text touching edges */
         }
 
         .hero-banner-img {
             width: 100%;
-            height: 400px;
+            height: 100%;
             object-fit: cover;
             margin-top: 50px;
             border-radius: 20px;
@@ -118,9 +132,10 @@
             top: 50%;
             left: -50px;
             transform: translateY(-50%);
-            font-size: 15rem; /* Large background text */
+            font-size: 15rem;
+            /* Large background text */
             font-weight: 900;
-            color: rgba(0,0,0,0.03);
+            color: rgba(0, 0, 0, 0.03);
             font-family: 'Gantari', sans-serif;
             line-height: 1;
             z-index: 0;
@@ -150,9 +165,18 @@
             object-fit: cover;
             border-radius: 8px;
         }
-        .c-img-1 { grid-row: 1 / 3; } 
-        .c-img-2 { grid-column: 2; }
-        .c-img-3 { grid-column: 2; }
+
+        .c-img-1 {
+            grid-row: 1 / 3;
+        }
+
+        .c-img-2 {
+            grid-column: 2;
+        }
+
+        .c-img-3 {
+            grid-column: 2;
+        }
 
         /* ==================== DARK PHILOSOPHY SECTION ==================== */
         .philosophy-dark {
@@ -163,16 +187,26 @@
             overflow: hidden;
         }
 
-        .philosophy-dark h2 { color: white; font-size: 2.5rem; }
-        .philosophy-dark p { color: rgba(255,255,255,0.7); }
+        .philosophy-dark h2 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .philosophy-dark p {
+            color: rgba(255, 255, 255, 0.7);
+        }
 
         .philo-box {
-            border-left: 1px solid rgba(255,255,255,0.2);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
             padding-left: 30px;
             height: 100%;
             transition: 0.3s;
         }
-        .philo-box:hover { border-left-color: var(--orange); padding-left: 40px; }
+
+        .philo-box:hover {
+            border-left-color: var(--orange);
+            padding-left: 40px;
+        }
 
         .philo-icon {
             font-size: 2rem;
@@ -182,7 +216,9 @@
         }
 
         /* ==================== LEADERSHIP PROFILE ==================== */
-        .leadership-section { padding: 100px 0; }
+        .leadership-section {
+            padding: 100px 0;
+        }
 
         .leader-card {
             background: #f4f7f6;
@@ -197,7 +233,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
 
@@ -219,25 +255,48 @@
 
         /* Responsive */
         @media (max-width: 991px) {
-            .mag-hero { padding-top: 30px; }
-            .mag-hero h1 { font-size: 2.5rem; }
-            .hero-banner-img { height: 250px; margin-top: 30px; }
-            
-            .story-collage { grid-template-columns: 1fr; grid-template-rows: auto; gap: 10px; }
-            .c-img-1 { height: 300px; grid-row: auto; }
-            .c-img-2, .c-img-3 { grid-column: auto; height: 200px; }
-            
-            .philo-box { 
-                border-left: none; 
-                border-top: 1px solid rgba(255,255,255,0.2); 
-                padding-left: 0; 
-                padding-top: 30px; 
-                margin-bottom: 40px; 
+            .mag-hero {
+                padding-top: 30px;
+            }
+
+            .mag-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-banner-img {
+                height: 250px;
+                margin-top: 30px;
+            }
+
+            .story-collage {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 10px;
+            }
+
+            .c-img-1 {
+                height: 300px;
+                grid-row: auto;
+            }
+
+            .c-img-2,
+            .c-img-3 {
+                grid-column: auto;
+                height: 200px;
+            }
+
+            .philo-box {
+                border-left: none;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                padding-left: 0;
+                padding-top: 30px;
+                margin-bottom: 40px;
             }
 
             /* Fix header/menu collision in mobile if needed */
             .gm-links {
-                z-index: 1001; /* Ensure mobile menu is on top */
+                z-index: 1001;
+                /* Ensure mobile menu is on top */
             }
         }
     </style>
@@ -245,7 +304,8 @@
 
 <body>
 
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true" style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999;"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999;"></div>
 
     <!-- ==================== HEADER (PRESERVED) ==================== -->
     <header class="gm-header" id="header">
@@ -254,7 +314,8 @@
                 <a href="/index.html" class="gm-logo">
                     <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
                 </a>
-                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
                     <span class="gm-burger-line"></span>
                     <span class="gm-burger-line"></span>
                     <span class="gm-burger-line"></span>
@@ -263,14 +324,21 @@
                     <li><a class="gm-link" href="./kumss-private-iti-karhati.html">Home</a></li>
                     <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
                     <li class="gm-item gm-dropdown" data-dropdown>
-                        <button class="gm-link gm-dropbtn" type="button">Our Educational Institutes <i class="fas fa-chevron-down gm-chevron"></i></button>
+                        <button class="gm-link gm-dropbtn" type="button">Our Educational Institutes <i
+                                class="fas fa-chevron-down gm-chevron"></i></button>
                         <ul class="gm-submenu" id="institutesMenu">
-                            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-                            <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
-                            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
-                            <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+                            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School
+                                    Dhakale</a></li>
+                            <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
+                            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala Mahavidhyalaya</a></li>
                         </ul>
                     </li>
                     <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
@@ -284,12 +352,16 @@
     <section class="mag-hero">
         <div class="container gs-hero">
             <span class="text-orange fw-bold text-uppercase ls-2 mb-2 d-block">Established 2000</span>
-            <h1>Legacy of <br> <span class="text-decoration-underline" style="text-decoration-color: var(--orange) !important;">Excellence</span></h1>
-            <p class="mt-4">Bridging the gap between rural ambition and industrial reality through world-class technical education.</p>
+            <h1>Legacy of <span class="text-decoration-underline"
+                    style="text-decoration-color: var(--orange) !important;">Excellence</span></h1>
+            <p class="mt-4">Bridging the gap between rural ambition and industrial reality through world-class technical
+                education.</p>
         </div>
         <div class="container-fluid px-lg-5">
             <!-- Ensure this image path is correct -->
-            <img src="/assets/iti-temp.JPG" onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80'" alt="Institute Wide Shot" class="hero-banner-img gs-img-scale">
+            <img src="/assets/iti-temp.JPG"
+                onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80'"
+                alt="Institute Wide Shot" class="hero-banner-img gs-img-scale">
         </div>
     </section>
 
@@ -300,13 +372,18 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 pe-lg-5 mb-5 mb-lg-0 gs-reveal-left">
                     <h2 class="mb-4" style="font-size: 2.5rem;">Our Journey</h2>
-                    <p class="lead text-dark mb-4">Empowering the rural youth of Baramati since the turn of the millennium.</p>
-                    
+                    <p class="lead text-dark mb-4">Empowering the rural youth of Baramati since the turn of the
+                        millennium.</p>
+
                     <p class="drop-cap text-muted">
-                        KUMSS Private ITI Karhati was born from a singular vision: to bring industrial-grade technical training to the heart of rural Pune. Established in 2000 under the Krushi Udyog Mul Shikshan Sanstha (est. 1951), we have spent over two decades refining our methodology.
+                        KUMSS Private ITI Karhati was born from a singular vision: to bring industrial-grade technical
+                        training to the heart of rural Pune. Established in 2000 under the Krushi Udyog Mul Shikshan
+                        Sanstha (est. 1951), we have spent over two decades refining our methodology.
                     </p>
                     <p class="text-muted">
-                        We don't just teach trades; we forge professionals. Our 2-year intensive programs in Electrician, Fitter, and Electronics are designed not just to pass exams, but to thrive in high-pressure industrial environments.
+                        We don't just teach trades; we forge professionals. Our 2-year intensive programs in
+                        Electrician, Fitter, and Electronics are designed not just to pass exams, but to thrive in
+                        high-pressure industrial environments.
                     </p>
 
                     <div class="mt-4 d-flex align-items-center gap-4">
@@ -329,9 +406,12 @@
 
                 <div class="col-lg-6 gs-reveal-right">
                     <div class="story-collage">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80" class="collage-img c-img-1" alt="Student Working">
-                        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=400&q=80" class="collage-img c-img-2" alt="Circuit Board">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" class="collage-img c-img-3" alt="Welding">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80"
+                            class="collage-img c-img-1" alt="Student Working">
+                        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=400&q=80"
+                            class="collage-img c-img-2" alt="Circuit Board">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80"
+                            class="collage-img c-img-3" alt="Welding">
                     </div>
                 </div>
             </div>
@@ -354,7 +434,8 @@
                     <div class="philo-box">
                         <i class="fas fa-eye philo-icon"></i>
                         <h4 class="text-white">Our Vision</h4>
-                        <p>To be a world-class, student-friendly institution providing career-oriented skill development training. We aim to prepare masters and leaders in their respective fields.</p>
+                        <p>To be a world-class, student-friendly institution providing career-oriented skill development
+                            training. We aim to prepare masters and leaders in their respective fields.</p>
                     </div>
                 </div>
 
@@ -363,7 +444,8 @@
                     <div class="philo-box">
                         <i class="fas fa-bullseye philo-icon"></i>
                         <h4 class="text-white">Our Mission</h4>
-                        <p>To improve social well-being by providing industrial & skill development training for sustainable income generation. We tailor learning to individual student needs.</p>
+                        <p>To improve social well-being by providing industrial & skill development training for
+                            sustainable income generation. We tailor learning to individual student needs.</p>
                     </div>
                 </div>
 
@@ -372,7 +454,8 @@
                     <div class="philo-box">
                         <i class="fas fa-gem philo-icon"></i>
                         <h4 class="text-white">Our Values</h4>
-                        <p>Transparency, Integrity, and Concern for the Environment. We believe in instilling high moral values to produce responsible citizens for rural society.</p>
+                        <p>Transparency, Integrity, and Concern for the Environment. We believe in instilling high moral
+                            values to produce responsible citizens for rural society.</p>
                     </div>
                 </div>
             </div>
@@ -386,14 +469,19 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 text-center text-lg-start">
                         <!-- Ensure image path is correct -->
-                        <img src="/assets/vikas-nirmal-iti-principal.jpg" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" alt="Principal" class="leader-img">
+                        <img src="/assets/vikas-nirmal-iti-principal.jpg"
+                            onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" alt="Principal"
+                            class="leader-img">
                         <h4 class="mb-0">Mr. Vikas Nirmal</h4>
                         <small class="text-muted text-uppercase fw-bold">Principal</small>
                     </div>
                     <div class="col-lg-9 ps-lg-5 border-start-lg">
                         <span class="text-orange fw-bold text-uppercase">Leadership Message</span>
                         <div class="leader-quote">
-                            "We realize that we have to transform 10th class students into professionals within a period of 2 years. We want our students to be committed, dedicated to their goals along with integrity and concern for the environment and rural society they live in. Each student studying in KUMSS Private ITI will be a young star of our family."
+                            "We realize that we have to transform 10th class students into professionals within a period
+                            of 2 years. We want our students to be committed, dedicated to their goals along with
+                            integrity and concern for the environment and rural society they live in. Each student
+                            studying in KUMSS Private ITI will be a young star of our family."
                         </div>
                         <div class="signature">Vikas Nirmal</div>
                     </div>
@@ -407,7 +495,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+                    <a href="/index.html" class="logo kumss-since"
+                        style="margin-bottom: 2rem; align-items: flex-start;">
                         <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
                         <div><span>KUMSS SINCE 1951</span></div>
                     </a>
@@ -417,15 +506,17 @@
 
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+
                         <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="./kumss-private-iti-karhati.html">Home</a></li>
                         <li><a href="./about.html">About</a></li>
@@ -435,17 +526,24 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English Campus, Dhakale</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English Campus,
+                                Dhakale</a></li>
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary Campus, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
                     <ul class="footer-links">
                         <li><a href="tel:+919421394242">+91 94213 94242</a></li>
                         <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
@@ -504,8 +602,8 @@
                 scale: 0.95, opacity: 0, duration: 0.8,
                 scrollTrigger: { trigger: ".leadership-section", start: "top 80%" }
             });
-            
-             // Mobile Menu Logic (Fallback if institute.js doesn't load)
+
+            // Mobile Menu Logic (Fallback if institute.js doesn't load)
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
             if (mobileMenuBtn && navLinks) {
@@ -522,4 +620,5 @@
         });
     </script>
 </body>
+
 </html>

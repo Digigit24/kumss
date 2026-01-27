@@ -1,1124 +1,1188 @@
 <!DOCTYPE html>
 <html lang="zxx">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krushi Udyog Mul Shikshan Sansthan</title>
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krushi Udyog Mul Shikshan Sansthan</title>
 
-    <!-- Added AOS Animation Library CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/scrollCue.css">
-    <link rel="stylesheet" href="assets/css/remixicon.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <link href="assets/kumss_log.png" type="image/x-icon" rel="icon">
-  </head>
+  <!-- Added AOS Animation Library CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <style>
-    /* ===========================
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/scrollCue.css">
+  <link rel="stylesheet" href="assets/css/remixicon.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <link href="assets/kumss_log.png" type="image/x-icon" rel="icon">
+</head>
+
+<style>
+  /* ===========================
        FIX #0: FULL WIDTH RESTORATION
        This removes the default browser white border and ensures full width.
        =========================== */
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden; /* Prevents horizontal scrollbar */
-    }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevents horizontal scrollbar */
+  }
 
-    :root {
-      --primary-color: #0a296c;
-      --secondary-color: #ff8402;
-      --accent-color: #28a745;
-    }
+  :root {
+    --primary-color: #0a296c;
+    --secondary-color: #ff8402;
+    --accent-color: #28a745;
+  }
 
-    /* ===========================
+  /* ===========================
        FIX #1: NAVBAR Z-INDEX
        =========================== */
-    #navbar {
-      position: relative;
-      z-index: 999; 
-    }
+  #navbar {
+    position: relative;
+    z-index: 999;
+  }
 
-    /* Ensure dropdowns inside navbar are visible */
-    #navbar .dropdown-menu {
-      z-index: 1000;
-    }
-    
-    #navbar .nav-item.dropdown {
-      position: relative;
-    }
+  /* Ensure dropdowns inside navbar are visible */
+  #navbar .dropdown-menu {
+    z-index: 1000;
+  }
 
-    /* Fixed: The previous CSS squashed the text. 
+  #navbar .nav-item.dropdown {
+    position: relative;
+  }
+
+  /* Fixed: The previous CSS squashed the text. 
        Applied width only to the image inside, not the span text wrapper. */
-    .sub-title {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .sub-title img {
-      width: 40px;
-      height: 40px;
-    }
+  .sub-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-    /* ===========================
+  .sub-title img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* ===========================
        FIX #2: MOBILE MENU Z-INDEX
        =========================== */
-    .offcanvas {
-      z-index: 1050 !important; /* Bootstrap default is 1045 */
-    }
-    
-    .offcanvas-backdrop {
-      z-index: 1040 !important;
-    }
+  .offcanvas {
+    z-index: 1050 !important;
+    /* Bootstrap default is 1045 */
+  }
 
-    .dropdown-item {
-      color: #fff;
-      font-size: 15px;
-    }
-     .dropdown-item:hover {
-      color: #ff8402;
-      font-size: 15px;
-      background: transparent;
-    }
+  .offcanvas-backdrop {
+    z-index: 1040 !important;
+  }
 
-    /* Hero Section Styles */
-    .banner-wrap-area {
-      position: relative;
-      width: 100vw; /* Ensures viewport width */
-      height: 100vh;
-      overflow: hidden;
-      background-color: #000;
-      margin: 0;
-      padding: 0;
-    }
+  .dropdown-item {
+    color: #fff;
+    font-size: 15px;
+  }
 
-    /* Video Background */
-    #hero-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
+  .dropdown-item:hover {
+    color: #ff8402;
+    font-size: 15px;
+    background: transparent;
+  }
 
-    /* Overlay */
-    .kumss-video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Slightly darker for better text readability */
-      z-index: 1;
-      pointer-events: none;
-    }
+  /* Hero Section Styles */
+  .banner-wrap-area {
+    position: relative;
+    width: 100vw;
+    /* Ensures viewport width */
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+  }
 
-    /* kumss-banner-wrap-content for Text */
+  /* Video Background */
+  #hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  /* Overlay */
+  .kumss-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Slightly darker for better text readability */
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* kumss-banner-wrap-content for Text */
+  .kumss-banner-wrap-content {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: white;
+    padding: 20px;
+    max-width: 600px;
+    text-align: left;
+    pointer-events: none;
+  }
+
+  .kumss-banner-wrap-content a,
+  .kumss-banner-wrap-content button {
+    pointer-events: auto;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 4rem;
+    margin: 20px 0;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000;
+    font-style: italic;
+  }
+
+  /* Make hero text white for readability over video */
+  .kumss-banner-wrap-content p {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
     .kumss-banner-wrap-content {
-      position: absolute;
-      top: 20%;
-      left: 10%;
+      top: 40%;
+      left: 5%;
       transform: translateY(-50%);
-      z-index: 2;
-      color: white;
-      padding: 20px;
-      max-width: 600px;
-      text-align: left;
-      pointer-events: none;
-    }
-
-    .kumss-banner-wrap-content a,
-    .kumss-banner-wrap-content button {
-      pointer-events: auto;
-    }
-
-    .title {
-      font-size: 2rem;
-      margin: 20px 0;
+      text-align: center;
+      padding: 15px;
+      max-width: 90%;
     }
 
     h1 {
-      font-weight: 800;
-      font-size: 4rem;
-      margin: 20px 0;
+      font-size: 2.5rem;
     }
 
     p {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #000000;
-      font-style: italic;
-    }
-    
-    /* Make hero text white for readability over video */
-    .kumss-banner-wrap-content p {
-        color: #fff;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .kumss-banner-wrap-content {
-        top: 40%;
-        left: 5%;
-        transform: translateY(-50%);
-        text-align: center;
-        padding: 15px;
-        max-width: 90%;
-      }
-
-      h1 { font-size: 2.5rem; }
-      p { font-size: 1rem; }
-    }
-
-    @media (max-width: 480px) {
-      .kumss-banner-wrap-content {
-        top: 30%; /* Adjusted for mobile view */
-        left: 5%;
-        padding: 10px;
-        max-width: 90%;
-      }
-
-      h1 { font-size: 2rem; }
-      p { font-size: 0.9rem; }
-    }
-
-    .about-hero-image {
-      padding: 0;
-      transition: transform 0.5s ease;
-    }
-    .about-hero-image:hover {
-      transform: scale(1.02);
-    }
-
-    /* --- SECTION STYLING --- */
-    .institute-philosophy-section {
-      background-color: #fff;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    /* Headings */
-    .main-heading {
-      color: #0a296c;
-      font-weight: 700;
-      font-family: 'Merriweather', serif;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      color: #606060;
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-    }
-
-    .heading-divider {
-      width: 80px;
-      height: 4px;
-      background-color: #0a296c;
-      margin: 0 auto;
-      border-radius: 2px;
-    }
-
-    /* --- CARD GENERAL STYLING --- */
-    .philosophy-card {
-      background: #d6e2fa;
-      border: none;
-      border-radius: 8px;
-      padding: 40px 30px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.614);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-    }
-
-    .philosophy-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    .vision-card { border-color: #000000; }
-    .mission-card { border-color: #000000; }
-    .values-card { border-color: #000000; }
-
-    .card-icon {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-align: center;
-      transition: transform 0.5s ease;
-    }
-
-    .philosophy-card:hover .card-icon {
-      transform: scale(1.2) rotate(5deg);
-    }
-
-    .vision-card .card-icon { color: var(--primary-color); }
-    .mission-card .card-icon { color: var(--accent-color); }
-    .values-card .card-icon { color: var(--secondary-color); }
-
-    .card-title {
-      text-align: center;
-      font-weight: 700;
-      color: #000000;
-      margin-bottom: 25px;
-      font-size: 1.5rem;
-      letter-spacing: 0.5px;
-    }
-
-    /* --- LIST STYLING --- */
-    .custom-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .custom-list li {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 15px;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    .list-bullet {
-      margin-right: 12px;
-      margin-top: 5px;
       font-size: 1rem;
     }
+  }
 
-    .vision-card .list-bullet { color: var(--primary-color); }
-    .mission-card .list-bullet { color: var(--accent-color); }
-
-    /* --- VALUES GRID STYLING --- */
-    .values-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
+  @media (max-width: 480px) {
+    .kumss-banner-wrap-content {
+      top: 30%;
+      /* Adjusted for mobile view */
+      left: 5%;
+      padding: 10px;
+      max-width: 90%;
     }
 
-    .value-item {
-      background-color: #fff;
-      border: 1px solid #eee;
-      border-radius: 50px;
-      padding: 8px 15px;
-      display: flex;
-      align-items: center;
-      font-weight: 600;
-      color: #444;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-      transition: all 0.3s ease;
-      flex: 1 1 40%;
-      justify-content: center;
-      min-width: 120px;
+    h1 {
+      font-size: 2rem;
     }
 
-    .value-item.full-width {
-      flex: 1 1 100%;
-    }
-
-    .value-item:hover {
-      background-color: var(--secondary-color);
-      color: white;
-      border-color: var(--secondary-color);
-      transform: translateY(-3px);
-    }
-
-    .value-item i {
-      margin-right: 8px;
+    p {
       font-size: 0.9rem;
     }
+  }
 
-    .value-item:hover i {
-      color: white;
-    }
+  .about-hero-image {
+    padding: 0;
+    transition: transform 0.5s ease;
+  }
 
-    /* Stats Card Animation */
-    .stat-row-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .stat-row-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-    .stat-row-card__icon {
-      transition: transform 0.5s ease;
-    }
-    .stat-row-card:hover .stat-row-card__icon {
-      transform: rotateY(360deg);
-    }
+  .about-hero-image:hover {
+    transform: scale(1.02);
+  }
 
-    /* Institute Tile Animation */
-    .inst-tile {
-      transition: all 0.3s ease;
-      display: block;
+  /* --- SECTION STYLING --- */
+  .institute-philosophy-section {
+    background-color: #fff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .subtitle {
+    color: #606060;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .heading-divider {
+    width: 80px;
+    height: 4px;
+    background-color: #0a296c;
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+
+  /* --- CARD GENERAL STYLING --- */
+  .philosophy-card {
+    background: #d6e2fa;
+    border: none;
+    border-radius: 8px;
+    padding: 40px 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.614);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .philosophy-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .vision-card {
+    border-color: #000000;
+  }
+
+  .mission-card {
+    border-color: #000000;
+  }
+
+  .values-card {
+    border-color: #000000;
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.5s ease;
+  }
+
+  .philosophy-card:hover .card-icon {
+    transform: scale(1.2) rotate(5deg);
+  }
+
+  .vision-card .card-icon {
+    color: var(--primary-color);
+  }
+
+  .mission-card .card-icon {
+    color: var(--accent-color);
+  }
+
+  .values-card .card-icon {
+    color: var(--secondary-color);
+  }
+
+  .card-title {
+    text-align: center;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* --- LIST STYLING --- */
+  .custom-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .custom-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .list-bullet {
+    margin-right: 12px;
+    margin-top: 5px;
+    font-size: 1rem;
+  }
+
+  .vision-card .list-bullet {
+    color: var(--primary-color);
+  }
+
+  .mission-card .list-bullet {
+    color: var(--accent-color);
+  }
+
+  /* --- VALUES GRID STYLING --- */
+  .values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .value-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 50px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    flex: 1 1 40%;
+    justify-content: center;
+    min-width: 120px;
+  }
+
+  .value-item.full-width {
+    flex: 1 1 100%;
+  }
+
+  .value-item:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+  }
+
+  .value-item i {
+    margin-right: 8px;
+    font-size: 0.9rem;
+  }
+
+  .value-item:hover i {
+    color: white;
+  }
+
+  /* Stats Card Animation */
+  .stat-row-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .stat-row-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .stat-row-card__icon {
+    transition: transform 0.5s ease;
+  }
+
+  .stat-row-card:hover .stat-row-card__icon {
+    transform: rotateY(360deg);
+  }
+
+  /* Institute Tile Animation */
+  .inst-tile {
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .inst-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 991px) {
+    .philosophy-card {
+      margin-bottom: 30px;
     }
-    .inst-tile:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
+  }
+</style>
 
-    @media (max-width: 991px) {
-      .philosophy-card {
-        margin-bottom: 30px;
-      }
-    }
-  </style>
+<body>
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress__bar" id="scrollProgress"></span>
+  </div>
 
-  <body>
-    <div class="scroll-progress" aria-hidden="true">
-      <span class="scroll-progress__bar" id="scrollProgress"></span>
-    </div>
+  <!-- Start Navbar Area -->
+  <nav class="navbar navbar-expand-lg style-3" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img class="black-logo" src="assets/kumss_log.png" alt="black-logo">
+      </a>
 
-    <!-- Start Navbar Area -->
-    <nav class="navbar navbar-expand-lg style-3" id="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img class="black-logo" src="assets/kumss_log.png" alt="black-logo">
-        </a>
+      <a class="navbar-toggler text-decoration-none" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
+        aria-controls="navbarOffcanvas">
+        <span class="burger-menu">
+          <span class="top-bar"></span>
+          <span class="middle-bar"></span>
+          <span class="bottom-bar"></span>
+        </span>
+      </a>
 
-        <a
-          class="navbar-toggler text-decoration-none"
-          data-bs-toggle="offcanvas"
-          href="#navbarOffcanvas"
-          role="button"
-          aria-controls="navbarOffcanvas"
-        >
-          <span class="burger-menu">
-            <span class="top-bar"></span>
-            <span class="middle-bar"></span>
-            <span class="bottom-bar"></span>
-          </span>
-        </a>
-
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link active"> Home </a>
-            </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link"> About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Our Educational Institutes
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">
-                    Vasatigruh Vidyalay Karhati
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active"> Home </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link"> About</a>
+          </li>
+          <li class="nav-item dropdown mega-menu-item">
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Our Educational Institutes
+            </a>
+            <div class="dropdown-menu mega-menu">
+              <div class="mega-menu-container">
+                <div class="mega-menu-grid">
+                  <!-- Institute 1 -->
+                  <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="/assets/institute.avif" alt="VVK" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>Vasatigruh Vidyalay Karhati</h5>
+                      <span>Est. 1982 | Marathi & Semi-English</span>
+                    </div>
                   </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./new-english-school-dhakale/new-english-school-dhakale.html">
-                    New English School, Dhakale
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./primary-school-tembha/primary-school-tembha.html">
-                    Primary School, Tembha
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html">
-                    KUMSS Private I.T.I Karhati
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./gurukul-english-medium-school/gurukul-english-medium-school.html">
-                    Gurukul English Medium School
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">
-                    Shardabai Pawar Kala <br>Mahavidyalaya
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a href="/gallery.html" class="nav-link"> Gallery </a>
-            </li>
-            <li class="nav-item">
-              <a href="/careers.html" class="nav-link">Careers</a>
-            </li>
-            <li class="nav-item">
-              <a href="/contact.html" class="nav-link">
-                Contact <span>Us</span>
-              </a>
-            </li>
-          </ul>
 
-          <div class="others-option">
-            <div class="d-flex align-items-center">
-              <div class="option-item">
-                <a class="text-decoration-none default-btn" href="javascript:void(0)">
-                  Donate Now
-                  <i class="fi fi-sr-hand-holding-heart"></i>
-                </a>
+                  <!-- Institute 2 -->
+                  <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="assets/institute2.avif" alt="NESD" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>New English School, Dhakale</h5>
+                      <span>Est. 2000 | English Medium</span>
+                    </div>
+                  </a>
+
+                  <!-- Institute 3 -->
+                  <a href="./primary-school-tembha/primary-school-tembha.html" class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="assets/institute3.avif" alt="PST" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>Primary School, Tembha</h5>
+                      <span>Est. 2000 | English Medium</span>
+                    </div>
+                  </a>
+
+                  <!-- Institute 4 -->
+                  <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="assets/institute4.jpg" alt="ITI" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>KUMSS Private I.T.I Karhati</h5>
+                      <span>Est. 2021 | Vocational Training</span>
+                    </div>
+                  </a>
+
+                  <!-- Institute 5 -->
+                  <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="assets/institute5.avif" alt="Gurukul" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>Gurukul English Medium School</h5>
+                      <span>Est. 2021 | Modern Schooling</span>
+                    </div>
+                  </a>
+
+                  <!-- Institute 6 -->
+                  <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
+                    class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="assets/institute7.avif" alt="SPKM" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>Shardabai Pawar Kala Mahavidyalaya</h5>
+                      <span>Est. 1993 | Arts College</span>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <!-- End Navbar Area -->
-
-    <!-- Start Responsive Navbar Area -->
-    <div
-      class="responsive-navbar offcanvas offcanvas-end border-0"
-      data-bs-backdrop="static"
-      tabindex="-1"
-      id="navbarOffcanvas"
-    >
-      <div class="offcanvas-header">
-        <a href="index.html" class="logo d-inline-block">
-          <img src="assets/kumss_log.png" alt="logo">
-        </a>
-        <button
-          type="button"
-          class="close-btn bg-transparent position-relative lh-1 p-0 border-0"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        >
-          <i class="ri-close-fill"></i>
-        </button>
-      </div>
-
-      <div class="offcanvas-body">
-        <ul class="responsive-menu">
-          <li class="responsive-menu-list without-icon">
-            <a href="index.html" class="nav-link">Home</a>
           </li>
-          <li class="responsive-menu-list without-icon">
-            <a href="about.html" class="nav-link">About</a>
+          <li class="nav-item">
+            <a href="/gallery.html" class="nav-link"> Gallery </a>
           </li>
-          <li class="responsive-menu-list">
-            <a href="/all-institutes.html">Our Educational Institutes</a>
-            <ul class="responsive-menu-items">
-              <li class="nav-item">
-                <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="nav-link">
-                  Vasatigruh Vidyalay Karhati
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="nav-link">
-                  New English School, Dhakale
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./primary-school-tembha/primary-school-tembha.html" class="nav-link">
-                  Primary School, Tembha
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="nav-link">
-                  KUMSS Private I.T.I Karhati
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="nav-link">
-                  Gurukul English Medium School
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html" class="nav-link">
-                  Shardabai Pawar Kala Mahavidyalaya
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="responsive-menu-list without-icon">
-            <a href="/gallery.html" class="nav-link">Gallery</a>
-          </li>
-          <li class="responsive-menu-list without-icon">
+          <li class="nav-item">
             <a href="/careers.html" class="nav-link">Careers</a>
           </li>
-          <li class="responsive-menu-list without-icon">
+          <li class="nav-item">
             <a href="/contact.html" class="nav-link">
               Contact <span>Us</span>
             </a>
           </li>
         </ul>
 
-        <div class="others-option d-md-flex align-items-center">
-          <div class="option-item">
-            <a class="text-decoration-none default-btn" href="javascript:void(0)">
-              Donate Now
-              <i class="flaticon-right-arrow"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Responsive Navbar Area -->
-
-    <!-- Start Banner Area -->
-    <div class="banner-wrap-area">
-      <video id="hero-video" autoplay muted loop playsinline poster="assets/kumss_log.png">
-        <source src="assets/gurukul-hero-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-
-      <div class="kumss-video-overlay"></div>
-
-      <div class="kumss-banner-wrap-content" data-aos="fade-up" data-aos-duration="1500">
-        <div class="title">
-          <p>Welcome To KUMSS <span>1951</span></p>
-          <h1>Craft Your Career At KUMSS</h1>
-          <p>
-            "Education opens up the mind, expands it and allows you to improve your life in so many ways"
-          </p>
-        </div>
-        <ul class="list-unstyled ps-0 mb-0 d-flex align-items-center btn-list">
-          <li class="d-inline-block">
-            <a class="text-decoration-none default-btn" href="index.html">
-              KUMSS Overview <i class="fi fi-sr-arrow-up-right"></i>
-            </a>
-          </li>
-          <li class="d-inline-block">
-            <ul class="list-unstyled d-flex align-items-center ps-0 mb-0 play-btn">
-              <li>
-                <a class="text-decoration-none arrow-btn" href="/about.html">
-                  Explore KUMSS <i class="fi fi-sr-arrow-up-right"></i>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- End Banner Area -->
-
-    <!-- STATS SECTION -->
-    <section class="inst-stats-row" aria-label="Institute statistics">
-      <div class="inst-stats-row__wrap">
-        <header class="inst-stats-row__head" data-aos="fade-down">
-          <h2 class="inst-stats-row__title">Our Family</h2>
-        </header>
-
-        <div class="inst-stats-row__grid">
-          <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="0">
-            <div class="stat-row-card__icon">
-              <i class="fi fi-sr-school" aria-hidden="true"></i>
-            </div>
-            <div class="stat-row-card__body">
-              <div class="stat-row-card__value">
-                <span class="stat-num has-plus" data-target="5">0</span>
-              </div>
-              <p class="stat-row-card__label">Educational Institutes</p>
-            </div>
-          </article>
-
-          <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="100">
-            <div class="stat-row-card__icon">
-              <i class="fa-solid fa-person-dress" aria-hidden="true"></i>
-            </div>
-            <div class="stat-row-card__body">
-              <div class="stat-row-card__value">
-                <span class="stat-num has-plus" data-target="1000">0</span>
-              </div>
-              <p class="stat-row-card__label">Girls</p>
-            </div>
-          </article>
-
-          <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="200">
-            <div class="stat-row-card__icon">
-              <i class="fa-solid fa-person" aria-hidden="true"></i>
-            </div>
-            <div class="stat-row-card__body">
-              <div class="stat-row-card__value">
-                <span class="stat-num has-plus" data-target="1000">0</span>
-              </div>
-              <p class="stat-row-card__label">Boys</p>
-            </div>
-          </article>
-
-          <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="300">
-            <div class="stat-row-card__icon">
-              <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
-            </div>
-            <div class="stat-row-card__body">
-              <div class="stat-row-card__value">
-                <span class="stat-num has-plus" data-target="1500">0</span>
-              </div>
-              <p class="stat-row-card__label">Employees</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Start kumss About Area -->
-    <section class="kumss-about-area section-padding">
-      <div class="container">
-        <div class="row align-items-center mb-5">
-          <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1200">
-            <div class="section-title-left">
-              <span class="sub-title">
-                <img src="assets/img/title-shape.svg" alt="shape"> About KUMSS
-              </span>
-
-              <h2 class="premium-heading">
-                “Education opens up the mind, expands it and allows you to improve your life in so many ways”
-              </h2>
-
-              <p class="lead-text">
-                KUMSS is an educational society which mainly focuses upon the overall development of students.
-              </p>
-
-              <p>
-                It established in the year of 1951, Great visionaries founder of the institute late Dr.Shri.A.J.Agarkar plant a seed of an idea.
-                Now, small plant becomes a big tree with great leadership of KUMSS President and Dy.CM of Maharashtra Shri.Ajitdada Pawar from 2004.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1200">
-            <div class="about-hero-image">
-              <img src="assets/ajit-pawar-about.webp" alt="KUMSS Campus" class="img-fluid rounded-3 shadow-lg" loading="lazy">
-              <div class="exp-badge" data-aos="flip-up" data-aos-delay="400">
-                <h3>70+</h3>
-                <span>Years of Excellence</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End kumss About Area -->
-
-    <section class="institute-philosophy-section py-5">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-lg-8 text-center" data-aos="fade-up">
-            <h2 class="main-heading">Our Core Philosophy</h2>
-            <p class="subtitle">Building leaders through excellence in education and moral integrity.</p>
-            <div class="heading-divider"></div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="0">
-            <div class="philosophy-card vision-card">
-              <div class="card-icon">
-                <i class="fas fa-eye"></i>
-              </div>
-              <h3 class="card-title">Our Vision</h3>
-              <ul class="custom-list">
-                <li>
-                  <i class="fas fa-check-circle list-bullet"></i>
-                  <div><strong>Empowering Students:</strong> Developing masters and leaders through skill development.</div>
-                </li>
-                <li>
-                  <i class="fas fa-check-circle list-bullet"></i>
-                  <div><strong>World-Class Institution:</strong> Providing career-oriented training globally.</div>
-                </li>
-                <li>
-                  <i class="fas fa-check-circle list-bullet"></i>
-                  <div><strong>Global Leadership:</strong> Leading the way in education and innovation.</div>
-                </li>
-                <li>
-                  <i class="fas fa-check-circle list-bullet"></i>
-                  <div><strong>Well-rounded Individuals:</strong> Creating a safe, welcoming environment.</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
-            <div class="philosophy-card mission-card">
-              <div class="card-icon">
-                <i class="fas fa-bullseye"></i>
-              </div>
-              <h3 class="card-title">Our Mission</h3>
-              <ul class="custom-list">
-                <li>
-                  <i class="fas fa-caret-right list-bullet"></i>
-                  <div><strong>Empowering Learners:</strong> Tailoring quality services to individual needs.</div>
-                </li>
-                <li>
-                  <i class="fas fa-caret-right list-bullet"></i>
-                  <div><strong>Social Well-being:</strong> Training for sustainable income generation.</div>
-                </li>
-                <li>
-                  <i class="fas fa-caret-right list-bullet"></i>
-                  <div><strong>High-Quality Education:</strong> Safe, inclusive, life-long learning.</div>
-                </li>
-                <li>
-                  <i class="fas fa-caret-right list-bullet"></i>
-                  <div><strong>Practical Focus:</strong> Intellectually stimulating practical learning.</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-12 mb-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="philosophy-card values-card">
-              <div class="card-icon">
-                <i class="fas fa-gem"></i>
-              </div>
-              <h3 class="card-title">Our Values</h3>
-
-              <div class="values-grid">
-                <div class="value-item">
-                  <i class="fas fa-handshake"></i>
-                  <span>Integrity</span>
-                </div>
-                <div class="value-item">
-                  <i class="fas fa-search"></i>
-                  <span>Transparency</span>
-                </div>
-                <div class="value-item">
-                  <i class="fas fa-star"></i>
-                  <span>Excellence</span>
-                </div>
-                <div class="value-item">
-                  <i class="fas fa-user-shield"></i>
-                  <span>Ethics & Dignity</span>
-                </div>
-                <div class="value-item full-width">
-                  <i class="fas fa-users"></i>
-                  <span>Inspiring Leadership</span>
-                </div>
-              </div>
-              <p class="text-center mt-3 text-muted small">Upholding the highest standards in every interaction.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="committee-v2">
-      <div class="container">
-        <div class="sec-head" data-aos="fade-down">
-          <div class="sec-line"></div>
-          <h2>The Executive Committee</h2>
-          <p>Leadership team guiding the institute’s vision and governance.</p>
-        </div>
-
-        <div class="chairman-spotlight-vertical" data-aos="zoom-in">
-          <div class="photo">
-            <img src="/assets/ajit-pawar.jfif" alt="Shri. Ajit Anantrao Pawar" loading="lazy">
-          </div>
-          <div class="info">
-            <span class="role-pill role-chairman">Chairman</span>
-            <h3>Shri. Ajit Anantrao Pawar</h3>
-            <p>Deputy Chief Minister, Finance &amp; Planning Minister, Govt. of Maharashtra State</p>
-          </div>
-        </div>
-
-        <div class="section-title" data-aos="fade-right">
-          <h3>Office Bearers</h3>
-          <span></span>
-        </div>
-
-        <div class="office-grid">
-          <div class="member-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="avatar">
-              <img src="/assets/placeholder-image.jfif" alt="Shri. Dasharathrao Babaso Dhumal" loading="lazy">
-            </div>
-            <div class="meta">
-              <span class="role-pill">Vice-Chairman</span>
-              <h4>Shri. Dasharathrao Babaso Dhumal</h4>
-            </div>
-          </div>
-
-          <div class="member-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="avatar">
-              <img src="/assets/placeholder-image.jfif" alt="Shri. Prafulla Bhimdeo Taware" loading="lazy">
-            </div>
-            <div class="meta">
-              <span class="role-pill">Secretary</span>
-              <h4>Shri. Prafulla Bhimdeo Taware</h4>
-            </div>
-          </div>
-
-          <div class="member-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="avatar">
-              <img src="/assets/placeholder-image.jfif" alt="Shri. Subhash Champalal Somani" loading="lazy">
-            </div>
-            <div class="meta">
-              <span class="role-pill">Treasurer</span>
-              <h4>Shri. Subhash Champalal Somani</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-title" data-aos="fade-right">
-          <h3>Trustees</h3>
-          <span></span>
-        </div>
-
-        <div class="trustee-grid" data-aos="fade-up">
-          <div class="trustee-item"><span class="dot"></span> <span>Sau. Sunetra Ajit Pawar</span></div>
-          <div class="trustee-item"><span class="dot"></span> <span>Shri. Narendra Punamchand Gujrathi</span></div>
-          <div class="trustee-item"><span class="dot"></span> <span>Shri. Milind Khasherao Jagtap</span></div>
-          <div class="trustee-item"><span class="dot"></span> <span>Shri. Sayyad Maula Gulab Dastgir</span></div>
-          <div class="trustee-item"><span class="dot"></span> <span>Shri. Dattatray Gulabrao Wable</span></div>
-          <div class="trustee-item"><span class="dot"></span> <span>Shri. Pritam Suryakant Pahade</span></div>
-          <div class="trustee-item"><span class="dot"></span> <span>Shri. Pranav Vijay Soman</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="institutes-toplogo" id="institutes">
-      <div class="container">
-        <div class="institutes-toplogo__head" data-aos="fade-down">
-          <h2>Our Educational Institutes</h2>
-        </div>
-
-        <div class="institutes-toplogo__grid">
-          <a class="inst-tile" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" target="_blank" rel="noopener" data-aos="flip-left" data-aos-delay="0">
-            <img class="inst-tile__logo" src="/assets/kumss_log.png" alt="Institute 1 Logo">
-            <h3 class="inst-tile__name">Vasatigruh Vidyalay Karhati</h3>
-            <p class="inst-tile__desc">Established in 1982</p>
-            <p class="inst-tile__desc">(Marathi & Semi-English Medium School)</p>
-          </a>
-
-          <a class="inst-tile" href="/new-english-school-dhakale/new-english-school-dhakale.html" target="_blank" rel="noopener" data-aos="flip-left" data-aos-delay="150">
-            <img class="inst-tile__logo" src="/assets/kumss_log.png" alt="Institute 2 Logo">
-            <h3 class="inst-tile__name">New English School, Dhakale</h3>
-            <p class="inst-tile__desc">Established in 2000</p>
-            <p class="inst-tile__desc">English Medium School</p>
-          </a>
-
-          <a class="inst-tile" id="int3" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html" target="_blank" rel="noopener" data-aos="flip-left" data-aos-delay="300">
-            <img class="inst-tile__logo" src="/assets/kumss_log.png" alt="Institute 3 Logo">
-            <h3 class="inst-tile__name">KUMSS Private I.T.I Karhati</h3>
-            <p class="inst-tile__desc">Establishing in 2021</p>
-            <p class="inst-tile__desc">Private Industrial Training Institute</p>
-          </a>
-        </div>
-
-        <div class="institutes-toplogo__footer" data-aos="fade-up">
-          <a href="/all-institutes.html" class="view-all-btn">
-            View All Institutes
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-split" id="contact">
-      <div class="container">
-        <div class="contact-split__head" data-aos="fade-down">
-          <h2>Contact Us</h2>
-        </div>
-
-        <div class="contact-split__wrap">
-          <div class="contact-split__map" data-aos="fade-right">
-            <iframe
-              title="KUMSS Location Map"
-              src="https://www.google.com/maps?q=18.249670417662454,74.43023575460906&z=16&output=embed"
-              loading="lazy"
-              decoding="async"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <div class="contact-split__info" data-aos="fade-left">
-            <div class="contact-block">
-              <h3>Call us</h3>
-              <a href="tel:+919421394242" class="contact-link">+91 94213 94242</a>
-            </div>
-
-            <div class="contact-block">
-              <h3>E-mail</h3>
-              <a href="mailto:info@kumss.org" class="contact-link">info@kumss.org</a>
-            </div>
-
-            <div class="contact-block">
-              <h3>Address</h3>
-              <p class="contact-text">
-                Krushi Udyog Mul Shikshan Sanstha,<br>
-                A/p -Karhati, Tal – Baramati,<br>
-                Dist - Pune, 412204
-              </p>
-            </div>
-
-            <div class="contact-block">
-              <h3>Latitude &amp; Longitude</h3>
-              <p class="contact-text">18.249670417662454, 74.43023575460906</p>
-              <a
-                class="btn-map"
-                href="https://share.google/F4ouhi4XpbHhqr7rd"
-                target="_blank"
-                rel="noopener"
-              >
-                Open in Google Maps
+        <div class="others-option">
+          <div class="d-flex align-items-center">
+            <div class="option-item">
+              <a class="text-decoration-none default-btn" href="javascript:void(0)">
+                Donate Now
+                <i class="fi fi-sr-hand-holding-heart"></i>
               </a>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </nav>
+  <!-- End Navbar Area -->
 
-    <footer class="footer" id="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col footer-brand">
-            <a href="index.html" class="footer-logo">
-              <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
-              <div class="footer-logo-text">
-                <span class="footer-since">KUMSS SINCE 1951</span>
-              </div>
-            </a>
+  <!-- Start Responsive Navbar Area -->
+  <div class="responsive-navbar offcanvas offcanvas-end border-0" data-bs-backdrop="static" tabindex="-1"
+    id="navbarOffcanvas">
+    <div class="offcanvas-header">
+      <a href="index.html" class="logo d-inline-block">
+        <img src="assets/kumss_log.png" alt="logo">
+      </a>
+      <button type="button" class="close-btn bg-transparent position-relative lh-1 p-0 border-0"
+        data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="ri-close-fill"></i>
+      </button>
+    </div>
 
-            <p class="footer-desc">
-              An educational society focused on overall development of students since 1951.
-            </p>
+    <div class="offcanvas-body">
+      <ul class="responsive-menu">
+        <li class="responsive-menu-list without-icon">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+        <li class="responsive-menu-list">
+          <a href="/all-institutes.html">Our Educational Institutes</a>
+          <ul class="responsive-menu-items">
+            <li class="nav-item">
+              <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="nav-link">
+                Vasatigruh Vidyalay Karhati
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="nav-link">
+                New English School, Dhakale
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./primary-school-tembha/primary-school-tembha.html" class="nav-link">
+                Primary School, Tembha
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="nav-link">
+                KUMSS Private I.T.I Karhati
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="nav-link">
+                Gurukul English Medium School
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html" class="nav-link">
+                Shardabai Pawar Kala Mahavidyalaya
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="/gallery.html" class="nav-link">Gallery</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="/careers.html" class="nav-link">Careers</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="/contact.html" class="nav-link">
+            Contact <span>Us</span>
+          </a>
+        </li>
+      </ul>
 
-            <div class="social-links">
-              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            </div>
-          </div>
-
-          <div class="footer-col">
-            <h3 class="footer-title">Quick Links</h3>
-            <ul class="footer-links">
-              <li><a href="/index.html">Home</a></li>
-              <li><a href="/about.html">About Us</a></li>
-              <li><a href="/gallery.html">Gallery</a></li>
-              <li><a href="/careers.html">Careers</a></li>
-              <li><a href="/contact.html">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h3 class="footer-title">Our Institutes</h3>
-            <ul class="footer-links">
-              <li><a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" target="_blank" rel="noopener">Vasatigruh Vidyalay Karhati</a></li>
-              <li><a href="./new-english-school-dhakale/new-english-school-dhakale.html" target="_blank" rel="noopener">New English School, Dhakale</a></li>
-              <li><a href="./primary-school-tembha/primary-school-tembha.html" target="_blank" rel="noopener">Primary School, Tembha</a></li>
-              <li><a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" target="_blank" rel="noopener">KUMSS Private I.T.I</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h3 class="footer-title">Contact Info</h3>
-            <ul class="footer-links">
-              <li><i class="fa-solid fa-phone-volume"></i> <a href="tel:+919421394242"> +91 94213 94242</a></li>
-              <li><i class="fa-regular fa-envelope"></i> <a href="mailto:info@kumss.org"> info@kumss.org</a></li>
-              <li><i class="fa-regular fa-envelope"></i> <a href="mailto:iti@kumss.org"> iti@kumss.org</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p class="footer-copy">© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
-          <p class="footer-note">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
+      <div class="others-option d-md-flex align-items-center">
+        <div class="option-item">
+          <a class="text-decoration-none default-btn" href="javascript:void(0)">
+            Donate Now
+            <i class="flaticon-right-arrow"></i>
+          </a>
         </div>
       </div>
-    </footer>
+    </div>
+  </div>
+  <!-- End Responsive Navbar Area -->
 
-    <button type="button" id="back-to-top" aria-label="Back to Top">
-      <i class="ri-arrow-up-double-fill"></i>
-    </button>
+  <!-- Start Banner Area -->
+  <div class="banner-wrap-area">
+    <video id="hero-video" autoplay muted loop playsinline poster="assets/gurukul-hero-img.jpg">
+      <source src="assets/gurukul-hero-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-    <!-- Js Files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudflare-email-decode/1.0.0/email-decode.min.js"></script>
+    <div class="kumss-video-overlay"></div>
 
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
+    <div class="kumss-banner-wrap-content" data-aos="fade-up" data-aos-duration="1500">
+      <div class="title">
+        <p>Welcome To KUMSS <span>1951</span></p>
+        <h1>Craft Your Career At KUMSS</h1>
+        <p>
+          "Education opens up the mind, expands it and allows you to improve your life in so many ways"
+        </p>
+      </div>
+      <ul class="list-unstyled ps-0 mb-0 d-flex align-items-center btn-list">
+        <li class="d-inline-block">
+          <a class="text-decoration-none default-btn" href="index.html">
+            KUMSS Overview <i class="fi fi-sr-arrow-up-right"></i>
+          </a>
+        </li>
+        <li class="d-inline-block">
+          <ul class="list-unstyled d-flex align-items-center ps-0 mb-0 play-btn">
+            <li>
+              <a class="text-decoration-none arrow-btn" href="/about.html">
+                Explore KUMSS <i class="fi fi-sr-arrow-up-right"></i>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- End Banner Area -->
 
-    <script src="assets/js/scrollCue.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+  <!-- STATS SECTION -->
+  <section class="inst-stats-row" aria-label="Institute statistics">
+    <div class="inst-stats-row__wrap">
+      <header class="inst-stats-row__head" data-aos="fade-down">
+        <h2 class="inst-stats-row__title">Our Family</h2>
+      </header>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        once: true,
-        offset: 100,
-        duration: 800,
-        easing: 'ease-out-cubic',
-      });
-    </script>
+      <div class="inst-stats-row__grid">
+        <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="0">
+          <div class="stat-row-card__icon">
+            <i class="fi fi-sr-school" aria-hidden="true"></i>
+          </div>
+          <div class="stat-row-card__body">
+            <div class="stat-row-card__value">
+              <span class="stat-num has-plus" data-target="5">0</span>
+            </div>
+            <p class="stat-row-card__label">Educational Institutes</p>
+          </div>
+        </article>
 
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-      data-cf-beacon='{"version":"2024.11.0","token":"5fe684bbe2954c839d4575e6915100ba","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-      crossorigin="anonymous"
-    ></script>
+        <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="stat-row-card__icon">
+            <i class="fa-solid fa-person-dress" aria-hidden="true"></i>
+          </div>
+          <div class="stat-row-card__body">
+            <div class="stat-row-card__value">
+              <span class="stat-num has-plus" data-target="1700">0</span>
+            </div>
+            <p class="stat-row-card__label">Girls</p>
+          </div>
+        </article>
 
-    <script>
-      // 3. Scroll Progress Bar Logic
-      window.onscroll = function() {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        var bar = document.getElementById("scrollProgress");
-        if(bar) bar.style.width = scrolled + "%";
+        <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="stat-row-card__icon">
+            <i class="fa-solid fa-person" aria-hidden="true"></i>
+          </div>
+          <div class="stat-row-card__body">
+            <div class="stat-row-card__value">
+              <span class="stat-num has-plus" data-target="2000">0</span>
+            </div>
+            <p class="stat-row-card__label">Boys</p>
+          </div>
+        </article>
+
+        <article class="stat-row-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="stat-row-card__icon">
+            <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+          </div>
+          <div class="stat-row-card__body">
+            <div class="stat-row-card__value">
+              <span class="stat-num has-plus" data-target="100">0</span>
+            </div>
+            <p class="stat-row-card__label">Employees</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start kumss About Area -->
+  <section class="kumss-about-area section-padding">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1200">
+          <div class="section-title-left">
+            <span class="sub-title">
+              <img src="assets/img/title-shape.svg" alt="shape" loading="lazy"> About KUMSS
+            </span>
+
+            <h2 class="premium-heading">
+              “Education opens up the mind, expands it and allows you to improve your life in so many ways”
+            </h2>
+
+            <p class="lead-text">
+              KUMSS is an educational society which mainly focuses upon the overall development of students.
+            </p>
+
+            <p>
+              It established in the year of 1951, Great visionaries founder of the institute late Dr.Shri.A.J.Agarkar
+              plant a seed of an idea.
+              Now, small plant becomes a big tree with great leadership of KUMSS President and Dy.CM of Maharashtra
+              Shri.Ajitdada Pawar from 2004.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1200">
+          <div class="about-hero-image">
+            <img src="assets/ajit-pawar-about.webp" alt="KUMSS Campus" class="img-fluid rounded-3 shadow-lg"
+              loading="lazy">
+            <div class="exp-badge" data-aos="flip-up" data-aos-delay="400">
+              <h3>70+</h3>
+              <span>Years of Excellence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End kumss About Area -->
+
+  <section class="institute-philosophy-section py-5">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center" data-aos="fade-up">
+          <h2 class="main-heading">Our Core Philosophy</h2>
+          <p class="subtitle">Building leaders through excellence in education and moral integrity.</p>
+          <div class="heading-divider"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="0">
+          <div class="philosophy-card vision-card">
+            <div class="card-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3 class="card-title">Our Vision</h3>
+            <ul class="custom-list">
+              <li>
+                <i class="fas fa-check-circle list-bullet"></i>
+                <div><strong>Empowering Students:</strong> Developing masters and leaders through skill development.
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle list-bullet"></i>
+                <div><strong>World-Class Institution:</strong> Providing career-oriented training globally.</div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle list-bullet"></i>
+                <div><strong>Global Leadership:</strong> Leading the way in education and innovation.</div>
+              </li>
+              <li>
+                <i class="fas fa-check-circle list-bullet"></i>
+                <div><strong>Well-rounded Individuals:</strong> Creating a safe, welcoming environment.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="150">
+          <div class="philosophy-card mission-card">
+            <div class="card-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3 class="card-title">Our Mission</h3>
+            <ul class="custom-list">
+              <li>
+                <i class="fas fa-caret-right list-bullet"></i>
+                <div><strong>Empowering Learners:</strong> Tailoring quality services to individual needs.</div>
+              </li>
+              <li>
+                <i class="fas fa-caret-right list-bullet"></i>
+                <div><strong>Social Well-being:</strong> Training for sustainable income generation.</div>
+              </li>
+              <li>
+                <i class="fas fa-caret-right list-bullet"></i>
+                <div><strong>High-Quality Education:</strong> Safe, inclusive, life-long learning.</div>
+              </li>
+              <li>
+                <i class="fas fa-caret-right list-bullet"></i>
+                <div><strong>Practical Focus:</strong> Intellectually stimulating practical learning.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12 mb-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="philosophy-card values-card">
+            <div class="card-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <h3 class="card-title">Our Values</h3>
+
+            <div class="values-grid">
+              <div class="value-item">
+                <i class="fas fa-handshake"></i>
+                <span>Integrity</span>
+              </div>
+              <div class="value-item">
+                <i class="fas fa-search"></i>
+                <span>Transparency</span>
+              </div>
+              <div class="value-item">
+                <i class="fas fa-star"></i>
+                <span>Excellence</span>
+              </div>
+              <div class="value-item">
+                <i class="fas fa-user-shield"></i>
+                <span>Ethics & Dignity</span>
+              </div>
+              <div class="value-item full-width">
+                <i class="fas fa-users"></i>
+                <span>Inspiring Leadership</span>
+              </div>
+            </div>
+            <p class="text-center mt-3 text-muted small">Upholding the highest standards in every interaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="committee-v2">
+    <div class="container">
+      <div class="sec-head" data-aos="fade-down">
+        <div class="sec-line"></div>
+        <h2>The Executive Committee</h2>
+        <p>Leadership team guiding the institute’s vision and governance.</p>
+      </div>
+
+      <div class="chairman-spotlight-vertical" data-aos="zoom-in">
+        <div class="photo">
+          <img src="/assets/ajit-pawar.jfif" alt="Shri. Ajit Anantrao Pawar" loading="lazy">
+        </div>
+        <div class="info">
+          <span class="role-pill role-chairman">Chairman</span>
+          <h3>Shri. Ajit Anantrao Pawar</h3>
+          <p>Deputy Chief Minister, Finance &amp; Planning Minister, Govt. of Maharashtra State</p>
+        </div>
+      </div>
+
+      <div class="section-title" data-aos="fade-right">
+        <h3>Office Bearers</h3>
+        <span></span>
+      </div>
+
+      <div class="office-grid">
+        <div class="member-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="avatar">
+            <img src="/assets/placeholder-image.jfif" alt="Shri. Dasharathrao Babaso Dhumal" loading="lazy">
+          </div>
+          <div class="meta">
+            <span class="role-pill">Vice-Chairman</span>
+            <h4>Shri. Dasharathrao Babaso Dhumal</h4>
+          </div>
+        </div>
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="avatar">
+            <img src="/assets/placeholder-image.jfif" alt="Shri. Prafulla Bhimdeo Taware" loading="lazy">
+          </div>
+          <div class="meta">
+            <span class="role-pill">Secretary</span>
+            <h4>Shri. Prafulla Bhimdeo Taware</h4>
+          </div>
+        </div>
+
+        <div class="member-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="avatar">
+            <img src="/assets/placeholder-image.jfif" alt="Shri. Subhash Champalal Somani" loading="lazy">
+          </div>
+          <div class="meta">
+            <span class="role-pill">Treasurer</span>
+            <h4>Shri. Subhash Champalal Somani</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title" data-aos="fade-right">
+        <h3>Trustees</h3>
+        <span></span>
+      </div>
+
+      <div class="trustee-grid" data-aos="fade-up">
+        <div class="trustee-item"><span class="dot"></span> <span>Sau. Sunetra Ajit Pawar</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Narendra Punamchand Gujrathi</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Milind Khasherao Jagtap</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Sayyad Maula Gulab Dastgir</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Dattatray Gulabrao Wable</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Pritam Suryakant Pahade</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Pranav Vijay Soman</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="institutes-toplogo" id="institutes">
+    <div class="container">
+      <div class="institutes-toplogo__head" data-aos="fade-down">
+        <h2>Our Educational Institutes</h2>
+      </div>
+
+      <div class="institutes-toplogo__grid">
+        <a class="inst-tile" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" target="_blank"
+          rel="noopener" data-aos="flip-left" data-aos-delay="0">
+          <img class="inst-tile__logo" src="/assets/kumss_log.png" alt="Institute 1 Logo">
+          <h3 class="inst-tile__name">Vasatigruh Vidyalay Karhati</h3>
+          <p class="inst-tile__desc">Established in 1982</p>
+          <p class="inst-tile__desc">(Marathi & Semi-English Medium School)</p>
+        </a>
+
+        <a class="inst-tile" href="/new-english-school-dhakale/new-english-school-dhakale.html" target="_blank"
+          rel="noopener" data-aos="flip-left" data-aos-delay="150">
+          <img class="inst-tile__logo" src="/assets/kumss_log.png" alt="Institute 2 Logo">
+          <h3 class="inst-tile__name">New English School, Dhakale</h3>
+          <p class="inst-tile__desc">Established in 2000</p>
+          <p class="inst-tile__desc">English Medium School</p>
+        </a>
+
+        <a class="inst-tile" id="int3" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html" target="_blank"
+          rel="noopener" data-aos="flip-left" data-aos-delay="300">
+          <img class="inst-tile__logo" src="/assets/kumss_log.png" alt="Institute 3 Logo">
+          <h3 class="inst-tile__name">KUMSS Private I.T.I Karhati</h3>
+          <p class="inst-tile__desc">Establishing in 2021</p>
+          <p class="inst-tile__desc">Private Industrial Training Institute</p>
+        </a>
+      </div>
+
+      <div class="institutes-toplogo__footer" data-aos="fade-up">
+        <a href="/all-institutes.html" class="view-all-btn">
+          View All Institutes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-split" id="contact">
+    <div class="container">
+      <div class="contact-split__head" data-aos="fade-down">
+        <h2>Contact Us</h2>
+      </div>
+
+      <div class="contact-split__wrap">
+        <div class="contact-split__map" data-aos="fade-right">
+          <iframe title="KUMSS Location Map"
+            src="https://www.google.com/maps?q=18.249670417662454,74.43023575460906&z=16&output=embed" loading="lazy"
+            decoding="async" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="contact-split__info" data-aos="fade-left">
+          <div class="contact-block">
+            <h3>Call us</h3>
+            <a href="tel:+919421394242" class="contact-link">+91 94213 94242</a>
+          </div>
+
+          <div class="contact-block">
+            <h3>E-mail</h3>
+            <a href="mailto:info@kumss.org" class="contact-link">info@kumss.org</a>
+          </div>
+
+          <div class="contact-block">
+            <h3>Address</h3>
+            <p class="contact-text">
+              Krushi Udyog Mul Shikshan Sanstha,<br>
+              A/p -Karhati, Tal – Baramati,<br>
+              Dist - Pune, 412204
+            </p>
+          </div>
+
+          <div class="contact-block">
+            <h3>Latitude &amp; Longitude</h3>
+            <p class="contact-text">18.249670417662454, 74.43023575460906</p>
+            <a class="btn-map" href="https://share.google/F4ouhi4XpbHhqr7rd" target="_blank" rel="noopener">
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+            <div class="footer-logo-text">
+              <span class="footer-since">KUMSS SINCE 1951</span>
+            </div>
+          </a>
+
+          <p class="footer-desc">
+            An educational society focused on overall development of students since 1951.
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Our Institutes</h3>
+          <ul class="footer-links">
+            <li><a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" target="_blank"
+                rel="noopener">Vasatigruh Vidyalay Karhati</a></li>
+            <li><a href="./new-english-school-dhakale/new-english-school-dhakale.html" target="_blank"
+                rel="noopener">New English School, Dhakale</a></li>
+            <li><a href="./primary-school-tembha/primary-school-tembha.html" target="_blank" rel="noopener">Primary
+                School, Tembha</a></li>
+            <li><a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" target="_blank"
+                rel="noopener">KUMSS Private I.T.I</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Contact Info</h3>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-phone-volume"></i> <a href="tel:+919421394242"> +91 94213 94242</a></li>
+            <li><i class="fa-regular fa-envelope"></i> <a href="mailto:info@kumss.org"> info@kumss.org</a></li>
+            <li><i class="fa-regular fa-envelope"></i> <a href="mailto:iti@kumss.org"> iti@kumss.org</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+        <p class="footer-note">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" id="back-to-top" aria-label="Back to Top">
+    <i class="ri-arrow-up-double-fill"></i>
+  </button>
+
+  <!-- Js Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudflare-email-decode/1.0.0/email-decode.min.js"></script>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/scrollCue.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      offset: 100,
+      duration: 800,
+      easing: 'ease-out-cubic',
+    });
+  </script>
+
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"5fe684bbe2954c839d4575e6915100ba","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous"></script>
+
+  <script>
+    // 3. Scroll Progress Bar Logic
+    window.onscroll = function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      var bar = document.getElementById("scrollProgress");
+      if (bar) bar.style.width = scrolled + "%";
+    };
+
+    (function () {
+      const els = document.querySelectorAll(".stat-num[data-target]");
+      const speed = 200;
+
+      const run = (el) => {
+        const target = parseInt(el.getAttribute("data-target"), 10) || 0;
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / speed));
+
+        const tick = () => {
+          current += step;
+          if (current >= target) {
+            el.textContent = target;
+            return;
+          }
+          el.textContent = current;
+          requestAnimationFrame(tick);
+        };
+        tick();
       };
 
-      (function(){
-        const els = document.querySelectorAll(".stat-num[data-target]");
-        const speed = 200;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            run(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.35 });
 
-        const run = (el) => {
-          const target = parseInt(el.getAttribute("data-target"), 10) || 0;
-          let current = 0;
-          const step = Math.max(1, Math.floor(target / speed));
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
 
-          const tick = () => {
-            current += step;
-            if(current >= target){
-              el.textContent = target;
-              return;
-            }
-            el.textContent = current;
-            requestAnimationFrame(tick);
-          };
-          tick();
-        };
+  <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
 
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach(e => {
-            if(e.isIntersecting){
-              run(e.target);
-              io.unobserve(e.target);
-            }
-          });
-        }, { threshold: 0.35 });
+  <script>
+    document.addEventListener('click', function (e) {
+      const t = e.target.closest('#navbar .dropdown-toggle');
+      if (t && t.getAttribute('href') === '#') {
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
 
-        els.forEach(el => io.observe(el));
-      })();
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
-
-    <script>
-      document.addEventListener('click', function(e){
-        const t = e.target.closest('#navbar .dropdown-toggle');
-        if(t && t.getAttribute('href') === '#'){
-          e.preventDefault();
-        }
-      });
-    </script>
-  </body>
 </html>

@@ -10,7 +10,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Existing CSS -->
     <link rel="stylesheet" href="/assets/css/institute.css">
@@ -33,10 +35,15 @@
             --white: #ffffff;
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         /* Footer Logo Fix */
-        .footer-logo-img { width: 30%; height: 30%; }
+        .footer-logo-img {
+            width: 30%;
+            height: 30%;
+        }
 
         /* General Layout Helpers */
         .page-container {
@@ -45,8 +52,10 @@
             padding: 0 24px;
         }
 
-        .section-padding { padding: 100px 0; }
-        
+        .section-padding {
+            padding: 100px 0;
+        }
+
         /* Badges & Titles */
         .section-badge {
             display: inline-block;
@@ -89,7 +98,8 @@
             color: white;
             padding: 0 20px;
             overflow: hidden;
-            background-color: #000; /* Fallback color */
+            background-color: #000;
+            /* Fallback color */
         }
 
         .hero-video-wrapper {
@@ -118,10 +128,10 @@
             z-index: 1;
         }
 
-        .hero-inner { 
+        .hero-inner {
             position: relative;
-            z-index: 2; 
-            max-width: 900px; 
+            z-index: 2;
+            max-width: 900px;
         }
 
         .hero-inner h1 {
@@ -130,7 +140,7 @@
             font-weight: 800;
             margin-bottom: 24px;
             line-height: 1.1;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             color: #fff;
         }
 
@@ -140,7 +150,7 @@
             max-width: 700px;
             margin: 0 auto;
             color: #fff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         /* --- 2. ACADEMIC PHILOSOPHY --- */
@@ -148,6 +158,7 @@
             text-align: center;
             background: #ffffff;
         }
+
         .academic-card {
             background: #f8fafc;
             padding: 60px;
@@ -157,20 +168,30 @@
         }
 
         /* --- 3. ZIG-ZAG SECTIONS --- */
-        .zigzag-section { background: #ffffff; overflow: hidden; }
-        
+        .zigzag-section {
+            background: #ffffff;
+            overflow: hidden;
+        }
+
         .zigzag-row {
             display: flex;
             align-items: center;
             gap: 60px;
             margin-bottom: 100px;
         }
-        
-        .zigzag-row:last-child { margin-bottom: 0; }
-        .zigzag-row.reverse { flex-direction: row-reverse; }
 
-        .zigzag-content { flex: 1; }
-        
+        .zigzag-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .zigzag-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .zigzag-content {
+            flex: 1;
+        }
+
         .zigzag-visual {
             flex: 1;
             display: flex;
@@ -179,9 +200,9 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         /* --- 4. FACULTY SECTION (Background) --- */
-        .faculty-section { 
+        .faculty-section {
             position: relative;
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(35, 63, 146, 0.8)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
@@ -190,8 +211,13 @@
             padding: 100px 0;
         }
 
-        .faculty-section .section-title { color: #ffffff; }
-        .faculty-section .section-text { color: rgba(255, 255, 255, 0.9); }
+        .faculty-section .section-title {
+            color: #ffffff;
+        }
+
+        .faculty-section .section-text {
+            color: rgba(255, 255, 255, 0.9);
+        }
 
         .faculty-section .section-badge {
             background: rgba(255, 255, 255, 0.15);
@@ -210,22 +236,24 @@
             background: #ffffff;
             padding: 40px;
             border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
             text-align: left;
         }
 
-        .mentor-card:hover { transform: translateY(-10px); }
+        .mentor-card:hover {
+            transform: translateY(-10px);
+        }
 
-        .mentor-card h3 { 
-            color: #233f92; 
-            font-size: 1.25rem; 
-            margin: 15px 0 10px 0; 
+        .mentor-card h3 {
+            color: #233f92;
+            font-size: 1.25rem;
+            margin: 15px 0 10px 0;
             font-weight: 700;
         }
-        
-        .mentor-card .section-text { 
-            color: #6b7280; 
+
+        .mentor-card .section-text {
+            color: #6b7280;
             font-size: 0.95rem;
         }
 
@@ -248,9 +276,21 @@
             padding: 80px 0;
             position: relative;
         }
-        .values-content { text-align: center; max-width: 800px; margin: 0 auto; }
-        .values-content h2 { color: white; margin-bottom: 20px;}
-        .values-content p { color: rgba(255,255,255,0.9); }
+
+        .values-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .values-content h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .values-content p {
+            color: rgba(255, 255, 255, 0.9);
+        }
 
         /* --- 6. WHY CHOOSE US (MOSAIC LAYOUT FIXED) --- */
         .why-us-section {
@@ -277,11 +317,13 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
         }
 
-        .mosaic-card:hover { transform: translateY(-5px); }
+        .mosaic-card:hover {
+            transform: translateY(-5px);
+        }
 
         .mosaic-icon {
             font-size: 2.5rem;
@@ -299,20 +341,45 @@
             line-height: 1;
         }
 
-        .mosaic-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; position: relative; z-index: 2; }
-        .mosaic-card p { font-size: 0.95rem; line-height: 1.6; position: relative; z-index: 2; }
+        .mosaic-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mosaic-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
 
         /* -- Mosaic Colors & Spans -- */
-        
+
         /* 1. English Fluency (Large Blue) */
         .card-1 {
             grid-column: span 7;
-            background-color: #233f92; /* Brand Blue */
+            background-color: #233f92;
+            /* Brand Blue */
             color: #ffffff;
         }
-        .card-1 h3, .card-1 p { color: #ffffff; }
-        .card-1 .mosaic-icon { color: #ff9704; } /* Orange Icon */
-        .card-1 .mosaic-bg-num { color: #ffffff; opacity: 0.1; }
+
+        .card-1 h3,
+        .card-1 p {
+            color: #ffffff;
+        }
+
+        .card-1 .mosaic-icon {
+            color: #ff9704;
+        }
+
+        /* Orange Icon */
+        .card-1 .mosaic-bg-num {
+            color: #ffffff;
+            opacity: 0.1;
+        }
 
         /* 2. Individual Attention (Small White) */
         .card-2 {
@@ -320,20 +387,45 @@
             background-color: #ffffff;
             color: #1f2937;
         }
-        .card-2 h3 { color: #1f2937; }
-        .card-2 p { color: #6b7280; }
-        .card-2 .mosaic-icon { color: #233f92; }
-        .card-2 .mosaic-bg-num { color: #233f92; opacity: 0.05; }
+
+        .card-2 h3 {
+            color: #1f2937;
+        }
+
+        .card-2 p {
+            color: #6b7280;
+        }
+
+        .card-2 .mosaic-icon {
+            color: #233f92;
+        }
+
+        .card-2 .mosaic-bg-num {
+            color: #233f92;
+            opacity: 0.05;
+        }
 
         /* 3. Digital Integration (Small Orange) */
         .card-3 {
             grid-column: span 5;
-            background-color: #ff9704; /* Brand Orange */
+            background-color: #ff9704;
+            /* Brand Orange */
             color: #ffffff;
         }
-        .card-3 h3, .card-3 p { color: #ffffff; }
-        .card-3 .mosaic-icon { color: #ffffff; }
-        .card-3 .mosaic-bg-num { color: #ffffff; opacity: 0.2; }
+
+        .card-3 h3,
+        .card-3 p {
+            color: #ffffff;
+        }
+
+        .card-3 .mosaic-icon {
+            color: #ffffff;
+        }
+
+        .card-3 .mosaic-bg-num {
+            color: #ffffff;
+            opacity: 0.2;
+        }
 
         /* 4. Trusted Legacy (Large White) */
         .card-4 {
@@ -341,22 +433,63 @@
             background-color: #ffffff;
             color: #1f2937;
         }
-        .card-4 h3 { color: #1f2937; }
-        .card-4 p { color: #6b7280; }
-        .card-4 .mosaic-icon { color: #ff9704; }
-        .card-4 .mosaic-bg-num { color: #ff9704; opacity: 0.1; }
+
+        .card-4 h3 {
+            color: #1f2937;
+        }
+
+        .card-4 p {
+            color: #6b7280;
+        }
+
+        .card-4 .mosaic-icon {
+            color: #ff9704;
+        }
+
+        .card-4 .mosaic-bg-num {
+            color: #ff9704;
+            opacity: 0.1;
+        }
 
 
         /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
-            .mosaic-grid { display: flex; flex-direction: column; gap: 20px; }
-            .card-1, .card-2, .card-3, .card-4 { grid-column: auto; min-height: 250px; }
-            
-            .zigzag-row, .zigzag-row.reverse { flex-direction: column; text-align: left; gap: 30px; }
-            .zigzag-visual { width: 100%; height: 250px; }
-            .section-title { font-size: 2rem; }
-            .modern-hero { height: auto; padding: 150px 20px 100px 20px; }
+            .mosaic-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .card-1,
+            .card-2,
+            .card-3,
+            .card-4 {
+                grid-column: auto;
+                min-height: 250px;
+            }
+
+            .zigzag-row,
+            .zigzag-row.reverse {
+                flex-direction: column;
+                text-align: left;
+                gap: 30px;
+            }
+
+            .zigzag-visual {
+                width: 100%;
+                height: 250px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .modern-hero {
+                height: auto;
+                padding: 150px 20px 100px 20px;
+            }
         }
+
         .span-sentence {
             color: #ff9704;
             font-weight: 800;
@@ -397,12 +530,24 @@
                             <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
                         </button>
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
-                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
-                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala Mahavidhyalaya</a></li>
                         </ul>
                     </li>
 
@@ -425,14 +570,15 @@
                 <source src="/assets/vvk-bg.mp4" type="video/mp4">
             </video>
         </div>
-        
+
         <!-- Overlay -->
         <div class="hero-overlay"></div>
 
         <!-- Content -->
         <div class="hero-inner">
             <h1 class="gs_hero">Nurturing Curious Minds<br>Since 1951</h1>
-            <p class="gs_hero"><span class="span-sentence">New English Medium School Dhakale</span> combines traditional values with modern learning to shape the leaders of tomorrow.</p>
+            <p class="gs_hero"><span class="span-sentence">New English Medium School Dhakale</span> combines traditional
+                values with modern learning to shape the leaders of tomorrow.</p>
         </div>
     </section>
 
@@ -441,10 +587,15 @@
         <div class="page-container">
             <span class="section-badge gs_reveal">Academic Philosophy</span>
             <h2 class="section-title gs_reveal">Education Beyond Textbooks</h2>
-            
+
             <div class="academic-card gs_reveal">
                 <p class="section-text">
-                    At New English Medium School Dhakale, education extends far beyond the four walls of a classroom. Our academic curriculum is designed to move away from rote memorization and towards concept-based learning. By integrating modern teaching aids with traditional values, we encourage students to ask questions, explore new ideas, and develop critical thinking skills. Our goal is to build a strong foundation in English, Mathematics, and Sciences while ensuring every child feels confident to express themselves globally.
+                    At New English Medium School Dhakale, education extends far beyond the four walls of a classroom.
+                    Our academic curriculum is designed to move away from rote memorization and towards concept-based
+                    learning. By integrating modern teaching aids with traditional values, we encourage students to ask
+                    questions, explore new ideas, and develop critical thinking skills. Our goal is to build a strong
+                    foundation in English, Mathematics, and Sciences while ensuring every child feels confident to
+                    express themselves globally.
                 </p>
             </div>
         </div>
@@ -453,14 +604,18 @@
     <!-- 3. Zig-Zag: Co-Curriculars & Infrastructure -->
     <section class="zigzag-section section-padding">
         <div class="page-container">
-            
+
             <!-- Row 1: Beyond Academics -->
             <div class="zigzag-row">
                 <div class="zigzag-content gs_slide_right">
                     <span class="section-badge">Holistic Development</span>
                     <h2 class="section-title">Beyond Academics</h2>
                     <p class="section-text">
-                        We recognize that every child has a unique talent waiting to be discovered. Our campus buzzes with activity beyond school hours, ranging from sports and athletics to cultural arts and public speaking. Whether it’s competing on the playground, performing on stage during our annual gathering, or participating in science exhibitions, our students are given ample opportunities to build leadership skills, teamwork, and resilience.
+                        We recognize that every child has a unique talent waiting to be discovered. Our campus buzzes
+                        with activity beyond school hours, ranging from sports and athletics to cultural arts and public
+                        speaking. Whether it’s competing on the playground, performing on stage during our annual
+                        gathering, or participating in science exhibitions, our students are given ample opportunities
+                        to build leadership skills, teamwork, and resilience.
                     </p>
                 </div>
                 <div class="zigzag-visual gs_slide_left">
@@ -474,11 +629,15 @@
                     <span class="section-badge">Infrastructure</span>
                     <h2 class="section-title">Safe & Modern Learning</h2>
                     <p class="section-text">
-                        We take pride in providing a campus that feels like a second home. Our infrastructure is designed to be safe, inclusive, and conducive to learning. We feature spacious, well-ventilated classrooms, a dedicated computer lab for digital literacy, and a well-stocked library to foster a love for reading. The school premises are secure and monitored, ensuring that parents can have peace of mind.
+                        We take pride in providing a campus that feels like a second home. Our infrastructure is
+                        designed to be safe, inclusive, and conducive to learning. We feature spacious, well-ventilated
+                        classrooms, a dedicated computer lab for digital literacy, and a well-stocked library to foster
+                        a love for reading. The school premises are secure and monitored, ensuring that parents can have
+                        peace of mind.
                     </p>
                 </div>
                 <div class="zigzag-visual gs_slide_right">
-                   <img src="/assets/modern-learning.png" alt="modern-learning">
+                    <img src="/assets/modern-learning.png" alt="modern-learning">
                 </div>
             </div>
 
@@ -491,8 +650,10 @@
             <div style="text-align: center;">
                 <span class="section-badge gs_reveal">Our Team</span>
                 <h2 class="section-title gs_reveal">Guided by Experts</h2>
-                <p class="section-text gs_reveal" style="max-width: 700px; margin: 0 auto; color: rgba(255,255,255,0.9);">
-                    Our greatest asset is our team of dedicated educators who act as mentors and guides rather than just instructors.
+                <p class="section-text gs_reveal"
+                    style="max-width: 700px; margin: 0 auto; color: rgba(255,255,255,0.9);">
+                    Our greatest asset is our team of dedicated educators who act as mentors and guides rather than just
+                    instructors.
                 </p>
             </div>
 
@@ -502,23 +663,26 @@
                     <div class="mentor-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                     <h3>Expert Faculty</h3>
                     <p class="section-text">
-                        With years of experience and a passion for teaching, our faculty focuses on the individual progress of every student.
+                        With years of experience and a passion for teaching, our faculty focuses on the individual
+                        progress of every student.
                     </p>
                 </div>
-                 <!-- Card 2 -->
-                 <div class="mentor-card gs_card">
+                <!-- Card 2 -->
+                <div class="mentor-card gs_card">
                     <div class="mentor-icon"><i class="fas fa-hands-helping"></i></div>
                     <h3>Personalized Mentorship</h3>
                     <p class="section-text">
-                        They identify the strengths and weaknesses of each learner, providing the extra support needed to turn challenges into achievements.
+                        They identify the strengths and weaknesses of each learner, providing the extra support needed
+                        to turn challenges into achievements.
                     </p>
                 </div>
-                 <!-- Card 3 -->
-                 <div class="mentor-card gs_card">
+                <!-- Card 3 -->
+                <div class="mentor-card gs_card">
                     <div class="mentor-icon"><i class="fas fa-user-graduate"></i></div>
                     <h3>Student Success</h3>
                     <p class="section-text">
-                        Our teachers are committed to shaping not just academically bright students, but well-rounded personalities ready for the world.
+                        Our teachers are committed to shaping not just academically bright students, but well-rounded
+                        personalities ready for the world.
                     </p>
                 </div>
             </div>
@@ -532,7 +696,10 @@
                 <i class="fas fa-hand-holding-heart" style="font-size: 3rem; margin-bottom: 20px; color: #ff9704;"></i>
                 <h2>Rooted in Values, Ready for the World</h2>
                 <p>
-                    While we prepare our students for a modern future, we remain deeply rooted in our local culture. Discipline, respect for elders, and social responsibility are woven into our daily school life. We actively encourage students to participate in community service and environmental awareness programs.
+                    While we prepare our students for a modern future, we remain deeply rooted in our local culture.
+                    Discipline, respect for elders, and social responsibility are woven into our daily school life. We
+                    actively encourage students to participate in community service and environmental awareness
+                    programs.
                 </p>
             </div>
         </div>
@@ -547,13 +714,14 @@
             </div>
 
             <div class="mosaic-grid">
-                
+
                 <!-- 01: Large Blue -->
                 <div class="mosaic-card card-1 gs_card">
                     <div class="mosaic-bg-num">01</div>
                     <i class="fas fa-language mosaic-icon"></i>
                     <h3>English Fluency</h3>
-                    <p>We place special emphasis on spoken English and communication skills, ensuring students are confident global citizens.</p>
+                    <p>We place special emphasis on spoken English and communication skills, ensuring students are
+                        confident global citizens.</p>
                 </div>
 
                 <!-- 02: Small White -->
@@ -577,7 +745,8 @@
                     <div class="mosaic-bg-num">04</div>
                     <i class="fas fa-history mosaic-icon"></i>
                     <h3>Trusted Legacy</h3>
-                    <p>Part of the KUMSS family, we have been delivering excellence in education since 1951, building trust across generations.</p>
+                    <p>Part of the KUMSS family, we have been delivering excellence in education since 1951, building
+                        trust across generations.</p>
                 </div>
 
             </div>
@@ -593,7 +762,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+                    <a href="/index.html" class="logo kumss-since"
+                        style="margin-bottom: 2rem; align-items: flex-start;">
                         <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
                         <div><span>KUMSS SINCE 1951</span></div>
                     </a>
@@ -603,15 +773,18 @@
 
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
                         <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="./new-english-school-dhakale.html">Home</a></li>
                         <li><a href="./about.html">About</a></li>
@@ -621,17 +794,24 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a></li>
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
                     <ul class="footer-links">
                         <li><a href="tel:+919421394242">+91 94213 94242</a></li>
                         <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
@@ -727,13 +907,13 @@
             // Header & Mobile Menu (Preserved)
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) { header.classList.add('scrolled'); } 
+                if (window.scrollY > 50) { header.classList.add('scrolled'); }
                 else { header.classList.remove('scrolled'); }
             });
 
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
-            if(mobileMenuBtn){
+            if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', () => {
                     mobileMenuBtn.classList.toggle('active');
                     navLinks.classList.toggle('active');
@@ -742,4 +922,5 @@
         });
     </script>
 </body>
+
 </html>

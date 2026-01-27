@@ -26,7 +26,7 @@
 
     <style>
         /* --- Page Specific Styles --- */
-        
+
         :root {
             --primary-color: #0f8042;
             --text-dark: #1a1a1a;
@@ -71,11 +71,11 @@
         }
 
         /* --- Glassmorphism Section Styling --- */
-        
+
         .perfect-faculty-section {
             /* Soft Abstract Background to make glass visible */
             background-color: #f0fdf4;
-            background-image: 
+            background-image:
                 radial-gradient(at 0% 0%, hsla(145, 63%, 93%, 1) 0px, transparent 50%),
                 radial-gradient(at 100% 0%, hsla(145, 63%, 96%, 1) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, hsla(145, 63%, 93%, 1) 0px, transparent 50%),
@@ -115,12 +115,17 @@
         /* --- Glass Card Styling --- */
         .faculty-card {
             /* Glass Effect properties */
-            background: rgba(255, 255, 255, 0.45); /* Semi-transparent white */
-            backdrop-filter: blur(12px);           /* The Frost Effect */
-            -webkit-backdrop-filter: blur(12px);   /* Safari Support */
-            border: 1px solid rgba(255, 255, 255, 0.6); /* Subtle border highlight */
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07); /* Soft colored shadow */
-            
+            background: rgba(255, 255, 255, 0.45);
+            /* Semi-transparent white */
+            backdrop-filter: blur(12px);
+            /* The Frost Effect */
+            -webkit-backdrop-filter: blur(12px);
+            /* Safari Support */
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            /* Subtle border highlight */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            /* Soft colored shadow */
+
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.4s ease;
@@ -130,8 +135,10 @@
 
         .faculty-card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.65); /* More opaque on hover */
-            box-shadow: 0 15px 40px 0 rgba(15, 128, 66, 0.15); /* Greenish glow shadow */
+            background: rgba(255, 255, 255, 0.65);
+            /* More opaque on hover */
+            box-shadow: 0 15px 40px 0 rgba(15, 128, 66, 0.15);
+            /* Greenish glow shadow */
             border-color: rgba(255, 255, 255, 0.9);
         }
 
@@ -139,7 +146,8 @@
             height: 300px;
             overflow: hidden;
             position: relative;
-            background: rgba(0,0,0,0.03); /* Slight tint behind image */
+            background: rgba(0, 0, 0, 0.03);
+            /* Slight tint behind image */
         }
 
         .card-image img {
@@ -189,7 +197,8 @@
             margin-top: auto;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            background: rgba(15, 128, 66, 0.08); /* Tiny tag bg */
+            background: rgba(15, 128, 66, 0.08);
+            /* Tiny tag bg */
             padding: 4px 8px;
             border-radius: 6px;
             align-self: center;
@@ -198,337 +207,351 @@
         /* Navbar force white bg */
         .gm-header {
             background: white !important;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         @media (max-width: 768px) {
-            .page-hero { padding: 120px 0 60px; }
-            .page-hero h1 { font-size: 2.2rem; }
-            .faculty-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+            .page-hero {
+                padding: 120px 0 60px;
+            }
+
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .faculty-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
         }
+
         .ggm-btn {
-      display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 10px 16px;
-  border-radius: 999px;
-  text-decoration:none;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.785);
-  background-color: var(--primaryColor);
-}
-.ggm-btn:hover{
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 16px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.785);
+            background-color: var(--primaryColor);
+        }
 
-@media (max-width: 768px){ 
-    a.ggm-btn {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-}
-.mobile-nav-toggle {
-    display: none; /* Hidden by default on desktop */
-    background: #f37a20;
-    border: none;
-    cursor: pointer;
-    padding: 12px;
-    z-index: 1000;
-    position: relative;
-    transition: transform 0.3s ease;
-}
+        .ggm-btn:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-.mobile-nav-toggle:hover {
-    transform: scale(1.1);
-}
+        @media (max-width: 768px) {
+            a.ggm-btn {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+            }
+        }
 
-.mobile-nav-toggle:focus {
-    outline: 2px solid #337425;
-    outline-offset: 2px;
-}
+        .mobile-nav-toggle {
+            display: none;
+            /* Hidden by default on desktop */
+            background: #f37a20;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            z-index: 1000;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
 
-.mobile-nav-toggle:active {
-    transform: scale(0.95);
-}
+        .mobile-nav-toggle:hover {
+            transform: scale(1.1);
+        }
 
-.toggle-line {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: all 0.3s ease;
-    border-radius: 2px;
-}
+        .mobile-nav-toggle:focus {
+            outline: 2px solid #337425;
+            outline-offset: 2px;
+        }
 
-/* Active/Open state */
-.mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-}
+        .mobile-nav-toggle:active {
+            transform: scale(0.95);
+        }
 
-.mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(2) {
-    opacity: 0;
-    transform: translateX(-10px);
-}
+        .toggle-line {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
 
-.mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-}
+        /* Active/Open state */
+        .mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
 
-/* Dark theme variation */
-.mobile-nav-toggle.dark-theme .toggle-line {
-    background-color: #fff;
-}
+        .mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
 
-/* Animated variation */
-.mobile-nav-toggle.animated .toggle-line {
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
+        .mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
 
-/* Media query for mobile display */
-@media (max-width: 768px) {
-    .mobile-nav-toggle {
-        display: block;
-    }
-}
-/* Navigation Links Container */
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+        /* Dark theme variation */
+        .mobile-nav-toggle.dark-theme .toggle-line {
+            background-color: #fff;
+        }
 
-/* Navigation Items */
-.nav-item {
-    position: relative;
-}
+        /* Animated variation */
+        .mobile-nav-toggle.animated .toggle-line {
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
 
-/* Navigation Links */
-.nav-link {
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 0;
-    position: relative;
-    transition: color 0.3s ease;
-}
+        /* Media query for mobile display */
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+        }
 
-.nav-link:hover,
-.nav-link:focus {
-    color: #f37a20;
-}
+        /* Navigation Links Container */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Dropdown Button */
-.nav-dropbtn {
-    background: none;
-    border: none;
-    font-weight: 500;
-    font: inherit;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
-}
+        /* Navigation Items */
+        .nav-item {
+            position: relative;
+        }
 
-.nav-dropbtn .nav-chevron {
-    transition: transform 0.3s ease;
-}
+        /* Navigation Links */
+        .nav-link {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
 
-.nav-dropdown[data-dropdown-open] .nav-chevron {
-    transform: rotate(180deg);
-}
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #f37a20;
+        }
 
-/* Submenu */
-.nav-submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 220px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    list-style: none;
-    margin: 0;
-    padding: 0.5rem 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 100;
-}
+        /* Dropdown Button */
+        .nav-dropbtn {
+            background: none;
+            border: none;
+            font-weight: 500;
+            font: inherit;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+        }
 
-.nav-submenu::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 20px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid white;
-}
+        .nav-dropbtn .nav-chevron {
+            transition: transform 0.3s ease;
+        }
 
-.nav-dropdown[data-dropdown-open] .nav-submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+        .nav-dropdown[data-dropdown-open] .nav-chevron {
+            transform: rotate(180deg);
+        }
 
-.nav-submenu li {
-    margin: 0;
-}
+        /* Submenu */
+        .nav-submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            margin: 0;
+            padding: 0.5rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
 
-.nav-submenu a {
-    display: block;
-    padding: 0.75rem 1.5rem;
-    color: #1a1a1a;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    white-space: nowrap;
-}
+        .nav-submenu::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid white;
+        }
 
-.nav-submenu a:hover,
-.nav-submenu a:focus {
-    background-color: #f8f9fa;
-    color: #f37a20;
-}
+        .nav-dropdown[data-dropdown-open] .nav-submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
 
-/* Call to Action Button */
-.nav-cta {
-    margin-left: 1rem;
-}
+        .nav-submenu li {
+            margin: 0;
+        }
 
-.nav-button {
-    background: #007bff;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
+        .nav-submenu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
 
-.nav-button:hover {
-    background: #0056b3;
-}
+        .nav-submenu a:hover,
+        .nav-submenu a:focus {
+            background-color: #f8f9fa;
+            color: #f37a20;
+        }
 
-/* MOBILE STYLES */
-@media (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 280px;
-        height: 100vh;
-        background: #eee;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 80px 20px 40px;
-        transform: translateX(100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 999;
-        overflow-y: auto;
-    }
-    .footer-logo-img {
-        margin-left: 0 !important;
-    }
+        /* Call to Action Button */
+        .nav-cta {
+            margin-left: 1rem;
+        }
 
-    .nav-links.active {
-        transform: translateX(0);
-        opacity: 1;
-        visibility: visible;
-    }
+        .nav-button {
+            background: #007bff;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
 
-    .nav-item,
-    .nav-cta {
-        width: 100%;
-        margin: 0;
-    }
+        .nav-button:hover {
+            background: #0056b3;
+        }
 
-    .nav-link,
-    .nav-dropbtn {
-        width: 100%;
-        text-align: left;
-        padding: 1rem 0;
-        border-bottom: 1px solid #eee;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        /* MOBILE STYLES */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 280px;
+                height: 100vh;
+                background: #eee;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 20px 40px;
+                transform: translateX(100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
 
-    /* Mobile Submenu Styles */
-    .nav-submenu {
-        position: static;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        background: #f8f9fa;
-        border-radius: 0;
-        padding: 0;
-        transition: max-height 0.3s ease;
-    }
+            .footer-logo-img {
+                margin-left: 0 !important;
+            }
 
-    .nav-submenu::before {
-        display: none;
-    }
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
 
-    .nav-dropdown[data-dropdown-open] .nav-submenu {
-        max-height: 500px;
-        padding: 0.5rem 0;
-        margin-top: 0.5rem;
-    }
+            .nav-item,
+            .nav-cta {
+                width: 100%;
+                margin: 0;
+            }
 
-    .nav-submenu a {
-        padding: 0.75rem 1rem 0.75rem 2rem;
-        border-bottom: 1px solid #eee;
-    }
+            .nav-link,
+            .nav-dropbtn {
+                width: 100%;
+                text-align: left;
+                padding: 1rem 0;
+                border-bottom: 1px solid #eee;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-    .nav-submenu li:last-child a {
-        border-bottom: none;
-    }
+            /* Mobile Submenu Styles */
+            .nav-submenu {
+                position: static;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: #f8f9fa;
+                border-radius: 0;
+                padding: 0;
+                transition: max-height 0.3s ease;
+            }
 
-    .nav-cta {
-        margin-top: auto;
-        padding-top: 2rem;
-    }
+            .nav-submenu::before {
+                display: none;
+            }
 
-    .nav-button {
-        display: block;
-        text-align: center;
-        width: 100%;
-    }
-}
+            .nav-dropdown[data-dropdown-open] .nav-submenu {
+                max-height: 500px;
+                padding: 0.5rem 0;
+                margin-top: 0.5rem;
+            }
 
- .footer-logo-img {
-                                width: 30%;
-                                height: 30%;
-                            }
+            .nav-submenu a {
+                padding: 0.75rem 1rem 0.75rem 2rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-submenu li:last-child a {
+                border-bottom: none;
+            }
+
+            .nav-cta {
+                margin-top: auto;
+                padding-top: 2rem;
+            }
+
+            .nav-button {
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        .footer-logo-img {
+            width: 30%;
+            height: 30%;
+        }
     </style>
 </head>
 
 <body>
-  
 
 
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
     <!-- Mobile overlay (added) -->
     <div class="gm-overlay" id="gmOverlay" aria-hidden="true"></div>
 
-   <!-- Header -->
+    <!-- Header -->
     <header class="gm-header" id="header">
         <div class="gm-container">
             <nav class="gm-nav" aria-label="Primary">
@@ -538,43 +561,56 @@
                 </a>
 
                 <!-- Mobile toggle -->
-               <button class="mobile-nav-toggle" id="mobileMenuBtn" type="button" aria-label="Open menu"
-    aria-controls="navLinks" aria-expanded="false">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-</button>
+                <button class="mobile-nav-toggle" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
+                    <span class="toggle-line"></span>
+                    <span class="toggle-line"></span>
+                    <span class="toggle-line"></span>
+                </button>
 
-               <ul class="nav-links" id="navLinks">
-    <li><a class="nav-link" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
+                <ul class="nav-links" id="navLinks">
+                    <li><a class="nav-link"
+                            href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
 
-   <li><a class="nav-link" href="/gurukul-english-medium-school/about.html">About</a></li>
-    
-    <li><a class="nav-link" href="./academics.html">Academics</a></li>
-    
-    <li class="nav-item nav-dropdown" data-dropdown>
-        <button class="nav-link nav-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
-            aria-controls="institutesMenu">
-            Our Educational Institutes
-            <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
-        </button>
+                    <li><a class="nav-link" href="/gurukul-english-medium-school/about.html">About</a></li>
 
-        <ul class="nav-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
-            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
-            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
-            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
-        </ul>
-    </li>
+                    <li><a class="nav-link" href="./academics.html">Academics</a></li>
 
-    <li><a class="nav-link" href="/gurukul-english-medium-school/staff.html">Staff</a></li>
+                    <li class="nav-item nav-dropdown" data-dropdown>
+                        <button class="nav-link nav-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="fas fa-chevron-down nav-chevron" aria-hidden="true"></i>
+                        </button>
 
-</ul>
-                 
-                        <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
-                    
+                        <ul class="nav-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala Mahavidhyalaya</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="nav-link" href="/gurukul-english-medium-school/staff.html">Staff</a></li>
+
+                </ul>
+
+                <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
+
             </nav>
         </div>
     </header>
@@ -584,7 +620,8 @@
     <section class="page-hero">
         <div class="container">
             <h1>Our Dedicated Staff</h1>
-            <p>Meet the passionate educators and support staff who make learning possible at Gurukul English Medium School.</p>
+            <p>Meet the passionate educators and support staff who make learning possible at Gurukul English Medium
+                School.</p>
         </div>
     </section>
 
@@ -597,11 +634,11 @@
             </div>
 
             <div class="faculty-grid">
-                
+
                 <!-- 1 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/supriya-aherkar-principal.jpeg" alt="Mrs. Supriya Aherkar"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/supriya-aherkar-principal.jpeg" alt="Mrs. Supriya Aherkar"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Supriya Aherkar</h3>
                         <p class="faculty-designation">Principal</p>
@@ -611,8 +648,8 @@
 
                 <!-- 2 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/ashwini-khomane.jpeg" alt="Mrs. Ashwini Khomane"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/ashwini-khomane.jpeg" alt="Mrs. Ashwini Khomane"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Ashwini Khomane</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -622,8 +659,8 @@
 
                 <!-- 3 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/asmita-wabale.jpeg" alt="Mrs. Asmita Wabale"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/asmita-wabale.jpeg" alt="Mrs. Asmita Wabale"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Asmita Wabale</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -633,8 +670,8 @@
 
                 <!-- 4 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/bhagyashri-bhapkar.jpeg" alt="Mrs. Bhagyshri Bhapkar"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/bhagyashri-bhapkar.jpeg" alt="Mrs. Bhagyshri Bhapkar"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Bhagyshri Bhapkar</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -644,8 +681,8 @@
 
                 <!-- 5 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/chaya-jadhav.jpeg" alt="Mrs. Chaya Jadhav"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/chaya-jadhav.jpeg" alt="Mrs. Chaya Jadhav" loading="lazy"
+                            decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Chaya Jadhav</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
@@ -655,8 +692,8 @@
 
                 <!-- 6 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/komal-chandgude.jpeg" alt="Mrs. Komal Chandgude"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/komal-chandgude.jpeg" alt="Mrs. Komal Chandgude"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Komal Chandgude</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
@@ -666,8 +703,8 @@
 
                 <!-- 7 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/vidya-panasare.jpeg" alt="Mrs. Vidya Pansare"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/vidya-panasare.jpeg" alt="Mrs. Vidya Pansare"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Vidya Pansare</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -677,8 +714,8 @@
 
                 <!-- 8 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/lina-jarad.jpeg" alt="Mrs. Lina Jarad"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/lina-jarad.jpeg" alt="Mrs. Lina Jarad" loading="lazy"
+                            decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Lina Jarad</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
@@ -688,8 +725,8 @@
 
                 <!-- 9 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/placeholder-image.jfif" alt="Mrs. Pawar Shital"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/placeholder-image.jfif" alt="Mrs. Pawar Shital"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Pawar Shital</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -699,8 +736,8 @@
 
                 <!-- 10 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/pooja-jagtap.jpeg" alt="pooja jagtap"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/pooja-jagtap.jpeg" alt="pooja jagtap" loading="lazy"
+                            decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Pooja Jagtap</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
@@ -710,8 +747,8 @@
 
                 <!-- 11 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/placeholder-image.jfif" alt="Mrs. Priti Londhe"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/placeholder-image.jfif" alt="Mrs. Priti Londhe"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Priti Londhe</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -721,8 +758,8 @@
 
                 <!-- 12 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/priyanka-parkale.jpeg" alt="Mrs. Priyanaka Parkale"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/priyanka-parkale.jpeg" alt="Mrs. Priyanaka Parkale"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Priyanaka Parkale</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -732,8 +769,8 @@
 
                 <!-- 13 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/placeholder-image.jfif" alt="Miss. Rupali Kaule"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/placeholder-image.jfif" alt="Miss. Rupali Kaule"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Miss. Rupali Kaule</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -743,8 +780,8 @@
 
                 <!-- 14 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/shayra-bagwan.jpeg" alt="Mrs. Shayara Bagwan"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/shayra-bagwan.jpeg" alt="Mrs. Shayara Bagwan"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Shayara Bagwan</h3>
                         <p class="faculty-designation">Care Taker</p>
@@ -754,8 +791,8 @@
 
                 <!-- 15 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/anita-pisal.jpeg" alt="Mrs. Anita Pisal"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/anita-pisal.jpeg" alt="Mrs. Anita Pisal" loading="lazy"
+                            decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Anita Pisal</h3>
                         <p class="faculty-designation">Teacher</p>
@@ -765,8 +802,8 @@
 
                 <!-- 16 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/swati-bhapkar.jpeg" alt="Mrs. Swati Bhapkar"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/swati-bhapkar.jpeg" alt="Mrs. Swati Bhapkar"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Swati Bhapkar</h3>
                         <p class="faculty-designation">Asst. Teacher</p>
@@ -776,8 +813,8 @@
 
                 <!-- 17 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/geetanjali-lonkar.jpeg" alt="Mrs. Geetanjali Lonkar"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/geetanjali-lonkar.jpeg" alt="Mrs. Geetanjali Lonkar"
+                            loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Geetanjali Lonkar</h3>
                         <p class="faculty-designation">Care Taker</p>
@@ -787,8 +824,8 @@
 
                 <!-- 18 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/aarti-makar.jpeg" alt="Mrs. Arti Makar"  loading="lazy"
-     decoding="async"></div>
+                    <div class="card-image"><img src="/assets/aarti-makar.jpeg" alt="Mrs. Arti Makar" loading="lazy"
+                            decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Arti Makar</h3>
                         <p class="faculty-designation">Care Taker</p>
@@ -796,7 +833,7 @@
                     </div>
                 </div>
 
-               
+
 
             </div>
         </div>
@@ -807,7 +844,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="https://kumss.org" class="logo" style="margin-bottom: 2rem; align-items: flex-start; color: var(--primaryColor); text-decoration: none;">
+                    <a href="https://kumss.org" class="logo"
+                        style="margin-bottom: 2rem; align-items: flex-start; color: var(--primaryColor); text-decoration: none;">
                         <img src="/assets/gurukul-logo.png" alt="KUMSS Logo" class="footer-logo-img">
                         <div>
                             <div class="logo-text">KUMSS SINCE 1951</div>
@@ -818,13 +856,18 @@
                     </p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
                         <li><a href="#">Academics</a></li>
@@ -838,15 +881,20 @@
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a></li>
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
                     <ul class="footer-links">
                         <li> 📞 <a href="tel:+919421394242">+91 94213 94242</a></li>
                         <li>📧 <a href="mailto:info@kumss.org">info@kumss.org</a></li>
@@ -866,14 +914,14 @@
         gsap.registerPlugin(ScrollTrigger);
 
         // Animation
-        document.addEventListener("DOMContentLoaded", function() {
-            gsap.fromTo(".faculty-card", 
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.fromTo(".faculty-card",
                 { opacity: 0, y: 50 },
                 {
                     opacity: 1,
                     y: 0,
                     duration: 0.8,
-                    stagger: 0.05, 
+                    stagger: 0.05,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: ".faculty-grid",
@@ -884,260 +932,261 @@
         });
     </script>
     <script>
-      class MobileNavigation {
-    constructor() {
-        this.toggleBtn = document.getElementById('mobileMenuBtn');
-        this.navLinks = document.getElementById('navLinks');
-        this.dropdowns = document.querySelectorAll('[data-dropdown]');
-        this.isAnimating = false;
-        
-        this.init();
-    }
-    
-    init() {
-        // Initialize menu toggle
-        this.initMenuToggle();
-        
-        // Initialize dropdowns
-        this.initDropdowns();
-        
-        // Handle clicks outside
-        this.handleClickOutside();
-        
-        // Handle keyboard navigation
-        this.handleKeyboard();
-        
-        // Handle resize
-        this.handleResize();
-    }
-    
-    initMenuToggle() {
-        if (!this.toggleBtn || !this.navLinks) return;
-        
-        this.toggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            this.toggleMenu();
-        });
-    }
-    
-    initDropdowns() {
-        this.dropdowns.forEach(dropdown => {
-            const button = dropdown.querySelector('.nav-dropbtn');
-            const submenu = dropdown.querySelector('.nav-submenu');
-            
-            if (!button || !submenu) return;
-            
-            // Click event for dropdown button
-            button.addEventListener('click', (e) => {
-                e.stopPropagation();
-                
-                // On mobile, only toggle dropdown
-                if (window.innerWidth <= 768) {
-                    this.toggleDropdown(dropdown);
-                }
-            });
-            
-            // Hover for desktop
-            if (window.innerWidth > 768) {
-                dropdown.addEventListener('mouseenter', () => {
-                    this.openDropdown(dropdown);
+        class MobileNavigation {
+            constructor() {
+                this.toggleBtn = document.getElementById('mobileMenuBtn');
+                this.navLinks = document.getElementById('navLinks');
+                this.dropdowns = document.querySelectorAll('[data-dropdown]');
+                this.isAnimating = false;
+
+                this.init();
+            }
+
+            init() {
+                // Initialize menu toggle
+                this.initMenuToggle();
+
+                // Initialize dropdowns
+                this.initDropdowns();
+
+                // Handle clicks outside
+                this.handleClickOutside();
+
+                // Handle keyboard navigation
+                this.handleKeyboard();
+
+                // Handle resize
+                this.handleResize();
+            }
+
+            initMenuToggle() {
+                if (!this.toggleBtn || !this.navLinks) return;
+
+                this.toggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.toggleMenu();
                 });
-                
-                dropdown.addEventListener('mouseleave', () => {
+            }
+
+            initDropdowns() {
+                this.dropdowns.forEach(dropdown => {
+                    const button = dropdown.querySelector('.nav-dropbtn');
+                    const submenu = dropdown.querySelector('.nav-submenu');
+
+                    if (!button || !submenu) return;
+
+                    // Click event for dropdown button
+                    button.addEventListener('click', (e) => {
+                        e.stopPropagation();
+
+                        // On mobile, only toggle dropdown
+                        if (window.innerWidth <= 768) {
+                            this.toggleDropdown(dropdown);
+                        }
+                    });
+
+                    // Hover for desktop
+                    if (window.innerWidth > 768) {
+                        dropdown.addEventListener('mouseenter', () => {
+                            this.openDropdown(dropdown);
+                        });
+
+                        dropdown.addEventListener('mouseleave', () => {
+                            this.closeDropdown(dropdown);
+                        });
+
+                        dropdown.addEventListener('focusin', () => {
+                            this.openDropdown(dropdown);
+                        });
+
+                        dropdown.addEventListener('focusout', (e) => {
+                            if (!dropdown.contains(e.relatedTarget)) {
+                                this.closeDropdown(dropdown);
+                            }
+                        });
+                    }
+                });
+            }
+
+            toggleMenu() {
+                if (this.isAnimating) return;
+
+                this.isAnimating = true;
+                const isExpanded = this.toggleBtn.getAttribute('aria-expanded') === 'true';
+                const newState = !isExpanded;
+
+                // Update toggle button
+                this.toggleBtn.setAttribute('aria-expanded', newState);
+
+                // Toggle navigation menu
+                this.navLinks.classList.toggle('active');
+
+                // Toggle body class
+                document.body.classList.toggle('menu-open', newState);
+
+                // Close all dropdowns when closing menu
+                if (!newState) {
+                    this.closeAllDropdowns();
+                }
+
+                // Reset animation flag
+                setTimeout(() => {
+                    this.isAnimating = false;
+                }, 300);
+            }
+
+            toggleDropdown(dropdown) {
+                const isOpen = dropdown.hasAttribute('data-dropdown-open');
+
+                // Close other dropdowns
+                this.closeAllDropdownsExcept(dropdown);
+
+                if (isOpen) {
+                    this.closeDropdown(dropdown);
+                } else {
+                    this.openDropdown(dropdown);
+                }
+            }
+
+            openDropdown(dropdown) {
+                const button = dropdown.querySelector('.nav-dropbtn');
+                const submenu = dropdown.querySelector('.nav-submenu');
+
+                if (!button || !submenu) return;
+
+                dropdown.setAttribute('data-dropdown-open', '');
+                button.setAttribute('aria-expanded', 'true');
+
+                // On mobile, adjust submenu height
+                if (window.innerWidth <= 768) {
+                    submenu.style.maxHeight = submenu.scrollHeight + 'px';
+                }
+            }
+
+            closeDropdown(dropdown) {
+                const button = dropdown.querySelector('.nav-dropbtn');
+                const submenu = dropdown.querySelector('.nav-submenu');
+
+                if (!button || !submenu) return;
+
+                dropdown.removeAttribute('data-dropdown-open');
+                button.setAttribute('aria-expanded', 'false');
+
+                // On mobile, reset height
+                if (window.innerWidth <= 768) {
+                    submenu.style.maxHeight = '0';
+                }
+            }
+
+            closeAllDropdowns() {
+                this.dropdowns.forEach(dropdown => {
                     this.closeDropdown(dropdown);
                 });
-                
-                dropdown.addEventListener('focusin', () => {
-                    this.openDropdown(dropdown);
-                });
-                
-                dropdown.addEventListener('focusout', (e) => {
-                    if (!dropdown.contains(e.relatedTarget)) {
+            }
+
+            closeAllDropdownsExcept(exceptDropdown) {
+                this.dropdowns.forEach(dropdown => {
+                    if (dropdown !== exceptDropdown) {
                         this.closeDropdown(dropdown);
                     }
                 });
             }
-        });
-    }
-    
-    toggleMenu() {
-        if (this.isAnimating) return;
-        
-        this.isAnimating = true;
-        const isExpanded = this.toggleBtn.getAttribute('aria-expanded') === 'true';
-        const newState = !isExpanded;
-        
-        // Update toggle button
-        this.toggleBtn.setAttribute('aria-expanded', newState);
-        
-        // Toggle navigation menu
-        this.navLinks.classList.toggle('active');
-        
-        // Toggle body class
-        document.body.classList.toggle('menu-open', newState);
-        
-        // Close all dropdowns when closing menu
-        if (!newState) {
-            this.closeAllDropdowns();
-        }
-        
-        // Reset animation flag
-        setTimeout(() => {
-            this.isAnimating = false;
-        }, 300);
-    }
-    
-    toggleDropdown(dropdown) {
-        const isOpen = dropdown.hasAttribute('data-dropdown-open');
-        
-        // Close other dropdowns
-        this.closeAllDropdownsExcept(dropdown);
-        
-        if (isOpen) {
-            this.closeDropdown(dropdown);
-        } else {
-            this.openDropdown(dropdown);
-        }
-    }
-    
-    openDropdown(dropdown) {
-        const button = dropdown.querySelector('.nav-dropbtn');
-        const submenu = dropdown.querySelector('.nav-submenu');
-        
-        if (!button || !submenu) return;
-        
-        dropdown.setAttribute('data-dropdown-open', '');
-        button.setAttribute('aria-expanded', 'true');
-        
-        // On mobile, adjust submenu height
-        if (window.innerWidth <= 768) {
-            submenu.style.maxHeight = submenu.scrollHeight + 'px';
-        }
-    }
-    
-    closeDropdown(dropdown) {
-        const button = dropdown.querySelector('.nav-dropbtn');
-        const submenu = dropdown.querySelector('.nav-submenu');
-        
-        if (!button || !submenu) return;
-        
-        dropdown.removeAttribute('data-dropdown-open');
-        button.setAttribute('aria-expanded', 'false');
-        
-        // On mobile, reset height
-        if (window.innerWidth <= 768) {
-            submenu.style.maxHeight = '0';
-        }
-    }
-    
-    closeAllDropdowns() {
-        this.dropdowns.forEach(dropdown => {
-            this.closeDropdown(dropdown);
-        });
-    }
-    
-    closeAllDropdownsExcept(exceptDropdown) {
-        this.dropdowns.forEach(dropdown => {
-            if (dropdown !== exceptDropdown) {
-                this.closeDropdown(dropdown);
-            }
-        });
-    }
-    
-    handleClickOutside() {
-        document.addEventListener('click', (e) => {
-            // Close menu if clicking outside
-            if (this.navLinks.classList.contains('active') &&
-                !this.navLinks.contains(e.target) &&
-                !this.toggleBtn.contains(e.target)) {
-                this.toggleMenu();
-            }
-            
-            // Close dropdowns if clicking outside
-            this.dropdowns.forEach(dropdown => {
-                if (dropdown.hasAttribute('data-dropdown-open') &&
-                    !dropdown.contains(e.target)) {
-                    this.closeDropdown(dropdown);
-                }
-            });
-        });
-    }
-    
-    handleKeyboard() {
-        document.addEventListener('keydown', (e) => {
-            // Escape key
-            if (e.key === 'Escape') {
-                if (this.navLinks.classList.contains('active')) {
-                    this.toggleMenu();
-                    this.toggleBtn.focus();
-                } else {
-                    this.closeAllDropdowns();
-                }
-            }
-            
-            // Close dropdown on Tab if focusing outside
-            if (e.key === 'Tab') {
-                this.dropdowns.forEach(dropdown => {
-                    if (dropdown.hasAttribute('data-dropdown-open')) {
-                        const focusableElements = dropdown.querySelectorAll(
-                            'a, button, input, [tabindex]:not([tabindex="-1"])'
-                        );
-                        
-                        const lastElement = focusableElements[focusableElements.length - 1];
-                        const isLeaving = !dropdown.contains(document.activeElement);
-                        
-                        if (isLeaving || (e.shiftKey && document.activeElement === dropdown.querySelector('.nav-dropbtn'))) {
+
+            handleClickOutside() {
+                document.addEventListener('click', (e) => {
+                    // Close menu if clicking outside
+                    if (this.navLinks.classList.contains('active') &&
+                        !this.navLinks.contains(e.target) &&
+                        !this.toggleBtn.contains(e.target)) {
+                        this.toggleMenu();
+                    }
+
+                    // Close dropdowns if clicking outside
+                    this.dropdowns.forEach(dropdown => {
+                        if (dropdown.hasAttribute('data-dropdown-open') &&
+                            !dropdown.contains(e.target)) {
                             this.closeDropdown(dropdown);
                         }
+                    });
+                });
+            }
+
+            handleKeyboard() {
+                document.addEventListener('keydown', (e) => {
+                    // Escape key
+                    if (e.key === 'Escape') {
+                        if (this.navLinks.classList.contains('active')) {
+                            this.toggleMenu();
+                            this.toggleBtn.focus();
+                        } else {
+                            this.closeAllDropdowns();
+                        }
+                    }
+
+                    // Close dropdown on Tab if focusing outside
+                    if (e.key === 'Tab') {
+                        this.dropdowns.forEach(dropdown => {
+                            if (dropdown.hasAttribute('data-dropdown-open')) {
+                                const focusableElements = dropdown.querySelectorAll(
+                                    'a, button, input, [tabindex]:not([tabindex="-1"])'
+                                );
+
+                                const lastElement = focusableElements[focusableElements.length - 1];
+                                const isLeaving = !dropdown.contains(document.activeElement);
+
+                                if (isLeaving || (e.shiftKey && document.activeElement === dropdown.querySelector('.nav-dropbtn'))) {
+                                    this.closeDropdown(dropdown);
+                                }
+                            }
+                        });
                     }
                 });
             }
-        });
-    }
-    
-    handleResize() {
-        window.addEventListener('resize', () => {
-            // Reset mobile menu on desktop
-            if (window.innerWidth > 768) {
+
+            handleResize() {
+                window.addEventListener('resize', () => {
+                    // Reset mobile menu on desktop
+                    if (window.innerWidth > 768) {
+                        if (this.navLinks.classList.contains('active')) {
+                            this.toggleMenu();
+                        }
+
+                        // Reset dropdown styles for desktop
+                        this.dropdowns.forEach(dropdown => {
+                            const submenu = dropdown.querySelector('.nav-submenu');
+                            if (submenu) {
+                                submenu.style.maxHeight = '';
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Public methods
+            openMenu() {
+                if (!this.navLinks.classList.contains('active')) {
+                    this.toggleMenu();
+                }
+            }
+
+            closeMenu() {
                 if (this.navLinks.classList.contains('active')) {
                     this.toggleMenu();
                 }
-                
-                // Reset dropdown styles for desktop
-                this.dropdowns.forEach(dropdown => {
-                    const submenu = dropdown.querySelector('.nav-submenu');
-                    if (submenu) {
-                        submenu.style.maxHeight = '';
-                    }
-                });
             }
-        });
-    }
-    
-    // Public methods
-    openMenu() {
-        if (!this.navLinks.classList.contains('active')) {
-            this.toggleMenu();
         }
-    }
-    
-    closeMenu() {
-        if (this.navLinks.classList.contains('active')) {
-            this.toggleMenu();
-        }
-    }
-}
 
-// Initialize on DOM load
-document.addEventListener('DOMContentLoaded', () => {
-    const mobileNav = new MobileNavigation();
-    
-    // Make available globally if needed
-    window.mobileNav = mobileNav;
-});
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileNav = new MobileNavigation();
+
+            // Make available globally if needed
+            window.mobileNav = mobileNav;
+        });
     </script>
     <!-- JS file -->
-  <script src="/assets/js/institute.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
+    <script src="/assets/js/institute.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
 </body>
+
 </html>

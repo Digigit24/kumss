@@ -10,7 +10,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,16 +29,24 @@
            PROFESSIONAL DESIGN SYSTEM
            ========================================= */
         :root {
-            --pro-blue: #233f92;       /* Trust, Professionalism */
-            --pro-dark: #0f172a;       /* Deep Navy for text */
-            --pro-orange: #ff9704;     /* Energy accent */
-            --pro-gray: #64748b;       /* Body text */
-            --pro-bg-light: #f8fafc;   /* Light gray backgrounds */
+            --pro-blue: #233f92;
+            /* Trust, Professionalism */
+            --pro-dark: #0f172a;
+            /* Deep Navy for text */
+            --pro-orange: #ff9704;
+            /* Energy accent */
+            --pro-gray: #64748b;
+            /* Body text */
+            --pro-bg-light: #f8fafc;
+            /* Light gray backgrounds */
             --pro-white: #ffffff;
-            --font-main: 'Manrope', sans-serif; /* Clean, modern font */
+            --font-main: 'Manrope', sans-serif;
+            /* Clean, modern font */
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             font-family: var(--font-main);
@@ -57,10 +67,14 @@
             padding: 100px 0;
         }
 
-        .text-center { text-align: center; }
+        .text-center {
+            text-align: center;
+        }
 
         /* Typography */
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             font-family: 'Poppins', sans-serif;
             line-height: 1.2;
             margin: 0;
@@ -99,9 +113,13 @@
            ========================================= */
         .pro-hero {
             position: relative;
-            height: 80vh;
-            min-height: 600px;
-            background: url('/assets/vvk-history-img.JPG') no-repeat center center/cover;
+            height: 100%;
+            min-height: 100vh;
+            background: url('/assets/vvk-history-img.JPG');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-position: top;
             display: flex;
             align-items: center;
         }
@@ -138,127 +156,137 @@
         /* =========================================
            2. MISSION & VISION (Modern Grid)
            ========================================= */
-         /* Section Spacing & Positioning */
-    .mv-section {
-        position: relative;
-        z-index: 10;
-        margin-top: -80px; /* Overlaps the hero image slightly */
-        padding-bottom: 80px;
-    }
-
-    /* Grid Layout */
-    .mv-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-    }
-
-    /* Card Base Styles */
-    .mv-item {
-        background: #ffffff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-        display: flex;
-        align-items: flex-start;
-        gap: 25px;
-        transition: all 0.3s ease;
-        border-top: 5px solid transparent; /* Ready for color */
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Hover Lift Effect */
-    .mv-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-    }
-
-    /* Icon Box Base */
-    .mv-icon-box {
-        flex-shrink: 0;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        transition: transform 0.3s ease;
-    }
-
-    /* THEME: Blue (Vision) */
-    .mv-item.mv-blue {
-        border-top-color: var(--pro-blue);
-    }
-    .mv-item.mv-blue .mv-icon-box {
-        background-color: rgba(35, 63, 146, 0.1);
-        color: var(--pro-blue);
-    }
-    .mv-item.mv-blue:hover .mv-icon-box {
-        background-color: var(--pro-blue);
-        color: #fff;
-        transform: rotate(10deg);
-    }
-
-    /* THEME: Orange (Mission) */
-    .mv-item.mv-orange {
-        border-top-color: var(--pro-orange);
-    }
-    .mv-item.mv-orange .mv-icon-box {
-        background-color: rgba(255, 151, 4, 0.1);
-        color: var(--pro-orange);
-    }
-    .mv-item.mv-orange:hover .mv-icon-box {
-        background-color: var(--pro-orange);
-        color: #fff;
-        transform: rotate(-10deg);
-    }
-
-    /* Typography */
-    .mv-content h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin: 0 0 15px 0;
-        color: var(--pro-dark);
-    }
-
-    .mv-content p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        color: var(--pro-gray);
-        margin-bottom: 12px;
-    }
-    
-    .mv-content p:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
+        /* Section Spacing & Positioning */
         .mv-section {
-            margin-top: 0; /* Remove overlap on tablet/mobile */
-            padding-top: 60px;
-            padding-bottom: 60px;
+            position: relative;
+            z-index: 10;
+            margin-top: -80px;
+            /* Overlaps the hero image slightly */
+            padding-bottom: 80px;
         }
-        
-        .mv-wrapper {
-            grid-template-columns: 1fr; /* Stack vertically */
-            gap: 20px;
-        }
-    }
 
-    @media (max-width: 576px) {
+        /* Grid Layout */
+        .mv-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Card Base Styles */
         .mv-item {
-            flex-direction: column; /* Icon on top for small phones */
-            text-align: center;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            transition: all 0.3s ease;
+            border-top: 5px solid transparent;
+            /* Ready for color */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Lift Effect */
+        .mv-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Icon Box Base */
+        .mv-icon-box {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            padding: 30px;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
         }
+
+        /* THEME: Blue (Vision) */
+        .mv-item.mv-blue {
+            border-top-color: var(--pro-blue);
+        }
+
+        .mv-item.mv-blue .mv-icon-box {
+            background-color: rgba(35, 63, 146, 0.1);
+            color: var(--pro-blue);
+        }
+
+        .mv-item.mv-blue:hover .mv-icon-box {
+            background-color: var(--pro-blue);
+            color: #fff;
+            transform: rotate(10deg);
+        }
+
+        /* THEME: Orange (Mission) */
+        .mv-item.mv-orange {
+            border-top-color: var(--pro-orange);
+        }
+
+        .mv-item.mv-orange .mv-icon-box {
+            background-color: rgba(255, 151, 4, 0.1);
+            color: var(--pro-orange);
+        }
+
+        .mv-item.mv-orange:hover .mv-icon-box {
+            background-color: var(--pro-orange);
+            color: #fff;
+            transform: rotate(-10deg);
+        }
+
+        /* Typography */
+        .mv-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            color: var(--pro-dark);
+        }
+
         .mv-content p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--pro-gray);
+            margin-bottom: 12px;
         }
-    }
+
+        .mv-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .mv-section {
+                margin-top: 0;
+                /* Remove overlap on tablet/mobile */
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+
+            .mv-wrapper {
+                grid-template-columns: 1fr;
+                /* Stack vertically */
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .mv-item {
+                flex-direction: column;
+                /* Icon on top for small phones */
+                text-align: center;
+                align-items: center;
+                padding: 30px;
+            }
+
+            .mv-content p {
+                font-size: 0.9rem;
+            }
+        }
 
         /* =========================================
            3. HISTORY & ACADEMICS (Split Layout)
@@ -272,7 +300,8 @@
 
         .split-section.reverse {
             flex-direction: row-reverse;
-            background-color: var(--pro-bg-light); /* Alternating background */
+            background-color: var(--pro-bg-light);
+            /* Alternating background */
         }
 
         .split-content {
@@ -287,7 +316,7 @@
         .split-image img {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         /* Decorative box behind image */
@@ -332,7 +361,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateX(-50%);
         }
 
@@ -345,11 +374,11 @@
 
         .timeline-content {
             width: 45%;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 8px;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .timeline-row:nth-child(odd) .timeline-content {
@@ -384,7 +413,7 @@
 
         .timeline-content p {
             font-size: 0.95rem;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.6;
         }
 
@@ -392,63 +421,102 @@
            RESPONSIVE
            ========================================= */
         @media (max-width: 992px) {
-            .split-section { flex-direction: column; gap: 40px; padding: 60px 0; }
-            .split-section.reverse { flex-direction: column; }
-            .split-image { width: 100%; }
-            .mv-section { margin-top: 0; padding: 60px 0; }
+            .split-section {
+                flex-direction: column;
+                gap: 40px;
+                padding: 60px 0;
+            }
+
+            .split-section.reverse {
+                flex-direction: column;
+            }
+
+            .split-image {
+                width: 100%;
+            }
+
+            .mv-section {
+                margin-top: 0;
+                padding: 60px 0;
+            }
         }
 
         @media (max-width: 768px) {
-            .pro-timeline-container::before { left: 20px; }
-            .timeline-row { flex-direction: column; margin-bottom: 40px; }
-            .timeline-content { width: 100%; margin: 0 !important; text-align: left !important; padding-left: 50px; background: transparent; border: none; }
-            .timeline-dot { left: 20px; top: 5px; }
-            .pro-hero h1 { font-size: 2.5rem; }
+            .pro-timeline-container::before {
+                left: 20px;
+            }
+
+            .timeline-row {
+                flex-direction: column;
+                margin-bottom: 40px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin: 0 !important;
+                text-align: left !important;
+                padding-left: 50px;
+                background: transparent;
+                border: none;
+            }
+
+            .timeline-dot {
+                left: 20px;
+                top: 5px;
+            }
+
+            .pro-hero h1 {
+                font-size: 2.5rem;
+            }
         }
+
         /* --- Split Section Layout (Desktop) --- */
-.split-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    width: 100%;
-}
+        .split-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            width: 100%;
+        }
 
-/* Desktop: History Section (Normal) */
-/* No extra CSS needed, default flex is Row */
+        /* Desktop: History Section (Normal) */
+        /* No extra CSS needed, default flex is Row */
 
-/* Desktop: Academics Section (Reverse/ZigZag) */
-/* This swaps the order horizontally on Desktop only */
-.split-section.reverse .split-wrapper {
-    flex-direction: row-reverse;
-}
+        /* Desktop: Academics Section (Reverse/ZigZag) */
+        /* This swaps the order horizontally on Desktop only */
+        .split-section.reverse .split-wrapper {
+            flex-direction: row-reverse;
+        }
 
-/* --- Mobile Responsiveness --- */
-@media (max-width: 992px) {
-    
-    .split-wrapper {
-        flex-direction: column !important; /* Stack vertically */
-        gap: 30px;
-    }
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 992px) {
 
-    /* Force Image to Top */
-    .split-image {
-        width: 100%;
-        order: -1; /* This magic number forces the image to be the 1st item */
-        margin-bottom: 10px;
-    }
+            .split-wrapper {
+                flex-direction: column !important;
+                /* Stack vertically */
+                gap: 30px;
+            }
 
-    /* Content follows below */
-    .split-content {
-        width: 100%;
-        order: 1;
-        text-align: left; /* Optional: Center text on mobile if preferred */
-    }
-}
+            /* Force Image to Top */
+            .split-image {
+                width: 100%;
+                order: -1;
+                /* This magic number forces the image to be the 1st item */
+                margin-bottom: 10px;
+            }
+
+            /* Content follows below */
+            .split-content {
+                width: 100%;
+                order: 1;
+                text-align: left;
+                /* Optional: Center text on mobile if preferred */
+            }
+        }
     </style>
 </head>
 
 <body>
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <!-- ==============================================
          HEADER (PRESERVED EXACTLY AS REQUESTED)
          ============================================== -->
@@ -480,12 +548,24 @@
                             <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
                         </button>
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
-                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
-                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala Mahavidhyalaya</a></li>
                         </ul>
                     </li>
                     <li><a class="gm-link" href="/vasatigruh-vidyalay-karhati/staff.html">Staff</a></li>
@@ -506,75 +586,82 @@
             <div class="pro-hero-content">
                 <span class="section-tag gs-fade-up">Established 1952</span>
                 <h1 class="gs-fade-up">Vasatigruh Vidyalay <br>Karhati</h1>
-                <p class="gs-fade-up">Empowering generations through quality education, discipline, and holistic development in the heart of the Karhati community.</p>
+                <p class="gs-fade-up">Empowering generations through quality education, discipline, and holistic
+                    development in the heart of the Karhati community.</p>
             </div>
         </div>
     </section>
 
     <!-- 2. Mission & Vision -->
-<section class="mv-section">
-    <div class="pro-container">
-        <div class="mv-wrapper">
-            
-            <!-- Vision Card (Blue Theme) -->
-            <div class="mv-item mv-blue gs-fade-up">
-                <div class="mv-icon-box">
-                    <i class="fa-solid fa-eye"></i>
-                </div>
-                <div class="mv-content">
-                    <h3>Our Vision</h3>
-                    <p>
-                        To establish Vasatigruh Vidyalay Karhati as a premier educational institution that empowers students through quality education, skill development, and ethical values.
-                    </p>
-                    <p>
-                        We envision a learning environment that fosters innovation, critical thinking, and holistic growth, preparing students to become responsible citizens.
-                    </p>
-                </div>
-            </div>
+    <section class="mv-section">
+        <div class="pro-container">
+            <div class="mv-wrapper">
 
-            <!-- Mission Card (Orange Theme) -->
-            <div class="mv-item mv-orange gs-fade-up">
-                <div class="mv-icon-box">
-                    <i class="fa-solid fa-bullseye"></i>
+                <!-- Vision Card (Blue Theme) -->
+                <div class="mv-item mv-blue gs-fade-up">
+                    <div class="mv-icon-box">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <div class="mv-content">
+                        <h3>Our Vision</h3>
+                        <p>
+                            To establish Vasatigruh Vidyalay Karhati as a premier educational institution that empowers
+                            students through quality education, skill development, and ethical values.
+                        </p>
+                        <p>
+                            We envision a learning environment that fosters innovation, critical thinking, and holistic
+                            growth, preparing students to become responsible citizens.
+                        </p>
+                    </div>
                 </div>
-                <div class="mv-content">
-                    <h3>Our Mission</h3>
-                    <p>
-                        To provide high-quality education in a safe, inclusive, and respectful environment. We are committed to building strong academic foundations and encouraging leadership.
-                    </p>
-                    <p>
-                        By maintaining modern infrastructure and through continuous improvement and student-focused teaching, we prepare learners for academic success.
-                    </p>
-                </div>
-            </div>
 
+                <!-- Mission Card (Orange Theme) -->
+                <div class="mv-item mv-orange gs-fade-up">
+                    <div class="mv-icon-box">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div class="mv-content">
+                        <h3>Our Mission</h3>
+                        <p>
+                            To provide high-quality education in a safe, inclusive, and respectful environment. We are
+                            committed to building strong academic foundations and encouraging leadership.
+                        </p>
+                        <p>
+                            By maintaining modern infrastructure and through continuous improvement and student-focused
+                            teaching, we prepare learners for academic success.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-   <!-- 3. History Section -->
-<section class="split-section">
-    <div class="pro-container">
-        <!-- Added "split-wrapper" class here -->
-        <div class="split-wrapper">
-            
-            <div class="split-content gs-slide-right">
-                <span class="section-tag">Our Legacy</span>
-                <h2 class="section-heading">History & Heritage</h2>
-                <p class="section-desc">
-                    <strong style="color:var(--pro-blue);">Founded in 1952</strong> under the banner of Krushi Udyog Mul Shikshan Sansthan, VVK has consistently evolved while staying true to its founding vision.
-                    <br><br>
-                    Over the years, the institution has grown in infrastructure, academic offerings, and student strength. Today, it stands as a trusted educational pillar in the Karhati region.
-                </p>
-            </div>
-            
-            <div class="split-image gs-slide-left">
-                <img src="/assets/vvk-history-img.JPG" alt="History of VVK">
-            </div>
+    <!-- 3. History Section -->
+    <section class="split-section">
+        <div class="pro-container">
+            <!-- Added "split-wrapper" class here -->
+            <div class="split-wrapper">
 
+                <div class="split-content gs-slide-right">
+                    <span class="section-tag">Our Legacy</span>
+                    <h2 class="section-heading">History & Heritage</h2>
+                    <p class="section-desc">
+                        <strong style="color:var(--pro-blue);">Founded in 1952</strong> under the banner of Krushi Udyog
+                        Mul Shikshan Sansthan, VVK has consistently evolved while staying true to its founding vision.
+                        <br><br>
+                        Over the years, the institution has grown in infrastructure, academic offerings, and student
+                        strength. Today, it stands as a trusted educational pillar in the Karhati region.
+                    </p>
+                </div>
+
+                <div class="split-image gs-slide-left">
+                    <img src="/assets/vvk-history-img.JPG" alt="History of VVK">
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- 4. Timeline (Why Choose Us) -->
     <section class="pro-timeline">
@@ -582,7 +669,8 @@
             <div class="text-center gs-fade-up">
                 <span class="section-tag" style="background: rgba(255,255,255,0.1); color: #fff;">Why Choose Us</span>
                 <h2 class="section-heading" style="color: #fff;">Excellence in Education</h2>
-                <p class="section-desc" style="margin: 0 auto 60px auto; color: rgba(255,255,255,0.7);">Why parents trust Vasatigruh Vidyalay Karhati for their children's future.</p>
+                <p class="section-desc" style="margin: 0 auto 60px auto; color: rgba(255,255,255,0.7);">Why parents
+                    trust Vasatigruh Vidyalay Karhati for their children's future.</p>
             </div>
 
             <div class="pro-timeline-container">
@@ -591,7 +679,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>70+ Years Experience</h3>
-                        <p>Serving generations of students with strong academics, discipline, and a trusted legacy in the Karhati community.</p>
+                        <p>Serving generations of students with strong academics, discipline, and a trusted legacy in
+                            the Karhati community.</p>
                     </div>
                 </div>
                 <!-- Item 2 -->
@@ -599,7 +688,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>MSBSHSE Affiliation</h3>
-                        <p>Following the Maharashtra State Board curriculum for secondary and higher secondary education with structured outcomes.</p>
+                        <p>Following the Maharashtra State Board curriculum for secondary and higher secondary education
+                            with structured outcomes.</p>
                     </div>
                 </div>
                 <!-- Item 3 -->
@@ -607,7 +697,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Agricultural Focus</h3>
-                        <p>A unique approach that connects students to farming, rural life, and real-world learning through practical exposure.</p>
+                        <p>A unique approach that connects students to farming, rural life, and real-world learning
+                            through practical exposure.</p>
                     </div>
                 </div>
                 <!-- Item 4 -->
@@ -615,7 +706,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Committed Faculty</h3>
-                        <p>Dedicated educators who focus on strong fundamentals, student guidance, and continuous improvement in learning.</p>
+                        <p>Dedicated educators who focus on strong fundamentals, student guidance, and continuous
+                            improvement in learning.</p>
                     </div>
                 </div>
                 <!-- Item 5 -->
@@ -623,7 +715,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>Holistic Development</h3>
-                        <p>Building character alongside academics through values, respectful conduct, and all-round student development.</p>
+                        <p>Building character alongside academics through values, respectful conduct, and all-round
+                            student development.</p>
                     </div>
                 </div>
             </div>
@@ -631,29 +724,32 @@
     </section>
 
     <!-- 5. Academics Section (ZigZag) -->
-<section class="split-section reverse">
-    <div class="pro-container">
-        <!-- Added "split-wrapper" class here -->
-        <div class="split-wrapper">
-            
-            <!-- Note: We keep the same HTML order (Content first), CSS handles the swap -->
-            <div class="split-content gs-slide-left">
-                <span class="section-tag">Academic Excellence</span>
-                <h2 class="section-heading">Focus on Agriculture</h2>
-                <p class="section-desc">
-                    One of the defining strengths of Vasatigruh Vidyalay Karhati is its emphasis on agricultural education.
-                    <br><br>
-                    Students are introduced to the fundamentals of farming, sustainable practices, and the role of agriculture in rural life. This hands-on exposure helps students understand the importance of agriculture while building respect for the land.
-                </p>
-            </div>
-            
-            <div class="split-image gs-slide-right">
-                <img src="/assets/our-vision.png" alt="Agricultural Education">
-            </div>
+    <section class="split-section reverse">
+        <div class="pro-container">
+            <!-- Added "split-wrapper" class here -->
+            <div class="split-wrapper">
 
+                <!-- Note: We keep the same HTML order (Content first), CSS handles the swap -->
+                <div class="split-content gs-slide-left">
+                    <span class="section-tag">Academic Excellence</span>
+                    <h2 class="section-heading">Focus on Agriculture</h2>
+                    <p class="section-desc">
+                        One of the defining strengths of Vasatigruh Vidyalay Karhati is its emphasis on agricultural
+                        education.
+                        <br><br>
+                        Students are introduced to the fundamentals of farming, sustainable practices, and the role of
+                        agriculture in rural life. This hands-on exposure helps students understand the importance of
+                        agriculture while building respect for the land.
+                    </p>
+                </div>
+
+                <div class="split-image gs-slide-right">
+                    <img src="/assets/our-vision.png" alt="Agricultural Education">
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- ==============================================
          FOOTER (PRESERVED EXACTLY AS REQUESTED)
@@ -662,7 +758,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+                    <a href="#" class="logo"
+                        style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
                         <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
                         <div>
                             <div style="color: #ff9704;">KUMSS SINCE 1951</div>
@@ -674,15 +771,18 @@
 
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
                         <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="./vasatigruh-vidyalay-karhati.html">Home</a></li>
                         <li><a href="/vasatigruh-vidyalay-karhati/about.html">About</a></li>
@@ -693,17 +793,24 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a></li>
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-phone"></i><a href="tel:+919421394242">+91 94213 94242</a></li>
                         <li><i class="fas fa-envelope"></i><a href="mailto:info@kumss.org">info@kumss.org</a></li>
@@ -780,8 +887,8 @@
             // Mobile Menu Logic (Preserving your original functionality)
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
-            
-            if(mobileMenuBtn){
+
+            if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', () => {
                     mobileMenuBtn.classList.toggle('active');
                     navLinks.classList.toggle('active');
@@ -791,4 +898,5 @@
     </script>
 
 </body>
+
 </html>

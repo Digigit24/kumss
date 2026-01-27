@@ -9,7 +9,7 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
@@ -24,8 +24,17 @@
     /* =========================================
        GLOBAL & UTILITIES
     ========================================= */
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; font-family: "Poppins", sans-serif; overflow-x: hidden; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+    }
 
     :root {
       --ac-blue: #233f92;
@@ -37,16 +46,46 @@
     }
 
     /* Animation Classes (Scroll Trigger) */
-    .reveal-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
-    .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
-    .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
-    .scale-in { opacity: 0; transform: scale(0.9); transition: all 0.8s ease; }
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
 
-    .active { opacity: 1 !important; transform: translate(0) scale(1) !important; }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
 
-    .delay-100 { transition-delay: 0.1s; }
-    .delay-200 { transition-delay: 0.2s; }
-    .delay-300 { transition-delay: 0.3s; }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.8s ease;
+    }
+
+    .active {
+      opacity: 1 !important;
+      transform: translate(0) scale(1) !important;
+    }
+
+    .delay-100 {
+      transition-delay: 0.1s;
+    }
+
+    .delay-200 {
+      transition-delay: 0.2s;
+    }
+
+    .delay-300 {
+      transition-delay: 0.3s;
+    }
 
     /* Layout Wrapper */
     .ac-container {
@@ -60,10 +99,11 @@
     ========================================= */
     .ac-hero {
       position: relative;
-      padding: 140px 0 80px; /* Top padding accounts for fixed header */
+      padding: 140px 0 80px;
+      /* Top padding accounts for fixed header */
       background: radial-gradient(circle at 10% 20%, rgba(255, 151, 4, 0.08) 0%, transparent 40%),
-                  radial-gradient(circle at 90% 80%, rgba(35, 63, 146, 0.08) 0%, transparent 40%),
-                  #ffffff;
+        radial-gradient(circle at 90% 80%, rgba(35, 63, 146, 0.08) 0%, transparent 40%),
+        #ffffff;
       text-align: center;
       overflow: hidden;
     }
@@ -106,8 +146,22 @@
       z-index: 0;
       opacity: 0.6;
     }
-    .blob-1 { width: 300px; height: 300px; background: #fff4d6; top: -50px; left: -100px; }
-    .blob-2 { width: 250px; height: 250px; background: #e0e7ff; bottom: 20px; right: -50px; }
+
+    .blob-1 {
+      width: 300px;
+      height: 300px;
+      background: #fff4d6;
+      top: -50px;
+      left: -100px;
+    }
+
+    .blob-2 {
+      width: 250px;
+      height: 250px;
+      background: #e0e7ff;
+      bottom: 20px;
+      right: -50px;
+    }
 
     /* =========================================
        PHILOSOPHY SECTION
@@ -136,7 +190,10 @@
       display: block;
       transition: transform 0.6s ease;
     }
-    .ac-philo-img:hover img { transform: scale(1.05); }
+
+    .ac-philo-img:hover img {
+      transform: scale(1.05);
+    }
 
     .ac-philo-content h2 {
       font-size: 2.2rem;
@@ -152,7 +209,11 @@
       font-size: 1.05rem;
     }
 
-    .check-list { list-style: none; padding: 0; }
+    .check-list {
+      list-style: none;
+      padding: 0;
+    }
+
     .check-list li {
       display: flex;
       align-items: flex-start;
@@ -161,6 +222,7 @@
       font-weight: 500;
       color: #1e293b;
     }
+
     .check-list i {
       color: var(--ac-orange);
       margin-top: 4px;
@@ -170,75 +232,118 @@
       font-size: 0.8rem;
     }
 
-/* =========================================
+    /* =========================================
    LARGE CENTERED HEADER STYLES
 ========================================= */
-.ac-subjects {
-  padding: 100px 0;
-  background: #ffffff;
-}
+    .ac-subjects {
+      padding: 100px 0;
+      background: #ffffff;
+    }
 
-/* Specific Header Styling for this Section */
-.ac-subjects .section-head {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 80px auto; /* Centered with bottom spacing */
-}
+    /* Specific Header Styling for this Section */
+    .ac-subjects .section-head {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 80px auto;
+      /* Centered with bottom spacing */
+    }
 
-.ac-subjects .section-head h2 {
-  font-size: 3.8rem; /* Very Large Size */
-  line-height: 1.1;
-  font-weight: 900;
-  color: #233f92; /* School Blue */
-  margin-bottom: 20px;
-  letter-spacing: -1px;
-}
+    .ac-subjects .section-head h2 {
+      font-size: 3.8rem;
+      /* Very Large Size */
+      line-height: 1.1;
+      font-weight: 900;
+      color: #233f92;
+      /* School Blue */
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
 
-.ac-subjects .section-head p {
-  font-size: 1.5rem; /* Large Subtext */
-  color: #555;
-  font-weight: 400;
-  line-height: 1.6;
-}
+    .ac-subjects .section-head p {
+      font-size: 1.5rem;
+      /* Large Subtext */
+      color: #555;
+      font-weight: 400;
+      line-height: 1.6;
+    }
 
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-  .ac-subjects .section-head h2 { font-size: 2.5rem; }
-  .ac-subjects .section-head p { font-size: 1.15rem; }
-}
+    /* Responsive adjustments for mobile */
+    @media (max-width: 768px) {
+      .ac-subjects .section-head h2 {
+        font-size: 2.5rem;
+      }
 
-/* --- Keep the previous No-Card List Styles below --- */
-.subject-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  column-gap: 60px;
-  row-gap: 50px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
+      .ac-subjects .section-head p {
+        font-size: 1.15rem;
+      }
+    }
 
-.sub-item { display: flex; align-items: flex-start; gap: 20px; }
+    /* --- Keep the previous No-Card List Styles below --- */
+    .subject-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      column-gap: 60px;
+      row-gap: 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-.sub-icon-circle {
-  flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
-  background: rgba(35, 63, 146, 0.1); color: #233f92;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem; transition: all 0.3s ease;
-}
+    .sub-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
 
-.sub-item:nth-child(even) .sub-icon-circle {
-  background: rgba(255, 151, 4, 0.1); color: #d97706;
-}
+    .sub-icon-circle {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(35, 63, 146, 0.1);
+      color: #233f92;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
+    }
 
-.sub-item:hover .sub-icon-circle { transform: scale(1.1); background: #233f92; color: #fff; }
-.sub-item:nth-child(even):hover .sub-icon-circle { background: #ff9704; color: #fff; }
+    .sub-item:nth-child(even) .sub-icon-circle {
+      background: rgba(255, 151, 4, 0.1);
+      color: #d97706;
+    }
 
-.sub-content h3 { font-size: 1.35rem; font-weight: 800; color: #1e293b; margin: 0 0 10px; }
-.sub-content p { font-size: 1rem; line-height: 1.7; color: #64748b; margin: 0; }
+    .sub-item:hover .sub-icon-circle {
+      transform: scale(1.1);
+      background: #233f92;
+      color: #fff;
+    }
 
-@media (max-width: 768px) {
-  .subject-list { grid-template-columns: 1fr; gap: 40px; }
-}
+    .sub-item:nth-child(even):hover .sub-icon-circle {
+      background: #ff9704;
+      color: #fff;
+    }
+
+    .sub-content h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin: 0 0 10px;
+    }
+
+    .sub-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #64748b;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .subject-list {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
 
     /* =========================================
        METHODOLOGY (TIMELINE STYLE)
@@ -254,9 +359,11 @@
       margin-bottom: 40px;
       align-items: flex-start;
     }
+
     .method-number {
       flex-shrink: 0;
-      width: 50px; height: 50px;
+      width: 50px;
+      height: 50px;
       background: var(--ac-orange);
       color: #fff;
       border-radius: 50%;
@@ -267,11 +374,13 @@
       justify-content: center;
       box-shadow: 0 8px 16px rgba(255, 151, 4, 0.3);
     }
+
     .method-text h3 {
       margin: 0 0 8px;
       color: var(--ac-blue);
       font-size: 1.3rem;
     }
+
     .method-text p {
       margin: 0;
       color: var(--ac-text);
@@ -285,6 +394,7 @@
       padding: 80px 0;
       background: #fff;
     }
+
     .ac-cta-box {
       background: linear-gradient(135deg, var(--ac-blue) 0%, #1a2e6e 100%);
       border-radius: 30px;
@@ -295,17 +405,35 @@
       overflow: hidden;
       box-shadow: 0 20px 50px rgba(35, 63, 146, 0.25);
     }
+
     /* Background pattern */
     .ac-cta-box::after {
-      content: ''; position: absolute; inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
       background-size: 20px 20px;
       opacity: 0.5;
     }
-    .ac-cta-content { position: relative; z-index: 2; }
 
-    .ac-cta h2 { font-size: 2rem; margin-bottom: 15px; }
-    .ac-cta p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .ac-cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ac-cta h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .ac-cta p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     .ac-btn {
       display: inline-flex;
@@ -319,31 +447,59 @@
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s;
     }
+
     .ac-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     /* =========================================
        RESPONSIVE
     ========================================= */
     @media (max-width: 768px) {
-      .ac-hero { padding-top: 120px; }
-      .ac-grid-2 { grid-template-columns: 1fr; }
-      .ac-philo-img { order: -1; margin-bottom: 20px; transform: rotate(0); }
-      .ac-hero h1 { font-size: 2.2rem; }
+      .ac-hero {
+        padding-top: 120px;
+      }
+
+      .ac-grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .ac-philo-img {
+        order: -1;
+        margin-bottom: 20px;
+        transform: rotate(0);
+      }
+
+      .ac-hero h1 {
+        font-size: 2.2rem;
+      }
     }
-    
+
     /* Keep your existing CTA button style for header */
-    .ggm-btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 16px; border-radius:999px; text-decoration:none;
-      font-weight:700; color: rgba(0,0,0,.785);
+    .ggm-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      color: rgba(0, 0, 0, .785);
       background-color: var(--primaryColor);
     }
-    .ggm-btn:hover{ box-shadow:0 10px 20px rgba(0,0,0,.2); }
-    @media (max-width: 768px){
-      a.ggm-btn{ display:none !important; visibility:hidden !important; opacity:0 !important; pointer-events:none !important; }
+
+    .ggm-btn:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    }
+
+    @media (max-width: 768px) {
+      a.ggm-btn {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
     }
   </style>
 </head>
@@ -360,7 +516,8 @@
           <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
         </a>
 
-        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks"
+          aria-expanded="false">
           <span class="gm-burger-line"></span>
           <span class="gm-burger-line"></span>
           <span class="gm-burger-line"></span>
@@ -372,18 +529,28 @@
           <li><a class="gm-link" href="/primary-school-tembha/academics.html">Academics</a></li>
 
           <li class="gm-item gm-dropdown" data-dropdown>
-            <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="institutesMenu">
+            <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+              aria-controls="institutesMenu">
               Our Educational Institutes
               <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
             </button>
 
             <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-              <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
-              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
-              <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
-              <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+              </li>
+              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New
+                  English School Dhakale</a></li>
+              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School
+                  Karhati Tembha</a></li>
+              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS
+                  Private I.T.I Karhati</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium
+                  School</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar
+                  Kala Mahavidhyalaya</a></li>
             </ul>
           </li>
 
@@ -407,7 +574,8 @@
       </div>
       <h1 class="reveal-up delay-100">Building a Strong Foundation<br>for Future Leaders</h1>
       <p class="reveal-up delay-200">
-        At Karhati Tembha Primary School, we combine traditional values with modern learning techniques to foster curiosity, confidence, and character in every child.
+        At Karhati Tembha Primary School, we combine traditional values with modern learning techniques to foster
+        curiosity, confidence, and character in every child.
       </p>
     </div>
   </section>
@@ -422,7 +590,8 @@
         <div class="ac-philo-content reveal-left">
           <h2>Our Academic Philosophy</h2>
           <p>
-            We believe that primary education is the stepping stone for lifelong learning. Our curriculum is designed not just to teach subjects, but to teach children <strong>how to learn</strong>.
+            We believe that primary education is the stepping stone for lifelong learning. Our curriculum is designed
+            not just to teach subjects, but to teach children <strong>how to learn</strong>.
           </p>
           <ul class="check-list">
             <li><i class="fa-solid fa-check"></i> Focus on strong literacy and numeracy skills.</li>
@@ -431,7 +600,7 @@
             <li><i class="fa-solid fa-check"></i> Integrating moral values into daily lessons.</li>
           </ul>
         </div>
-        
+
         <!-- Image -->
         <div class="ac-philo-img reveal-right">
           <!-- Placeholder for class activity image -->
@@ -441,12 +610,12 @@
     </div>
   </section>
 
-<!-- =========================================
+  <!-- =========================================
        SUBJECTS / CURRICULUM (NO CARDS)
   ========================================= -->
   <section class="ac-subjects" id="curriculum">
     <div class="ac-container">
-      
+
       <!-- Header -->
       <div class="section-head reveal-up">
         <h2>What We Teach</h2>
@@ -455,13 +624,14 @@
 
       <!-- Clean List Grid -->
       <div class="subject-list">
-        
+
         <!-- 1. Language -->
         <div class="sub-item reveal-up delay-100">
           <div class="sub-icon-circle"><i class="fa-solid fa-book-open-reader"></i></div>
           <div class="sub-content">
             <h3>Language Proficiency</h3>
-            <p>We focus on <strong>Marathi & English</strong> fluency. Students engage in daily reading, phonics, and poetry recitation to build strong communication skills.</p>
+            <p>We focus on <strong>Marathi & English</strong> fluency. Students engage in daily reading, phonics, and
+              poetry recitation to build strong communication skills.</p>
           </div>
         </div>
 
@@ -470,7 +640,8 @@
           <div class="sub-icon-circle"><i class="fa-solid fa-calculator"></i></div>
           <div class="sub-content">
             <h3>Mathematics & Logic</h3>
-            <p>Learning numbers without fear. We use objects, beads, and games to make addition, subtraction, and tables easy to understand and apply.</p>
+            <p>Learning numbers without fear. We use objects, beads, and games to make addition, subtraction, and tables
+              easy to understand and apply.</p>
           </div>
         </div>
 
@@ -479,7 +650,8 @@
           <div class="sub-icon-circle"><i class="fa-solid fa-leaf"></i></div>
           <div class="sub-content">
             <h3>Nature & Environment</h3>
-            <p>Students explore the world around them through simple science experiments, garden visits, and learning about hygiene and seasons.</p>
+            <p>Students explore the world around them through simple science experiments, garden visits, and learning
+              about hygiene and seasons.</p>
           </div>
         </div>
 
@@ -488,7 +660,8 @@
           <div class="sub-icon-circle"><i class="fa-solid fa-palette"></i></div>
           <div class="sub-content">
             <h3>Art & Creativity</h3>
-            <p>We nurture imagination through drawing, craft, clay modeling, and music, helping children express themselves freely.</p>
+            <p>We nurture imagination through drawing, craft, clay modeling, and music, helping children express
+              themselves freely.</p>
           </div>
         </div>
 
@@ -497,7 +670,8 @@
           <div class="sub-icon-circle"><i class="fa-solid fa-person-running"></i></div>
           <div class="sub-content">
             <h3>Physical Fitness</h3>
-            <p>Daily routines include Mass P.T., Yoga, and structured playground games (Kho-Kho, Running) to build stamina and discipline.</p>
+            <p>Daily routines include Mass P.T., Yoga, and structured playground games (Kho-Kho, Running) to build
+              stamina and discipline.</p>
           </div>
         </div>
 
@@ -506,7 +680,8 @@
           <div class="sub-icon-circle"><i class="fa-solid fa-hands-praying"></i></div>
           <div class="sub-content">
             <h3>Sanskar (Values)</h3>
-            <p>Character building is key. We teach respect for elders, honesty, and punctuality through morning prayers and moral stories.</p>
+            <p>Character building is key. We teach respect for elders, honesty, and punctuality through morning prayers
+              and moral stories.</p>
           </div>
         </div>
 
@@ -520,23 +695,23 @@
   <section class="ac-method">
     <div class="ac-container">
       <div class="ac-grid-2">
-        
-        <div class="reveal-left">
-           <div class="section-head">
-              <h2 style=" font-size: 2rem;">How We Teach</h2>
-              <p style="padding: 40px;">Our teaching method is simple, consistent, and child-centric.</p>
-           </div>
-           
-           <!-- Timeline Items -->
-           <div class="method-item">
-             <div class="method-number">1</div>
-             <div class="method-text">
-               <h3>Concept Introduction</h3>
-               <p>Teachers introduce new topics using real-life objects, charts, or stories to create interest.</p>
-             </div>
-           </div>
 
-           <div class="method-item">
+        <div class="reveal-left">
+          <div class="section-head">
+            <h2 style=" font-size: 2rem;">How We Teach</h2>
+            <p style="padding: 40px;">Our teaching method is simple, consistent, and child-centric.</p>
+          </div>
+
+          <!-- Timeline Items -->
+          <div class="method-item">
+            <div class="method-number">1</div>
+            <div class="method-text">
+              <h3>Concept Introduction</h3>
+              <p>Teachers introduce new topics using real-life objects, charts, or stories to create interest.</p>
+            </div>
+          </div>
+
+          <div class="method-item">
             <div class="method-number">2</div>
             <div class="method-text">
               <h3>Guided Practice</h3>
@@ -555,7 +730,7 @@
         </div>
 
         <div class="ac-philo-img reveal-right" style="transform: rotate(2deg);">
-           <img src="/assets/how-we-teach.png" alt="School Activities" style="height: 400px; object-fit: cover;">
+          <img src="/assets/how-we-teach.png" alt="School Activities" style="height: 400px; object-fit: cover;">
         </div>
 
       </div>
@@ -570,7 +745,8 @@
       <div class="ac-cta-box scale-in">
         <div class="ac-cta-content">
           <h2>Ready to Join Us?</h2>
-          <p>Give your child the best start in life. Contact us to learn more about the admission process or to schedule a school visit.</p>
+          <p>Give your child the best start in life. Contact us to learn more about the admission process or to schedule
+            a school visit.</p>
           <a href="/contact.html" class="ac-btn">
             Contact Us <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -584,7 +760,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="/index.html" class="logo" style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+          <a href="/index.html" class="logo"
+            style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
             <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
             <div>
               <div style="color: #ff9704;">KUMSS SINCE 1951</div>
@@ -596,15 +773,18 @@
 
           <div class="social-links">
             <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+
             <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+          <h3
+            style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Quick Links</h3>
           <ul class="footer-links">
             <li><a href="./primary-school-tembha.html">Home</a></li>
             <li><a href="/primary-school-tembha/about.html">About</a></li>
@@ -615,17 +795,23 @@
         </div>
 
         <div class="footer-col">
-          <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
+          <h3
+            style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Our Institutes</h3>
           <ul class="footer-links">
-            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+            </li>
+            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
+            </li>
             <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
             <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+          <h3
+            style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Contact Info</h3>
           <ul class="footer-links">
             <li><i class="fas fa-phone"></i> <a href="tel:+919421394242">+91 94213 94242</a></li>
             <li><i class="fas fa-envelope"></i> <a href="mailto:info@kumss.org">info@kumss.org</a></li>
@@ -662,4 +848,5 @@
     });
   </script>
 </body>
+
 </html>

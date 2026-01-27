@@ -37,45 +37,55 @@
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
-/* Native smooth scroll */
-html{
-  scroll-behavior: smooth;
-}
+        /* Native smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* Keep anchor jumps below fixed header */
-:root{
-  --header-offset: 90px; /* auto-updated by JS too */
-}
+        /* Keep anchor jumps below fixed header */
+        :root {
+            --header-offset: 90px;
+            /* auto-updated by JS too */
+        }
 
-/* Works for any element you scroll to by #id */
-section[id], [id]{
-  scroll-margin-top: var(--header-offset);
-}
+        /* Works for any element you scroll to by #id */
+        section[id],
+        [id] {
+            scroll-margin-top: var(--header-offset);
+        }
 
-/* Reduce motion support */
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior: auto; }
-  *{
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+        /* Reduce motion support */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
 
-/* Mobile performance: fixed background often stutters */
-@media (max-width: 992px){
-  .about-hero{ background-attachment: scroll; }
-}
+            * {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Mobile performance: fixed background often stutters */
+        @media (max-width: 992px) {
+            .about-hero {
+                background-attachment: scroll;
+            }
+        }
+
         * {
             box-sizing: border-box;
         }
 
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
             font-family: "Poppins", sans-serif;
-            overflow-x: hidden; /* Critical for preventing animation glitches */
+            overflow-x: hidden;
+            /* Critical for preventing animation glitches */
             background-color: var(--white);
         }
 
@@ -164,168 +174,172 @@ section[id], [id]{
    MISSION & VISION (NO CARDS, UNIQUE TEXT LAYOUT)
    ========================= */
 
-.mission-vision-section{
-  position: relative;
-  padding: 90px 0;
-  background: var(--bg-light);
-  overflow: hidden;
-}
+        .mission-vision-section {
+            position: relative;
+            padding: 90px 0;
+            background: var(--bg-light);
+            overflow: hidden;
+        }
 
-/* subtle background lines */
-.mission-vision-section::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(to right, rgba(15,23,42,0.06) 1px, transparent 1px);
-  background-size: 90px 100%;
-  opacity: .35;
-  pointer-events:none;
-}
+        /* subtle background lines */
+        .mission-vision-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to right, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+            background-size: 90px 100%;
+            opacity: .35;
+            pointer-events: none;
+        }
 
-.mission-vision-section .container-custom{
-  position: relative;
-  z-index: 2;
-}
+        .mission-vision-section .container-custom {
+            position: relative;
+            z-index: 2;
+        }
 
-/* Grid becomes an editorial split */
-.mv-grid{
-  position: relative;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-top: 28px;
-  align-items: start;
-  padding-top: 18px;
-}
+        /* Grid becomes an editorial split */
+        .mv-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 28px;
+            align-items: start;
+            padding-top: 18px;
+        }
 
-/* Center divider */
-.mv-grid::before{
-  content:"";
-  position:absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-  transform: translateX(-50%);
-  background: rgba(15,23,42,0.12);
-}
+        /* Center divider */
+        .mv-grid::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 1px;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.12);
+        }
 
-/* kill images completely */
-.mv-img-wrapper{
-  display:none !important;
-}
+        /* kill images completely */
+        .mv-img-wrapper {
+            display: none !important;
+        }
 
-/* kill card look */
-.mv-card{
-  background: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  transform: none !important;
-}
+        /* kill card look */
+        .mv-card {
+            background: transparent !important;
+            box-shadow: none !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            transform: none !important;
+        }
 
-/* content spacing */
-.mv-content{
-  padding: 0 !important;
-}
+        /* content spacing */
+        .mv-content {
+            padding: 0 !important;
+        }
 
-/* Title becomes label-style (big + clean) */
-.mv-content h2{
-  margin: 0 0 14px 0;
-  font-size: 2.2rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
+        /* Title becomes label-style (big + clean) */
+        .mv-content h2 {
+            margin: 0 0 14px 0;
+            font-size: 2.2rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
 
-/* Add a small “tag” above heading using pseudo */
-.mv-card:nth-child(1) .mv-content h2::before{
-  content:"VISION";
-  display:block;
-  font-size: .85rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  color: var(--primary);
-}
+        /* Add a small “tag” above heading using pseudo */
+        .mv-card:nth-child(1) .mv-content h2::before {
+            content: "VISION";
+            display: block;
+            font-size: .85rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
 
-.mv-card:nth-child(2) .mv-content h2::before{
-  content:"MISSION";
-  display:block;
-  font-size: .85rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  color: var(--secondary);
-}
+        .mv-card:nth-child(2) .mv-content h2::before {
+            content: "MISSION";
+            display: block;
+            font-size: .85rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
 
-/* Accent underline (not a box) */
-.mv-card:nth-child(1) .mv-content h2{
-  color: var(--primary);
-}
-.mv-card:nth-child(2) .mv-content h2{
-  color: var(--secondary);
-}
+        /* Accent underline (not a box) */
+        .mv-card:nth-child(1) .mv-content h2 {
+            color: var(--primary);
+        }
 
-.mv-content h2::after{
-  content:"";
-  display:block;
-  width: 68px;
-  height: 3px;
-  margin-top: 14px;
-  background: currentColor;
-  opacity: .25;
-}
+        .mv-card:nth-child(2) .mv-content h2 {
+            color: var(--secondary);
+        }
 
-/* Paragraph looks like premium editorial text */
-.mv-content p{
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.85;
-  color: var(--text-light);
-  max-width: 60ch;
-}
+        .mv-content h2::after {
+            content: "";
+            display: block;
+            width: 68px;
+            height: 3px;
+            margin-top: 14px;
+            background: currentColor;
+            opacity: .25;
+        }
 
-/* Add a subtle “quote bar” before each paragraph */
-.mv-content p{
-  position: relative;
-  padding-left: 18px;
-}
-.mv-content p::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:.25em;
-  width: 3px;
-  height: calc(100% - .5em);
-  background: rgba(15,23,42,0.18);
-}
+        /* Paragraph looks like premium editorial text */
+        .mv-content p {
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--text-light);
+            max-width: 60ch;
+        }
 
-/* Make each column offset slightly for uniqueness */
-.mv-card:nth-child(1){
-  padding-right: 10px !important;
-}
-.mv-card:nth-child(2){
-  padding-left: 10px !important;
-}
+        /* Add a subtle “quote bar” before each paragraph */
+        .mv-content p {
+            position: relative;
+            padding-left: 18px;
+        }
 
-/* Responsive: stack with divider becoming horizontal line */
-@media (max-width: 992px){
-  .mv-grid{
-    grid-template-columns: 1fr;
-    gap: 34px;
-  }
-  .mv-grid::before{
-    left: 0;
-    right: 0;
-    top: 50%;
-    bottom: auto;
-    width: 100%;
-    height: 1px;
-    transform: translateY(-50%);
-  }
-}
+        .mv-content p::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: .25em;
+            width: 3px;
+            height: calc(100% - .5em);
+            background: rgba(15, 23, 42, 0.18);
+        }
+
+        /* Make each column offset slightly for uniqueness */
+        .mv-card:nth-child(1) {
+            padding-right: 10px !important;
+        }
+
+        .mv-card:nth-child(2) {
+            padding-left: 10px !important;
+        }
+
+        /* Responsive: stack with divider becoming horizontal line */
+        @media (max-width: 992px) {
+            .mv-grid {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .mv-grid::before {
+                left: 0;
+                right: 0;
+                top: 50%;
+                bottom: auto;
+                width: 100%;
+                height: 1px;
+                transform: translateY(-50%);
+            }
+        }
 
         /* --- TIMELINE (WHY CHOOSE US) --- */
         .timeline-section {
@@ -333,7 +347,7 @@ section[id], [id]{
             color: white;
             position: relative;
         }
-        
+
         .timeline-wrapper {
             position: relative;
             max-width: 1000px;
@@ -347,7 +361,7 @@ section[id], [id]{
             top: 0;
             bottom: 0;
             width: 4px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateX(-50%);
         }
 
@@ -368,33 +382,52 @@ section[id], [id]{
             background: white;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             position: relative;
             color: var(--text-dark);
         }
 
-        .timeline-row:nth-child(odd) { justify-content: flex-start; }
-        .timeline-row:nth-child(odd) .timeline-content-box {
-            margin-left: auto; margin-right: 50%; transform: translateX(-40px);
+        .timeline-row:nth-child(odd) {
+            justify-content: flex-start;
         }
-        .timeline-row:nth-child(even) { justify-content: flex-end; }
+
+        .timeline-row:nth-child(odd) .timeline-content-box {
+            margin-left: auto;
+            margin-right: 50%;
+            transform: translateX(-40px);
+        }
+
+        .timeline-row:nth-child(even) {
+            justify-content: flex-end;
+        }
+
         .timeline-row:nth-child(even) .timeline-content-box {
-            margin-right: auto; margin-left: 50%; transform: translateX(40px);
+            margin-right: auto;
+            margin-left: 50%;
+            transform: translateX(40px);
         }
 
         .timeline-dot {
-            width: 20px; height: 20px;
+            width: 20px;
+            height: 20px;
             background: var(--secondary);
-            border: 4px solid rgba(255,255,255,0.5);
+            border: 4px solid rgba(255, 255, 255, 0.5);
             border-radius: 50%;
-            position: absolute; left: 50%;
-            transform: translateX(-50%); z-index: 2;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
         }
 
         .timeline-content-box h3 {
-            color: var(--primary); margin: 0 0 10px; font-size: 1.25rem;
+            color: var(--primary);
+            margin: 0 0 10px;
+            font-size: 1.25rem;
         }
-        .timeline-section h2.section-title { color: white; }
+
+        .timeline-section h2.section-title {
+            color: white;
+        }
 
         /* ==================================================================
            NEW SECTION: HISTORY (Overlapping Card Layout)
@@ -422,7 +455,7 @@ section[id], [id]{
             z-index: 1;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+            box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1);
         }
 
         .history-image-container img {
@@ -440,7 +473,7 @@ section[id], [id]{
             right: 0;
             z-index: 2;
             border-radius: 12px;
-            box-shadow: -10px 15px 40px rgba(0,0,0,0.15);
+            box-shadow: -10px 15px 40px rgba(0, 0, 0, 0.15);
             border-left: 5px solid var(--secondary);
         }
 
@@ -466,211 +499,258 @@ section[id], [id]{
         /* ==================================================================
    REDESIGNED: ACADEMIC EXCELLENCE (Premium 3D Glass)
    ================================================================== */
-.academic-section-new {
-    padding: 120px 20px;
-    color: white;
-    position: relative;
-    overflow: hidden; /* Critical to prevent scrollbar glitches */
-}
-/* Academic Excellence section background image (keeps layout same) */
-.academic-section-new{
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(rgba(8, 12, 20, 0.783), rgba(8, 12, 20, 0.88)),
-    url("/assets/gurukul-our-history.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll; /* change to 'fixed' if you want parallax-ish effect */
-}
+        .academic-section-new {
+            padding: 120px 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            /* Critical to prevent scrollbar glitches */
+        }
 
-/* keep your pattern layer above the image but below content */
-.academic-section-new .academic-bg-pattern{
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
+        /* Academic Excellence section background image (keeps layout same) */
+        .academic-section-new {
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(rgba(8, 12, 20, 0.783), rgba(8, 12, 20, 0.88)),
+                url("/assets/gurukul-our-history.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            /* change to 'fixed' if you want parallax-ish effect */
+        }
 
-/* make sure content stays above bg */
-.academic-section-new .container-custom{
-  position: relative;
-  z-index: 2;
-}
+        /* keep your pattern layer above the image but below content */
+        .academic-section-new .academic-bg-pattern {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* make sure content stays above bg */
+        .academic-section-new .container-custom {
+            position: relative;
+            z-index: 2;
+        }
 
 
-/* Moving Background Mesh */
-.academic-bg-pattern {
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background-image: radial-gradient(rgba(255,255,255,0.03) 2px, transparent 2px);
-    background-size: 50px 50px;
-    opacity: 0.6;
-    pointer-events: none;
-    animation: moveBackground 60s linear infinite;
-    z-index: 1;
-}
+        /* Moving Background Mesh */
+        .academic-bg-pattern {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 2px, transparent 2px);
+            background-size: 50px 50px;
+            opacity: 0.6;
+            pointer-events: none;
+            animation: moveBackground 60s linear infinite;
+            z-index: 1;
+        }
 
-@keyframes moveBackground {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
-}
+        @keyframes moveBackground {
+            0% {
+                transform: translate(0, 0);
+            }
 
-.container-custom {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
 
-.academic-section-new h2.section-title {
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
-}
+        .container-custom {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.academic-intro-text {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 70px;
-    font-size: 1.15rem;
-    color: rgba(255,255,255,0.85);
-    font-weight: 300;
-}
+        .academic-section-new h2.section-title {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-.academic-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    perspective: 1000px; /* Essential for 3D animation */
-}
+        .academic-intro-text {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 70px;
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+        }
 
-.course-box {
-    background: rgb(255, 255, 255);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px 30px;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
-    will-change: transform, opacity; /* Performance boost */
-}
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            perspective: 1000px;
+            /* Essential for 3D animation */
+        }
 
-/* Soft Glow Behind Card */
-.course-box::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at center, rgba(255, 151, 4, 0.15) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
-}
+        .course-box {
+            background: rgb(255, 255, 255);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            will-change: transform, opacity;
+            /* Performance boost */
+        }
 
-/* Hover State */
-.course-box:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    border-color: rgba(255, 149, 0, 0.795);
-    background: rgba(255, 255, 255, 0.507);
-}
+        /* Soft Glow Behind Card */
+        .course-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 151, 4, 0.15) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
 
-.course-box:hover::before {
-    opacity: 1;
-}
+        /* Hover State */
+        .course-box:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 149, 0, 0.795);
+            background: rgba(255, 255, 255, 0.507);
+        }
 
-.course-icon-circle {
-    width: 80px; height: 80px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    font-size: 2rem;
-    color: var(--secondary);
-    transition: all 0.4s ease;
-    border: 1px solid rgba(255,255,255,0.05);
-}
+        .course-box:hover::before {
+            opacity: 1;
+        }
 
-.course-box:hover .course-icon-circle {
-    background: var(--secondary);
-    color: white;
-    transform: rotateY(180deg); /* 3D Icon Flip */
-    box-shadow: 0 0 20px rgba(255, 151, 4, 0.4);
-}
+        .course-icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--secondary);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-.course-box h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: rgb(18, 34, 87);
-    font-weight: 700;
-}
+        .course-box:hover .course-icon-circle {
+            background: var(--secondary);
+            color: white;
+            transform: rotateY(180deg);
+            /* 3D Icon Flip */
+            box-shadow: 0 0 20px rgba(255, 151, 4, 0.4);
+        }
 
-.course-box p {
-    color: rgba(0, 0, 0, 0.7);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0;
-}
+        .course-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: rgb(18, 34, 87);
+            font-weight: 700;
+        }
+
+        .course-box p {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
 
 
         /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 992px) {
-            .mv-grid { grid-template-columns: 1fr; }
-            
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+
             /* History Stacked on Tablet */
             .history-wrapper {
                 flex-direction: column;
             }
+
             .history-image-container {
                 width: 100%;
-                margin-bottom: -50px; /* Overlap effect vertical */
+                margin-bottom: -50px;
+                /* Overlap effect vertical */
             }
+
             .history-card {
                 width: 90%;
                 position: relative;
                 right: auto;
                 padding: 30px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             }
         }
 
         @media (max-width: 768px) {
+
             /* Timeline Mobile Fixes */
-            .timeline-line { left: 20px; transform: none; }
-            .timeline-dot { left: 20px; transform: translateX(-50%); }
-            .timeline-row { justify-content: flex-start !important; }
+            .timeline-line {
+                left: 20px;
+                transform: none;
+            }
+
+            .timeline-dot {
+                left: 20px;
+                transform: translateX(-50%);
+            }
+
+            .timeline-row {
+                justify-content: flex-start !important;
+            }
+
             .timeline-row:nth-child(odd) .timeline-content-box,
             .timeline-row:nth-child(even) .timeline-content-box {
                 width: calc(100% - 60px);
-                margin-left: 60px !important; margin-right: 0 !important;
+                margin-left: 60px !important;
+                margin-right: 0 !important;
                 transform: none !important;
             }
 
             /* History Mobile */
-            .history-image-container { margin-bottom: 0; border-radius: 12px 12px 0 0; }
-            .history-card { 
-                width: 100%; 
-                border-radius: 0 0 12px 12px; 
+            .history-image-container {
+                margin-bottom: 0;
+                border-radius: 12px 12px 0 0;
+            }
+
+            .history-card {
+                width: 100%;
+                border-radius: 0 0 12px 12px;
                 border-left: none;
                 border-top: 4px solid var(--secondary);
             }
-            .history-year { display: none; } /* Hide big number on mobile */
-            
-            .ggm-btn { display: none !important; }
+
+            .history-year {
+                display: none;
+            }
+
+            /* Hide big number on mobile */
+
+            .ggm-btn {
+                display: none !important;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true" style="position:fixed; top:0; left:0; height:4px; background:var(--secondary); z-index:9999; width:0%;"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"
+        style="position:fixed; top:0; left:0; height:4px; background:var(--secondary); z-index:9999; width:0%;"></div>
 
     <!-- Header -->
     <header class="gm-header" id="header">
@@ -691,7 +771,8 @@ section[id], [id]{
 
                 <!-- Links -->
                 <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
+                    <li><a class="gm-link"
+                            href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
                     <li><a class="gm-link" href="/gurukul-english-medium-school/about.html">About</a></li>
                     <li><a class="gm-link" href="./academics.html">Academics</a></li>
                     <li class="gm-item gm-dropdown" data-dropdown>
@@ -701,12 +782,24 @@ section[id], [id]{
                             <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
                         </button>
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
-                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
-                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala Mahavidhyalaya</a></li>
                         </ul>
                     </li>
                     <li><a class="gm-link" href="/gurukul-english-medium-school/staff.html">Staff</a></li>
@@ -736,7 +829,9 @@ section[id], [id]{
                     </div>
                     <div class="mv-content">
                         <h2>Our Vision</h2>
-                        <p>Our vision is to build a community of learners who are confident, empathetic, and innovative. We aim to foster a love for learning and personal growth, empowering our students to excel in academics, sports, arts, and leadership.</p>
+                        <p>Our vision is to build a community of learners who are confident, empathetic, and innovative.
+                            We aim to foster a love for learning and personal growth, empowering our students to excel
+                            in academics, sports, arts, and leadership.</p>
                     </div>
                 </div>
 
@@ -747,7 +842,9 @@ section[id], [id]{
                     </div>
                     <div class="mv-content">
                         <h2>Our Mission</h2>
-                        <p>Our mission is to provide a well-rounded education that equips students with knowledge. We focus on critical thinking, creativity, emotional intelligence, and fostering a love for lifelong learning.</p>
+                        <p>Our mission is to provide a well-rounded education that equips students with knowledge. We
+                            focus on critical thinking, creativity, emotional intelligence, and fostering a love for
+                            lifelong learning.</p>
                     </div>
                 </div>
             </div>
@@ -758,35 +855,39 @@ section[id], [id]{
     <section class="section-padding timeline-section">
         <div class="container-custom">
             <h2 class="section-title">Why Choose KUMSS Gurukul?</h2>
-            
+
             <div class="timeline-wrapper">
                 <div class="timeline-line"></div>
                 <div class="timeline-row">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content-box">
                         <h3>Experienced Educators</h3>
-                        <p>Our faculty members are highly skilled professionals who bring their knowledge, passion, and commitment to every classroom.</p>
+                        <p>Our faculty members are highly skilled professionals who bring their knowledge, passion, and
+                            commitment to every classroom.</p>
                     </div>
                 </div>
                 <div class="timeline-row">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content-box">
                         <h3>Modern Infrastructure</h3>
-                        <p>Our campus is equipped with state-of-the-art facilities, providing a conducive environment for learning, sports, and arts.</p>
+                        <p>Our campus is equipped with state-of-the-art facilities, providing a conducive environment
+                            for learning, sports, and arts.</p>
                     </div>
                 </div>
                 <div class="timeline-row">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content-box">
                         <h3>Holistic Development</h3>
-                        <p>From academics to sports, arts, and leadership training, we aim to develop well-rounded individuals ready for the world.</p>
+                        <p>From academics to sports, arts, and leadership training, we aim to develop well-rounded
+                            individuals ready for the world.</p>
                     </div>
                 </div>
                 <div class="timeline-row">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content-box">
                         <h3>Focus on Values</h3>
-                        <p>We emphasize values like integrity, compassion, respect, and responsibility, creating students who are good human beings.</p>
+                        <p>We emphasize values like integrity, compassion, respect, and responsibility, creating
+                            students who are good human beings.</p>
                     </div>
                 </div>
             </div>
@@ -799,12 +900,16 @@ section[id], [id]{
             <div class="history-image-container">
                 <img src="/assets/gurukul-our-history.jpg" alt="School History Building">
             </div>
-            
+
             <div class="history-card">
                 <span class="history-year">2021</span>
                 <h2>Our History</h2>
-                <p><strong style="color:var(--secondary);">Founded in 2021</strong>, KUMSS Gurukul English Medium School was born out of a vision to provide top-tier education that nurtures both intellectual and emotional growth.</p>
-                <p>From humble beginnings, we have rapidly grown into a trusted institution in Pune. We are known for our balanced approach, instilling life skills, and fostering a culture where every child is encouraged to dream big.</p>
+                <p><strong style="color:var(--secondary);">Founded in 2021</strong>, KUMSS Gurukul English Medium School
+                    was born out of a vision to provide top-tier education that nurtures both intellectual and emotional
+                    growth.</p>
+                <p>From humble beginnings, we have rapidly grown into a trusted institution in Pune. We are known for
+                    our balanced approach, instilling life skills, and fostering a culture where every child is
+                    encouraged to dream big.</p>
             </div>
         </div>
     </section>
@@ -815,7 +920,8 @@ section[id], [id]{
         <div class="container-custom">
             <h2 class="section-title">Academic Excellence</h2>
             <p class="academic-intro-text">
-                We offer a modern curriculum that challenges students to think critically. Through experiential learning and practical projects, we prepare the next generation of leaders.
+                We offer a modern curriculum that challenges students to think critically. Through experiential learning
+                and practical projects, we prepare the next generation of leaders.
             </p>
 
             <div class="academic-grid">
@@ -863,7 +969,8 @@ section[id], [id]{
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo" style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+                    <a href="#" class="logo"
+                        style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
                         <img src="/assets/gurukul-logo.png" alt="KUMSS Logo" class="footer-logo-img">
                         <div>
                             <div style="color: #ff9704;">KUMSS SINCE 1951</div>
@@ -874,15 +981,18 @@ section[id], [id]{
                     </p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"><i
+                                class="fab fa-instagram"></i></a>
+
                         <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
                         <li><a href="/gurukul-english-medium-school/about.html">About</a></li>
@@ -893,17 +1003,24 @@ section[id], [id]{
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a></li>
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-phone"></i><a href="tel:+919421394242">+91 94213 94242</a></li>
                         <li><i class="fas fa-envelope"></i><a href="mailto:info@kumss.org">info@kumss.org</a></li>
@@ -913,160 +1030,162 @@ section[id], [id]{
             </div>
             <div class="footer-bottom">
                 <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">ISO 9001:2015 Certified</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">ISO 9001:2015
+                    Certified</p>
             </div>
         </div>
     </footer>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Safety: GSAP must exist (you already load it in <head>)
-  if (!window.gsap) return;
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Safety: GSAP must exist (you already load it in <head>)
+            if (!window.gsap) return;
 
-  gsap.registerPlugin(ScrollTrigger);
+            gsap.registerPlugin(ScrollTrigger);
 
-  // ---------- ScrollTrigger stability ----------
-  ScrollTrigger.config({ ignoreMobileResize: true });
+            // ---------- ScrollTrigger stability ----------
+            ScrollTrigger.config({ ignoreMobileResize: true });
 
-  // Refresh after images load (prevents jumpy triggers)
-  window.addEventListener("load", () => ScrollTrigger.refresh());
+            // Refresh after images load (prevents jumpy triggers)
+            window.addEventListener("load", () => ScrollTrigger.refresh());
 
-  // Respect reduced-motion users
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduceMotion) return;
+            // Respect reduced-motion users
+            const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            if (reduceMotion) return;
 
-  // ---------- 1) HERO: clean entrance ----------
-  gsap.from(".about-content", {
-    opacity: 0,
-    y: 30,
-    duration: 1,
-    ease: "power2.out"
-  });
+            // ---------- 1) HERO: clean entrance ----------
+            gsap.from(".about-content", {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                ease: "power2.out"
+            });
 
-  gsap.from(".hero-sub", {
-    opacity: 0,
-    y: 18,
-    duration: 0.8,
-    ease: "power2.out",
-    delay: 0.1
-  });
+            gsap.from(".hero-sub", {
+                opacity: 0,
+                y: 18,
+                duration: 0.8,
+                ease: "power2.out",
+                delay: 0.1
+            });
 
-  gsap.from(".hero-title", {
-    opacity: 0,
-    y: 18,
-    duration: 0.9,
-    ease: "power2.out",
-    delay: 0.2
-  });
+            gsap.from(".hero-title", {
+                opacity: 0,
+                y: 18,
+                duration: 0.9,
+                ease: "power2.out",
+                delay: 0.2
+            });
 
-  // Slight background zoom for premium feel (no layout shift)
-  gsap.fromTo(".about-hero", { filter: "saturate(0.95)" }, {
-    filter: "saturate(1)",
-    duration: 1.2,
-    ease: "power2.out"
-  });
+            // Slight background zoom for premium feel (no layout shift)
+            gsap.fromTo(".about-hero", { filter: "saturate(0.95)" }, {
+                filter: "saturate(1)",
+                duration: 1.2,
+                ease: "power2.out"
+            });
 
-  // ---------- 2) SECTION TITLES: consistent reveal ----------
-  gsap.utils.toArray(".section-title").forEach((title) => {
-    gsap.from(title, {
-      scrollTrigger: { trigger: title, start: "top 85%" },
-      opacity: 0,
-      y: 20,
-      duration: 0.7,
-      ease: "power2.out"
-    });
-  });
+            // ---------- 2) SECTION TITLES: consistent reveal ----------
+            gsap.utils.toArray(".section-title").forEach((title) => {
+                gsap.from(title, {
+                    scrollTrigger: { trigger: title, start: "top 85%" },
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.7,
+                    ease: "power2.out"
+                });
+            });
 
-  // ---------- 3) MISSION/VISION (text layout): stagger reveal ----------
-  gsap.utils.toArray(".mission-vision-section .mv-card").forEach((card, i) => {
-    gsap.from(card, {
-      scrollTrigger: { trigger: ".mission-vision-section", start: "top 70%" },
-      opacity: 0,
-      y: 28,
-      duration: 0.8,
-      ease: "power2.out",
-      delay: i * 0.15
-    });
-  });
+            // ---------- 3) MISSION/VISION (text layout): stagger reveal ----------
+            gsap.utils.toArray(".mission-vision-section .mv-card").forEach((card, i) => {
+                gsap.from(card, {
+                    scrollTrigger: { trigger: ".mission-vision-section", start: "top 70%" },
+                    opacity: 0,
+                    y: 28,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    delay: i * 0.15
+                });
+            });
 
-  // Subtle divider draw effect (your ::before divider line)
-  gsap.fromTo(".mv-grid", { "--mvLine": 0 }, {
-    scrollTrigger: { trigger: ".mission-vision-section", start: "top 70%" },
-    duration: 0.9
-  });
+            // Subtle divider draw effect (your ::before divider line)
+            gsap.fromTo(".mv-grid", { "--mvLine": 0 }, {
+                scrollTrigger: { trigger: ".mission-vision-section", start: "top 70%" },
+                duration: 0.9
+            });
 
-  // ---------- 4) TIMELINE: boxes slide in from sides ----------
-  gsap.utils.toArray(".timeline-row").forEach((row, i) => {
-    const box = row.querySelector(".timeline-content-box");
-    const isEven = (i + 1) % 2 === 0;
+            // ---------- 4) TIMELINE: boxes slide in from sides ----------
+            gsap.utils.toArray(".timeline-row").forEach((row, i) => {
+                const box = row.querySelector(".timeline-content-box");
+                const isEven = (i + 1) % 2 === 0;
 
-    gsap.from(box, {
-      scrollTrigger: { trigger: row, start: "top 85%" },
-      opacity: 0,
-      x: isEven ? 40 : -40,
-      y: 15,
-      duration: 0.7,
-      ease: "power2.out"
-    });
+                gsap.from(box, {
+                    scrollTrigger: { trigger: row, start: "top 85%" },
+                    opacity: 0,
+                    x: isEven ? 40 : -40,
+                    y: 15,
+                    duration: 0.7,
+                    ease: "power2.out"
+                });
 
-    gsap.from(row.querySelector(".timeline-dot"), {
-      scrollTrigger: { trigger: row, start: "top 85%" },
-      scale: 0,
-      opacity: 0,
-      duration: 0.45,
-      ease: "back.out(1.7)"
-    });
-  });
+                gsap.from(row.querySelector(".timeline-dot"), {
+                    scrollTrigger: { trigger: row, start: "top 85%" },
+                    scale: 0,
+                    opacity: 0,
+                    duration: 0.45,
+                    ease: "back.out(1.7)"
+                });
+            });
 
-  // ---------- 5) HISTORY: image + card reveal ----------
-  const historySection = document.querySelector(".history-section-new");
-  const historyImg = document.querySelector(".history-image-container");
-  const historyCard = document.querySelector(".history-card");
+            // ---------- 5) HISTORY: image + card reveal ----------
+            const historySection = document.querySelector(".history-section-new");
+            const historyImg = document.querySelector(".history-image-container");
+            const historyCard = document.querySelector(".history-card");
 
-  if (historySection && historyImg && historyCard) {
-    gsap.from(historyImg, {
-      scrollTrigger: { trigger: historySection, start: "top 70%" },
-      opacity: 0,
-      scale: 0.95,
-      duration: 0.9,
-      ease: "power2.out"
-    });
+            if (historySection && historyImg && historyCard) {
+                gsap.from(historyImg, {
+                    scrollTrigger: { trigger: historySection, start: "top 70%" },
+                    opacity: 0,
+                    scale: 0.95,
+                    duration: 0.9,
+                    ease: "power2.out"
+                });
 
-    gsap.from(historyCard, {
-      scrollTrigger: { trigger: historySection, start: "top 65%" },
-      opacity: 0,
-      y: 35,
-      duration: 0.85,
-      delay: 0.15,
-      ease: "power2.out"
-    });
+                gsap.from(historyCard, {
+                    scrollTrigger: { trigger: historySection, start: "top 65%" },
+                    opacity: 0,
+                    y: 35,
+                    duration: 0.85,
+                    delay: 0.15,
+                    ease: "power2.out"
+                });
 
-    // Tiny hover enhancement (optional, no layout changes)
-    historyImg.addEventListener("mouseenter", () => {
-      gsap.to(historyImg.querySelector("img"), { scale: 1.05, duration: 0.5, ease: "power2.out" });
-    });
-    historyImg.addEventListener("mouseleave", () => {
-      gsap.to(historyImg.querySelector("img"), { scale: 1, duration: 0.5, ease: "power2.out" });
-    });
-  }
+                // Tiny hover enhancement (optional, no layout changes)
+                historyImg.addEventListener("mouseenter", () => {
+                    gsap.to(historyImg.querySelector("img"), { scale: 1.05, duration: 0.5, ease: "power2.out" });
+                });
+                historyImg.addEventListener("mouseleave", () => {
+                    gsap.to(historyImg.querySelector("img"), { scale: 1, duration: 0.5, ease: "power2.out" });
+                });
+            }
 
-  // ---------- 7) Scroll progress bar ----------
-  const bar = document.getElementById("scrollProgress");
-  if (bar) {
-    const updateBar = () => {
-      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-      bar.style.width = scrolled + "%";
-    };
-    updateBar();
-    window.addEventListener("scroll", updateBar, { passive: true });
-  }
-});
-</script>
+            // ---------- 7) Scroll progress bar ----------
+            const bar = document.getElementById("scrollProgress");
+            if (bar) {
+                const updateBar = () => {
+                    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+                    bar.style.width = scrolled + "%";
+                };
+                updateBar();
+                window.addEventListener("scroll", updateBar, { passive: true });
+            }
+        });
+    </script>
     <!-- js file -->
     <script src="/assets/js/institute.js"></script>
 
 
 
 </body>
+
 </html>

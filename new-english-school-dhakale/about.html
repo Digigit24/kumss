@@ -10,7 +10,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/institute.css">
@@ -44,10 +46,19 @@
             margin: 0;
         }
 
-        h1, h2, h3, h4 { font-family: "Gantari", sans-serif; }
-        
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Gantari", sans-serif;
+        }
+
         /* Footer Logo Fix */
-        .footer-logo-img { width: 30%; height: 30%; margin-left: 0 !important; }
+        .footer-logo-img {
+            width: 30%;
+            height: 30%;
+            margin-left: 0 !important;
+        }
 
         /* Utilities */
         .container-custom {
@@ -56,7 +67,9 @@
             padding: 0 20px;
         }
 
-        .section-padding { padding: 100px 0; }
+        .section-padding {
+            padding: 100px 0;
+        }
 
         .section-tag {
             display: inline-block;
@@ -90,7 +103,8 @@
            ========================================= */
         .home-hero {
             position: relative;
-            height: 60vh; /* Full Height for Home */
+            height: 60vh;
+            /* Full Height for Home */
             min-height: 600px;
             display: flex;
             align-items: center;
@@ -103,7 +117,10 @@
 
         .hero-video-bg {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             opacity: 0.85;
             z-index: 0;
@@ -111,7 +128,10 @@
 
         .hero-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(135deg, rgba(35, 63, 146, 0.7), rgba(15, 23, 42, 0.6));
             z-index: 1;
         }
@@ -121,7 +141,8 @@
             z-index: 2;
             max-width: 900px;
             padding: 0 20px;
-            transform: translateY(20px); /* Initial state for animation */
+            transform: translateY(20px);
+            /* Initial state for animation */
         }
 
         .hero-badge {
@@ -140,7 +161,7 @@
             font-weight: 900;
             margin-bottom: 20px;
             line-height: 1.1;
-            text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
         .hero-subtitle {
@@ -213,7 +234,7 @@
         .intro-img-wrapper img {
             width: 100%;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .experience-badge {
@@ -227,10 +248,22 @@
             text-align: center;
             box-shadow: 0 10px 30px rgba(35, 63, 146, 0.3);
         }
-        .experience-badge h3 { font-size: 3rem; margin: 0; line-height: 1; font-weight: 800; color: var(--brand-orange); }
-        .experience-badge span { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; }
 
-       
+        .experience-badge h3 {
+            font-size: 3rem;
+            margin: 0;
+            line-height: 1;
+            font-weight: 800;
+            color: var(--brand-orange);
+        }
+
+        .experience-badge span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+
 
         /* =========================================
            4. STATS BAR
@@ -240,13 +273,25 @@
             color: white;
             padding: 60px 0;
         }
+
         .stats-flex {
             display: flex;
             justify-content: space-between;
             text-align: center;
         }
-        .stat-unit h2 { font-size: 3.5rem; font-weight: 800; margin: 0; }
-        .stat-unit p { font-size: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+
+        .stat-unit h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .stat-unit p {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
         /* =========================================
            5. CTA SECTION
@@ -256,6 +301,7 @@
             text-align: center;
             background: url('https://www.transparenttextures.com/patterns/cubes.png'), var(--white);
         }
+
         .cta-box {
             max-width: 800px;
             margin: 0 auto;
@@ -267,26 +313,65 @@
             position: relative;
             overflow: hidden;
         }
+
         /* Decorative Circles */
         .cta-box::before {
-            content: ''; position: absolute; top: -50px; left: -50px;
-            width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%;
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
         }
+
         .cta-box::after {
-            content: ''; position: absolute; bottom: -30px; right: -30px;
-            width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%;
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
         }
 
         /* =========================================
            RESPONSIVE
            ========================================= */
         @media (max-width: 992px) {
-            .intro-grid { grid-template-columns: 1fr; }
-            .intro-img-wrapper { order: -1; margin-bottom: 40px; margin-left: 30px;} 
-            .bento-grid-layout { grid-template-columns: 1fr; grid-template-rows: auto; }
-            .box-large, .box-tall { grid-column: span 1; grid-row: auto; min-height: 250px; }
-            .stats-flex { flex-wrap: wrap; gap: 40px; justify-content: center; }
-            .hero-title { font-size: 3rem; }
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-img-wrapper {
+                order: -1;
+                margin-bottom: 40px;
+                margin-left: 30px;
+            }
+
+            .bento-grid-layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .box-large,
+            .box-tall {
+                grid-column: span 1;
+                grid-row: auto;
+                min-height: 250px;
+            }
+
+            .stats-flex {
+                flex-wrap: wrap;
+                gap: 40px;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
         }
     </style>
 </head>
@@ -323,12 +408,24 @@
                             <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
                         </button>
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
-                            <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
-                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
-                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
-                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala Mahavidhyalaya</a></li>
                         </ul>
                     </li>
 
@@ -341,9 +438,9 @@
 
     <!-- 1. HERO SECTION -->
     <section class="home-hero" id="home">
-         <img src="/assets/institute3.avif" alt="new-english-school-dhakale" class="hero-video-bg">
+        <img src="/assets/institute3.avif" alt="new-english-school-dhakale" class="hero-video-bg">
         <div class="hero-overlay"></div>
-        
+
         <div class="hero-content">
             <span class="hero-badge gs-up">KUMSS Institute</span>
             <h1 class="hero-title gs-up">About</h1>
@@ -357,17 +454,21 @@
     <section class="section-padding intro-section">
         <div class="container-custom">
             <div class="intro-grid">
-                
+
                 <div class="intro-text gs-right">
                     <span class="section-tag">Welcome to Dhakale</span>
                     <h2 class="section-title">Where Learning Meets <br>Innovation & Tradition</h2>
                     <p class="section-desc">
-                        Established with a vision to empower rural students, New English Medium School Dhakale has been a beacon of knowledge. We believe that every child is unique and deserves an environment that nurtures their intellectual, physical, and emotional growth.
+                        Established with a vision to empower rural students, New English Medium School Dhakale has been
+                        a beacon of knowledge. We believe that every child is unique and deserves an environment that
+                        nurtures their intellectual, physical, and emotional growth.
                     </p>
                     <p class="section-desc" style="margin-top: 15px;">
-                        Our curriculum blends academic rigor with creative arts and sports, ensuring holistic development under the guidance of expert mentors.
+                        Our curriculum blends academic rigor with creative arts and sports, ensuring holistic
+                        development under the guidance of expert mentors.
                     </p>
-                    <a href="./about.html" style="display:inline-block; margin-top: 25px; color: var(--brand-blue); font-weight:700; text-decoration:none;">
+                    <a href="./about.html"
+                        style="display:inline-block; margin-top: 25px; color: var(--brand-blue); font-weight:700; text-decoration:none;">
                         Read More About Us <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -414,8 +515,10 @@
         <div class="container-custom">
             <div class="cta-box gs-up">
                 <h2>Ready to Join Our Family?</h2>
-                <p style="margin: 15px 0 30px; opacity: 0.9;">Admissions are open for the upcoming academic year. Give your child the best start in life.</p>
-                <a href="tel:+919421394242" class="btn-primary" style="background: white; color: var(--brand-blue); border-color: white;">Call Us Now</a>
+                <p style="margin: 15px 0 30px; opacity: 0.9;">Admissions are open for the upcoming academic year. Give
+                    your child the best start in life.</p>
+                <a href="tel:+919421394242" class="btn-primary"
+                    style="background: white; color: var(--brand-blue); border-color: white;">Call Us Now</a>
             </div>
         </div>
     </section>
@@ -425,8 +528,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
-                        <img style="margin-left: 0;" src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+                    <a href="/index.html" class="logo kumss-since"
+                        style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img style="margin-left: 0;" src="/assets/kumss_log.png" alt="KUMSS Logo"
+                            class="footer-logo-img">
                         <div><span>KUMSS SINCE 1951</span></div>
                     </a>
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
@@ -435,15 +540,18 @@
 
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
                         <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="./new-english-school-dhakale.html">Home</a></li>
                         <li><a href="./about.html">About</a></li>
@@ -453,17 +561,24 @@
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a></li>
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
                     <ul class="footer-links">
                         <li><a href="tel:+919421394242">+91 94213 94242</a></li>
                         <li><a href="mailto:info@kumss.org">info@kumss.org</a></li>
@@ -533,14 +648,14 @@
             // 4. Header Scroll
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) { header.classList.add('scrolled'); } 
+                if (window.scrollY > 50) { header.classList.add('scrolled'); }
                 else { header.classList.remove('scrolled'); }
             });
 
             // 5. Mobile Menu
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
-            if(mobileMenuBtn){
+            if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', () => {
                     mobileMenuBtn.classList.toggle('active');
                     navLinks.classList.toggle('active');
@@ -555,12 +670,12 @@
                     const el = e.target;
                     const target = +el.dataset.target;
                     const suffix = "+";
-                    
+
                     let n = 0;
                     const step = Math.ceil(target / 100);
                     const t = setInterval(() => {
                         n += step;
-                        if(n >= target) { n = target; clearInterval(t); }
+                        if (n >= target) { n = target; clearInterval(t); }
                         el.textContent = n + suffix;
                     }, 20);
                 });
@@ -569,4 +684,5 @@
         });
     </script>
 </body>
+
 </html>
