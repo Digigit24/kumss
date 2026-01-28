@@ -505,10 +505,7 @@ Default Btn
   width: 100%;
 }
 
-@keyframes rotateme {
-  from {
-    transform: rotate(0deg);
-  }
+
 
   to {
     transform: rotate(360deg);
@@ -543,11 +540,7 @@ Default Btn
   }
 }
 
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
-  }
+
 
   to {
     opacity: 1;
@@ -1106,7 +1099,7 @@ img.black-logo,
   width: 100%;
   z-index: 999;
   position: sticky;
-  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  
   padding-top: 25px;
   padding-bottom: 25px;
 }
@@ -1567,7 +1560,7 @@ Hero Area Style
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../img/bg/bg-1.jpg);
+  background-image: url(../img/bg/bg-1.webp);
   padding-top: 190px;
   padding-bottom: 225px;
 }
@@ -1672,7 +1665,7 @@ Hero Area Style
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../img/bg/bg-2.jpg);
+  background-image: url(../img/bg/bg-2.webp);
 }
 
 .banner-area .container-fluid {
@@ -1876,7 +1869,7 @@ Hero Area Style
 }
 
 .banner-wrap-image .image-2 img {
-  animation: rotateme 15s linear infinite;
+  
 }
 
 .banner-wrap-image .image-2 .middle-img {
@@ -1890,7 +1883,7 @@ Hero Area Style
 }
 
 .banner-wrap-image .image-2 .middle-img img {
-  animation: unset;
+  
 }
 
 .banner-wrap-content {
@@ -2032,7 +2025,7 @@ Hero Area Style
 }
 
 .banner-wrap-content .content-shape img {
-  animation: rotateme 15s linear infinite;
+  
 }
 
 /*================================================
@@ -3790,7 +3783,7 @@ Facilities Area Style
 }
 
 .facilities-image.style-3 .shape-4 img {
-  animation: zoom-in-zoom-out 5s linear infinite;
+  
 }
 
 .facilities-image.style-3 .shape-5 {
@@ -3800,7 +3793,7 @@ Facilities Area Style
 }
 
 .facilities-image.style-3 .shape-5 img {
-  animation: zoom-in-zoom-out 3s linear infinite;
+  
 }
 
 .facilities-image.style-3 .shape-6 {
@@ -3810,7 +3803,7 @@ Facilities Area Style
 }
 
 .facilities-image.style-3 .shape-6 img {
-  animation: rotateme 5s linear infinite;
+  
 }
 
 /*================================================ 
@@ -4276,7 +4269,7 @@ Overview Area Style
 }
 
 .overview-image .casual-image.pages-style .content-shape img {
-  animation: rotateme 15s linear infinite;
+  
 }
 
 /*================================================
@@ -4842,7 +4835,7 @@ kumss About Area Style
 }
 
 .kumss-about-image .shape-3 img {
-  animation: rotateme 5s linear infinite;
+  
 }
 
 .kumss-about-image .shape-4 {
@@ -4852,7 +4845,7 @@ kumss About Area Style
 }
 
 .kumss-about-image .shape-4 img {
-  animation: zoom-in-zoom-out 3s linear infinite;
+  
 }
 
 .kumss-about-content {
@@ -5288,7 +5281,7 @@ Page Banner Area Style
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../img/bg/bg-3.jpg);
+  background-image: url(../img/bg/bg-3.webp);
 }
 
 .pages-banner-area .container-fluid {

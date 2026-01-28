@@ -565,7 +565,7 @@
     margin-bottom: 15px;
   }
   .overview-image .casual-image.pages-style .content-shape img {
-    animation: none;
+    
   }
   .programs-section-title {
     margin-bottom: 20px;
@@ -1937,7 +1937,7 @@
     position: absolute;
   }
   .banner-wrap-content .content-shape img {
-    animation: unset;
+    
   }
   .banner-wrap-content .btn-list {
     display: block !important;

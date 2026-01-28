@@ -602,7 +602,7 @@
             border-radius: 50%;
             opacity: 0.1;
             filter: blur(20px);
-            animation: float 20s infinite ease-in-out;
+            
         }
 
         .floating-1 {
@@ -610,7 +610,7 @@
             height: 300px;
             top: 10%;
             right: 10%;
-            animation-delay: 0s;
+            
         }
 
         .floating-2 {
@@ -618,7 +618,7 @@
             height: 200px;
             bottom: 20%;
             left: 5%;
-            animation-delay: -5s;
+            
         }
 
         .floating-3 {
@@ -626,15 +626,10 @@
             height: 150px;
             top: 40%;
             left: 15%;
-            animation-delay: -10s;
+            
         }
 
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
+        
 
             33% {
                 transform: translateY(-40px) rotate(120deg);
@@ -905,18 +900,14 @@
 
         .tab-content {
             display: none;
-            animation: fadeIn 0.5s ease;
+            
         }
 
         .tab-content.active {
             display: block;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+        
 
             to {
                 opacity: 1;
@@ -1437,11 +1428,7 @@
         }
 
         /* Animation for Reveal */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+        
 
             to {
                 opacity: 1;
@@ -1450,35 +1437,35 @@
         }
 
         .faculty-card {
-            animation: fadeInUp 0.6s ease forwards;
+            
         }
 
         .faculty-card:nth-child(2) {
-            animation-delay: 0.1s;
+            
         }
 
         .faculty-card:nth-child(3) {
-            animation-delay: 0.2s;
+            
         }
 
         .faculty-card:nth-child(4) {
-            animation-delay: 0.3s;
+            
         }
 
         .faculty-card:nth-child(5) {
-            animation-delay: 0.4s;
+            
         }
 
         .faculty-card:nth-child(6) {
-            animation-delay: 0.5s;
+            
         }
 
         .faculty-card:nth-child(7) {
-            animation-delay: 0.6s;
+            
         }
 
         .faculty-card:nth-child(8) {
-            animation-delay: 0.7s;
+            
         }
 
 

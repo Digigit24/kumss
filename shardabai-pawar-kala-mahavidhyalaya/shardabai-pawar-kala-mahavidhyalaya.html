@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shardabai Pawar Kala Mahavidhyalaya | Established in 1993-1994</title>
-    <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon">
+    <link rel="icon" href="/assets/kumss_log.webp" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,26 +18,26 @@
     <link rel="stylesheet" href="/assets/css/institute.css">
 
     <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    
+    
+    
 
     <!-- HLS.js for video streaming -->
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.10/dist/hls.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/hls.js@1.4.10/dist/hls.min.js"></script>
 
     <!-- Lottie -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 
     <!-- Splide Carousel -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lottie Web Component -->
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
         rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
     <style>
         /* Hero Section */
         .hero-school-arts {
@@ -1068,7 +1068,7 @@
             <nav class="gm-nav" aria-label="Primary">
                 <!-- Logo -->
                 <a href="#" class="gm-logo">
-                    <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="gm-logo-img">
+                    <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="gm-logo-img">
                 </a>
 
                 <!-- Mobile toggle -->
@@ -1093,7 +1093,7 @@
                         <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
                             aria-controls="institutesMenu">
                             Our Educational Institutes
-                            <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
+                            <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
                         </button>
 
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
@@ -1208,10 +1208,9 @@
             <!-- LEFT: STICKY LOTTIE PLAYER (Uses local folder path) -->
             <div class="lg:sticky lg:top-24 order-2 lg:order-1">
                 <div
-                    class="lottie-display-area relative p-10 min-h-[350px] md:min-h-[500px] flex justify-center items-center overflow-hidden">
-                    <dotlottie-player id="lottiePlayer" src="../assets/animation/Administrao.json"
-                        background="transparent" speed="1" style="width: 100%; max-width: 450px;" loop autoplay>
-                    </dotlottie-player>
+                    class="hero-display-area relative p-10 min-h-[350px] md:min-h-[500px] flex justify-center items-center overflow-hidden">
+                    <img src="/assets/about-hero-img.webp" alt="About College"
+                        style="width: 100%; max-width: 450px; border-radius: 20px;">
                 </div>
             </div>
 
@@ -1219,8 +1218,7 @@
             <div class="space-y-6 order-1 lg:order-2">
 
                 <!-- Point 1 -->
-                <div onmouseenter="updateLottie('./lottie/establishment.json')"
-                    class="info-card group p-8 rounded-[2rem] bg-white/50 flex items-center gap-6 cursor-default">
+                <div class="info-card group p-8 rounded-[2rem] bg-white/50 flex items-center gap-6 cursor-default">
                     <div
                         class="icon-box w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
@@ -1237,8 +1235,7 @@
                 </div>
 
                 <!-- Point 2 -->
-                <div onmouseenter="updateLottie('./lottie/affiliation.json')"
-                    class="info-card group p-8 rounded-[2rem] bg-white/50 flex items-center gap-6 cursor-default">
+                <div class="info-card group p-8 rounded-[2rem] bg-white/50 flex items-center gap-6 cursor-default">
                     <div
                         class="icon-box w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
@@ -1255,8 +1252,7 @@
                 </div>
 
                 <!-- Point 3 -->
-                <div onmouseenter="updateLottie('./lottie/nature.json')"
-                    class="info-card group p-8 rounded-[2rem] bg-white/50 flex items-center gap-6 cursor-default">
+                <div class="info-card group p-8 rounded-[2rem] bg-white/50 flex items-center gap-6 cursor-default">
                     <div
                         class="icon-box w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
@@ -1291,7 +1287,7 @@
 
             <div class="about-tabs">
                 <button class="tab-btn active" data-tab="programs">
-                    <i class="fas fa-palette"></i> Our Programs
+                    <i class="ri-palette-line"></i> Our Programs
                 </button>
             </div>
 
@@ -1301,7 +1297,7 @@
                     <!-- Course 1 -->
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-paint-brush"></i>
+                            <i class="ri-paint-brush-line"></i>
                         </div>
                         <h3>Foundation Course</h3>
                         <p>
@@ -1309,14 +1305,14 @@
                         </p>
                         <a href="javascript:void:0"
                             style="color: inherit; font-weight: bold; text-decoration: none; margin-top: 10px; display: inline-block;">
-                            Learn More <i class="fas fa-arrow-right"></i>
+                            Learn More <i class="ri-arrow-right-line"></i>
                         </a>
                     </div>
 
                     <!-- Course 2 -->
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-chalkboard-teacher"></i>
+                            <i class="ri-presentation-line"></i>
                         </div>
                         <h3>Art Teacher's Diploma (A.T.D.)</h3>
                         <p>
@@ -1325,7 +1321,7 @@
                         </p>
                         <a href="javascript:void:0"
                             style="color: inherit; font-weight: bold; text-decoration: none; margin-top: 10px; display: inline-block;">
-                            Learn More <i class="fas fa-arrow-right"></i>
+                            Learn More <i class="ri-arrow-right-line"></i>
                         </a>
                     </div>
 
@@ -1351,7 +1347,7 @@
             <div class="vision-mission-grid">
                 <div class="vm-card">
                     <div class="vm-icon">
-                        <i class="fas fa-eye"></i>
+                        <i class="ri-eye-line"></i>
                     </div>
                     <h3 class="vm-title">Our Vision</h3>
                     <div class="vm-text">
@@ -1366,7 +1362,7 @@
 
                 <div class="vm-card">
                     <div class="vm-icon">
-                        <i class="fas fa-bullseye"></i>
+                        <i class="ri-focus-3-line"></i>
                     </div>
                     <h3 class="vm-title">Our Mission</h3>
                     <div class="vm-text">
@@ -1397,7 +1393,7 @@
 
                 <!-- 1 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/shirke-santosh-sambhaji.jpeg"
+                    <div class="card-image"><img src="/assets/shirke-santosh-sambhaji.webp"
                             alt="Mr. Shrike Santosh Sambhaji" loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mr. Shrike Santosh Sambhaji</h3>
@@ -1410,8 +1406,8 @@
 
                 <!-- 2 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/jangam-preetam-suresh.png" alt="Mr. Jangam Preetam Suresh"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/jangam-preetam-suresh.webp"
+                            alt="Mr. Jangam Preetam Suresh" loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mr. Jangam Preetam Suresh</h3>
                         <p class="faculty-designation">Asst. Lecturer</p>
@@ -1423,7 +1419,7 @@
 
                 <!-- 3 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/dhumal-swapnil-satish.jpeg"
+                    <div class="card-image"><img src="/assets/dhumal-swapnil-satish.webp"
                             alt="Mr. Dhumal Swapnil Satish" loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mr. Dhumal Swapnil Satish</h3>
@@ -1436,7 +1432,7 @@
 
                 <!-- 4 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/mr-jagdale-shyam-madhukar.jpeg"
+                    <div class="card-image"><img src="/assets/mr-jagdale-shyam-madhukar.webp"
                             alt="Mr. Jagdale Shyam Madhukar" loading="lazy" decoding="async"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mr. Jagdale Shyam Madhukar</h3>
@@ -1462,7 +1458,7 @@
                 <div class="leader-card">
                     <div class="leader-front">
                         <div class="leader-avatar">
-                            <i class="fas fa-user-tie"></i>
+                            <i class="ri-user-tie-fill"></i>
                         </div>
                         <h3 class="leader-role">Chairman</h3>
                         <h4>Shri. Ajit Anantrao Pawar</h4>
@@ -1476,7 +1472,7 @@
                 <div class="leader-card">
                     <div class="leader-front">
                         <div class="leader-avatar">
-                            <i class="fas fa-user"></i>
+                            <i class="ri-user-fill"></i>
                         </div>
                         <h3 class="leader-role">Vice-Chairman</h3>
                         <h4>Shri. Dasharathrao Babaso Dhumal</h4>
@@ -1490,7 +1486,7 @@
                 <div class="leader-card">
                     <div class="leader-front">
                         <div class="leader-avatar">
-                            <i class="fas fa-user"></i>
+                            <i class="ri-user-fill"></i>
                         </div>
                         <h3 class="leader-role">Secretary</h3>
                         <h4>Shri. Prafulla Bhimdeo Taware</h4>
@@ -1518,7 +1514,7 @@
             <div class="bento-grid">
                 <div class="bento-card">
                     <div class="testimonial-avatar">
-                        <i class="fas fa-user-graduate"></i>
+                        <i class="ri-user-star-line"></i>
                     </div>
                     <p class="testimonial-text">
                         "The institute develops excellent infrastructure facilities with well-equipped workshops
@@ -1535,7 +1531,7 @@
 
                 <div class="bento-card">
                     <div class="testimonial-avatar">
-                        <i class="fas fa-user"></i>
+                        <i class="ri-user-line"></i>
                     </div>
                     <p class="testimonial-text">
                         "KUMSS transformed my career completely. The hands-on training and industry exposure
@@ -1552,7 +1548,7 @@
 
                 <div class="bento-card">
                     <div class="testimonial-avatar">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                        <i class="ri-presentation-line"></i>
                     </div>
                     <p class="testimonial-text">
                         "Teaching at KUMSS has been incredibly rewarding. The institute provides all the
@@ -1569,7 +1565,7 @@
 
                 <div class="bento-card">
                     <div class="testimonial-avatar">
-                        <i class="fas fa-user-friends"></i>
+                        <i class="ri-group-line"></i>
                     </div>
                     <p class="testimonial-text">
                         "As a parent, I appreciate the emphasis on both technical skills and character
@@ -1586,7 +1582,7 @@
 
                 <div class="bento-card">
                     <div class="testimonial-avatar">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="ri-briefcase-line"></i>
                     </div>
                     <p class="testimonial-text">
                         "We regularly hire from KUMSS because their graduates come with practical skills
@@ -1620,7 +1616,7 @@
                 <!-- Card 1: Address -->
                 <div class="pc-card">
                     <div class="pc-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="ri-map-pin-line"></i>
                     </div>
                     <h3>Our Location</h3>
                     <p>Karhati, (Morgaon – Baramati Road)
@@ -1630,7 +1626,7 @@
                 <!-- Card 2: Phone -->
                 <div class="pc-card">
                     <div class="pc-icon">
-                        <i class="fas fa-phone-volume"></i>
+                        <i class="ri-phone-fill"></i>
                     </div>
                     <h3>Phone Support</h3>
                     <p>+91 9922415158 <br>
@@ -1642,7 +1638,7 @@
                 <!-- Card 3: Email -->
                 <div class="pc-card">
                     <div class="pc-icon">
-                        <i class="fas fa-envelope"></i>
+                        <i class="ri-mail-line"></i>
                     </div>
                     <h3>Email Us</h3>
                     <p>
@@ -1661,7 +1657,7 @@
                 <div class="footer-col">
                     <a href="/index.html" class="logo kumss-since"
                         style="margin-bottom: 2rem; align-items: flex-start;">
-                        <img src="/assets/kumss_log.png" alt="KUMSS Logo" class="footer-logo-img">
+                        <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
                         <div><span>KUMSS SINCE 1951</span></div>
                     </a>
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
@@ -1670,15 +1666,15 @@
 
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                            <i class="ri-facebook-fill"></i>
                         </a>
 
                         <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
+                            <i class="ri-instagram-fill"></i>
                         </a>
 
                         <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
+                            <i class="ri-youtube-fill"></i>
                         </a>
                     </div>
                 </div>
@@ -1743,32 +1739,12 @@
             const loadingScreen = document.getElementById('loadingScreen');
 
             // Animate loading screen out
-            gsap.to(loadingScreen, {
-                opacity: 0,
-                duration: 1,
-                ease: "power2.inOut",
-                delay: 2,
-                onComplete: () => {
-                    loadingScreen.style.display = 'none';
-                    initAnimations();
-                }
-            });
+            
 
             // Animate loading elements
-            gsap.to(".loading-logo", {
-                rotation: 360,
-                duration: 20,
-                repeat: -1,
-                ease: "none"
-            });
+            
 
-            gsap.to(".loading-dot", {
-                y: -20,
-                duration: 1,
-                repeat: -1,
-                yoyo: true,
-                stagger: 0.2
-            });
+            
         });
 
         // Initialize HLS Video Streaming
@@ -1824,7 +1800,7 @@
         // Initialize all animations and interactions
         function initAnimations() {
             // Initialize GSAP with ScrollTrigger
-            gsap.registerPlugin(ScrollTrigger);
+            
 
             // Initialize HLS video
             initHLSVideo();
@@ -1841,13 +1817,13 @@
                     header.classList.add('scrolled');
 
                     if (currentScroll > lastScroll && currentScroll > 200) {
-                        gsap.to(header, { y: -100, duration: 0.3 });
+                        
                     } else {
-                        gsap.to(header, { y: 0, duration: 0.3 });
+                        
                     }
                 } else {
                     header.classList.remove('scrolled');
-                    gsap.to(header, { y: 0, duration: 0.3 });
+                    
                 }
 
                 lastScroll = currentScroll;
@@ -1890,35 +1866,17 @@
             const courseCards = document.querySelectorAll('.course-card');
             courseCards.forEach(card => {
                 card.addEventListener('mouseenter', () => {
-                    gsap.to(card, {
-                        y: -20,
-                        rotationY: 5,
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    });
+                    
 
                     const image = card.querySelector('.course-image');
-                    gsap.to(image, {
-                        scale: 1.1,
-                        duration: 0.8,
-                        ease: 'power2.out'
-                    });
+                    
                 });
 
                 card.addEventListener('mouseleave', () => {
-                    gsap.to(card, {
-                        y: 0,
-                        rotationY: 0,
-                        duration: 0.5,
-                        ease: 'power2.out'
-                    });
+                    
 
                     const image = card.querySelector('.course-image');
-                    gsap.to(image, {
-                        scale: 1,
-                        duration: 0.8,
-                        ease: 'power2.out'
-                    });
+                    
                 });
             });
 
@@ -1997,50 +1955,23 @@
             });
 
             // Parallax effect for video
-            gsap.to('.hero-video', {
-                y: '20%',
-                scale: 1.1,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: '.hero',
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: true
-                }
-            });
+            
 
             // Floating elements animation
             const floatingElements = document.querySelectorAll('.floating-element');
             floatingElements.forEach((el, i) => {
-                gsap.to(el, {
-                    y: 'random(-40, 40)',
-                    x: 'random(-30, 30)',
-                    rotation: 'random(-20, 20)',
-                    duration: 'random(4, 8)',
-                    repeat: -1,
-                    yoyo: true,
-                    ease: 'sine.inOut',
-                    delay: i * 0.5
-                });
+                
             });
 
             // Button hover effects
             const buttons = document.querySelectorAll('.btn');
             buttons.forEach(btn => {
                 btn.addEventListener('mouseenter', () => {
-                    gsap.to(btn, {
-                        scale: 1.05,
-                        duration: 0.3,
-                        ease: 'power2.out'
-                    });
+                    
                 });
 
                 btn.addEventListener('mouseleave', () => {
-                    gsap.to(btn, {
-                        scale: 1,
-                        duration: 0.3,
-                        ease: 'power2.out'
-                    });
+                    
                 });
             });
         }
@@ -2078,18 +2009,10 @@
             navLinks.classList.toggle('active');
 
             if (navLinks.classList.contains('active')) {
-                gsap.to(navLinks, {
-                    x: 0,
-                    duration: 0.5,
-                    ease: 'power3.out'
-                });
+                
                 document.body.style.overflow = 'hidden';
             } else {
-                gsap.to(navLinks, {
-                    x: 300,
-                    duration: 0.5,
-                    ease: 'power3.in'
-                });
+                
                 document.body.style.overflow = '';
             }
         });
@@ -2188,7 +2111,7 @@
     </script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.6/build/player/lottie.min.js"></script>
+
 </body>
 
 </html>

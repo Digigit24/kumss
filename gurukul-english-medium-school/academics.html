@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gurukul English Medium School | Academics</title>
-  <link rel="icon" href="/assets/kumss_log.png" type="image/x-icon">
+  <link rel="icon" href="/assets/kumss_log.webp" type="image/x-icon">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,11 +18,11 @@
   <link rel="stylesheet" href="/assets/css/institute.css">
 
   <!-- Font Awesome (kept, but used minimally) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
 
   <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  
 
   <style>
     :root {
@@ -611,7 +611,7 @@
     <div class="gm-container">
       <nav class="gm-nav" aria-label="Primary">
         <a href="/index.html" class="gm-logo">
-          <img src="/assets/gurukul-logo.png" alt="KUMSS Logo" class="gm-logo-img">
+          <img src="/assets/gurukul-logo.webp" alt="KUMSS Logo" class="gm-logo-img">
         </a>
 
         <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks"
@@ -630,7 +630,7 @@
             <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
               aria-controls="institutesMenu">
               Our Educational Institutes
-              <i class="fas fa-chevron-down gm-chevron" aria-hidden="true"></i>
+              <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
             </button>
 
             <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
@@ -678,13 +678,13 @@
 
       <div class="hero-media" aria-hidden="true">
         <div class="hero-card hc-1">
-          <img src="/assets/gurukul-ac-three.jpg" alt="Classroom environment">
+          <img src="/assets/gurukul-ac-three.webp" alt="Classroom environment">
         </div>
         <div class="hero-card hc-2">
-          <img src="/assets/gurukul-ac-one.jpg" alt="Science learning">
+          <img src="/assets/gurukul-ac-one.webp" alt="Science learning">
         </div>
         <div class="hero-card hc-3">
-          <img src="/assets/gurukul-ac-two.jpg" alt="Library study">
+          <img src="/assets/gurukul-ac-two.webp" alt="Library study">
         </div>
       </div>
     </div>
@@ -702,7 +702,7 @@
 
       <div class="split">
         <div class="photo-frame reveal">
-          <img src="/assets/gurukul-ac-four.jpg" alt="Study and reading environment">
+          <img src="/assets/gurukul-ac-four.webp" alt="Study and reading environment">
         </div>
 
         <div class="panel reveal">
@@ -761,7 +761,7 @@
         <article class="card reveal">
           <div class="card-media">
             <span class="card-badge">Classrooms</span>
-            <img src="/assets/structured-classrooms.jpg" alt="Classroom">
+            <img src="/assets/structured-classrooms.webp" alt="Classroom">
           </div>
           <div class="card-body">
             <h3>Structured classrooms</h3>
@@ -816,7 +816,7 @@
         <div class="footer-col">
           <a href="/index.html" class="logo"
             style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
-            <img src="/assets/gurukul-logo.png" alt="KUMSS Logo" class="footer-logo-img">
+            <img src="/assets/gurukul-logo.webp" alt="KUMSS Logo" class="footer-logo-img">
             <div>
               <div style="color: #ff9704;">KUMSS SINCE 1951</div>
             </div>
@@ -826,12 +826,12 @@
           </p>
 
           <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
 
             <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
-                class="fab fa-instagram"></i></a>
+                class="ri-instagram-fill"></i></a>
 
-            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           </div>
         </div>
 
@@ -870,9 +870,9 @@
             Contact Info
           </h3>
           <ul class="footer-links">
-            <li><i class="fas fa-phone"></i><a href="tel:+919421394242">+91 94213 94242</a></li>
-            <li><i class="fas fa-envelope"></i><a href="mailto:info@kumss.org">info@kumss.org</a></li>
-            <li><i class="fas fa-envelope"></i><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+            <li><i class="ri-phone-fill"></i><a href="tel:+919421394242">+91 94213 94242</a></li>
+            <li><i class="ri-mail-fill"></i><a href="mailto:info@kumss.org">info@kumss.org</a></li>
+            <li><i class="ri-mail-fill"></i><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
           </ul>
         </div>
       </div>
@@ -917,55 +917,30 @@
     // GSAP animations (unchanged)
     document.addEventListener('DOMContentLoaded', () => {
       if (!window.gsap) return;
-      gsap.registerPlugin(ScrollTrigger);
+      
 
-      gsap.from(".hero-tag", { autoAlpha: 0, y: 16, duration: 0.7, ease: "power2.out", clearProps: "opacity,visibility,transform" });
-      gsap.from(".hero-copy h1", { autoAlpha: 0, y: 18, duration: 0.8, delay: 0.08, ease: "power2.out", clearProps: "opacity,visibility,transform" });
-      gsap.from(".hero-copy p", { autoAlpha: 0, y: 14, duration: 0.75, delay: 0.16, ease: "power2.out", clearProps: "opacity,visibility,transform" });
-      gsap.from(".hero-cta .btn", { autoAlpha: 0, y: 12, duration: 0.6, delay: 0.22, stagger: 0.08, ease: "power2.out", clearProps: "opacity,visibility,transform" });
+      
+      
+      
+      
 
-      gsap.from(".hc-1", { autoAlpha: 0, x: 22, duration: 0.9, delay: 0.05, ease: "power2.out", clearProps: "opacity,visibility,transform" });
-      gsap.from(".hc-2", { autoAlpha: 0, x: -22, duration: 0.9, delay: 0.10, ease: "power2.out", clearProps: "opacity,visibility,transform" });
-      gsap.from(".hc-3", { autoAlpha: 0, y: 18, duration: 0.9, delay: 0.15, ease: "power2.out", clearProps: "opacity,visibility,transform" });
+      
+      
+      
 
       const grids = document.querySelectorAll(".grid-3");
       grids.forEach((grid) => {
         const cards = grid.querySelectorAll(".card.reveal");
         if (!cards.length) return;
 
-        gsap.from(cards, {
-          scrollTrigger: {
-            trigger: grid,
-            start: "top 85%",
-            toggleActions: "play none none none",
-            once: true
-          },
-          autoAlpha: 0,
-          y: 26,
-          duration: 0.7,
-          stagger: 0.10,
-          ease: "power2.out",
-          clearProps: "opacity,visibility,transform"
-        });
+        
       });
 
       const nonGridReveals = Array.from(document.querySelectorAll(".reveal"))
         .filter(el => !el.closest(".grid-3"));
 
       nonGridReveals.forEach((el) => {
-        gsap.from(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none none",
-            once: true
-          },
-          autoAlpha: 0,
-          y: 26,
-          duration: 0.75,
-          ease: "power2.out",
-          clearProps: "opacity,visibility,transform"
-        });
+        
       });
 
       window.addEventListener("load", () => {
@@ -984,3 +959,4 @@
 </body>
 
 </html>
+
