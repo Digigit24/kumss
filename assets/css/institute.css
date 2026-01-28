@@ -24,6 +24,7 @@
             --section-padding-md: 7rem 2rem;
             --section-padding-sm: 5rem 1.5rem;
             --container-max: 1400px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -602,7 +603,7 @@
             border-radius: 50%;
             opacity: 0.1;
             filter: blur(20px);
-            
+            animation: floatAnimation 15s infinite ease-in-out;
         }
 
         .floating-1 {
@@ -610,7 +611,7 @@
             height: 300px;
             top: 10%;
             right: 10%;
-            
+
         }
 
         .floating-2 {
@@ -618,7 +619,7 @@
             height: 200px;
             bottom: 20%;
             left: 5%;
-            
+
         }
 
         .floating-3 {
@@ -626,10 +627,15 @@
             height: 150px;
             top: 40%;
             left: 15%;
-            
+
         }
 
-        
+        @keyframes floatAnimation {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
 
             33% {
                 transform: translateY(-40px) rotate(120deg);
@@ -900,19 +906,24 @@
 
         .tab-content {
             display: none;
-            
+
         }
 
-        .tab-content.active {
-            display: block;
-        }
-
-        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
         }
 
         /* === Timeline Component === */
@@ -1428,7 +1439,11 @@
         }
 
         /* Animation for Reveal */
-        
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
 
             to {
                 opacity: 1;
@@ -1437,35 +1452,40 @@
         }
 
         .faculty-card {
-            
+            opacity: 0;
+            animation: reveal 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .faculty-card:nth-child(1) {
+            animation-delay: 0.1s;
         }
 
         .faculty-card:nth-child(2) {
-            
+            animation-delay: 0.2s;
         }
 
         .faculty-card:nth-child(3) {
-            
+            animation-delay: 0.3s;
         }
 
         .faculty-card:nth-child(4) {
-            
+            animation-delay: 0.4s;
         }
 
         .faculty-card:nth-child(5) {
-            
+            animation-delay: 0.5s;
         }
 
         .faculty-card:nth-child(6) {
-            
+            animation-delay: 0.6s;
         }
 
         .faculty-card:nth-child(7) {
-            
+            animation-delay: 0.7s;
         }
 
         .faculty-card:nth-child(8) {
-            
+            animation-delay: 0.8s;
         }
 
 
