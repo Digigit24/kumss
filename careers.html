@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | KUMSS</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Icons -->
+
+
+
+  <!-- AOS ANIMATION CSS (Added) -->
+  
+
+  <link href="/assets/img/favicon.webp" type="image/x-icon" rel="icon">
+
+  <style>
+    /* --- PAGE HERO (Matches Gallery Page) --- */
+    .page-hero {
+      background: linear-gradient(135deg, #0b2a5b 0%, #061938 100%);
+      padding: 80px 0;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 0;
+    }
+
+    .page-hero h1 {
+      color: #f0f4fa;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .page-hero p {
+      font-size: 1.2rem;
+      color: #ddd;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* --- CAREERS SECTION STYLING --- */
+    .careers-section {
+      padding: 80px 0;
+      background-color: #f8faff;
+      overflow: hidden;
+    }
+
+    /* Left Side: Job Info Card */
+    .job-info-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      height: 100%;
+      border: 5px solid #0b2a5b;
+    }
+
+    .job-info-card h3 {
+      color: #0b2a5b;
+      font-weight: 800;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .job-intro {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .contact-box {
+      background: #f0f4fa;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .contact-box h4 {
+      color: #0b2a5b;
+      font-weight: 700;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .contact-list i {
+      color: #f7941d;
+      font-size: 1.2rem;
+    }
+
+    .contact-list a {
+      color: #0b2a5b;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .contact-list a:hover {
+      color: #f7941d;
+    }
+
+    /* Right Side: Image Grid */
+    .flyer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* 2 columns */
+      gap: 20px;
+    }
+
+    .flyer-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .flyer-item:first-child {
+      grid-column: span 2;
+      /* Make the first image big */
+    }
+
+    .flyer-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .flyer-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .flyer-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .job-info-card {
+        padding: 25px;
+      }
+
+      .flyer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flyer-item:first-child {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg style-3" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img class="black-logo" src="assets/kumss_log.webp" alt="KUMSS logo">
+      </a>
+
+      <a class="navbar-toggler text-decoration-none" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
+        aria-controls="navbarOffcanvas">
+        <span class="burger-menu">
+          <span class="top-bar"></span>
+          <span class="middle-bar"></span>
+          <span class="bottom-bar"></span>
+        </span>
+      </a>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/all-institutes.html" class="dropdown-toggle nav-link">Our Educational Institutes</a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html"
+                  class="nav-link">Vasatigruh Vidyalay Karhati</a></li>
+              <li class="nav-item"><a href="/new-english-school-dhakale/new-english-school-dhakale.html"
+                  class="nav-link">New English School, Dhakale</a></li>
+              <li class="nav-item"><a href="/primary-school-tembha/primary-school-tembha.html" class="nav-link">Primary
+                  School, Tembha</a></li>
+              <li class="nav-item"><a href="/kumss-private-iti-Karhati/kumss-private-iti-Karhati.html"
+                  class="nav-link">KUMSS Private I.T.I Karhati</a></li>
+              <li class="nav-item"><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html"
+                  class="nav-link">Gurukul English Medium School</a></li>
+              <li class="nav-item"><a
+                  href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
+                  class="nav-link">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="/gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="/careers.html" class="nav-link active">Careers</a></li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact <span>Us</span></a>
+          </li>
+        </ul>
+
+        <div class="others-option">
+          <div class="d-flex align-items-center">
+            <div class="option-item">
+              <a class="text-decoration-none default-btn" href="#">
+                Donate Now <i class="ri-heart-add-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Responsive Navbar -->
+  <div class="responsive-navbar offcanvas offcanvas-end border-0" data-bs-backdrop="static" tabindex="-1"
+    id="navbarOffcanvas">
+    <div class="offcanvas-header">
+      <a href="index.html" class="logo d-inline-block">
+        <img src="assets/kumss_log.webp" alt="logo">
+      </a>
+      <button type="button" class="close-btn bg-transparent position-relative lh-1 p-0 border-0"
+        data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="ri-close-fill"></i>
+      </button>
+    </div>
+
+    <div class="offcanvas-body">
+      <ul class="responsive-menu">
+        <li class="responsive-menu-list without-icon">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="about.html">About</a>
+        </li>
+
+        <li class="responsive-menu-list">
+          <a href="#">Our Educational Institutes</a>
+          <ul class="responsive-menu-items">
+            <li class="nav-item"><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html"
+                class="nav-link">Vasatigruh Vidyalay Karhati</a></li>
+            <li class="nav-item"><a href="/new-english-school-dhakale/new-english-school-dhakale.html"
+                class="nav-link">New English School, Dhakale</a></li>
+            <li class="nav-item"><a href="/primary-school-tembha/primary-school-tembha.html" class="nav-link">Primary
+                School, Tembha</a></li>
+            <li class="nav-item"><a href="/kumss-private-iti-Karhati/kumss-private-iti-Karhati.html"
+                class="nav-link">KUMSS Private I.T.I Karhati</a></li>
+            <li class="nav-item"><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html"
+                class="nav-link">Gurukul English Medium School</a></li>
+            <li class="nav-item"><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
+                class="nav-link">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+          </ul>
+        </li>
+
+        <li class="responsive-menu-list without-icon">
+          <a href="/gallery.html" class="nav-link">Gallery</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="/careers.html" class="nav-link active">Careers</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="contact.html" class="nav-link">Contact <span>Us</span></a>
+        </li>
+      </ul>
+
+      <div class="others-option d-md-flex align-items-center">
+        <div class="option-item">
+          <a class="text-decoration-none default-btn" href="#">
+            Donate Now <i class="ri-heart-add-fill"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEW HERO HEADER -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>Careers at KUMSS</h1>
+      <p>Join our mission to empower rural education and innovation.</p>
+    </div>
+  </div>
+
+  <!-- MAIN CAREERS SECTION -->
+  <section class="careers-section">
+    <div class="container">
+      <div class="row align-items-start">
+
+        <!-- LEFT COLUMN: TEXT INFO -->
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <div class="job-info-card">
+            <h3>Current Openings</h3>
+            <p class="job-intro">
+              We are always looking for talented individuals to join our team. If you have a passion for growth and
+              innovation, we would love to hear from you.
+            </p>
+
+            <div class="contact-box">
+              <h4><i class="ri-briefcase-fill"></i> How to Apply</h4>
+              <p>Send your updated CV/Resume to:</p>
+              <ul class="contact-list">
+                <li><i class="ri-mail-fill"></i> <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+              </ul>
+            </div>
+
+            <div class="contact-box" style="margin-top: 20px;">
+              <h4><i class="ri-phone-fill"></i> Contact HR</h4>
+              <p>For questions or further information:</p>
+              <ul class="contact-list">
+                <li><i class="ri-smartphone-fill"></i> <a href="tel:+919423684242">9423684242</a></li>
+                <li><i class="ri-smartphone-fill"></i> <a href="tel:+919423694242">9423694242</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: IMAGE GRID -->
+        <div class="col-lg-7">
+          <div class="section-head text-start mb-4">
+            <h4 style="color: #0b2a5b; font-weight:700;">Recruitment Notices</h4>
+            <div class="line ms-0"></div>
+          </div>
+
+          <div class="flyer-grid">
+            <!-- Image 1 (Large) -->
+            <div class="flyer-item">
+              <img src="/assets/rec-one.webp" alt="Recruitment Process Image 1">
+            </div>
+            <!-- Image 2 -->
+            <div class="flyer-item">
+              <img src="/assets/rec-two.webp" alt="Recruitment Process Image 2">
+            </div>
+            <!-- Image 3 -->
+            <div class="flyer-item">
+              <img src="/assets/rec-three.webp" alt="Recruitment Process Image 3">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (same as index) -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
+            <div class="footer-logo-text">
+              <span class="footer-since">KUMSS SINCE 1951</span>
+            </div>
+          </a>
+
+          <p class="footer-desc">
+            An educational society focused on overall development of students since 1951.
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
+                class="ri-instagram-fill"></i></a>
+
+            <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About KUMSS</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Our Institutes</h3>
+          <ul class="footer-links">
+            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" target="_blank"
+                rel="noopener">Vasatigruh Vidyalay Karhati</a></li>
+            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html" target="_blank" rel="noopener">New
+                English School, Dhakale</a></li>
+            <li><a href="/primary-school-tembha/primary-school-tembha.html" target="_blank" rel="noopener">Primary
+                School, Tembha</a></li>
+            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-Karhati.html" target="_blank" rel="noopener">KUMSS
+                Private I.T.I</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Contact Info</h3>
+          <ul class="footer-links">
+            <li>
+              <i class="ri-phone-fill"></i>
+              <a href="tel:+919421394242"> +91 94213 94242</a>
+            </li>
+            <li>
+              <i class="ri-mail-line"></i>
+              <a href="mailto:kumss@kumss.org"> kumss@kumss.org</a>
+            </li>
+             <li>
+             <i class="ri-map-pin-line"</i>
+              <a href="https://maps.app.goo.gl/S1J6rKbm6cHSpKrj8"> A/p-Karahti,tal-Baramati,Dist-Pune.412204</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+        <p class="footer-note">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button type="button" id="back-to-top">
+    <i class="ri-arrow-up-double-fill"></i>
+  </button>
+  <!-- End Back to Top -->
+
+  <!-- Js Files -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+
+
+  <script src="assets/js/custom.js"></script>
+
+  <!-- AOS ANIMATION SCRIPT (Added) -->
+  
+  
+
+</body>
+
+</html>

@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primary School Karhati Tembha | Nurturing Young Minds</title>
+    <link rel="icon" href="/assets/kumss_log.webp" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;600;700;800&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="/assets/css/institute.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    
+    
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+    <style>
+        /* =========================================
+           THEME: PROFESSIONAL PRIMARY (Warm & Safe)
+           ========================================= */
+        :root {
+            /* Palette: Friendly yet Trustworthy */
+            --primary: #4361ee;
+            /* Vibrant Blue */
+            --secondary: #ffb703;
+            /* Warm Yellow */
+            --accent: #06d6a0;
+            /* Growth Green */
+            --dark: #2b2d42;
+            /* Soft Black */
+            --text: #5d6d7e;
+            /* Grey Text */
+            --bg-body: #fdfbf7;
+            /* Warm Paper White */
+            --white: #ffffff;
+
+            /* Shapes */
+            --radius-lg: 30px;
+            --radius-md: 20px;
+            --shadow: 0 10px 40px rgba(67, 97, 238, 0.08);
+        }
+
+        body {
+            font-family: "Nunito", sans-serif;
+            /* Rounder, friendlier font */
+            color: var(--dark);
+            background-color: var(--bg-body);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Gantari", sans-serif;
+            color: var(--dark);
+        }
+
+        /* Footer Logo Fix */
+        .footer-logo-img {
+            width: 30%;
+            height: 30%;
+            margin-left: 0 !important;
+        }
+
+        /* Utilities */
+        .container-custom {
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        /* Playful Badges */
+        .section-badge {
+            display: inline-block;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .section-desc {
+            color: var(--text);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* --- 1. HERO SECTION (Curved & Warm) --- */
+        .primary-hero {
+            position: relative;
+            height: 40vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            background-color: #000;
+            /* Curved Bottom separation */
+            border-bottom-left-radius: 50% 200px;
+            border-bottom-right-radius: 50% 200px;
+        }
+
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Gradient: Deep Blue to hints of Purple/Warmth */
+            background: linear-gradient(135deg, rgba(67, 98, 238, 0.735), rgba(43, 45, 66, 0.521));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            padding: 0 20px;
+            transform: translateY(-20px);
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-btn {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(255, 183, 3, 0.4);
+            font-size: 1.1rem;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: #ffc83d;
+        }
+
+        /* --- 2. ABOUT (Organic Shapes) --- */
+        .about-section {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-img-box {
+            position: relative;
+        }
+
+        .about-img-box img {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Blobs behind image */
+        .blob-bg {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            border-radius: var(--radius-lg);
+            opacity: 0.2;
+            z-index: 1;
+            transform: rotate(-3deg);
+        }
+
+        /* --- 3. FEATURES (Fixed Visibility) --- */
+        .features-section {
+            background-color: #f4f7fe;
+            /* Light Blue-Grey Background for contrast */
+            position: relative;
+            overflow: hidden;
+            padding: 90px 0;
+        }
+
+        /* Background Blobs */
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: rgba(67, 97, 238, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .features-section::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            right: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 183, 3, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            /* Explicit White */
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            /* Stronger shadow for visibility */
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 6px solid #ccc;
+            /* Default gray fallback */
+            height: 100%;
+            /* Uniform height */
+        }
+
+
+        /* The Fill Animation Element */
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #4361ee;
+            /* Default fallback */
+            transition: top 0.4s ease-in-out;
+            z-index: 0;
+            border-radius: 50% 50% 0 0;
+            transform: scaleY(1.5);
+        }
+
+        /* Hover Fill Colors */
+        .feature-card.blue::before {
+            background: #4361ee;
+        }
+
+        .feature-card.yellow::before {
+            background: #ffb703;
+        }
+
+        .feature-card.green::before {
+            background: #06d6a0;
+        }
+
+        .feature-card.pink::before {
+            background: #ef476f;
+        }
+
+        .feature-card:hover::before {
+            top: -50%;
+            /* Moves up to fill the card */
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border-bottom-width: 0;
+        }
+
+        /* Icon & Text Styling */
+        .f-content-wrap {
+            position: relative;
+            z-index: 2;
+            /* Ensures text stays ON TOP of the fill color */
+            transition: color 0.3s ease;
+        }
+
+        .f-icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.4s ease;
+        }
+
+        /* Icon Colors */
+        .feature-card.blue .f-icon-box {
+            color: #4361ee;
+        }
+
+        .feature-card.yellow .f-icon-box {
+            color: #ffb703;
+        }
+
+        .feature-card.green .f-icon-box {
+            color: #06d6a0;
+        }
+
+        .feature-card.pink .f-icon-box {
+            color: #ef476f;
+        }
+
+        .feature-card:hover .f-icon-box {
+            transform: scale(1.1) rotate(-10deg);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #2b2d42;
+            /* Dark text */
+            transition: color 0.3s;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #5d6d7e;
+            /* Grey text */
+            transition: color 0.3s;
+        }
+
+        /* Text Color Changes on Hover */
+        .feature-card:hover h3,
+        .feature-card:hover p {
+            color: #ffffff;
+            /* White text on hover */
+        }
+
+        /* --- 4. WHY PARENTS TRUST US (Redesigned) --- */
+        .trust-section {
+            padding: 100px 0;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            /* Give content slightly more space */
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* --- Left Side: Image Composition --- */
+        .trust-visual {
+            position: relative;
+        }
+
+        .trust-img-main {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.5s ease;
+        }
+
+        .trust-visual:hover .trust-img-main {
+            transform: scale(1.02);
+        }
+
+        /* Decorative Blob behind image */
+        .trust-blob {
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: 100%;
+            height: 100%;
+            background-color: #ffb703;
+            /* Yellow Blob */
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            /* Organic Shape */
+            z-index: 1;
+            opacity: 0.2;
+            animation: blobFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes blobFloat {
+
+            0%,
+            100% {
+                border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            }
+
+            50% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+        }
+
+        /* Floating Badge on Image */
+        .trust-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -20px;
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tb-icon {
+            font-size: 2rem;
+            color: #06d6a0;
+        }
+
+        .tb-text span {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #2b2d42;
+            line-height: 1;
+        }
+
+        .tb-text small {
+            font-size: 0.85rem;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        /* --- Right Side: Content Cards --- */
+        .trust-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .trust-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            padding: 25px;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .trust-card:hover {
+            transform: translateX(10px);
+            background: #ffffff;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.05);
+        }
+
+
+        .tc-icon {
+            min-width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: #ffffff;
+            color: #4361ee;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+
+        .trust-card h4 {
+            margin: 0 0 8px 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2b2d42;
+        }
+
+        .trust-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #5d6d7e;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .trust-visual {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .trust-badge {
+                right: 0;
+                bottom: -20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .trust-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .trust-badge {
+                display: none;
+            }
+
+            /* Hide floating badge on small mobile */
+        }
+
+        /* --- 5. STATS (Floating Bubbles) --- */
+        .stats-section {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Background Circles */
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .stats-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-box h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+            color: var(--secondary);
+            /* Yellow pop */
+        }
+
+        .stat-box p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: white;
+        }
+
+        /* --- 6. PRINCIPAL SECTION (Card) --- */
+        .principal-section {
+            background: var(--white);
+        }
+
+        .principal-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .principal-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary);
+            flex-shrink: 0;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+
+            .about-grid,
+            .why-us-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .primary-hero {
+                border-radius: 0;
+                height: auto;
+                padding: 150px 0 100px;
+            }
+
+            .principal-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- HEADER (PRESERVED) -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <!-- Logo -->
+                <a href="/index.html" class="gm-logo">
+                    <img src="/assets/kumss_log.webp" alt="Primary School Karhati Tembha" class="gm-logo-img">
+                </a>
+
+                <!-- Mobile toggle -->
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                </button>
+
+                <!-- Links -->
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link active" href="#">Home</a></li>
+                    <li><a class="gm-link" href="./about.html">About</a></li>
+                    <li><a class="gm-link" href="/primary-school-tembha/academics.html">Academics</a></li>
+
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+                        </button>
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala Mahavidhyalaya</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
+                    <li class="gm-cta"><a class="ggm-btn" href="/contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="primary-hero" id="home">
+        <!-- Placeholder Video -->
+        <video autoplay muted loop playsinline class="hero-video-bg">
+            <source src="/assets/kumss-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">Primary School Karhati Tembha</h1>
+            <p class="section-desc" style="color:#ffb703;margin-bottom: 35px; font-size: 1.2rem;">
+                Creates a safe, joyful, and creative environment where your child falls in love with learning every
+                single day.
+            </p>
+            <a href="#about" class="hero-btn">Visit Our School</a>
+        </div>
+    </section>
+
+    <!-- 2. WELCOME / ABOUT -->
+    <section class="section-padding about-section" id="about">
+        <div class="container-custom">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-badge">Welcome</span>
+                    <h2 class="section-title">More Than Just a School,<br>It's a <span>Family</span></h2>
+                    <p class="section-desc">
+                        Since 2000, we have been the first step in the educational journey for hundreds of children in
+                        Karhati Tembha. We understand that primary years are crucial.
+                    </p>
+                    <p class="section-desc" style="margin-top:15px;">
+                        Our approach is simple: <strong>Play, Learn, Grow.</strong> We move beyond textbooks to include
+                        storytelling, arts, nature walks, and hands-on activities, ensuring your child builds confidence
+                        and character alongside ABCs and 123s.
+                    </p>
+                </div>
+                <div class="about-img-box">
+                    <div class="blob-bg"></div>
+                    <img src="/assets/primary-school.webp" alt="Happy Primary Students"
+                        onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. FEATURES (Fixed Visibility) -->
+    <section class="features-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <span class="section-badge">Our Approach</span>
+                <h2 class="section-title">Learning Made <span style="color:#ffb703">Fun</span></h2>
+                <p class="section-desc">We combine traditional values with modern, activity-based learning to spark
+                    curiosity.</p>
+            </div>
+
+            <div class="features-grid">
+
+                <!-- Card 1: Blue -->
+                <div class="feature-card blue">
+                    <div class="f-content-wrap">
+                        <div class="f-icon-box"><i class="ri-book-open-line"></i></div>
+                        <h3>Language Skills</h3>
+                        <p>Developing strong reading and speaking skills in English & Marathi through interactive
+                            storytelling sessions.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Yellow -->
+                <div class="feature-card yellow">
+                    <div class="f-content-wrap">
+                        <div class="f-icon-box"><i class="ri-shapes-line"></i></div>
+                        <h3>Playful Math</h3>
+                        <p>Understanding numbers and logic through toys, shapes, and puzzles, moving beyond rote memory.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Green -->
+                <div class="feature-card green">
+                    <div class="f-content-wrap">
+                        <div class="f-icon-box"><i class="ri-palette-line"></i></div>
+                        <h3>Creative Arts</h3>
+                        <p>Weekly drawing, craft, music, and dance sessions to help children express their unique
+                            creativity.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Pink -->
+                <div class="feature-card pink">
+                    <div class="f-content-wrap">
+                        <div class="f-icon-box"><i class="ri-bus-line"></i></div>
+                        <h3>Safe Travel</h3>
+                        <p>Secure bus facility covering Karhati, Tembha, and nearby villages with caring attendants for
+                            every trip.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WHY PARENTS TRUST US (Redesigned) -->
+    <section class="trust-section">
+        <div class="container-custom">
+            <div class="trust-grid">
+
+                <!-- Left: Visuals -->
+                <div class="trust-visual">
+                    <div class="trust-blob"></div>
+                    <img src="/assets/primary-school-section.webp" class="trust-img-main" alt="Caring Environment">
+
+                </div>
+
+                <!-- Right: Content -->
+                <div class="trust-content">
+                    <span class="section-badge">Why Choose Us</span>
+                    <h2 class="section-title">Safe, Caring & <br><span>Disciplined</span></h2>
+                    <p class="section-desc" style="margin-bottom: 40px;">
+                        We know that sending your little one to school is a big step. Here is how we ensure they are in
+                        good hands, every single day.
+                    </p>
+
+                    <div class="trust-cards-container">
+
+                        <!-- Item 1: Blue Tint -->
+                        <div class="trust-card tc-blue">
+                            <div class="tc-icon"><i class="ri-checkbox-circle-fill"></i></div>
+                            <div>
+                                <h4>Individual Attention</h4>
+                                <p>With small class sizes, our teachers act as second mothers, understanding the unique
+                                    emotional and learning needs of every child.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Yellow Tint -->
+                        <div class="trust-card tc-yellow">
+                            <div class="tc-icon"><i class="ri-checkbox-circle-fill"></i></div>
+                            <div>
+                                <h4>Safe Campus</h4>
+                                <p>A fully gated campus with 24/7 CCTV monitoring and caring support staff ensures your
+                                    child is always safe and secure.</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Green Tint -->
+                        <div class="trust-card tc-green">
+                            <div class="tc-icon"><i class="ri-checkbox-circle-fill"></i></div>
+                            <div>
+                                <h4>Moral Values</h4>
+                                <p>We go beyond books. Daily assembly, value-education classes, and cultural activities
+                                    help build a strong character foundation.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. STATS SECTION -->
+    <section class="stats-section">
+        <div class="container-custom">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h2 class="num" data-target="23">0</h2>
+                    <p>Years of Service</p>
+                </div>
+                <div class="stat-box">
+                    <h2 class="num" data-target="500">0</h2>
+                    <p>Happy Students</p>
+                </div>
+                <div class="stat-box">
+                    <h2 class="num" data-target="15">0</h2>
+                    <p>Caring Teachers</p>
+                </div>
+                <div class="stat-box">
+                    <h2 class="num" data-target="100">0</h2>
+                    <p>Events Per Year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PRINCIPAL SECTION -->
+    <section class="section-padding principal-section">
+        <div class="container-custom">
+            <div class="principal-card">
+                <img src="/assets/anita-ravindra-chavan.webp" class="principal-img" alt="Principal">
+                <div>
+                    <span class="section-badge">Headmistress Message</span>
+                    <h3 style="color:var(--primary); margin-bottom:10px;">Mrs. Anita Ravindra Chavan</h3>
+                    <p style="font-weight:700; color:var(--text); margin-bottom:20px;">M.A., M.Ed., Ph.D.</p>
+                    <p class="section-desc">
+                        "At Primary School Karhati Tembha, we don't just teach subjects; we teach children how to learn.
+                        Our goal is to create a happy school where children learn without fear, ask questions without
+                        hesitation, and develop a lifelong love for knowledge."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (PRESERVED) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/index.html" class="logo kumss-since"
+                        style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
+                        <div><span>KUMSS SINCE 1951</span></div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"
+                            aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./primary-school-tembha.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./academics.html">Academics</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+919421394242">+91 94213 94242</a></li>
+                        <li><a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+                        <li><a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/institute.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            
+
+            // 1. Hero Animations
+            
+
+            // 2. Slide Animations
+            gsap.utils.toArray('.').forEach(el => {
+                
+            });
+            gsap.utils.toArray('.').forEach(el => {
+                
+            });
+
+            // 3. Stagger Grid (Bouncy)
+            
+
+            // 4. Scale Up Stats
+            gsap.utils.toArray('.').forEach(el => {
+                
+            });
+
+            // 5. Header Scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { header.classList.add('scrolled'); }
+                else { header.classList.remove('scrolled'); }
+            });
+
+            // 6. Mobile Menu
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // 7. Stats Counter
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting || e.target.dataset.done) return;
+                    e.target.dataset.done = "1";
+                    const el = e.target;
+                    const target = +el.dataset.target;
+                    const suffix = "+";
+
+                    let n = 0;
+                    const step = Math.ceil(target / 100);
+                    const t = setInterval(() => {
+                        n += step;
+                        if (n >= target) { n = target; clearInterval(t); }
+                        el.textContent = n + suffix;
+                    }, 20);
+                });
+            }, { threshold: 0.5 });
+            document.querySelectorAll(".num").forEach(el => io.observe(el));
+        });
+    </script>
+</body>
+
+</html>
+

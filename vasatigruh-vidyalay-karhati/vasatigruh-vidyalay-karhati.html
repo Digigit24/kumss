@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasatigruh Vidyalaya | Excellence Since 1951</title>
+    <link rel="icon" href="/assets/kumss_log.webp" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- css  -->
+    <link rel="stylesheet" href="/assets/css/institute.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    
+    
+    
+
+    <!-- HLS.js for video streaming -->
+    <script defer src="https://cdn.jsdelivr.net/npm/hls.js@1.4.10/dist/hls.min.js"></script>
+
+    <!-- Lottie -->
+
+
+    <!-- Splide Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+     <style>
+        :root {
+            --primary: #1e3a8a;
+            --accent: #f59e0b;
+            --secondary: #10b981;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.9);
+            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Gantari', sans-serif;
+            font-weight: 800;
+        }
+
+        .container {
+            width: min(1280px, 90%);
+            margin: auto;
+        }
+
+        /* Generic Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ================= HERO SECTION ================= */
+        .vvk-hero {
+            position: relative;
+            padding-top: 80px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-video-container {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.8), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .hero-pill {
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+
+        .hero-quote {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-left: 4px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        /* ================= ABOUT SECTION ================= */
+        .about-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image-stack {
+            position: relative;
+        }
+
+        .about-image-stack img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .experience-badge span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .about-kicker {
+            color: var(--secondary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* ================= AGRICULTURE FOCUS ================= */
+        .agri-section {
+            background: var(--bg-light);
+            padding: 100px 0;
+            border-radius: 60px 60px 0 0;
+        }
+
+        .agri-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+        }
+
+        .agri-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .agri-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 24px;
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .agri-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+        }
+
+        .agri-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .agri-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        /* ================= FEATURES ================= */
+        .features-section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            position: relative;
+            height: 400px;
+            border-radius: 30px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .feature-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(30, 58, 138, 0.9), transparent);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover .feature-img {
+            transform: scale(1.1);
+        }
+
+        .feature-card:hover .feature-overlay {
+            background: linear-gradient(to top, rgba(16, 185, 129, 0.9), transparent);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* ================= FACULTY ================= */
+        .faculty-section {
+            padding: 100px 0;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            border-radius: 0 0 60px 60px;
+        }
+
+        .faculty-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .faculty-img-wrapper {
+            margin-top: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .faculty-img-wrapper img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-grid, .agri-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-image-stack {
+                max-width: 500px;
+                margin: 0 auto 50px;
+            }
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .agri-cards {
+                grid-template-columns: 1fr;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ================= QUICK STATS BAR ================= */
+.vvk-stats-bar {
+    position: relative;
+    z-index: 30;
+    margin-top: -60px; /* This creates the attractive overlap effect */
+    padding-bottom: 40px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 20px;
+    border-right: 1px solid #f1f5f9;
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-icon {
+    width: 54px;
+    height: 54px;
+    background: rgba(30, 58, 138, 0.05);
+    color: var(--primary);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: 0.3s ease;
+}
+
+.stat-item:hover .stat-icon {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-light);
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Responsive Stats */
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .stat-item:nth-child(2) {
+        border-right: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .vvk-stats-bar {
+        margin-top: -30px;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid #f1f5f9;
+        padding-bottom: 20px;
+        justify-content: flex-start;
+    }
+    .stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+    </style>
+
+
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+
+
+
+    <!-- Header -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <!-- Logo -->
+                <a href="/index.html" class="gm-logo">
+                    <img src="../assets/kumss_log.webp" alt="KUMSS Logo" class="gm-logo-img">
+                </a>
+
+                <!-- Mobile toggle -->
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                </button>
+
+                <!-- Links -->
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link" href="#">Home</a></li>
+
+                    <li><a class="gm-link" href="./about.html">About</a></li>
+
+                    <li><a class="gm-link" href="/vasatigruh-vidyalay-karhati/gallery.html">Gallery</a></li>
+                    <!-- Dropdown -->
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <!-- Desktop uses hover/focus. Mobile uses this button. -->
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+                        </button>
+
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a>
+                            </li>
+                            <li role="none"><a role="menuitem"
+                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a>
+                            </li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala
+                                    Mahavidhyalaya</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="gm-link" href="./staff.html">Staff</a></li>
+                </ul>
+
+                <a class="ggm-btn" href="tel:+919142917272 ">Contact Us</a>
+
+            </nav>
+        </div>
+    </header>
+
+    
+<body>
+
+    <!-- HERO -->
+    <section class="vvk-hero">
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="/assets/kumss-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-pill">Established 1951</span>
+                <h1>Vasatigruh Vidyalay Karhati</h1>
+                <p>Nurturing future leaders through a unique blend of traditional academic excellence and modern agricultural innovation.</p>
+                
+                <div class="hero-quote">
+                    <p>"Education is the most powerful weapon which you can use to change the world."</p>
+                </div>
+
+                <div class="hero-btns">
+                    <a href="/contact.html" class="btn btn-primary">Begin Your Journey <i class="ri-arrow-right-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
+        <div class="container about-grid">
+            <div class="about-image-stack">
+                <img src="/assets/vvk-about-img.webp" alt="Campus Life">
+            </div>
+            <div class="about-content">
+                <span class="about-kicker">Welcome to VVK</span>
+                <h2>Nurturing Young Minds for a Brighter Tomorrow</h2>
+                <p>Located in the heart of Karhati, Vasatigruh Vidyalay has been a beacon of knowledge since 1951. As a co-educational institution affiliated with MSBSHSE, we pride ourselves on creating an environment where curiosity meets character.</p>
+                
+                <div style="display: flex; gap: 20px;">
+                    <a href="/gallery.html" class="btn btn-outline">Explore Campus</a>
+                    <a href="/about.html" class="btn btn-primary">Our History</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK STATS BAR -->
+<section class="vvk-stats-bar">
+    <div class="container">
+        <div class="stats-grid">
+            <!-- Stat 1 -->
+            <div class="stat-item">
+                <div class="stat-icon"><i class="ri-community-line"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-number">5+</h3>
+                    <p class="stat-label">Educational Institutes</p>
+                </div>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="stat-item">
+                <div class="stat-icon"><i class="ri-men-line"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-number">77</h3>
+                    <p class="stat-label">Boys Enrolled</p>
+                </div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="stat-item">
+                <div class="stat-icon"><i class="ri-women-line"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-number">83</h3>
+                    <p class="stat-label">Girls Enrolled</p>
+                </div>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="stat-item">
+                <div class="stat-icon"><i class="ri-team-line"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-number">10</h3>
+                    <p class="stat-label">Expert Employees</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- AGRICULTURE FOCUS -->
+    <section class="agri-section">
+        <div class="container agri-grid">
+            <div class="agri-text">
+                <span class="about-kicker" style="color: var(--primary)">Specialized Curriculum</span>
+                <h2 style="color: var(--primary); font-size: 2.8rem;">Pioneering Agricultural Education</h2>
+                <p style="margin: 20px 0 30px;">We believe that true education connects students back to the earth. Our unique agricultural focus provides students with hands-on experience in sustainable farming and modern agrotech.</p>
+                
+                <div style="background: white; padding: 25px; border-radius: 20px; border-left: 5px solid var(--secondary);">
+                    <p style="font-weight: 500; color: var(--text-main);">"Our students don't just read about biology; they grow it. This practical approach builds responsibility and a deep respect for nature."</p>
+                </div>
+            </div>
+
+            <div class="agri-cards">
+                <div class="agri-card">
+                    <i class="ri-seedling-line"></i>
+                    <h4>Practical Farming</h4>
+                    <p>Direct field experience in crop management and soil health.</p>
+                </div>
+                <div class="agri-card">
+                    <i class="ri-team-line"></i>
+                    <h4>Team Leadership</h4>
+                    <p>Collaborative projects that build character and social skills.</p>
+                </div>
+                <div class="agri-card">
+                    <i class="ri-microscope-line"></i>
+                    <h4>Modern Science</h4>
+                    <p>Applying scientific methods to traditional farming techniques.</p>
+                </div>
+                <div class="agri-card">
+                    <i class="ri-earth-line"></i>
+                    <h4>Sustainability</h4>
+                    <p>Learning the importance of environmental conservation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="about-kicker">Why Choose Us</span>
+                <h2 style="font-size: 2.5rem; color: var(--primary);">A Foundation for Success</h2>
+            </div>
+
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <img src="/assets/img/quality-education.webp" alt="Quality Education" class="feature-img">
+                    <div class="feature-overlay">
+                        <div class="feature-icon"><i class="ri-award-fill"></i></div>
+                        <h3>Quality Education</h3>
+                        <p>Academic excellence delivered by passionate educators using modern teaching aids.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <img src="/assets/img/agricultural-focus.webp" alt="Agricultural Focus" class="feature-img">
+                    <div class="feature-overlay">
+                        <div class="feature-icon"><i class="ri-plant-fill"></i></div>
+                        <h3>Rooted in Reality</h3>
+                        <p>Bridging the gap between textbook theory and real-world agricultural application.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACULTY -->
+    <section class="faculty-section">
+        <div class="container">
+            <span class="hero-pill" style="border-color: white; color: white;">Our Pillars</span>
+            <h2>Guided by Expert Mentors</h2>
+            <p style="max-width: 600px; margin: auto; opacity: 0.8;">Our faculty consists of industry veterans and academic experts dedicated to mentoring the next generation of leaders.</p>
+            
+            <div class="faculty-img-wrapper">
+                <img src="/assets/vasatigruha-faculty.webp" alt="VVK Faculty Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/index.html" class="logo kumss-since"
+                        style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
+                        <div><span>KUMSS SINCE 1951</span></div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/about.html">About</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/gallery.html">Gallery</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="./vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+918149707678">+91 81497 07678</a></li>
+                        <li><a href="mailto:vvk3352@gmail.com">vvk3352@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- js file  -->
+    <script src="/assets/js/institute.js"></script>
+
+  
+
+</body>
+
+</html>
