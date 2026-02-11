@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Staff | Primary School Karhati Tembha</title>
+    <link rel="icon" href="/assets/kumss_log.webp" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/assets/css/institute.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+    
+    
+
+    <style>
+        /* --- Page Specific Styles --- */
+
+        :root {
+            --primary-color: #0f8042;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Page Hero Section */
+        .page-hero {
+            background: linear-gradient(rgba(15, 128, 66, 0.9), rgba(11, 85, 45, 0.9)), url('/assets/anita-ravindra-chavan.webp');
+            background-size: cover;
+            background-position: center top;
+            padding: 160px 0 80px;
+            text-align: center;
+            color: white;
+            /* No margin bottom here so it flows into the gradient section */
+        }
+
+        .page-hero h1 {
+            font-family: 'Gantari', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+        }
+
+        /* --- Glassmorphism Section Styling --- */
+
+        .perfect-faculty-section {
+            /* Soft Abstract Background to make glass visible */
+            background-color: #f0fdf4;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(145, 63%, 93%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(145, 63%, 96%, 1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(145, 63%, 93%, 1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(145, 63%, 96%, 1) 0px, transparent 50%);
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: 'Gantari', sans-serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin: 0 0 15px;
+        }
+
+        /* Grid Layout */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        /* --- Glass Card Styling --- */
+        .faculty-card {
+            /* Glass Effect properties */
+            background: rgba(255, 255, 255, 0.45);
+            /* Semi-transparent white */
+            backdrop-filter: blur(12px);
+            /* The Frost Effect */
+            -webkit-backdrop-filter: blur(12px);
+            /* Safari Support */
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            /* Subtle border highlight */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            /* Soft colored shadow */
+
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.65);
+            /* More opaque on hover */
+            box-shadow: 0 15px 40px 0 rgba(15, 128, 66, 0.15);
+            /* Greenish glow shadow */
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .card-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(0, 0, 0, 0.03);
+            /* Slight tint behind image */
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.6s ease;
+        }
+
+        .faculty-card:hover .card-image img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        .faculty-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+            font-family: 'Gantari', sans-serif;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        .faculty-designation {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin: 5px 0;
+            text-transform: uppercase;
+        }
+
+        .faculty-qualification {
+            color: var(--text-light);
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: auto;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(15, 128, 66, 0.08);
+            /* Tiny tag bg */
+            padding: 4px 8px;
+            border-radius: 6px;
+            align-self: center;
+        }
+
+        /* Navbar force white bg */
+        .gm-header {
+            background: white !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                padding: 120px 0 60px;
+            }
+
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .faculty-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+
+        .footer-logo-img {
+            width: 30%;
+            height: 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <a href="/index.html" class="gm-logo">
+                    <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="gm-logo-img">
+                </a>
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu">
+                    <span class="gm-burger-line"></span><span class="gm-burger-line"></span><span
+                        class="gm-burger-line"></span>
+                </button>
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link" href="./primary-school-tembha.html">Home</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <button class="gm-link gm-dropbtn" type="button">Our Educational Institutes <i
+                                class="ri-arrow-down-s-line gm-chevron"></i></button>
+                        <ul class="gm-submenu">
+                            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School
+                                    Dhakale</a></li>
+                            <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
+                            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala Mahavidhyalaya</a></li>
+                        </ul>
+                    </li>
+                    <li class="gm-item"><a class="gm-link active" style="color: var(--primary-color); font-weight:600;"
+                            href="./staff.html">Staff</a></li>
+                    <li><a class="gm-link" href="./gallery.html">Gallery</a></li>
+                    <li class="gm-cta"><a class="ggm-btn" href="tel:+919421394242">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Dedicated Staff</h1>
+            <p>Meet the passionate educators and support staff who make learning possible at Vasatigruh Vidyalay
+                Karhati.</p>
+        </div>
+    </section>
+
+    <!-- Faculty Grid (Glassmorphism Effect) -->
+    <section class="perfect-faculty-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">The Team</span>
+                <h2 class="section-title">Teaching & Non-Teaching Staff</h2>
+            </div>
+
+            <div class="faculty-grid">
+
+                <!-- 1 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/kamal-gadekar.jpg"
+                            alt="Mrs. Kamal  Sampat  Gadekar" loading="lazy" decoding="async"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Kamal  Sampat  Gadekar</h3>
+                        <p class="faculty-designation">Principal</p>
+                        <p class="faculty-qualification">9766052165</p>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/nita-jagtap.jpg"
+                            alt="Mrs. Nita Madhukar Jagtap" loading="lazy" decoding="async"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Nita  Madhukar Jagtap</h3>
+                        <p class="faculty-designation">Asst. Teacher</p>
+                        <p class="faculty-qualification">9503607428</p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/jyoti-shinde.jpg"
+                            alt="Mrs. Jyoti Shankar Shinde" loading="lazy" decoding="async"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs.  Jyoti  Shankar  Shinde  </h3>
+                        <p class="faculty-designation">Asst. Teacher</p>
+                        <p class="faculty-qualification">9158430710</p>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/alka-deokar.jpg"
+                            alt="Mrs. Alka Ravindra Deokar" loading="lazy" decoding="async"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Alka Ravindra Deokar</h3>
+                        <p class="faculty-designation">Asst. Teacher</p>
+                        <p class="faculty-qualification">8317219736</p>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/harsha-pawar.jpg"
+                            alt="Mrs. Harsha Vijay Pawar" loading="lazy" decoding="async"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Harsha Vijay Pawar</h3>
+                        <p class="faculty-designation">Asst. Teacher</p>
+                        <p class="faculty-qualification">7744054664 </p>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/chandrasingh-kokani.jpg" alt="Mr. Chandrasing  Gokul  Kokani"
+                            loading="lazy" decoding="async"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mr. Chandrasing  Gokul 
+                           Kokani</h3>
+                        <p class="faculty-designation">Asst. Teacher</p>
+                        <p class="faculty-qualification">7276960053</p>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/seema-mhetre.jpg" alt="Mrs. Seema Chandrakant Mhetre   "
+                            loading="lazy" decoding="async"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Seema   
+                 Chandrakant  Mhetre</h3>
+                        <p class="faculty-designation">LKG Assistant Teacher</p>
+                        <p class="faculty-qualification">8888736380</p>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="faculty-card">
+                    <div class="card-image"><img src="/assets/manisha-raskar.jpg"
+                            alt="Mrs. Manisha Bhanudas Raskar" loading="lazy" decoding="async"></div>
+                    <div class="card-content">
+                        <h3 class="faculty-name">Mrs. Manisha Bhanudas Raskar</h3>
+                        <p class="faculty-designation">HKG Assistant Teacher</p>
+                        <p class="faculty-qualification">7447430094</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="https://kumss.org" class="logo"
+                        style="margin-bottom: 2rem; align-items: flex-start; color: var(--primaryColor); text-decoration: none;">
+                        <img src="../assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
+                        <div>
+                            <div class="logo-text">KUMSS SINCE 1951</div>
+                        </div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"
+                            aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./primary-school-tembha.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
+                    <ul class="footer-links">
+                        <li> 📞 <a href="tel:+919421394242">+91 94213 94242</a></li>
+                        <li>📧 <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+                        <li> 📧<a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p>ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                
+                document.body.style.overflow = 'hidden';
+            } else {
+                
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+    <script src="/assets/js/institute.js"></script>
+
+</body>
+
+</html>
+

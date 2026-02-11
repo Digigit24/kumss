@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Shardabai Pawar Kala Mahavidhyalaya</title>
+  <link rel="icon" href="/assets/kumss_log.webp" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/assets/css/institute.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+  <!-- HLS.js (for .m3u8) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/hls.js@1.4.10/dist/hls.min.js"></script>
+
+  <style>
+    /* =========================
+       RE-DESIGNED CSS CORE
+    ========================= */
+    :root {
+      --primary-blue: #1f3c88;
+      --accent-orange: #d84315;
+      --soft-bg: #f8fafc;
+      --text-dark: #1e293b;
+      --text-muted: #475569;
+      --white: #ffffff;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      background-color: var(--soft-bg);
+      color: var(--text-dark);
+    }
+
+    /* =========================
+       NEW HERO REDESIGN
+    ========================= */
+    .hero {
+      position: relative;
+      min-height: 90vh; /* Increased height for impact */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(31, 60, 136, 0.75), rgba(0, 0, 0, 0.6)), 
+                  url('/assets/about-hero-img.webp') center/cover no-repeat;
+      padding: 40px 20px;
+      overflow: hidden;
+    }
+
+    /* Artistic Background Elements */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(216, 67, 21, 0.2) 0%, transparent 70%);
+      z-index: 1;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 60px;
+      border-radius: 30px;
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      animation: heroFadeIn 1s ease-out;
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-card .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent-orange);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(216, 67, 21, 0.3);
+    }
+
+    .hero-card h1 {
+      font-family: "Gantari", sans-serif;
+      font-size: clamp(34px, 6vw, 60px);
+      font-weight: 900;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .hero-card .lead {
+      color: rgba(255, 255, 255, 0.9) !important;
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* =========================
+       SECTION LAYOUTS (EXISTING)
+    ========================= */
+    .activities-section {
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    .activities-section:nth-of-type(even) {
+      background: var(--white);
+    }
+
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .activities-section h2 {
+      font-family: "Gantari", sans-serif;
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 800;
+      color: var(--primary-blue);
+      margin-bottom: 50px;
+      position: relative;
+      text-align: center;
+    }
+
+    .activities-section h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--accent-orange);
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+
+    .activities-section h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 40px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .activities-section h3::before {
+      content: "";
+      width: 8px;
+      height: 24px;
+      background: var(--accent-orange);
+      border-radius: 4px;
+    }
+
+    .activities-section p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      max-width: 1000px;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+    }
+
+    .activity-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.03);
+      display: flex;
+      gap: 15px;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+    }
+
+    .activity-card .icon-box {
+      color: var(--accent-orange);
+      font-size: 24px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .artist-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .artist-tag {
+      background: #eef2ff;
+      color: var(--primary-blue);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      border: 1px solid #e0e7ff;
+      transition: all 0.3s ease;
+    }
+
+    .artist-tag:hover {
+      background: var(--primary-blue);
+      color: white;
+    }
+
+    .section-dark {
+      background: var(--primary-blue) !important;
+      color: white;
+    }
+
+    .section-dark h2, .section-dark p {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero { min-height: 70vh; }
+      .hero-card { padding: 40px 20px; }
+      .activities-section { padding: 60px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div id="scrollProgress"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="gm-header" id="header">
+    <div class="gm-container">
+      <nav class="gm-nav" aria-label="Primary">
+        <a href="./shardabai-pawar-kala-mahavidhyalaya.html" class="gm-logo">
+          <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="gm-logo-img">
+        </a>
+
+        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks"
+          aria-expanded="false">
+          <span class="gm-burger-line"></span>
+          <span class="gm-burger-line"></span>
+          <span class="gm-burger-line"></span>
+        </button>
+
+        <ul class="gm-links" id="navLinks">
+          <li><a class="gm-link" href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
+          <li><a class="gm-link is-active" href="./about.html">About</a></li>
+
+          <li class="gm-item gm-dropdown" data-dropdown>
+            <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+              aria-controls="institutesMenu">
+              Our Educational Institutes
+              <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+            </button>
+
+            <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+              <li role="none"><a role="menuitem"
+                  href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+              </li>
+              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New
+                  English School Dhakale</a></li>
+              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School
+                  Karhati Tembha</a></li>
+              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS
+                  Private I.T.I Karhati</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium
+                  School</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar
+                  Kala Mahavidhyalaya</a></li>
+            </ul>
+          </li>
+
+          <li><a class="gm-link" href="./staff.html">Staff</a></li>
+          <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
+
+          <li class="gm-cta">
+            <a class="ggm-btn" href="/contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Redesigned Hero -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <span class="kicker"><i class="ri-palette-line"></i> Fine Arts • Karhati</span>
+        <h1>About Shardabai Pawar Kala Mahavidhyalaya</h1>
+        <p class="lead">
+          Nurturing creativity with technique and tradition. We build skilled, disciplined, and visionary art educators through real-world guidance and focused practice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Remarkable Activities -->
+  <section class="activities-section">
+    <div class="section-wrap">
+      <h2>Some Remarkable Activities</h2>
+      <ul class="activity-grid">
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-medal-2-line"></i></div>
+          <span>State Level Landscape Drawing Competition (Only for girl students) held by Nehru Centre, Worli (Mumbai)</span>
+        </li>
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-brush-line"></i></div>
+          <span>Workshop of eminent artists from Pune & Mumbai under the leadership of Hon. Shri Tuka Jadhav (Head, S.N.D.T. Women’s University)</span>
+        </li>
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-award-line"></i></div>
+          <span>‘Srujan’ Youth Festival – State Level & Zonal competitions of Portrait, Landscape Drawing, Sculpture, Photography, etc. (2006–2007)</span>
+        </li>
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-mickey-line"></i></div>
+          <span>‘Srujan’ – National Level Sculptors Camp (2016)</span>
+        </li>
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-pencil-ruler-2-line"></i></div>
+          <span>Taluka Level Drawing Competition for school students</span>
+        </li>
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-tent-line"></i></div>
+          <span>Art Camp ‘Kalaranga’ organized for school students</span>
+        </li>
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-shopping-bag-3-line"></i></div>
+          <span>Exhibition-cum-sale of handmade greeting cards, Aakash Kandil & decorative lamps by students</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 2: Participation & Achievements -->
+  <section class="activities-section">
+    <div class="section-wrap">
+      <h2>Participation in Various Competitions / Achievements</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px;">
+        <div>
+          <h3>Student Section</h3>
+          <p>
+            Our students have actively participated in State Level competitions organized by the State Government,
+            Camlin Art Foundation, and various Art Colleges in Maharashtra. Many students have received awards.
+            One student participated in a Group Exhibition at the National Art Gallery, New Delhi.
+            Several exhibitions were also organized locally by our ex-students.
+          </p>
+        </div>
+        <div>
+          <h3>Staff Section</h3>
+          <p>
+            Our staff members have participated in National and State Level competitions and received awards,
+            including State Art Exhibition (Artist Category), Bombay Art Society Exhibition,
+            Camlin Art Foundation Exhibition, Chitari Art Foundation (Pune), and Indian Oil Corporation’s
+            National Art Competition.
+          </p>
+          <p>
+            Staff members were selected and participated in National Level Art Camps at Bilaspur (Chhattisgarh)
+            and Vadodara (Gujarat). Various solo and group exhibitions have also been organized by the staff.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Demonstrations & Lectures -->
+  <section class="activities-section">
+    <div class="section-wrap">
+      <h2>Demonstrations & Lectures by Eminent Artists</h2>
+      <ul class="activity-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <li class="activity-card"><span><strong>1993-94</strong> Hon. D.S. Khatavkar (Pune) – Eminent Sculptor</span></li>
+        <li class="activity-card"><span><strong>1994-95</strong> Hon. Raosaheb Gurav (Pune) – Famous Art Teacher & Artist</span></li>
+        <li class="activity-card"><span><strong>1995-96</strong> Hon. Pawar B.S. (Kolhapur) – Famous Artist</span></li>
+        <li class="activity-card"><span><strong>1996-97</strong> Hon. Ramkrishna Kamble, Hon. Sudhir Katkar, Hon. Mazgaonkar Sir</span></li>
+        <li class="activity-card"><span><strong>1997-98</strong> Late Hon. Vijay Kadam (Pune)</span></li>
+        <li class="activity-card"><span><strong>2000-01</strong> Hon. Raj Thackeray (Mumbai), Hon. Dr. Anil Awachat (Pune)</span></li>
+        <li class="activity-card"><span><strong>2002-03</strong> Hon. Tuka Jadhav (Mumbai), Late Hon. Chandrakant Ohal (Pune)</span></li>
+        <li class="activity-card"><span><strong>2003-04</strong> Hon. Suresh Raut (Pune)</span></li>
+        <li class="activity-card"><span><strong>2005-06</strong> Hon. Ravi Paranjpe</span></li>
+        <li class="activity-card"><span><strong>2007-08</strong> Hon. Sharad Kapuskar (Pune), Hon. Sanjay Tadaskar (Kolhapur)</span></li>
+        <li class="activity-card"><span><strong>2015-16</strong> National Level Sculptors Camp (Sanstha Level)</span></li>
+        <li class="activity-card"><span><strong>2022-23</strong> Hon. Shubham Salave (Sambhajinagar), Hon. Pravin Mukhekar (Beed)</span></li>
+        <li class="activity-card"><span><strong>2024-25</strong> Hon. Prasad Thite – Head Study & Still Life Demo</span></li>
+      </ul>
+
+      <h3 style="margin-top: 60px;">Participating Artists</h3>
+      <ul class="artist-list">
+        <li class="artist-tag">J.K. Chillar (Mumbai)</li>
+        <li class="artist-tag">Prayag Jha Chillar (Mumbai)</li>
+        <li class="artist-tag">Bapusaheb Zanje (Pune)</li>
+        <li class="artist-tag">Bishamber Mehta (Jammu)</li>
+        <li class="artist-tag">Ramkumar Kannadasan (Chennai)</li>
+        <li class="artist-tag">Kantilal Parmar (Baroda)</li>
+        <li class="artist-tag">Mohammad Iqbal (Srinagar)</li>
+        <li class="artist-tag">Deepak Thopte (Pune)</li>
+        <li class="artist-tag">Sharad Lohar (Baramati)</li>
+        <li class="artist-tag">Gururaj S. Naik (Mysore)</li>
+        <li class="artist-tag">Hariram Phad (Parli)</li>
+        <li class="artist-tag">S. Kanta Reddy (Hyderabad)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 4: Student Activities -->
+  <section class="activities-section section-dark">
+    <div class="section-wrap">
+      <h2>Student Activities</h2>
+      <p style="text-align: center; font-size: 20px; font-weight: 500;">
+        Wall Painting, Warli Painting, Patta Painting, Maratha Painting, Madhubani Painting, etc. (Sanstha Level).
+        Making of eco-friendly ‘Ganpati’ / Shadumati Ganpati.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5: Future Plan -->
+  <section class="activities-section">
+    <div class="section-wrap">
+      <h2>Future Plan Activities</h2>
+      <ul class="activity-grid">
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-computer-line"></i></div>
+          <span>Basic computer education and training programs for Kala Mahavidhyalaya students</span>
+        </li>
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-palette-line"></i></div>
+          <span>Sketching, landscape drawing & painting workshops</span>
+        </li>
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-book-read-line"></i></div>
+          <span>Guidance for Intermediate Drawing Grade examinations for school students</span>
+        </li>
+        <li class="activity-card">
+          <div class="icon-box"><i class="ri-leaf-line"></i></div>
+          <span>Expansion of eco-friendly ‘Ganpati’ / Shadumati Ganpati creation workshops</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+            <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
+            <div><span>KUMSS SINCE 1951</span></div>
+          </a>
+          <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+            An educational society focused on overall development of students since 1951.
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
+                class="ri-instagram-fill"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Quick Links
+          </h3>
+          <ul class="footer-links">
+            <li><a href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./staff.html">Staff</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Our Institutes
+          </h3>
+          <ul class="footer-links">
+            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+            </li>
+            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
+            </li>
+            <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Contact Info
+          </h3>
+          <ul class="footer-links">
+            <li><a href="tel:+919421394242">+91 94213 94242</a></li>
+            <li><a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+            <li><a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 Shardabai Pawar Kala Mahavidhyalaya, Karhati. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+          ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS file -->
+  <script src="/assets/js/institute.js"></script>
+
+  <script>
+    function setScrollProgress() {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (currentScroll / docHeight) * 100 : 0;
+      const bar = document.getElementById('scrollProgress');
+      if (bar) bar.style.width = `${progress}%`;
+    }
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+    }
+
+    document.querySelectorAll('#navLinks a.gm-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (!navLinks) return;
+        navLinks.classList.remove('active');
+        if (mobileMenuBtn) {
+          mobileMenuBtn.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+        document.body.style.overflow = '';
+      });
+    });
+
+    window.addEventListener('scroll', setScrollProgress);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shardabai Pawar Kala Mahavidhyalaya | Karhati</title>
+  <link rel="icon" href="/assets/kumss_log.webp" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;600;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/assets/css/institute.css">
+
+  <style>
+/* =========================================
+   1. CORE THEME & DEFAULTS
+   ========================================= */
+:root {
+  --primary-blue: #1f3c88;
+  --accent-orange: #d84315;
+  --soft-bg: #f8fafc;
+  --text-dark: #1e293b;
+  --text-muted: #475569;
+  --white: #ffffff;
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --header-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--soft-bg);
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.section-padding {
+  padding: 80px 20px;
+}
+
+.max-w-7xl {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   2. REUSABLE SECTION TITLES
+   ========================================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-family: 'Gantari', sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--primary-blue);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent-orange);
+  border-radius: 10px;
+}
+
+/* =========================================
+   3. REFINED SIMPLE HERO
+   ========================================= */
+.hero-simple {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: #0f172a;
+  margin-top: 0; /* Adjust if header is absolute */
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(31, 60, 136, 0.7), rgba(15, 23, 42, 0.9));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.hero-kicker {
+  color: #ffd180;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.hero-content h1 {
+  font-family: 'Gantari', sans-serif;
+  font-size: clamp(34px, 5vw, 64px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(16px, 1.5vw, 20px);
+  margin-bottom: 35px;
+  font-weight: 300;
+}
+
+/* =========================================
+   4. ABOUT & PROGRAM CARDS
+   ========================================= */
+.art-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  height: 100%;
+}
+
+.art-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-orange);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle {
+  width: 65px;
+  height: 65px;
+  background: #eff6ff;
+  color: var(--primary-blue);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  transition: 0.3s;
+}
+
+.art-card:hover .icon-circle {
+  background: var(--accent-orange);
+  color: white;
+  transform: rotate(-10deg);
+}
+
+/* =========================================
+   5. VISION & MISSION (BG IMAGE PARALLAX)
+   ========================================= */
+section:has(.vm-grid) {
+  position: relative;
+  background: linear-gradient(rgba(31, 60, 136, 0.85), rgba(0, 0, 0, 0.85)), 
+              url('/assets/about-hero-img.webp') center/cover no-repeat;
+  background-attachment: fixed; /* Parallax effect */
+  color: white;
+}
+
+section:has(.vm-grid) .section-title h2 {
+  color: white;
+}
+
+.vm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.vm-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 45px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.vm-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.vm-item h3 {
+  color: #ffd180;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* =========================================
+   6. STATS STRIP
+   ========================================= */
+.stats-strip {
+  background: var(--primary-blue);
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 800;
+  color: #ffd180;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0.8;
+}
+
+/* =========================================
+   7. FACULTY WRAPPER
+   ========================================= */
+.faculty-wrapper {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.faculty-img-container {
+  height: 280px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.faculty-img-container img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.faculty-wrapper:hover .faculty-img-container img {
+  transform: scale(1.05);
+}
+
+.faculty-info {
+  padding: 25px;
+}
+
+.faculty-info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 5px;
+}
+
+.faculty-info p {
+  font-size: 14px;
+  color: var(--accent-orange);
+  font-weight: 600;
+}
+
+/* =========================================
+   8. CAREER CARDS & FOOTER
+   ========================================= */
+.text-center.p-6.rounded-xl {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.text-center.p-6.rounded-xl:hover {
+  background: #fff;
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow);
+  border-color: var(--accent-orange);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .hero-simple { height: 70vh; }
+  .section-padding { padding: 60px 15px; }
+  section:has(.vm-grid) { background-attachment: scroll; } /* Better for mobile performance */
+  .stat-box { margin-bottom: 20px; }
+}
+</style>
+</head>
+
+
+<body>
+
+  <!-- Header -->
+  <header class="gm-header" id="header">
+    <div class="gm-container">
+      <nav class="gm-nav" aria-label="Primary">
+        <a href="./shardabai-pawar-kala-mahavidhyalaya.html" class="gm-logo">
+          <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="gm-logo-img">
+        </a>
+
+        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks"
+          aria-expanded="false">
+          <span class="gm-burger-line"></span>
+          <span class="gm-burger-line"></span>
+          <span class="gm-burger-line"></span>
+        </button>
+
+        <ul class="gm-links" id="navLinks">
+          <li><a class="gm-link is-active" href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
+          <li><a class="gm-link" href="./about.html">About</a></li>
+
+          <li class="gm-item gm-dropdown" data-dropdown>
+            <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+              aria-controls="institutesMenu">
+              Our Educational Institutes
+              <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+            </button>
+
+            <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+              <li role="none"><a role="menuitem"
+                  href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+              </li>
+              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New
+                  English School Dhakale</a></li>
+              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School
+                  Karhati Tembha</a></li>
+              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS
+                  Private I.T.I Karhati</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium
+                  School</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar
+                  Kala Mahavidhyalaya</a></li>
+            </ul>
+          </li>
+
+          <li><a class="gm-link" href="./staff.html">Staff</a></li>
+          <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
+
+          <li class="gm-cta">
+            <a class="ggm-btn" href="/contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ 
+ <!-- REFINED SIMPLE HERO -->
+  <section class="hero-simple">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="/assets/kumss-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-kicker">Fine Arts Excellence</span>
+      <h1>Mastering the Art of Creative Teaching</h1>
+      <p>Nurturing professional art educators with a profound aesthetic sense and technical expertise.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#about" class="ggm-btn" style="padding: 14px 40px;">Get Started</a>
+        <a href="/gallery.html" class="px-8 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-blue-900 transition">View Gallery</a>
+      </div>
+    </div>
+  </section>
+ <!-- About Overview -->
+  <section class="section-padding" id="about">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-title">
+        <h2>About Our College</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="art-card">
+          <div class="icon-circle"><i class="ri-history-line"></i></div>
+          <h3 class="text-xl font-bold mb-3">Establishment</h3>
+          <p class="text-muted">Founded in 1993-94, serving as a beacon of artistic excellence for over 30 years.</p>
+        </div>
+        <div class="art-card">
+          <div class="icon-circle"><i class="ri-shield-check-line"></i></div>
+          <h3 class="text-xl font-bold mb-3">Affiliation</h3>
+          <p class="text-muted">Directly affiliated with the Directorate of Art, Maharashtra State, Mumbai.</p>
+        </div>
+        <div class="art-card">
+          <div class="icon-circle"><i class="ri-community-line"></i></div>
+          <h3 class="text-xl font-bold mb-3">Nature</h3>
+          <p class="text-muted">A premier Non-government grant-in-aid art college focused on professional growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-title">
+        <h2>Academic Programs</h2>
+        <p class="text-center text-slate-500 max-w-2xl mx-auto">Specialized courses designed to mold the next generation of Art Educators.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="art-card border-l-4 border-l-[#d84315]">
+          <h3 class="text-2xl font-bold mb-4 text-[#1f3c88]">Foundation Course</h3>
+          <ul class="space-y-3 text-slate-600">
+            <li><i class="ri-time-line text-[#d84315] mr-2"></i> <strong>Duration:</strong> 1 Year</li>
+            <li><i class="ri-user-line text-[#d84315] mr-2"></i> <strong>Intake:</strong> 15 Students</li>
+            <li><i class="ri-graduation-cap-line text-[#d84315] mr-2"></i> <strong>Eligibility:</strong> 10th Passed + Intermediate Exam</li>
+          </ul>
+        </div>
+        <div class="art-card border-l-4 border-l-[#1f3c88]">
+          <h3 class="text-2xl font-bold mb-4 text-[#1f3c88]">Art Teacher's Diploma (A.T.D.)</h3>
+          <ul class="space-y-3 text-slate-600">
+            <li><i class="ri-time-line text-[#d84315] mr-2"></i> <strong>Duration:</strong> 2 Years</li>
+            <li><i class="ri-user-line text-[#d84315] mr-2"></i> <strong>Intake:</strong> 30 per Year</li>
+            <li><i class="ri-graduation-cap-line text-[#d84315] mr-2"></i> <strong>Eligibility:</strong> 12th Passed + Intermediate Exam</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Mission -->
+  <section class="section-padding">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-title">
+        <h2>Our Guiding Principles</h2>
+      </div>
+      <div class="vm-grid">
+        <div class="vm-item">
+          <h3>Our Vision</h3>
+          <p>To create complete Art teachers by providing up-to-date information and inculcating fine arts skills through direct and indirect experiences.</p>
+        </div>
+        <div class="vm-item" style="background: var(--accent-orange);">
+          <h3 style="color: white;">Our Mission</h3>
+          <p>To nurture Art teachers with a profound aesthetic sense and creative excellence in the field of fine arts.</p>
+        </div>
+        <div class="vm-item">
+          <h3>Our Objectives</h3>
+          <p>To enable professional perfection, artistic happiness, and ideal teaching practices in every student.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Strip -->
+  <section class="stats-strip">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="stat-box">
+        <div class="stat-number">2000+</div>
+        <div class="stat-label">Total Enrollment</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">99.3%</div>
+        <div class="stat-label">Success Rate</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">30+</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Creative Focus</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Opps -->
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-title">
+        <h2>Career Opportunities</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-orange-50 transition">
+          <i class="ri-school-line text-3xl text-orange-600 mb-2"></i>
+          <p class="font-bold">Art Teacher</p>
+        </div>
+        <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-orange-50 transition">
+          <i class="ri-brush-line text-3xl text-orange-600 mb-2"></i>
+          <p class="font-bold">Visual Artist</p>
+        </div>
+        <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-orange-50 transition">
+          <i class="ri-camera-line text-3xl text-orange-600 mb-2"></i>
+          <p class="font-bold">Photography</p>
+        </div>
+        <div class="text-center p-6 rounded-xl bg-slate-50 hover:bg-orange-50 transition">
+          <i class="ri-computer-line text-3xl text-orange-600 mb-2"></i>
+          <p class="font-bold">Animation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty -->
+  <section class="section-padding">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-title">
+        <h2>Our Faculty</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Faculty 1 -->
+        <div class="faculty-wrapper">
+          <div class="faculty-img-container">
+            <img src="/assets/shirke-santosh-sambhaji.webp" alt="Principal">
+          </div>
+          <div class="faculty-info">
+            <h4>Mr. Shirke S. S.</h4>
+            <p>Principal</p>
+          </div>
+        </div>
+        <!-- Faculty 2 -->
+        <div class="faculty-wrapper">
+          <div class="faculty-img-container">
+            <img src="/assets/jangam-preetam-suresh.webp" alt="Lecturer">
+          </div>
+          <div class="faculty-info">
+            <h4>Mr. Jangam P. S.</h4>
+            <p>Asst. Lecturer</p>
+          </div>
+        </div>
+        <!-- Faculty 3 -->
+        <div class="faculty-wrapper">
+          <div class="faculty-img-container">
+            <img src="/assets/dhumal-swapnil-satish.webp" alt="Clerk">
+          </div>
+          <div class="faculty-info">
+            <h4>Mr. Dhumal S. S.</h4>
+            <p>Clerk</p>
+          </div>
+        </div>
+        <!-- Faculty 4 -->
+        <div class="faculty-wrapper">
+          <div class="faculty-img-container">
+            <img src="/assets/mr-jagdale-shyam-madhukar.webp" alt="Peon">
+          </div>
+          <div class="faculty-info">
+            <h4>Mr. Jagdale S. M.</h4>
+            <p>Peon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Grid -->
+  <section class="section-padding bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="flex gap-4">
+        <i class="ri-map-pin-line text-3xl text-orange-500"></i>
+        <div>
+          <h4 class="font-bold text-lg mb-2">Our Location</h4>
+          <p class="opacity-70">Karhati, (Morgaon – Baramati Road), Dist. Pune - 412204</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <i class="ri-phone-line text-3xl text-orange-500"></i>
+        <div>
+          <h4 class="font-bold text-lg mb-2">Phone</h4>
+          <p class="opacity-70">+91 9922415158 / 9657465627</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <i class="ri-mail-line text-3xl text-orange-500"></i>
+        <div>
+          <h4 class="font-bold text-lg mb-2">Email</h4>
+          <p class="opacity-70">spkm.4242@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/index.html" class="logo kumss-since" style="margin-bottom: 2rem; align-items: flex-start;">
+            <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
+            <div><span>KUMSS SINCE 1951</span></div>
+          </a>
+          <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+            An educational society focused on overall development of students since 1951.
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
+                class="ri-instagram-fill"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./staff.html">Staff</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
+          <ul class="footer-links">
+            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+            <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
+          <ul class="footer-links">
+            <li><a href="tel:+919922415158">+91 9922415158</a></li>
+            <li><a href="mailto:spkm.4242@gmail.com">spkm.4242@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Shardabai Pawar Kala Mahavidhyalaya, Karhati. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+          Affiliated to Directorate of Art, Maharashtra State | Est. 1993-1994
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/assets/js/institute.js"></script>
+  <script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+  </script>
+</body>
+</html>
