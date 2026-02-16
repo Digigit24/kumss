@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css">
 
   <!-- AOS ANIMATION CSS (Added) -->
-  
+
 
   <!-- CSS Files -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -189,6 +189,22 @@
         column-count: 1;
       }
     }
+
+    /* ===========================
+       MEGA MENU FIXES
+       =========================== */
+    #navbar {
+      position: relative;
+      z-index: 1001;
+    }
+
+    #navbar .dropdown-menu {
+      /* Base z-index for regular dropdowns, mega-menu overrides this */
+    }
+
+    #navbar .nav-item.dropdown {
+      /* Position handled in style.css, allowing mega-menu-item to override with static */
+    }
   </style>
 </head>
 
@@ -249,23 +265,83 @@
             <a href="/about.html" class="nav-link">About</a>
           </li>
 
-          <li class="nav-item">
-            <a href="javascript:void(0)" class="dropdown-toggle nav-link">Our Educational Institutes</a>
-            <ul class="dropdown-menu">
-              <li class="nav-item"><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html"
-                  class="nav-link">Vasatigruh Vidyalay Karhati</a></li>
-              <li class="nav-item"><a href="/new-english-school-dhakale/new-english-school-dhakale.html"
-                  class="nav-link">New English School, Dhakale</a></li>
-              <li class="nav-item"><a href="/primary-school-tembha/primary-school-tembha.html" class="nav-link">Primary
-                  School, Tembha</a></li>
-              <li class="nav-item"><a href="/kumss-private-iti-Karhati/kumss-private-iti-Karhati.html"
-                  class="nav-link">KUMSS Private I.T.I Karhati</a></li>
-              <li class="nav-item"><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html"
-                  class="nav-link">Gurukul English Medium School</a></li>
-              <li class="nav-item"><a
-                  href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
-                  class="nav-link">Shardabai Pawar Kala Mahavidhyalaya</a></li>
-            </ul>
+          <li class="nav-item dropdown mega-menu-item">
+            <a href="/all-institutes.html" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Our Educational Institutes
+            </a>
+            <div class="dropdown-menu mega-menu">
+              <div class="mega-menu-container">
+                <div class="mega-menu-grid">
+                  <!-- Institute 1 -->
+                  <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="/assets/institute.webp" alt="VVK" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>Vasatigruh Vidyalay Karhati</h5>
+                      <span>Est. 1982 | Marathi & Semi-English</span>
+                    </div>
+                  </a>
+
+                  <!-- Institute 2 -->
+                  <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="assets/institute2.webp" alt="NESD" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>New English School, Dhakale</h5>
+                      <span>Est. 2000 | English Medium</span>
+                    </div>
+                  </a>
+
+                  <!-- Institute 3 -->
+                  <a href="./primary-school-tembha/primary-school-tembha.html" class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="assets/institute3.webp" alt="PST" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>Primary School, Tembha</h5>
+                      <span>Est. 2000 | English Medium</span>
+                    </div>
+                  </a>
+
+                  <!-- Institute 4 -->
+                  <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="assets/institute4.webp" alt="ITI" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>KUMSS Private I.T.I Karhati</h5>
+                      <span>Est. 2021 | Vocational Training</span>
+                    </div>
+                  </a>
+
+                  <!-- Institute 5 -->
+                  <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="assets/institute5.webp" alt="Gurukul" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>Gurukul English Medium School</h5>
+                      <span>Est. 2021 | Modern Schooling</span>
+                    </div>
+                  </a>
+
+                  <!-- Institute 6 -->
+                  <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
+                    class="mega-menu-card">
+                    <div class="m-img">
+                      <img src="assets/institute7.webp" alt="SPKM" loading="lazy">
+                    </div>
+                    <div class="m-content">
+                      <h5>Shardabai Pawar Kala Mahavidyalaya</h5>
+                      <span>Est. 1993 | Arts College</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
           </li>
 
           <li class="nav-item"><a href="/gallery.html" class="nav-link active">Gallery</a></li>
@@ -289,8 +365,7 @@
   </nav>
 
   <!-- Responsive Navbar -->
-  <div class="responsive-navbar offcanvas offcanvas-end border-0" data-bs-backdrop="static" tabindex="-1"
-    id="navbarOffcanvas">
+  <div class="responsive-navbar offcanvas offcanvas-end border-0" tabindex="-1" id="navbarOffcanvas">
     <div class="offcanvas-header">
       <a href="index.html" class="logo d-inline-block">
         <img src="assets/kumss_log.webp" alt="logo">
@@ -514,8 +589,8 @@
               <i class="ri-mail-line"></i>
               <a href="mailto:kumss@kumss.org"> kumss@kumss.org</a>
             </li>
-             <li>
-             <i class="ri-map-pin-line"</i>
+            <li>
+              <i class="ri-map-pin-line"></i>
               <a href="https://maps.app.goo.gl/S1J6rKbm6cHSpKrj8"> A/p-Karahti,tal-Baramati,Dist-Pune.412204</a>
             </li>
           </ul>
@@ -542,8 +617,8 @@
   <script src="assets/js/custom.js"></script>
 
   <!-- AOS ANIMATION SCRIPT (Added) -->
-  
-  
+
+
 
 </body>
 

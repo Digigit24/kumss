@@ -507,9 +507,8 @@ Default Btn
 
 
 
-  to {
-    transform: rotate(360deg);
-  }
+to {
+  transform: rotate(360deg);
 }
 
 @keyframes zoom-in-zoom-out {
@@ -542,10 +541,9 @@ Default Btn
 
 
 
-  to {
-    opacity: 1;
-    transform: translateZ(0);
-  }
+to {
+  opacity: 1;
+  transform: translateZ(0);
 }
 
 /*=========================================
@@ -808,6 +806,12 @@ img.black-logo,
   padding-right: 0;
   padding-top: 0;
   padding-bottom: 0;
+  z-index: 5;
+  /* Ensure link stays clickable over the stealth bridge */
+}
+
+.explore-kumss-btn {
+  margin-left: 30px;
 }
 
 .navbar .navbar-nav .nav-item .nav-link:hover,
@@ -1099,7 +1103,7 @@ img.black-logo,
   width: 100%;
   z-index: 999;
   position: sticky;
-  
+
   padding-top: 25px;
   padding-bottom: 25px;
 }
@@ -1284,7 +1288,14 @@ Responsive Navbar
 .responsive-navbar {
   --bs-offcanvas-width: 420px;
   background-color: var(--blackColor);
-  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 767px) {
+  .responsive-navbar {
+    --bs-offcanvas-width: 290px;
+    /* Half-ish width for mobile */
+  }
 }
 
 .responsive-navbar .offcanvas-header {
@@ -1868,9 +1879,7 @@ Hero Area Style
   position: absolute;
 }
 
-.banner-wrap-image .image-2 img {
-  
-}
+
 
 .banner-wrap-image .image-2 .middle-img {
   top: 50%;
@@ -1882,9 +1891,7 @@ Hero Area Style
   transform: translateY(-50%);
 }
 
-.banner-wrap-image .image-2 .middle-img img {
-  
-}
+.banner-wrap-image .image-2 .middle-img img {}
 
 .banner-wrap-content {
   max-width: 625px;
@@ -2024,9 +2031,7 @@ Hero Area Style
   background-color: var(--primaryColor);
 }
 
-.banner-wrap-content .content-shape img {
-  
-}
+.banner-wrap-content .content-shape img {}
 
 /*================================================
 About Area Style
@@ -3782,9 +3787,7 @@ Facilities Area Style
   transform: rotate(45deg);
 }
 
-.facilities-image.style-3 .shape-4 img {
-  
-}
+.facilities-image.style-3 .shape-4 img {}
 
 .facilities-image.style-3 .shape-5 {
   top: 10px;
@@ -3792,9 +3795,7 @@ Facilities Area Style
   position: absolute;
 }
 
-.facilities-image.style-3 .shape-5 img {
-  
-}
+.facilities-image.style-3 .shape-5 img {}
 
 .facilities-image.style-3 .shape-6 {
   bottom: -50px;
@@ -3802,9 +3803,7 @@ Facilities Area Style
   position: absolute;
 }
 
-.facilities-image.style-3 .shape-6 img {
-  
-}
+.facilities-image.style-3 .shape-6 img {}
 
 /*================================================ 
 Testimonial Area Style
@@ -4268,9 +4267,7 @@ Overview Area Style
   background-color: var(--primaryColor);
 }
 
-.overview-image .casual-image.pages-style .content-shape img {
-  
-}
+.overview-image .casual-image.pages-style .content-shape img {}
 
 /*================================================
 Programs Area Style
@@ -4834,9 +4831,7 @@ kumss About Area Style
   position: absolute;
 }
 
-.kumss-about-image .shape-3 img {
-  
-}
+.kumss-about-image .shape-3 img {}
 
 .kumss-about-image .shape-4 {
   left: -15px;
@@ -4844,9 +4839,7 @@ kumss About Area Style
   position: absolute;
 }
 
-.kumss-about-image .shape-4 img {
-  
-}
+.kumss-about-image .shape-4 img {}
 
 .kumss-about-content {
   margin-bottom: 25px;
@@ -7446,8 +7439,8 @@ Mega Menu Style - Final Neat Optimization
   width: 100% !important;
   left: 0 !important;
   right: 0 !important;
-  top: 90px !important;
-  /* Forces a physical overlap with the trigger zone */
+  top: 100% !important;
+  /* Seamless transition from navbar bottom */
   padding: 40px 0 !important;
   margin: 0 !important;
   background: #ffffff !important;
@@ -7457,24 +7450,29 @@ Mega Menu Style - Final Neat Optimization
   display: block !important;
   visibility: hidden;
   opacity: 0;
-  z-index: 9999 !important;
+  z-index: 99 !important;
+  /* Keep it below navbar elements (z-index 999) */
   transition: opacity 0.2s ease, visibility 0.2s ease;
   pointer-events: none;
+  transform: none !important;
+  /* Prevent any base dropdown transforms from pulling it up */
 }
 
-/* Enhanced Sticky Bridge - Effectively merges the link and the menu */
+/* Stealth Bridge: Reaches up into navbar to maintain hover state
+   without blocking link clicks by using z-index: -1 */
 .navbar .navbar-nav .nav-item.mega-menu-item .dropdown-menu.mega-menu::before {
   content: "";
   position: absolute;
-  top: -85px;
-  /* Oversized bridge to catch cursor from any navbar height */
+  top: -120px;
+  /* Oversized to bridge the gap perfectly */
   left: 0;
   right: 0;
-  height: 85px;
+  height: 120px;
   background: transparent;
-  z-index: 10;
-  pointer-events: auto !important;
+  z-index: -1;
+  pointer-events: auto;
 }
+
 
 .navbar .navbar-nav .nav-item.mega-menu-item:hover .dropdown-menu.mega-menu {
   visibility: visible;

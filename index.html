@@ -43,15 +43,15 @@
        =========================== */
   #navbar {
     position: relative;
-    z-index: 999;
+    z-index: 1001;
   }
 
   #navbar .dropdown-menu {
-    z-index: 1000;
+    /* Base z-index for regular dropdowns, mega-menu overrides this */
   }
 
   #navbar .nav-item.dropdown {
-    position: relative;
+    /* Position handled in style.css, allowing mega-menu-item to override with static */
   }
 
   .sub-title {
@@ -647,8 +647,7 @@
   <!-- End Navbar Area -->
 
   <!-- Start Responsive Navbar Area -->
-  <div class="responsive-navbar offcanvas offcanvas-end border-0" data-bs-backdrop="static" tabindex="-1"
-    id="navbarOffcanvas">
+  <div class="responsive-navbar offcanvas offcanvas-end border-0" tabindex="-1" id="navbarOffcanvas">
     <div class="offcanvas-header">
       <a href="index.html" class="logo d-inline-block">
         <img src="assets/kumss_log.webp" alt="logo">
@@ -751,7 +750,7 @@
           </a>
         </li>
         <li class="d-inline-block">
-          <ul class="list-unstyled d-flex align-items-center ps-0 mb-0 play-btn">
+          <ul class="explore-kumss-btn list-unstyled d-flex align-items-center ps-0 mb-0 play-btn">
             <li>
               <a class="text-decoration-none arrow-btn" href="/about.html">
                 Explore KUMSS <i class="ri-arrow-right-up-line"></i>
@@ -877,7 +876,7 @@
 
       <!-- Cards Wrapper -->
       <div class="philosophy-cards-wrapper">
-        
+
         <!-- Vision Card -->
         <div class="philosophy-card vision-card">
           <div class="card-icon">
@@ -888,25 +887,30 @@
             <li>
               <i class="ri-checkbox-circle-fill list-bullet"></i>
               <div>
-                To empower students through quality education in skill development and technical education to prepare a master and leader in his field.
+                To empower students through quality education in skill development and technical education to prepare a
+                master and leader in his field.
               </div>
             </li>
             <li>
               <i class="ri-checkbox-circle-fill list-bullet"></i>
               <div>
-                To empower and position the organization as a world class progressive, cost effective and student friendly institution providing career oriented skill development training.
+                To empower and position the organization as a world class progressive, cost effective and student
+                friendly institution providing career oriented skill development training.
               </div>
             </li>
             <li>
               <i class="ri-checkbox-circle-fill list-bullet"></i>
               <div>
-                To be a leading global organization that provides a transformative education to create leaders and innovators, and generates new knowledge for society and industry.
+                To be a leading global organization that provides a transformative education to create leaders and
+                innovators, and generates new knowledge for society and industry.
               </div>
             </li>
             <li>
               <i class="ri-checkbox-circle-fill list-bullet"></i>
               <div>
-                Our vision is to develop well rounded, confident and responsible individuals who aspire to achieve their full potential. We will do this by providing a welcoming, happy, safe, and supportive learning environment in which everyone is equal and all achievements are celebrated.
+                Our vision is to develop well rounded, confident and responsible individuals who aspire to achieve their
+                full potential. We will do this by providing a welcoming, happy, safe, and supportive learning
+                environment in which everyone is equal and all achievements are celebrated.
               </div>
             </li>
           </ul>
@@ -922,31 +926,36 @@
             <li>
               <i class="ri-arrow-right-s-fill list-bullet"></i>
               <div>
-                To provide our learners with quality learning services that caters to their individual needs and requirements.
+                To provide our learners with quality learning services that caters to their individual needs and
+                requirements.
               </div>
             </li>
             <li>
               <i class="ri-arrow-right-s-fill list-bullet"></i>
               <div>
-                To improve the economic and social well-being of youth through industrial & skill development training for sustained income generating activities throughout their lives.
+                To improve the economic and social well-being of youth through industrial & skill development training
+                for sustained income generating activities throughout their lives.
               </div>
             </li>
             <li>
               <i class="ri-arrow-right-s-fill list-bullet"></i>
               <div>
-                Our Mission is to provide high quality education, safe, respectful and inclusive environment that builds a foundation for life-long learning.
+                Our Mission is to provide high quality education, safe, respectful and inclusive environment that builds
+                a foundation for life-long learning.
               </div>
             </li>
             <li>
               <i class="ri-arrow-right-s-fill list-bullet"></i>
               <div>
-                Focus on practical aspects of the course material so as to make learning a meaningful and interesting experience in our intellectually stimulating campus.
+                Focus on practical aspects of the course material so as to make learning a meaningful and interesting
+                experience in our intellectually stimulating campus.
               </div>
             </li>
             <li>
               <i class="ri-arrow-right-s-fill list-bullet"></i>
               <div>
-                Work to inculcate high moral and ethical values amongst the students to make them responsible citizens and good human beings.
+                Work to inculcate high moral and ethical values amongst the students to make them responsible citizens
+                and good human beings.
               </div>
             </li>
           </ul>
@@ -1050,18 +1059,20 @@
       </div>
 
       <div class="trustee-grid">
-  <div class="trustee-item"><span class="dot"></span> <span>Shri. Ajit Ashatai Anatrao Pawar</span></div>
-  <div class="trustee-item"><span class="dot"></span> <span>Shri. Dasharathrao Manukabai Babaso Dhumal</span></div>
-  <div class="trustee-item"><span class="dot"></span> <span>Shri. Prafulla Asha Bhimdeo Taware</span></div>
-  <div class="trustee-item"><span class="dot"></span> <span>Shri. Subhash Kamal Champalal Somani</span></div>
-  <div class="trustee-item"><span class="dot"></span> <span>Sau. Sunetra Ajit Pawar</span></div>
-  <div class="trustee-item"><span class="dot"></span> <span>Shri. Narendra Vimlaben Punamchand Gujrathi</span></div>
-  <div class="trustee-item"><span class="dot"></span> <span>Shri. Milind Indumati Khasherao Jagtap</span></div>
-  <div class="trustee-item"><span class="dot"></span> <span>Shri. Sayyad Maula Shahanur Gulab Dastgir</span></div>
-  <div class="trustee-item"><span class="dot"></span> <span>Shri. Dattatray Yamunabai Gulabrao Wable</span></div>
-  <div class="trustee-item"><span class="dot"></span> <span>Shri. Pritam Suvarna Suryakant Pahade</span></div>
-  <div class="trustee-item"><span class="dot"></span> <span>Shri. Pranav Suchitra Vijay Soman</span></div>
-</div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Ajit Ashatai Anatrao Pawar</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Dasharathrao Manukabai Babaso Dhumal</span>
+        </div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Prafulla Asha Bhimdeo Taware</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Subhash Kamal Champalal Somani</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Sau. Sunetra Ajit Pawar</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Narendra Vimlaben Punamchand Gujrathi</span>
+        </div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Milind Indumati Khasherao Jagtap</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Sayyad Maula Shahanur Gulab Dastgir</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Dattatray Yamunabai Gulabrao Wable</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Pritam Suvarna Suryakant Pahade</span></div>
+        <div class="trustee-item"><span class="dot"></span> <span>Shri. Pranav Suchitra Vijay Soman</span></div>
+      </div>
 
     </div>
   </section>

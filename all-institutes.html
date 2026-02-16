@@ -136,6 +136,22 @@
         height: 210px;
       }
     }
+
+    /* ===========================
+       MEGA MENU FIXES
+       =========================== */
+    #navbar {
+      position: relative;
+      z-index: 1001;
+    }
+
+    #navbar .dropdown-menu {
+      /* Base z-index for regular dropdowns, mega-menu overrides this */
+    }
+
+    #navbar .nav-item.dropdown {
+      /* Position handled in style.css, allowing mega-menu-item to override with static */
+    }
   </style>
 </head>
 
@@ -281,8 +297,7 @@
   </nav>
 
   <!-- Responsive Navbar (same as index, About active) -->
-  <div class="responsive-navbar offcanvas offcanvas-end border-0" data-bs-backdrop="static" tabindex="-1"
-    id="navbarOffcanvas">
+  <div class="responsive-navbar offcanvas offcanvas-end border-0" tabindex="-1" id="navbarOffcanvas">
     <div class="offcanvas-header">
       <a href="index.html" class="logo d-inline-block">
         <img src="assets/kumss_log.webp" alt="logo">
@@ -505,8 +520,8 @@
               <i class="ri-mail-line"></i>
               <a href="mailto:kumss@kumss.org"> kumss@kumss.org</a>
             </li>
-             <li>
-             <i class="ri-map-pin-line"</i>
+            <li>
+              <i class="ri-map-pin-line"></i>
               <a href="https://maps.app.goo.gl/S1J6rKbm6cHSpKrj8"> A/p-Karahti,tal-Baramati,Dist-Pune.412204</a>
             </li>
           </ul>
@@ -535,4 +550,3 @@
 </body>
 
 </html>
-
