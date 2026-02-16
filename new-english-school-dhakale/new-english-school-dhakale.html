@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="/assets/css/institute.css">
 
     <!-- GSAP & ScrollTrigger -->
-    
-    
+
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
@@ -495,102 +495,107 @@
             font-weight: 800;
         }
 
-               /* ================= QUICK STATS BAR ================= */
-.vvk-stats-bar {
-    position: relative;
-    z-index: 30;
-    margin-top: -60px; /* This creates the attractive overlap effect */
-    padding-bottom: 40px;
-}
+        /* ================= QUICK STATS BAR ================= */
+        .vvk-stats-bar {
+            position: relative;
+            z-index: 30;
+            margin-top: -60px;
+            /* This creates the attractive overlap effect */
+            padding-bottom: 40px;
+        }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    background: var(--white);
-    padding: 40px 20px;
-    border-radius: 24px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--white);
+            padding: 40px 20px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-.stat-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding: 0 20px;
-    border-right: 1px solid #f1f5f9;
-}
+        .stat-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 0 20px;
+            border-right: 1px solid #f1f5f9;
+        }
 
-.stat-item:last-child {
-    border-right: none;
-}
+        .stat-item:last-child {
+            border-right: none;
+        }
 
-.stat-icon {
-    width: 54px;
-    height: 54px;
-    background: rgba(30, 58, 138, 0.05);
-    color: var(--primary);
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    transition: 0.3s ease;
-}
+        .stat-icon {
+            width: 54px;
+            height: 54px;
+            background: rgba(30, 58, 138, 0.05);
+            color: var(--primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: 0.3s ease;
+        }
 
-.stat-item:hover .stat-icon {
-    background: var(--primary);
-    color: var(--white);
-    transform: translateY(-5px);
-}
+        .stat-item:hover .stat-icon {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
 
-.stat-number {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--primary);
-    line-height: 1;
-    margin-bottom: 4px;
-}
+        .stat-number {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
 
-.stat-label {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-light);
-    margin: 0;
-    white-space: nowrap;
-}
+        .stat-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-light);
+            margin: 0;
+            white-space: nowrap;
+        }
 
-/* Responsive Stats */
-@media (max-width: 1024px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-    .stat-item:nth-child(2) {
-        border-right: none;
-    }
-}
+        /* Responsive Stats */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
 
-@media (max-width: 600px) {
-    .vvk-stats-bar {
-        margin-top: -30px;
-    }
-    .stats-grid {
-        grid-template-columns: 1fr;
-        padding: 30px;
-    }
-    .stat-item {
-        border-right: none;
-        border-bottom: 1px solid #f1f5f9;
-        padding-bottom: 20px;
-        justify-content: flex-start;
-    }
-    .stat-item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-}
+            .stat-item:nth-child(2) {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .vvk-stats-bar {
+                margin-top: -30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                padding: 30px;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #f1f5f9;
+                padding-bottom: 20px;
+                justify-content: flex-start;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
     </style>
 </head>
 
@@ -603,7 +608,8 @@
             <nav class="gm-nav" aria-label="Primary">
                 <!-- Logo -->
                 <a href="/index.html" class="gm-logo">
-                    <img src="/assets/new-english-school-logo.jpg" alt="New English School Dhakale Logo" class="gm-logo-img">
+                    <img src="/assets/new-english-school-logo.jpg" alt="New English School Dhakale Logo"
+                        class="gm-logo-img">
                 </a>
 
                 <!-- Mobile toggle -->
@@ -680,46 +686,46 @@
     </section>
 
     <section class="vvk-stats-bar">
-    <div class="container">
-        <div class="stats-grid">
-            <!-- Stat 1 -->
-            <div class="stat-item">
-                <div class="stat-icon"><i class="ri-community-line"></i></div>
-                <div class="stat-info">
-                    <h3 class="stat-number">5+</h3>
-                    <p class="stat-label">Educational Institutes</p>
+        <div class="container">
+            <div class="stats-grid">
+                <!-- Stat 1 -->
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="ri-community-line"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">5+</h3>
+                        <p class="stat-label">Educational Institutes</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Stat 2 -->
-            <div class="stat-item">
-                <div class="stat-icon"><i class="ri-men-line"></i></div>
-                <div class="stat-info">
-                    <h3 class="stat-number">60</h3>
-                    <p class="stat-label">Boys Enrolled</p>
+                <!-- Stat 2 -->
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="ri-men-line"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">60</h3>
+                        <p class="stat-label">Boys Enrolled</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Stat 3 -->
-            <div class="stat-item">
-                <div class="stat-icon"><i class="ri-women-line"></i></div>
-                <div class="stat-info">
-                    <h3 class="stat-number">96</h3>
-                    <p class="stat-label">Girls Enrolled</p>
+                <!-- Stat 3 -->
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="ri-women-line"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">96</h3>
+                        <p class="stat-label">Girls Enrolled</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Stat 4 -->
-            <div class="stat-item">
-                <div class="stat-icon"><i class="ri-team-line"></i></div>
-                <div class="stat-info">
-                    <h3 class="stat-number">156</h3>
-                    <p class="stat-label">Expert Employees</p>
+                <!-- Stat 4 -->
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="ri-team-line"></i></div>
+                    <div class="stat-info">
+                        <h3 class="stat-number">156</h3>
+                        <p class="stat-label">Expert Employees</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- 2. Academic Philosophy -->
     <section class="academic-section section-padding">
@@ -944,6 +950,10 @@
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
                         <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
                         </li>
+                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
+                                Medium</a></li>
+                        <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                Pawar Kala Mahavidyalaya</a></li>
                     </ul>
                 </div>
 
@@ -972,28 +982,28 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
-            
+
 
             // 1. Hero Animations
-            
+
 
             // 2. Fade Up Generic
             gsap.utils.toArray('.gs_reveal').forEach(element => {
-                
+
             });
 
             // 3. Zig Zag Left
             gsap.utils.toArray('.gs_slide_left').forEach(element => {
-                
+
             });
 
             // 4. Zig Zag Right
             gsap.utils.toArray('.gs_slide_right').forEach(element => {
-                
+
             });
 
             // 5. Card Stagger
-            
+
 
             // Header & Mobile Menu (Preserved)
             const header = document.getElementById('header');
@@ -1015,4 +1025,3 @@
 </body>
 
 </html>
-

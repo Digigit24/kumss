@@ -67,6 +67,13 @@ Default Style
   }
 }
 
+img,
+iframe {
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
 
 :root {
   /* --- TYPOGRAPHY --- */
@@ -3057,11 +3064,8 @@ Graduets Area Style
 
 /* BRAND */
 .footer-logo {
-  display: inline-flex;
   align-items: flex-start;
-  gap: 14px;
   text-decoration: none;
-  margin-bottom: 18px;
 }
 
 .footer-logo-img {
@@ -3075,7 +3079,7 @@ Graduets Area Style
 .footer-logo-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  margin-top: 10px;
 }
 
 .footer-since {
@@ -3107,7 +3111,19 @@ Graduets Area Style
   margin: 0;
   padding: 0;
   display: grid;
+  gap: 12px;
+}
+
+.footer-links li {
+  display: flex;
+  align-items: flex-start;
   gap: 10px;
+}
+
+.footer-links li i {
+  color: #ff9704;
+  font-size: 1.1rem;
+  margin-top: 3px;
 }
 
 .footer-links a {
