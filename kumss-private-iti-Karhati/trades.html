@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trades | KUMSS Private ITI Karhati</title>
+    <link rel="icon" href="/assets/kumss_log.webp" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Existing Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/institute.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+    <style>
+        /* ==================== GLOBAL & THEME VARIABLES ==================== */
+        :root {
+            --blue: #003366;
+            --orange: #ff6700;
+            --dark: #111;
+            --light: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #555555;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Gantari', sans-serif;
+            font-weight: 700;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .trades-hero {
+            background-color: var(--blue);
+            color: #ffffff;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trades-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, rgba(255, 103, 0, 0.15) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .trades-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .trades-hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ==================== TRADES GRID ==================== */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .trades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .trade-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border: 1px solid #eeeeee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trade-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .trade-thumb {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            background-color: #e9ecef;
+        }
+
+        .trade-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .trade-body {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trade-title {
+            color: #003366;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .trade-duration {
+            font-size: 0.9rem;
+            color: var(--orange);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .trade-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .trade-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .trade-features li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #444;
+        }
+
+        .trade-features li i {
+            color: var(--orange);
+        }
+
+        .btn-trade {
+            background: transparent;
+            color: var(--blue);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            border: 2px solid var(--blue);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .btn-trade:hover {
+            background: var(--blue);
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999; width: 0%;"></div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <!-- Logo -->
+                <a href="/index.html" class="gm-logo">
+                    <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="gm-logo-img">
+                </a>
+
+                <!-- Mobile toggle -->
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                </button>
+
+                <!-- Links -->
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link" href="./kumss-private-iti-karhati.html">Home</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./faculty.html">Faculty</a></li>
+                    <!-- Dropdown -->
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes <i class="ri-arrow-down-s-line gm-chevron"
+                                aria-hidden="true"></i>
+                        </button>
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
+                            <li role="none"><a role="menuitem" href="kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar Kala Mahavidhyalaya</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="gm-link active" href="#" style="color: var(--orange);">Trades</a></li>
+                    <li class="gm-cta"><a class="ggm-btn" href="tel:+919421394242">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="trades-hero">
+        <div class="container">
+            <h1 class="gs-reveal">Our Technical Trades</h1>
+            <p class="gs-reveal">Industry-relevant courses designed to build careers and future leaders.</p>
+        </div>
+    </section>
+
+    <!-- ==================== TRADES LIST ==================== -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="trades-grid">
+
+                <!-- Electrician -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2
+                            YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Electrician" onerror="this.src='https://placehold.co/600x400?text=Electrician'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Electrician</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 2 Years</span>
+                        <p class="trade-desc">Comprehensive training in electrical wiring, safety standards, fire
+                            extinguishers, conductors, cabling, and industrial electrical maintenance.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Domestic & Industrial Wiring</li>
+                            <li><i class="ri-check-line"></i> Motor Winding & Repair</li>
+                            <li><i class="ri-check-line"></i> Power Transmission</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Fitter -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2
+                            YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Fitter" onerror="this.src='https://placehold.co/600x400?text=Fitter'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Fitter</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 2 Years</span>
+                        <p class="trade-desc">Specialized training in sawing, filing, drilling, brazing, and allied
+                            trades like Welding (Gas & Arc) focusing on precision and safety.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Machine assembly & maintenance</li>
+                            <li><i class="ri-check-line"></i> Precision measuring instruments</li>
+                            <li><i class="ri-check-line"></i> Pipe fitting & sheet metal work</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Electronics Mechanic -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2
+                            YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Electronics" onerror="this.src='https://placehold.co/600x400?text=Electronics'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Electronics Mech</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 2 Years</span>
+                        <p class="trade-desc">Focuses on Solar panel installation, Radio Technology, Optical fiber
+                            splicing, LED TV installation, and repair of industrial controls.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> PCB Design & Soldering</li>
+                            <li><i class="ri-check-line"></i> IoT & Microcontrollers</li>
+                            <li><i class="ri-check-line"></i> Digital Electronics</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Interior Design -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Interior Design"
+                            onerror="this.src='https://placehold.co/600x400?text=Interior+Design'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Interior Design</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 1 Year</span>
+                        <p class="trade-desc">Learn 2D Software designs, layout designs for plumbing/lighting, and
+                            analysis of paints, polish, and varnish for modern interiors.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> AutoCAD & SketchUp</li>
+                            <li><i class="ri-check-line"></i> Space Planning</li>
+                            <li><i class="ri-check-line"></i> Material Selection</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Welder -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Welder" onerror="this.src='https://placehold.co/600x400?text=Welder'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Welder</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 1 Year</span>
+                        <p class="trade-desc">Mastering Gas and Electric welding, cutting, and brazing techniques.
+                            Essential for manufacturing and construction industries.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Arc & Gas Welding</li>
+                            <li><i class="ri-check-line"></i> Plasma Cutting</li>
+                            <li><i class="ri-check-line"></i> Safety Protocols</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- COPA -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
+                        <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="COPA" onerror="this.src='https://placehold.co/600x400?text=COPA'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">COPA</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 1 Year</span>
+                        <p class="trade-desc">Computer Operator and Programming Assistant. Covers basics of hardware,
+                            software, networking, and programming languages.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> MS Office & Internet</li>
+                            <li><i class="ri-check-line"></i> Database Management</li>
+                            <li><i class="ri-check-line"></i> JavaScript & Python Basics</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Draughtsman Mechanical -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2
+                            YEARS</span>
+                        <img src="/assets/Draughtsman Mechanical.jpg" alt="Draughtsman Mechanical"
+                            onerror="this.src='https://placehold.co/600x400?text=Draughtsman'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Draughtsman Mechanical</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 2 Years</span>
+                        <p class="trade-desc">Expertise in mechanical drawings, CAD software, and design specifications
+                            for machinery and mechanical components.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Technical Drawing & CAD</li>
+                            <li><i class="ri-check-line"></i> 3D Modeling</li>
+                            <li><i class="ri-check-line"></i> Mechanical Design Principles</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Surveyor -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Surveyor" onerror="this.src='https://placehold.co/600x400?text=Surveyor'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Surveyor</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 1 Year</span>
+                        <p class="trade-desc">Training in land surveying, mapping, and using modern surveying
+                            instruments like Theodolite and Total Station.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Land Measurement</li>
+                            <li><i class="ri-check-line"></i> Topographical Mapping</li>
+                            <li><i class="ri-check-line"></i> Construction Surveying</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Mechanic Motor Vehicle -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2
+                            YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Mechanic Motor Vehicle" onerror="this.src='https://placehold.co/600x400?text=MMV'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Mechanic Motor Vehicle</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 2 Years</span>
+                        <p class="trade-desc">Skills in maintenance, repair, and overhaul of motor vehicles, covering
+                            engines, transmission, and braking systems.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Engine Diagnostics</li>
+                            <li><i class="ri-check-line"></i> Vehicle Servicing</li>
+                            <li><i class="ri-check-line"></i> Auto-Electrical Systems</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Refrigeration and Air Conditioning Technician -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2
+                            YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="RAC Technician" onerror="this.src='https://placehold.co/600x400?text=RAC'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Refrigeration & AC Tech</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 2 Years</span>
+                        <p class="trade-desc">Specialized in installation, maintenance, and repair of refrigeration and
+                            air conditioning systems for residential and commercial use.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> HVAC Systems</li>
+                            <li><i class="ri-check-line"></i> Gas Charging & Leak Testing</li>
+                            <li><i class="ri-check-line"></i> Compressor Repair</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Lift and Escalator Mechanic -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2
+                            YEARS</span>
+                        <img src="/assets/Lift & Escalator Mechanic.jpg" alt="Lift Mechanic"
+                            onerror="this.src='https://placehold.co/600x400?text=Lift+Mechanic'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Lift & Escalator Mechanic</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 2 Years</span>
+                        <p class="trade-desc">Focuses on installation, commissioning, maintenance, and troubleshooting
+                            of lifts (elevators) and escalators.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Elevator Safety Systems</li>
+                            <li><i class="ri-check-line"></i> Control Panel Wiring</li>
+                            <li><i class="ri-check-line"></i> Mechanical Maintenance</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Solar Technician -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Solar Technician" onerror="this.src='https://placehold.co/600x400?text=Solar+Tech'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Solar Technician</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 1 Year</span>
+                        <p class="trade-desc">Training in installation, operation, and maintenance of solar PV systems
+                            and solar thermal systems for sustainable energy.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Solar Panel Installation</li>
+                            <li><i class="ri-check-line"></i> Inverter & Battery connection</li>
+                            <li><i class="ri-check-line"></i> Site Assessment</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Fire Technology and Industrial Safety Management -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
+                        <img src="/assets/Fire Tech & Safety Mgmt.jpg" alt="Fire & Safety"
+                            onerror="this.src='https://placehold.co/600x400?text=Fire+Safety'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Fire Tech & Safety Mgmt</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 1 Year</span>
+                        <p class="trade-desc">Comprehensive course on fire prevention, firefighting techniques, and
+                            industrial safety protocols to ensure workplace safety.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Firefighting Operations</li>
+                            <li><i class="ri-check-line"></i> Risk Assessment</li>
+                            <li><i class="ri-check-line"></i> Emergency Response</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Industrial Painter -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
+                        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Industrial Painter" onerror="this.src='https://placehold.co/600x400?text=Painter'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Industrial Painter</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 1 Year</span>
+                        <p class="trade-desc">Skills in preparing surfaces and applying protective and decorative
+                            coatings (paints, varnishes, lacquers) to industrial products.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Surface Preparation</li>
+                            <li><i class="ri-check-line"></i> Spray Painting Techniques</li>
+                            <li><i class="ri-check-line"></i> Coating Defects & Remedies</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Multimedia Animation and Special Effects -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
+                        <img src="https://images.unsplash.com/photo-1626379953822-baec19c3accd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Multimedia Animation" onerror="this.src='https://placehold.co/600x400?text=Animation'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Multimedia Animation & VFX</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 1 Year</span>
+                        <p class="trade-desc">Creative course covering 2D/3D animation, visual effects, graphic design,
+                            and video editing for the entertainment and media industry.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> 2D & 3D Animation</li>
+                            <li><i class="ri-check-line"></i> Graphic Design</li>
+                            <li><i class="ri-check-line"></i> Video Editing & VFX</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Human Resource Executive -->
+                <div class="trade-card gs-reveal">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
+                        <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="HR Executive" onerror="this.src='https://placehold.co/600x400?text=HR'">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Human Resource Executive</h3>
+                        <span class="trade-duration"><i class="ri-time-line"></i> Duration: 1 Year</span>
+                        <p class="trade-desc">Training in HR functions including recruitment, payroll management,
+                            employee relations, and compliance with labor laws.</p>
+                        <ul class="trade-features">
+                            <li><i class="ri-check-line"></i> Recruitment Processes</li>
+                            <li><i class="ri-check-line"></i> Payroll Management</li>
+                            <li><i class="ri-check-line"></i> Labor Laws & Compliance</li>
+                        </ul>
+                        <a href="/contact.html" class="btn-trade">Contact Us <i class="ri-phone-line"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/index.html" class="logo kumss-since"
+                        style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
+                        <div><span>KUMSS SINCE 1951</span></div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"
+                            aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./kumss-private-iti-karhati.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a></li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
+                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
+                                Medium</a></li>
+                        <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                Pawar Kala Mahavidyalaya</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+919421394242">+91 94213 94242</a></li>
+                        <li><a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="/assets/js/institute.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // Simple Reveal Animation
+            const revealElements = document.querySelectorAll('.gs-reveal');
+            revealElements.forEach(el => {
+                gsap.fromTo(el,
+                    { y: 30, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 85%"
+                        }
+                    }
+                );
+            });
+
+            // Scroll Progress Bar
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("scrollProgress").style.width = scrolled + "%";
+            });
+        });
+    </script>
+</body>
+
+</html>

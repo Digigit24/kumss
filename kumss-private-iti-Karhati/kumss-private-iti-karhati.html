@@ -506,6 +506,98 @@
                 margin-left: 0 !important;
             }
         }
+
+        /* ==================== FACULTY SECTION ==================== */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .faculty-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border: 1px solid #eeeeee;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .faculty-img-box {
+            height: 320px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f9fa;
+        }
+
+        .faculty-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .faculty-card:hover .faculty-img {
+            transform: scale(1.05);
+        }
+
+        .faculty-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .faculty-name {
+            color: #003366;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .faculty-role {
+            color: #ff6700;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .btn-outline-dark-custom {
+            background: transparent;
+            color: #003366;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid #003366;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-outline-dark-custom:hover {
+            background: #003366;
+            color: #ffffff;
+        }
+
+        @media (max-width: 991px) {
+            .faculty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -535,6 +627,7 @@
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link" href="#">Home</a></li>
                     <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./faculty.html">Faculty</a></li>
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
@@ -562,7 +655,7 @@
                                     Pawar Kala Mahavidhyalaya</a></li>
                         </ul>
                     </li>
-                    <li><a class="gm-link" href="#trades">Trades</a></li>
+                    <li><a class="gm-link" href="/kumss-private-iti-Karhati/trades.html">Trades</a></li>
                     <li class="gm-cta"><a class="ggm-btn" href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
@@ -632,7 +725,7 @@
 
                 <div class="stat-box-modern">
                     <i class="ri-calendar-line stat-icon-m"></i>
-                    <span class="stat-num-m" data-target="24">0</span>
+                    <span class="stat-num-m" data-target="5">0+</span>
                     <span class="stat-label-m">Years of Legacy</span>
                 </div>
 
@@ -750,6 +843,71 @@
         </div>
     </section>
 
+    <!-- ==================== FACULTY SECTION ==================== -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="section-header gs-reveal">
+                <span class="section-subtitle">Our Team</span>
+                <div class="section-title">
+                    <h2>Expert Faculty</h2>
+                </div>
+                <p class="mt-3 text-muted">Dedicated professionals shaping the future of industrial talent.</p>
+            </div>
+
+            <div class="faculty-grid">
+                <!-- Faculty 1 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/chandgude-mahesh.jpg" alt="Mrs. Anjali Deshmukh" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Mr. Chandgude Mahesh Prakash</h4>
+                        <span class="faculty-role">Superintendent</span>
+                    </div>
+                </div>
+
+                <!-- Faculty 2 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/madane-vishal.jpg" alt="Mr. Madane Vishal Laxman" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Mr. Madane Vishal Laxman</h4>
+                        <span class="faculty-role">Engg.Drawing Instructor</span>
+                    </div>
+                </div>
+
+                <!-- Faculty 3 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/jadhav-rahul.jpg" alt="Mr. Jadhav Rahul Manikrao" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Mr. Jadhav Rahul Manikrao</h4>
+                        <span class="faculty-role">Fitter Instructor</span>
+                    </div>
+                </div>
+
+                <!-- Faculty 4 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/taware-akshay.jpg" alt="Mr. Taware Akshay Chandrakant" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h4 class="faculty-name">Mr. Taware Akshay Chandrakant</h4>
+                        <span class="faculty-role">Fitter Instructor</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="faculty.html" class="btn-outline-dark-custom">
+                    View All Faculty <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- ==================== TRADES SECTION ==================== -->
     <section class="section-padding" id="trades" style="background-color: #f4f7f6;">
         <div class="container">
@@ -831,7 +989,7 @@
             </div>
 
             <div class="text-center mt-5">
-                <a href="#" class="ggm-btn"
+                <a href="/kumss-private-iti-Karhati/trades.html" class="ggm-btn"
                     style="background: #003366; color: white; display: inline-block; padding: 12px 30px; border-radius: 50px;">View
                     All Courses</a>
             </div>
@@ -934,6 +1092,8 @@
     </footer>
 
     <!-- JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="/assets/js/institute.js"></script>
 
     <!-- PREMIUM ANIMATION LOGIC -->
@@ -955,9 +1115,19 @@
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-target');
                 ScrollTrigger.create({
-                    trigger: counter, start: "top 90%", once: true,
+                    trigger: counter,
+                    start: "top 90%",
+                    once: true,
                     onEnter: () => {
-
+                        let count = { val: 0 };
+                        gsap.to(count, {
+                            val: target,
+                            duration: 2,
+                            ease: "power2.out",
+                            onUpdate: function () {
+                                counter.innerText = Math.ceil(count.val) + "+";
+                            }
+                        });
                     }
                 });
             });
