@@ -47,12 +47,13 @@
     ========================= */
     .hero {
       position: relative;
-      min-height: 90vh; /* Increased height for impact */
+      min-height: 90vh;
+      /* Increased height for impact */
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(rgba(31, 60, 136, 0.75), rgba(0, 0, 0, 0.6)), 
-                  url('/assets/about-hero-img.webp') center/cover no-repeat;
+      background: linear-gradient(rgba(31, 60, 136, 0.75), rgba(0, 0, 0, 0.6)),
+        url('/assets/about-hero-img.webp') center/cover no-repeat;
       padding: 40px 20px;
       overflow: hidden;
     }
@@ -91,8 +92,15 @@
     }
 
     @keyframes heroFadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .hero-card .kicker {
@@ -118,7 +126,7 @@
       color: white;
       line-height: 1.1;
       margin-bottom: 20px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
     .hero-card .lead {
@@ -208,7 +216,7 @@
       border-radius: 20px;
       box-shadow: var(--card-shadow);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(0,0,0,0.03);
+      border: 1px solid rgba(0, 0, 0, 0.03);
       display: flex;
       gap: 15px;
     }
@@ -254,14 +262,23 @@
       color: white;
     }
 
-    .section-dark h2, .section-dark p {
+    .section-dark h2,
+    .section-dark p {
       color: white;
     }
 
     @media (max-width: 768px) {
-      .hero { min-height: 70vh; }
-      .hero-card { padding: 40px 20px; }
-      .activities-section { padding: 60px 20px; }
+      .hero {
+        min-height: 70vh;
+      }
+
+      .hero-card {
+        padding: 40px 20px;
+      }
+
+      .activities-section {
+        padding: 60px 20px;
+      }
     }
   </style>
 </head>
@@ -272,7 +289,9 @@
   <div class="scroll-progress" aria-hidden="true">
     <div id="scrollProgress"></div>
   </div>
-
+  <a href="/" class="back-to-main-btn" title="Back to Main Website">
+    <i class="ri-home-4-line"></i>
+  </a>
   <!-- Header -->
   <header class="gm-header" id="header">
     <div class="gm-container">
@@ -290,7 +309,8 @@
 
         <ul class="gm-links" id="navLinks">
           <li><a class="gm-link" href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
-          <li><a class="gm-link is-active" href="./about.html">About</a></li>
+          <li><a class="gm-link active" href="./about.html">About</a></li>
+          <li><a class="gm-link" href="./academics.html">Academics</a></li>
 
           <li class="gm-item gm-dropdown" data-dropdown>
             <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
@@ -333,10 +353,11 @@
   <section class="hero" id="top">
     <div class="hero-inner">
       <div class="hero-card">
-        <span class="kicker"><i class="ri-palette-line"></i> Fine Arts • Karhati</span>
+        <span class="kicker"><i class="ri-palette-line"></i> Fine Arts - Karhati</span>
         <h1>About Shardabai Pawar Kala Mahavidhyalaya</h1>
         <p class="lead">
-          Nurturing creativity with technique and tradition. We build skilled, disciplined, and visionary art educators through real-world guidance and focused practice.
+          Nurturing creativity with technique and tradition. We build skilled, disciplined, and visionary art educators
+          through real-world guidance and focused practice.
         </p>
       </div>
     </div>
@@ -349,19 +370,22 @@
       <ul class="activity-grid">
         <li class="activity-card">
           <div class="icon-box"><i class="ri-medal-2-line"></i></div>
-          <span>State Level Landscape Drawing Competition (Only for girl students) held by Nehru Centre, Worli (Mumbai)</span>
+          <span>State Level Landscape Drawing Competition (Only for girl students) held by Nehru Centre, Worli
+            (Mumbai)</span>
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-brush-line"></i></div>
-          <span>Workshop of eminent artists from Pune & Mumbai under the leadership of Hon. Shri Tuka Jadhav (Head, S.N.D.T. Women’s University)</span>
+          <span>Workshop of eminent artists from Pune & Mumbai under the leadership of Hon. Shri Tuka Jadhav (Head,
+            S.N.D.T. Women's University)</span>
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-award-line"></i></div>
-          <span>‘Srujan’ Youth Festival – State Level & Zonal competitions of Portrait, Landscape Drawing, Sculpture, Photography, etc. (2006–2007)</span>
+          <span> Srujan Youth Festival State Level & Zonal competitions of Portrait, Landscape Drawing, Sculpture,
+            Photography, etc. (2006-2007)</span>
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-mickey-line"></i></div>
-          <span>‘Srujan’ – National Level Sculptors Camp (2016)</span>
+          <span> Srujan National Level Sculptors Camp (2016)</span>
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-pencil-ruler-2-line"></i></div>
@@ -369,7 +393,7 @@
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-tent-line"></i></div>
-          <span>Art Camp ‘Kalaranga’ organized for school students</span>
+          <span>Art Camp Kalaranga organized for school students</span>
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-shopping-bag-3-line"></i></div>
@@ -399,7 +423,7 @@
           <p>
             Our staff members have participated in National and State Level competitions and received awards,
             including State Art Exhibition (Artist Category), Bombay Art Society Exhibition,
-            Camlin Art Foundation Exhibition, Chitari Art Foundation (Pune), and Indian Oil Corporation’s
+            Camlin Art Foundation Exhibition, Chitari Art Foundation (Pune), and Indian Oil Corporation's
             National Art Competition.
           </p>
           <p>
@@ -416,19 +440,28 @@
     <div class="section-wrap">
       <h2>Demonstrations & Lectures by Eminent Artists</h2>
       <ul class="activity-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-        <li class="activity-card"><span><strong>1993-94</strong> Hon. D.S. Khatavkar (Pune) – Eminent Sculptor</span></li>
-        <li class="activity-card"><span><strong>1994-95</strong> Hon. Raosaheb Gurav (Pune) – Famous Art Teacher & Artist</span></li>
-        <li class="activity-card"><span><strong>1995-96</strong> Hon. Pawar B.S. (Kolhapur) – Famous Artist</span></li>
-        <li class="activity-card"><span><strong>1996-97</strong> Hon. Ramkrishna Kamble, Hon. Sudhir Katkar, Hon. Mazgaonkar Sir</span></li>
+        <li class="activity-card"><span><strong>1993-94</strong> Hon. D.S. Khatavkar (Pune) Eminent Sculptor</span>
+        </li>
+        <li class="activity-card"><span><strong>1994-95</strong> Hon. Raosaheb Gurav (Pune) Famous Art Teacher &
+            Artist</span></li>
+        <li class="activity-card"><span><strong>1995-96</strong> Hon. Pawar B.S. (Kolhapur) Famous Artist</span></li>
+        <li class="activity-card"><span><strong>1996-97</strong> Hon. Ramkrishna Kamble, Hon. Sudhir Katkar, Hon.
+            Mazgaonkar Sir</span></li>
         <li class="activity-card"><span><strong>1997-98</strong> Late Hon. Vijay Kadam (Pune)</span></li>
-        <li class="activity-card"><span><strong>2000-01</strong> Hon. Raj Thackeray (Mumbai), Hon. Dr. Anil Awachat (Pune)</span></li>
-        <li class="activity-card"><span><strong>2002-03</strong> Hon. Tuka Jadhav (Mumbai), Late Hon. Chandrakant Ohal (Pune)</span></li>
+        <li class="activity-card"><span><strong>2000-01</strong> Hon. Raj Thackeray (Mumbai), Hon. Dr. Anil Awachat
+            (Pune)</span></li>
+        <li class="activity-card"><span><strong>2002-03</strong> Hon. Tuka Jadhav (Mumbai), Late Hon. Chandrakant Ohal
+            (Pune)</span></li>
         <li class="activity-card"><span><strong>2003-04</strong> Hon. Suresh Raut (Pune)</span></li>
         <li class="activity-card"><span><strong>2005-06</strong> Hon. Ravi Paranjpe</span></li>
-        <li class="activity-card"><span><strong>2007-08</strong> Hon. Sharad Kapuskar (Pune), Hon. Sanjay Tadaskar (Kolhapur)</span></li>
-        <li class="activity-card"><span><strong>2015-16</strong> National Level Sculptors Camp (Sanstha Level)</span></li>
-        <li class="activity-card"><span><strong>2022-23</strong> Hon. Shubham Salave (Sambhajinagar), Hon. Pravin Mukhekar (Beed)</span></li>
-        <li class="activity-card"><span><strong>2024-25</strong> Hon. Prasad Thite – Head Study & Still Life Demo</span></li>
+        <li class="activity-card"><span><strong>2007-08</strong> Hon. Sharad Kapuskar (Pune), Hon. Sanjay Tadaskar
+            (Kolhapur)</span></li>
+        <li class="activity-card"><span><strong>2015-16</strong> National Level Sculptors Camp (Sanstha Level)</span>
+        </li>
+        <li class="activity-card"><span><strong>2022-23</strong> Hon. Shubham Salave (Sambhajinagar), Hon. Pravin
+            Mukhekar (Beed)</span></li>
+        <li class="activity-card"><span><strong>2024-25</strong> Hon. Prasad Thite Head Study & Still Life
+            Demo</span></li>
       </ul>
 
       <h3 style="margin-top: 60px;">Participating Artists</h3>
@@ -455,7 +488,7 @@
       <h2>Student Activities</h2>
       <p style="text-align: center; font-size: 20px; font-weight: 500;">
         Wall Painting, Warli Painting, Patta Painting, Maratha Painting, Madhubani Painting, etc. (Sanstha Level).
-        Making of eco-friendly ‘Ganpati’ / Shadumati Ganpati.
+        Making of eco-friendly "Ganpati"/ Shadumati Ganpati.
       </p>
     </div>
   </section>
@@ -479,7 +512,7 @@
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-leaf-line"></i></div>
-          <span>Expansion of eco-friendly ‘Ganpati’ / Shadumati Ganpati creation workshops</span>
+          <span>Expansion of eco-friendly Ganpati / Shadumati Ganpati creation workshops</span>
         </li>
       </ul>
     </div>
@@ -514,6 +547,7 @@
           <ul class="footer-links">
             <li><a href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
+            <li><a href="./academics.html">Academics</a></li>
             <li><a href="./staff.html">Staff</a></li>
             <li><a href="/gallery.html">Gallery</a></li>
             <li><a href="/contact.html">Contact Us</a></li>
@@ -557,6 +591,11 @@
     </div>
   </footer>
 
+  <button type="button" id="back-to-top" aria-label="Back to Top">
+    <i class="ri-arrow-up-double-fill"></i>
+  </button>
+
+
   <!-- JS file -->
   <script src="/assets/js/institute.js"></script>
 
@@ -595,6 +634,8 @@
 
     window.addEventListener('scroll', setScrollProgress);
   </script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
+
 </html>

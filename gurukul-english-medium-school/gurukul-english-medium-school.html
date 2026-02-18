@@ -474,7 +474,9 @@
 <body>
 
     <div class="scroll-progress" id="scrollProgress"></div>
-
+    <a href="/" class="back-to-main-btn" title="Back to Main Website">
+        <i class="ri-home-4-line"></i>
+    </a>
     <!-- HEADER (Original) -->
     <header class="gm-header" id="header">
         <div class="gm-container">
@@ -488,10 +490,9 @@
                         class="gm-burger-line"></span>
                 </button>
                 <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="#">Home</a></li>
+                    <li><a class="gm-link active" href="#">Home</a></li>
                     <li><a class="gm-link" href="/gurukul-english-medium-school/about.html">About</a></li>
-                    <li><a class="gm-link" href="/gurukul-english-medium-school/academics.html">Academics</a></li>
-                    <li><a class="gm-link" href="/gurukul-english-medium-school/gallery.html">Gallery</a></li>
+                    <li><a class="gm-link" href="/gurukul-english-medium-school/admissions.html">Admissions</a></li>
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
                             aria-controls="institutesMenu">
@@ -520,6 +521,8 @@
                         </ul>
                     </li>
                     <li><a class="gm-link" href="/gurukul-english-medium-school/staff.html">Staff</a></li>
+                    <li><a class="gm-link" href="/gurukul-english-medium-school/gallery.html">Gallery</a></li>
+                    <li><a class="gm-link" href="/gurukul-english-medium-school/student-rulebook.html">Rulebook</a></li>
                 </ul>
                 <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
             </nav>
@@ -674,7 +677,7 @@
             </div>
             <div class="testi-grid">
                 <div class="testi-item reveal-up">
-                    <p style="font-style: italic; color: #ffffff;">"Teachers are supportive and disciplined. My child’s
+                    <p style="font-style: italic; color: #ffffff;">"Teachers are supportive and disciplined. My child's
                         confidence improved a lot since joining."</p>
                     <div style="margin-top: 15px; font-weight: 700; color: #ffffff;">- Priya Patil</div>
                 </div>
@@ -753,9 +756,11 @@
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
                         <li><a href="./about.html">About</a></li>
-                        <li><a href="./academics.html">Academics</a></li>
+                        <li><a href="./admissions.html">Admissions</a></li>
                         <li><a href="./staff.html">Staff</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="./student-rulebook.html">Rulebook</a></li>
+                        <li><a href="./refund-policy.html">Refund Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -784,16 +789,25 @@
                         <li><i class="ri-phone-fill"></i><a href="tel:+917757833496">+91 7757833496</a></li>
                         <li><i class="ri-mail-fill"></i><a href="mailto:gemskarhati@gmail.com">gemskarhati@gmail.com</a>
                         </li>
+                        <li style="color: #000;">
+                            <i class="ri-map-pin-line"></i>
+                            A/P – Karhati, Tal – Baramati, Dist – Pune.
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">ISO 9001:2015
                     Certified Institute | Recognized by Government of Maharashtra</p>
             </div>
         </div>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+        <i class="ri-arrow-up-double-fill"></i>
+    </button>
+
 
     <!-- JS -->
     <script src="/assets/js/institute.js"></script>
@@ -890,6 +904,7 @@
             }
         });
     </script>
+    <script src="assets/js/custom.js"></script>
 </body>
 
 </html>

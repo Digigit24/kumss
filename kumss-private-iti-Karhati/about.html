@@ -306,7 +306,9 @@
 
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"
         style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999;"></div>
-
+    <a href="/" class="back-to-main-btn" title="Back to Main Website">
+        <i class="ri-home-4-line"></i>
+    </a>
     <!-- ==================== HEADER (PRESERVED) ==================== -->
     <header class="gm-header" id="header">
         <div class="gm-container">
@@ -322,8 +324,9 @@
                 </button>
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link" href="./kumss-private-iti-karhati.html">Home</a></li>
-                    <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
-                    <li class="gm-item"><a class="gm-link" href="/kumss-private-iti-Karhati/faculty.html">Faculty</a>
+                    <li class="gm-item"><a class="gm-link active" href="./about.html">About</a></li>
+                    <li><a class="gm-link" href="./trades.html">Trades</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./faculty.html">Faculty</a>
                     </li>
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <button class="gm-link gm-dropbtn" type="button">Our Educational Institutes <i
@@ -344,7 +347,7 @@
                         </ul>
                     </li>
                     <li><a class="gm-link" href="./gallery.html">Gallery</a></li>
-                    <li><a class="gm-link" href="/kumss-private-iti-Karhati/trades.html">Trades</a></li>
+
                     <li class="gm-cta"><a class="ggm-btn" href="tel:+919421394242">Contact Us</a></li>
                 </ul>
             </nav>
@@ -453,9 +456,9 @@
                 </div>
 
                 <!-- Values -->
-                <div class="col-md-4 gs-fade-up" style="transition-delay: 0.4s">
+                <div class="col-md-4">
                     <div class="philo-box">
-                        <i class="ri-gemini-line philo-icon"></i>
+                        <i class="ri-compass-3-line philo-icon"></i>
                         <h4 class="text-white">Our Values</h4>
                         <p>Transparency, Integrity, and Concern for the Environment. We believe in instilling high moral
                             values to produce responsible citizens for rural society.</p>
@@ -468,7 +471,7 @@
     <!-- ==================== LEADERSHIP PROFILE ==================== -->
     <section class="leadership-section">
         <div class="container">
-            <div class="leader-card gs-zoom-in">
+            <div class="leader-card">
                 <div class="row align-items-center">
                     <div class="col-lg-3 text-center text-lg-start">
                         <!-- Ensure image path is correct -->
@@ -524,7 +527,7 @@
                         <li><a href="./kumss-private-iti-karhati.html">Home</a></li>
                         <li><a href="./about.html">About</a></li>
                         <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="./trades.html">Trades</a></li>
                     </ul>
                 </div>
 
@@ -548,20 +551,31 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Contact Info</h3>
                     <ul class="footer-links">
-                        <li><a href="tel:+919421394242">+91 94213 94242</a></li>
-                        <li><a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+                        <li>
+                            <i class="ri-phone-line"></i>
+                            <a href="tel:+919423694242">+91 94236 94242</a>
+                        </li>
+                        <li>
+                            <i class="ri-mail-line"></i>
+                            <a href="mailto:iti@kumss.org">iti@kumss.org</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
             </div>
         </div>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+        <i class="ri-arrow-up-double-fill"></i>
+    </button>
+
 
     <!-- JS Files -->
     <!-- Assuming you have this file for your header functionality -->
@@ -571,22 +585,7 @@
         document.addEventListener("DOMContentLoaded", () => {
 
 
-            // 1. Hero Text Reveal
 
-
-            // 2. Hero Image Scale
-
-
-            // 3. Story Section
-
-
-
-            // 4. Philosophy Items
-            gsap.utils.toArray('.gs-fade-up').forEach((el, i) => {
-
-            });
-
-            // 5. Leader Card
 
 
             // Mobile Menu Logic (Fallback if institute.js doesn't load)
@@ -605,6 +604,7 @@
             }
         });
     </script>
+    <script src="assets/js/custom.js"></script>
 </body>
 
 </html>

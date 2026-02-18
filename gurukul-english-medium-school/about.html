@@ -249,7 +249,7 @@
             letter-spacing: -0.02em;
         }
 
-        /* Add a small “tag” above heading using pseudo */
+        /* Add a small €œtag€ above heading using pseudo */
         .mv-card:nth-child(1) .mv-content h2::before {
             content: "VISION";
             display: block;
@@ -298,7 +298,7 @@
             max-width: 60ch;
         }
 
-        /* Add a subtle “quote bar” before each paragraph */
+        /* Add a subtle €œquote bar€ before each paragraph */
         .mv-content p {
             position: relative;
             padding-left: 18px;
@@ -751,7 +751,9 @@
 
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"
         style="position:fixed; top:0; left:0; height:4px; background:var(--secondary); z-index:9999; width:0%;"></div>
-
+    <a href="/" class="back-to-main-btn" title="Back to Main Website">
+        <i class="ri-home-4-line"></i>
+    </a>
     <!-- Header -->
     <header class="gm-header" id="header">
         <div class="gm-container">
@@ -773,10 +775,10 @@
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link"
                             href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
-                    <li><a class="gm-link" href="/gurukul-english-medium-school/about.html">About</a></li>
-                    <li><a class="gm-link" href="/gurukul-english-medium-school/academics.html">Academics</a></li>
-                    <li><a class="gm-link" href="/gurukul-english-medium-school/gallery.html">Gallery</a></li>
-                    
+                    <li><a class="gm-link active" href="/gurukul-english-medium-school/about.html">About</a></li>
+                    <li><a class="gm-link" href="/gurukul-english-medium-school/admissions.html">Admissions</a></li>
+
+
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
                             aria-controls="institutesMenu">
@@ -805,6 +807,8 @@
                         </ul>
                     </li>
                     <li><a class="gm-link" href="/gurukul-english-medium-school/staff.html">Staff</a></li>
+                    <li><a class="gm-link" href="/gurukul-english-medium-school/gallery.html">Gallery</a></li>
+                    <li><a class="gm-link" href="/gurukul-english-medium-school/student-rulebook.html">Rulebook</a></li>
                 </ul>
                 <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
             </nav>
@@ -831,7 +835,9 @@
                     </div>
                     <div class="mv-content">
                         <h2>Our Vision</h2>
-                        <p>Our Vision is to develop well rounded Confident and responsible individuals who aspire to achieve their full Potential, to become responsible global citizens through child Centered Play based Curriculum that builds life Skills, independence, Confidence among them.</p>
+                        <p>Our Vision is to develop well rounded Confident and responsible individuals who aspire to
+                            achieve their full Potential, to become responsible global citizens through child Centered
+                            Play based Curriculum that builds life Skills, independence, Confidence among them.</p>
                     </div>
                 </div>
 
@@ -842,7 +848,8 @@
                     </div>
                     <div class="mv-content">
                         <h2>Our Mission</h2>
-                        <p>Gurukul English Medium School seeks to provide excellence in education. It seeks to make the learners confident, responsible, reflective, innovative and engaged citizens of India. </p>
+                        <p>Gurukul English Medium School seeks to provide excellence in education. It seeks to make the
+                            learners confident, responsible, reflective, innovative and engaged citizens of India. </p>
                     </div>
                 </div>
             </div>
@@ -992,11 +999,13 @@
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
-                        <li><a href="/gurukul-english-medium-school/about.html">About</a></li>
-                        <li><a href="./academics.html">Academics</a></li>
-                        <li><a href="/gurukul-english-medium-school/staff.html">Staff</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
+                        <li><a href="./gurukul-english-medium-school.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./admissions.html">Admissions</a></li>
+                        <li><a href="./staff.html">Staff</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="./student-rulebook.html">Rulebook</a></li>
+                        <li><a href="./refund-policy.html">Refund Policy</a></li>
                     </ul>
                 </div>
 
@@ -1012,6 +1021,10 @@
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
                         <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
                         </li>
+                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                English Medium School</a></li>
+                        <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                Pawar Kala Mahavidhyalaya</a></li>
                     </ul>
                 </div>
 
@@ -1021,18 +1034,28 @@
                         Contact Info</h3>
                     <ul class="footer-links">
                         <li><i class="ri-phone-fill"></i><a href="tel:+917757833496">+91 7757833496</a></li>
-                        <li><i class="ri-mail-fill"></i><a href="mailto:gemskarhati@gmail.com">gemskarhati@gmail.com</a></li>
-                        <li><i class="ri-mail-fill"></i><a href="mailto:gemskarhati@gmail.com">gemskarhati@gmail.com</a></li>
+                        <li><i class="ri-mail-fill"></i><a href="mailto:gemskarhati@gmail.com">gemskarhati@gmail.com</a>
+                        </li>
+                        <li style="color: #000;">
+                            <i class="ri-map-pin-line"></i>
+                            A/P – Karhati, Tal – Baramati, Dist – Pune.
+                        </li>
+
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">ISO 9001:2015
                     Certified</p>
             </div>
         </div>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+        <i class="ri-arrow-up-double-fill"></i>
+    </button>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Safety: GSAP must exist (you already load it in <head>)
@@ -1139,6 +1162,7 @@
     </script>
     <!-- js file -->
     <script src="/assets/js/institute.js"></script>
+    <script src="assets/js/custom.js"></script>
 
 
 

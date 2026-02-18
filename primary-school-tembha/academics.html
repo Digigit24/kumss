@@ -508,6 +508,9 @@
 
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
+  <a href="/" class="back-to-main-btn" title="Back to Main Website">
+    <i class="ri-home-4-line"></i>
+  </a>
   <!-- Header (Maintained Exactly as Requested) -->
   <header class="gm-header" id="header">
     <div class="gm-container">
@@ -526,7 +529,7 @@
         <ul class="gm-links" id="navLinks">
           <li><a class="gm-link" href="/primary-school-tembha/primary-school-tembha.html">Home</a></li>
           <li><a class="gm-link" href="/primary-school-tembha/about.html">About</a></li>
-          <li><a class="gm-link" href="/primary-school-tembha/academics.html">Academics</a></li>
+          <li><a class="gm-link active" href="/primary-school-tembha/academics.html">Academics</a></li>
 
           <li class="gm-item gm-dropdown" data-dropdown>
             <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
@@ -553,6 +556,7 @@
                   Kala Mahavidhyalaya</a></li>
             </ul>
           </li>
+          <li><a class="gm-link" href="./staff.html">Staff</a></li>
 
           <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
         </ul>
@@ -821,13 +825,18 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+        <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
         <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
           ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
         </p>
       </div>
     </div>
   </footer>
+
+  <button type="button" id="back-to-top" aria-label="Back to Top">
+    <i class="ri-arrow-up-double-fill"></i>
+  </button>
+
 
   <script src="/assets/js/institute.js"></script>
 
@@ -847,7 +856,7 @@
       animElements.forEach(el => observer.observe(el));
     });
   </script>
+  <script src="assets/js/custom.js"></script>
 </body>
 
 </html>
-

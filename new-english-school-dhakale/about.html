@@ -378,7 +378,9 @@
 
 <body>
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
+    <a href="/" class="back-to-main-btn" title="Back to Main Website">
+        <i class="ri-home-4-line"></i>
+    </a>
     <!-- HEADER (Same as inner pages) -->
     <header class="gm-header" id="header">
         <div class="gm-container">
@@ -400,7 +402,7 @@
                 <!-- Links -->
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link active" href="./new-english-school-dhakale.html">Home</a></li>
-                    <li><a class="gm-link" href="./about.html">About</a></li>
+                    <li><a class="gm-link active" href="./about.html">About</a></li>
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
@@ -430,7 +432,7 @@
                         </ul>
                     </li>
 
-                    <li><a class="gm-link" href="gallery.html">Gallery</a></li>
+                    <li><a class="gm-link" href="./gallery.html">Gallery</a></li>
                 </ul>
                 <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
             </nav>
@@ -598,44 +600,44 @@
                         <tr>
                             <td>1</td>
                             <td>5th STD</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹500/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹500/-</td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>6th STD</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹500/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹500/-</td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>7th STD</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹500/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹500/-</td>
                         </tr>
                         <tr>
                             <td>4</td>
                             <td>8th STD</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹500/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹500/-</td>
                         </tr>
                         <tr>
                             <td>5</td>
                             <td>9th STD</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹500/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹500/-</td>
                         </tr>
                         <tr>
                             <td>6</td>
                             <td>10th STD</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹250/-</td>
-                            <td class="fee-amount">₹500/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹250/-</td>
+                            <td class="fee-amount">‚¹500/-</td>
                         </tr>
                     </tbody>
                 </table>
@@ -720,13 +722,18 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
             </div>
         </div>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+        <i class="ri-arrow-up-double-fill"></i>
+    </button>
+
 
     <!-- Scripts -->
     <script src="/assets/js/institute.js"></script>
@@ -783,6 +790,7 @@
             document.querySelectorAll(".num").forEach(el => io.observe(el));
         });
     </script>
+    <script src="assets/js/custom.js"></script>
 </body>
 
 </html>

@@ -43,8 +43,10 @@
             window.onscroll = function () {
                 if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                     topbutton.style.opacity = "1";
+                    topbutton.style.visibility = "visible";
                 } else {
                     topbutton.style.opacity = "0";
+                    topbutton.style.visibility = "hidden";
                 }
             };
         }

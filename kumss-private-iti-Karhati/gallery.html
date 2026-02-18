@@ -177,7 +177,11 @@
 </head>
 
 <body>
-
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999; width: 0%;"></div>
+    <a href="/" class="back-to-main-btn" title="Back to Main Website">
+        <i class="ri-home-4-line"></i>
+    </a>
     <!-- Header -->
     <header class="gm-header" id="header">
         <div class="gm-container">
@@ -199,6 +203,7 @@
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link" href="./kumss-private-iti-karhati.html">Home</a></li>
                     <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
+                    <li><a class="gm-link" href="./trades.html">Trades</a></li>
                     <li class="gm-item"><a class="gm-link" href="./faculty.html">Faculty</a></li>
                     <!-- Dropdown -->
                     <li class="gm-item gm-dropdown" data-dropdown>
@@ -228,8 +233,8 @@
                                     Pawar Kala Mahavidhyalaya</a></li>
                         </ul>
                     </li>
-                    <li><a class="gm-link active" href="./gallery.html" style="color: #ff6700;">Gallery</a></li>
-                    <li><a class="gm-link" href="./trades.html">Trades</a></li>
+                    <li><a class="gm-link active" href="./gallery.html">Gallery</a></li>
+
 
                     <li class="gm-cta"><a class="ggm-btn" href="/contact.html">Contact Us</a></li>
                 </ul>
@@ -360,20 +365,31 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Contact Info</h3>
                     <ul class="footer-links">
-                        <li><a href="tel:+919421394242">+91 94213 94242</a></li>
-                        <li><a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
+                        <li>
+                            <i class="ri-phone-line"></i>
+                            <a href="tel:+919423694242">+91 94236 94242</a>
+                        </li>
+                        <li>
+                            <i class="ri-mail-line"></i>
+                            <a href="mailto:iti@kumss.org">iti@kumss.org</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
             </div>
         </div>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+        <i class="ri-arrow-up-double-fill"></i>
+    </button>
+
 
     <!-- JS Files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -413,6 +429,7 @@
             }
         });
     </script>
+    <script src="assets/js/custom.js"></script>
 </body>
 
 </html>

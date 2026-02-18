@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics | Shardabai Pawar Kala Mahavidhyalaya</title>
+    <link rel="icon" href="/assets/kumss_log.webp" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/assets/css/institute.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+    <style>
+        /* =========================================
+       GLOBAL & UTILITIES
+    ========================================= */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --ac-blue: #233f92;
+            --ac-orange: #ff7104;
+            --ac-soft-bg: #f8fbff;
+            --ac-text: #334155;
+            --ac-card-bg: #ffffff;
+            --ac-radius: 24px;
+        }
+
+        /* Animation Classes (Scroll Trigger) */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease;
+        }
+
+        .active {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        /* Layout Wrapper */
+        .ac-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* =========================================
+       HERO SECTION
+    ========================================= */
+        .ac-hero {
+            position: relative;
+            padding: 140px 0 80px;
+            /* Top padding accounts for fixed header */
+            background: radial-gradient(circle at 10% 20%, rgba(255, 151, 4, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(35, 63, 146, 0.08) 0%, transparent 40%),
+                #ffffff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .ac-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: #eef2ff;
+            color: var(--ac-blue);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            border: 1px solid rgba(35, 63, 146, 0.1);
+        }
+
+        .ac-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 800;
+            color: var(--ac-blue);
+            margin: 0 0 16px;
+            line-height: 1.1;
+        }
+
+        .ac-hero p {
+            font-size: 1.15rem;
+            color: var(--ac-text);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #111;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .muted {
+            color: #666;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+
+        th,
+        td {
+            border: 1px solid #e5e7eb;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #f3f4f6;
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 10px 0 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .stat-card {
+            background: #f9fafb;
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .stat-card strong {
+            font-size: 22px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .ac-hero-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .hero-btn.primary {
+            background: linear-gradient(135deg, var(--ac-orange), #ffb347);
+            color: #000;
+            box-shadow: 0 10px 25px rgba(255, 151, 4, 0.3);
+        }
+
+        .hero-btn.primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-btn.ghost {
+            border: 2px solid var(--ac-blue);
+            color: var(--ac-blue);
+            background: transparent;
+        }
+
+        .hero-btn.ghost:hover {
+            background: var(--ac-blue);
+            color: #fff;
+        }
+
+        .section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255, 151, 4, 0.15), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .act-card {
+            background: linear-gradient(135deg, #fff, #f8fbff);
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 18px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--ac-blue);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .act-card i {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 8px;
+            color: var(--ac-orange);
+        }
+
+        .act-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* =========================================
+       RESPONSIVE
+    ========================================= */
+        @media (max-width: 768px) {
+            .ac-hero {
+                padding-top: 120px;
+            }
+
+            .ac-grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .ac-philo-img {
+                order: -1;
+                margin-bottom: 20px;
+                transform: rotate(0);
+            }
+
+            .ac-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Keep your existing CTA button style for header */
+        .ggm-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 16px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            color: rgba(0, 0, 0, .785);
+            background-color: var(--primaryColor);
+        }
+
+        .ggm-btn:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+        }
+
+        @media (max-width: 768px) {
+            a.ggm-btn {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <a href="/" class="back-to-main-btn" title="Back to Main Website">
+        <i class="ri-home-4-line"></i>
+    </a>
+    <!-- Header (Maintained Exactly as Requested) -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <a href="/index.html" class="gm-logo">
+                    <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="gm-logo-img">
+                </a>
+
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                </button>
+
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link"
+                            href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Home</a>
+                    </li>
+                    <li><a class="gm-link" href="/shardabai-pawar-kala-mahavidhyalaya/about.html">About</a></li>
+                    <li><a class="gm-link active"
+                            href="/shardabai-pawar-kala-mahavidhyalaya/academics.html">Academics</a></li>
+
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+                        </button>
+
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a>
+                            </li>
+                            <li role="none"><a role="menuitem"
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New
+                                    English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School
+                                    Karhati Tembha</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS
+                                    Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium
+                                    School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                    Pawar
+                                    Kala Mahavidhyalaya</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="gm-link" href="./staff.html">Staff</a></li>
+
+                    <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
+                </ul>
+
+                <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =========================================
+       NEW HERO SECTION
+  ========================================= -->
+    <section class="ac-hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="ac-container">
+            <div class="ac-hero-badge reveal-up">
+                <i class="ri-graduation-cap-line"></i> Academics
+            </div>
+            <h1 class="reveal-up delay-100">Admissions, Results & Activities</h1>
+            <p class="reveal-up delay-200">
+                Shaping creative careers since 1993.
+                Government-approved courses, consistent results, and real-world placements in art, design, and creative
+                fields.
+            </p>
+            <div class="ac-hero-actions reveal-up delay-300">
+                <a href="#admissions" class="hero-btn primary">
+                    <i class="ri-pencil-ruler-2-line"></i> Explore Courses
+                </a>
+                <a href="#activities" class="hero-btn ghost">
+                    <i class="ri-gallery-line"></i> See Activities
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="ac-container">
+        <!-- Admission Procedure -->
+        <div class="section">
+            <span class="badge"><i class="ri-user-add-line"></i> Admissions</span>
+            <h2>Admission Procedure</h2>
+            <p class="muted">(According to norms of State Govt.) — Online & Offline Process</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Curriculum</th>
+                        <th>Duration</th>
+                        <th>Qualification</th>
+                        <th>Intake Capacity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Foundation</td>
+                        <td>01 Year</td>
+                        <td>10th Std. Passed & Intermediate Drawing Exam</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Art Teacher’s Diploma (A.T.D.)</td>
+                        <td>02 Years</td>
+                        <td>12th Std. Passed (Any Faculty) & Intermediate Drawing Exam</td>
+                        <td>I Year – 30<br>II Year – 30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Results -->
+        <div class="section">
+            <span class="badge"><i class="ri-bar-chart-line"></i> Results</span>
+            <h2>Academic Results</h2>
+            <p>
+                From <strong>1993–94 to 2023–24</strong>, our results have consistently ranged between
+                <strong>90% to 100%</strong>.
+            </p>
+        </div>
+
+        <!-- Placement -->
+        <div class="section">
+            <span class="badge"><i class="ri-briefcase-line"></i> Placements</span>
+            <h2>Student Placement Record (1993 – 2024)</h2>
+
+            <div class="stat-card">
+                <strong class="count" data-target="2000">0</strong>
+                Students Enrolled
+            </div>
+            <div class="stat-card">
+                <strong class="count" data-target="1986">0</strong>
+                Students Passed
+            </div>
+            <h3 style="margin-top:16px;">Fields / Services / Professions</h3>
+            <ul>
+                <li>Education – Art Teacher</li>
+                <li>Advertising – Junior Artist & Printing Press</li>
+                <li>Animation – Animator</li>
+                <li>Screen Printing – Artist</li>
+                <li>Photography – Photographer</li>
+                <li>Beauty Parlour</li>
+                <li>Making Educational Aids</li>
+                <li>Interior Decoration – Designer</li>
+                <li>Running Own Art Courses / Hobby Classes</li>
+            </ul>
+        </div>
+
+        <!-- Curricular Activities -->
+        <div class="section">
+            <span class="badge"><i class="ri-palette-line"></i> Activities</span>
+            <h2>Curricular Activities</h2>
+            <div class="activities-grid">
+                <div class="act-card"><i class="ri-brush-line"></i><span>Workshops by Artists</span></div>
+                <div class="act-card"><i class="ri-trophy-line"></i><span>Competitions</span></div>
+                <div class="act-card"><i class="ri-image-line"></i><span>Exhibitions & Displays</span></div>
+                <div class="act-card"><i class="ri-building-line"></i><span>Museum & College Visits</span></div>
+                <div class="act-card"><i class="ri-music-2-line"></i><span>Cultural Festivals</span></div>
+            </div>
+
+            <ul>
+                <li>Arrangement of workshops and demonstrations by famous artists</li>
+                <li>Organization of various competitions (Taluka Level, State Level, Zonal, etc.)</li>
+                <li>Arrangement of exhibitions and displays at Sanstha level</li>
+                <li>Educational visits to museums and art colleges</li>
+                <li>Arrangement of cultural activities such as Gunotsav, Lalitotsav, etc. at Sanstha level</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer (Maintained Exactly as Requested) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/index.html" class="logo"
+                        style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+                        <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
+                        <div>
+                            <div style="color: #ff9704;">KUMSS SINCE 1951</div>
+                        </div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+
+                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"
+                            aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
+                        <li><a href="shardabai-pawar-kala-mahavidhyalaya/about.html">About</a></li>
+                        <li><a href="shardabai-pawar-kala-mahavidhyalaya/academics.html">Academics</a></li>
+                        <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
+                                Karhati</a>
+                        </li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a>
+                        </li>
+                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="ri-phone-line"></i> <a href="tel:+919922415158">+91 99224 15158</a></li>
+                        <li><a href="tel:+919657465627">+91 96574 65627</a></li>
+                        <li><a href="tel:+919075192092">+91 90751 92092</a></li>
+                        <li><i class="ri-mail-line"></i> <a href="mailto:spkm.4242@gmail.com">spkm.4242@gmail.com</a>
+                        </li>
+                        <li style="color: #000;"><i class="ri-map-pin-line"></i>
+                            Karhati,(Morgaon – Baramati Road)
+                            Tal.Baramati, Dist. Pune Pin code No. 412204</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+        <i class="ri-arrow-up-double-fill"></i>
+    </button>
+
+
+    <script src="/assets/js/institute.js"></script>
+
+
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const animElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .scale-in');
+            animElements.forEach(el => observer.observe(el));
+        });
+    </script>
+    <script>
+        const counters = document.querySelectorAll('.count');
+
+        const runCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            let current = 0;
+            const step = Math.ceil(target / 100);
+
+            const update = () => {
+                current += step;
+                if (current < target) {
+                    counter.innerText = current;
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            update();
+        };
+
+        const observer2 = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCounter(entry.target);
+                    observer2.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => observer2.observe(c));
+    </script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

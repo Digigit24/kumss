@@ -355,7 +355,13 @@
 
 
 <body>
-
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div id="scrollProgress"></div>
+  </div>
+  <a href="/" class="back-to-main-btn" title="Back to Main Website">
+    <i class="ri-home-4-line"></i>
+  </a>
   <!-- Header -->
   <header class="gm-header" id="header">
     <div class="gm-container">
@@ -372,8 +378,9 @@
         </button>
 
         <ul class="gm-links" id="navLinks">
-          <li><a class="gm-link is-active" href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
+          <li><a class="gm-link active" href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
           <li><a class="gm-link" href="./about.html">About</a></li>
+          <li><a class="gm-link" href="./academics.html">Academics</a></li>
 
           <li class="gm-item gm-dropdown" data-dropdown>
             <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
@@ -620,7 +627,7 @@
         <i class="ri-map-pin-line text-3xl text-orange-500"></i>
         <div>
           <h4 class="font-bold text-lg mb-2">Our Location</h4>
-          <p class="opacity-70">Karhati, (Morgaon – Baramati Road), Dist. Pune - 412204</p>
+          <p class="opacity-70">Karhati, (Morgaon-Baramati Road), Tal.Baramati, Dist. Pune Pin code No. 412204</p>
         </div>
       </div>
       <div class="flex gap-4">
@@ -668,6 +675,7 @@
           <ul class="footer-links">
             <li><a href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
+            <li><a href="./academics.html">Academics</a></li>
             <li><a href="./staff.html">Staff</a></li>
             <li><a href="/gallery.html">Gallery</a></li>
             <li><a href="/contact.html">Contact Us</a></li>
@@ -697,20 +705,29 @@
             style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
             Contact Info</h3>
           <ul class="footer-links">
-            <li><a href="tel:+919922415158">+91 9922415158</a></li>
-            <li><a href="mailto:spkm.4242@gmail.com">spkm.4242@gmail.com</a></li>
+            <li><i class="ri-phone-line"></i><a href="tel:+919922415158">+91 9922415158</a></li>
+            <li><a href="tel:+919075192092">+91 9075192092</a></li>
+            <li><a href="tel:+919657465627">+91 9657465627</a></li>
+            <li><i class="ri-mail-line"></i><a href="mailto:spkm.4242@gmail.com">spkm.4242@gmail.com</a></li>
+            <li><i class="ri-map-pin-line"></i>Karhati,(Morgaon – Baramati Road)
+              Tal.Baramati, Dist. Pune Pin code No. 412204</li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 Shardabai Pawar Kala Mahavidhyalaya, Karhati. All Rights Reserved.</p>
+        <p>© 2026 Shardabai Pawar Kala Mahavidhyalaya, Karhati. All Rights Reserved.</p>
         <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
           Affiliated to Directorate of Art, Maharashtra State | Est. 1993-1994
         </p>
       </div>
     </div>
   </footer>
+
+  <button type="button" id="back-to-top" aria-label="Back to Top">
+    <i class="ri-arrow-up-double-fill"></i>
+  </button>
+
 
   <!-- Scripts -->
   <script src="/assets/js/institute.js"></script>
@@ -724,6 +741,7 @@
       document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
   </script>
+  <script src="assets/js/custom.js"></script>
 </body>
 
 </html>

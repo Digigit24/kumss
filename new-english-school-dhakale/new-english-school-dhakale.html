@@ -601,7 +601,9 @@
 
 <body>
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
+    <a href="/" class="back-to-main-btn" title="Back to Main Website">
+        <i class="ri-home-4-line"></i>
+    </a>
     <!-- HEADER (Preserved) -->
     <header class="gm-header" id="header">
         <div class="gm-container">
@@ -622,7 +624,7 @@
 
                 <!-- Links -->
                 <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="./new-english-school-dhakale.html">Home</a></li>
+                    <li><a class="gm-link active" href="./new-english-school-dhakale.html">Home</a></li>
                     <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
 
                     <!-- Dropdown -->
@@ -758,7 +760,7 @@
                     <p class="section-text">
                         We recognize that every child has a unique talent waiting to be discovered. Our campus buzzes
                         with activity beyond school hours, ranging from sports and athletics to cultural arts and public
-                        speaking. Whether it’s competing on the playground, performing on stage during our annual
+                        speaking. Whether it's competing on the playground, performing on stage during our annual
                         gathering, or participating in science exhibitions, our students are given ample opportunities
                         to build leadership skills, teamwork, and resilience.
                     </p>
@@ -934,7 +936,7 @@
                     <div class="mosaic-bg-num">02</div>
                     <i class="ri-emotion-happy-line mosaic-icon"></i>
                     <h3>Individual Attention</h3>
-                    <p>Small class sizes allow our teachers to focus on every child’s unique needs.</p>
+                    <p>Small class sizes allow our teachers to focus on every child's unique needs.</p>
                 </div>
 
                 <!-- 03: Small Orange -->
@@ -1029,13 +1031,18 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© 2025 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
             </div>
         </div>
     </footer>
+
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+        <i class="ri-arrow-up-double-fill"></i>
+    </button>
+
 
     <!-- Scripts -->
     <script src="/assets/js/institute.js"></script>
@@ -1082,6 +1089,7 @@
             }
         });
     </script>
+    <script src="assets/js/custom.js"></script>
 </body>
 
 </html>
