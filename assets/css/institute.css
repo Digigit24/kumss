@@ -1773,6 +1773,7 @@
             font-family: var(--heading-font-family);
             font-weight: 700;
             font-size: 1.25rem;
+            text-align: left;
         }
 
         .footer-links {
@@ -1787,6 +1788,8 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
+            color: #000;
+            text-align: left;
         }
 
         .footer-links li i {
@@ -2772,11 +2775,11 @@ Back to Top Style
 =================================================*/
         #back-to-top {
             opacity: 0;
-            top: 87%;
-            right: 2%;
+            bottom: 70px;
+            right: 25px;
             z-index: 4;
             width: 40px;
-            height: 50px;
+            height: 45px;
             border: unset;
             position: fixed;
             transition: 0.9s;
@@ -2852,8 +2855,8 @@ Back to Top Style
         /* back to main btn */
         .back-to-main-btn {
             position: fixed;
-            bottom: 40px;
-            left: 30px;
+            bottom: 20px;
+            right: 20px;
             /* change to right: 20px; if you want it on right */
             z-index: 9999;
 

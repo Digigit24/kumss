@@ -24,9 +24,6 @@
   <script defer src="https://cdn.jsdelivr.net/npm/hls.js@1.4.10/dist/hls.min.js"></script>
 
   <style>
-    /* =========================
-       RE-DESIGNED CSS CORE
-    ========================= */
     :root {
       --primary-blue: #1f3c88;
       --accent-orange: #d84315;
@@ -37,18 +34,17 @@
       --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
     }
 
-    body {
+    /* FIX: Prevent any horizontal overflow */
+    html, body {
       background-color: var(--soft-bg);
       color: var(--text-dark);
+      overflow-x: hidden;
     }
 
-    /* =========================
-       NEW HERO REDESIGN
-    ========================= */
+    /* ========================= HERO ========================= */
     .hero {
       position: relative;
       min-height: 90vh;
-      /* Increased height for impact */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -58,7 +54,6 @@
       overflow: hidden;
     }
 
-    /* Artistic Background Elements */
     .hero::before {
       content: "";
       position: absolute;
@@ -74,7 +69,6 @@
       position: relative;
       z-index: 2;
       width: 100%;
-      max-width: 1200px;
     }
 
     .hero-card {
@@ -92,15 +86,8 @@
     }
 
     @keyframes heroFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-card .kicker {
@@ -138,9 +125,7 @@
       font-weight: 300;
     }
 
-    /* =========================
-       SECTION LAYOUTS (EXISTING)
-    ========================= */
+    /* ========================= SECTIONS ========================= */
     .activities-section {
       padding: 100px 20px;
       position: relative;
@@ -150,8 +135,10 @@
       background: var(--white);
     }
 
+    /* FIX: constrain section-wrap width */
     .section-wrap {
-      max-width: 1200px;
+      max-width: 1280px;
+      width: 100%;
       margin: 0 auto;
     }
 
@@ -191,6 +178,7 @@
       height: 24px;
       background: var(--accent-orange);
       border-radius: 4px;
+      flex-shrink: 0;
     }
 
     .activities-section p {
@@ -198,12 +186,12 @@
       line-height: 1.8;
       color: var(--text-muted);
       margin-bottom: 25px;
-      max-width: 1000px;
     }
 
+    /* FIX: use min(320px, 100%) so cards never overflow on small screens */
     .activity-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
       gap: 25px;
       list-style: none;
       padding: 0;
@@ -231,6 +219,13 @@
       font-size: 24px;
       font-weight: bold;
       flex-shrink: 0;
+    }
+
+    /* FIX: two-column grid also needs min() to prevent overflow */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+      gap: 40px;
     }
 
     .artist-list {
@@ -267,18 +262,20 @@
       color: white;
     }
 
+    /* FIX: also use min() for the smaller card variant */
+    .activity-grid-sm {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: 25px;
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+    }
+
     @media (max-width: 768px) {
-      .hero {
-        min-height: 70vh;
-      }
-
-      .hero-card {
-        padding: 40px 20px;
-      }
-
-      .activities-section {
-        padding: 60px 20px;
-      }
+      .hero { min-height: 70vh; }
+      .hero-card { padding: 40px 20px; }
+      .activities-section { padding: 60px 20px; }
     }
   </style>
 </head>
@@ -292,6 +289,7 @@
   <a href="/" class="back-to-main-btn" title="Back to Main Website">
     <i class="ri-home-4-line"></i>
   </a>
+
   <!-- Header -->
   <header class="gm-header" id="header">
     <div class="gm-container">
@@ -320,21 +318,13 @@
             </button>
 
             <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-              <li role="none"><a role="menuitem"
-                  href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
-              </li>
-              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New
-                  English School Dhakale</a></li>
-              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School
-                  Karhati Tembha</a></li>
-              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS
-                  Private I.T.I Karhati</a></li>
-              <li role="none"><a role="menuitem"
-                  href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium
-                  School</a></li>
-              <li role="none"><a role="menuitem"
-                  href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar
-                  Kala Mahavidhyalaya</a></li>
+              <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+              <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+              <li role="none"><a role="menuitem" href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati Tembha</a></li>
+              <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+              <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
+              <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+              <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh Primary School</a></li>
             </ul>
           </li>
 
@@ -349,7 +339,7 @@
     </div>
   </header>
 
-  <!-- Redesigned Hero -->
+  <!-- Hero -->
   <section class="hero" id="top">
     <div class="hero-inner">
       <div class="hero-card">
@@ -370,22 +360,19 @@
       <ul class="activity-grid">
         <li class="activity-card">
           <div class="icon-box"><i class="ri-medal-2-line"></i></div>
-          <span>State Level Landscape Drawing Competition (Only for girl students) held by Nehru Centre, Worli
-            (Mumbai)</span>
+          <span>State Level Landscape Drawing Competition (Only for girl students) held by Nehru Centre, Worli (Mumbai)</span>
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-brush-line"></i></div>
-          <span>Workshop of eminent artists from Pune & Mumbai under the leadership of Hon. Shri Tuka Jadhav (Head,
-            S.N.D.T. Women's University)</span>
+          <span>Workshop of eminent artists from Pune & Mumbai under the leadership of Hon. Shri Tuka Jadhav (Head, S.N.D.T. Women's University)</span>
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-award-line"></i></div>
-          <span> Srujan Youth Festival State Level & Zonal competitions of Portrait, Landscape Drawing, Sculpture,
-            Photography, etc. (2006-2007)</span>
+          <span>Srujan Youth Festival State Level & Zonal competitions of Portrait, Landscape Drawing, Sculpture, Photography, etc. (2006-2007)</span>
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-mickey-line"></i></div>
-          <span> Srujan National Level Sculptors Camp (2016)</span>
+          <span>Srujan National Level Sculptors Camp (2016)</span>
         </li>
         <li class="activity-card">
           <div class="icon-box"><i class="ri-pencil-ruler-2-line"></i></div>
@@ -408,7 +395,8 @@
     <div class="section-wrap">
       <h2>Participation in Various Competitions / Achievements</h2>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px;">
+      <!-- FIX: replaced inline style grid with proper class -->
+      <div class="two-col-grid">
         <div>
           <h3>Student Section</h3>
           <p>
@@ -439,29 +427,21 @@
   <section class="activities-section">
     <div class="section-wrap">
       <h2>Demonstrations & Lectures by Eminent Artists</h2>
-      <ul class="activity-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-        <li class="activity-card"><span><strong>1993-94</strong> Hon. D.S. Khatavkar (Pune) Eminent Sculptor</span>
-        </li>
-        <li class="activity-card"><span><strong>1994-95</strong> Hon. Raosaheb Gurav (Pune) Famous Art Teacher &
-            Artist</span></li>
+      <!-- FIX: use proper class instead of inline style with 280px min -->
+      <ul class="activity-grid-sm">
+        <li class="activity-card"><span><strong>1993-94</strong> Hon. D.S. Khatavkar (Pune) Eminent Sculptor</span></li>
+        <li class="activity-card"><span><strong>1994-95</strong> Hon. Raosaheb Gurav (Pune) Famous Art Teacher & Artist</span></li>
         <li class="activity-card"><span><strong>1995-96</strong> Hon. Pawar B.S. (Kolhapur) Famous Artist</span></li>
-        <li class="activity-card"><span><strong>1996-97</strong> Hon. Ramkrishna Kamble, Hon. Sudhir Katkar, Hon.
-            Mazgaonkar Sir</span></li>
+        <li class="activity-card"><span><strong>1996-97</strong> Hon. Ramkrishna Kamble, Hon. Sudhir Katkar, Hon. Mazgaonkar Sir</span></li>
         <li class="activity-card"><span><strong>1997-98</strong> Late Hon. Vijay Kadam (Pune)</span></li>
-        <li class="activity-card"><span><strong>2000-01</strong> Hon. Raj Thackeray (Mumbai), Hon. Dr. Anil Awachat
-            (Pune)</span></li>
-        <li class="activity-card"><span><strong>2002-03</strong> Hon. Tuka Jadhav (Mumbai), Late Hon. Chandrakant Ohal
-            (Pune)</span></li>
+        <li class="activity-card"><span><strong>2000-01</strong> Hon. Raj Thackeray (Mumbai), Hon. Dr. Anil Awachat (Pune)</span></li>
+        <li class="activity-card"><span><strong>2002-03</strong> Hon. Tuka Jadhav (Mumbai), Late Hon. Chandrakant Ohal (Pune)</span></li>
         <li class="activity-card"><span><strong>2003-04</strong> Hon. Suresh Raut (Pune)</span></li>
         <li class="activity-card"><span><strong>2005-06</strong> Hon. Ravi Paranjpe</span></li>
-        <li class="activity-card"><span><strong>2007-08</strong> Hon. Sharad Kapuskar (Pune), Hon. Sanjay Tadaskar
-            (Kolhapur)</span></li>
-        <li class="activity-card"><span><strong>2015-16</strong> National Level Sculptors Camp (Sanstha Level)</span>
-        </li>
-        <li class="activity-card"><span><strong>2022-23</strong> Hon. Shubham Salave (Sambhajinagar), Hon. Pravin
-            Mukhekar (Beed)</span></li>
-        <li class="activity-card"><span><strong>2024-25</strong> Hon. Prasad Thite Head Study & Still Life
-            Demo</span></li>
+        <li class="activity-card"><span><strong>2007-08</strong> Hon. Sharad Kapuskar (Pune), Hon. Sanjay Tadaskar (Kolhapur)</span></li>
+        <li class="activity-card"><span><strong>2015-16</strong> National Level Sculptors Camp (Sanstha Level)</span></li>
+        <li class="activity-card"><span><strong>2022-23</strong> Hon. Shubham Salave (Sambhajinagar), Hon. Pravin Mukhekar (Beed)</span></li>
+        <li class="activity-card"><span><strong>2024-25</strong> Hon. Prasad Thite Head Study & Still Life Demo</span></li>
       </ul>
 
       <h3 style="margin-top: 60px;">Participating Artists</h3>
@@ -530,20 +510,15 @@
           <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
             An educational society focused on overall development of students since 1951.
           </p>
-
           <div class="social-links">
             <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
-                class="ri-instagram-fill"></i></a>
+            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
             <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h3
-            style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-            Quick Links
-          </h3>
+          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
           <ul class="footer-links">
             <li><a href="./shardabai-pawar-kala-mahavidhyalaya.html">Home</a></li>
             <li><a href="./about.html">About</a></li>
@@ -555,25 +530,17 @@
         </div>
 
         <div class="footer-col">
-          <h3
-            style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-            Our Institutes
-          </h3>
+          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
           <ul class="footer-links">
-            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
-            </li>
-            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
-            </li>
+            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
             <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
             <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h3
-            style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-            Contact Info
-          </h3>
+          <h3 style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
           <ul class="footer-links">
             <li><a href="tel:+919421394242">+91 94213 94242</a></li>
             <li><a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
@@ -595,10 +562,7 @@
     <i class="ri-arrow-up-double-fill"></i>
   </button>
 
-
-  <!-- JS file -->
   <script src="/assets/js/institute.js"></script>
-
   <script>
     function setScrollProgress() {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -607,35 +571,9 @@
       const bar = document.getElementById('scrollProgress');
       if (bar) bar.style.width = `${progress}%`;
     }
-
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    if (mobileMenuBtn && navLinks) {
-      mobileMenuBtn.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
-        mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-      });
-    }
-
-    document.querySelectorAll('#navLinks a.gm-link').forEach(link => {
-      link.addEventListener('click', () => {
-        if (!navLinks) return;
-        navLinks.classList.remove('active');
-        if (mobileMenuBtn) {
-          mobileMenuBtn.classList.remove('active');
-          mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        }
-        document.body.style.overflow = '';
-      });
-    });
-
     window.addEventListener('scroll', setScrollProgress);
   </script>
-  <script src="assets/js/custom.js"></script>
+  <script src="/assets/js/custom.js"></script>
 
 </body>
-
 </html>

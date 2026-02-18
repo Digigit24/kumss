@@ -745,6 +745,7 @@
                             <li role="none"><a role="menuitem"
                                     href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
                                     Pawar Kala Mahavidhyalaya</a></li>
+                                    <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh Primary School</a></li>
                         </ul>
                     </li>
 
@@ -1044,67 +1045,43 @@
     <script src="/assets/js/institute.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
+      document.addEventListener("DOMContentLoaded", () => {
+  // Header Scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
 
+  // Mobile Menu
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  }
 
-            // 1. Hero Animations
-
-
-            // 2. Slide Animations
-            gsap.utils.toArray('.').forEach(el => {
-
-            });
-            gsap.utils.toArray('.').forEach(el => {
-
-            });
-
-            // 3. Stagger Grid (Bouncy)
-
-
-            // 4. Scale Up Stats
-            gsap.utils.toArray('.').forEach(el => {
-
-            });
-
-            // 5. Header Scroll
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) { header.classList.add('scrolled'); }
-                else { header.classList.remove('scrolled'); }
-            });
-
-            // 6. Mobile Menu
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', () => {
-                    mobileMenuBtn.classList.toggle('active');
-                    navLinks.classList.toggle('active');
-                });
-            }
-
-            // 7. Stats Counter
-            const io = new IntersectionObserver((entries) => {
-                entries.forEach(e => {
-                    if (!e.isIntersecting || e.target.dataset.done) return;
-                    e.target.dataset.done = "1";
-                    const el = e.target;
-                    const target = +el.dataset.target;
-                    const suffix = "+";
-
-                    let n = 0;
-                    const step = Math.ceil(target / 100);
-                    const t = setInterval(() => {
-                        n += step;
-                        if (n >= target) { n = target; clearInterval(t); }
-                        el.textContent = n + suffix;
-                    }, 20);
-                });
-            }, { threshold: 0.5 });
-            document.querySelectorAll(".num").forEach(el => io.observe(el));
-        });
+  // Stats Counter
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting || e.target.dataset.done) return;
+      e.target.dataset.done = "1";
+      const el = e.target;
+      const target = +el.dataset.target;
+      let n = 0;
+      const step = Math.ceil(target / 100);
+      const t = setInterval(() => {
+        n += step;
+        if (n >= target) { n = target; clearInterval(t); }
+        el.textContent = n + "+";
+      }, 20);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll(".num").forEach(el => io.observe(el));
+});
     </script>
-    <script src="assets/js/custom.js"></script>
+    <script src="/assets/js/custom.js"></script>
 </body>
 
 </html>

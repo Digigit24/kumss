@@ -3116,8 +3116,10 @@ Graduets Area Style
 
 .footer-links li {
   display: flex;
+  
   align-items: flex-start;
   gap: 10px;
+  text-align: left;
 }
 
 .footer-links li i {

@@ -554,39 +554,28 @@
         <i class="ri-home-4-line"></i>
     </a>
     <!-- Header -->
-    <header class="gm-header" id="header">
+     <header class="gm-header" id="header">
         <div class="gm-container">
             <nav class="gm-nav" aria-label="Primary">
-                <!-- Logo -->
                 <a href="/index.html" class="gm-logo">
                     <img src="/assets/gurukul-logo.webp" alt="KUMSS Logo" class="gm-logo-img">
                 </a>
-
-                <!-- Mobile toggle -->
-                <button class="mobile-nav-toggle" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
                     aria-controls="navLinks" aria-expanded="false">
-                    <span class="toggle-line"></span>
-                    <span class="toggle-line"></span>
-                    <span class="toggle-line"></span>
+                    <span class="gm-burger-line"></span><span class="gm-burger-line"></span><span
+                        class="gm-burger-line"></span>
                 </button>
-
-                <ul class="nav-links" id="navLinks">
-                    <li><a class="nav-link"
-                            href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
-
-                    <li><a class="nav-link" href="/gurukul-english-medium-school/about.html">About</a></li>
-
-                    <li><a class="nav-link" href="/gurukul-english-medium-school/admissions.html">Admissions</a></li>
-
-
-                    <li class="nav-item nav-dropdown" data-dropdown>
-                        <button class="nav-link nav-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link" href="./gurukul-english-medium-school.html">Home</a></li>
+                    <li><a class="gm-link" href="./about.html">About</a></li>
+                    <li><a class="gm-link" href="./admissions.html">Admissions</a></li>
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
                             aria-controls="institutesMenu">
-                            Our Educational Institutes
-                            <i class="ri-arrow-down-s-line nav-chevron" aria-hidden="true"></i>
+                            Our Educational Institutes <i class="ri-arrow-down-s-line gm-chevron"
+                                aria-hidden="true"></i>
                         </button>
-
-                        <ul class="nav-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
                             <li role="none"><a role="menuitem"
                                     href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
                                     Vidyalay Karhati</a></li>
@@ -605,18 +594,14 @@
                             <li role="none"><a role="menuitem"
                                     href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
                                     Pawar Kala Mahavidhyalaya</a></li>
+                                    <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh Primary School</a></li>
                         </ul>
                     </li>
-
-                    <li><a class="nav-link active" href="/gurukul-english-medium-school/staff.html">Staff</a></li>
-                    <li><a class="nav-link" href="/gurukul-english-medium-school/gallery.html">Gallery</a></li>
-                    <li><a class="nav-link" href="/gurukul-english-medium-school/student-rulebook.html">Rulebook</a>
-                    </li>
-
+                    <li><a class="gm-link active" href="./staff.html">Staff</a></li>
+                    <li><a class="gm-link" href="./gallery.html">Gallery</a></li>
+                    <li><a class="gm-link" href="./student-rulebook.html">Rulebook</a></li>
                 </ul>
-
                 <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
-
             </nav>
         </div>
     </header>
@@ -925,29 +910,6 @@
         <i class="ri-arrow-up-double-fill"></i>
     </button>
 
-
-    <!-- Scripts -->
-    <script>
-
-
-        // Animation
-        document.addEventListener("DOMContentLoaded", function () {
-            gsap.fromTo(".faculty-card",
-                { opacity: 0, y: 50 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    stagger: 0.05,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: ".faculty-grid",
-                        start: "top 85%",
-                    }
-                }
-            );
-        });
-    </script>
     <script>
         class MobileNavigation {
             constructor() {
@@ -1203,7 +1165,7 @@
     </script>
     <!-- JS file -->
     <script src="/assets/js/institute.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="/assets/js/custom.js"></script>
 
 </body>
 

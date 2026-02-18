@@ -1,12 +1,7 @@
-
-
-
-
 (function () {
     "use strict";
     const yearEl = document.getElementById("yearNow");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
 
     (function initScrollProgressBar() {
         const bar = document.getElementById("scrollProgress");
@@ -24,20 +19,24 @@
         window.addEventListener("resize", update);
     })();
 
-    // Header Sticky
-    window.addEventListener('scroll', event => {
-        const height = 150;
-        const { scrollTop } = event.target.scrollingElement;
-        document.querySelector('#navbar').classList.toggle('sticky', scrollTop >= height);
-    });
+    // Header Sticky — fixed: use #header instead of #navbar, with null check
+    const navbar = document.querySelector('#header') || document.querySelector('#navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function (event) {
+            const height = 150;
+            const scrollTop = event.target.scrollingElement
+                ? event.target.scrollingElement.scrollTop
+                : 0;
+            navbar.classList.toggle('sticky', scrollTop >= height);
+        });
+    }
 
     window.onload = function () {
 
         // Back to Top
-        const getId = document.getElementById("back-to-top");
-        if (getId) {
-            const topbutton = document.getElementById("back-to-top");
-            topbutton.onclick = function (e) {
+        const topbutton = document.getElementById("back-to-top");
+        if (topbutton) {
+            topbutton.onclick = function () {
                 window.scrollTo({ top: 0, behavior: "smooth" });
             };
             window.onscroll = function () {
@@ -78,188 +77,38 @@
         }
     };
 
-    // Testimonial JS
-    var swiper = new Swiper(".testimonial", {
-        loop: true,
-        spaceBetween: 10,
-        slidesPerView: 4,
-        freeMode: true,
-        watchSlidesProgress: true,
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
-    });
-    var swiper2 = new Swiper(".testimonial2", {
-        loop: true,
-        spaceBetween: 10,
-        navigation: {
-            nextEl: ".next",
-            prevEl: ".prev",
-        },
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
-        thumbs: {
-            swiper: swiper,
-        },
-    });
-    var swiper2 = new Swiper(".testimonial-slider-2", {
-        loop: true,
-        spaceBetween: 30,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1
-            },
-            576: {
-                slidesPerView: 1
-            },
-            768: {
-                slidesPerView: 2
-            },
-            992: {
-                slidesPerView: 2
-            },
-            1200: {
-                slidesPerView: 2
-            },
-            1400: {
-                slidesPerView: 2
-            }
-        }
-    });
-    var swiper2 = new Swiper(".testimonial-slider-3", {
-        loop: true,
-        spaceBetween: 30,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1
-            },
-            576: {
-                slidesPerView: 1
-            },
-            768: {
-                slidesPerView: 2
-            },
-            992: {
-                slidesPerView: 2
-            },
-            1200: {
-                slidesPerView: 2
-            },
-            1400: {
-                slidesPerView: 3
-            }
-        }
-    });
-
-    // Partner JS
-    var swiper = new Swiper(".partner-slider", {
-        spaceBetween: 70,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 2
-            },
-            576: {
-                slidesPerView: 2
-            },
-            768: {
-                slidesPerView: 3
-            },
-            992: {
-                slidesPerView: 3
-            },
-            1200: {
-                slidesPerView: 4
-            },
-            1400: {
-                slidesPerView: 5
-            }
-        }
-    });
-
-    // Programs JS
-    var swiper = new Swiper(".programs-slider", {
-        spaceBetween: 25,
-        loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            0: {
-                slidesPerView: 1
-            },
-            576: {
-                slidesPerView: 1
-            },
-            768: {
-                slidesPerView: 2
-            },
-            992: {
-                slidesPerView: 3
-            },
-            1200: {
-                slidesPerView: 3
-            },
-            1400: {
-                slidesPerView: 3
-            }
-        }
-    });
-
     // Timer Js
     try {
-        const days1 = document.querySelector("#days")
-        const hours1 = document.querySelector("#hours")
-        const minutes1 = document.querySelector("#minutes")
-        const seconds1 = document.querySelector("#seconds")
-        const newYears = 'Jan 01 2028 00:00:00';
-        function countdown() {
-            const newYearsDate = new Date(newYears);
-            const currentDate = new Date();
+        const days1 = document.querySelector("#days");
+        const hours1 = document.querySelector("#hours");
+        const minutes1 = document.querySelector("#minutes");
+        const seconds1 = document.querySelector("#seconds");
 
-            const totalSeconds = (newYearsDate - currentDate) / 1000;
-            const days = Math.floor(totalSeconds / 3600 / 24);
-            const hours = Math.floor(totalSeconds / 3600) % 24;
-            const minutes = Math.floor(totalSeconds / 60) % 60;
-            const seconds = Math.floor(totalSeconds % 60);
+        if (days1 && hours1 && minutes1 && seconds1) {
+            const newYears = 'Jan 01 2028 00:00:00';
+            function countdown() {
+                const newYearsDate = new Date(newYears);
+                const currentDate = new Date();
+                const totalSeconds = (newYearsDate - currentDate) / 1000;
+                const days = Math.floor(totalSeconds / 3600 / 24);
+                const hours = Math.floor(totalSeconds / 3600) % 24;
+                const minutes = Math.floor(totalSeconds / 60) % 60;
+                const seconds = Math.floor(totalSeconds % 60);
 
-            days1.innerHTML = formatTime(days);
-            hours1.innerHTML = formatTime(hours);
-            minutes1.innerHTML = formatTime(minutes);
-            seconds1.innerHTML = formatTime(seconds);
+                days1.innerHTML = formatTime(days);
+                hours1.innerHTML = formatTime(hours);
+                minutes1.innerHTML = formatTime(minutes);
+                seconds1.innerHTML = formatTime(seconds);
+            }
+            function formatTime(time) {
+                return time < 10 ? `0${time}` : time;
+            }
+            countdown();
+            setInterval(countdown, 1000);
         }
-        countdown();
-        function formatTime(time) {
-            return time < 10 ? `0${time}` : time;
-        }
-        setInterval(countdown, 1000);
-    } catch { }
-
-    // ScrollCue
-
+    } catch (e) {
+        // Timer elements not present on this page
+    }
 
 })();
 
@@ -269,17 +118,15 @@ function accordion(e) {
     e.stopPropagation();
     if (this.classList.contains('active')) {
         this.classList.remove('active');
-    }
-    else if (this.parentElement.parentElement.classList.contains('active')) {
+    } else if (this.parentElement.parentElement.classList.contains('active')) {
         this.classList.add('active');
-    }
-    else {
-        for (i = 0; i < list.length; i++) {
+    } else {
+        for (let i = 0; i < list.length; i++) {
             list[i].classList.remove('active');
         }
         this.classList.add('active');
     }
 }
-for (i = 0; i < list.length; i++) {
+for (let i = 0; i < list.length; i++) {
     list[i].addEventListener('click', accordion);
 }
