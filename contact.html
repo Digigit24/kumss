@@ -53,11 +53,9 @@
       align-items: center;
       overflow: hidden;
       z-index: 1;
-      /* Base Mesh Layer */
       background: #ffffff;
     }
 
-    /* Ambient Motion Blobs */
     .cx-hero-bg {
       position: absolute;
       inset: 0;
@@ -187,7 +185,6 @@
       animation: heroFade 0.8s 0.6s var(--ease) forwards;
     }
 
-    /* Quick-info pills */
     .cx-hero-pills {
       display: flex;
       gap: 14px;
@@ -231,7 +228,6 @@
       color: #000000;
     }
 
-    /* Right side — stats with a unique glass frame */
     .cx-hero-right {
       opacity: 0;
       animation: heroFade 1s 0.7s var(--ease) forwards;
@@ -301,7 +297,6 @@
       }
     }
 
-    /* Hero Responsive */
     @media (max-width: 991px) {
       .cx-hero {
         min-height: 480px;
@@ -382,10 +377,6 @@
     }
 
 
-    /* ═══════════════════════════════════
-       EVERYTHING BELOW IS UNCHANGED
-    ═══════════════════════════════════ */
-
     /* ══════════ CONTACT STRIP ══════════ */
     .cx-strip {
       background: var(--ivory);
@@ -417,7 +408,6 @@
       gap: 18px;
       transition: box-shadow 0.35s var(--ease), transform 0.35s var(--ease);
     }
-
 
     .cx-strip-icon {
       width: 52px;
@@ -586,6 +576,76 @@
 
     .cx-send-btn:active {
       transform: translateY(0);
+    }
+
+    .cx-send-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Form feedback styles */
+    .cx-form-feedback {
+      margin-top: 16px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      display: none;
+      align-items: center;
+      gap: 10px;
+      animation: feedbackSlide 0.4s var(--ease);
+    }
+
+    .cx-form-feedback.show {
+      display: flex;
+    }
+
+    .cx-form-feedback.success {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .cx-form-feedback.error {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    .cx-form-feedback i {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    @keyframes feedbackSlide {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Spinner for loading state */
+    .cx-spinner {
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .cx-info-panel {
@@ -947,7 +1007,6 @@
 
   <!-- ═══════════ UNIQUE HERO ═══════════ -->
   <section class="cx-hero">
-    <!-- Animated CSS Blobs -->
     <div class="cx-hero-bg">
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
@@ -962,8 +1021,7 @@
           Human Connection.
         </h1>
         <p>Our mission is to be accessible. Whether you are a student, a parent, or a partner, we are ready to listen
-          and
-          collaborate.</p>
+          and collaborate.</p>
 
         <div class="cx-hero-pills">
           <a href="tel:+919421394242" class="cx-hero-pill">
@@ -1000,7 +1058,7 @@
   </section>
 
 
-  <!-- ═══════════ CONTACT STRIP (UNCHANGED) ═══════════ -->
+  <!-- ═══════════ CONTACT STRIP ═══════════ -->
   <section class="cx-strip">
     <div class="cx-strip-inner">
       <div class="cx-strip-grid">
@@ -1030,7 +1088,7 @@
   </section>
 
 
-  <!-- ═══════════ FORM + INFO (UNCHANGED) ═══════════ -->
+  <!-- ═══════════ FORM + INFO ═══════════ -->
   <section class="cx-body">
     <div class="cx-container">
 
@@ -1039,33 +1097,41 @@
           <h2>Send a Message</h2>
           <p class="cx-subtitle">Fill in the details and our team will respond within 24 hours.</p>
 
-          <form id="contactForm">
+          <form id="contactForm" novalidate>
             <div class="cx-form-row">
               <div class="cx-input-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter your name" required>
+                <label for="cf-name">Full Name</label>
+                <input type="text" id="cf-name" name="name" placeholder="Enter your name" required>
               </div>
               <div class="cx-input-group">
-                <label>Phone Number</label>
-                <input type="tel" placeholder="+91 00000 00000" required>
+                <label for="cf-phone">Phone Number</label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="+91 00000 00000" required>
               </div>
             </div>
             <div class="cx-form-row full">
               <div class="cx-input-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="example@mail.com" required>
+                <label for="cf-email">Email Address</label>
+                <input type="email" id="cf-email" name="email" placeholder="example@mail.com" required>
               </div>
             </div>
             <div class="cx-form-row full">
               <div class="cx-input-group">
-                <label>Your Message</label>
-                <textarea rows="5" placeholder="How can we help you?" required></textarea>
+                <label for="cf-message">Your Message</label>
+                <textarea id="cf-message" name="message" rows="5" placeholder="How can we help you?"
+                  required></textarea>
               </div>
             </div>
-            <button type="submit" class="cx-send-btn">
-              Send Message <i class="ri-send-plane-fill"></i>
+            <button type="submit" class="cx-send-btn" id="submitBtn">
+              <span id="btnText">Send Message</span>
+              <i class="ri-send-plane-fill" id="btnIcon"></i>
             </button>
           </form>
+
+          <!-- Feedback message area -->
+          <div class="cx-form-feedback" id="formFeedback">
+            <i id="feedbackIcon"></i>
+            <span id="feedbackText"></span>
+          </div>
         </div>
 
         <div class="cx-info-panel">
@@ -1102,7 +1168,7 @@
         </div>
       </div>
 
-      <!-- Map (UNCHANGED) -->
+      <!-- Map -->
       <div class="cx-map-container">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15164.757041766245!2d74.42223575460906!3d18.249670417662454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc301fd09e0a05b%3A0xc3f60f4c3f6e8e0!2sKarhati%2C%20Maharashtra%20412204!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
@@ -1118,7 +1184,7 @@
   </section>
 
 
-  <!-- Footer (UNCHANGED) -->
+  <!-- Footer -->
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer-grid">
@@ -1182,6 +1248,119 @@
   <script src="/assets/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/swiper-bundle.min.js"></script>
   <script src="/assets/js/custom.js"></script>
+
+  <!-- ═══════════ CELIYO FORM SUBMISSION ═══════════ -->
+  <script>
+    (function () {
+      const CELIYO_ENDPOINT = 'https://forms.celiyo.com/api/forms/submit/4f1886c9-e2e6-4e4d-8e5d-b3f9c0f1c734';
+
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const btnIcon = document.getElementById('btnIcon');
+      const feedback = document.getElementById('formFeedback');
+      const feedbackIcon = document.getElementById('feedbackIcon');
+      const feedbackText = document.getElementById('feedbackText');
+
+      function showFeedback(type, message) {
+        feedback.className = 'cx-form-feedback show ' + type;
+        feedbackIcon.className = type === 'success' ? 'ri-checkbox-circle-fill' : 'ri-error-warning-fill';
+        feedbackText.textContent = message;
+      }
+
+      function hideFeedback() {
+        feedback.className = 'cx-form-feedback';
+      }
+
+      function setLoading(loading) {
+        submitBtn.disabled = loading;
+        if (loading) {
+          btnText.textContent = 'Sending...';
+          btnIcon.className = '';
+          btnIcon.innerHTML = '<span class="cx-spinner"></span>';
+          // Move spinner outside of <i> — replace icon with spinner
+          const spinner = document.createElement('span');
+          spinner.className = 'cx-spinner';
+          btnIcon.replaceWith(spinner);
+          // Store reference for restoring
+          submitBtn._spinner = spinner;
+        } else {
+          // Restore original icon
+          if (submitBtn._spinner) {
+            const icon = document.createElement('i');
+            icon.className = 'ri-send-plane-fill';
+            icon.id = 'btnIcon';
+            submitBtn._spinner.replaceWith(icon);
+            submitBtn._spinner = null;
+          }
+          btnText.textContent = 'Send Message';
+        }
+      }
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        hideFeedback();
+
+        // Gather values
+        const name = document.getElementById('cf-name').value.trim();
+        const phone = document.getElementById('cf-phone').value.trim();
+        const email = document.getElementById('cf-email').value.trim();
+        const message = document.getElementById('cf-message').value.trim();
+
+        // Client-side validation
+        if (!name || !phone || !email || !message) {
+          showFeedback('error', 'Please fill in all fields before submitting.');
+          return;
+        }
+
+        if (!validateEmail(email)) {
+          showFeedback('error', 'Please enter a valid email address.');
+          return;
+        }
+
+        setLoading(true);
+
+        try {
+          const response = await fetch(CELIYO_ENDPOINT, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              name: name,
+              phone: phone,
+              email: email,
+              message: message
+            })
+          });
+
+          if (response.ok) {
+            showFeedback('success', 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.');
+            form.reset();
+          } else {
+            // Try to extract error message from response
+            let errorMsg = 'Something went wrong. Please try again or contact us directly.';
+            try {
+              const errorData = await response.json();
+              if (errorData && errorData.message) {
+                errorMsg = errorData.message;
+              }
+            } catch (_) { }
+            showFeedback('error', errorMsg);
+          }
+        } catch (err) {
+          showFeedback('error', 'Network error. Please check your connection and try again.');
+        } finally {
+          setLoading(false);
+        }
+      });
+    })();
+  </script>
 
 </body>
 

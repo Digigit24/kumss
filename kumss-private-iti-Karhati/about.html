@@ -17,19 +17,14 @@
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Existing CSS (Your main file) -->
+    <!-- Existing CSS -->
     <link rel="stylesheet" href="/assets/css/institute.css">
 
-    <!-- Font Awesome -->
+    <!-- Remix Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
-
-    <!-- GSAP (Animations) -->
-
-
 
     <style>
         /* ==================== CRITICAL FIXES ==================== */
-        /* This fixes the white space on the right side of mobile view */
         html,
         body {
             overflow-x: hidden;
@@ -37,7 +32,6 @@
             position: relative;
         }
 
-        /* Ensure Bootstrap rows don't cause overflow */
         .row {
             margin-right: 0;
             margin-left: 0;
@@ -74,8 +68,7 @@
             background-color: var(--blue) !important;
         }
 
-        /* ==================== HEADER Z-INDEX FIX ==================== */
-        /* Ensures header stays on top but menu works correctly */
+        /* ==================== HEADER ==================== */
         .gm-header {
             position: relative;
             z-index: 1000;
@@ -85,7 +78,6 @@
         /* ==================== MAGAZINE HERO ==================== */
         .mag-hero {
             padding-top: 50px;
-            /* Reduced top padding to fit better */
             padding-bottom: 80px;
             text-align: center;
             background: #fff;
@@ -94,7 +86,6 @@
 
         .mag-hero h1 {
             font-size: clamp(2.5rem, 6vw, 5rem);
-            /* Responsive font size */
             line-height: 1.1;
             margin-bottom: 20px;
             position: relative;
@@ -107,7 +98,6 @@
             margin: 0 auto;
             color: #666;
             padding: 0 15px;
-            /* Prevent text touching edges */
         }
 
         .hero-banner-img {
@@ -121,7 +111,7 @@
             transition: 1s ease-out;
         }
 
-        /* ==================== THE STORY (Legacy) ==================== */
+        /* ==================== THE STORY ==================== */
         .story-section {
             padding: 80px 0;
             position: relative;
@@ -133,7 +123,6 @@
             left: -50px;
             transform: translateY(-50%);
             font-size: 15rem;
-            /* Large background text */
             font-weight: 900;
             color: rgba(0, 0, 0, 0.03);
             font-family: 'Gantari', sans-serif;
@@ -178,7 +167,7 @@
             grid-column: 2;
         }
 
-        /* ==================== DARK PHILOSOPHY SECTION ==================== */
+        /* ==================== DARK PHILOSOPHY ==================== */
         .philosophy-dark {
             background-color: var(--blue);
             color: white;
@@ -215,45 +204,19 @@
             display: block;
         }
 
-        /* ==================== LEADERSHIP PROFILE ==================== */
+        /* ==================== LEADERSHIP CARD (SIMPLE) ==================== */
         .leadership-section {
             padding: 100px 0;
+            background: var(--light);
         }
 
-        .leader-card {
-            background: #f4f7f6;
-            padding: 50px;
-            border-radius: 20px;
-            position: relative;
+        @media (max-width: 576px) {
+            .leadership-section {
+                padding: 60px 0;
+            }
         }
 
-        .leader-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .leader-quote {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-style: italic;
-            color: var(--blue);
-            line-height: 1.6;
-            margin: 30px 0;
-        }
-
-        .signature {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--orange);
-            margin-top: 10px;
-        }
-
-        /* Responsive */
+        /* ==================== RESPONSIVE ==================== */
         @media (max-width: 991px) {
             .mag-hero {
                 padding-top: 30px;
@@ -293,12 +256,12 @@
                 margin-bottom: 40px;
             }
 
-            /* Fix header/menu collision in mobile if needed */
             .gm-links {
                 z-index: 1001;
-                /* Ensure mobile menu is on top */
             }
         }
+
+        @media (max-width: 576px) {}
     </style>
 </head>
 
@@ -309,7 +272,8 @@
     <a href="/" class="back-to-main-btn" title="Back to Main Website">
         <i class="ri-home-4-line"></i>
     </a>
-    <!-- ==================== HEADER (PRESERVED) ==================== -->
+
+    <!-- HEADER -->
     <header class="gm-header" id="header">
         <div class="gm-container">
             <nav class="gm-nav" aria-label="Primary">
@@ -326,8 +290,7 @@
                     <li><a class="gm-link" href="./kumss-private-iti-karhati.html">Home</a></li>
                     <li class="gm-item"><a class="gm-link active" href="./about.html">About</a></li>
                     <li><a class="gm-link" href="./trades.html">Trades</a></li>
-                    <li class="gm-item"><a class="gm-link" href="./faculty.html">Faculty</a>
-                    </li>
+                    <li class="gm-item"><a class="gm-link" href="./faculty.html">Faculty</a></li>
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <button class="gm-link gm-dropbtn" type="button">Our Educational Institutes <i
                                 class="ri-arrow-down-s-line gm-chevron"></i></button>
@@ -344,18 +307,18 @@
                                     English Medium School</a></li>
                             <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
                                     Pawar Kala Mahavidhyalaya</a></li>
-                                    <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh Primary School</a></li>
+                            <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh
+                                    Primary School</a></li>
                         </ul>
                     </li>
                     <li><a class="gm-link" href="./gallery.html">Gallery</a></li>
-
-                    <li class="gm-cta"><a class="ggm-btn" href="tel:+919421394242">Contact Us</a></li>
+                    <li class="gm-cta"><a class="ggm-btn" href="/contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- ==================== MAGAZINE HERO ==================== -->
+    <!-- MAGAZINE HERO -->
     <section class="mag-hero">
         <div class="container gs-hero">
             <span class="text-orange fw-bold text-uppercase ls-2 mb-2 d-block">Established 2000</span>
@@ -365,14 +328,13 @@
                 education.</p>
         </div>
         <div class="container-fluid px-lg-5">
-            <!-- Ensure this image path is correct -->
             <img src="/assets/iti-temp.webp"
                 onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=80'"
                 alt="Institute Wide Shot" class="hero-banner-img gs-img-scale">
         </div>
     </section>
 
-    <!-- ==================== THE STORY (LEGACY) ==================== -->
+    <!-- THE STORY -->
     <section class="story-section">
         <div class="watermark">2000</div>
         <div class="container">
@@ -381,7 +343,6 @@
                     <h2 class="mb-4" style="font-size: 2.5rem;">Our Journey</h2>
                     <p class="lead text-dark mb-4">Empowering the rural youth of Baramati since the turn of the
                         millennium.</p>
-
                     <p class="drop-cap text-muted">
                         KUMSS Private ITI Karhati was born from a singular vision: to bring industrial-grade technical
                         training to the heart of rural Pune. Established in 2000 under the Krushi Udyog Mul Shikshan
@@ -392,7 +353,6 @@
                         Electrician, Fitter, and Electronics are designed not just to pass exams, but to thrive in
                         high-pressure industrial environments.
                     </p>
-
                     <div class="mt-4 d-flex align-items-center gap-4">
                         <div class="d-flex align-items-center gap-2">
                             <i class="ri-award-fill text-orange fs-3"></i>
@@ -410,7 +370,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-6 gs-reveal-right">
                     <div class="story-collage">
                         <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80"
@@ -425,7 +384,7 @@
         </div>
     </section>
 
-    <!-- ==================== DARK PHILOSOPHY ==================== -->
+    <!-- DARK PHILOSOPHY -->
     <section class="philosophy-dark">
         <div class="container">
             <div class="row mb-5">
@@ -434,9 +393,7 @@
                     <p class="lead">Guided by integrity, driven by innovation.</p>
                 </div>
             </div>
-
             <div class="row g-5">
-                <!-- Vision -->
                 <div class="col-md-4 gs-fade-up">
                     <div class="philo-box">
                         <i class="ri-eye-line philo-icon"></i>
@@ -445,8 +402,6 @@
                             training. We aim to prepare masters and leaders in their respective fields.</p>
                     </div>
                 </div>
-
-                <!-- Mission -->
                 <div class="col-md-4 gs-fade-up" style="transition-delay: 0.2s">
                     <div class="philo-box">
                         <i class="ri-focus-3-line philo-icon"></i>
@@ -455,8 +410,6 @@
                             sustainable income generation. We tailor learning to individual student needs.</p>
                     </div>
                 </div>
-
-                <!-- Values -->
                 <div class="col-md-4">
                     <div class="philo-box">
                         <i class="ri-compass-3-line philo-icon"></i>
@@ -469,35 +422,72 @@
         </div>
     </section>
 
-    <!-- ==================== LEADERSHIP PROFILE ==================== -->
+    <!-- LEADERSHIP MESSAGE -->
     <section class="leadership-section">
         <div class="container">
-            <div class="leader-card">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 text-center text-lg-start">
-                        <!-- Ensure image path is correct -->
-                        <img src="/assets/vikas-nirmal-iti-principal.webp"
-                            onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.webp'"
-                            alt="Principal" class="leader-img">
-                        <h4 class="mb-0">Mr. Vikas Nirmal</h4>
-                        <small class="text-muted text-uppercase fw-bold">Principal</small>
-                    </div>
-                    <div class="col-lg-9 ps-lg-5 border-start-lg">
-                        <span class="text-orange fw-bold text-uppercase">Leadership Message</span>
-                        <div class="leader-quote">
-                            "We realize that we have to transform 10th class students into professionals within a period
-                            of 2 years. We want our students to be committed, dedicated to their goals along with
-                            integrity and concern for the environment and rural society they live in. Each student
-                            studying in KUMSS Private ITI will be a young star of our family."
+
+            <!-- Card wrapper -->
+            <div
+                style="background:#fff; border-radius:20px; box-shadow:0 8px 40px rgba(0,0,0,0.06); border-top:5px solid #ff6700; overflow:hidden;">
+
+                <!-- Profile Section -->
+                <div
+                    style="background:linear-gradient(135deg,#003366,#001a33); color:#fff; text-align:center; padding:44px 28px;">
+                    <img src="/assets/vikas-nirmal-iti-principal.webp"
+                        onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.webp'"
+                        alt="Mr. Vikas Nirmal - Principal"
+                        style="width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid rgba(255,255,255,0.2); box-shadow:0 8px 24px rgba(0,0,0,0.3); display:block; margin:0 auto 18px;">
+                    <h4
+                        style="color:#fff; font-size:1.3rem; font-weight:700; margin:0 0 4px; font-family:'Gantari',sans-serif;">
+                        Mr. Vikas Nirmal</h4>
+                    <div
+                        style="color:#ff6700; font-size:0.82rem; font-weight:600; text-transform:uppercase; letter-spacing:1.5px;">
+                        Principal</div>
+                    <div style="display:inline-flex; gap:10px; margin-top:20px;">
+                        <div
+                            style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); padding:8px 14px; border-radius:10px; text-align:center;">
+                            <i class="ri-award-line"
+                                style="font-size:1.1rem; color:#ff6700; display:block; margin-bottom:4px;"></i>
+                            <span
+                                style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.5px; opacity:0.8;">ISO
+                                Certified</span>
                         </div>
-                        <div class="signature">Vikas Nirmal</div>
+                        <div
+                            style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); padding:8px 14px; border-radius:10px; text-align:center;">
+                            <i class="ri-calendar-line"
+                                style="font-size:1.1rem; color:#ff6700; display:block; margin-bottom:4px;"></i>
+                            <span
+                                style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.5px; opacity:0.8;">Since
+                                2000</span>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Quote Section -->
+                <div style="padding:40px 28px 36px; position:relative;">
+                    <div
+                        style="color:#ff6700; font-weight:700; font-size:0.82rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:16px;">
+                        Leadership Message
+                    </div>
+                    <blockquote
+                        style="font-family:'Playfair Display',serif; font-size:1.15rem; font-style:italic; color:#003366; line-height:1.7; margin:0 0 24px; padding:0 0 0 22px; border-left:3px solid #ff6700;">
+                        We realize that we have to transform 10th class students into professionals within a period
+                        of 2 years. We want our students to be committed, dedicated to their goals along with
+                        integrity and concern for the environment and rural society they live in. Each student
+                        studying in KUMSS Private ITI will be a young star of our family.
+                    </blockquote>
+                    <div style="font-family:'Playfair Display',serif; font-size:1.5rem; color:#ff6700;">Vikas Nirmal
+                    </div>
+                    <div style="color:#999; font-size:0.85rem; font-weight:500;">Principal, KUMSS Private ITI Karhati
+                    </div>
+                </div>
+
             </div>
+
         </div>
     </section>
 
-    <!-- ==================== FOOTER (PRESERVED) ==================== -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -510,12 +500,10 @@
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
                         An educational society focused on overall development of students since 1951.
                     </p>
-
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="ri-facebook-fill"></i></a>
-
-                        <a href="#" class="social-link"><i class="ri-instagram-fill"></i></a>
-
+                        <a href="https://www.instagram.com/kumss.iti?igsh=ZXJ5dnRyMGcyM2Y4" class="social-link"><i
+                                class="ri-instagram-fill"></i></a>
                         <a href="#" class="social-link"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
@@ -552,13 +540,9 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Contact Info</h3>
                     <ul class="footer-links">
-                        <li>
-                            <i class="ri-phone-line"></i>
-                            <a href="tel:+919423694242">+91 94236 94242</a>
-                        </li>
-                        <li>
-                            <i class="ri-mail-line"></i>
-                            <a href="mailto:iti@kumss.org">iti@kumss.org</a>
+                        <li><i class="ri-phone-line"></i> <a href="tel:+919423694242">+91 94236 94242</a></li>
+                        <li><i class="ri-mail-line"></i> <a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                        <li style="color: #000;"><i class="ri-map-pin-line"></i>6CXH+VQ5, Malwadi, Maharashtra 412204
                         </li>
                     </ul>
                 </div>
@@ -577,30 +561,15 @@
         <i class="ri-arrow-up-double-fill"></i>
     </button>
 
-
-    <!-- JS Files -->
-    <!-- Assuming you have this file for your header functionality -->
     <script src="/assets/js/institute.js"></script>
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-
-
-
-
-
-            // Mobile Menu Logic (Fallback if institute.js doesn't load)
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
             if (mobileMenuBtn && navLinks) {
                 mobileMenuBtn.addEventListener('click', () => {
                     mobileMenuBtn.classList.toggle('active');
                     navLinks.classList.toggle('active');
-                    if (navLinks.classList.contains('active')) {
-
-                    } else {
-
-                    }
                 });
             }
         });

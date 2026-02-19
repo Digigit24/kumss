@@ -6,193 +6,816 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | Krushi Udyog Mul Shikshan Sansthan (KUMSS)</title>
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css">
-
- 
-
-
   <!-- CSS Files -->
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/assets/css/scrollCue.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
-
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/responsive.css">
-
   <link href="/assets/kumss_log.webp" type="image/x-icon" rel="icon">
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <style>
-    /* --- NEW PAGE HERO --- */
-    .page-hero {
-      background: linear-gradient(135deg, #0b2a5b 0%, #061938 100%);
-      padding: 80px 0;
-      text-align: center;
-      color: #fff;
+    :root {
+      --deep: #0a1628;
+      --navy: #131b56;
+      --indigo: #1e2a78;
+      --clay: #f37a20;
+      --clay-glow: rgba(243, 122, 32, 0.15);
+      --amber: #ffb347;
+      --ivory: #faf8f4;
+      --linen: #f2ede5;
+      --charcoal: #2a2a2a;
+      --muted: #8a8a8a;
+      --border: #e5dfd6;
+      --radius: 16px;
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .page-hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #ddd;
-      margin-bottom: 10px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .page-hero p {
-      font-size: 1.2rem;
-      color: #ddd;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* --- GENERAL SECTION STYLES --- */
-    .gallery-section {
-      padding: 60px 0;
-      background-color: #f9f9f9;
+    /* ══════════════════════════════════════
+       GALLERY HERO — CINEMATIC SPLIT
+    ══════════════════════════════════════ */
+    .gl-hero {
+      position: relative;
+      min-height: 480px;
+      background: var(--deep);
+      display: flex;
+      align-items: center;
       overflow: hidden;
-      /* For animations */
     }
 
-    .gallery-section:nth-child(even) {
-      background-color: #ffffff;
-    }
-
-    .section-head {
-      text-align: center;
-      margin-bottom: 50px;
-      position: relative;
-    }
-
-    .section-head h2 {
-      font-size: 2.5rem;
-      color: #0b2a5b;
-      font-weight: 800;
-      display: inline-block;
-      position: relative;
+    .gl-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(30, 42, 120, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 80% 30%, rgba(243, 122, 32, 0.12) 0%, transparent 60%);
       z-index: 1;
     }
 
-    .section-head h2::after {
-      content: '';
+    /* Animated grid lines */
+    .gl-hero-grid {
       position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: #f7941d;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.06;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+      background-size: 80px 80px;
+      animation: gridDrift 30s linear infinite;
+    }
+
+    @keyframes gridDrift {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(80px, 80px);
+      }
+    }
+
+    /* Floating orbs */
+    .gl-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+    }
+
+    .gl-orb-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--navy);
+      top: -200px;
+      left: -100px;
+      opacity: 0.8;
+      animation: orbPulse 12s ease-in-out infinite alternate;
+    }
+
+    .gl-orb-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--clay);
+      bottom: -100px;
+      right: 5%;
+      opacity: 0.15;
+      animation: orbPulse 15s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes orbPulse {
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+
+      50% {
+        transform: scale(1.15) translate(20px, -15px);
+      }
+
+      100% {
+        transform: scale(1) translate(0, 0);
+      }
+    }
+
+    .gl-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .gl-hero-text {
+      max-width: 600px;
+    }
+
+    .gl-hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: heroUp 0.7s 0.1s var(--ease) forwards;
+    }
+
+    .gl-hero-label::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--clay);
       border-radius: 2px;
     }
 
-    /* --- LAYOUT 1: STANDARD GRID (For Single/Few Images) --- */
-    .std-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      justify-content: center;
+    .gl-hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+      opacity: 0;
+      animation: heroUp 0.8s 0.25s var(--ease) forwards;
     }
 
-    /* --- LAYOUT 2: MASONRY (Pinterest Style for Photos) --- */
-    .masonry-grid {
-      column-count: 4;
+    .gl-hero-text h1 em {
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    .gl-hero-text p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.7;
+      max-width: 440px;
+      opacity: 0;
+      animation: heroUp 0.8s 0.4s var(--ease) forwards;
+    }
+
+    /* Right side — floating preview thumbnails */
+    .gl-hero-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      opacity: 0;
+      animation: heroUp 1s 0.5s var(--ease) forwards;
+    }
+
+    .gl-hero-thumb {
+      width: 130px;
+      height: 90px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.4s var(--ease);
+      position: relative;
+    }
+
+    .gl-hero-thumb:nth-child(2) {
+      transform: translateY(20px);
+    }
+
+    .gl-hero-thumb:nth-child(3) {
+      transform: translateY(-10px);
+    }
+
+    .gl-hero-thumb:nth-child(4) {
+      transform: translateY(10px);
+    }
+
+    .gl-hero-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s var(--ease);
+    }
+
+    .gl-hero-thumb:hover {
+      border-color: var(--clay);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(243, 122, 32, 0.25);
+    }
+
+    .gl-hero-thumb:hover img {
+      transform: scale(1.12);
+    }
+
+    @keyframes heroUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero counter strip */
+    .gl-hero-counter {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      background: rgba(10, 22, 40, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .gl-counter-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 40px;
+      display: flex;
+      gap: 48px;
+    }
+
+    .gl-counter-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .gl-counter-item .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--clay);
+    }
+
+    .gl-counter-item .lbl {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 991px) {
+      .gl-hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 100px 24px 70px;
+      }
+
+      .gl-hero-mosaic {
+        display: none;
+      }
+
+      .gl-counter-inner {
+        gap: 32px;
+        padding: 16px 24px;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .gl-hero-inner {
+        padding: 90px 16px 60px;
+      }
+
+      .gl-counter-inner {
+        gap: 20px;
+      }
+
+      .gl-counter-item .num {
+        font-size: 1.3rem;
+      }
+    }
+
+    /* ══════════════════════════════════════
+       FILTER TABS
+    ══════════════════════════════════════ */
+    .gl-filter-bar {
+      background: var(--ivory);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s var(--ease);
+    }
+
+    .gl-filter-bar.scrolled {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .gl-filter-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .gl-filter-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .gl-tab {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      padding: 18px 22px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      white-space: nowrap;
+      position: relative;
+      transition: color 0.3s var(--ease);
+      letter-spacing: 0.3px;
+    }
+
+    .gl-tab::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: var(--clay);
+      border-radius: 3px 3px 0 0;
+      transition: width 0.35s var(--bounce);
+    }
+
+    .gl-tab:hover {
+      color: var(--charcoal);
+    }
+
+    .gl-tab.active {
+      color: var(--navy);
+    }
+
+    .gl-tab.active::after {
+      width: 60%;
+    }
+
+    .gl-tab-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 6px;
+      border-radius: 10px;
+      background: var(--linen);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-left: 6px;
+      transition: all 0.3s var(--ease);
+    }
+
+    .gl-tab.active .gl-tab-count {
+      background: var(--clay-glow);
+      color: var(--clay);
+    }
+
+    @media (max-width: 576px) {
+      .gl-filter-inner {
+        padding: 0 16px;
+      }
+
+      .gl-tab {
+        padding: 14px 16px;
+        font-size: 0.78rem;
+      }
+    }
+
+    /* ══════════════════════════════════════
+       GALLERY SECTIONS
+    ══════════════════════════════════════ */
+    .gl-section {
+      padding: 72px 0;
+      background: var(--ivory);
+    }
+
+    .gl-section:nth-child(even) {
+      background: #fff;
+    }
+
+    .gl-section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* Section Header */
+    .gl-sec-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 44px;
+      gap: 20px;
+    }
+
+    .gl-sec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      position: relative;
+    }
+
+    .gl-sec-title::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--clay);
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+
+    .gl-sec-desc {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 8px;
+      max-width: 400px;
+    }
+
+    .gl-sec-badge {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--clay);
+      background: var(--clay-glow);
+      padding: 8px 18px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ══════════ MASONRY GRID ══════════ */
+    .gl-masonry {
+      column-count: 3;
       column-gap: 20px;
     }
 
-    /* --- GALLERY ITEM CARD --- */
-    .gallery-item {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      /* For Masonry spacing */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-      transition: all 0.4s ease;
-      position: relative;
+    /* ══════════ STANDARD GRID ══════════ */
+    .gl-std-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    /* ══════════ GALLERY CARD ══════════ */
+    .gl-card {
       break-inside: avoid;
-      /* Prevents masonry breaking images */
+      margin-bottom: 20px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
     }
 
-    .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    .gl-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
     }
 
-    .gallery-item img {
+    .gl-card img {
       width: 100%;
       height: auto;
       display: block;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s var(--ease);
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.05);
+    .gl-card:hover img {
+      transform: scale(1.06);
     }
 
-    /* Overlay Effect */
-    .gallery-item::before {
-      content: '';
+    /* Hover overlay */
+    .gl-card-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(11, 42, 91, 0.4);
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(10, 22, 40, 0.75) 100%);
       opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 1;
-    }
-
-    .gallery-item::after {
-      content: '\f0d1';
-      /* RemixIcon Search Icon */
-      font-family: "remixicon";
-      font-weight: 400;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      color: #fff;
-      font-size: 2rem;
+      transition: opacity 0.4s var(--ease);
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
       z-index: 2;
-      transition: transform 0.3s ease;
     }
 
-    .gallery-item:hover::before {
+    .gl-card:hover .gl-card-overlay {
       opacity: 1;
     }
 
-    .gallery-item:hover::after {
-      transform: translate(-50%, -50%) scale(1);
+    .gl-card-overlay-content {
+      transform: translateY(12px);
+      transition: transform 0.4s var(--ease);
     }
 
+    .gl-card:hover .gl-card-overlay-content {
+      transform: translateY(0);
+    }
 
-    /* --- RESPONSIVE ADJUSTMENTS --- */
+    .gl-card-overlay-content span {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--clay);
+    }
+
+    /* Expand icon */
+    .gl-card-expand {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.1rem;
+      z-index: 3;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: all 0.35s var(--bounce);
+    }
+
+    .gl-card:hover .gl-card-expand {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .gl-card-expand:hover {
+      background: var(--clay);
+    }
+
+    /* Scroll-in animation */
+    .gl-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+
+    .gl-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger children */
+    .gl-card.gl-reveal:nth-child(1) {
+      transition-delay: 0s;
+    }
+
+    .gl-card.gl-reveal:nth-child(2) {
+      transition-delay: 0.08s;
+    }
+
+    .gl-card.gl-reveal:nth-child(3) {
+      transition-delay: 0.16s;
+    }
+
+    .gl-card.gl-reveal:nth-child(4) {
+      transition-delay: 0.24s;
+    }
+
+    .gl-card.gl-reveal:nth-child(5) {
+      transition-delay: 0.32s;
+    }
+
+    .gl-card.gl-reveal:nth-child(6) {
+      transition-delay: 0.4s;
+    }
+
+    .gl-card.gl-reveal:nth-child(7) {
+      transition-delay: 0.48s;
+    }
+
+    /* ══════════ LIGHTBOX ══════════ */
+    .gl-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s var(--ease);
+    }
+
+    .gl-lightbox.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .gl-lightbox-img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 16px;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+      transform: scale(0.9);
+      transition: transform 0.4s var(--bounce);
+      object-fit: contain;
+    }
+
+    .gl-lightbox.open .gl-lightbox-img {
+      transform: scale(1);
+    }
+
+    .gl-lb-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+    }
+
+    .gl-lb-close:hover {
+      background: var(--clay);
+      border-color: var(--clay);
+      transform: rotate(90deg);
+    }
+
+    .gl-lb-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+    }
+
+    .gl-lb-nav:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .gl-lb-prev {
+      left: 24px;
+    }
+
+    .gl-lb-next {
+      right: 24px;
+    }
+
+    .gl-lb-caption {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ══════════ RESPONSIVE ══════════ */
     @media (max-width: 991px) {
-      .masonry-grid {
-        column-count: 3;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .masonry-grid {
+      .gl-masonry {
         column-count: 2;
       }
 
-      .page-hero h1 {
-        font-size: 2.2rem;
+      .gl-section-inner {
+        padding: 0 24px;
+      }
+
+      .gl-sec-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .gl-section {
+        padding: 56px 0;
       }
     }
 
-    @media (max-width: 480px) {
-      .masonry-grid {
+    @media (max-width: 576px) {
+      .gl-masonry {
         column-count: 1;
       }
+
+      .gl-std-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gl-section-inner {
+        padding: 0 16px;
+      }
+
+      .gl-sec-title {
+        font-size: 1.8rem;
+      }
+
+      .gl-section {
+        padding: 44px 0;
+      }
+
+      .gl-lb-prev {
+        left: 12px;
+      }
+
+      .gl-lb-next {
+        right: 12px;
+      }
+
+      .gl-lb-nav {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+      }
     }
 
-    /* ===========================
-       MEGA MENU FIXES
-       =========================== */
+    /* ══════════ NAVBAR FIX ══════════ */
     #navbar {
       position: relative;
       z-index: 1001;
@@ -213,14 +836,12 @@
             <ul class="list-unstyled ps-0 mb-0">
               <li class="d-inline-block">
                 <a class="text-decoration-none d-flex align-items-center" href="tel:9421394242">
-                  <i class="fi fi-sr-phone-call"></i>
-                  +91 9421394242
+                  <i class="ri-phone-fill"></i> +91 9421394242
                 </a>
               </li>
               <li class="d-inline-block">
                 <a class="text-decoration-none d-flex align-items-center" href="mailto:kumss@kumss.org">
-                  <i class="fi fi-sr-envelope"></i>
-                  kumss@kumss.org
+                  <i class="ri-mail-fill"></i> kumss@kumss.org
                 </a>
               </li>
             </ul>
@@ -237,7 +858,6 @@
       <a class="navbar-brand" href="index.html">
         <img class="black-logo" src="/assets/kumss_log.webp" alt="KUMSS logo">
       </a>
-
       <a class="navbar-toggler text-decoration-none" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
         aria-controls="navbarOffcanvas">
         <span class="burger-menu">
@@ -246,110 +866,64 @@
           <span class="bottom-bar"></span>
         </span>
       </a>
-
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a href="/index.html" class="nav-link">Home</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="/about.html" class="nav-link">About</a>
-          </li>
-
+          <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
           <li class="nav-item dropdown mega-menu-item">
             <a href="/all-institutes.html" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Our Educational Institutes
-            </a>
+              aria-expanded="false">Our Educational Institutes</a>
             <div class="dropdown-menu mega-menu">
               <div class="mega-menu-container">
                 <div class="mega-menu-grid">
-                  <!-- Institute 1 -->
                   <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute.webp" alt="VVK" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute.webp" alt="VVK" loading="lazy"></div>
                     <div class="m-content">
-                      <h5>Vasatigruh Vidyalay Karhati</h5>
-                      <span>Est. 1982 | Marathi & Semi-English</span>
+                      <h5>Vasatigruh Vidyalay Karhati</h5><span>Est. 1982 | Marathi & Semi-English</span>
                     </div>
                   </a>
-
-                  <!-- Institute 2 -->
                   <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute2.webp" alt="NESD" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute2.webp" alt="NESD" loading="lazy"></div>
                     <div class="m-content">
-                      <h5>New English School, Dhakale</h5>
-                      <span>Est. 2000 | English Medium</span>
+                      <h5>New English School, Dhakale</h5><span>Est. 2000 | English Medium</span>
                     </div>
                   </a>
-
-                  <!-- Institute 3 -->
                   <a href="./primary-school-tembha/primary-school-tembha.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute3.webp" alt="PST" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute3.webp" alt="PST" loading="lazy"></div>
                     <div class="m-content">
-                      <h5>Primary School, Tembha</h5>
-                      <span>Est. 2000 | English Medium</span>
+                      <h5>Primary School, Tembha</h5><span>Est. 2000 | English Medium</span>
                     </div>
                   </a>
-
-                  <!-- Institute 4 -->
                   <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute4.webp" alt="ITI" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute4.webp" alt="ITI" loading="lazy"></div>
                     <div class="m-content">
-                      <h5>KUMSS Private I.T.I Karhati</h5>
-                      <span>Est. 2021 | Vocational Training</span>
+                      <h5>KUMSS Private I.T.I Karhati</h5><span>Est. 2021 | Vocational Training</span>
                     </div>
                   </a>
-
-                  <!-- Institute 5 -->
                   <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute5.webp" alt="Gurukul" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute5.webp" alt="Gurukul" loading="lazy"></div>
                     <div class="m-content">
-                      <h5>Gurukul English Medium School</h5>
-                      <span>Est. 2021 | Modern Schooling</span>
+                      <h5>Gurukul English Medium School</h5><span>Est. 2021 | Modern Schooling</span>
                     </div>
                   </a>
-
-                  <!-- Institute 6 -->
                   <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
                     class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute7.webp" alt="SPKM" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute7.webp" alt="SPKM" loading="lazy"></div>
                     <div class="m-content">
-                      <h5>Shardabai Pawar Kala Mahavidyalaya</h5>
-                      <span>Est. 1993 | Arts College</span>
+                      <h5>Shardabai Pawar Kala Mahavidyalaya</h5><span>Est. 1993 | Arts College</span>
                     </div>
                   </a>
                 </div>
               </div>
             </div>
           </li>
-
           <li class="nav-item"><a href="/gallery.html" class="nav-link active">Gallery</a></li>
           <li class="nav-item"><a href="/careers.html" class="nav-link">Careers</a></li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact <span>Us</span></a>
-          </li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact <span>Us</span></a></li>
         </ul>
-
         <div class="others-option">
           <div class="d-flex align-items-center">
-            <div class="option-item">
-              <!--<a class="text-decoration-none default-btn" href="#">
-                Donate Now <i class="fi fi-sr-hand-holding-heart"></i>
-              </a>-->
-            </div>
+            <div class="option-item"></div>
           </div>
         </div>
       </div>
@@ -359,164 +933,258 @@
   <!-- Responsive Navbar -->
   <div class="responsive-navbar offcanvas offcanvas-end border-0" tabindex="-1" id="navbarOffcanvas">
     <div class="offcanvas-header">
-      <a href="index.html" class="logo d-inline-block">
-        <img src="/assets/kumss_log.webp" alt="logo">
-      </a>
+      <a href="index.html" class="logo d-inline-block"><img src="/assets/kumss_log.webp" alt="logo"></a>
       <button type="button" class="close-btn bg-transparent position-relative lh-1 p-0 border-0"
-        data-bs-dismiss="offcanvas" aria-label="Close">
-        <i class="ri-close-fill"></i>
-      </button>
+        data-bs-dismiss="offcanvas" aria-label="Close"><i class="ri-close-fill"></i></button>
     </div>
-
     <div class="offcanvas-body">
       <ul class="responsive-menu">
-        <li class="responsive-menu-list without-icon">
-          <a href="/index.html" class="nav-link">Home</a>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="/about.html" class="nav-link">About</a>
-        </li>
-
+        <li class="responsive-menu-list without-icon"><a href="/index.html" class="nav-link">Home</a></li>
+        <li class="responsive-menu-list without-icon"><a href="/about.html">About</a></li>
         <li class="responsive-menu-list">
           <a href="javascript:void(0);">Our Educational Institutes</a>
           <ul class="responsive-menu-items">
-            <li class="nav-item"><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html"
-                class="nav-link">Vasatigruh Vidyalay Karhati</a></li>
-            <li class="nav-item"><a href="/new-english-school-dhakale/new-english-school-dhakale.html"
-                class="nav-link">New English School, Dhakale</a></li>
-            <li class="nav-item"><a href="/primary-school-tembha/primary-school-tembha.html" class="nav-link">Primary
-                School, Tembha</a></li>
-            <li class="nav-item"><a href="/kumss-private-iti-Karhati/kumss-private-iti-Karhati.html"
-                class="nav-link">KUMSS Private I.T.I Karhati</a></li>
-            <li class="nav-item"><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html"
-                class="nav-link">Gurukul English Medium School</a></li>
-            <li class="nav-item"><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
-                class="nav-link">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+            </li>
+            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
+            </li>
+            <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-Karhati.html">KUMSS Private I.T.I Karhati</a></li>
+            <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium
+                School</a></li>
+            <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar
+                Kala Mahavidhyalaya</a></li>
           </ul>
         </li>
-
-        <li class="responsive-menu-list without-icon">
-          <a href="/gallery.html" class="nav-link active">Gallery</a>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="/careers.html" class="nav-link">Careers</a>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="contact.html" class="nav-link">Contact <span>Us</span></a>
-        </li>
+        <li class="responsive-menu-list without-icon"><a href="/gallery.html" class="nav-link active">Gallery</a></li>
+        <li class="responsive-menu-list without-icon"><a href="/careers.html" class="nav-link">Careers</a></li>
+        <li class="responsive-menu-list without-icon"><a href="contact.html" class="nav-link">Contact Us</a></li>
       </ul>
-
-      <div class="others-option d-md-flex align-items-center">
-        <div class="option-item">
-          <!--<a class="text-decoration-none default-btn" href="#">
-            Donate Now <i class="fi fi-sr-hand-holding-heart"></i>
-          </a>-->
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- NEW HERO BANNER -->
-  <div class="page-hero">
-    <div class="container">
-      <h1>Gallery & Archives</h1>
-      <p>Glimpses of events, news, and infrastructure at KUMSS</p>
     </div>
   </div>
 
 
-  <!-- SECTION 1: PRIVATE ITI -->
-  <section class="gallery-section" id="private-iti-karhati">
-    <div class="container">
-      <div class="section-head">
-        <h2>Private ITI Karhati</h2>
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="gl-hero">
+    <div class="gl-hero-grid"></div>
+    <div class="gl-orb gl-orb-1"></div>
+    <div class="gl-orb gl-orb-2"></div>
+
+    <div class="gl-hero-inner">
+      <div class="gl-hero-text">
+        <div class="gl-hero-label">Visual Archives</div>
+        <h1>Moments That<br>Shaped <em>Futures</em></h1>
+        <p>A curated look at the events, milestones, and everyday life across all six KUMSS institutes since 1951.</p>
       </div>
-      <!-- Standard Grid for single feature images -->
-      <div class="std-grid">
-        <div class="gallery-item">
-          <img src="/assets/institute5.webp" alt="ITI Image 1" loading="lazy">
+      <div class="gl-hero-mosaic">
+        <div class="gl-hero-thumb"><img src="/assets/l2.webp" alt="Preview 1" loading="lazy"></div>
+        <div class="gl-hero-thumb"><img src="/assets/news-one.webp" alt="Preview 2" loading="lazy"></div>
+        <div class="gl-hero-thumb"><img src="/assets/l5.webp" alt="Preview 3" loading="lazy"></div>
+        <div class="gl-hero-thumb"><img src="/assets/news-three.webp" alt="Preview 4" loading="lazy"></div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════ FILTER TABS ═══════════ -->
+  <div class="gl-filter-bar" id="filterBar">
+    <div class="gl-filter-inner">
+      <button class="gl-tab active" data-target="all">All <span class="gl-tab-count">16</span></button>
+      <button class="gl-tab" data-target="private-iti-karhati">Private ITI <span class="gl-tab-count">1</span></button>
+      <button class="gl-tab" data-target="news">News & Coverage <span class="gl-tab-count">7</span></button>
+      <button class="gl-tab" data-target="lalitosh2024">ललितोत्सव 2024 <span class="gl-tab-count">7</span></button>
+      <button class="gl-tab" data-target="recruitments">Recruitments <span class="gl-tab-count">1</span></button>
+    </div>
+  </div>
+
+
+  <!-- ═══════════ SECTION 1: PRIVATE ITI ═══════════ -->
+  <section class="gl-section" id="private-iti-karhati" data-section="private-iti-karhati">
+    <div class="gl-section-inner">
+      <div class="gl-sec-head">
+        <div>
+          <h2 class="gl-sec-title">Private ITI Karhati</h2>
+          <p class="gl-sec-desc">Vocational training infrastructure providing hands-on skill development.</p>
+        </div>
+        <span class="gl-sec-badge"><i class="ri-building-2-line"></i>&ensp;Institute</span>
+      </div>
+      <div class="gl-std-grid">
+        <div class="gl-card gl-reveal" data-category="private-iti-karhati" onclick="openLightbox(this)">
+          <img src="/assets/institute5.webp" alt="Private ITI Karhati" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>Private ITI Karhati</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: NEWS (Masonry Layout) -->
-  <section class="gallery-section" id="news">
-    <div class="container">
-      <div class="section-head">
-        <h2>News & Coverage</h2>
+
+  <!-- ═══════════ SECTION 2: NEWS ═══════════ -->
+  <section class="gl-section" id="news" data-section="news">
+    <div class="gl-section-inner">
+      <div class="gl-sec-head">
+        <div>
+          <h2 class="gl-sec-title">News & Coverage</h2>
+          <p class="gl-sec-desc">KUMSS in the media — press clippings and featured articles.</p>
+        </div>
+        <span class="gl-sec-badge"><i class="ri-newspaper-line"></i>&ensp;7 Photos</span>
       </div>
-      <div class="masonry-grid">
-        <div class="gallery-item">
-          <img src="/assets/news-one.webp" alt="News Image 1" loading="lazy">
+      <div class="gl-masonry">
+        <div class="gl-card gl-reveal" data-category="news" onclick="openLightbox(this)">
+          <img src="/assets/news-one.webp" alt="News 1" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>News Coverage</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/news-two.webp" alt="News Image 2" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="news" onclick="openLightbox(this)">
+          <img src="/assets/news-two.webp" alt="News 2" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>News Coverage</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/news-three.webp" alt="News Image 3" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="news" onclick="openLightbox(this)">
+          <img src="/assets/news-three.webp" alt="News 3" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>News Coverage</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/news-four.webp" alt="News Image 4" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="news" onclick="openLightbox(this)">
+          <img src="/assets/news-four.webp" alt="News 4" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>News Coverage</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/news-five.webp" alt="News Image 5" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="news" onclick="openLightbox(this)">
+          <img src="/assets/news-five.webp" alt="News 5" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>News Coverage</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/news-six.webp" alt="News Image 6" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="news" onclick="openLightbox(this)">
+          <img src="/assets/news-six.webp" alt="News 6" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>News Coverage</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/news-seven.webp" alt="News Image 7" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="news" onclick="openLightbox(this)">
+          <img src="/assets/news-seven.webp" alt="News 7" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>News Coverage</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: LALITOSH (Masonry Layout) -->
-  <section class="gallery-section" id="lalitosh2024">
-    <div class="container">
-      <div class="section-head">
-        <h2>ललितोत्सव 2024</h2>
+
+  <!-- ═══════════ SECTION 3: LALITOSH 2024 ═══════════ -->
+  <section class="gl-section" id="lalitosh2024" data-section="lalitosh2024">
+    <div class="gl-section-inner">
+      <div class="gl-sec-head">
+        <div>
+          <h2 class="gl-sec-title">ललितोत्सव 2024</h2>
+          <p class="gl-sec-desc">Annual cultural celebration showcasing student talent and creativity.</p>
+        </div>
+        <span class="gl-sec-badge"><i class="ri-palette-line"></i>&ensp;7 Photos</span>
       </div>
-      <div class="masonry-grid">
-        <div class="gallery-item">
-          <img src="/assets/l2.webp" alt="Lalitosh 2024 Image 1" loading="lazy">
+      <div class="gl-masonry">
+        <div class="gl-card gl-reveal" data-category="lalitosh2024" onclick="openLightbox(this)">
+          <img src="/assets/l2.webp" alt="Lalitosh 2024 - 1" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>ललितोत्सव 2024</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/l3.webp" alt="Lalitosh 2024 Image 2" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="lalitosh2024" onclick="openLightbox(this)">
+          <img src="/assets/l3.webp" alt="Lalitosh 2024 - 2" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>ललितोत्सव 2024</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/l4.webp" alt="Lalitosh 2024 Image 3" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="lalitosh2024" onclick="openLightbox(this)">
+          <img src="/assets/l4.webp" alt="Lalitosh 2024 - 3" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>ललितोत्सव 2024</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/l5.webp" alt="Lalitosh 2024 Image 4" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="lalitosh2024" onclick="openLightbox(this)">
+          <img src="/assets/l5.webp" alt="Lalitosh 2024 - 4" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>ललितोत्सव 2024</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/l6.webp" alt="Lalitosh 2024 Image 5" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="lalitosh2024" onclick="openLightbox(this)">
+          <img src="/assets/l6.webp" alt="Lalitosh 2024 - 5" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>ललितोत्सव 2024</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/l7.webp" alt="Lalitosh 2024 Image 6" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="lalitosh2024" onclick="openLightbox(this)">
+          <img src="/assets/l7.webp" alt="Lalitosh 2024 - 6" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>ललितोत्सव 2024</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/l1.webp" alt="Lalitosh 2024 Image 7" loading="lazy">
+        <div class="gl-card gl-reveal" data-category="lalitosh2024" onclick="openLightbox(this)">
+          <img src="/assets/l1.webp" alt="Lalitosh 2024 - 7" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>ललितोत्सव 2024</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: RECRUITMENTS -->
-  <section class="gallery-section" id="recruitments">
-    <div class="container">
-      <div class="section-head">
-        <h2>Recruitments</h2>
+
+  <!-- ═══════════ SECTION 4: RECRUITMENTS ═══════════ -->
+  <section class="gl-section" id="recruitments" data-section="recruitments">
+    <div class="gl-section-inner">
+      <div class="gl-sec-head">
+        <div>
+          <h2 class="gl-sec-title">Recruitments</h2>
+          <p class="gl-sec-desc">Open positions and campus recruitment drives.</p>
+        </div>
+        <span class="gl-sec-badge"><i class="ri-briefcase-line"></i>&ensp;Careers</span>
       </div>
-      <div class="std-grid">
-        <div class="gallery-item">
-          <img src="/assets/r1.webp" alt="Recruitment Image 1" loading="lazy">
+      <div class="gl-std-grid">
+        <div class="gl-card gl-reveal" data-category="recruitments" onclick="openLightbox(this)">
+          <img src="/assets/r1.webp" alt="Recruitment" loading="lazy">
+          <div class="gl-card-overlay">
+            <div class="gl-card-overlay-content"><span>Recruitment Drive</span></div>
+          </div>
+          <div class="gl-card-expand"><i class="ri-fullscreen-line"></i></div>
         </div>
       </div>
     </div>
   </section>
+
+
+  <!-- ═══════════ LIGHTBOX ═══════════ -->
+  <div class="gl-lightbox" id="lightbox">
+    <button class="gl-lb-close" onclick="closeLightbox()" aria-label="Close"><i class="ri-close-line"></i></button>
+    <button class="gl-lb-nav gl-lb-prev" onclick="navLightbox(-1)" aria-label="Previous"><i
+        class="ri-arrow-left-s-line"></i></button>
+    <img class="gl-lightbox-img" id="lbImg" src="" alt="Gallery preview">
+    <button class="gl-lb-nav gl-lb-next" onclick="navLightbox(1)" aria-label="Next"><i
+        class="ri-arrow-right-s-line"></i></button>
+    <div class="gl-lb-caption" id="lbCaption"></div>
+  </div>
 
 
   <!-- Footer -->
@@ -526,25 +1194,16 @@
         <div class="footer-col footer-brand">
           <a href="index.html" class="footer-logo">
             <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
-            <div class="footer-logo-text">
-              <span class="footer-since">KUMSS SINCE 1951</span>
-            </div>
+            <div class="footer-logo-text"><span class="footer-since">KUMSS SINCE 1951</span></div>
           </a>
-
-          <p class="footer-desc">
-            An educational society focused on overall development of students since 1951.
-          </p>
-
+          <p class="footer-desc">An educational society focused on overall development of students since 1951.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-
             <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
                 class="ri-instagram-fill"></i></a>
-
             <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           </div>
         </div>
-
         <div class="footer-col">
           <h3 class="footer-title">Quick Links</h3>
           <ul class="footer-links">
@@ -555,7 +1214,6 @@
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h3 class="footer-title">Our Institutes</h3>
           <ul class="footer-links">
@@ -571,7 +1229,6 @@
                 Kala Mahavidyalaya</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h3 class="footer-title">Contact Info</h3>
           <ul class="footer-links">
@@ -582,28 +1239,136 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+        <p class="footer-copy">&copy; 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
         <p class="footer-note">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
       </div>
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <button type="button" id="back-to-top">
-    <i class="ri-arrow-up-double-fill"></i>
-  </button>
+  <button type="button" id="back-to-top"><i class="ri-arrow-up-double-fill"></i></button>
 
   <!-- JS Files -->
   <script src="/assets/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/js/swiper-bundle.min.js"></script>
-
   <script src="/assets/js/custom.js"></script>
 
-  
+  <script>
+    (function () {
+      /* ═══════ SCROLL REVEAL ═══════ */
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
+      document.querySelectorAll('.gl-reveal').forEach(el => revealObserver.observe(el));
 
+      /* ═══════ FILTER TABS ═══════ */
+      const tabs = document.querySelectorAll('.gl-tab');
+      const sections = document.querySelectorAll('.gl-section');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.target;
+
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          if (target === 'all') {
+            sections.forEach(s => {
+              s.style.display = '';
+              // Re-trigger reveals for cards that are already visible
+              s.querySelectorAll('.gl-reveal:not(.visible)').forEach(el => revealObserver.observe(el));
+            });
+          } else {
+            sections.forEach(s => {
+              if (s.dataset.section === target) {
+                s.style.display = '';
+                s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                s.querySelectorAll('.gl-reveal:not(.visible)').forEach(el => revealObserver.observe(el));
+              } else {
+                s.style.display = 'none';
+              }
+            });
+          }
+        });
+      });
+
+      /* ═══════ STICKY FILTER BAR SHADOW ═══════ */
+      const filterBar = document.getElementById('filterBar');
+      const barObserver = new IntersectionObserver(([e]) => {
+        filterBar.classList.toggle('scrolled', e.intersectionRatio < 1);
+      }, { threshold: [1], rootMargin: '-1px 0px 0px 0px' });
+      barObserver.observe(filterBar);
+
+      /* ═══════ LIGHTBOX ═══════ */
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbCaption = document.getElementById('lbCaption');
+      let currentImages = [];
+      let currentIndex = 0;
+
+      function collectVisibleImages() {
+        const imgs = [];
+        document.querySelectorAll('.gl-section').forEach(sec => {
+          if (sec.style.display === 'none') return;
+          sec.querySelectorAll('.gl-card img').forEach(img => {
+            imgs.push({ src: img.src, alt: img.alt });
+          });
+        });
+        return imgs;
+      }
+
+      window.openLightbox = function (card) {
+        const img = card.querySelector('img');
+        currentImages = collectVisibleImages();
+        currentIndex = currentImages.findIndex(i => i.src === img.src);
+        if (currentIndex === -1) currentIndex = 0;
+
+        lbImg.src = currentImages[currentIndex].src;
+        lbCaption.textContent = currentImages[currentIndex].alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      };
+
+      window.closeLightbox = function () {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+      };
+
+      window.navLightbox = function (dir) {
+        currentIndex = (currentIndex + dir + currentImages.length) % currentImages.length;
+        lbImg.style.opacity = '0';
+        lbImg.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          lbImg.src = currentImages[currentIndex].src;
+          lbCaption.textContent = currentImages[currentIndex].alt;
+          lbImg.style.opacity = '1';
+          lbImg.style.transform = 'scale(1)';
+        }, 150);
+      };
+
+      // Close on background click
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      // Keyboard nav
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navLightbox(-1);
+        if (e.key === 'ArrowRight') navLightbox(1);
+      });
+
+      // Smooth transition for lightbox image
+      lbImg.style.transition = 'opacity 0.2s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1)';
+    })();
+  </script>
 
 </body>
 

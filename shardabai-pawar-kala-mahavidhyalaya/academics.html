@@ -16,14 +16,33 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="/assets/css/institute.css">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
 
     <style>
-        /* =========================================
-       GLOBAL & UTILITIES
-    ========================================= */
+        /* ═══════════ DESIGN SYSTEM ═══════════ */
+        :root {
+            --ac-blue: #233f92;
+            --ac-blue-dark: #1a2f6e;
+            --ac-blue-light: #eef2ff;
+            --ac-orange: #ff7104;
+            --ac-orange-glow: rgba(255, 113, 4, 0.08);
+            --ac-green: #10b981;
+            --ac-green-glow: rgba(16, 185, 129, 0.07);
+            --ac-purple: #7c3aed;
+            --ac-purple-glow: rgba(124, 58, 237, 0.06);
+            --ac-text: #1e293b;
+            --ac-muted: #64748b;
+            --ac-border: #e2e8f0;
+            --ac-bg: #ffffff;
+            --ac-bg-alt: #f8fafc;
+            --ac-radius: 20px;
+            --ac-radius-sm: 14px;
+            --ac-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ac-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ac-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.07);
+            --ac-shadow-lg: 0 24px 56px -12px rgba(0, 0, 0, 0.12);
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -34,189 +53,142 @@
             padding: 0;
             font-family: "Poppins", sans-serif;
             overflow-x: hidden;
+            color: var(--ac-text);
+            background: var(--ac-bg);
         }
 
-        :root {
-            --ac-blue: #233f92;
-            --ac-orange: #ff7104;
-            --ac-soft-bg: #f8fbff;
-            --ac-text: #334155;
-            --ac-card-bg: #ffffff;
-            --ac-radius: 24px;
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Gantari", sans-serif;
+            margin: 0;
         }
 
-        /* Animation Classes (Scroll Trigger) */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(40px);
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .scale-in {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.8s ease;
-        }
-
-        .active {
-            opacity: 1 !important;
-            transform: translate(0) scale(1) !important;
-        }
-
-        .delay-100 {
-            transition-delay: 0.1s;
-        }
-
-        .delay-200 {
-            transition-delay: 0.2s;
-        }
-
-        .delay-300 {
-            transition-delay: 0.3s;
-        }
-
-        /* Layout Wrapper */
         .ac-container {
-            max-width: 1150px;
+            max-width: 1160px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* =========================================
-       HERO SECTION
-    ========================================= */
+        /* Scroll reveal */
+        .sr {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s var(--ac-ease), transform 0.7s var(--ac-ease);
+        }
+
+        .sr.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══════════ HERO ═══════════ */
         .ac-hero {
             position: relative;
-            padding: 140px 0 80px;
-            /* Top padding accounts for fixed header */
-            background: radial-gradient(circle at 10% 20%, rgba(255, 151, 4, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(35, 63, 146, 0.08) 0%, transparent 40%),
-                #ffffff;
+            padding: 160px 0 100px;
             text-align: center;
             overflow: hidden;
+            background: var(--ac-bg);
+        }
+
+        /* Gradient orbs */
+        .ac-hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 113, 4, 0.07) 0%, transparent 70%);
+            top: -200px;
+            left: -150px;
+            pointer-events: none;
+            animation: orbFloat 12s ease-in-out infinite;
+        }
+
+        .ac-hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(35, 63, 146, 0.06) 0%, transparent 70%);
+            bottom: -180px;
+            right: -120px;
+            pointer-events: none;
+            animation: orbFloat 14s ease-in-out infinite reverse;
+        }
+
+        @keyframes orbFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(30px, -20px);
+            }
+        }
+
+        /* Grid pattern */
+        .ac-hero-grid {
+            position: absolute;
+            inset: 0;
+            opacity: 0.025;
+            background-image:
+                linear-gradient(var(--ac-blue) 1px, transparent 1px),
+                linear-gradient(90deg, var(--ac-blue) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+        }
+
+        .ac-hero-inner {
+            position: relative;
+            z-index: 2;
         }
 
         .ac-hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 16px;
-            background: #eef2ff;
+            padding: 8px 20px;
+            background: var(--ac-blue-light);
             color: var(--ac-blue);
-            border-radius: 50px;
+            border-radius: 100px;
             font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            border: 1px solid rgba(35, 63, 146, 0.1);
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid rgba(35, 63, 146, 0.08);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.7s 0.1s var(--ac-ease) forwards;
         }
 
         .ac-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            font-weight: 800;
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 900;
             color: var(--ac-blue);
-            margin: 0 0 16px;
-            line-height: 1.1;
+            line-height: 1.08;
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.25s var(--ac-ease) forwards;
         }
 
-        .ac-hero p {
-            font-size: 1.15rem;
-            color: var(--ac-text);
-            max-width: 700px;
-            margin: 0 auto 30px;
-            line-height: 1.7;
+        .ac-hero h1 span {
+            color: var(--ac-orange);
         }
 
-        h2 {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-
-        h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .section {
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .badge {
-            display: inline-block;
-            background: #111;
-            color: #fff;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-size: 12px;
-            margin-bottom: 10px;
-        }
-
-        .muted {
-            color: #666;
-            font-size: 14px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 12px;
-        }
-
-        th,
-        td {
-            border: 1px solid #e5e7eb;
-            padding: 10px 12px;
-            text-align: left;
-            vertical-align: top;
-        }
-
-        th {
-            background: #f3f4f6;
-            font-weight: 600;
-        }
-
-        ul {
-            padding-left: 20px;
-            margin: 10px 0 0;
-        }
-
-        li {
-            margin-bottom: 6px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            margin-top: 12px;
-        }
-
-        .stat-card {
-            background: #f9fafb;
-            border-radius: 10px;
-            padding: 16px;
-            border: 1px solid #e5e7eb;
-        }
-
-        .stat-card strong {
-            font-size: 22px;
-            display: block;
-            margin-bottom: 4px;
+        .ac-hero-desc {
+            font-size: 1.08rem;
+            color: var(--ac-muted);
+            max-width: 600px;
+            margin: 0 auto 36px;
+            line-height: 1.75;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.4s var(--ac-ease) forwards;
         }
 
         .ac-hero-actions {
@@ -224,117 +196,841 @@
             gap: 14px;
             justify-content: center;
             flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.55s var(--ac-ease) forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 20px;
-            border-radius: 999px;
+            padding: 14px 28px;
+            border-radius: var(--ac-radius-sm);
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
+            font-size: 0.92rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.35s var(--ac-ease);
+            border: 2px solid transparent;
         }
 
         .hero-btn.primary {
-            background: linear-gradient(135deg, var(--ac-orange), #ffb347);
-            color: #000;
-            box-shadow: 0 10px 25px rgba(255, 151, 4, 0.3);
+            background: var(--ac-orange);
+            color: #fff;
+            border-color: var(--ac-orange);
+            box-shadow: 0 8px 24px -4px rgba(255, 113, 4, 0.3);
         }
 
         .hero-btn.primary:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px -4px rgba(255, 113, 4, 0.4);
         }
 
         .hero-btn.ghost {
-            border: 2px solid var(--ac-blue);
+            border-color: var(--ac-border);
             color: var(--ac-blue);
-            background: transparent;
+            background: var(--ac-bg);
         }
 
         .hero-btn.ghost:hover {
             background: var(--ac-blue);
             color: #fff;
+            border-color: var(--ac-blue);
+            transform: translateY(-3px);
         }
 
-        .section {
+        /* Hero stat pills */
+        .ac-hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 52px;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.7s var(--ac-ease) forwards;
+        }
+
+        .ac-hero-stat {
+            text-align: center;
+        }
+
+        .ac-hero-stat h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--ac-blue);
+            line-height: 1;
+        }
+
+        .ac-hero-stat span {
+            font-size: 0.78rem;
+            color: var(--ac-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ac-hero-stat-divider {
+            width: 1px;
+            background: var(--ac-border);
+            align-self: stretch;
+        }
+
+        /* ═══════════ SECTION COMMONS ═══════════ */
+        .ac-section {
+            padding: 90px 0;
+        }
+
+        .ac-section.alt {
+            background: var(--ac-bg-alt);
+        }
+
+        .ac-sec-header {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 52px;
+        }
+
+        .ac-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(35, 63, 146, 0.05);
+            color: var(--ac-blue);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 0.73rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 16px;
+        }
+
+        .ac-tag::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--ac-orange);
+            border-radius: 50%;
+        }
+
+        .ac-sec-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--ac-blue);
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+
+        .ac-sec-header p {
+            color: var(--ac-muted);
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        /* ═══════════ ADMISSIONS TABLE ═══════════ */
+        .adm-card {
+            background: var(--ac-bg);
+            border: 1px solid var(--ac-border);
+            border-radius: var(--ac-radius);
+            overflow: hidden;
+            box-shadow: var(--ac-shadow);
+        }
+
+        .adm-card-header {
+            padding: 28px 32px 20px;
+            border-bottom: 1px solid var(--ac-border);
+        }
+
+        .adm-card-header .adm-process {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--ac-green-glow);
+            color: var(--ac-green);
+            border: 1px solid rgba(16, 185, 129, 0.12);
+            padding: 5px 14px;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .adm-card-header p {
+            color: var(--ac-muted);
+            font-size: 0.88rem;
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        .adm-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 620px;
+        }
+
+        .adm-table thead th {
+            background: var(--ac-bg-alt);
+            color: var(--ac-muted);
+            font-family: 'Gantari', sans-serif;
+            font-weight: 700;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 14px 24px;
+            text-align: left;
+            border-bottom: 1px solid var(--ac-border);
+        }
+
+        .adm-table tbody td {
+            padding: 18px 24px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.92rem;
+            color: var(--ac-text);
+            vertical-align: top;
+        }
+
+        .adm-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .adm-table tbody tr:hover td {
+            background: #fafbfe;
+        }
+
+        .adm-course-name {
+            font-weight: 700;
+            color: var(--ac-blue);
+            font-family: 'Gantari', sans-serif;
+        }
+
+        .adm-duration {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--ac-orange-glow);
+            color: var(--ac-orange);
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.82rem;
+        }
+
+        .adm-capacity {
+            font-weight: 800;
+            color: var(--ac-blue);
+            font-family: 'Gantari', sans-serif;
+            font-size: 1rem;
+        }
+
+        /* ═══════════ RESULTS ═══════════ */
+        .results-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .result-big-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--ac-blue) 0%, var(--ac-blue-dark) 100%);
+            border-radius: var(--ac-radius);
+            padding: 52px 48px;
+            color: white;
             position: relative;
             overflow: hidden;
         }
 
-        .section::before {
-            content: "";
+        .result-big-card::before {
+            content: '';
             position: absolute;
-            top: -40px;
-            right: -40px;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, rgba(255, 151, 4, 0.15), transparent 70%);
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 50%;
+            top: -100px;
+            right: -60px;
+            pointer-events: none;
         }
 
-        .badge {
+        .result-big-card::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+            bottom: -80px;
+            left: -40px;
+            pointer-events: none;
+        }
+
+        .result-big-card .rbc-label {
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px;
-            margin-top: 16px;
-        }
-
-        .act-card {
-            background: linear-gradient(135deg, #fff, #f8fbff);
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            padding: 18px;
-            text-align: center;
-            font-weight: 600;
-            color: var(--ac-blue);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
-        }
-
-        .act-card i {
-            font-size: 28px;
-            display: block;
+        .result-big-card h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
             margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .result-big-card p {
+            font-size: 1rem;
+            opacity: 0.65;
+            line-height: 1.7;
+            max-width: 500px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .result-big-numbers {
+            display: flex;
+            gap: 48px;
+            margin-top: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .result-num-item h4 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1;
             color: var(--ac-orange);
         }
 
-        .act-card:hover {
-            transform: translateY(-4px);
+        .result-num-item span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* =========================================
-       RESPONSIVE
-    ========================================= */
-        @media (max-width: 768px) {
-            .ac-hero {
-                padding-top: 120px;
+        .result-stat-card {
+            background: var(--ac-bg);
+            border: 1px solid var(--ac-border);
+            border-radius: var(--ac-radius);
+            padding: 32px 28px;
+            transition: all 0.4s var(--ac-ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            border-radius: 0 4px 4px 0;
+            transition: height 0.4s var(--ac-ease);
+        }
+
+        .result-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--ac-shadow-lg);
+            border-color: transparent;
+        }
+
+        .result-stat-card:hover::before {
+            height: 100%;
+        }
+
+        .result-stat-card.enrolled::before {
+            background: var(--ac-blue);
+        }
+
+        .result-stat-card.passed::before {
+            background: var(--ac-green);
+        }
+
+        .rsc-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--ac-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+            transition: all 0.4s var(--ac-bounce);
+        }
+
+        .result-stat-card:hover .rsc-icon {
+            transform: translateY(-3px) scale(1.08);
+        }
+
+        .result-stat-card.enrolled .rsc-icon {
+            background: rgba(35, 63, 146, 0.07);
+            color: var(--ac-blue);
+        }
+
+        .result-stat-card.passed .rsc-icon {
+            background: var(--ac-green-glow);
+            color: var(--ac-green);
+        }
+
+        .result-stat-card:hover.enrolled .rsc-icon {
+            background: var(--ac-blue);
+            color: #fff;
+            box-shadow: 0 8px 20px -4px rgba(35, 63, 146, 0.3);
+        }
+
+        .result-stat-card:hover.passed .rsc-icon {
+            background: var(--ac-green);
+            color: #fff;
+            box-shadow: 0 8px 20px -4px rgba(16, 185, 129, 0.3);
+        }
+
+        .result-stat-card h3 {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--ac-text);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .result-stat-card p {
+            font-size: 0.88rem;
+            color: var(--ac-muted);
+            font-weight: 500;
+        }
+
+        /* ═══════════ PLACEMENTS ═══════════ */
+        .placement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .pl-card {
+            background: var(--ac-bg);
+            border: 1px solid var(--ac-border);
+            border-radius: var(--ac-radius-sm);
+            padding: 28px 24px;
+            transition: all 0.35s var(--ac-ease);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .pl-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--ac-shadow);
+            border-color: transparent;
+        }
+
+        .pl-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            transition: all 0.35s var(--ac-bounce);
+        }
+
+        .pl-card:hover .pl-icon {
+            transform: scale(1.1);
+        }
+
+        .pl-icon.a {
+            background: rgba(35, 63, 146, 0.06);
+            color: var(--ac-blue);
+        }
+
+        .pl-icon.b {
+            background: var(--ac-orange-glow);
+            color: var(--ac-orange);
+        }
+
+        .pl-icon.c {
+            background: var(--ac-green-glow);
+            color: var(--ac-green);
+        }
+
+        .pl-icon.d {
+            background: var(--ac-purple-glow);
+            color: var(--ac-purple);
+        }
+
+        .pl-card:hover .pl-icon.a {
+            background: var(--ac-blue);
+            color: #fff;
+        }
+
+        .pl-card:hover .pl-icon.b {
+            background: var(--ac-orange);
+            color: #fff;
+        }
+
+        .pl-card:hover .pl-icon.c {
+            background: var(--ac-green);
+            color: #fff;
+        }
+
+        .pl-card:hover .pl-icon.d {
+            background: var(--ac-purple);
+            color: #fff;
+        }
+
+        .pl-text h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--ac-text);
+            margin-bottom: 3px;
+        }
+
+        .pl-text span {
+            font-size: 0.8rem;
+            color: var(--ac-muted);
+        }
+
+        /* ═══════════ ACTIVITIES ═══════════ */
+        .act-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+            margin-bottom: 40px;
+        }
+
+        .act-card {
+            background: var(--ac-bg);
+            border: 1px solid var(--ac-border);
+            border-radius: var(--ac-radius-sm);
+            padding: 28px 16px;
+            text-align: center;
+            transition: all 0.35s var(--ac-ease);
+            cursor: default;
+        }
+
+        .act-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--ac-shadow);
+            border-color: transparent;
+        }
+
+        .act-card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin: 0 auto 14px;
+            transition: all 0.4s var(--ac-bounce);
+        }
+
+        .act-card:hover .act-card-icon {
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .act-card:nth-child(1) .act-card-icon {
+            background: var(--ac-orange-glow);
+            color: var(--ac-orange);
+        }
+
+        .act-card:nth-child(2) .act-card-icon {
+            background: rgba(35, 63, 146, 0.06);
+            color: var(--ac-blue);
+        }
+
+        .act-card:nth-child(3) .act-card-icon {
+            background: var(--ac-green-glow);
+            color: var(--ac-green);
+        }
+
+        .act-card:nth-child(4) .act-card-icon {
+            background: var(--ac-purple-glow);
+            color: var(--ac-purple);
+        }
+
+        .act-card:nth-child(5) .act-card-icon {
+            background: rgba(244, 63, 94, 0.06);
+            color: #f43f5e;
+        }
+
+        .act-card:hover:nth-child(1) .act-card-icon {
+            background: var(--ac-orange);
+            color: #fff;
+            box-shadow: 0 8px 20px -4px rgba(255, 113, 4, 0.3);
+        }
+
+        .act-card:hover:nth-child(2) .act-card-icon {
+            background: var(--ac-blue);
+            color: #fff;
+            box-shadow: 0 8px 20px -4px rgba(35, 63, 146, 0.3);
+        }
+
+        .act-card:hover:nth-child(3) .act-card-icon {
+            background: var(--ac-green);
+            color: #fff;
+            box-shadow: 0 8px 20px -4px rgba(16, 185, 129, 0.3);
+        }
+
+        .act-card:hover:nth-child(4) .act-card-icon {
+            background: var(--ac-purple);
+            color: #fff;
+            box-shadow: 0 8px 20px -4px rgba(124, 58, 237, 0.3);
+        }
+
+        .act-card:hover:nth-child(5) .act-card-icon {
+            background: #f43f5e;
+            color: #fff;
+            box-shadow: 0 8px 20px -4px rgba(244, 63, 94, 0.3);
+        }
+
+        .act-card h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--ac-text);
+        }
+
+        /* Activities detail list */
+        .act-details {
+            background: var(--ac-bg);
+            border: 1px solid var(--ac-border);
+            border-radius: var(--ac-radius);
+            padding: 36px 32px;
+        }
+
+        .act-details h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--ac-blue);
+            margin-bottom: 20px;
+        }
+
+        .act-detail-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 14px;
+        }
+
+        .act-detail-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 0.92rem;
+            color: var(--ac-text);
+            line-height: 1.6;
+        }
+
+        .act-detail-list li .adl-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: var(--ac-blue-light);
+            color: var(--ac-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            font-family: 'Gantari', sans-serif;
+        }
+
+        /* ═══════════ CTA ═══════════ */
+        .ac-cta {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .ac-cta-box {
+            max-width: 780px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--ac-blue) 0%, var(--ac-blue-dark) 100%);
+            border-radius: 24px;
+            padding: 60px 44px;
+            color: white;
+            box-shadow: 0 24px 56px -8px rgba(35, 63, 146, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ac-cta-box::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            top: -80px;
+            left: -50px;
+        }
+
+        .ac-cta-box h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ac-cta-box p {
+            opacity: 0.65;
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 440px;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ac-cta-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: var(--ac-radius-sm);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: all 0.35s var(--ac-ease);
+            border: 2px solid transparent;
+        }
+
+        .cta-btn-white {
+            background: #fff;
+            color: var(--ac-blue);
+            border-color: #fff;
+        }
+
+        .cta-btn-white:hover {
+            background: transparent;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .cta-btn-ghost {
+            border-color: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cta-btn-ghost:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ═══════════ RESPONSIVE ═══════════ */
+        @media (max-width: 992px) {
+            .placement-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .ac-grid-2 {
+            .act-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .result-big-numbers {
+                gap: 32px;
+            }
+
+            .ac-hero-stats {
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ac-hero {
+                padding: 130px 0 70px;
+            }
+
+            .placement-grid {
                 grid-template-columns: 1fr;
             }
 
-            .ac-philo-img {
-                order: -1;
-                margin-bottom: 20px;
-                transform: rotate(0);
+            .act-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .ac-hero h1 {
-                font-size: 2.2rem;
+            .results-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .result-big-card {
+                padding: 36px 28px;
+            }
+
+            .result-big-numbers {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .ac-hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .ac-hero-stat-divider {
+                width: 60px;
+                height: 1px;
+            }
+
+            .ac-sec-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .adm-card {
+                overflow-x: auto;
             }
         }
 
-        /* Keep your existing CTA button style for header */
+        @media (max-width: 480px) {
+            .act-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .ac-cta-box {
+                padding: 40px 24px;
+            }
+        }
+
+        /* Header CTA button */
         .ggm-btn {
             display: inline-flex;
             align-items: center;
@@ -354,9 +1050,6 @@
         @media (max-width: 768px) {
             a.ggm-btn {
                 display: none !important;
-                visibility: hidden !important;
-                opacity: 0 !important;
-                pointer-events: none !important;
             }
         }
     </style>
@@ -365,25 +1058,20 @@
 <body>
 
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <a href="/" class="back-to-main-btn" title="Back to Main Website"><i class="ri-home-4-line"></i></a>
 
-    <a href="/" class="back-to-main-btn" title="Back to Main Website">
-        <i class="ri-home-4-line"></i>
-    </a>
-    <!-- Header (Maintained Exactly as Requested) -->
+    <!-- Header -->
     <header class="gm-header" id="header">
         <div class="gm-container">
             <nav class="gm-nav" aria-label="Primary">
                 <a href="/index.html" class="gm-logo">
                     <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="gm-logo-img">
                 </a>
-
                 <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
                     aria-controls="navLinks" aria-expanded="false">
-                    <span class="gm-burger-line"></span>
-                    <span class="gm-burger-line"></span>
-                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span><span class="gm-burger-line"></span><span
+                        class="gm-burger-line"></span>
                 </button>
-
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link"
                             href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Home</a>
@@ -391,197 +1079,336 @@
                     <li><a class="gm-link" href="/shardabai-pawar-kala-mahavidhyalaya/about.html">About</a></li>
                     <li><a class="gm-link active"
                             href="/shardabai-pawar-kala-mahavidhyalaya/academics.html">Academics</a></li>
-
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
                             aria-controls="institutesMenu">
-                            Our Educational Institutes
-                            <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+                            Our Educational Institutes <i class="ri-arrow-down-s-line gm-chevron"
+                                aria-hidden="true"></i>
                         </button>
-
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
                             <li role="none"><a role="menuitem"
                                     href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
-                                    Vidyalay Karhati</a>
-                            </li>
+                                    Vidyalay Karhati</a></li>
                             <li role="none"><a role="menuitem"
-                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New
-                                    English School Dhakale</a></li>
+                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
                             <li role="none"><a role="menuitem"
-                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School
-                                    Karhati Tembha</a></li>
+                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
+                                    Tembha</a></li>
                             <li role="none"><a role="menuitem"
-                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS
-                                    Private I.T.I Karhati</a></li>
+                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
                             <li role="none"><a role="menuitem"
                                     href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
-                                    English Medium
-                                    School</a></li>
+                                    English Medium School</a></li>
                             <li role="none"><a role="menuitem"
                                     href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
-                                    Pawar
-                                    Kala Mahavidhyalaya</a></li>
-                                    <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh Primary School</a></li>
+                                    Pawar Kala Mahavidhyalaya</a></li>
+                            <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh
+                                    Primary School</a></li>
                         </ul>
                     </li>
                     <li><a class="gm-link" href="./staff.html">Staff</a></li>
-
                     <li><a class="gm-link" href="/gallery.html">Gallery</a></li>
                 </ul>
-
-                <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
+                <a class="ggm-btn" href="/contact.html">Contact Us</a>
             </nav>
         </div>
     </header>
 
-    <!-- =========================================
-       NEW HERO SECTION
-  ========================================= -->
+
+    <!-- ═══════════ HERO ═══════════ -->
     <section class="ac-hero">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
+        <div class="ac-hero-grid"></div>
         <div class="ac-container">
-            <div class="ac-hero-badge reveal-up">
-                <i class="ri-graduation-cap-line"></i> Academics
-            </div>
-            <h1 class="reveal-up delay-100">Admissions, Results & Activities</h1>
-            <p class="reveal-up delay-200">
-                Shaping creative careers since 1993.
-                Government-approved courses, consistent results, and real-world placements in art, design, and creative
-                fields.
-            </p>
-            <div class="ac-hero-actions reveal-up delay-300">
-                <a href="#admissions" class="hero-btn primary">
-                    <i class="ri-pencil-ruler-2-line"></i> Explore Courses
-                </a>
-                <a href="#activities" class="hero-btn ghost">
-                    <i class="ri-gallery-line"></i> See Activities
-                </a>
+            <div class="ac-hero-inner">
+                <div class="ac-hero-badge"><i class="ri-graduation-cap-line"></i> Academics</div>
+                <h1>Admissions, <span>Results</span><br>& Creative Activities</h1>
+                <p class="ac-hero-desc">Shaping creative careers since 1993. Government-approved courses, consistent
+                    results, and real-world placements in art, design, and creative fields.</p>
+                <div class="ac-hero-actions">
+                    <a href="#admissions" class="hero-btn primary"><i class="ri-pencil-ruler-2-line"></i> Explore
+                        Courses</a>
+                    <a href="#activities" class="hero-btn ghost"><i class="ri-gallery-line"></i> See Activities</a>
+                </div>
+
+                <div class="ac-hero-stats">
+                    <div class="ac-hero-stat">
+                        <h3>90–100%</h3>
+                        <span>Pass Rate</span>
+                    </div>
+                    <div class="ac-hero-stat-divider"></div>
+                    <div class="ac-hero-stat">
+                        <h3>30+</h3>
+                        <span>Years Legacy</span>
+                    </div>
+                    <div class="ac-hero-stat-divider"></div>
+                    <div class="ac-hero-stat">
+                        <h3>2000+</h3>
+                        <span>Students Enrolled</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="ac-container">
-        <!-- Admission Procedure -->
-        <div class="section">
-            <span class="badge"><i class="ri-user-add-line"></i> Admissions</span>
-            <h2>Admission Procedure</h2>
-            <p class="muted">(According to norms of State Govt.) — Online & Offline Process</p>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Sr. No.</th>
-                        <th>Curriculum</th>
-                        <th>Duration</th>
-                        <th>Qualification</th>
-                        <th>Intake Capacity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td>Foundation</td>
-                        <td>01 Year</td>
-                        <td>10th Std. Passed & Intermediate Drawing Exam</td>
-                        <td>15</td>
-                    </tr>
-                    <tr>
-                        <td>02</td>
-                        <td>Art Teacher’s Diploma (A.T.D.)</td>
-                        <td>02 Years</td>
-                        <td>12th Std. Passed (Any Faculty) & Intermediate Drawing Exam</td>
-                        <td>I Year – 30<br>II Year – 30</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Results -->
-        <div class="section">
-            <span class="badge"><i class="ri-bar-chart-line"></i> Results</span>
-            <h2>Academic Results</h2>
-            <p>
-                From <strong>1993–94 to 2023–24</strong>, our results have consistently ranged between
-                <strong>90% to 100%</strong>.
-            </p>
-        </div>
-
-        <!-- Placement -->
-        <div class="section">
-            <span class="badge"><i class="ri-briefcase-line"></i> Placements</span>
-            <h2>Student Placement Record (1993 – 2024)</h2>
-
-            <div class="stat-card">
-                <strong class="count" data-target="2000">0</strong>
-                Students Enrolled
-            </div>
-            <div class="stat-card">
-                <strong class="count" data-target="1986">0</strong>
-                Students Passed
-            </div>
-            <h3 style="margin-top:16px;">Fields / Services / Professions</h3>
-            <ul>
-                <li>Education – Art Teacher</li>
-                <li>Advertising – Junior Artist & Printing Press</li>
-                <li>Animation – Animator</li>
-                <li>Screen Printing – Artist</li>
-                <li>Photography – Photographer</li>
-                <li>Beauty Parlour</li>
-                <li>Making Educational Aids</li>
-                <li>Interior Decoration – Designer</li>
-                <li>Running Own Art Courses / Hobby Classes</li>
-            </ul>
-        </div>
-
-        <!-- Curricular Activities -->
-        <div class="section">
-            <span class="badge"><i class="ri-palette-line"></i> Activities</span>
-            <h2>Curricular Activities</h2>
-            <div class="activities-grid">
-                <div class="act-card"><i class="ri-brush-line"></i><span>Workshops by Artists</span></div>
-                <div class="act-card"><i class="ri-trophy-line"></i><span>Competitions</span></div>
-                <div class="act-card"><i class="ri-image-line"></i><span>Exhibitions & Displays</span></div>
-                <div class="act-card"><i class="ri-building-line"></i><span>Museum & College Visits</span></div>
-                <div class="act-card"><i class="ri-music-2-line"></i><span>Cultural Festivals</span></div>
+    <!-- ═══════════ ADMISSIONS ═══════════ -->
+    <section class="ac-section" id="admissions">
+        <div class="ac-container">
+            <div class="ac-sec-header sr">
+                <span class="ac-tag">Admissions</span>
+                <h2>Admission Procedure</h2>
+                <p>According to norms of State Government — available through both online and offline process.</p>
             </div>
 
-            <ul>
-                <li>Arrangement of workshops and demonstrations by famous artists</li>
-                <li>Organization of various competitions (Taluka Level, State Level, Zonal, etc.)</li>
-                <li>Arrangement of exhibitions and displays at Sanstha level</li>
-                <li>Educational visits to museums and art colleges</li>
-                <li>Arrangement of cultural activities such as Gunotsav, Lalitotsav, etc. at Sanstha level</li>
-            </ul>
+            <div class="adm-card sr">
+                <div class="adm-card-header">
+                    <span class="adm-process"><i class="ri-check-double-line"></i> Online & Offline Process</span>
+                    <p>Government-approved courses with clearly defined eligibility and intake capacity for the academic
+                        year.</p>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="adm-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 70px;">Sr. No.</th>
+                                <th>Curriculum</th>
+                                <th>Duration</th>
+                                <th>Qualification</th>
+                                <th>Intake</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01</td>
+                                <td class="adm-course-name">Foundation</td>
+                                <td><span class="adm-duration"><i class="ri-time-line"></i> 1 Year</span></td>
+                                <td>10th Std. Passed & Intermediate Drawing Exam</td>
+                                <td class="adm-capacity">15</td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td class="adm-course-name">Art Teacher's Diploma (A.T.D.)</td>
+                                <td><span class="adm-duration"><i class="ri-time-line"></i> 2 Years</span></td>
+                                <td>12th Std. Passed (Any Faculty) & Intermediate Drawing Exam</td>
+                                <td class="adm-capacity">I Year – 30 &nbsp;|&nbsp; II Year – 30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer (Maintained Exactly as Requested) -->
+
+    <!-- ═══════════ RESULTS & STATS ═══════════ -->
+    <section class="ac-section alt" id="results">
+        <div class="ac-container">
+            <div class="ac-sec-header sr">
+                <span class="ac-tag">Track Record</span>
+                <h2>Results & Placement</h2>
+                <p>Three decades of consistent academic excellence and successful career placements across creative
+                    industries.</p>
+            </div>
+
+            <div class="results-showcase">
+                <!-- Big result banner -->
+                <div class="result-big-card sr">
+                    <span class="rbc-label"><i class="ri-bar-chart-grouped-line"></i> Academic Results</span>
+                    <h3>Consistently Exceptional Results</h3>
+                    <p>From 1993–94 to 2023–24, our results have consistently ranged between 90% to 100%, reflecting our
+                        commitment to academic rigour and creative excellence.</p>
+                    <div class="result-big-numbers">
+                        <div class="result-num-item">
+                            <h4>90–100%</h4>
+                            <span>Pass Rate</span>
+                        </div>
+                        <div class="result-num-item">
+                            <h4>30+</h4>
+                            <span>Years</span>
+                        </div>
+                        <div class="result-num-item">
+                            <h4>99%</h4>
+                            <span>Placement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat cards -->
+                <div class="result-stat-card enrolled sr">
+                    <div class="rsc-icon"><i class="ri-user-line"></i></div>
+                    <h3 class="count" data-target="2000">0</h3>
+                    <p>Students Enrolled (1993–2024)</p>
+                </div>
+                <div class="result-stat-card passed sr">
+                    <div class="rsc-icon"><i class="ri-user-star-line"></i></div>
+                    <h3 class="count" data-target="1986">0</h3>
+                    <p>Students Passed Successfully</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ PLACEMENTS ═══════════ -->
+    <section class="ac-section" id="placements">
+        <div class="ac-container">
+            <div class="ac-sec-header sr">
+                <span class="ac-tag">Career Outcomes</span>
+                <h2>Placement Fields</h2>
+                <p>Our graduates are successfully employed across a wide range of creative and professional fields.</p>
+            </div>
+
+            <div class="placement-grid">
+                <div class="pl-card sr">
+                    <div class="pl-icon a"><i class="ri-presentation-line"></i></div>
+                    <div class="pl-text">
+                        <h4>Education</h4><span>Art Teacher</span>
+                    </div>
+                </div>
+                <div class="pl-card sr">
+                    <div class="pl-icon b"><i class="ri-advertisement-line"></i></div>
+                    <div class="pl-text">
+                        <h4>Advertising</h4><span>Junior Artist & Printing Press</span>
+                    </div>
+                </div>
+                <div class="pl-card sr">
+                    <div class="pl-icon c"><i class="ri-movie-line"></i></div>
+                    <div class="pl-text">
+                        <h4>Animation</h4><span>Animator</span>
+                    </div>
+                </div>
+                <div class="pl-card sr">
+                    <div class="pl-icon d"><i class="ri-t-shirt-line"></i></div>
+                    <div class="pl-text">
+                        <h4>Screen Printing</h4><span>Artist</span>
+                    </div>
+                </div>
+                <div class="pl-card sr">
+                    <div class="pl-icon b"><i class="ri-camera-line"></i></div>
+                    <div class="pl-text">
+                        <h4>Photography</h4><span>Photographer</span>
+                    </div>
+                </div>
+                <div class="pl-card sr">
+                    <div class="pl-icon c"><i class="ri-scissors-line"></i></div>
+                    <div class="pl-text">
+                        <h4>Beauty Parlour</h4><span>Stylist & Beautician</span>
+                    </div>
+                </div>
+                <div class="pl-card sr">
+                    <div class="pl-icon a"><i class="ri-tools-line"></i></div>
+                    <div class="pl-text">
+                        <h4>Educational Aids</h4><span>Making Educational Aids</span>
+                    </div>
+                </div>
+                <div class="pl-card sr">
+                    <div class="pl-icon d"><i class="ri-home-smile-line"></i></div>
+                    <div class="pl-text">
+                        <h4>Interior Decoration</h4><span>Designer</span>
+                    </div>
+                </div>
+                <div class="pl-card sr">
+                    <div class="pl-icon b"><i class="ri-palette-line"></i></div>
+                    <div class="pl-text">
+                        <h4>Own Art Courses</h4><span>Running Hobby Classes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ ACTIVITIES ═══════════ -->
+    <section class="ac-section alt" id="activities">
+        <div class="ac-container">
+            <div class="ac-sec-header sr">
+                <span class="ac-tag">Creative Life</span>
+                <h2>Curricular Activities</h2>
+                <p>A vibrant academic environment enriched with workshops, competitions, exhibitions, and cultural
+                    celebrations.</p>
+            </div>
+
+            <div class="act-grid">
+                <div class="act-card sr">
+                    <div class="act-card-icon"><i class="ri-brush-line"></i></div>
+                    <h4>Workshops by Artists</h4>
+                </div>
+                <div class="act-card sr">
+                    <div class="act-card-icon"><i class="ri-trophy-line"></i></div>
+                    <h4>Competitions</h4>
+                </div>
+                <div class="act-card sr">
+                    <div class="act-card-icon"><i class="ri-image-line"></i></div>
+                    <h4>Exhibitions &amp; Displays</h4>
+                </div>
+                <div class="act-card sr">
+                    <div class="act-card-icon"><i class="ri-building-line"></i></div>
+                    <h4>Museum Visits</h4>
+                </div>
+                <div class="act-card sr">
+                    <div class="act-card-icon"><i class="ri-music-2-line"></i></div>
+                    <h4>Cultural Festivals</h4>
+                </div>
+            </div>
+
+            <div class="act-details sr">
+                <h3>Activity Details</h3>
+                <ul class="act-detail-list">
+                    <li><span class="adl-num">01</span> Arrangement of workshops and demonstrations by famous artists
+                    </li>
+                    <li><span class="adl-num">02</span> Organization of various competitions — Taluka Level, State
+                        Level, Zonal, and beyond</li>
+                    <li><span class="adl-num">03</span> Arrangement of exhibitions and displays at Sanstha level</li>
+                    <li><span class="adl-num">04</span> Educational visits to museums and art colleges across the state
+                    </li>
+                    <li><span class="adl-num">05</span> Arrangement of cultural activities such as Gunotsav, Lalitotsav,
+                        etc. at Sanstha level</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section class="ac-cta">
+        <div class="ac-container">
+            <div class="ac-cta-box sr">
+                <h2>Begin Your Creative Journey</h2>
+                <p>Admissions are open for Foundation and Art Teacher's Diploma courses. Take the first step towards a
+                    rewarding creative career.</p>
+                <div class="ac-cta-actions">
+                    <a href="tel:+919922415158" class="cta-btn cta-btn-white"><i class="ri-phone-fill"></i> Call Us
+                        Now</a>
+                    <a href="/contact.html" class="cta-btn cta-btn-ghost"><i class="ri-mail-line"></i> Send Enquiry</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="/index.html" class="logo"
-                        style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+                        style="margin-bottom: 2rem; align-items: flex-start; text-decoration: none;">
                         <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
                         <div>
                             <div style="color: #ff9704;">KUMSS SINCE 1951</div>
                         </div>
                     </a>
-                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
-                        An educational society focused on overall development of students since 1951.
-                    </p>
-
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">An educational society focused on
+                        overall development of students since 1951.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-
-                        <a href="https://www.instagram.com/kumss_baramati/" class="social-link"
+                        <a href="https://www.instagram.com/kumss_spkm?igsh=MThidWg1aHh4dHRkYw==" class="social-link"
                             aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
-
                         <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
-
                 <div class="footer-col">
                     <h3
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
@@ -594,24 +1421,20 @@
                         <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h3
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
                         <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
-                                Karhati</a>
-                        </li>
+                                Karhati</a></li>
                         <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
-                                Dhakale</a>
-                        </li>
+                                Dhakale</a></li>
                         <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
                         <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
                         </li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h3
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
@@ -622,77 +1445,90 @@
                         <li><a href="tel:+919075192092">+91 90751 92092</a></li>
                         <li><i class="ri-mail-line"></i> <a href="mailto:spkm.4242@gmail.com">spkm.4242@gmail.com</a>
                         </li>
-                        <li style="color: #000;"><i class="ri-map-pin-line"></i>
-                            Karhati,(Morgaon – Baramati Road)
-                            Tal.Baramati, Dist. Pune Pin code No. 412204</li>
+                        <li style="color: #000;"><i class="ri-map-pin-line"></i> Karhati, (Morgaon–Baramati Road) Tal.
+                            Baramati, Dist. Pune Pin code No. 412204</li>
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
-                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
-                </p>
+                <p>&copy; 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">ISO 9001:2015
+                    Certified Institute | Recognized by Government of Maharashtra</p>
             </div>
         </div>
     </footer>
 
-    <button type="button" id="back-to-top" aria-label="Back to Top">
-        <i class="ri-arrow-up-double-fill"></i>
-    </button>
-
+    <button type="button" id="back-to-top" aria-label="Back to Top"><i class="ri-arrow-up-double-fill"></i></button>
 
     <script src="/assets/js/institute.js"></script>
+    <script src="/assets/js/custom.js"></script>
 
-
-    <!-- Animation Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
+        (function () {
+            // Scroll reveal with stagger
+            const srObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
+                        const parent = entry.target.closest('.ac-container, .ac-hero-inner') || entry.target.parentElement;
+                        const siblings = Array.from(parent.querySelectorAll('.sr'));
+                        const idx = siblings.indexOf(entry.target);
+                        entry.target.style.transitionDelay = (idx * 0.07) + 's';
+                        entry.target.classList.add('visible');
+                        srObserver.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
-            const animElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .scale-in');
-            animElements.forEach(el => observer.observe(el));
-        });
-    </script>
-    <script>
-        const counters = document.querySelectorAll('.count');
+            document.querySelectorAll('.sr').forEach(el => srObserver.observe(el));
 
-        const runCounter = (counter) => {
-            const target = +counter.getAttribute('data-target');
-            let current = 0;
-            const step = Math.ceil(target / 100);
+            // Number counter
+            const counters = document.querySelectorAll('.count');
+            const counterObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = +el.getAttribute('data-target');
+                        let current = 0;
+                        const step = Math.ceil(target / 80);
+                        const update = () => {
+                            current += step;
+                            if (current < target) {
+                                el.innerText = current.toLocaleString();
+                                requestAnimationFrame(update);
+                            } else {
+                                el.innerText = target.toLocaleString() + '+';
+                            }
+                        };
+                        update();
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            counters.forEach(c => counterObserver.observe(c));
 
-            const update = () => {
-                current += step;
-                if (current < target) {
-                    counter.innerText = current;
-                    requestAnimationFrame(update);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-            update();
-        };
-
-        const observer2 = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    runCounter(entry.target);
-                    observer2.unobserve(entry.target);
-                }
+            // Smooth anchor scroll
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const target = document.querySelector(link.getAttribute('href'));
+                    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                });
             });
-        }, { threshold: 0.5 });
 
-        counters.forEach(c => observer2.observe(c));
+            // Header scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+        })();
     </script>
-    <script src="/assets/js/custom.js"></script>
 </body>
 
 </html>

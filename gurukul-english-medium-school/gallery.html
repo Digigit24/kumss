@@ -17,156 +17,480 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="/assets/css/institute.css">
 
-  <!-- Font Awesome -->
+  <!-- Remix Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
 
-
   <style>
-    /* --- NEW PAGE HERO --- */
-    .page-hero {
-      background: linear-gradient(135deg, #0b2a5b 0%, #061938 100%);
-      padding: 80px 0;
-      text-align: center;
-      color: #fff;
+    :root {
+      --brand-blue: #233f92;
+      --brand-blue-dark: #0b2a5b;
+      --brand-orange: #ff9704;
+      --text-dark: #1f2937;
+      --text-gray: #6b7280;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
     }
 
-    .page-hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #ddd;
-      margin-bottom: 10px;
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+      margin: 0;
     }
 
-    .page-hero p {
-      font-size: 1.2rem;
-      color: #ddd;
-      max-width: 600px;
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Gantari", sans-serif;
+    }
+
+    .footer-logo-img {
+      width: 30%;
+      height: 30%;
+      margin-left: 0 !important;
+    }
+
+    .container-custom {
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
     }
 
-    /* --- GENERAL SECTION STYLES --- */
-    .gallery-section {
-      padding: 60px 0;
-      background-color: #f9f9f9;
-      overflow: hidden;
-      /* For animations */
-    }
-
-    .gallery-section:nth-child(even) {
-      background-color: #ffffff;
-    }
-
-    .section-head {
+    /* ====== HERO ====== */
+    .page-hero {
+      position: relative;
+      height: 50vh;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      margin-bottom: 50px;
-      position: relative;
+      color: white;
+      overflow: hidden;
+      background: #000;
     }
 
-    .section-head h2 {
-      font-size: 2.5rem;
-      color: #0b2a5b;
-      font-weight: 800;
-      display: inline-block;
-      position: relative;
+    .hero-bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(35, 63, 146, 0.75), rgba(15, 23, 42, 0.65));
       z-index: 1;
     }
 
-    .section-head h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: #f7941d;
-      border-radius: 2px;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
     }
 
-    /* --- LAYOUT 1: STANDARD GRID (For Single/Few Images) --- */
-    .std-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+    .hero-badge {
+      background: rgba(255, 151, 4, 0.9);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 900;
+      margin: 0 0 16px;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      font-weight: 300;
+      opacity: 0.95;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ====== STATS RIBBON ====== */
+    .gallery-ribbon {
+      background: var(--brand-blue);
+    }
+
+    .ribbon-flex {
+      display: flex;
       justify-content: center;
     }
 
-    /* --- LAYOUT 2: MASONRY (Pinterest Style for Photos) --- */
-    .masonry-grid {
-      column-count: 4;
-      column-gap: 20px;
+    .ribbon-item {
+      flex: 1;
+      max-width: 280px;
+      text-align: center;
+      padding: 30px 20px;
+      color: white;
+      position: relative;
     }
 
-    /* --- GALLERY ITEM CARD --- */
+    .ribbon-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 36px;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .ribbon-item i {
+      font-size: 1.5rem;
+      color: var(--brand-orange);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .ribbon-item h3 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin: 0;
+      color: white;
+    }
+
+    .ribbon-item span {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      font-weight: 500;
+    }
+
+    /* ====== GALLERY MAIN ====== */
+    .gallery-main {
+      padding: 80px 0 100px;
+      background: var(--bg-light);
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: rgba(35, 63, 146, 0.1);
+      color: var(--brand-blue);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--brand-blue);
+      margin: 0 0 14px;
+    }
+
+    .section-desc {
+      color: var(--text-gray);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* ====== MASONRY ====== */
+    .masonry-grid {
+      column-count: 4;
+      column-gap: 22px;
+    }
+
     .gallery-item {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      /* For Masonry spacing */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-      transition: all 0.4s ease;
-      position: relative;
       break-inside: avoid;
-      /* Prevents masonry breaking images */
+      margin-bottom: 22px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .gallery-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .gallery-item.batch-hidden {
+      display: none;
     }
 
     .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
     }
 
     .gallery-item img {
       width: 100%;
       height: auto;
       display: block;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .gallery-item:hover img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
-    /* Overlay Effect */
-    .gallery-item::before {
-      content: '';
+    .item-expand {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(11, 42, 91, 0.4);
+      top: 14px;
+      right: 14px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--brand-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      z-index: 3;
       opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: 1;
+      transform: scale(0.7);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-    .gallery-item::after {
-      content: '\f0d1';
-      /* RemixIcon Search Icon */
-      font-family: "remixicon";
-      font-weight: 400;
+    .gallery-item:hover .item-expand {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ====== LOAD MORE ====== */
+    .load-more-wrap {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .load-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--brand-blue);
+      color: var(--white);
+      border: 2px solid var(--brand-blue);
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .load-more-btn:hover {
+      background: transparent;
+      color: var(--brand-blue);
+    }
+
+    .load-more-btn.hidden {
+      display: none;
+    }
+
+    .photos-showing {
+      margin-top: 16px;
+      font-size: 0.88rem;
+      color: var(--text-gray);
+      font-weight: 500;
+    }
+
+    /* ====== LIGHTBOX ====== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-img-wrap img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      transform: scale(0.9);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .lightbox.open .lightbox-img-wrap img {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      color: white;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .lightbox-nav {
       position: absolute;
       top: 50%;
+      transform: translateY(-50%);
+      width: 54px;
+      height: 54px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      color: white;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .lightbox-nav:hover {
+      background: var(--brand-orange);
+      border-color: var(--brand-orange);
+    }
+
+    .lightbox-prev {
+      left: 24px;
+    }
+
+    .lightbox-next {
+      right: 24px;
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 24px;
       left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      color: #fff;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      font-weight: 500;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 6px 18px;
+      border-radius: 30px;
+    }
+
+    /* ====== CTA ====== */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .cta-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--brand-blue);
+      border-radius: 30px;
+      padding: 60px;
+      color: white;
+      box-shadow: 0 20px 50px rgba(35, 63, 146, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    .cta-box::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    .cta-box h2 {
       font-size: 2rem;
-      z-index: 2;
-      transition: transform 0.3s ease;
+      font-weight: 800;
+      margin: 0 0 10px;
+      color: white;
     }
 
-    .gallery-item:hover::before {
-      opacity: 1;
+    .btn-primary {
+      display: inline-block;
+      background: white;
+      color: var(--brand-blue);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid white;
     }
 
-    .gallery-item:hover::after {
-      transform: translate(-50%, -50%) scale(1);
+    .btn-primary:hover {
+      background: transparent;
+      color: white;
     }
 
-
-    /* --- RESPONSIVE ADJUSTMENTS --- */
-    @media (max-width: 991px) {
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 1100px) {
       .masonry-grid {
         column-count: 3;
       }
@@ -175,16 +499,65 @@
     @media (max-width: 768px) {
       .masonry-grid {
         column-count: 2;
+        column-gap: 14px;
       }
 
-      .page-hero h1 {
-        font-size: 2.2rem;
+      .gallery-item {
+        margin-bottom: 14px;
+      }
+
+      .ribbon-flex {
+        flex-wrap: wrap;
+      }
+
+      .ribbon-item {
+        min-width: 140px;
+        padding: 24px 16px;
+      }
+
+      .ribbon-item:not(:last-child)::after {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2.4rem;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+
+      .lightbox-nav {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+      }
+
+      .cta-box {
+        padding: 40px 24px;
+      }
+
+      .section-title {
+        font-size: 2rem;
       }
     }
 
     @media (max-width: 480px) {
       .masonry-grid {
         column-count: 1;
+        column-gap: 0;
+      }
+
+      .gallery-item {
+        margin-bottom: 18px;
+      }
+
+      .ribbon-item h3 {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -196,35 +569,29 @@
   <a href="/" class="back-to-main-btn" title="Back to Main Website">
     <i class="ri-home-4-line"></i>
   </a>
-  <!-- Header (Maintained Exactly as Requested) -->
+
+  <!-- Header -->
   <header class="gm-header" id="header">
     <div class="gm-container">
       <nav class="gm-nav" aria-label="Primary">
         <a href="/index.html" class="gm-logo">
           <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="gm-logo-img">
         </a>
-
         <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks"
           aria-expanded="false">
           <span class="gm-burger-line"></span>
           <span class="gm-burger-line"></span>
           <span class="gm-burger-line"></span>
         </button>
-
         <ul class="gm-links" id="navLinks">
           <li><a class="gm-link" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
           <li><a class="gm-link" href="/gurukul-english-medium-school/about.html">About</a></li>
-
           <li><a class="gm-link" href="/gurukul-english-medium-school/admissions.html">Admissions</a></li>
-
-
           <li class="gm-item gm-dropdown" data-dropdown>
             <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
               aria-controls="institutesMenu">
-              Our Educational Institutes
-              <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+              Our Educational Institutes <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
             </button>
-
             <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
               <li role="none"><a role="menuitem"
                   href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
@@ -241,145 +608,269 @@
               <li role="none"><a role="menuitem"
                   href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar
                   Kala Mahavidhyalaya</a></li>
-                  <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh Primary School</a></li>
+              <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh Primary School</a>
+              </li>
             </ul>
           </li>
-
           <li><a class="gm-link" href="./staff.html">Staff</a></li>
           <li><a class="gm-link active" href="/gurukul-english-medium-school/gallery.html">Gallery</a></li>
           <li><a class="gm-link" href="/gurukul-english-medium-school/student-rulebook.html">Rulebook</a></li>
         </ul>
-
-        <a class="ggm-btn" href="tel:+919421394242">Contact Us</a>
+        <a class="ggm-btn" href="/contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
-  <!-- NEW HERO BANNER -->
-  <div class="page-hero">
-    <div class="container">
-      <h1>Gallery & Archives</h1>
-      <p>Glimpses of events, news, and infrastructure at KUMSS</p>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <img src="/assets/gurukul-1.webp" alt="Gurukul English Medium School" class="hero-bg-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">KUMSS Institute</span>
+      <h1 class="hero-title">Gallery & Archives</h1>
+      <p class="hero-subtitle">Glimpses of events, celebrations, and everyday moments at Gurukul English Medium School
+      </p>
     </div>
-  </div>
+  </section>
 
-  <section class="gallery-section" id="news">
-    <div class="container">
-      <div class="masonry-grid">
-        <div class="gallery-item">
-          <img src="/assets/gurukul-1.jpg" alt=" Image 1" loading="lazy">
+  <!-- Stats Ribbon -->
+  <section class="gallery-ribbon">
+    <div class="container-custom">
+      <div class="ribbon-flex">
+        <div class="ribbon-item">
+          <i class="ri-image-line"></i>
+          <h3>28</h3>
+          <span>Photos</span>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-2.jpg" alt=" Image 2" loading="lazy">
+        <div class="ribbon-item">
+          <i class="ri-calendar-event-line"></i>
+          <h3>10+</h3>
+          <span>Events</span>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-3.jpg" alt=" Image 3" loading="lazy">
+        <div class="ribbon-item">
+          <i class="ri-group-line"></i>
+          <h3>300+</h3>
+          <span>Students</span>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-4.jpg" alt=" Image 4" loading="lazy">
+        <div class="ribbon-item">
+          <i class="ri-camera-lens-line"></i>
+          <h3>2025</h3>
+          <span>Latest Archive</span>
         </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-5.jpg" alt=" Image 5" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-6.jpg" alt=" Image 6" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-7.jpg" alt=" Image 7" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-8.jpg" alt=" Image 8" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-9.jpg" alt=" Image 9" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-10.jpg" alt=" Image 10" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-11.jpg" alt=" Image 11" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-12.jpg" alt=" Image 12" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-13.jpg" alt=" Image 13" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-14.jpg" alt=" Image 14" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-15.jpg" alt=" Image 15" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-16.jpg" alt=" Image 16" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-17.jpg" alt=" Image 17" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-18.jpg" alt=" Image 18" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-19.jpg" alt=" Image 19" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-20.jpg" alt=" Image 20" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-21.jpg" alt=" Image 21" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-22.jpg" alt=" Image 22" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-23.jpg" alt=" Image 23" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-24.jpg" alt=" Image 24" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-25.jpg" alt=" Image 25" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-26.jpg" alt=" Image 26" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-27.jpg" alt=" Image 27" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/assets/gurukul-28.jpg" alt=" Image 28" loading="lazy">
-        </div>
-
-        <!--updated-->
-
-
       </div>
     </div>
   </section>
 
+  <!-- Gallery -->
+  <section class="gallery-main">
+    <div class="container-custom">
 
-  <!-- Footer (Maintained Exactly as Requested) -->
+      <div class="gallery-header">
+        <span class="section-tag">Explore Our Moments</span>
+        <h2 class="section-title">School Photo Gallery</h2>
+        <p class="section-desc">Browse through our collection of memories — from academic events and cultural programs
+          to sports days and celebrations.</p>
+      </div>
+
+      <div class="masonry-grid" id="galleryGrid">
+
+        <div class="gallery-item" data-caption="Gurukul Event 1">
+          <img src="/assets/gurukul-1.webp" alt="Gurukul Event 1" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 2">
+          <img src="/assets/gurukul-2.webp" alt="Gurukul Event 2" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 3">
+          <img src="/assets/gurukul-3.webp" alt="Gurukul Event 3" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 4">
+          <img src="/assets/gurukul-4.webp" alt="Gurukul Event 4" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 5">
+          <img src="/assets/gurukul-5.webp" alt="Gurukul Event 5" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 6">
+          <img src="/assets/gurukul-6.webp" alt="Gurukul Event 6" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 7">
+          <img src="/assets/gurukul-7.webp" alt="Gurukul Event 7" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 8">
+          <img src="/assets/gurukul-8.webp" alt="Gurukul Event 8" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 9">
+          <img src="/assets/gurukul-9.webp" alt="Gurukul Event 9" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 10">
+          <img src="/assets/gurukul-10.webp" alt="Gurukul Event 10" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 11">
+          <img src="/assets/gurukul-11.webp" alt="Gurukul Event 11" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 12">
+          <img src="/assets/gurukul-12.webp" alt="Gurukul Event 12" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 13">
+          <img src="/assets/gurukul-13.webp" alt="Gurukul Event 13" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 14">
+          <img src="/assets/gurukul-14.webp" alt="Gurukul Event 14" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 15">
+          <img src="/assets/gurukul-15.webp" alt="Gurukul Event 15" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item" data-caption="Gurukul Event 16">
+          <img src="/assets/gurukul-16.webp" alt="Gurukul Event 16" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <!-- Batch 2: Hidden (17-28) -->
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 17">
+          <img src="/assets/gurukul-17.webp" alt="Gurukul Event 17" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 18">
+          <img src="/assets/gurukul-18.webp" alt="Gurukul Event 18" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 19">
+          <img src="/assets/gurukul-19.webp" alt="Gurukul Event 19" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 20">
+          <img src="/assets/gurukul-20.webp" alt="Gurukul Event 20" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 21">
+          <img src="/assets/gurukul-21.webp" alt="Gurukul Event 21" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 22">
+          <img src="/assets/gurukul-22.webp" alt="Gurukul Event 22" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 23">
+          <img src="/assets/gurukul-23.webp" alt="Gurukul Event 23" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 24">
+          <img src="/assets/gurukul-24.webp" alt="Gurukul Event 24" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 25">
+          <img src="/assets/gurukul-25.webp" alt="Gurukul Event 25" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 26">
+          <img src="/assets/gurukul-26.webp" alt="Gurukul Event 26" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 27">
+          <img src="/assets/gurukul-27.webp" alt="Gurukul Event 27" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+        <div class="gallery-item batch-hidden" data-caption="Gurukul Event 28">
+          <img src="/assets/gurukul-28.webp" alt="Gurukul Event 28" loading="lazy">
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+        </div>
+
+      </div>
+
+      <!-- Load More -->
+      <div class="load-more-wrap">
+        <button class="load-more-btn" id="loadMoreBtn">
+          <i class="ri-add-circle-line"></i> Load More Photos
+        </button>
+        <p class="photos-showing" id="photosShowing">Showing 16 of 28 photos</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lbClose" aria-label="Close"><i class="ri-close-line"></i></button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous"><i
+        class="ri-arrow-left-s-line"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next"><i
+        class="ri-arrow-right-s-line"></i></button>
+    <div class="lightbox-img-wrap">
+      <img id="lbImg" src="" alt="">
+    </div>
+    <div class="lightbox-counter" id="lbCounter"></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container-custom">
+      <div class="cta-box">
+        <h2>Want to See More?</h2>
+        <p style="margin: 15px 0 30px; opacity: 0.9;">Visit our school campus and experience the vibrant culture
+          firsthand.</p>
+        <a href="tel:+917757833496" class="btn-primary">Schedule a Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
           <a href="/index.html" class="logo"
-            style="margin-bottom: 2rem; align-items: flex-start;text-decoration: none;">
+            style="margin-bottom: 2rem; align-items: flex-start; text-decoration: none;">
             <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
             <div>
               <div style="color: #ff9704;">KUMSS SINCE 1951</div>
             </div>
           </a>
-          <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
-            An educational society focused on overall development of students since 1951.
-          </p>
-
+          <p style="color: var(--paragraphColor); margin-bottom: 2rem;">An educational society focused on overall
+            development of students since 1951.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-
-            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
-                class="ri-instagram-fill"></i></a>
-
+            <a href="https://www.instagram.com/kumss_gurukul?igsh=MTh3cmlsaGVtYWlqMA==" class="social-link"
+              aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
             <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           </div>
         </div>
@@ -420,19 +911,15 @@
           <ul class="footer-links">
             <li><i class="ri-phone-line"></i> <a href="tel:+917757833496">+91 7757833496</a></li>
             <li><i class="ri-mail-line"></i> <a href="mailto:gemskarhati@gmail.com">gemskarhati@gmail.com</a></li>
-            <li style="color: #000;">
-              <i class="ri-map-pin-line"></i>
-              A/P – Karhati, Tal – Baramati, Dist – Pune.
-            </li>
+            <li style="color: #000;"><i class="ri-map-pin-line"></i> A/P – Karhati, Tal – Baramati, Dist – Pune.</li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
-          ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
-        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">ISO 9001:2015 Certified
+          Institute | Recognized by Government of Maharashtra</p>
       </div>
     </div>
   </footer>
@@ -441,23 +928,139 @@
     <i class="ri-arrow-up-double-fill"></i>
   </button>
 
-
   <script src="/assets/js/institute.js"></script>
 
-
-  <!-- Animation Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver((entries) => {
+
+      /* Header scroll */
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      });
+
+      /* Mobile menu */
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.getElementById('navLinks');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenuBtn.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+      }
+
+      /* Items */
+      const allItems = document.querySelectorAll('.gallery-item');
+      const BATCH_SIZE = 16;
+      const totalPhotos = allItems.length;
+      let visibleCount = BATCH_SIZE;
+
+      /* Scroll reveal */
+      const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+          if (entry.isIntersecting && !entry.target.classList.contains('revealed')) {
+            const siblings = Array.from(allItems).filter(
+              el => !el.classList.contains('revealed') &&
+                !el.classList.contains('batch-hidden') &&
+                el.getBoundingClientRect().top < window.innerHeight + 100
+            );
+            const idx = siblings.indexOf(entry.target);
+            setTimeout(() => {
+              entry.target.classList.add('revealed');
+            }, Math.max(0, idx) * 60);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.06 });
 
-      const animElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .scale-in');
-      animElements.forEach(el => observer.observe(el));
+      allItems.forEach(el => {
+        if (!el.classList.contains('batch-hidden')) revealObserver.observe(el);
+      });
+
+      /* Load more */
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+      const photosShowing = document.getElementById('photosShowing');
+
+      function updateCounter() {
+        const showing = Math.min(visibleCount, totalPhotos);
+        photosShowing.textContent = 'Showing ' + showing + ' of ' + totalPhotos + ' photos';
+        if (visibleCount >= totalPhotos) {
+          loadMoreBtn.classList.add('hidden');
+          photosShowing.textContent = 'Showing all ' + totalPhotos + ' photos';
+        }
+      }
+
+      loadMoreBtn.addEventListener('click', () => {
+        const nextBatch = Array.from(allItems).slice(visibleCount, visibleCount + BATCH_SIZE);
+        nextBatch.forEach((item, i) => {
+          item.classList.remove('batch-hidden');
+          revealObserver.observe(item);
+          setTimeout(() => item.classList.add('revealed'), i * 60);
+        });
+        visibleCount += BATCH_SIZE;
+        updateCounter();
+        if (nextBatch[0]) {
+          setTimeout(() => nextBatch[0].scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
+        }
+      });
+
+      updateCounter();
+
+      /* Lightbox */
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbCounter = document.getElementById('lbCounter');
+      let currentIdx = 0;
+      let lightboxItems = [];
+
+      function getVisibleItems() {
+        return Array.from(allItems).filter(el => !el.classList.contains('batch-hidden'));
+      }
+
+      function openLightbox(idx) {
+        lightboxItems = getVisibleItems();
+        currentIdx = idx;
+        updateLightbox();
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      function updateLightbox() {
+        const item = lightboxItems[currentIdx];
+        if (!item) return;
+        const img = item.querySelector('img');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCounter.textContent = (currentIdx + 1) + ' / ' + lightboxItems.length;
+      }
+
+      function nextSlide() { currentIdx = (currentIdx + 1) % lightboxItems.length; updateLightbox(); }
+      function prevSlide() { currentIdx = (currentIdx - 1 + lightboxItems.length) % lightboxItems.length; updateLightbox(); }
+
+      allItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const vis = getVisibleItems();
+          const idx = vis.indexOf(item);
+          if (idx !== -1) openLightbox(idx);
+        });
+      });
+
+      document.getElementById('lbClose').addEventListener('click', closeLightbox);
+      document.getElementById('lbNext').addEventListener('click', nextSlide);
+      document.getElementById('lbPrev').addEventListener('click', prevSlide);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+      });
+
     });
   </script>
   <script src="/assets/js/custom.js"></script>
