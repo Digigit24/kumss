@@ -49,6 +49,28 @@
             text-decoration: none;
         }
 
+        /* ==================== MULTI-LOGO STYLES ==================== */
+        .gm-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gm-logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .gm-logo-divider {
+            width: 1px;
+            height: 35px;
+            background: rgba(0, 0, 0, 0.15);
+            margin: 0 4px;
+        }
+
+
+
         /* ==================== MODERN HERO SECTION ==================== */
         .hero-modern {
             position: relative;
@@ -612,9 +634,14 @@
     <header class="gm-header" id="header">
         <div class="gm-container">
             <nav class="gm-nav" aria-label="Primary">
-                <!-- Logo -->
+                <!-- Logo + Partner Logos -->
                 <a href="/index.html" class="gm-logo">
                     <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="gm-logo-img">
+                    <div class="gm-partner-logos">
+                        <img src="/assets/iti-logo-1.png" alt="Partner Logo 1" class="gm-partner-logo">
+                        <img src="/assets/iti-logo-2.png" alt="Partner Logo 2" class="gm-partner-logo">
+                        <img src="/assets/iti-logo-3.png" alt="Partner Logo 3" class="gm-partner-logo">
+                    </div>
                 </a>
 
                 <!-- Mobile toggle -->
@@ -646,8 +673,8 @@
                                     href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
                                     School Dhakale</a></li>
                             <li role="none"><a role="menuitem"
-                                    href="/primary-school-tembha/primary-school-tembha.html">Primary School Karhati
-                                    Tembha</a></li>
+                                    href="/primary-school-karhati/primary-school-karhati.html">Primary School Karhati
+                                    karhati</a></li>
                             <li role="none"><a role="menuitem" href="kumss-private-iti-karhati.html">KUMSS Private I.T.I
                                     Karhati</a></li>
                             <li role="none"><a role="menuitem"
@@ -687,10 +714,10 @@
                         </h1>
                         <p class="hero-lead">
                             Transforming 10th-grade students into skilled industry professionals in just 2 years. Join
-                            KUMSS ITI Karhati A leader in technical education since 2000.
+                            KUMSS ITI Karhati A leader in technical education since 1999.
                         </p>
                         <div class="d-flex flex-wrap gap-3">
-                            <a href="tel:+919421394242" class="btn-premium">
+                            <a href="tel:+919423694242" class="btn-premium">
                                 Apply Now <i class="ri-arrow-right-line"></i>
                             </a>
                             <a href="#trades" class="btn-premium-outline">
@@ -827,7 +854,7 @@
             <div class="principal-wrapper">
                 <div class="principal-img-box gs-reveal-left">
                     <!-- Image max-width limited to 350px in CSS -->
-                    <img src="/assets/vikas-nirmal-iti-principal.webp" alt="Mr. Vikas Nirmal">
+                    <img src="/assets/vikas-nirmal-iti-principal.webp" alt="Mr. Vikas Sanjay Nirmal">
                 </div>
                 <div class="principal-content gs-reveal-right">
                     <span class="section-subtitle">Principal's Desk</span>
@@ -841,7 +868,9 @@
                         in."
                     </p>
                     <div>
-                        <h4 class="mb-0 fw-bold" style="color: #003366;">Mr. Vikas Nirmal</h4>
+                        <h4 class="mb-0 fw-bold" style="color: #003366;">Er. Vikas Sanjay Nirmal</h4>
+                        <small class="text-muted text-uppercase fw-bold">CEO, Krushi Udyog Mool Shikshan Sanstha
+                            (KUMSS)</small><br>
                         <small class="text-muted text-uppercase fw-bold">Principal, KUMSS ITI</small>
                     </div>
                 </div>
@@ -1013,7 +1042,7 @@
                             for Fitter & Electrician.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a href="tel:+919421394242" class="btn bg-white text-dark fw-bold rounded-pill px-4 py-3">
+                        <a href="tel:+919423694242" class="btn bg-white text-dark fw-bold rounded-pill px-4 py-3">
                             <i class="ri-phone-fill me-2" style="color: #ff6700;"></i> Call Now
                         </a>
                     </div>
@@ -1069,13 +1098,41 @@
                                 Karhati</a></li>
                         <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
                                 Dhakale</a></li>
-                        <li><a href="/primary-school-tembha/primary-school-tembha.html">Primary School, Tembha</a></li>
+                        <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School, karhati</a>
+                        </li>
                         <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
                         </li>
                         <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
                                 Medium</a></li>
                         <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
                                 Pawar Kala Mahavidyalaya</a></li>
+                        <div class="footer-col">
+                            <h3
+                                style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                                Our Institutes</h3>
+                            <ul class="footer-links">
+                                <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                        Vidyalay
+                                        Karhati</a></li>
+                                <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                        School,
+                                        Dhakale</a></li>
+                                <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School,
+                                        karhati</a>
+                                </li>
+                                <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private
+                                        I.T.I</a>
+                                </li>
+                                <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                        English
+                                        Medium</a></li>
+                                <li><a
+                                        href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
+                                        Pawar Kala Mahavidyalaya</a></li>
+                                <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh
+                                        Primary School</a></li>
+                            </ul>
+                        </div>
                     </ul>
                 </div>
 
@@ -1099,7 +1156,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© 2026 Krushi Udyog Mul Shikshan Sansthan (KUMSS). All rights reserved.</p>
+                <p>© 2026 Krushi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>

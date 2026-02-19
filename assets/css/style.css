@@ -731,16 +731,12 @@ Navbar Area Style
 .navbar {
   z-index: 2;
   position: relative;
-  background-color: var(--whiteColor);
+  background-color: #002a5c;
   box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.05);
-  padding-top: 25px;
-  padding-bottom: 25px;
 }
 
 .navbar .container-fluid {
   max-width: 1680px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .navbar .navbar-brand {
@@ -756,11 +752,10 @@ Navbar Area Style
 img.black-logo,
 .copyright-logo img,
 .offcanvas-header .logo img {
-  background-color: aliceblue !important;
-  max-height: 100px;
+  background-color: white;
+  max-height: 120px;
   width: auto;
-  border-radius: 12px;
-  padding: 5px;
+  border-radius: 10px;
   display: inline-block;
   object-fit: contain;
 }
@@ -783,7 +778,7 @@ img.black-logo,
   .navbar .navbar-brand img,
   .navbar-brand img,
   img.black-logo {
-    max-height: 56px;
+    max-height: 60px;
   }
 }
 
@@ -1118,10 +1113,6 @@ img.black-logo,
 .navbar.style-2 .others-option .option-item .default-btn:hover {
   color: var(--whiteColor) !important;
   background-color: var(--blackColor);
-}
-
-.navbar.style-3 {
-  background-color: #002a5c;
 }
 
 .navbar.style-3 .navbar-nav {
@@ -3107,7 +3098,7 @@ Graduets Area Style
 
 /* LINKS */
 .footer-links {
-  list-style: none;
+  list-style: disc;
   margin: 0;
   padding: 0;
   display: grid;
@@ -3116,7 +3107,7 @@ Graduets Area Style
 
 .footer-links li {
   display: flex;
-  
+
   align-items: flex-start;
   gap: 10px;
   text-align: left;
@@ -7568,9 +7559,8 @@ Mega Menu Style - Final Neat Optimization
   opacity: 0.8;
 }
 
-/* Style-3 Specific (Dark Navbar Seamless Upgrade) */
 .navbar.style-3 {
-  background: #002a5c !important;
+  color: #002a5c !important;
 }
 
 .navbar.style-3 .nav-item.mega-menu-item .dropdown-menu.mega-menu {
@@ -7597,7 +7587,46 @@ Mega Menu Style - Final Neat Optimization
 }
 
 @media (max-width: 991px) {
-  .mega-menu-item .dropdown-menu.mega-menu {
+
+  .navbar .navbar-nav .nav-item.mega-menu-item .dropdown-menu.mega-menu,
+  .navbar .navbar-nav .nav-item.mega-menu-item .dropdown-menu.mega-menu::before {
     display: none !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .navbar-toggler {
+    position: relative;
+    z-index: 9999 !important;
+  }
+}
+
+/* TEMPORARY DEBUG - add this and try clicking the hamburger */
+@media (max-width: 991px) {
+
+  /* Nuclear reset: kill everything that could overlay */
+  .mega-menu,
+  .mega-menu *,
+  .mega-menu::before,
+  .mega-menu::after,
+  .dropdown-menu {
+    display: none !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Force hamburger clickable */
+  .navbar-toggler,
+  .navbar-toggler * {
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 99999 !important;
+    cursor: pointer !important;
   }
 }

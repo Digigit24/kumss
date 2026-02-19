@@ -126,9 +126,50 @@
         }
 
         .gm-logo-img {
-            height: 54px;
+            height: 80px;
+            width: 85px;
+        }
+
+        .gm-partner-logos {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 6px;
+        }
+
+        .gm-partner-logo {
+            height: 42px;
             width: auto;
-            filter: drop-shadow(0 4px 10px rgba(15, 128, 66, 0.25));
+            object-fit: contain;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .gm-partner-logo:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 767px) {
+            .gm-logo {
+                gap: 6px;
+            }
+
+            .gm-logo-img {
+                height: 68px;
+            }
+
+            .gm-partner-logos {
+                gap: 6px;
+                margin-left: 4px;
+            }
+
+            .gm-partner-logo {
+                height: 30px;
+            }
+
+            .gm-logo-divider {
+                height: 28px;
+            }
         }
 
         /* Links row */
@@ -1693,8 +1734,8 @@
         }
 
         .footer-logo-img {
-            width: 30%;
-            height: 30%;
+            width: 40%;
+            height: 40%;
         }
 
         .ggm-btn {
@@ -1777,7 +1818,7 @@
         }
 
         .footer-links {
-            list-style: none;
+            list-style: disc;
             padding: 0;
             margin: 0;
             display: grid;
