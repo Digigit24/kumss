@@ -13,127 +13,803 @@
   <!-- ANIMATION CSS (Added) -->
 
 
-  <!-- CSS Files (same as index) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/responsive.css">
-
   <link href="/assets/kumss_log.webp" type="image/x-icon" rel="icon">
 
   <!-- Page-only CSS -->
   <style>
-    .about-hero {
-      padding: 90px 0 60px;
-      background: linear-gradient(180deg, rgba(243, 247, 255, 1) 0%, #ffffff 70%);
-      overflow: hidden;
-      /* Prevent horizontal scroll from slide animations */
+    /* ===========================
+       FULL WIDTH RESTORATION
+       =========================== */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
     }
 
+    :root {
+      --primary-color: #0a296c;
+      --secondary-color: #ff8402;
+      --accent-color: #28a745;
+    }
+
+    /* ===========================
+       NAVBAR STYLES
+       =========================== */
+    #navbar {
+      position: relative;
+      z-index: 1001;
+      background: #fff;
+    }
+
+    #navbar .nav-link {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.1;
+      /* Reduced line height */
+      color: var(--primary-color) !important;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+      padding: 12px 15px !important;
+    }
+
+    /* Link indicator arrows */
+    #navbar .nav-link:not(.dropdown-toggle)::after {
+      content: '\203A';
+      /* Typographic chevron */
+      font-size: 1.3rem;
+      line-height: 1;
+      opacity: 0.4;
+      transition: all 0.3s ease;
+    }
+
+    #navbar .nav-link:hover {
+      color: var(--secondary-color) !important;
+    }
+
+    #navbar .nav-link:hover::after {
+      opacity: 1;
+      transform: translateX(4px);
+      color: var(--secondary-color);
+    }
+
+    /* Dropdown arrow fix */
+    #navbar .dropdown-toggle::after {
+      display: none !important;
+      /* Hide bootstrap default */
+    }
+
+    #navbar .dropdown-toggle::before {
+      position: static !important;
+      font-size: 14px !important;
+      margin-left: 5px;
+    }
+
+    /* ===========================
+       MOBILE MENU Z-INDEX
+       =========================== */
+    .offcanvas {
+      z-index: 1050 !important;
+    }
+
+    .offcanvas-backdrop {
+      z-index: 1040 !important;
+    }
+
+    .dropdown-item {
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .dropdown-item:hover {
+      color: #ff8402;
+      font-size: 15px;
+      background: transparent;
+    }
+
+    /* ============================================================
+       FOOTER – MODERN COMPACT REDESIGN
+    ============================================================ */
+    .footer {
+      background: #061633;
+      /* Deep navy base */
+      color: rgba(255, 255, 255, 0.75);
+      padding: 60px 0 0;
+      /* Reduced top padding */
+      font-family: 'Inter', system-ui, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 132, 2, 0.3), transparent);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.6fr 1fr 0.8fr;
+      gap: 40px;
+      /* Reduced gap */
+      margin-bottom: 50px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .footer-logo-img {
+      width: 54px;
+      height: 54px;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .footer-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-since {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #ff8402;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .footer-desc {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .social-link:hover {
+      background: #ff8402;
+      color: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(255, 132, 2, 0.3);
+    }
+
+    .footer-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 25px;
+      height: 2px;
+      background: #ff8402;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-links li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .footer-links li:not(:has(i))::before {
+      content: '\203A';
+      /* Simple clean chevron */
+      color: #ff8402;
+      font-size: 1.2rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: -1px;
+    }
+
+    .footer-links li i {
+      color: #ff8402;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 3px;
+      color: rgba(255, 255, 255, 0.75);
+      transition: all 0.3s ease;
+      line-height: 1.2;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .footer-bottom {
+      padding: 30px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+      margin: 0;
+    }
+
+    .footer-note {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.3);
+      margin: 0;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    @media (max-width: 991px) {
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+    }
+
+    /* ══════════════════════════════════════════
+       ABOUT HERO — PREMIUM REDESIGN v2
+       Vibrant, eye-catching with glassmorphism KPIs
+    ══════════════════════════════════════════ */
+    .about-hero {
+      position: relative;
+      padding: 90px 0 100px;
+      background: linear-gradient(135deg, #0a1628 0%, #0d2847 25%, #122f5a 50%, #1a3a6e 75%, #0d2847 100%);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* Wider container for hero */
+    .about-hero .container {
+      max-width: 92%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    /* Subtle noise overlay for texture */
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(255, 132, 2, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(74, 144, 217, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 60% 80%, rgba(255, 179, 71, 0.05) 0%, transparent 60%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Inverted Border Radius (concave wave) at bottom */
+    .about-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: -5%;
+      right: -5%;
+      height: 90px;
+      background: #ffffff;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      z-index: 5;
+    }
+
+    /* Animated mesh blobs — more vibrant */
+    .ah-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.18;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .ah-blob--1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #ff8402 0%, #ff6b00 100%);
+      top: -200px;
+      right: -150px;
+      animation: ahBlobDrift 18s infinite alternate ease-in-out;
+    }
+
+    .ah-blob--2 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #3b82f6 0%, #1d4ed8 100%);
+      bottom: -150px;
+      left: -120px;
+      animation: ahBlobDrift 22s infinite alternate-reverse ease-in-out;
+    }
+
+    .ah-blob--3 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #f59e0b 0%, #d97706 100%);
+      top: 40%;
+      left: 45%;
+      animation: ahBlobDrift 15s infinite alternate ease-in-out;
+    }
+
+    @keyframes ahBlobDrift {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(50px, -40px) scale(1.2);
+      }
+
+      100% {
+        transform: translate(-30px, 30px) scale(0.85);
+      }
+    }
+
+    /* Floating Animated SVGs — slightly more visible */
+    .ah-svg {
+      position: absolute;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.1;
+    }
+
+    .ah-svg svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ah-svg--cap {
+      width: 90px;
+      height: 90px;
+      top: 10%;
+      left: 6%;
+      animation: ahFloat 6s infinite ease-in-out;
+    }
+
+    .ah-svg--book {
+      width: 70px;
+      height: 70px;
+      top: 15%;
+      right: 10%;
+      animation: ahFloat 7s 1s infinite ease-in-out;
+    }
+
+    .ah-svg--plant {
+      width: 80px;
+      height: 80px;
+      bottom: 22%;
+      left: 4%;
+      animation: ahFloat 8s 2s infinite ease-in-out;
+    }
+
+    .ah-svg--bulb {
+      width: 55px;
+      height: 55px;
+      bottom: 28%;
+      right: 7%;
+      animation: ahFloat 5s 0.5s infinite ease-in-out;
+    }
+
+    .ah-svg--star {
+      width: 45px;
+      height: 45px;
+      top: 45%;
+      left: 22%;
+      animation: ahFloat 9s 3s infinite ease-in-out;
+      opacity: 0.07;
+    }
+
+    @keyframes ahFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-22px) rotate(6deg);
+      }
+    }
+
+    /* Hero content wrapper */
+    .ah-content {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Tagline pill */
     .about-hero .tagline {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 8px 14px;
+      padding: 10px 22px;
       border-radius: 999px;
-      background: rgba(11, 42, 91, 0.08);
-      color: #0b2a5b;
+      background: rgba(255, 132, 2, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 132, 2, 0.25);
+      color: #ffb347;
       font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      animation: ahFadeUp 0.6s 0.1s ease both;
     }
 
+    .about-hero .tagline i {
+      color: #ff8402;
+      font-size: 1.2rem;
+    }
+
+    /* Main heading */
     .about-hero h1 {
-      margin: 14px 0 10px;
-      font-size: 55px;
+      margin: 16px 0 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.12;
+      letter-spacing: -0.5px;
+      animation: ahFadeUp 0.6s 0.2s ease both;
     }
 
-    .about-hero .hero-card {
-      border-radius: 18px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    .about-hero h1 span {
+      background: linear-gradient(90deg, #ff8402, #ffb347, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .about-hero .hero-card img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      display: block;
+    /* Quote */
+    .about-hero .ah-quote {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.95rem;
+      font-style: italic;
+      padding-left: 16px;
+      border-left: 3px solid rgba(255, 132, 2, 0.5);
+      margin-bottom: 14px;
+      line-height: 1.55;
+      animation: ahFadeUp 0.6s 0.3s ease both;
     }
 
-    .about-hero .hero-badge {
-      position: absolute;
-      left: 16px;
-      bottom: 16px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    /* Description */
+    .about-hero .ah-desc {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1rem;
+      line-height: 1.65;
+      max-width: 560px;
+      margin-bottom: 20px;
+      animation: ahFadeUp 0.6s 0.35s ease both;
     }
 
-    .about-hero .hero-badge strong {
-      display: block;
-      font-size: 18px;
-      color: #0b2a5b;
-      line-height: 1.1;
+    @keyframes ahFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .about-hero .hero-badge span {
-      display: block;
-      font-size: 13px;
-      color: #6e6656;
-      margin-top: 2px;
-    }
-
-    .about-block {
-      padding: 70px 0;
-      overflow: hidden;
-      /* Prevent horizontal scroll */
-    }
-
+    /* ── KPI Cards — Glassmorphism Premium Redesign ── */
     .about-kpi {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      animation: ahFadeUp 0.7s 0.45s ease both;
     }
 
     .about-kpi .kpi {
-      border: 1px solid rgba(11, 42, 91, 0.08);
+      flex: 1;
+      position: relative;
+      padding: 16px 14px 14px;
       border-radius: 16px;
-      padding: 16px 14px;
-      background: #fff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      overflow: hidden;
+    }
+
+    /* Gradient glow top-border effect */
+    .about-kpi .kpi::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #ff8402, #ffb347, #ffd700);
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
     .about-kpi .kpi:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-6px);
+      border-color: rgba(255, 132, 2, 0.2);
+      box-shadow: 0 16px 40px rgba(255, 132, 2, 0.1), 0 0 0 1px rgba(255, 132, 2, 0.08);
     }
 
-    .about-kpi .kpi .kpi-top {
+    .about-kpi .kpi:hover::before {
+      opacity: 1;
+    }
+
+    .about-kpi .kpi .kpi-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255, 132, 2, 0.2), rgba(255, 179, 71, 0.1));
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
+      justify-content: center;
+      margin-bottom: 14px;
+      transition: transform 0.3s ease;
     }
 
-    .about-kpi .kpi i {
-      color: #0b2a5b;
-      font-size: 20px;
+    .about-kpi .kpi:hover .kpi-icon {
+      transform: scale(1.1) rotate(-3deg);
+    }
+
+    .about-kpi .kpi .kpi-icon i {
+      color: #ff8402;
+      font-size: 1.3rem;
     }
 
     .about-kpi .kpi strong {
-      font-size: 18px;
-      color: #0b2a5b;
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
     }
 
     .about-kpi .kpi p {
       margin: 0;
-      color: #6e6656;
-      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    /* ── Hero Image — Equal Height with Content ── */
+    .about-hero .hero-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      height: 100%;
+      min-height: 340px;
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      animation: ahFadeUp 0.8s 0.4s ease both;
+    }
+
+    /* Inverted corners on the card */
+    .hero-card-corners {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .hero-card-corners .corner {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+    }
+
+    .hero-card-corners .corner--bl {
+      bottom: 0;
+      left: 0;
+    }
+
+    .hero-card-corners .corner--bl::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border-radius: 0 20px 0 0;
+      box-shadow: -12px 0 0 0 rgba(13, 40, 71, 0.9);
+    }
+
+    .hero-card-corners .corner--br {
+      bottom: 0;
+      right: 0;
+    }
+
+    .hero-card-corners .corner--br::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border-radius: 20px 0 0 0;
+      box-shadow: 12px 0 0 0 rgba(13, 40, 71, 0.9);
+    }
+
+    .about-hero .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: transform 8s ease;
+    }
+
+    .about-hero .hero-card:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Gradient overlay on image */
+    .hero-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 22, 40, 0.7) 0%, rgba(10, 22, 40, 0) 50%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Glassmorphism badge — refined */
+    .about-hero .hero-badge {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      padding: 18px 24px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px) saturate(1.3);
+      -webkit-backdrop-filter: blur(20px) saturate(1.3);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      z-index: 5;
+      animation: ahFadeUp 0.8s 0.6s ease both;
+    }
+
+    .about-hero .hero-badge strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #ffffff;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .about-hero .hero-badge>span {
+      display: block;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 4px;
+    }
+
+    .about-hero .hero-badge .badge-stats {
+      display: flex;
+      gap: 20px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .about-hero .hero-badge .badge-stat {
+      text-align: center;
+    }
+
+    .about-hero .hero-badge .badge-stat .val {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ff8402;
+      line-height: 1;
+    }
+
+    .about-hero .hero-badge .badge-stat .lbl {
+      display: block;
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-top: 4px;
+    }
+
+    .about-block {
+      padding: 50px 0;
+      overflow: hidden;
     }
 
     .about-list {
@@ -141,15 +817,16 @@
       padding: 0;
       list-style: none;
       display: grid;
-      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
     }
 
     .about-list li {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       align-items: flex-start;
-      padding: 12px 12px;
-      border-radius: 14px;
+      padding: 10px;
+      border-radius: 12px;
       border: 1px solid rgba(11, 42, 91, 0.08);
       background: #fff;
       transition: transform 0.3s ease;
@@ -239,17 +916,148 @@
     }
 
 
+    @media (max-width: 1199px) {
+      .ah-svg--cap {
+        width: 65px;
+        height: 65px;
+      }
+
+      .ah-svg--book {
+        width: 50px;
+        height: 50px;
+      }
+
+      .ah-svg--plant {
+        width: 60px;
+        height: 60px;
+      }
+
+      .ah-svg--bulb {
+        width: 42px;
+        height: 42px;
+      }
+
+      .ah-svg--star {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
     @media (max-width: 991px) {
+      .about-hero {
+        padding: 80px 0 90px;
+      }
+
+      .about-hero::after {
+        height: 55px;
+      }
+
+      /* When columns stack, image needs its own height */
+      .about-hero .hero-card {
+        height: auto;
+        min-height: 360px;
+      }
+
       .about-hero .hero-card img {
-        height: 320px;
+        position: relative;
+        height: 360px;
+      }
+
+      .about-hero h1 {
+        font-size: clamp(1.8rem, 5vw, 2.6rem);
       }
 
       .about-kpi {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hero-card-corners .corner {
+        display: none;
+      }
+
+      .ah-svg {
+        opacity: 0.06;
       }
 
       .trustees-grid {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .about-hero {
+        padding: 75px 0 90px;
+      }
+
+      .about-hero::after {
+        height: 40px;
+      }
+
+      .about-hero .hero-card {
+        min-height: 280px;
+      }
+
+      .about-hero .hero-card img {
+        height: 280px;
+      }
+
+      .about-hero .hero-badge {
+        left: 14px;
+        bottom: 14px;
+        padding: 14px 18px;
+      }
+
+      .about-hero .hero-badge strong {
+        font-size: 1.1rem;
+      }
+
+      .about-hero .hero-badge .badge-stats {
+        gap: 12px;
+      }
+
+      .about-kpi .kpi strong {
+        font-size: 1.15rem;
+      }
+
+      .ah-svg--cap,
+      .ah-svg--star {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-hero {
+        padding: 65px 0 75px;
+      }
+
+      .about-hero::after {
+        height: 28px;
+      }
+
+      .about-hero .hero-card {
+        min-height: 220px;
+      }
+
+      .about-hero .hero-card img {
+        height: 220px;
+      }
+
+      .about-hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .about-hero .hero-badge .badge-stats {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .about-kpi .kpi {
+        padding: 16px 14px;
+      }
+
+      .ah-svg {
+        display: none;
       }
     }
 
@@ -416,9 +1224,82 @@
 
     .our-campus img {
       width: 100%;
-      height: 800px;
+      height: 450px;
       object-fit: cover;
       border-radius: 18px;
+    }
+
+    /* Our Campus section responsive */
+    @media (max-width: 991px) {
+      .about-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+      }
+
+      .about-list li {
+        padding: 8px;
+        font-size: 0.9rem;
+      }
+
+      .about-list li strong {
+        font-size: 0.85rem;
+      }
+
+      .our-campus img {
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .about-block {
+        padding: 35px 0;
+      }
+
+      .about-list {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .about-list li {
+        padding: 8px 10px;
+        border-radius: 10px;
+        gap: 6px;
+      }
+
+      .about-list li strong {
+        font-size: 0.82rem;
+      }
+
+      .about-list li div[style] {
+        font-size: 12px !important;
+      }
+
+      .our-campus img {
+        height: 240px;
+        border-radius: 12px;
+      }
+
+      .section-head h2 {
+        font-size: 28px;
+      }
+
+      .section-head p {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-block {
+        padding: 25px 0;
+      }
+
+      .about-list li {
+        padding: 6px 8px;
+      }
+
+      .our-campus img {
+        height: 200px;
+      }
     }
 
     /* General styles for mobile responsiveness */
@@ -496,38 +1377,36 @@
 
 <body>
 
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress__bar" id="scrollProgress"></span>
+  </div>
 
-  <!-- Navbar -->
+  <!-- Start Navbar Area -->
   <nav class="navbar navbar-expand-lg style-3" id="navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img class="black-logo" src="/assets/kumss_log.webp" alt="KUMSS logo">
+        <img class="black-logo" src="/assets/kumss_log.webp" alt="black-logo">
       </a>
 
-      <a class="navbar-toggler text-decoration-none" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
-        aria-controls="navbarOffcanvas">
+      <button class="navbar-toggler text-decoration-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
         <span class="burger-menu">
           <span class="top-bar"></span>
           <span class="middle-bar"></span>
           <span class="bottom-bar"></span>
         </span>
-      </a>
+      </button>
 
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html" class="nav-link"> Home </a>
           </li>
-
           <li class="nav-item">
-            <a href="about.html" class="nav-link active">About</a>
+            <a href="about.html" class="nav-link active"> About</a>
           </li>
-
-
           <li class="nav-item dropdown mega-menu-item">
-            <a href="/all-institutes.html" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Our Educational Institutes
             </a>
             <div class="dropdown-menu mega-menu">
@@ -614,28 +1493,31 @@
               </div>
             </div>
           </li>
-
-          <li class="nav-item"><a href="/gallery.html" class="nav-link">Gallery</a></li>
-          <li class="nav-item"><a href="/careers.html" class="nav-link">Careers</a></li>
           <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact <span>Us</span></a>
+            <a href="/gallery.html" class="nav-link"> Gallery </a>
+          </li>
+          <li class="nav-item">
+            <a href="/careers.html" class="nav-link">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a href="/contact.html" class="nav-link">
+              Contact <span>Us</span>
+            </a>
           </li>
         </ul>
 
         <div class="others-option">
           <div class="d-flex align-items-center">
             <div class="option-item">
-              <!--<a class="text-decoration-none default-btn" href="#">
-                Donate Now <i class="ri-heart-add-fill"></i>
-              </a>-->
             </div>
           </div>
         </div>
       </div>
     </div>
   </nav>
+  <!-- End Navbar Area -->
 
-  <!-- Responsive Navbar -->
+  <!-- Start Responsive Navbar Area -->
   <div class="responsive-navbar offcanvas offcanvas-end border-0" tabindex="-1" id="navbarOffcanvas">
     <div class="offcanvas-header">
       <a href="index.html" class="logo d-inline-block">
@@ -655,41 +1537,56 @@
         <li class="responsive-menu-list without-icon">
           <a href="about.html" class="nav-link active">About</a>
         </li>
-
         <li class="responsive-menu-list">
           <a href="/all-institutes.html">Our Educational Institutes</a>
           <ul class="responsive-menu-items">
-            <li class="nav-item"><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html"
-                class="nav-link">Vasatigruh Vidyalay Karhati</a></li>
-            <li class="nav-item"><a href="/new-english-school-dhakale/new-english-school-dhakale.html"
-                class="nav-link">New English School, Dhakale</a></li>
-            <li class="nav-item"><a href="/primary-school-karhati/primary-school-karhati.html" class="nav-link">Primary
-                School, karhati</a></li>
-            <li class="nav-item"><a href="/kumss-private-iti-Karhati/kumss-private-iti-Karhati.html"
-                class="nav-link">KUMSS Private I.T.I Karhati</a></li>
-            <li class="nav-item"><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html"
-                class="nav-link">Gurukul English Medium School</a></li>
-            <li class="nav-item"><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
-                class="nav-link">Shardabai Pawar Kala Mahavidhyalaya</a></li>
+            <li class="nav-item">
+              <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="nav-link">
+                Vasatigruh Vidyalay Karhati
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="nav-link">
+                New English School, Dhakale
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./primary-school-karhati/primary-school-karhati.html" class="nav-link">
+                Primary School, karhati
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="nav-link">
+                KUMSS Private I.T.I Karhati
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="nav-link">
+                Gurukul English Medium School
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html" class="nav-link">
+                Shardabai Pawar Kala Mahavidyalaya
+              </a>
+            </li>
           </ul>
         </li>
-
         <li class="responsive-menu-list without-icon">
           <a href="/gallery.html" class="nav-link">Gallery</a>
         </li>
         <li class="responsive-menu-list without-icon">
-          <a href="/Careers.html" class="nav-link">Careers</a>
+          <a href="/careers.html" class="nav-link">Careers</a>
         </li>
         <li class="responsive-menu-list without-icon">
-          <a href="/contact.html" class="nav-link">Contact <span>Us</span></a>
+          <a href="/contact.html" class="nav-link">
+            Contact <span>Us</span>
+          </a>
         </li>
       </ul>
 
       <div class="others-option d-md-flex align-items-center">
         <div class="option-item">
-          <!-- <a class="text-decoration-none default-btn" href="javascript:void(0)">
-            Donate Now <i class="ri-heart-add-fill"></i>
-          </a> -->
         </div>
       </div>
     </div>
@@ -697,61 +1594,131 @@
 
   <!-- ABOUT HERO -->
   <section class="about-hero" id="about">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Left Column: About Text and KPIs - ANIMATED -->
-        <div class="col-lg-6 pe-lg-5">
-          <span class="tagline">
-            <i class="ri-graduation-cap-fill" aria-hidden="true"></i>KUMSS Since 1951
-          </span>
+    <!-- Animated mesh blobs -->
+    <div class="ah-blob ah-blob--1"></div>
+    <div class="ah-blob ah-blob--2"></div>
+    <div class="ah-blob ah-blob--3"></div>
 
-          <h1>About Krushi Udyog Mool Shikshan Sanstha</h1>
+    <!-- Floating minimal animated SVGs -->
+    <div class="ah-svg ah-svg--cap">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 8L4 24l28 16 28-16L32 8z" stroke="#fff" stroke-width="2" fill="none" />
+        <path d="M12 30v14c0 4 8 10 20 10s20-6 20-10V30" stroke="#fff" stroke-width="2" fill="none" />
+        <line x1="56" y1="24" x2="56" y2="50" stroke="#ff8402" stroke-width="2" />
+        <circle cx="56" cy="52" r="3" fill="#ff8402" />
+      </svg>
+    </div>
 
-          <p style="color: var(--secenderyColor); font-size: large; font-style: italic; margin-bottom: 14px">
-            “Education opens up the mind, expands it, and allows you to improve your life in so many ways.”
-          </p>
+    <div class="ah-svg ah-svg--book">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 12c6-4 14-4 24 0v40c-10-4-18-4-24 0V12z" stroke="#fff" stroke-width="2" fill="none" />
+        <path d="M56 12c-6-4-14-4-24 0v40c10-4 18-4 24 0V12z" stroke="#fff" stroke-width="2" fill="none" />
+      </svg>
+    </div>
 
-          <p>
-            KUMSS is an educational society which mainly focuses upon the overall development of students.
-            It established in the year of 1951, Great visionaries founder of the institute late Dr. Agarkar
-            plant a seed of an idea. Now, small plant becomes a big tree with great leadership of KUMSS President and
-            Dy.CM of Maharashtra Shri.Ajitdada Pawar from 2004.
-          </p>
+    <div class="ah-svg ah-svg--plant">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 56V28" stroke="#fff" stroke-width="2" />
+        <path d="M32 28c-4-12-18-14-22-10 0 8 8 16 22 10z" stroke="#fff" stroke-width="1.5" fill="none" />
+        <path d="M32 36c4-10 16-12 20-8 0 8-8 14-20 8z" stroke="#fff" stroke-width="1.5" fill="none" />
+        <ellipse cx="32" cy="58" rx="8" ry="3" stroke="#ff8402" stroke-width="1.5" fill="none" />
+      </svg>
+    </div>
 
-          <div class="about-kpi">
-            <div class="kpi">
-              <div class="kpi-top">
+    <div class="ah-svg ah-svg--bulb">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="26" r="14" stroke="#fff" stroke-width="2" fill="none" />
+        <path d="M26 38h12v6H26z" stroke="#fff" stroke-width="1.5" fill="none" />
+        <path d="M28 44h8v4H28z" stroke="#fff" stroke-width="1.5" fill="none" />
+        <path d="M32 12v-4M18 14l-3-3M46 14l3-3M14 26H8M56 26h-6" stroke="#ff8402" stroke-width="1.5"
+          stroke-linecap="round" />
+      </svg>
+    </div>
+
+    <div class="ah-svg ah-svg--star">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="32,4 38,24 58,24 42,36 48,56 32,44 16,56 22,36 6,24 26,24" stroke="#ff8402" stroke-width="1.5"
+          fill="none" />
+      </svg>
+    </div>
+
+    <div class="ah-content">
+      <div class="container">
+        <div class="row align-items-stretch g-5">
+          <!-- Left Column -->
+          <div class="col-lg-6">
+            <span class="tagline">
+              <i class="ri-graduation-cap-fill" aria-hidden="true"></i> KUMSS Since 1951
+            </span>
+
+            <h1>About <span>Krushi Udyog</span> Mool Shikshan Sanstha</h1>
+
+            <p class="ah-quote">
+              “Education opens up the mind, expands it, and allows you to improve your life in so many ways.”
+            </p>
+
+            <p class="ah-desc">
+              KUMSS is an educational society that focuses upon the overall development of students.
+              Established in 1951, great visionaries planted a seed of an idea. Now, that small plant
+              has become a mighty tree under the leadership of KUMSS President and Dy.CM of Maharashtra
+              Shri. Ajitdada Pawar since 2004.
+            </p>
+
+            <!-- Premium KPI Cards -->
+            <div class="about-kpi">
+              <div class="kpi">
+                <div class="kpi-icon">
+                  <i class="ri-calendar-fill" aria-hidden="true"></i>
+                </div>
                 <strong>1951</strong>
-                <i class="ri-calendar-fill" aria-hidden="true"></i>
+                <p>Founded with a clear mission for rural development.</p>
               </div>
-              <p>Established with a clear mission for rural development.</p>
-            </div>
 
-            <div class="kpi">
-              <div class="kpi-top">
+              <div class="kpi">
+                <div class="kpi-icon">
+                  <i class="ri-group-fill" aria-hidden="true"></i>
+                </div>
                 <strong>All Ages</strong>
-                <i class="ri-group-fill" aria-hidden="true"></i>
+                <p>Primary to ITI & skill training under one ecosystem.</p>
               </div>
-              <p>Primary to ITI and skill training under one ecosystem.</p>
-            </div>
 
-            <div class="kpi">
-              <div class="kpi-top">
+              <div class="kpi">
+                <div class="kpi-icon">
+                  <i class="ri-plant-fill" aria-hidden="true"></i>
+                </div>
                 <strong>Agri + Skill</strong>
-                <i class="ri-plant-fill" aria-hidden="true"></i>
+                <p>Agri-based learning & career-ready development.</p>
               </div>
-              <p>Agri-based learning and career-ready skill development.</p>
             </div>
           </div>
-        </div>
 
-        <!-- Right Column: Image - ANIMATED -->
-        <div class="col-lg-6 ps-lg-5">
-          <div class="hero-card">
-            <img src="/assets/about-hero-img.webp" alt="KUMSS Campus" class="img-fluid" loading="lazy">
-            <div class="hero-badge">
-              <strong>75+ Years</strong>
-              <span>Learning, values, and rural upliftment</span>
+          <!-- Right Column: Image -->
+          <div class="col-lg-6">
+            <div class="hero-card">
+              <img src="/assets/about-hero-img.webp" alt="KUMSS Campus" class="img-fluid" loading="lazy">
+              <div class="hero-card-overlay"></div>
+              <div class="hero-card-corners">
+                <div class="corner corner--bl"></div>
+                <div class="corner corner--br"></div>
+              </div>
+              <div class="hero-badge">
+                <strong>75+ Years</strong>
+                <span>Learning, values & rural upliftment</span>
+                <div class="badge-stats">
+                  <div class="badge-stat">
+                    <span class="val">7</span>
+                    <span class="lbl">Institutes</span>
+                  </div>
+                  <div class="badge-stat">
+                    <span class="val">15K+</span>
+                    <span class="lbl">Students</span>
+                  </div>
+                  <div class="badge-stat">
+                    <span class="val">ISO</span>
+                    <span class="lbl">Certified</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1177,7 +2144,6 @@
   </section>
 
 
-  <!-- Footer (same as index) -->
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer-grid">
@@ -1235,7 +2201,7 @@
         <div class="footer-col">
           <h3 class="footer-title">Contact Info</h3>
           <ul class="footer-links">
-            <li><i class="ri-phone-fill"></i> <a href="tel:+91 9423694242">+91 9423694242</a></li>
+            <li><i class="ri-phone-fill"></i> <a href="tel:+919423694242">+91 94236 94242</a></li>
             <li><i class="ri-mail-line"></i> <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
             <li><i class="ri-map-pin-line"></i> <a href="https://maps.app.goo.gl/S1J6rKbm6cHSpKrj8"
                 target="_blank">A/p-Karhati, Tal-Baramati, Dist-Pune 412204</a></li>
@@ -1244,27 +2210,44 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Krushi Udyog Mool Shikshan Sanstha (KUMSS). All Rights Reserved.</p>
+        <p class="footer-copy">© 2026 Krushi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
         <p class="footer-note">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
       </div>
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <button type="button" id="back-to-top">
+  <button type="button" id="back-to-top" aria-label="Back to Top">
     <i class="ri-arrow-up-double-fill"></i>
   </button>
 
-  <!-- Remove your broken local files and use these instead -->
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudflare-email-decode/1.0.0/email-decode.min.js"></script>
   <!-- Bootstrap 5.3 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
   <!-- Swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
   <script src="/assets/js/custom.js"></script>
+
+  <script>
+    // Scroll Progress Bar Logic
+    window.onscroll = function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      var bar = document.getElementById("scrollProgress");
+      if (bar) bar.style.width = scrolled + "%";
+    };
+
+    // Dropdown Toggle Fix
+    document.addEventListener('click', function (e) {
+      const t = e.target.closest('#navbar .dropdown-toggle');
+      if (t && t.getAttribute('href') === '#') {
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+
+</html>
 
 
 

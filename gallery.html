@@ -14,9 +14,10 @@
   <link rel="stylesheet" href="/assets/css/responsive.css">
   <link href="/assets/kumss_log.webp" type="image/x-icon" rel="icon">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
@@ -37,6 +38,302 @@
       --radius: 16px;
       --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
       --bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --primary-color: #0a296c;
+      --secondary-color: #ff8402;
+      --accent-color: #28a745;
+    }
+
+    /* ===========================
+       NAVBAR STYLES
+       =========================== */
+    #navbar {
+      position: relative;
+      z-index: 1001;
+      background: #fff;
+    }
+
+    #navbar .nav-link {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.1;
+      /* Reduced line height */
+      color: var(--primary-color) !important;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+      padding: 12px 15px !important;
+    }
+
+    /* Link indicator arrows */
+    #navbar .nav-link:not(.dropdown-toggle)::after {
+      content: '\203A';
+      /* Typographic chevron */
+      font-size: 1.3rem;
+      line-height: 1;
+      opacity: 0.4;
+      transition: all 0.3s ease;
+    }
+
+    #navbar .nav-link:hover {
+      color: var(--secondary-color) !important;
+    }
+
+    #navbar .nav-link:hover::after {
+      opacity: 1;
+      transform: translateX(4px);
+      color: var(--secondary-color);
+    }
+
+    /* Dropdown arrow fix */
+    #navbar .dropdown-toggle::after {
+      display: none !important;
+      /* Hide bootstrap default */
+    }
+
+    #navbar .dropdown-toggle::before {
+      position: static !important;
+      font-size: 14px !important;
+      margin-left: 5px;
+    }
+
+    /* ===========================
+       MOBILE MENU Z-INDEX
+       =========================== */
+    .offcanvas {
+      z-index: 1050 !important;
+    }
+
+    .offcanvas-backdrop {
+      z-index: 1040 !important;
+    }
+
+    .dropdown-item {
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .dropdown-item:hover {
+      color: #ff8402;
+      font-size: 15px;
+      background: transparent;
+    }
+
+    /* ============================================================
+       FOOTER – MODERN COMPACT REDESIGN
+    ============================================================ */
+    .footer {
+      background: #061633;
+      /* Deep navy base */
+      color: rgba(255, 255, 255, 0.75);
+      padding: 60px 0 0;
+      /* Reduced top padding */
+      font-family: 'Inter', system-ui, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 132, 2, 0.3), transparent);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.6fr 1fr 0.8fr;
+      gap: 40px;
+      /* Reduced gap */
+      margin-bottom: 50px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .footer-logo-img {
+      width: 54px;
+      height: 54px;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    }
+
+    .footer-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-since {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #ff8402;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .footer-desc {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .social-link:hover {
+      background: #ff8402;
+      color: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(255, 132, 2, 0.3);
+    }
+
+    .footer-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 25px;
+      height: 2px;
+      background: #ff8402;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-links li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .footer-links li:not(:has(i))::before {
+      content: '\203A';
+      /* Simple clean chevron */
+      color: #ff8402;
+      font-size: 1.2rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: -1px;
+    }
+
+    .footer-links li i {
+      color: #ff8402;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 3px;
+      color: rgba(255, 255, 255, 0.75);
+      transition: all 0.3s ease;
+      line-height: 1.2;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .footer-bottom {
+      padding: 30px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+      margin: 0;
+    }
+
+    .footer-note {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.3);
+      margin: 0;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+
+    @media (max-width: 991px) {
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
     }
 
     * {
@@ -825,92 +1122,105 @@
 
 <body>
 
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <!-- Top Header -->
-  <div class="top-header-area style-3">
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col-lg-6 col-md-6">
-          <div class="top-header-list style-2">
-            <ul class="list-unstyled ps-0 mb-0">
-              <li class="d-inline-block">
-                <a class="text-decoration-none d-flex align-items-center" href="tel:9423694242">
-                  <i class="ri-phone-fill"></i> +91 9423694242
-                </a>
-              </li>
-              <li class="d-inline-block">
-                <a class="text-decoration-none d-flex align-items-center" href="mailto:kumss@kumss.org">
-                  <i class="ri-mail-fill"></i> kumss@kumss.org
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6"></div>
-      </div>
-    </div>
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress__bar" id="scrollProgress"></span>
   </div>
 
-  <!-- Navbar -->
+  <!-- Start Navbar Area -->
   <nav class="navbar navbar-expand-lg style-3" id="navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img class="black-logo" src="/assets/kumss_log.webp" alt="KUMSS logo">
+        <img class="black-logo" src="/assets/kumss_log.webp" alt="black-logo">
       </a>
-      <a class="navbar-toggler text-decoration-none" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button"
-        aria-controls="navbarOffcanvas">
+
+      <button class="navbar-toggler text-decoration-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
         <span class="burger-menu">
           <span class="top-bar"></span>
           <span class="middle-bar"></span>
           <span class="bottom-bar"></span>
         </span>
-      </a>
+      </button>
+
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link"> Home </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link"> About</a>
+          </li>
           <li class="nav-item dropdown mega-menu-item">
-            <a href="/all-institutes.html" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">Our Educational Institutes</a>
+            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Our Educational Institutes
+            </a>
             <div class="dropdown-menu mega-menu">
               <div class="mega-menu-container">
                 <div class="mega-menu-grid">
+                  <!-- Institute 1 -->
                   <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="mega-menu-card">
-                    <div class="m-img"><img src="/assets/institute.webp" alt="VVK" loading="lazy"></div>
+                    <div class="m-img">
+                      <img src="/assets/institute.webp" alt="VVK" loading="lazy">
+                    </div>
                     <div class="m-content">
-                      <h5>Vasatigruh Vidyalay Karhati</h5><span>Est. 1951 | Marathi & Semi-English</span>
+                      <h5>Vasatigruh Vidyalay Karhati</h5>
+                      <span>Est. 1951 | Marathi & Semi-English</span>
                     </div>
                   </a>
+
+                  <!-- Institute 2 -->
                   <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="mega-menu-card">
-                    <div class="m-img"><img src="/assets/institute2.webp" alt="NESD" loading="lazy"></div>
+                    <div class="m-img">
+                      <img src="/assets/institute2.webp" alt="NESD" loading="lazy">
+                    </div>
                     <div class="m-content">
-                      <h5>New English School, Dhakale</h5><span>Est. 1999 | Marathi Medium</span>
+                      <h5>New English School, Dhakale</h5>
+                      <span>Est. 2000 | Marathi Medium</span>
                     </div>
                   </a>
+
+                  <!-- Institute 3 -->
                   <a href="./primary-school-karhati/primary-school-karhati.html" class="mega-menu-card">
-                    <div class="m-img"><img src="/assets/institute3.webp" alt="PST" loading="lazy"></div>
+                    <div class="m-img">
+                      <img src="/assets/institute3.webp" alt="PST" loading="lazy">
+                    </div>
                     <div class="m-content">
-                      <h5>Primary School, karhati</h5><span>Est. 1999 | Marathi Medium</span>
+                      <h5>Primary School, karhati</h5>
+                      <span>Est. 1999 | Marathi Medium</span>
                     </div>
                   </a>
+
+                  <!-- Institute 4 -->
                   <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="mega-menu-card">
-                    <div class="m-img"><img src="/assets/institute4.webp" alt="ITI" loading="lazy"></div>
+                    <div class="m-img">
+                      <img src="/assets/institute4.webp" alt="ITI" loading="lazy">
+                    </div>
                     <div class="m-content">
-                      <h5>KUMSS Private I.T.I Karhati</h5><span>Est. 2020 | Vocational Training</span>
+                      <h5>KUMSS Private I.T.I Karhati</h5>
+                      <span>Est. 2020 | Vocational Training</span>
                     </div>
                   </a>
+
+                  <!-- Institute 5 -->
                   <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="mega-menu-card">
-                    <div class="m-img"><img src="/assets/institute5.webp" alt="Gurukul" loading="lazy"></div>
+                    <div class="m-img">
+                      <img src="/assets/institute5.webp" alt="Gurukul" loading="lazy">
+                    </div>
                     <div class="m-content">
-                      <h5>Gurukul English Medium School</h5><span>Est. 2021 | Modern Schooling</span>
+                      <h5>Gurukul English Medium School</h5>
+                      <span>Est. 2021 | Modern Schooling</span>
                     </div>
                   </a>
+
+                  <!-- Institute 6 -->
                   <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
                     class="mega-menu-card">
-                    <div class="m-img"><img src="/assets/institute7.webp" alt="SPKM" loading="lazy"></div>
+                    <div class="m-img">
+                      <img src="/assets/institute7.webp" alt="SPKM" loading="lazy">
+                    </div>
                     <div class="m-content">
-                      <h5>Shardabai Pawar Kala Mahavidyalaya</h5><span>Est. 1993 | Arts College</span>
+                      <h5>Shardabai Pawar Kala Mahavidyalaya</h5>
+                      <span>Est. 1993 | Arts College</span>
                     </div>
                   </a>
 
@@ -928,49 +1238,102 @@
               </div>
             </div>
           </li>
-          <li class="nav-item"><a href="/gallery.html" class="nav-link active">Gallery</a></li>
-          <li class="nav-item"><a href="/careers.html" class="nav-link">Careers</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact <span>Us</span></a></li>
+          <li class="nav-item">
+            <a href="/gallery.html" class="nav-link active"> Gallery </a>
+          </li>
+          <li class="nav-item">
+            <a href="/careers.html" class="nav-link">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a href="/contact.html" class="nav-link">
+              Contact <span>Us</span>
+            </a>
+          </li>
         </ul>
+
         <div class="others-option">
           <div class="d-flex align-items-center">
-            <div class="option-item"></div>
+            <div class="option-item">
+            </div>
           </div>
         </div>
       </div>
     </div>
   </nav>
+  <!-- End Navbar Area -->
 
-  <!-- Responsive Navbar -->
+  <!-- Start Responsive Navbar Area -->
   <div class="responsive-navbar offcanvas offcanvas-end border-0" tabindex="-1" id="navbarOffcanvas">
     <div class="offcanvas-header">
-      <a href="index.html" class="logo d-inline-block"><img src="/assets/kumss_log.webp" alt="logo"></a>
+      <a href="index.html" class="logo d-inline-block">
+        <img src="/assets/kumss_log.webp" alt="logo">
+      </a>
       <button type="button" class="close-btn bg-transparent position-relative lh-1 p-0 border-0"
-        data-bs-dismiss="offcanvas" aria-label="Close"><i class="ri-close-fill"></i></button>
+        data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="ri-close-fill"></i>
+      </button>
     </div>
+
     <div class="offcanvas-body">
       <ul class="responsive-menu">
-        <li class="responsive-menu-list without-icon"><a href="/index.html" class="nav-link">Home</a></li>
-        <li class="responsive-menu-list without-icon"><a href="/about.html">About</a></li>
+        <li class="responsive-menu-list without-icon">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
         <li class="responsive-menu-list">
-          <a href="javascript:void(0);">Our Educational Institutes</a>
+          <a href="/all-institutes.html">Our Educational Institutes</a>
           <ul class="responsive-menu-items">
-            <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+            <li class="nav-item">
+              <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="nav-link">
+                Vasatigruh Vidyalay Karhati
+              </a>
             </li>
-            <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
+            <li class="nav-item">
+              <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="nav-link">
+                New English School, Dhakale
+              </a>
             </li>
-            <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School, karhati</a></li>
-            <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-Karhati.html">KUMSS Private I.T.I Karhati</a></li>
-            <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium
-                School</a></li>
-            <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai Pawar
-                Kala Mahavidhyalaya</a></li>
+            <li class="nav-item">
+              <a href="./primary-school-karhati/primary-school-karhati.html" class="nav-link">
+                Primary School, karhati
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="nav-link">
+                KUMSS Private I.T.I Karhati
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="nav-link">
+                Gurukul English Medium School
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html" class="nav-link">
+                Shardabai Pawar Kala Mahavidyalaya
+              </a>
+            </li>
           </ul>
         </li>
-        <li class="responsive-menu-list without-icon"><a href="/gallery.html" class="nav-link active">Gallery</a></li>
-        <li class="responsive-menu-list without-icon"><a href="/careers.html" class="nav-link">Careers</a></li>
-        <li class="responsive-menu-list without-icon"><a href="contact.html" class="nav-link">Contact Us</a></li>
+        <li class="responsive-menu-list without-icon">
+          <a href="/gallery.html" class="nav-link active">Gallery</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="/careers.html" class="nav-link">Careers</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="/contact.html" class="nav-link">
+            Contact <span>Us</span>
+          </a>
+        </li>
       </ul>
+
+      <div class="others-option d-md-flex align-items-center">
+        <div class="option-item">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1386,7 +1749,6 @@
       lbImg.style.transition = 'opacity 0.2s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1)';
     })();
   </script>
-
 </body>
 
 </html>
