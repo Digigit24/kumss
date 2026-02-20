@@ -737,6 +737,8 @@ Navbar Area Style
 
 .navbar .container-fluid {
   max-width: 1680px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .navbar .navbar-brand {
@@ -753,9 +755,10 @@ img.black-logo,
 .copyright-logo img,
 .offcanvas-header .logo img {
   background-color: white;
-  max-height: 120px;
+  max-height: 60px;
+  height: 60px;
   width: auto;
-  border-radius: 10px;
+  border-radius: 8px;
   display: inline-block;
   object-fit: contain;
 }
@@ -772,13 +775,15 @@ img.black-logo,
 
   /* reduce logo size on small screens */
   .responsive-navbar .offcanvas-header .logo img {
-    max-height: 48px;
+    max-height: 44px;
+    height: 44px;
   }
 
   .navbar .navbar-brand img,
   .navbar-brand img,
   img.black-logo {
-    max-height: 60px;
+    max-height: 44px;
+    height: 44px;
   }
 }
 
@@ -7461,22 +7466,22 @@ Mega Menu Style - Final Neat Optimization
   opacity: 0;
   z-index: 99 !important;
   /* Keep it below navbar elements (z-index 999) */
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
   pointer-events: none;
-  transform: none !important;
-  /* Prevent any base dropdown transforms from pulling it up */
+  transform: translateY(10px) !important;
+  /* Start slightly lower for a lift-up effect */
 }
 
-/* Stealth Bridge: Reaches up into navbar to maintain hover state
-   without blocking link clicks by using z-index: -1 */
+/* Target Bridge: Only active directly under/around the menu item to prevent blocking other links */
 .navbar .navbar-nav .nav-item.mega-menu-item .dropdown-menu.mega-menu::before {
   content: "";
   position: absolute;
-  top: -120px;
-  /* Oversized to bridge the gap perfectly */
-  left: 0;
-  right: 0;
-  height: 120px;
+  top: -40px;
+  /* Reduced height to only bridge the actual hover gap */
+  left: 30%;
+  /* Approximate position of the link */
+  right: 30%;
+  height: 40px;
   background: transparent;
   z-index: -1;
   pointer-events: auto;
@@ -7487,6 +7492,7 @@ Mega Menu Style - Final Neat Optimization
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+  transform: translateY(0) !important;
 }
 
 .mega-menu-container {

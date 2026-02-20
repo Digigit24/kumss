@@ -109,7 +109,7 @@
         .gm-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 16px 18px;
+            padding: 10px 18px;
         }
 
         .gm-nav {
@@ -126,8 +126,8 @@
         }
 
         .gm-logo-img {
-            height: 80px;
-            width: 85px;
+            height: 60px;
+            width: auto;
         }
 
         .gm-partner-logos {
@@ -155,7 +155,7 @@
             }
 
             .gm-logo-img {
-                height: 68px;
+                height: 48px;
             }
 
             .gm-partner-logos {
