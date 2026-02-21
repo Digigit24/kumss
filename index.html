@@ -2683,8 +2683,11 @@
       display: block;
       text-decoration: none;
       position: relative;
+      /* removed cursor: none from here to prevent glitch before JS loads */
+    }
+
+    .ei-section.has-custom-cursor .ei-item {
       cursor: none;
-      /* hides default cursor inside – uses custom dot */
     }
 
     /* Horizontal separator line that draws on scroll */
@@ -2777,13 +2780,14 @@
     .ei-item__arrow {
       width: 48px;
       height: 48px;
-      border: 1.5px solid rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.25);
+      color: rgba(255, 255, 255, 0.6);
+      /* increased visibility */
       flex-shrink: 0;
       transition: all 0.35s ease;
     }
@@ -2991,27 +2995,53 @@
         }
 
         /* ── Cursor follower ── */
+        const section = document.querySelector('.ei-section');
         const cursor = document.getElementById('eiCursor');
         const list = document.getElementById('eiList');
 
-        if (cursor && list) {
+        if (cursor && section) {
           let cx = 0, cy = 0, mx = 0, my = 0;
+          let active = false;
+          const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-          list.addEventListener('mouseenter', () => cursor.classList.add('is-active'));
-          list.addEventListener('mouseleave', () => cursor.classList.remove('is-active', 'is-hover'));
+          if (!isTouch) {
+            section.addEventListener('mouseenter', () => {
+              cursor.classList.add('is-active');
+              section.classList.add('has-custom-cursor');
+              active = true;
+            });
 
-          document.querySelectorAll('.ei-item').forEach(item => {
-            item.addEventListener('mouseenter', () => cursor.classList.add('is-hover'));
-            item.addEventListener('mouseleave', () => cursor.classList.remove('is-hover'));
-          });
+            section.addEventListener('mouseleave', () => {
+              cursor.classList.remove('is-active', 'is-hover');
+              section.classList.remove('has-custom-cursor');
+              active = false;
+            });
 
-          window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+            document.querySelectorAll('.ei-item, .ei-view-all').forEach(item => {
+              item.addEventListener('mouseenter', () => cursor.classList.add('is-hover'));
+              item.addEventListener('mouseleave', () => cursor.classList.remove('is-hover'));
+            });
 
-          gsap.ticker.add(() => {
-            cx += (mx - cx) * 0.12;
-            cy += (my - cy) * 0.12;
-            gsap.set(cursor, { x: cx, y: cy });
-          });
+            window.addEventListener('mousemove', e => {
+              mx = e.clientX;
+              my = e.clientY;
+              if (!active && section.matches(':hover')) {
+                cursor.classList.add('is-active');
+                section.classList.add('has-custom-cursor');
+                active = true;
+              }
+            });
+
+            gsap.ticker.add(() => {
+              if (!active) return;
+              cx += (mx - cx) * 0.12;
+              cy += (my - cy) * 0.12;
+              gsap.set(cursor, { x: cx, y: cy });
+            });
+          } else {
+            // Hide custom cursor on touch devices to avoid glitches
+            cursor.style.display = 'none';
+          }
         }
 
         /* ── View All underline ── */
