@@ -126,8 +126,13 @@
         }
 
         .gm-logo-img {
-            height: 60px;
+            background-color: white;
+            max-height: 127px;
+            height: 127px;
             width: auto;
+            border-radius: 8px;
+            display: inline-block;
+            object-fit: contain;
         }
 
         .gm-partner-logos {
@@ -155,7 +160,8 @@
             }
 
             .gm-logo-img {
-                height: 48px;
+                height: 127px;
+                /* Kept consistent with desktop design */
             }
 
             .gm-partner-logos {
@@ -183,10 +189,11 @@
         }
 
         .gm-link {
+            font-family: "Inter", sans-serif;
             text-decoration: none;
             color: #000;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 500;
+            font-size: 1.15rem;
             letter-spacing: .2px;
             padding: 10px 2px;
             position: relative;

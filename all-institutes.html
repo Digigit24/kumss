@@ -12,7 +12,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
@@ -22,440 +23,300 @@
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/responsive.css">
 
-  <link href="/assets/kumss_log.webp" type="image/x-icon" rel="icon">
+  <link href="/assets/kumss-logo.jpeg" type="image/x-icon" rel="icon">
 
   <!-- Page-only CSS (kept minimal, won't break your existing theme) -->
   <style>
-    /* ===========================
-       FULL WIDTH RESTORATION
-       =========================== */
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-    }
-
     :root {
       --primary-color: #0a296c;
       --secondary-color: #ff8402;
       --accent-color: #28a745;
+      --midnight: #020617;
+      --glass: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
     }
 
-    /* ===========================
-       NAVBAR STYLES
-       =========================== */
-    #navbar {
-      position: relative;
-      z-index: 1001;
-      background: #fff;
-    }
-
-    #navbar .nav-link {
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.1;
-      /* Reduced line height */
-      color: var(--primary-color) !important;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.3s ease;
-      padding: 12px 15px !important;
-    }
-
-    /* Link indicator arrows */
-    #navbar .nav-link:not(.dropdown-toggle)::after {
-      content: '\203A';
-      /* Typographic chevron */
-      font-size: 1.3rem;
-      line-height: 1;
-      opacity: 0.4;
-      transition: all 0.3s ease;
-    }
-
-    #navbar .nav-link:hover {
-      color: var(--secondary-color) !important;
-    }
-
-    #navbar .nav-link:hover::after {
-      opacity: 1;
-      transform: translateX(4px);
-      color: var(--secondary-color);
-    }
-
-    /* Dropdown arrow fix */
-    #navbar .dropdown-toggle::after {
-      display: none !important;
-      /* Hide bootstrap default */
-    }
-
-    #navbar .dropdown-toggle::before {
-      position: static !important;
-      font-size: 14px !important;
-      margin-left: 5px;
-    }
-
-    /* ===========================
-       MOBILE MENU Z-INDEX
-       =========================== */
-    .offcanvas {
-      z-index: 1050 !important;
-    }
-
-    .offcanvas-backdrop {
-      z-index: 1040 !important;
-    }
-
-    .dropdown-item {
+    body {
+      background-color: var(--midnight);
       color: #fff;
-      font-size: 15px;
     }
 
-    .dropdown-item:hover {
-      color: #ff8402;
-      font-size: 15px;
-      background: transparent;
+    /* ══════════════════════════════════════
+       TECHNICAL GRID BACKGROUND
+    ══════════════════════════════════════ */
+    .page-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(circle at 50% 50%, black, transparent 90%);
     }
 
-    /* ============================================================
-       FOOTER – MODERN COMPACT REDESIGN
-    ============================================================ */
-    .footer {
-      background: #061633;
-      /* Deep navy base */
-      color: rgba(255, 255, 255, 0.75);
-      padding: 60px 0 0;
-      /* Reduced top padding */
-      font-family: 'Inter', system-ui, sans-serif;
+    /* ══════════════════════════════════════
+       HERO SECTION
+    ══════════════════════════════════════ */
+    .inst-hero {
+      padding: 180px 0 100px;
       position: relative;
+      text-align: center;
       overflow: hidden;
     }
 
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 132, 2, 0.3), transparent);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.6fr 1fr 0.8fr;
-      gap: 40px;
-      /* Reduced gap */
-      margin-bottom: 50px;
-    }
-
-    .footer-brand {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .footer-logo-img {
-      width: 54px;
-      height: 54px;
-      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
-    }
-
-    .footer-logo-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .footer-since {
-      font-size: 0.7rem;
-      font-weight: 800;
-      color: #ff8402;
-      letter-spacing: 2.5px;
+    .inst-hero__tag {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 5px;
+      color: var(--secondary-color);
       text-transform: uppercase;
-    }
-
-    .footer-desc {
-      font-size: 0.92rem;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.6);
-      margin: 0;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .social-link {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .social-link:hover {
-      background: #ff8402;
-      color: #fff;
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(255, 132, 2, 0.3);
-    }
-
-    .footer-title {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 30px;
-      position: relative;
+      margin-bottom: 25px;
       display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
     }
 
-    .footer-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 25px;
-      height: 2px;
-      background: #ff8402;
-    }
-
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .footer-links li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-
-    .footer-links li:not(:has(i))::before {
-      content: '\203A';
-      /* Simple clean chevron */
-      color: #ff8402;
-      font-size: 1.2rem;
+    .inst-hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 900;
       line-height: 1;
-      flex-shrink: 0;
-      margin-top: -1px;
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(30px);
     }
 
-    .footer-links li i {
-      color: #ff8402;
-      font-size: 1.15rem;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .inst-hero__title em {
+      font-style: italic;
+      color: var(--secondary-color);
     }
 
-    .footer-links a {
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 3px;
-      color: rgba(255, 255, 255, 0.75);
-      transition: all 0.3s ease;
-      line-height: 1.2;
+    .inst-hero__desc {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #8fa0c0;
+      line-height: 1.7;
+      opacity: 0;
+      transform: translateY(40px);
     }
 
-    .footer-links a:hover {
-      color: #fff;
-      transform: translateX(4px);
-    }
-
-    .footer-bottom {
-      padding: 30px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-copy {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.4);
-      margin: 0;
-    }
-
-    .footer-note {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.3);
-      margin: 0;
-      font-weight: 500;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 6px 16px;
-      border-radius: 999px;
-    }
-
-    @media (max-width: 991px) {
-      .footer-grid {
-        grid-template-columns: 1.5fr 1fr;
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-      }
-    }
-
-    .institutes-page.clean {
-      padding: 80px 0;
-      background: transparent;
-      /* no shade */
-    }
-
-    .inst-page-head {
-      text-align: center;
-      margin-bottom: 26px;
-    }
-
-    .inst-page-head p {
-      margin: 0;
-      color: #6e6656;
+    /* ══════════════════════════════════════
+       INSTITUTES GRID & CARDS
+    ══════════════════════════════════════ */
+    .inst-section {
+      padding-bottom: 160px;
     }
 
     .inst-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 30px;
     }
 
-    .inst-card.clean {
+    .inst-card {
       display: block;
       text-decoration: none;
-      background: #fff;
-      border: 1px solid rgba(11, 42, 91, 0.10);
-      border-radius: 18px;
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
       overflow: hidden;
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+      transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+      position: relative;
+      opacity: 0;
+      transform: translateY(50px);
     }
 
-    .inst-img {
-      width: 100%;
-      height: 220px;
+    .inst-card__media {
+      height: 280px;
+      position: relative;
       overflow: hidden;
     }
 
-    .inst-img img {
+    .inst-card__media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+      filter: grayscale(0.2) contrast(1.1);
+    }
+
+    .inst-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--midnight), transparent);
+      z-index: 1;
+    }
+
+    .inst-card__badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--secondary-color);
+      z-index: 2;
+    }
+
+    .inst-card__body {
+      padding: 35px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .inst-card__num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.2);
+      margin-bottom: 15px;
       display: block;
-      transition: transform .4s ease;
+      letter-spacing: 2px;
     }
 
-    .inst-body {
-      padding: 16px 16px 18px;
+    .inst-card__name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      transition: 0.4s ease;
     }
 
-    .inst-badge {
+    .inst-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .inst-card__year {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      color: var(--secondary-color);
+      letter-spacing: 1px;
+    }
+
+    .inst-card__dot {
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .inst-card__type {
+      font-size: 0.85rem;
+      color: #8fa0c0;
+    }
+
+    .inst-card__cta {
       display: inline-flex;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(247, 148, 29, 0.14);
-      color: #0b2a5b;
-      font-weight: 800;
-      font-size: 13px;
-      margin-bottom: 10px;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: #fff;
+      text-transform: uppercase;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      width: 100%;
+      transition: 0.4s ease;
     }
 
-    .inst-name {
-      margin: 0 0 8px;
+    /* HOVER EFFECTS */
+    .inst-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(255, 132, 2, 0.4);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    }
+
+    .inst-card:hover .inst-card__media img {
+      transform: scale(1.1);
+      filter: grayscale(0) contrast(1);
+    }
+
+    .inst-card:hover .inst-card__name {
+      color: var(--secondary-color);
+    }
+
+    .inst-card:hover .inst-card__cta {
+      color: var(--secondary-color);
+      gap: 20px;
+    }
+
+    /* ══════════════════════════════════════
+       NAVBAR SYNC
+    ══════════════════════════════════════ */
+    #navbar {
+      background: rgba(2, 6, 23, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+    }
+
+    #navbar .nav-link {
+      font-family: "Inter", sans-serif;
       font-size: 18px;
-      color: #0b2a5b;
+      font-weight: 500;
+      color: #fff !important;
     }
 
-    .inst-year {
-      margin: 0 0 6px;
-      color: #2c2a26;
+    /* Logo Styling */
+    .navbar .navbar-brand img,
+    .navbar-brand img,
+    .logo img,
+    img.black-logo,
+    .copyright-logo img,
+    .offcanvas-header .logo img {
+      background-color: white;
+      max-height: 127px;
+      height: 127px;
+      width: auto;
+      border-radius: 8px;
+      display: inline-block;
+      object-fit: contain;
     }
 
-    .inst-desc {
-      margin: 0;
-      color: #6e6656;
-      font-size: 14px;
+    .black-logo {
+      filter: none;
+      /* Removed filter to show actual image with new styling */
     }
 
-    .inst-card.clean:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.12);
-      border-color: rgba(11, 42, 91, 0.18);
-    }
-
-    .inst-card.clean:hover .inst-img img {
-      transform: scale(1.06);
-    }
-
-    /* Responsive */
-    @media (max-width: 991px) {
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 1200px) {
       .inst-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
-      .inst-img {
-        height: 200px;
-      }
     }
 
-    @media (max-width: 575px) {
-      .institutes-page.clean {
-        padding: 60px 0;
-      }
-
+    @media (max-width: 768px) {
       .inst-grid {
         grid-template-columns: 1fr;
       }
 
-      .inst-img {
-        height: 210px;
+      .inst-hero__title {
+        font-size: 3.5rem;
       }
-    }
 
-    /* ===========================
-       MEGA MENU FIXES
-       =========================== */
-    #navbar {
-      position: relative;
-      z-index: 1001;
+      .inst-hero {
+        padding: 140px 0 60px;
+      }
+
+      .inst-card__media {
+        height: 220px;
+      }
     }
   </style>
 </head>
@@ -464,15 +325,18 @@
 
 
 
+  <!-- Structural Background -->
+  <div class="page-bg"></div>
+
   <div class="scroll-progress" aria-hidden="true">
     <span class="scroll-progress__bar" id="scrollProgress"></span>
   </div>
 
-  <!-- Start Navbar Area -->
+  <!-- Navbar (Dark Theme Synchronized) -->
   <nav class="navbar navbar-expand-lg style-3" id="navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img class="black-logo" src="/assets/kumss_log.webp" alt="black-logo">
+        <img class="black-logo" src="/assets/kumss-logo.jpeg" alt="KUMSS LOGO">
       </a>
 
       <button class="navbar-toggler text-decoration-none" type="button" data-bs-toggle="offcanvas"
@@ -486,12 +350,8 @@
 
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link"> Home </a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link"> About</a>
-          </li>
+          <li class="nav-item"><a href="index.html" class="nav-link"> Home </a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link"> About</a></li>
           <li class="nav-item dropdown mega-menu-item">
             <a href="#" class="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
@@ -500,78 +360,51 @@
             <div class="dropdown-menu mega-menu">
               <div class="mega-menu-container">
                 <div class="mega-menu-grid">
-                  <!-- Institute 1 -->
                   <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute.webp" alt="VVK" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute.webp" alt="VVK" loading="lazy"></div>
                     <div class="m-content">
                       <h5>Vasatigruh Vidyalay Karhati</h5>
                       <span>Est. 1951 | Marathi & Semi-English</span>
                     </div>
                   </a>
-
-                  <!-- Institute 2 -->
                   <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute2.webp" alt="NESD" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute2.webp" alt="NESD" loading="lazy"></div>
                     <div class="m-content">
                       <h5>New English School, Dhakale</h5>
                       <span>Est. 2000 | Marathi Medium</span>
                     </div>
                   </a>
-
-                  <!-- Institute 3 -->
                   <a href="./primary-school-karhati/primary-school-karhati.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute3.webp" alt="PST" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute3.webp" alt="PST" loading="lazy"></div>
                     <div class="m-content">
                       <h5>Primary School, karhati</h5>
                       <span>Est. 1999 | Marathi Medium</span>
                     </div>
                   </a>
-
-                  <!-- Institute 4 -->
                   <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute4.webp" alt="ITI" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute4.webp" alt="ITI" loading="lazy"></div>
                     <div class="m-content">
                       <h5>KUMSS Private I.T.I Karhati</h5>
                       <span>Est. 2020 | Vocational Training</span>
                     </div>
                   </a>
-
-                  <!-- Institute 5 -->
                   <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute5.webp" alt="Gurukul" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute5.webp" alt="Gurukul" loading="lazy"></div>
                     <div class="m-content">
                       <h5>Gurukul English Medium School</h5>
                       <span>Est. 2021 | Modern Schooling</span>
                     </div>
                   </a>
-
-                  <!-- Institute 6 -->
                   <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
                     class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/institute7.webp" alt="SPKM" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/institute7.webp" alt="SPKM" loading="lazy"></div>
                     <div class="m-content">
                       <h5>Shardabai Pawar Kala Mahavidyalaya</h5>
                       <span>Est. 1993 | Arts College</span>
                     </div>
                   </a>
-
-                  <!-- Institute 7 -->
                   <a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/vvk-about-img.webp" alt="VVKP" loading="lazy">
-                    </div>
+                    <div class="m-img"><img src="/assets/vvk-about-img.webp" alt="VVKP" loading="lazy"></div>
                     <div class="m-content">
                       <h5>Vasatigruh Primary School (Jr)</h5>
                       <span>Est. 2013 | Primary School</span>
@@ -581,209 +414,159 @@
               </div>
             </div>
           </li>
-          <li class="nav-item">
-            <a href="/gallery.html" class="nav-link"> Gallery </a>
-          </li>
-          <li class="nav-item">
-            <a href="/careers.html" class="nav-link">Careers</a>
-          </li>
-          <li class="nav-item">
-            <a href="/contact.html" class="nav-link">
-              Contact <span>Us</span>
-            </a>
-          </li>
+          <li class="nav-item"><a href="/gallery.html" class="nav-link"> Gallery </a></li>
+          <li class="nav-item"><a href="/careers.html" class="nav-link">Careers</a></li>
+          <li class="nav-item"><a href="/contact.html" class="nav-link">Contact <span>Us</span></a></li>
         </ul>
-
-        <div class="others-option">
-          <div class="d-flex align-items-center">
-            <div class="option-item">
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </nav>
-  <!-- End Navbar Area -->
 
-  <!-- Start Responsive Navbar Area -->
-  <div class="responsive-navbar offcanvas offcanvas-end border-0" tabindex="-1" id="navbarOffcanvas">
-    <div class="offcanvas-header">
-      <a href="index.html" class="logo d-inline-block">
-        <img src="/assets/kumss_log.webp" alt="logo">
-      </a>
-      <button type="button" class="close-btn bg-transparent position-relative lh-1 p-0 border-0"
-        data-bs-dismiss="offcanvas" aria-label="Close">
-        <i class="ri-close-fill"></i>
-      </button>
-    </div>
-
-    <div class="offcanvas-body">
-      <ul class="responsive-menu">
-        <li class="responsive-menu-list without-icon">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="about.html" class="nav-link">About</a>
-        </li>
-        <li class="responsive-menu-list">
-          <a href="/all-institutes.html" class="active">Our Educational Institutes</a>
-          <ul class="responsive-menu-items">
-            <li class="nav-item">
-              <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="nav-link">
-                Vasatigruh Vidyalay Karhati
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="nav-link">
-                New English School, Dhakale
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./primary-school-karhati/primary-school-karhati.html" class="nav-link">
-                Primary School, karhati
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="nav-link">
-                KUMSS Private I.T.I Karhati
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="nav-link">
-                Gurukul English Medium School
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html" class="nav-link">
-                Shardabai Pawar Kala Mahavidyalaya
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="/gallery.html" class="nav-link">Gallery</a>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="/careers.html" class="nav-link">Careers</a>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="/contact.html" class="nav-link">
-            Contact <span>Us</span>
-          </a>
-        </li>
-      </ul>
-
-      <div class="others-option d-md-flex align-items-center">
-        <div class="option-item">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="institutes-page clean" id="institutes">
+  <!-- Hero Section -->
+  <header class="inst-hero">
     <div class="container">
+      <span class="inst-hero__tag">DECADES OF LEGACY</span>
+      <h1 class="inst-hero__title">Our <em>Ecosystem</em> of Excellence</h1>
+      <p class="inst-hero__desc">From foundational schooling to advanced vocational training, KUMSS provides a
+        comprehensive educational pathway for the next generation of leaders in rural Maharashtra.</p>
+    </div>
+  </header>
 
-      <div class="inst-page-head">
-        <h1>Our Institutes</h1>
-        <p>KUMSS</p>
-      </div>
-
+  <!-- Institutions Grid -->
+  <section class="inst-section">
+    <div class="container">
       <div class="inst-grid">
 
-        <a class="inst-card clean" href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" target="_blank"
-          rel="noopener">
-          <div class="inst-img">
-            <img src="/assets/institute.webp" alt="Vasatigruh Vidyalay Karhati campus" loading="lazy">
+        <!-- Card 1 -->
+        <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="inst-card">
+          <div class="inst-card__media">
+            <img src="/assets/institute.webp" alt="Vasatigruh Vidyalay Karhati" loading="lazy">
+            <div class="inst-card__overlay"></div>
+            <div class="inst-card__badge">VVK_SCHOOL</div>
           </div>
-
-          <div class="inst-body">
-            <div class="inst-badge">VVK</div>
-            <h3 class="inst-name">Vasatigruh Vidyalay Karhati</h3>
-            <p class="inst-year">Established in <strong>1951</strong></p>
-            <p class="inst-desc">(Marathi & Semi-English Medium School)</p>
-          </div>
-        </a>
-
-        <a class="inst-card clean" href="/new-english-school-dhakale/new-english-school-dhakale.html" target="_blank"
-          rel="noopener">
-          <div class="inst-img">
-            <img src="/assets/institute2.webp" alt="New English School, Dhakale campus" loading="lazy">
-          </div>
-
-          <div class="inst-body">
-            <div class="inst-badge">NES D</div>
-            <h3 class="inst-name">New English School, Dhakale</h3>
-            <p class="inst-year">Established in <strong>2000</strong></p>
-            <p class="inst-desc"> Marathi Medium School</p>
+          <div class="inst-card__body">
+            <span class="inst-card__num">UNIT_01</span>
+            <h3 class="inst-card__name">Vasatigruh Vidyalay Karhati</h3>
+            <div class="inst-card__meta">
+              <span class="inst-card__year">EST. 1951</span>
+              <div class="inst-card__dot"></div>
+              <span class="inst-card__type">Marathi & Semi-English</span>
+            </div>
+            <div class="inst-card__cta">Explore Institution <i class="ri-arrow-right-line"></i></div>
           </div>
         </a>
 
-        <a class="inst-card clean" href="./primary-school-karhati/primary-school-karhati.html" target="_blank"
-          rel="noopener">
-          <div class="inst-img">
-            <img src="/assets/institute3.webp" alt="Primary School, karhati campus" loading="lazy">
+        <!-- Card 2 -->
+        <a href="/new-english-school-dhakale/new-english-school-dhakale.html" class="inst-card">
+          <div class="inst-card__media">
+            <img src="/assets/institute2.webp" alt="New English School, Dhakale" loading="lazy">
+            <div class="inst-card__overlay"></div>
+            <div class="inst-card__badge">NESD_UNIT</div>
           </div>
-
-          <div class="inst-body">
-            <div class="inst-badge">PS</div>
-            <h3 class="inst-name">Primary School, karhati</h3>
-            <p class="inst-year">Establishing in <strong>1999</strong></p>
-            <p class="inst-desc">Marathi Medium School</p>
-          </div>
-        </a>
-
-        <a class="inst-card clean" href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" target="_blank"
-          rel="noopener">
-          <div class="inst-img">
-            <img src="/assets/institute4.webp" alt="KUMSS Private I.T.I Karhati campus" loading="lazy">
-          </div>
-
-          <div class="inst-body">
-            <div class="inst-badge">ITI KUMSS</div>
-            <h3 class="inst-name">KUMSS Private I.T.I Karhati</h3>
-            <p class="inst-year">Established in <strong>2020</strong></p>
-            <p class="inst-desc">Private Industrial Training Institute</p>
+          <div class="inst-card__body">
+            <span class="inst-card__num">UNIT_02</span>
+            <h3 class="inst-card__name">New English School, Dhakale</h3>
+            <div class="inst-card__meta">
+              <span class="inst-card__year">EST. 2000</span>
+              <div class="inst-card__dot"></div>
+              <span class="inst-card__type">Marathi Medium</span>
+            </div>
+            <div class="inst-card__cta">Explore Institution <i class="ri-arrow-right-line"></i></div>
           </div>
         </a>
 
-        <a class="inst-card clean" href="./gurukul-english-medium-school/gurukul-english-medium-school.html"
-          target="_blank" rel="noopener">
-          <div class="inst-img">
-            <img src="/assets/institute5.webp" alt="Gurukul English Medium School campus" loading="lazy">
+        <!-- Card 3 -->
+        <a href="./primary-school-karhati/primary-school-karhati.html" class="inst-card">
+          <div class="inst-card__media">
+            <img src="/assets/institute3.webp" alt="Primary School, Karhati" loading="lazy">
+            <div class="inst-card__overlay"></div>
+            <div class="inst-card__badge">PS_KARHATI</div>
           </div>
-
-          <div class="inst-body">
-            <div class="inst-badge">GURUKUL</div>
-            <h3 class="inst-name">Gurukul English Medium School</h3>
-            <p class="inst-year">Establishing in <strong>2021</strong></p>
-            <p class="inst-desc">English Medium School</p>
-          </div>
-        </a>
-
-        <a class="inst-card clean" href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
-          target="_blank" rel="noopener">
-          <div class="inst-img">
-            <img src="/assets/institute7.webp" alt="Shardabai Pawar Kala Mahavidhyalaya campus" loading="lazy">
-          </div>
-
-          <div class="inst-body">
-            <div class="inst-badge">SPKM</div>
-            <h3 class="inst-name">Shardabai Pawar Kala Mahavidhyalaya</h3>
-            <p class="inst-year">Established in <strong>1993-1994</strong></p>
+          <div class="inst-card__body">
+            <span class="inst-card__num">UNIT_03</span>
+            <h3 class="inst-card__name">Primary School, Karhati</h3>
+            <div class="inst-card__meta">
+              <span class="inst-card__year">EST. 1999</span>
+              <div class="inst-card__dot"></div>
+              <span class="inst-card__type">Marathi Medium Foundation</span>
+            </div>
+            <div class="inst-card__cta">Explore Institution <i class="ri-arrow-right-line"></i></div>
           </div>
         </a>
 
-        <a class="inst-card clean" href="./gurukul-english-medium-school/gurukul-english-medium-school.html"
-          target="_blank" rel="noopener">
-          <div class="inst-img">
-            <img src="/assets/institute5.webp" alt="Gurukul English Medium School campus" loading="lazy">
+        <!-- Card 4 -->
+        <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="inst-card">
+          <div class="inst-card__media">
+            <img src="/assets/institute4.webp" alt="KUMSS Private I.T.I" loading="lazy">
+            <div class="inst-card__overlay"></div>
+            <div class="inst-card__badge">ITI_TECH</div>
           </div>
+          <div class="inst-card__body">
+            <span class="inst-card__num">UNIT_04</span>
+            <h3 class="inst-card__name">KUMSS Private I.T.I Karhati</h3>
+            <div class="inst-card__meta">
+              <span class="inst-card__year">EST. 2020</span>
+              <div class="inst-card__dot"></div>
+              <span class="inst-card__type">Vocational Excellence</span>
+            </div>
+            <div class="inst-card__cta">Explore Institution <i class="ri-arrow-right-line"></i></div>
+          </div>
+        </a>
 
-          <div class="inst-body">
-            <div class="inst-badge">VVKP</div>
-            <h3 class="inst-name">Vasatigruh Primary School</h3>
-            <p class="inst-year">Establishing in <strong>2013</strong></p>
-            <p class="inst-desc">-</p>
+        <!-- Card 5 -->
+        <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="inst-card">
+          <div class="inst-card__media">
+            <img src="/assets/institute5.webp" alt="Gurukul English Medium" loading="lazy">
+            <div class="inst-card__overlay"></div>
+            <div class="inst-card__badge">GURUKUL_GLOBAL</div>
+          </div>
+          <div class="inst-card__body">
+            <span class="inst-card__num">UNIT_05</span>
+            <h3 class="inst-card__name">Gurukul English Medium School</h3>
+            <div class="inst-card__meta">
+              <span class="inst-card__year">EST. 2021</span>
+              <div class="inst-card__dot"></div>
+              <span class="inst-card__type">Global Standards</span>
+            </div>
+            <div class="inst-card__cta">Explore Institution <i class="ri-arrow-right-line"></i></div>
+          </div>
+        </a>
+
+        <!-- Card 6 -->
+        <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html" class="inst-card">
+          <div class="inst-card__media">
+            <img src="/assets/institute7.webp" alt="Shardabai Pawar Arts College" loading="lazy">
+            <div class="inst-card__overlay"></div>
+            <div class="inst-card__badge">ARTS_COLLEGE</div>
+          </div>
+          <div class="inst-card__body">
+            <span class="inst-card__num">UNIT_06</span>
+            <h3 class="inst-card__name">Shardabai Pawar Kala Mahavidyalaya</h3>
+            <div class="inst-card__meta">
+              <span class="inst-card__year">EST. 1993</span>
+              <div class="inst-card__dot"></div>
+              <span class="inst-card__type">Higher Education in Arts</span>
+            </div>
+            <div class="inst-card__cta">Explore Institution <i class="ri-arrow-right-line"></i></div>
+          </div>
+        </a>
+
+        <!-- Card 7 -->
+        <a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html" class="inst-card">
+          <div class="inst-card__media">
+            <img src="/assets/vvk-about-img.webp" alt="Vasatigruh Primary" loading="lazy">
+            <div class="inst-card__overlay"></div>
+            <div class="inst-card__badge">VVKP_JR</div>
+          </div>
+          <div class="inst-card__body">
+            <span class="inst-card__num">UNIT_07</span>
+            <h3 class="inst-card__name">Vasatigruh Primary School (Jr)</h3>
+            <div class="inst-card__meta">
+              <span class="inst-card__year">EST. 2013</span>
+              <div class="inst-card__dot"></div>
+              <span class="inst-card__type">Early Childhood Growth</span>
+            </div>
+            <div class="inst-card__cta">Explore Institution <i class="ri-arrow-right-line"></i></div>
           </div>
         </a>
 
@@ -793,27 +576,23 @@
 
 
 
+
+  <!-- Institutional Footer -->
   <footer class="footer" id="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col footer-brand">
           <a href="index.html" class="footer-logo">
-            <img src="/assets/kumss_log.webp" alt="KUMSS Logo" class="footer-logo-img">
+            <img src="/assets/kumss-logo.jpeg" alt="KUMSS Logo" class="footer-logo-img">
             <div class="footer-logo-text">
               <span class="footer-since">KUMSS SINCE 1951</span>
             </div>
           </a>
-
-          <p class="footer-desc">
-            An educational society focused on overall development of students since 1951.
-          </p>
-
+          <p class="footer-desc">An educational society focused on overall development of students since 1951.</p>
           <div class="social-links">
             <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-
             <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
                 class="ri-instagram-fill"></i></a>
-
             <a href="#" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           </div>
         </div>
@@ -836,14 +615,9 @@
             </li>
             <li><a href="new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
             </li>
-            <li><a href="primary-school-karhati/primary-school-karhati.html">Primary School, karhati</a></li>
             <li><a href="kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
-            <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
-                Medium</a></li>
-            <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
-                Pawar Kala Mahavidyalaya</a></li>
-            <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh
-                Primary School</a></li>
+            <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Arts College</a>
+            </li>
           </ul>
         </div>
 
@@ -853,17 +627,59 @@
             <li><i class="ri-phone-fill"></i> <a href="tel:+919423694242">+91 94236 94242</a></li>
             <li><i class="ri-mail-line"></i> <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
             <li><i class="ri-map-pin-line"></i> <a href="https://maps.app.goo.gl/S1J6rKbm6cHSpKrj8"
-                target="_blank">A/p-Karhati, Tal-Baramati, Dist-Pune 412204</a></li>
+                target="_blank">A/p-Karhati, Tal-Baramati</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Krushi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
-        <p class="footer-note">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
+        <p class="footer-copy">© 2026 KUMSS. All rights reserved.</p>
+        <p class="footer-note">ISO 9001:2015 Certified Institute</p>
       </div>
     </div>
   </footer>
+
+  <!-- GSAP & ScrollTrigger Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.2 } });
+
+      // Hero Entrance
+      tl.to('.inst-hero__tag', { opacity: 1, y: 0, delay: 0.2 })
+        .to('.inst-hero__title', { opacity: 1, y: 0 }, "-=0.8")
+        .to('.inst-hero__desc', { opacity: 1, y: 0 }, "-=1");
+
+      // Grid Entrance
+      gsap.to('.inst-card', {
+        opacity: 1,
+        y: 0,
+        stagger: 0.15,
+        duration: 1.4,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: '.inst-grid',
+          start: 'top 80%'
+        }
+      });
+
+      // Navbar Scroll Effect
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.style.background = 'rgba(2, 6, 23, 0.98)';
+          navbar.style.padding = '10px 0';
+        } else {
+          navbar.style.background = 'rgba(2, 6, 23, 0.95)';
+          navbar.style.padding = '15px 0';
+        }
+      });
+    });
+  </script>
 
   <button type="button" id="back-to-top" aria-label="Back to Top">
     <i class="ri-arrow-up-double-fill"></i>
