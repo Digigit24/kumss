@@ -1755,9 +1755,15 @@
         }
 
         .footer-logo-img {
-            width: 40%;
-            height: 40%;
-        }
+      width: 140px;
+      height: 140px;
+      align-items: center;
+    }
+
+    .footer-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
 
         .ggm-btn {
             display: inline-flex;
@@ -2960,3 +2966,10 @@ Back to Top Style
         .active {
             color: #f37a20;
         }
+
+        .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
