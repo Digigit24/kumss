@@ -126,7 +126,7 @@
         }
 
         .gm-logo-img {
-            background-color: white;
+            background-color: transparent;
             max-height: 127px;
             height: 127px;
             width: auto;
@@ -1825,7 +1825,6 @@
         }
 
         .footer-links {
-            list-style: disc;
             padding: 0;
             margin: 0;
             display: grid;
