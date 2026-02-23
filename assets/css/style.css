@@ -3076,24 +3076,22 @@ Graduets Area Style
   border-bottom: 1px solid rgba(255, 255, 255, 0.37);
 }
 
-/* BRAND */
+
 .footer-logo {
-  align-items: flex-start;
-  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-self: start;
 }
 
 .footer-logo-img {
-  background: white;
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  flex: 0 0 auto;
+  width: 140px;  /* I assume you meant 140px width, not 10px? */
+  height: 140px;
+  background: #fff;
 }
 
 .footer-logo-text {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
 }
 
 .footer-since {
@@ -3235,6 +3233,24 @@ Graduets Area Style
     width: 42px;
     height: 42px;
   }
+
+                
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+}
+
+.footer-logo-img {
+  width: 140px;  /* I assume you meant 140px width, not 10px? */
+  height: 140px;
+  background: #fff;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+}
 }
 
 /*footer end */
@@ -7649,3 +7665,10 @@ Mega Menu Style - Final Neat Optimization
     cursor: pointer !important;
   }
 }
+
+.footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
