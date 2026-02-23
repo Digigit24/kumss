@@ -521,7 +521,7 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             background: var(--white);
             padding: 40px 20px;
             border-radius: 24px;
@@ -584,7 +584,7 @@
         /* Responsive Stats */
         @media (max-width: 1024px) {
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(1, 1fr);
                 gap: 30px;
             }
 
@@ -712,14 +712,6 @@
     <section class="vvk-stats-bar">
         <div class="container">
             <div class="stats-grid">
-                <!-- Stat 1 -->
-                <div class="stat-item">
-                    <div class="stat-icon"><i class="ri-community-line"></i></div>
-                    <div class="stat-info">
-                        <h3 class="stat-number">5+</h3>
-                        <p class="stat-label">Educational Institutes</p>
-                    </div>
-                </div>
 
                 <!-- Stat 2 -->
                 <div class="stat-item">
@@ -1072,6 +1064,7 @@
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">23 Feb 2026, 12:42 PM</span></p>
             </div>
         </div>
     </footer>
