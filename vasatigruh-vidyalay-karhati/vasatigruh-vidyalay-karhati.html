@@ -279,7 +279,7 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             background: var(--white);
             padding: 0;
             border-radius: 20px;
@@ -800,11 +800,7 @@
         /* ════════════════════ RESPONSIVE ════════════════════ */
         @media (max-width: 1024px) {
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stat-item:nth-child(2)::after {
-                display: none;
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .stat-item {
@@ -997,13 +993,13 @@
     <section class="vvk-stats-bar">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
+                <!-- <div class="stat-item">
                     <div class="stat-icon"><i class="ri-community-line"></i></div>
                     <div class="stat-info">
                         <h3 class="stat-number">5+</h3>
                         <p class="stat-label">Educational Institutes</p>
                     </div>
-                </div>
+                </div> -->
                 <div class="stat-item">
                     <div class="stat-icon"><i class="ri-men-line"></i></div>
                     <div class="stat-info">
