@@ -135,6 +135,16 @@
             object-fit: contain;
         }
 
+        .ggm-logo-img {
+            background-color: transparent;
+            max-height: 80px;
+            height: 80px;
+            width: auto;
+            border-radius: 8px;
+            display: inline-block;
+            object-fit: contain;
+        }
+
         .gm-partner-logos {
             display: flex;
             align-items: center;
@@ -162,6 +172,10 @@
             .gm-logo-img {
                 height: 127px;
                 /* Kept consistent with desktop design */
+            }
+
+            .ggm-logo-img {
+                height: 80px;
             }
 
             .gm-partner-logos {
@@ -389,7 +403,7 @@
                 transform: translateY(0);
                 opacity: 1;
                 visibility: visible;
-                margin-top: 20px;
+                margin-top: 30px;
             }
 
             .gm-link {
@@ -539,7 +553,7 @@
             position: relative;
             z-index: 2;
             max-width: 1000px;
-            padding: 4rem 0;
+            margin-top: 120px;
         }
 
         .hero-subtitle {
