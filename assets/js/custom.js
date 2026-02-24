@@ -70,15 +70,7 @@
             document.querySelectorAll(".counter, .stat-num").forEach(c => counterObserver.observe(c));
         }
 
-        // Last Updated Dynamic Date
-        (function initLastUpdated() {
-            const lastUpdatedEl = document.getElementById('lastUpdated');
-            if (lastUpdatedEl) {
-                const date = new Date(document.lastModified);
-                const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-                lastUpdatedEl.textContent = date.toLocaleDateString('en-GB', options);
-            }
-        })();
+
 
         // New Year Timer
         (function initTimer() {

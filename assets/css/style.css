@@ -1044,13 +1044,13 @@ Committee Section
   backdrop-filter: blur(6px);
 }
 
-.role-chairman {
+.role-President {
   color: #fff;
   background: #f7941d;
   border-color: #f7941d;
 }
 
-.chairman-spotlight-vertical {
+.President-spotlight-vertical {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1064,7 +1064,7 @@ Committee Section
   border-radius: 15px;
 }
 
-.chairman-spotlight-vertical .photo {
+.President-spotlight-vertical .photo {
   width: 250px;
   height: 250px;
   border-radius: 20px;
@@ -1073,25 +1073,25 @@ Committee Section
   border: 2px solid rgba(247, 148, 29, .45);
 }
 
-.chairman-spotlight-vertical img {
+.President-spotlight-vertical img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.chairman-spotlight-vertical .info {
+.President-spotlight-vertical .info {
   text-align: center;
 }
 
-.chairman-spotlight-vertical .info h3 {
+.President-spotlight-vertical .info h3 {
   margin: 10px 0 6px;
   font-size: 24px;
   font-weight: 900;
   color: #0b2a5b;
 }
 
-.chairman-spotlight-vertical .info p {
+.President-spotlight-vertical .info p {
   margin: 0;
   color: #4f5f77;
   font-weight: 600;

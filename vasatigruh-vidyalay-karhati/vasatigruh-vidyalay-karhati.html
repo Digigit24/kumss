@@ -181,6 +181,7 @@
             background: var(--accent-glow);
             border: 1px solid rgba(245, 158, 11, 0.4);
             color: var(--accent);
+            margin-top: 40px;
             padding: 8px 20px;
             border-radius: 100px;
             font-size: 0.8rem;
@@ -460,8 +461,8 @@
             flex-wrap: wrap;
         }
 
-        /* ════════════════════ AGRICULTURE ════════════════════ */
-        .agri-section {
+        /* ════════════════════ HOLISTIC EDUCATION ════════════════════ */
+        .holistic-section {
             background: var(--bg-light);
             padding: 100px 0 120px;
             border-radius: 48px 48px 0 0;
@@ -469,7 +470,7 @@
         }
 
         /* Subtle top border accent */
-        .agri-section::before {
+        .holistic-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -481,14 +482,14 @@
             border-radius: 0 0 4px 4px;
         }
 
-        .agri-grid {
+        .holistic-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 64px;
             align-items: center;
         }
 
-        .agri-text-kicker {
+        .holistic-text-kicker {
             color: var(--primary);
             font-weight: 700;
             text-transform: uppercase;
@@ -500,7 +501,7 @@
             gap: 10px;
         }
 
-        .agri-text-kicker::before {
+        .holistic-text-kicker::before {
             content: '';
             width: 24px;
             height: 2px;
@@ -508,21 +509,21 @@
             border-radius: 2px;
         }
 
-        .agri-text h2 {
+        .holistic-text h2 {
             color: var(--primary);
             font-size: 2.6rem;
             line-height: 1.15;
             margin-bottom: 20px;
         }
 
-        .agri-text>p {
+        .holistic-text>p {
             color: var(--text-light);
             font-size: 1.05rem;
             line-height: 1.8;
             margin-bottom: 32px;
         }
 
-        .agri-quote {
+        .holistic-quote {
             background: var(--white);
             padding: 28px 30px;
             border-radius: 20px;
@@ -530,7 +531,7 @@
             box-shadow: var(--shadow-sm);
         }
 
-        .agri-quote p {
+        .holistic-quote p {
             font-weight: 500;
             color: var(--text-main);
             font-size: 0.98rem;
@@ -538,13 +539,13 @@
             font-style: italic;
         }
 
-        .agri-cards {
+        .holistic-cards {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
-        .agri-card {
+        .holistic-card {
             background: var(--white);
             padding: 32px 28px;
             border-radius: 20px;
@@ -555,7 +556,7 @@
         }
 
         /* Subtle corner accent on hover */
-        .agri-card::before {
+        .holistic-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -567,17 +568,17 @@
             transition: height 0.4s var(--ease);
         }
 
-        .agri-card:hover {
+        .holistic-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow);
             border-color: rgba(16, 185, 129, 0.15);
         }
 
-        .agri-card:hover::before {
+        .holistic-card:hover::before {
             height: 100%;
         }
 
-        .agri-card-icon {
+        .holistic-card-icon {
             width: 52px;
             height: 52px;
             border-radius: 14px;
@@ -589,30 +590,30 @@
             transition: all 0.4s var(--bounce);
         }
 
-        .agri-card-icon i {
+        .holistic-card-icon i {
             font-size: 1.5rem;
             color: var(--secondary);
             transition: color 0.3s var(--ease);
         }
 
-        .agri-card:hover .agri-card-icon {
+        .holistic-card:hover .holistic-card-icon {
             background: var(--secondary);
             transform: translateY(-4px);
             box-shadow: 0 8px 20px -4px rgba(16, 185, 129, 0.35);
         }
 
-        .agri-card:hover .agri-card-icon i {
+        .holistic-card:hover .holistic-card-icon i {
             color: var(--white);
         }
 
-        .agri-card h4 {
+        .holistic-card h4 {
             font-size: 1.15rem;
             margin-bottom: 8px;
             font-weight: 700;
             color: var(--text-main);
         }
 
-        .agri-card p {
+        .holistic-card p {
             font-size: 0.9rem;
             color: var(--text-light);
             line-height: 1.6;
@@ -811,7 +812,7 @@
         @media (max-width: 992px) {
 
             .about-grid,
-            .agri-grid {
+            .holistic-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -830,7 +831,7 @@
             }
 
             .about-content h2,
-            .agri-text h2,
+            .holistic-text h2,
             .section-header h2,
             .faculty-section h2 {
                 font-size: 2rem;
@@ -865,7 +866,7 @@
                 display: none;
             }
 
-            .agri-cards {
+            .holistic-cards {
                 grid-template-columns: 1fr;
             }
 
@@ -874,13 +875,13 @@
             }
 
             .about-section,
-            .agri-section,
+            .holistic-section,
             .features-section,
             .faculty-section {
                 padding: 72px 0;
             }
 
-            .agri-section {
+            .holistic-section {
                 border-radius: 32px 32px 0 0;
             }
 
@@ -933,6 +934,7 @@
                             Our Educational Institutes
                             <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
                         </button>
+
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
                             <li role="none"><a role="menuitem"
                                     href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
@@ -952,8 +954,9 @@
                             <li role="none"><a role="menuitem"
                                     href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
                                     Pawar Kala Mahavidhyalaya</a></li>
-                            <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh
-                                    Primary School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh
+                                    Junior College</a></li>
                         </ul>
                     </li>
                     <li><a class="gm-link" href="./staff.html">Staff</a></li>
@@ -967,9 +970,10 @@
     <!-- ═══════════ HERO ═══════════ -->
     <section class="vvk-hero">
         <div class="hero-video-container">
-            <video class="hero-video" autoplay muted loop playsinline>
+            <img src="/assets/vasatigruh-vidyalay-hero-img.jpeg" alt="VVK School" class="hero-video">
+            <!-- <video class="hero-video" autoplay muted loop playsinline>
                 <source src="/assets/kumss-video.mp4" type="video/mp4">
-            </video>
+            </video> -->
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-deco-grid"></div>
@@ -977,9 +981,9 @@
         <div class="container">
             <div class="hero-content">
                 <span class="hero-pill">Established 1951</span>
-                <h1>Vasatigruh Madhyamik V Uchch Madhyamik Vidyalay</h1>
-                <p>Nurturing future leaders through a unique blend of traditional academic excellence and modern
-                    agricultural innovation.</p>
+                <h1>Vasatigruh Vidyalay, Karhati</h1>
+                <p>Nurturing future leaders through a unique blend of traditional academic excellence, character
+                    building, and holistic development.</p>
             </div>
         </div>
 
@@ -993,13 +997,6 @@
     <section class="vvk-stats-bar">
         <div class="container">
             <div class="stats-grid">
-                <!-- <div class="stat-item">
-                    <div class="stat-icon"><i class="ri-community-line"></i></div>
-                    <div class="stat-info">
-                        <h3 class="stat-number">5+</h3>
-                        <p class="stat-label">Educational Institutes</p>
-                    </div>
-                </div> -->
                 <div class="stat-item">
                     <div class="stat-icon"><i class="ri-men-line"></i></div>
                     <div class="stat-info">
@@ -1036,7 +1033,7 @@
                 <h2>Nurturing Young Minds for a Brighter Tomorrow</h2>
                 <p>Located in the heart of Karhati, Vasatigruh Vidyalay has been a beacon of knowledge since 1951. As a
                     co-educational institution affiliated with MSBSHSE, we pride ourselves on creating an environment
-                    where curiosity meets character.</p>
+                    where curiosity meets character and academic excellence meets moral values.</p>
                 <div class="about-btns">
                     <a href="/gallery.html" class="btn btn-outline"><i class="ri-camera-line"></i> Explore Campus</a>
                     <a href="/about.html" class="btn btn-primary"><i class="ri-history-line"></i> Our History</a>
@@ -1045,40 +1042,40 @@
         </div>
     </section>
 
-    <!-- ═══════════ AGRICULTURE ═══════════ -->
-    <section class="agri-section">
-        <div class="container agri-grid">
-            <div class="agri-text sr">
-                <span class="agri-text-kicker">Specialized Curriculum</span>
-                <h2>Pioneering Agricultural Education</h2>
-                <p>We believe that true education connects students back to the earth. Our unique agricultural focus
-                    provides students with hands-on experience in sustainable farming and modern agrotech.</p>
-                <div class="agri-quote">
-                    <p>"Our students don't just read about biology; they grow it. This practical approach builds
-                        responsibility and a deep respect for nature."</p>
+    <!-- ═══════════ HOLISTIC EDUCATION ═══════════ -->
+    <section class="holistic-section">
+        <div class="container holistic-grid">
+            <div class="holistic-text sr">
+                <span class="holistic-text-kicker">Our Approach</span>
+                <h2>Holistic Education for Complete Development</h2>
+                <p>We believe that true education goes beyond textbooks. Our curriculum focuses on developing
+                    well-rounded individuals equipped with knowledge, values, and life skills for success.</p>
+                <div class="holistic-quote">
+                    <p>"Our students don't just learn subjects; they develop character. This comprehensive approach
+                        builds confident, responsible citizens ready to face life's challenges."</p>
                 </div>
             </div>
 
-            <div class="agri-cards">
-                <div class="agri-card sr">
-                    <div class="agri-card-icon"><i class="ri-seedling-line"></i></div>
-                    <h4>Practical Farming</h4>
-                    <p>Direct field experience in crop management and soil health.</p>
+            <div class="holistic-cards">
+                <div class="holistic-card sr">
+                    <div class="holistic-card-icon"><i class="ri-book-open-line"></i></div>
+                    <h4>Academic Excellence</h4>
+                    <p>Strong foundation in core subjects with modern teaching methodologies.</p>
                 </div>
-                <div class="agri-card sr">
-                    <div class="agri-card-icon"><i class="ri-team-line"></i></div>
-                    <h4>Team Leadership</h4>
-                    <p>Collaborative projects that build character and social skills.</p>
+                <div class="holistic-card sr">
+                    <div class="holistic-card-icon"><i class="ri-team-line"></i></div>
+                    <h4>Character Building</h4>
+                    <p>Instilling moral values, discipline, and respect for others.</p>
                 </div>
-                <div class="agri-card sr">
-                    <div class="agri-card-icon"><i class="ri-microscope-line"></i></div>
-                    <h4>Modern Science</h4>
-                    <p>Applying scientific methods to traditional farming techniques.</p>
+                <div class="holistic-card sr">
+                    <div class="holistic-card-icon"><i class="ri-basketball-line"></i></div>
+                    <h4>Sports & Fitness</h4>
+                    <p>Encouraging physical fitness through various sports and activities.</p>
                 </div>
-                <div class="agri-card sr">
-                    <div class="agri-card-icon"><i class="ri-earth-line"></i></div>
-                    <h4>Sustainability</h4>
-                    <p>Learning the importance of environmental conservation.</p>
+                <div class="holistic-card sr">
+                    <div class="holistic-card-icon"><i class="ri-lightbulb-line"></i></div>
+                    <h4>Creative Thinking</h4>
+                    <p>Fostering innovation and problem-solving abilities in students.</p>
                 </div>
             </div>
         </div>
@@ -1098,15 +1095,17 @@
                     <div class="feature-overlay">
                         <div class="feature-icon"><i class="ri-award-fill"></i></div>
                         <h3>Quality Education</h3>
-                        <p>Academic excellence delivered by passionate educators using modern teaching aids.</p>
+                        <p>Academic excellence delivered by passionate educators using modern teaching aids and proven
+                            methodologies.</p>
                     </div>
                 </div>
                 <div class="feature-card sr">
-                    <img src="/assets/vastigruh.png" alt="Agricultural Focus" class="feature-img">
+                    <img src="/assets/vastigruh.png" alt="Value-Based Learning" class="feature-img">
                     <div class="feature-overlay">
-                        <div class="feature-icon"><i class="ri-plant-fill"></i></div>
-                        <h3>Rooted in Reality</h3>
-                        <p>Bridging the gap between textbook theory and real-world agricultural application.</p>
+                        <div class="feature-icon"><i class="ri-heart-fill"></i></div>
+                        <h3>Value-Based Learning</h3>
+                        <p>Building strong moral foundations while preparing students for academic and personal success.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1118,8 +1117,8 @@
         <div class="container">
             <span class="hero-pill">Our Pillars</span>
             <h2>Guided by Expert Mentors</h2>
-            <p>Our faculty consists of industry veterans and academic experts dedicated to mentoring the next generation
-                of leaders.</p>
+            <p>Our faculty consists of dedicated educators and experienced teachers committed to mentoring the next
+                generation of leaders and achievers.</p>
 
             <div class="faculty-img-wrapper sr">
                 <img src="/assets/vasatigruh-vidyalay-karhati-school.png" alt="VVK Faculty Team">
@@ -1167,11 +1166,13 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
-                                Karhati</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay,
+                                Karhati</a>
+                        </li>
                         <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
-                                Dhakale</a></li>
-                        <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School, karhati</a>
+                                Dhakale</a>
+                        </li>
+                        <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a>
                         </li>
                         <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
                         </li>
@@ -1179,8 +1180,9 @@
                                 Medium</a></li>
                         <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
                                 Pawar Kala Mahavidyalaya</a></li>
-                        <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh
-                                Primary School</a></li>
+                        <li><a href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior
+                                College</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1196,11 +1198,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Krushi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
+                <p>&copy; 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
                 <p>
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
-                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 11:45 AM</span></p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 04:57 PM</span></p>
             </div>
         </div>
     </footer>

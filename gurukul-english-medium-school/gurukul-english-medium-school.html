@@ -126,6 +126,19 @@
             opacity: 0.6;
         }
 
+        /* Hero Background Image Styles */
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.6;
+            z-index: 0;
+        }
+
         .hero-overlay {
             position: absolute;
             inset: 0;
@@ -136,7 +149,7 @@
         .pro-hero .container {
             position: relative;
             z-index: 2;
-            padding-top: 60px;
+            padding-top: 90px;
         }
 
         .hero-text-wrap {
@@ -369,7 +382,7 @@
             line-height: 1.6;
         }
 
-        /* === MAIN LEADER (CHAIRMAN) STYLES === */
+        /* === MAIN LEADER (President) STYLES === */
         .leader-card.main-leader {
             flex: 1.2;
             max-width: 420px;
@@ -484,9 +497,10 @@
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
                             aria-controls="institutesMenu">
-                            Our Educational Institutes <i class="ri-arrow-down-s-line gm-chevron"
-                                aria-hidden="true"></i>
+                            Our Educational Institutes
+                            <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
                         </button>
+
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
                             <li role="none"><a role="menuitem"
                                     href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
@@ -506,8 +520,9 @@
                             <li role="none"><a role="menuitem"
                                     href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
                                     Pawar Kala Mahavidhyalaya</a></li>
-                            <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh
-                                    Primary School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh
+                                    Junior College</a></li>
                         </ul>
                     </li>
                     <li><a class="gm-link" href="/gurukul-english-medium-school/staff.html">Staff</a></li>
@@ -521,9 +536,8 @@
 
     <!-- 1. HERO -->
     <section class="pro-hero" id="home">
-        <video class="hero-video-bg" autoplay muted loop playsinline poster="/assets/gurukul-hero-img.webp">
-            <source src="/assets/kumss-video.mp4" type="video/mp4">
-        </video>
+        <!-- Background Image -->
+        <img src="/assets/gurukul-hero-img.webp" alt="Gurukul English Medium School" class="hero-img">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-text-wrap">
@@ -577,17 +591,17 @@
                     <div class="leader-img-box"><img src="/assets/dasharathrao-dhumal.png"
                             alt="Shri. Dasharathrao Dhumal" loading="lazy">
                     </div>
-                    <div class="l-role">Vice-Chairman</div>
+                    <div class="l-role">Vice-President</div>
                     <h3 class="l-name">Shri. Dasharathrao Dhumal</h3>
                     <p class="l-desc">Dedicated to providing quality education opportunities.</p>
                 </div>
 
-                <!-- Chairman (Middle - Large) -->
+                <!-- President (Middle - Large) -->
                 <div class="leader-card main-leader reveal-up">
                     <div class="leader-img-box"><img src="/assets/ajit-pawar.png"
                             alt="Shri. Ajit Ashatai Anantrao Pawar" loading="lazy">
                     </div>
-                    <div class="l-role">Ex. Chairman</div>
+                    <div class="l-role">Ex. President</div>
                     <h3 class="l-name">Late Shri. Ajit Ashatai Anantrao Pawar</h3>
                 </div>
 
@@ -641,16 +655,15 @@
 
                     <div style="display:flex; gap:15px; margin-bottom: 20px;">
                         <i class="ri-map-pin-fill" style="font-size: 1.2rem; margin-top: 5px;"></i>
-                        <div><strong>Address:</strong><br>Krushi Udyog Mool Shikshan Sanstha,<br>Karhati, Baramati, Pune
+                        <div><strong>Address:</strong><br>Krishi Udyog Mool Shikshan Sanstha,<br>Karhati, Baramati, Pune
                             - 412204</div>
                     </div>
                     <div style="display:flex; gap:15px; margin-bottom: 20px;">
                         <i class="ri-phone-fill"
                             style="color: var(--brand-orange); font-size: 1.2rem; margin-top: 5px;"></i>
-                        <div><strong>Phone:</strong><br><a href="tel:+919423684242"
+                        <div><strong>Phone:</strong><br><a href="tel:+917757833496"
                                 style="color: #2f3390; text-decoration: none;">+91
-                                94236
-                                84242</a></div>
+                                7757833496</a></div>
                     </div>
                 </div>
                 <div class="c-cta">
@@ -707,11 +720,13 @@
                         style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay
-                                Karhati</a></li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay,
+                                Karhati</a>
+                        </li>
                         <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
-                                Dhakale</a></li>
-                        <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School, karhati</a>
+                                Dhakale</a>
+                        </li>
+                        <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a>
                         </li>
                         <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
                         </li>
@@ -719,8 +734,9 @@
                                 Medium</a></li>
                         <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
                                 Pawar Kala Mahavidyalaya</a></li>
-                        <li><a href="/vasatigruh-vidyalay-primary/vasatigruh-vidyalay-primary.html">Vasatigruh
-                                Primary School</a></li>
+                        <li><a href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior
+                                College</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -733,16 +749,16 @@
                         </li>
                         <li style="color: #000;">
                             <i class="ri-map-pin-line"></i>
-                            A/P – Karhati, Tal – Baramati, Dist – Pune.
+                            A/P – Karhati, Tal – Baramati, Dist – Pune - 412204
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 Krushi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
+                <p>© 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">ISO 9001:2015
                     Certified Institute | Recognized by Government of Maharashtra</p>
-                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 11:45 AM</span></p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 04:57 PM</span></p>
             </div>
         </div>
     </footer>
