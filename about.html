@@ -84,25 +84,34 @@
       padding: 12px 15px !important;
     }
 
-    /* Link indicator arrows */
-    #navbar .nav-link:not(.dropdown-toggle)::after {
-      content: '\203A';
-      /* Typographic chevron */
-      font-size: 1.3rem;
-      line-height: 1;
-      opacity: 0.4;
-      transition: all 0.3s ease;
+    /* Link indicator (Underline) */
+    #navbar .nav-link {
+      position: relative;
     }
 
-    #navbar .nav-link:hover {
+    #navbar .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      bottom: 8px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--secondary-color), #ffb347);
+      border-radius: 2px;
+      width: 0;
+      transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    #navbar .nav-link:hover::after,
+    #navbar .nav-link.active::after {
+      width: calc(100% - 30px);
+    }
+
+    #navbar .nav-link:hover,
+    #navbar .nav-link.active {
       color: var(--secondary-color) !important;
     }
 
-    #navbar .nav-link:hover::after {
-      opacity: 1;
-      transform: translateX(4px);
-      color: var(--secondary-color);
-    }
 
     /* Dropdown arrow fix */
     #navbar .dropdown-toggle::after {
@@ -176,9 +185,9 @@
       gap: 20px;
     }
 
-    
 
-   
+
+
 
     .footer-since {
       font-size: 0.7rem;
@@ -216,7 +225,7 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    
+
 
     .footer-title {
       font-size: 0.95rem;
@@ -289,15 +298,7 @@
       transform: translateX(4px);
     }
 
-    .footer-bottom {
-      padding: 30px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+
 
     .footer-copy {
       font-size: 0.85rem;
@@ -1508,7 +1509,7 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a href="index.html" class="nav-link active"> Home </a>
+            <a href="index.html" class="nav-link"> Home </a>
           </li>
           <li class="nav-item">
             <a href="about.html" class="nav-link"> About</a>
@@ -1526,7 +1527,7 @@
                       <img src="/assets/vasatigruh-vidyalay-karhati-school.png" alt="VVK" loading="lazy">
                     </div>
                     <div class="m-content">
-                      <h5>Vasatigruh Vidyalay Karhati</h5>
+                      <h5>Vasatigruh Junior College</h5>
                       <span>Est. 1951 | Marathi & Semi-English</span>
                     </div>
                   </a>
@@ -1593,7 +1594,7 @@
                       <img src="/assets/vvk-about-img.webp" alt="VVKP" loading="lazy">
                     </div>
                     <div class="m-content">
-                      <h5>Vasatigruh Primary School (Jr)</h5>
+                      <h5>Vasatigruh Primary School </h5>
                       <span>Est. 2013 | Primary School</span>
                     </div>
                   </a>
@@ -1654,7 +1655,7 @@
           <ul class="responsive-menu-items">
             <li class="nav-item">
               <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="nav-link">
-                Vasatigruh Vidyalay Karhati
+                Vasatigruh Junior College
               </a>
             </li>
             <li class="nav-item">
@@ -1925,12 +1926,12 @@
   </section>
 
 
-  <!-- BOARD OF TRUSTEES -->
+  <!-- Board & Management -->
   <section class="about-block pt-0" id="leadership">
     <div class="container">
       <div class="section-head">
         <div class="line"></div>
-        <h2>Board Of Trustees</h2>
+        <h2>Board & Management</h2>
         <p>Guiding the institute’s vision and governance.</p>
       </div>
 
@@ -2054,13 +2055,13 @@
       <div class="nexus-command-stage">
 
         <!-- Node 1: Academy -->
-        <div class="nexus-node node-1 active" onclick="commandNexus('academy')">
+        <div class="nexus-node node-1 active" data-nexus="academy" onclick="commandNexus('academy')">
           <div class="node-head">01_ACADEMY</div>
           <p class="node-info">Technical foundry for pedagogical advancement and digital mastery.</p>
         </div>
 
         <!-- Node 2: Welfare -->
-        <div class="nexus-node node-2" onclick="commandNexus('welfare')">
+        <div class="nexus-node node-2" data-nexus="welfare" onclick="commandNexus('welfare')">
           <div class="node-head">02_WELFARE</div>
           <p class="node-info">Holistic student health, hydration, and career readiness systems.</p>
         </div>
@@ -2074,13 +2075,13 @@
         </div>
 
         <!-- Node 3: Systems -->
-        <div class="nexus-node node-3" onclick="commandNexus('systems')">
+        <div class="nexus-node node-3" data-nexus="systems" onclick="commandNexus('systems')">
           <div class="node-head">03_SYSTEMS</div>
           <p class="node-info">Resilient grid backup, 24/7 security perimeter, and mesh fiber.</p>
         </div>
 
         <!-- Node 4: Resilience -->
-        <div class="nexus-node node-4" onclick="commandNexus('resilience')">
+        <div class="nexus-node node-4" data-nexus="resilience" onclick="commandNexus('resilience')">
           <div class="node-head">04_NETWORK</div>
           <p class="node-info">Campus-wide low-latency connectivity for the modern scholar.</p>
         </div>
@@ -2105,67 +2106,6 @@
     </div>
   </section>
 
-  <script>
-    const commandData = {
-      academy: {
-        img: '/assets/about-main-sub.JPG',
-        details: [
-          { icon: 'ri-book-open-fill', text: 'MATERIAL HUB' },
-          { icon: 'ri-computer-fill', text: 'DIGITAL LAB' },
-          { icon: 'ri-presentation-fill', text: 'MODERN CLASS' }
-        ]
-      },
-      welfare: {
-        img: '/assets/word_media_image15.webp',
-        details: [
-          { icon: 'ri-drop-fill', text: 'RO FILTRATION' },
-          { icon: 'ri-door-open-fill', text: 'COMMON ZONES' },
-          { icon: 'ri-briefcase-fill', text: 'CAREER CORE' }
-        ]
-      },
-      systems: {
-        img: '/assets/word_media_image5.webp',
-        details: [
-          { icon: 'ri-shield-keyhole-line', text: '24/7 SECURITY' },
-          { icon: 'ri-flashlight-line', text: 'GRID BACKUP' },
-          { icon: 'ri-wifi-line', text: 'MESH FIBER' }
-        ]
-      },
-      resilience: {
-        img: '/assets/iti-teach.png',
-        details: [
-          { icon: 'ri-signal-tower-line', text: 'LOW LATENCY' },
-          { icon: 'ri-node-tree', text: 'REDUNDANCY' },
-          { icon: 'ri-server-line', text: 'CLOUD READY' }
-        ]
-      }
-    };
-
-    function commandNexus(target) {
-      document.querySelectorAll('.nexus-node').forEach(n => n.classList.remove('active'));
-      const activeNode = Array.from(document.querySelectorAll('.nexus-node')).find(n => n.innerText.toLowerCase().includes(target));
-      if (activeNode) activeNode.classList.add('active');
-
-      const data = commandData[target];
-      const img = document.getElementById('command-img');
-      const detailBox = document.getElementById('command-details');
-
-      img.style.opacity = '0';
-      img.style.transform = 'scale(0.9) rotate(5deg)';
-
-      setTimeout(() => {
-        img.src = data.img;
-        data.details.forEach((d, i) => {
-          const icon = document.getElementById(`detail-icon-${i + 1}`);
-          const text = document.getElementById(`detail-text-${i + 1}`);
-          if (icon) icon.className = d.icon;
-          if (text) text.innerText = d.text;
-        });
-        img.style.opacity = '1';
-        img.style.transform = 'scale(1.1) rotate(0deg)';
-      }, 400);
-    }
-  </script>
 
 
   <!-- PRESIDENT'S MESSAGE -->
@@ -2220,6 +2160,45 @@
       </div>
     </div>
   </section>
+  <section class="about-block pt-0">
+    <div class="container">
+      <div class="section-head">
+        <div class="line"></div>
+        <h2>Trustee's Message</h2>
+        <p>A vision for empowering tomorrow's leaders.</p>
+      </div>
+
+      <div class="message-wrap d-flex">
+        <!-- Left Side Image - ANIMATED -->
+        <div class="message-image" style="flex: 1; height: 100%;">
+          <img src="/assets/sunetra-pawar.jfif" alt="trustee image" class="img-fluid rounded-3">
+        </div>
+
+        <!-- Right Side Message Text - ANIMATED -->
+        <div class="message-text" style="flex: 1; padding: 20px;">
+          <p class="quote">
+            "Education is the most powerful tool to transform lives and uplift communities. At KUMSS, we are dedicated
+            to nurturing young minds with knowledge, values, and the confidence to face the world.
+            <br><br>
+            Our mission goes beyond textbooks — we aim to shape responsible citizens who contribute meaningfully to
+            society. Every student who walks through our doors carries the potential to create a better tomorrow.
+            <br><br>
+            I invite parents and students to join us on this journey of learning, growth, and excellence. Together, let
+            us build a future where education knows no boundaries."
+          </p>
+
+          <div class="message-meta">
+            <span style="color: #f7941d;"><strong style="color: #fbfdff;">Trustee :</strong> Smt. Sunetra Ajit
+              Pawar</span><br>
+            <span style="color: #f7941d;"><strong style="color: #fbfdff;">Vision :</strong> Empowering through
+              education</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
 
   <footer class="footer" id="footer">
@@ -2243,7 +2222,8 @@
             <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
                 class="ri-instagram-fill"></i></a>
 
-            <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+            <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="social-link"
+              aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
           </div>
         </div>
 
@@ -2261,7 +2241,7 @@
         <div class="footer-col">
           <h3 class="footer-title">Our Institutes</h3>
           <ul class="footer-links">
-            <li><a href="vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a>
+            <li><a href="vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Junior College</a>
             </li>
             <li><a href="new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
             </li>
@@ -2291,7 +2271,7 @@
       <div class="footer-bottom">
         <p class="footer-copy">© 2026 Krushi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
         <p class="footer-copy">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
-        <p class="last-updated">Last Updated: <span id="lastUpdated">23 Feb 2026, 04:28 PM</span></p>
+        <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 10:04 AM</span></p>
       </div>
     </div>
   </footer>
@@ -2325,14 +2305,91 @@
       }
     });
   </script>
-</body>
+  <script>
+    const commandData = {
+      academy: {
+        img: '/assets/about-main-sub.JPG',
+        details: [
+          { icon: 'ri-book-open-fill', text: 'MATERIAL HUB' },
+          { icon: 'ri-computer-fill', text: 'DIGITAL LAB' },
+          { icon: 'ri-presentation-fill', text: 'MODERN CLASS' }
+        ]
+      },
+      welfare: {
+        img: '/assets/word_media_image15.webp',
+        details: [
+          { icon: 'ri-drop-fill', text: 'RO FILTRATION' },
+          { icon: 'ri-door-open-fill', text: 'COMMON ZONES' },
+          { icon: 'ri-briefcase-fill', text: 'CAREER CORE' }
+        ]
+      },
+      systems: {
+        img: '/assets/word_media_image5.webp',
+        details: [
+          { icon: 'ri-shield-keyhole-line', text: '24/7 SECURITY' },
+          { icon: 'ri-flashlight-line', text: 'GRID BACKUP' },
+          { icon: 'ri-wifi-line', text: 'MESH FIBER' }
+        ]
+      },
+      resilience: {
+        img: '/assets/iti-teach.png',
+        details: [
+          { icon: 'ri-signal-tower-line', text: 'LOW LATENCY' },
+          { icon: 'ri-node-tree', text: 'REDUNDANCY' },
+          { icon: 'ri-server-line', text: 'CLOUD READY' }
+        ]
+      }
+    };
 
-</html>
+    function commandNexus(target) {
+      // Manage Active State
+      document.querySelectorAll('.nexus-node').forEach(n => {
+        n.classList.remove('active');
+        if (n.getAttribute('data-nexus') === target) {
+          n.classList.add('active');
+        }
+      });
 
+      const data = commandData[target];
+      if (!data) return;
 
+      const img = document.getElementById('command-img');
+      const detailBox = document.getElementById('command-details');
 
+      // Visual Transition Sequence
+      img.style.opacity = '0';
+      img.style.transform = 'scale(0.85) rotate(4deg)';
 
+      setTimeout(() => {
+        // Switch content
+        img.src = data.img;
 
+        data.details.forEach((d, i) => {
+          const icon = document.getElementById(`detail-icon-${i + 1}`);
+          const text = document.getElementById(`detail-text-${i + 1}`);
+          if (icon) icon.className = d.icon;
+          if (text) text.innerText = d.text;
+        });
+
+        // Trigger reveal
+        img.onload = () => {
+          img.style.opacity = '1';
+          img.style.transform = 'scale(1.1) rotate(0deg)';
+        };
+
+        // Fallback if cached or immediate
+        if (img.complete) {
+          img.style.opacity = '1';
+          img.style.transform = 'scale(1.1) rotate(0deg)';
+        }
+      }, 350);
+    }
+
+    // Initialize display
+    document.addEventListener('DOMContentLoaded', () => {
+      commandNexus('academy');
+    });
+  </script>
 </body>
 
 </html>
