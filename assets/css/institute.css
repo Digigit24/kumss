@@ -229,6 +229,7 @@
             bottom: 4px;
             width: 0;
             height: 2px;
+            background: var(--secenderyColor);
             transition: var(--transition);
         }
 
@@ -236,9 +237,16 @@
             color: var(--btnHoverBgColor);
         }
 
-        .gm-link:hover::after {
+        .gm-link.active {
+            color: var(--secenderyColor);
+            font-weight: 700;
+        }
+
+        .gm-link:hover::after,
+        .gm-link.active::after {
             width: 100%;
         }
+
 
         /* CTA */
         .gm-cta {
@@ -1755,15 +1763,15 @@
         }
 
         .footer-logo-img {
-      width: 140px;
-      height: 140px;
-      align-items: center;
-    }
+            width: 140px;
+            height: 140px;
+            align-items: center;
+        }
 
-    .footer-logo-text {
-      display: flex;
-      flex-direction: column;
-    }
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
 
         .ggm-btn {
             display: inline-flex;
@@ -2968,8 +2976,8 @@ Back to Top Style
         }
 
         .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }

@@ -1,81 +1,94 @@
-// header js
-console.log("main js loaded");
-
+// Institute Header & Mobile Menu Js
 (function () {
-  const header = document.getElementById("header");
-  const menuBtn = document.getElementById("mobileMenuBtn");
-  const navLinks = document.getElementById("navLinks");
-  const dropdown = document.querySelector("[data-dropdown]");
-  const dropBtn = dropdown ? dropdown.querySelector(".gm-dropbtn") : null;
+  "use strict";
 
-  // Sticky scroll effect
-  window.addEventListener("scroll", () => {
-    header.classList.toggle("is-scrolled", window.scrollY > 10);
-  });
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById("header");
+    const menuBtn = document.getElementById("mobileMenuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const dropdowns = document.querySelectorAll("[data-dropdown]");
 
-  // Mobile main menu toggle
-  function setMenu(open) {
-    navLinks.classList.toggle("is-open", open);
-    menuBtn.setAttribute("aria-expanded", String(open));
-    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    if (!menuBtn || !navLinks) return;
 
-    if (!open && dropdown) {
-      dropdown.classList.remove("is-open");
-      dropBtn?.setAttribute("aria-expanded", "false");
+    // Mobile main menu toggle
+    function setMenu(open) {
+      navLinks.classList.toggle("is-open", open);
+      menuBtn.classList.toggle("active", open);
+      menuBtn.setAttribute("aria-expanded", String(open));
+      menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      document.body.style.overflow = open ? 'hidden' : '';
+
+      if (!open) {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove("is-open");
+          const btn = dropdown.querySelector(".gm-dropbtn");
+          btn?.setAttribute("aria-expanded", "false");
+        });
+      }
     }
-  }
 
-  menuBtn.addEventListener("click", () => {
-    const open = !navLinks.classList.contains("is-open");
-    setMenu(open);
-  });
+    menuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = !navLinks.classList.contains("is-open");
+      setMenu(open);
+    });
 
-  // Mobile dropdown toggle (only on <= 992px)
-  dropBtn?.addEventListener("click", (e) => {
-    const isMobile = window.matchMedia("(max-width: 992px)").matches;
-    if (!isMobile) return; // desktop uses hover/focus
-    e.preventDefault();
-    const open = !dropdown.classList.contains("is-open");
-    dropdown.classList.toggle("is-open", open);
-    dropBtn.setAttribute("aria-expanded", String(open));
-  });
+    // Mobile dropdown toggles
+    dropdowns.forEach(dropdown => {
+      const dropBtn = dropdown.querySelector(".gm-dropbtn");
+      if (dropBtn) {
+        dropBtn.addEventListener("click", (e) => {
+          const isMobile = window.matchMedia("(max-width: 992px)").matches;
+          if (!isMobile) return;
 
-  // Close menu when clicking outside (mobile)
-  document.addEventListener("click", (e) => {
-    const isMobile = window.matchMedia("(max-width: 992px)").matches;
-    if (!isMobile) return;
+          e.preventDefault();
+          e.stopPropagation();
 
-    const clickInside = header.contains(e.target);
-    if (!clickInside) setMenu(false);
-  });
+          const isOpen = dropdown.classList.contains("is-open");
 
-  // Close menu on ESC (mobile)
-  document.addEventListener("keydown", (e) => {
-    const isMobile = window.matchMedia("(max-width: 992px)").matches;
-    if (!isMobile) return;
+          // Close other dropdowns
+          dropdowns.forEach(d => {
+            if (d !== dropdown) {
+              d.classList.remove("is-open");
+              d.querySelector(".gm-dropbtn")?.setAttribute("aria-expanded", "false");
+            }
+          });
 
-    if (e.key === "Escape") setMenu(false);
-  });
+          dropdown.classList.toggle("is-open", !isOpen);
+          dropBtn.setAttribute("aria-expanded", String(!isOpen));
+        });
+      }
+    });
 
-  // Close menu after clicking a link (mobile)
-  navLinks.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      const isMobile = window.matchMedia("(max-width: 992px)").matches;
-      if (isMobile) setMenu(false);
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (navLinks.classList.contains("is-open") && !header.contains(e.target)) {
+        setMenu(false);
+      }
+    });
+
+    // Close menu on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setMenu(false);
+    });
+
+    // Close menu after clicking a sub-link (not a dropdown toggle)
+    navLinks.querySelectorAll("a:not(.gm-dropbtn)").forEach(a => {
+      a.addEventListener("click", () => {
+        const isMobile = window.matchMedia("(max-width: 992px)").matches;
+        if (isMobile) setMenu(false);
+      });
+    });
+
+    // Reset on resize
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 992 && navLinks.classList.contains("is-open")) {
+        setMenu(false);
+      }
     });
   });
-
-  // If resized to desktop, reset mobile states
-  window.addEventListener("resize", () => {
-    const isMobile = window.matchMedia("(max-width: 992px)").matches;
-    if (!isMobile) {
-      navLinks.classList.remove("is-open");
-      menuBtn.setAttribute("aria-expanded", "false");
-      dropdown?.classList.remove("is-open");
-      dropBtn?.setAttribute("aria-expanded", "false");
-    }
-  });
 })();
+
 
 
 
@@ -134,44 +147,8 @@ document.addEventListener('DOMContentLoaded', function () {
     facultyImages.forEach(img => imageObserver.observe(img));
   }
 });
-(function initScrollProgressBar() {
-  const bar = document.getElementById("scrollProgress");
-  if (!bar) return;
+// Redundant utilities removed as they are handled by custom.js
 
-  function update() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = Math.min(100, Math.max(0, progress)) + "%";
-  }
-
-  update();
-  window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
-})();
-
-
-const yearNowEl = document.getElementById("yearNow");
-if (yearNowEl) yearNowEl.textContent = String(new Date().getFullYear());
-
-(function initBackToTop() {
-  const topbutton = document.getElementById("back-to-top");
-  if (!topbutton) return;
-
-  topbutton.onclick = function (e) {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  window.addEventListener("scroll", () => {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      topbutton.style.opacity = "1";
-      topbutton.style.visibility = "visible";
-    } else {
-      topbutton.style.opacity = "0";
-      topbutton.style.visibility = "hidden";
-    }
-  });
-})();
 
 
 
