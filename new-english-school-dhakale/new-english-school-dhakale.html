@@ -611,6 +611,60 @@
                 padding-bottom: 0;
             }
         }
+
+        < !-- 4. Faculty & Mentorship (WITH BACKGROUND IMAGE) -->< !-- 4. Faculty & Mentorship --><style>.faculty-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .faculty-img-container {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .faculty-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.5s ease;
+        }
+
+        .faculty-card:hover .faculty-img-container img {
+            transform: scale(1.05);
+        }
+
+        .faculty-info {
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 4px solid var(--brand-orange, #ff9704);
+        }
+
+        .faculty-name {
+            font-family: 'Gantari', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark, #1f2937);
+            margin-bottom: 0.5rem;
+        }
+
+        .faculty-role {
+            font-size: 0.95rem;
+            color: var(--brand-blue, #233f92);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
     </style>
 </head>
 
@@ -800,122 +854,69 @@
         </div>
     </section>
 
-    <!-- 4. Faculty & Mentorship (WITH BACKGROUND IMAGE) -->
-    <!-- 4. Faculty & Mentorship -->
-    <style>
-        .faculty-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
 
-        .faculty-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .faculty-img-container {
-            height: 320px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .faculty-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-            transition: transform 0.5s ease;
-        }
-
-        .faculty-card:hover .faculty-img-container img {
-            transform: scale(1.05);
-        }
-
-        .faculty-info {
-            padding: 1.5rem;
-            text-align: center;
-            border-top: 4px solid var(--brand-orange, #ff9704);
-        }
-
-        .faculty-name {
-            font-family: 'Gantari', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-dark, #1f2937);
-            margin-bottom: 0.5rem;
-        }
-
-        .faculty-role {
-            font-size: 0.95rem;
-            color: var(--brand-blue, #233f92);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-    </style>
     <section class="faculty-section section-padding" style="background-color: #f8fafc;">
         <div class="page-container">
             <div style="text-align: center; margin-bottom: 60px;">
-                <span class="section-badge gs_reveal">Our Team</span>
-                <h2 class="section-title gs_reveal">Guided by Experts</h2>
+                <span class="section-badge gs_reveal">Our Leadership</span>
+                <h2 class="section-title gs_reveal">Visionaries Behind KUMSS</h2>
                 <p class="section-text gs_reveal" style="max-width: 700px; margin: 0 auto;">
-                    Our greatest asset is our team of dedicated educators who act as mentors and guides rather than just
-                    instructors.
+                    Our institution thrives under the guidance of visionary leaders whose unwavering commitment to
+                    education continues to shape the future of thousands of students.
                 </p>
             </div>
 
             <div class="faculty-grid"
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px;">
-                <!-- Faculty 1 -->
+
+                <!-- Chairman -->
                 <div class="faculty-card gs_reveal">
                     <div class="faculty-img-container">
                         <img src="/assets/ajit-pawar-about.webp" alt="Late Shri. Ajit Ashatai Anantrao Pawar"
                             onerror="this.src='https://placehold.co/600x800?text=Chairman'">
                     </div>
                     <div class="faculty-info">
-                        <h3 class="faculty-name">Late Shri.Ajit Ashatai Anantrao Pawar </h3>
+                        <h3 class="faculty-name">Late Shri. Ajit Ashatai Anantrao Pawar</h3>
                         <p class="faculty-role">Ex. Chairman</p>
                     </div>
                 </div>
 
-                <!-- Faculty 2 -->
+                <!-- Vice-Chairman -->
                 <div class="faculty-card gs_reveal">
                     <div class="faculty-img-container">
-                        <img src="#" alt="Mr. Rajesh Patil"
+                        <img src="/assets/dasharathrao-dhumal.png" alt="Shri. Dasharathrao Babaso Dhumal"
                             onerror="this.src='https://placehold.co/600x800?text=Vice-Chairman'">
                     </div>
                     <div class="faculty-info">
-                        <h3 class="faculty-name">Shri .Dashratharav Babasaheb Dhumal </h3>
+                        <h3 class="faculty-name">Shri. Dasharathrao Babaso Dhumal</h3>
                         <p class="faculty-role">Vice-Chairman</p>
                     </div>
                 </div>
 
-                <!-- Faculty 3 -->
+                <!-- Secretary -->
                 <div class="faculty-card gs_reveal">
                     <div class="faculty-img-container">
-                        <img src="#" alt="Shri .Prafull Bhimdev Tavare"
+                        <img src="/assets/prafulla-taware.png" alt="Shri. Prafulla Bhimdeo Taware"
                             onerror="this.src='https://placehold.co/600x800?text=Secretary'">
                     </div>
                     <div class="faculty-info">
-                        <h3 class="faculty-name">Shri .Prafull Bhimdev Tavare </h3>
+                        <h3 class="faculty-name">Shri. Prafulla Bhimdeo Taware</h3>
                         <p class="faculty-role">Secretary</p>
                     </div>
                 </div>
 
-                <!-- Faculty 4 -->
+                <!-- Treasurer -->
                 <div class="faculty-card gs_reveal">
                     <div class="faculty-img-container">
-                        <img src="#" alt="Shri .subhash Champalal Somani"
+                        <img src="/assets/subhash-somani.png" alt="Shri. Subhash Champalal Somani"
                             onerror="this.src='https://placehold.co/600x800?text=Treasurer'">
                     </div>
                     <div class="faculty-info">
-                        <h3 class="faculty-name">Shri .subhash Champalal Somani </h3>
+                        <h3 class="faculty-name">Shri. Subhash Champalal Somani</h3>
                         <p class="faculty-role">Treasurer</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1065,7 +1066,7 @@
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
-                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 10:41 AM</span></p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 11:32 AM</span></p>
             </div>
         </div>
     </footer>

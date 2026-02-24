@@ -75,22 +75,22 @@
       padding: 12px 15px !important;
     }
 
-    #navbar .nav-link:not(.dropdown-toggle)::after {
-      content: '\203A';
-      font-size: 1.3rem;
-      line-height: 1;
-      opacity: 0.4;
-      transition: all 0.3s ease;
+    #navbar .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 5px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--secondary-color), #ffb347);
+      border-radius: 2px;
+      width: 0;
+      transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
-    #navbar .nav-link:hover {
-      color: var(--secondary-color) !important;
-    }
-
-    #navbar .nav-link:hover::after {
-      opacity: 1;
-      transform: translateX(4px);
-      color: var(--secondary-color);
+    #navbar .nav-link:hover::after,
+    #navbar .nav-link.active::after {
+      width: 60%;
     }
 
     #navbar .dropdown-toggle::after {
@@ -826,7 +826,7 @@
       <div class="footer-bottom">
         <p class="footer-copy">&copy; 2026 Krushi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
         <p class="footer-copy">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
-        <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 10:41 AM</span></p>
+        <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 11:32 AM</span></p>
       </div>
     </div>
   </footer>
