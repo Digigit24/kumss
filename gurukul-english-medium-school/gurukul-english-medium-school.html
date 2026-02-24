@@ -574,8 +574,8 @@
             <div class="leader-tree">
                 <!-- Vice Chair -->
                 <div class="leader-card side-leader reveal-up">
-                    <div class="leader-img-box"><img src="/assets/icon-person.webp" alt="Shri. Dasharathrao Dhumal"
-                            loading="lazy">
+                    <div class="leader-img-box"><img src="/assets/dasharathrao-dhumal.png"
+                            alt="Shri. Dasharathrao Dhumal" loading="lazy">
                     </div>
                     <div class="l-role">Vice-Chairman</div>
                     <h3 class="l-name">Shri. Dasharathrao Dhumal</h3>
@@ -593,7 +593,7 @@
 
                 <!-- Secretary -->
                 <div class="leader-card side-leader reveal-up">
-                    <div class="leader-img-box"><img src="/assets/icon-person.webp" alt="Shri. Prafulla Taware"
+                    <div class="leader-img-box"><img src="/assets/prafulla-taware.png" alt="Shri. Prafulla Taware"
                             loading="lazy"></div>
                     <div class="l-role">Secretary</div>
                     <h3 class="l-name">Shri. Prafulla Taware</h3>
@@ -741,7 +741,7 @@
                 <p>© 2026 Krushi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">ISO 9001:2015
                     Certified Institute | Recognized by Government of Maharashtra</p>
-                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 10:05 AM</span></p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 10:14 AM</span></p>
             </div>
         </div>
     </footer>
@@ -753,8 +753,80 @@
 
     <!-- JS -->
     <script src="/assets/js/institute.js"></script>
-
     <script src="/assets/js/custom.js"></script>
+
+    <!-- Animation & Reveal Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // 1. Reveal Elements on Scroll
+                const reveals = document.querySelectorAll('.reveal-up');
+                reveals.forEach(el => {
+                    gsap.to(el, {
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        },
+                        opacity: 1,
+                        visibility: "visible",
+                        y: 0,
+                        duration: 1.2,
+                        ease: "power3.out",
+                        onStart: () => {
+                            el.style.visibility = 'visible';
+                        }
+                    });
+                });
+
+                // 2. Stats Counter Animation
+                const stats = document.querySelectorAll('.stat-num');
+                stats.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target')) || 0;
+                    const suffix = stat.getAttribute('data-suffix') || '';
+
+                    ScrollTrigger.create({
+                        trigger: stat,
+                        start: "top 90%",
+                        onEnter: () => {
+                            let counter = { val: 0 };
+                            gsap.to(counter, {
+                                val: target,
+                                duration: 2,
+                                ease: "power2.out",
+                                onUpdate: () => {
+                                    stat.innerText = Math.floor(counter.val) + suffix;
+                                }
+                            });
+                        },
+                        once: true
+                    });
+                });
+
+                // 3. Leadership Hover & Scale
+                gsap.from(".main-leader", {
+                    scrollTrigger: {
+                        trigger: ".leader-tree",
+                        start: "top 70%"
+                    },
+                    scale: 0.9,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "back.out(1.7)"
+                });
+
+            } else {
+                // Critical Fallback: Show all content if script library fails
+                document.querySelectorAll('.reveal-up').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.visibility = 'visible';
+                    el.style.transform = 'none';
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
