@@ -17,10 +17,6 @@
     <!-- Existing CSS -->
     <link rel="stylesheet" href="/assets/css/institute.css">
 
-    <!-- GSAP & ScrollTrigger -->
-
-
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
 
@@ -65,9 +61,6 @@
             font-family: "Gantari", sans-serif;
             color: var(--dark);
         }
-
-        /* Footer Logo Fix */
-
 
         /* Utilities */
         .container-custom {
@@ -127,13 +120,14 @@
             border-bottom-right-radius: 50% 200px;
         }
 
-        .hero-video-bg {
+        .hero-bg-img {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
         }
 
         .hero-overlay {
@@ -160,23 +154,6 @@
             font-weight: 800;
             margin-bottom: 20px;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-btn {
-            background: var(--secondary);
-            color: var(--dark);
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-weight: 800;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 10px 25px rgba(255, 183, 3, 0.4);
-            font-size: 1.1rem;
-        }
-
-        .hero-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            background: #ffc83d;
         }
 
         /* --- 2. ABOUT (Organic Shapes) --- */
@@ -759,19 +736,16 @@
 
     <!-- 1. HERO SECTION -->
     <section class="primary-hero" id="home">
-        <!-- Placeholder Video -->
-        <video autoplay muted loop playsinline class="hero-video-bg">
-            <source src="/assets/kumss-video.mp4" type="video/mp4">
-        </video>
+        <!-- Background Image -->
+        <img src="/assets/primary-school-hero-img.jpeg" alt="Primary School Karhati" class="hero-bg-img">
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
-            <h1 class="hero-title">Primary School karhati</h1>
+            <h1 class="hero-title">Primary School Karhati</h1>
             <p class="section-desc" style="color:#ffb703;margin-bottom: 35px; font-size: 1.2rem;">
-                Creates a safe, joyful, and creative environment where your child falls in love with learning every
+                Creating a safe, joyful, and creative environment where your child falls in love with learning every
                 single day.
             </p>
-            <a href="#about" class="hero-btn">Visit Our School</a>
         </div>
     </section>
 
@@ -784,7 +758,7 @@
                     <h2 class="section-title">More Than Just a School,<br>It's a <span>Family</span></h2>
                     <p class="section-desc">
                         Since 1999, we have been the first step in the educational journey for hundreds of children in
-                        karhati. We understand that primary years are crucial.
+                        Karhati. We understand that primary years are crucial.
                     </p>
                     <p class="section-desc" style="margin-top:15px;">
                         Our approach is simple: <strong>Play, Learn, Grow.</strong> We move beyond textbooks to include
@@ -922,44 +896,59 @@
         <div class="container-custom">
             <div class="stats-grid">
                 <div class="stat-box">
-                    <h2 class="num" data-target="23">0</h2>
+                    <h2 class="num" data-target="27">0</h2>
                     <p>Years of Service</p>
                 </div>
                 <div class="stat-box">
-                    <h2 class="num" data-target="5000">0</h2>
+                    <h2 class="num" data-target="5500">0</h2>
                     <p>Happy Students</p>
                 </div>
                 <div class="stat-box">
-                    <h2 class="num" data-target="15">0</h2>
+                    <h2 class="num" data-target="10">0</h2>
                     <p>Caring Teachers</p>
                 </div>
                 <div class="stat-box">
-                    <h2 class="num" data-target="100">0</h2>
+                    <h2 class="num" data-target="50">0</h2>
                     <p>Events Per Year</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. PRINCIPAL SECTION -->
-    <section class="section-padding principal-section">
-        <div class="container-custom">
-            <div class="principal-card">
-                <img src="/assets/kamal-gadekar.webp" class="principal-img" alt="Principal">
-                <div>
-                    <span class="section-badge">Headmistress Message</span>
-                    <h3 style="color:var(--primary); margin-bottom:10px;">Ms. Kamal Sampat Gadekar</h3>
-                    <p style="font-weight:700; color:var(--text); margin-bottom:20px;">M.A., M.Ed., Ph.D.</p>
-                    <p class="section-desc">
-                        "At Primary School karhati, we don't just teach subjects; we teach children how to
-                        learn.
-                        Our goal is to create a happy school where children learn without fear, ask questions without
-                        hesitation, and develop a lifelong love for knowledge."
+    <!-- ==================== PRINCIPAL SECTION ==================== -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="principal-wrapper">
+                <div class="principal-img-box gs-reveal-left">
+                    <!-- Image max-width limited to 350px in CSS -->
+                    <img src="/assets/kamal-gadekar.webp" alt="Ms. Kamal Sampat Gadekar">
+                </div>
+                <div class="principal-content gs-reveal-right">
+                    <span class="section-subtitle">Principal's Desk</span>
+                    <h2 class="mb-4" style="color: #003366;">Nurturing Young Minds, Building Strong Foundations</h2>
+                    <i class="ri-double-quotes-l" style="font-size: 3rem; color: #ff6700; opacity: 0.3;"></i>
+                    <p class="fst-italic fs-5 text-muted my-4" style="line-height: 1.8;">
+                        "At our Primary School, we believe that every child has unique potential. Our focus is on
+                        creating a safe,
+                        caring, and joyful learning environment where children build strong basics in reading, writing,
+                        and numbers,
+                        while also learning values, discipline, and confidence. We work closely with parents to ensure
+                        that each
+                        student grows not only academically, but also emotionally and socially. Our goal is simple: to
+                        give every
+                        child a strong foundation for a bright and successful future."
                     </p>
+                    <div>
+                        <h4 class="mb-0 fw-bold" style="color: #003366;">MS. KAMAL SAMPAT GADEKAR</h4>
+                        <small class="text-muted text-uppercase fw-bold">Principal</small><br>
+                        <small class="text-muted text-uppercase fw-bold">Primary School Karhati</small>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- FOOTER (PRESERVED) -->
     <footer class="footer">
@@ -1051,7 +1040,7 @@
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
-                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 04:57 PM</span></p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 05:31 PM</span></p>
             </div>
         </div>
     </footer>

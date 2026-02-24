@@ -116,10 +116,12 @@
             z-index: -1;
         }
 
-        .hero-video {
+        .hero-video,
+        .hero-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             filter: brightness(0.6);
         }
 
@@ -409,7 +411,7 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             background: var(--white);
             padding: 40px 20px;
             border-radius: 24px;
@@ -575,10 +577,7 @@
     <!-- HERO -->
     <section class="vvk-hero">
         <div class="hero-video-container">
-            <img src="/assets/vasatigruh-vidyalay-hero-img.jpeg" alt="vvk">
-            <!-- <video class="hero-video" autoplay muted loop playsinline>
-                <source src="/assets/kumss-video.mp4" type="video/mp4">
-            </video> -->
+            <img src="/assets/vasatigruh-vidyalay-hero-img.jpeg" alt="Vasatigruh Junior College" class="hero-img">
             <div class="hero-overlay"></div>
         </div>
 
@@ -622,7 +621,7 @@
                 <div class="stat-item">
                     <div class="stat-icon"><i class="ri-calendar-line"></i></div>
                     <div class="stat-info">
-                        <h3 class="stat-number">10+</h3>
+                        <h3 class="stat-number">13+</h3>
                         <p class="stat-label">Years of Excellence</p>
                     </div>
                 </div>
@@ -631,7 +630,7 @@
                 <div class="stat-item">
                     <div class="stat-icon"><i class="ri-men-line"></i></div>
                     <div class="stat-info">
-                        <h3 class="stat-number">320</h3>
+                        <h3 class="stat-number">180+</h3>
                         <p class="stat-label">Boys Enrolled</p>
                     </div>
                 </div>
@@ -640,7 +639,7 @@
                 <div class="stat-item">
                     <div class="stat-icon"><i class="ri-women-line"></i></div>
                     <div class="stat-info">
-                        <h3 class="stat-number">285</h3>
+                        <h3 class="stat-number">130+</h3>
                         <p class="stat-label">Girls Enrolled</p>
                     </div>
                 </div>
@@ -649,7 +648,7 @@
                 <div class="stat-item">
                     <div class="stat-icon"><i class="ri-team-line"></i></div>
                     <div class="stat-info">
-                        <h3 class="stat-number">25</h3>
+                        <h3 class="stat-number">12+</h3>
                         <p class="stat-label">Expert Faculty</p>
                     </div>
                 </div>
@@ -715,7 +714,7 @@
             <div class="features-grid">
                 <!-- Card 1 -->
                 <div class="feature-card">
-                    <img src="/assets/vvk-26.webp" alt="Quality Higher Secondary Education" class="feature-img">
+                    <img src="/assets/vastigruh.png" alt="Quality Higher Secondary Education" class="feature-img">
                     <div class="feature-overlay">
                         <div class="feature-icon"><i class="ri-award-fill"></i></div>
                         <h3>Academic Excellence</h3>
@@ -849,7 +848,7 @@
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
-                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 04:57 PM</span></p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 05:31 PM</span></p>
             </div>
         </div>
     </footer>
