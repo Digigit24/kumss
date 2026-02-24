@@ -840,8 +840,8 @@
   .preloader-logo-container {
     position: relative;
     z-index: 20;
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -899,52 +899,58 @@
     box-shadow: 0 0 15px currentColor;
   }
 
-  /* Distribute 7 dots across orbits */
   .dot-1 {
-    top: -5px;
+    top: 0;
     left: 50%;
+    transform: translate(-50%, -50%);
     color: #0f8042;
     background: #0f8042;
   }
 
   .dot-2 {
-    bottom: -5px;
+    bottom: 0;
     left: 50%;
+    transform: translate(-50%, 50%);
     color: #f37a20;
     background: #f37a20;
   }
 
   .dot-3 {
-    left: -5px;
+    left: 0;
     top: 50%;
+    transform: translate(-50%, -50%);
     color: #2f3390;
     background: #2f3390;
   }
 
   .dot-4 {
-    right: -5px;
+    right: 0;
     top: 50%;
+    transform: translate(50%, -50%);
     color: #0f8042;
     background: #0f8042;
   }
 
   .dot-5 {
-    top: 15%;
-    left: 15%;
+    top: 14.6%;
+    left: 14.6%;
+    transform: translate(-50%, -50%);
     color: #f37a20;
     background: #f37a20;
   }
 
   .dot-6 {
-    bottom: 15%;
-    right: 15%;
+    bottom: 14.6%;
+    right: 14.6%;
+    transform: translate(50%, 50%);
     color: #2f3390;
     background: #2f3390;
   }
 
   .dot-7 {
-    top: 15%;
-    right: 15%;
+    top: 14.6%;
+    right: 14.6%;
+    transform: translate(50%, -50%);
     color: #0f8042;
     background: #0f8042;
   }
@@ -1056,6 +1062,83 @@
   @keyframes fadeIn {
     to {
       opacity: 1;
+    }
+  }
+
+  /* Responsive Loader */
+  @media (max-width: 768px) {
+    .preloader-inner {
+      width: 240px;
+      height: 240px;
+    }
+
+    .preloader-logo-container {
+      width: 100px;
+      height: 100px;
+    }
+
+    .orbit-1 {
+      width: 130px;
+      height: 130px;
+    }
+
+    .orbit-2 {
+      width: 170px;
+      height: 170px;
+    }
+
+    .orbit-3 {
+      width: 210px;
+      height: 210px;
+    }
+
+    .brand-name {
+      font-size: 1.4rem;
+    }
+
+    .tagline {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+    }
+
+    .progress-wrap {
+      width: 150px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .preloader-inner {
+      width: 180px;
+      height: 180px;
+    }
+
+    .preloader-logo-container {
+      width: 80px;
+      height: 80px;
+    }
+
+    .orbit-1 {
+      width: 100px;
+      height: 100px;
+    }
+
+    .orbit-2 {
+      width: 130px;
+      height: 130px;
+    }
+
+    .orbit-3 {
+      width: 160px;
+      height: 160px;
+    }
+
+    .brand-name {
+      font-size: 1.2rem;
+    }
+
+    .tagline {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
     }
   }
 
@@ -2437,13 +2520,11 @@
         <div class="lead-spotlight__info">
           <div class="lead-spotlight__tag">Trustee</div>
           <h3 class="lead-spotlight__name">Smt. Sunetra Ajit Pawar</h3>
-          <<<<<<< HEAD=======<p>Deputy Chief Minister of Maharashtra</p>
-            >>>>>>> c9bae371a3d3b564527b7f2bfab280026353305e
-            <p class="lead-spotlight__role">Trustee, Krushi Udyog Mool Shikshan Sanstha (KUMSS).</p>
-            <div class="lead-spotlight__divider"></div>
-            <p class="lead-spotlight__legacy">"Carrying forward the legacy of our founders, she continues to champion
-              quality education and rural empowerment, nurturing the next generation of leaders with compassion and
-              dedication."</p>
+          <p class="lead-spotlight__role">Trustee, Krushi Udyog Mool Shikshan Sanstha (KUMSS).</p>
+          <div class="lead-spotlight__divider"></div>
+          <p class="lead-spotlight__legacy">"Carrying forward the legacy of our founders, she continues to champion
+            quality education and rural empowerment, nurturing the next generation of leaders with compassion and
+            dedication."</p>
         </div>
       </div>
 
@@ -3854,34 +3935,38 @@
     };
 
 
-    const run = (el) => {
-      const target = parseInt(el.getAttribute("data-target"), 10) || 0;
-      let current = 0;
-      const step = Math.max(1, Math.floor(target / speed));
+    (function () {
+      const els = document.querySelectorAll('.stat-num');
+      const speed = 200;
 
-      const tick = () => {
-        current += step;
-        if (current >= target) {
-          el.textContent = target;
-          return;
-        }
-        el.textContent = current;
-        requestAnimationFrame(tick);
+      const run = (el) => {
+        const target = parseInt(el.getAttribute("data-target"), 10) || 0;
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / speed));
+
+        const tick = () => {
+          current += step;
+          if (current >= target) {
+            el.textContent = target;
+            return;
+          }
+          el.textContent = current;
+          requestAnimationFrame(tick);
+        };
+        tick();
       };
-      tick();
-    };
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          run(e.target);
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.35 });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            run(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.35 });
 
-    els.forEach(el => io.observe(el));
-    }) ();
+      els.forEach(el => io.observe(el));
+    })();
 
     // Dropdown Toggle Fix
     document.addEventListener('click', function (e) {
