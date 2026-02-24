@@ -804,6 +804,261 @@
     }
   }
 
+  /* ===========================
+       PREMIUM LOADER STYLES
+       =========================== */
+  #kumss-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  #kumss-preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .preloader-inner {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .preloader-logo-container {
+    position: relative;
+    z-index: 20;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: logoFloat 3s ease-in-out infinite;
+  }
+
+  .preloader-logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    animation: imageReveal 1.5s ease-out forwards;
+  }
+
+  /* 7 Orbital paths and dots representing 7 colleges */
+  .orbits-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+
+  .orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(15, 128, 66, 0.08);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .orbit-1 {
+    width: 170px;
+    height: 170px;
+    animation: rotate 8s linear infinite;
+  }
+
+  .orbit-2 {
+    width: 220px;
+    height: 220px;
+    animation: rotate 12s linear infinite reverse;
+  }
+
+  .orbit-3 {
+    width: 270px;
+    height: 270px;
+    animation: rotate 15s linear infinite;
+  }
+
+  .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px currentColor;
+  }
+
+  /* Distribute 7 dots across orbits */
+  .dot-1 {
+    top: -5px;
+    left: 50%;
+    color: #0f8042;
+    background: #0f8042;
+  }
+
+  .dot-2 {
+    bottom: -5px;
+    left: 50%;
+    color: #f37a20;
+    background: #f37a20;
+  }
+
+  .dot-3 {
+    left: -5px;
+    top: 50%;
+    color: #2f3390;
+    background: #2f3390;
+  }
+
+  .dot-4 {
+    right: -5px;
+    top: 50%;
+    color: #0f8042;
+    background: #0f8042;
+  }
+
+  .dot-5 {
+    top: 15%;
+    left: 15%;
+    color: #f37a20;
+    background: #f37a20;
+  }
+
+  .dot-6 {
+    bottom: 15%;
+    right: 15%;
+    color: #2f3390;
+    background: #2f3390;
+  }
+
+  .dot-7 {
+    top: 15%;
+    right: 15%;
+    color: #0f8042;
+    background: #0f8042;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  @keyframes logoFloat {
+
+    0%,
+    100% {
+      transform: translateY(0) scale(1);
+    }
+
+    50% {
+      transform: translateY(-10px) scale(1.02);
+    }
+  }
+
+  @keyframes imageReveal {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+      filter: blur(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+  }
+
+  .loader-text {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #2f3390;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    display: block;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 0.5s;
+  }
+
+  .tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #0f8042;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    display: block;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 0.8s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .progress-wrap {
+    width: 200px;
+    height: 2px;
+    background: rgba(47, 51, 144, 0.1);
+    margin: 20px auto 0;
+    border-radius: 2px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards 1s;
+  }
+
+  .progress-line {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #0f8042, #f37a20);
+    animation: progressFill 2s ease-in-out forwards;
+  }
+
+  @keyframes progressFill {
+    from {
+      width: 0%;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
   /* ============================================================
        EDUCATIONAL INSTITUTES – EDITORIAL, NO CARDS
     ============================================================ */
@@ -1128,7 +1383,39 @@
   }
 </style>
 
-<body>
+
+<body style="overflow: hidden;">
+  <!-- Premium Loader -->
+  <div id="kumss-preloader">
+    <div class="preloader-inner">
+      <div class="orbits-wrapper">
+        <div class="orbit orbit-1">
+          <div class="dot dot-1"></div>
+          <div class="dot dot-2"></div>
+        </div>
+        <div class="orbit orbit-2">
+          <div class="dot dot-3"></div>
+          <div class="dot dot-4"></div>
+        </div>
+        <div class="orbit orbit-3">
+          <div class="dot dot-5"></div>
+          <div class="dot dot-6"></div>
+          <div class="dot dot-7"></div>
+        </div>
+      </div>
+      <div class="preloader-logo-container">
+        <img src="assets/kumss-logo.jpeg" alt="KUMSS Logo">
+      </div>
+    </div>
+    <div class="loader-text">
+      <span class="brand-name">K.U.M.S.S.</span>
+      <span class="tagline">Shaping Futures</span>
+      <div class="progress-wrap">
+        <div class="progress-line"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="scroll-progress" aria-hidden="true">
     <span class="scroll-progress__bar" id="scrollProgress"></span>
   </div>
@@ -2150,12 +2437,13 @@
         <div class="lead-spotlight__info">
           <div class="lead-spotlight__tag">Trustee</div>
           <h3 class="lead-spotlight__name">Smt. Sunetra Ajit Pawar</h3>
-          <p>Deputy Chief Minister of Maharashtra</p>
-          <p class="lead-spotlight__role">Trustee, Krushi Udyog Mool Shikshan Sanstha (KUMSS).</p>
-          <div class="lead-spotlight__divider"></div>
-          <p class="lead-spotlight__legacy">"Carrying forward the legacy of our founders, she continues to champion
-            quality education and rural empowerment, nurturing the next generation of leaders with compassion and
-            dedication."</p>
+          <<<<<<< HEAD=======<p>Deputy Chief Minister of Maharashtra</p>
+            >>>>>>> c9bae371a3d3b564527b7f2bfab280026353305e
+            <p class="lead-spotlight__role">Trustee, Krushi Udyog Mool Shikshan Sanstha (KUMSS).</p>
+            <div class="lead-spotlight__divider"></div>
+            <p class="lead-spotlight__legacy">"Carrying forward the legacy of our founders, she continues to champion
+              quality education and rural empowerment, nurturing the next generation of leaders with compassion and
+              dedication."</p>
         </div>
       </div>
 
@@ -3566,7 +3854,54 @@
     };
 
 
+    const run = (el) => {
+      const target = parseInt(el.getAttribute("data-target"), 10) || 0;
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / speed));
+
+      const tick = () => {
+        current += step;
+        if (current >= target) {
+          el.textContent = target;
+          return;
+        }
+        el.textContent = current;
+        requestAnimationFrame(tick);
+      };
+      tick();
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          run(e.target);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.35 });
+
+    els.forEach(el => io.observe(el));
+    }) ();
+
+    // Dropdown Toggle Fix
+    document.addEventListener('click', function (e) {
+      const t = e.target.closest('#navbar .dropdown-toggle');
+      if (t && t.getAttribute('href') === '#') {
+        e.preventDefault();
+      }
+    });
+
+    // Premium Loader Script
+    window.addEventListener('load', function () {
+      const loader = document.getElementById('kumss-preloader');
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+        document.body.style.overflow = 'visible';
+      }, 2500); // Showcase the premium animation for 2.5s
+    });
+
   </script>
+
 
   <script defer src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
