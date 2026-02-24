@@ -92,19 +92,19 @@
     #navbar .nav-link::after {
       content: "";
       position: absolute;
-      left: 15px;
-      right: 15px;
-      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 5px;
       height: 3px;
       background: linear-gradient(90deg, var(--secondary-color), #ffb347);
       border-radius: 2px;
       width: 0;
-      transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
     #navbar .nav-link:hover::after,
     #navbar .nav-link.active::after {
-      width: calc(100% - 30px);
+      width: 60%;
     }
 
     #navbar .nav-link:hover,
@@ -2045,11 +2045,7 @@
       <!-- Command Header -->
       <header class="nexus-header">
         <h2>Campus<br>Ecosystem</h2>
-        <div class="system-meta">
-          SYS_STATUS: ACTIVE<br>
-          LOC: CENTRAL_HUB_PUNE<br>
-          INTEGRITY: 99.8%
-        </div>
+
       </header>
 
       <div class="nexus-command-stage">
@@ -2274,7 +2270,7 @@
       <div class="footer-bottom">
         <p class="footer-copy">© 2026 Krushi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
         <p class="footer-copy">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
-        <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 10:41 AM</span></p>
+        <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 11:32 AM</span></p>
       </div>
     </div>
   </footer>

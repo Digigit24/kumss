@@ -41,6 +41,120 @@
       color: #fff;
     }
 
+    /* ===========================
+       NAVBAR STYLES
+       =========================== */
+    #navbar {
+      background: rgba(2, 6, 23, 0.8) !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+      z-index: 1001;
+      padding: 15px 0;
+    }
+
+    #navbar.sticky {
+      position: fixed !important;
+      top: 0;
+      width: 100%;
+      background: rgba(2, 6, 23, 0.98) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      padding: 10px 0 !important;
+    }
+
+    /* Logo Styling & Scaling */
+    .navbar-brand img,
+    .logo img,
+    img.black-logo,
+    .offcanvas-header .logo img {
+      max-height: 120px;
+      height: 120px !important;
+      width: auto;
+      transition: all 0.4s ease;
+      background: white;
+      border-radius: 8px;
+      object-fit: contain;
+      display: inline-block;
+    }
+
+    #navbar.sticky .navbar-brand img {
+      height: 80px !important;
+    }
+
+    #navbar .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff !important;
+      padding: 12px 20px !important;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+
+    #navbar .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 5px;
+      height: 3px;
+      background: var(--secondary-color);
+      border-radius: 2px;
+      width: 0;
+      transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    #navbar .nav-link:hover::after,
+    #navbar .nav-link.active::after {
+      width: 60%;
+    }
+
+    #navbar .nav-link:hover {
+      color: var(--secondary-color) !important;
+    }
+
+    /* Dropdown arrow fix - Resolves 'two arrows' glitch */
+    #navbar .dropdown-toggle::after {
+      display: none !important;
+      /* Hide bootstrap default caret */
+    }
+
+    #navbar .dropdown-toggle::before {
+      position: static !important;
+      font-size: 14px !important;
+      margin-left: 5px;
+      /* Theme arrow from style.css */
+    }
+
+    /* Mobile Menu Burger & Offcanvas */
+    .burger-menu span {
+      background: #fff !important;
+    }
+
+    .offcanvas {
+      z-index: 1050 !important;
+      background-color: #020617 !important;
+      /* Sync with page theme */
+    }
+
+    .offcanvas-backdrop {
+      z-index: 1040 !important;
+    }
+
+    .dropdown-item {
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .dropdown-item:hover {
+      color: var(--secondary-color) !important;
+      background: transparent;
+    }
+
     /* ══════════════════════════════════════
        TECHNICAL GRID BACKGROUND
     ══════════════════════════════════════ */
@@ -255,42 +369,6 @@
       gap: 20px;
     }
 
-    /* ══════════════════════════════════════
-       NAVBAR SYNC
-    ══════════════════════════════════════ */
-    #navbar {
-      background: rgba(2, 6, 23, 0.95);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-    }
-
-    #navbar .nav-link {
-      font-family: "Inter", sans-serif;
-      font-size: 18px;
-      font-weight: 500;
-      color: #fff !important;
-    }
-
-    /* Logo Styling */
-    .navbar .navbar-brand img,
-    .navbar-brand img,
-    .logo img,
-    img.black-logo,
-    .copyright-logo img,
-    .offcanvas-header .logo img {
-      background-color: white;
-      max-height: 127px;
-      height: 127px;
-      width: auto;
-      border-radius: 8px;
-      display: inline-block;
-      object-fit: contain;
-    }
-
-    .black-logo {
-      filter: none;
-      /* Removed filter to show actual image with new styling */
-    }
 
     /* ══════════════════════════════════════
        RESPONSIVE
@@ -471,6 +549,77 @@
     </div>
   </nav>
   <!-- End Navbar Area -->
+
+  <!-- Start Responsive Navbar Area -->
+  <div class="responsive-navbar offcanvas offcanvas-end border-0" tabindex="-1" id="navbarOffcanvas">
+    <div class="offcanvas-header">
+      <a href="index.html" class="logo d-inline-block">
+        <img src="/assets/kumss-logo.jpeg" alt="logo">
+      </a>
+      <button type="button" class="close-btn bg-transparent position-relative lh-1 p-0 border-0"
+        data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="ri-close-fill"></i>
+      </button>
+    </div>
+
+    <div class="offcanvas-body">
+      <ul class="responsive-menu">
+        <li class="responsive-menu-list without-icon">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="about.html" class="nav-link">About</a>
+        </li>
+        <li class="responsive-menu-list">
+          <a href="/all-institutes.html">Our Educational Institutes</a>
+          <ul class="responsive-menu-items">
+            <li class="nav-item">
+              <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="nav-link">
+                Vasatigruh Junior College
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="nav-link">
+                New English School, Dhakale
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./primary-school-karhati/primary-school-karhati.html" class="nav-link">
+                Primary School, karhati
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="nav-link">
+                KUMSS Private I.T.I Karhati
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="nav-link">
+                Gurukul English Medium School
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html" class="nav-link">
+                Shardabai Pawar Kala Mahavidyalaya
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="/gallery.html" class="nav-link">Gallery</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="/careers.html" class="nav-link">Careers</a>
+        </li>
+        <li class="responsive-menu-list without-icon">
+          <a href="/contact.html" class="nav-link">
+            Contact <span>Us</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- End Responsive Navbar Area -->
 
   <!-- Hero Section -->
   <header class="inst-hero">
@@ -693,7 +842,7 @@
       <div class="footer-bottom">
         <p class="footer-copy">© 2026 KUMSS. All rights reserved.</p>
         <p class="footer-copy">ISO 9001:2015 Certified Institute</p>
-        <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 10:41 AM</span></p>
+        <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 11:32 AM</span></p>
       </div>
     </div>
   </footer>
