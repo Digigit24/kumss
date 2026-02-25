@@ -216,6 +216,101 @@
             }
         }
 
+        /* ==================== EXPERT FACULTY ==================== */
+        .iti-faculty-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .iti-faculty-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .iti-faculty-section .section-header .section-subtitle {
+            display: inline-block;
+            color: var(--orange);
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .iti-faculty-section .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin: 0 0 12px;
+        }
+
+        .iti-faculty-section .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .iti-faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .iti-faculty-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .iti-faculty-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .iti-faculty-card .card-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .iti-faculty-card .card-body {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .iti-faculty-card .card-body h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin: 0 0 4px;
+        }
+
+        .iti-faculty-card .card-body span {
+            font-size: 0.82rem;
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        @media (max-width: 576px) {
+            .iti-faculty-section {
+                padding: 60px 0;
+            }
+
+            .iti-faculty-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 16px;
+            }
+
+            .iti-faculty-card .card-img {
+                height: 200px;
+            }
+        }
+
         /* ==================== RESPONSIVE ==================== */
         @media (max-width: 991px) {
             .mag-hero {
@@ -500,6 +595,124 @@
 
             </div>
 
+        </div>
+    </section>
+
+    <!-- EXPERT FACULTY -->
+    <section class="iti-faculty-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Team</span>
+                <h2>Expert Faculty</h2>
+                <p>Dedicated professionals committed to transforming students into skilled industry-ready technicians.</p>
+            </div>
+            <div class="iti-faculty-grid">
+                <div class="iti-faculty-card">
+                    <img src="/assets/chandgude-mahesh.webp" alt="Mr. Chandgude Mahesh Prakash" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Chandgude Mahesh P.</h4>
+                        <span>Superintendent</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/madane-vishal.webp" alt="Mr. Madane Vishal Laxman" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Madane Vishal L.</h4>
+                        <span>Engg. Drawing Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/jadhav-rahul.webp" alt="Mr. Jadhav Rahul Manikrao" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Jadhav Rahul M.</h4>
+                        <span>Fitter Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/taware-akshay.webp" alt="Mr. Taware Akshay Chandrakant" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Taware Akshay C.</h4>
+                        <span>Fitter Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/khandale-babasaheb.webp" alt="Mr. Khandale Babasaheb B." class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Khandale Babasaheb B.</h4>
+                        <span>Welder Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/madane-rajendra.webp" alt="Mr. Madane Rajendra Sopan" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Madane Rajendra S.</h4>
+                        <span>Welder Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/kalbhor-swapnil.webp" alt="Mr. Kalbhor Swapnil Jaywant" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Kalbhor Swapnil J.</h4>
+                        <span>Surveyor Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/ekatpure-sayali.webp" alt="Mrs. Ekatpure Sayali Ganpat" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Ekatpure Sayali G.</h4>
+                        <span>D'man Mechanical Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/gaikwad-mahesh.webp" alt="Mr. Gaikwad Mahesh Santosh" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Gaikwad Mahesh S.</h4>
+                        <span>Electrician Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/jadhav-priti.webp" alt="Miss. Jadhav Priti Ishwar" class="card-img">
+                    <div class="card-body">
+                        <h4>Miss. Jadhav Priti I.</h4>
+                        <span>Electrician Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/Mr.Pawar-abhijit.webp" alt="Mr. Pawar Abhijit Rajendra" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Pawar Abhijit R.</h4>
+                        <span>Fitter Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/bhise-ashwini.webp" alt="Miss. Bhise Ashwini Shivaji" class="card-img">
+                    <div class="card-body">
+                        <h4>Miss. Bhise Ashwini S.</h4>
+                        <span>Electronics Mechanic Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/hake-anuja.webp" alt="Miss. Hake Anuja Ganpat" class="card-img">
+                    <div class="card-body">
+                        <h4>Miss. Hake Anuja G.</h4>
+                        <span>Electronics Mechanic Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/jadhav-sushma.webp" alt="Miss. Jadhav Sushma Amol" class="card-img">
+                    <div class="card-body">
+                        <h4>Miss. Jadhav Sushma A.</h4>
+                        <span>RAC Instructor</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <img src="/assets/ketan-tambe.webp" alt="Mr. Tambe Ketan Vishwas" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Tambe Ketan V.</h4>
+                        <span>Surveyor Instructor</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

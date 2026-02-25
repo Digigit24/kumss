@@ -671,6 +671,166 @@
         }
 
 
+        /* ==================== PRINCIPAL'S DESK ==================== */
+        .gk-principal-section {
+            padding: 100px 20px;
+            background: var(--bg-light);
+        }
+
+        .gk-principal-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+            border-top: 5px solid var(--secondary);
+            overflow: hidden;
+        }
+
+        .gk-principal-profile {
+            background: linear-gradient(135deg, var(--primary), #1a2060);
+            color: #fff;
+            text-align: center;
+            padding: 44px 28px;
+        }
+
+        .gk-principal-profile img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            display: block;
+            margin: 0 auto 18px;
+        }
+
+        .gk-principal-profile h4 {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin: 0 0 4px;
+        }
+
+        .gk-principal-profile .role {
+            color: var(--secondary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .gk-principal-msg {
+            padding: 40px 28px 36px;
+        }
+
+        .gk-principal-msg .label {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .gk-principal-msg blockquote {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--primary);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0 0 0 22px;
+            border-left: 3px solid var(--secondary);
+        }
+
+        /* ==================== OUR TEAM / EXPERT FACULTY ==================== */
+        .gk-faculty-section {
+            padding: 100px 20px;
+            background: #fff;
+        }
+
+        .gk-faculty-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .gk-faculty-section .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0 0 12px;
+        }
+
+        .gk-faculty-section .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gk-faculty-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .gk-faculty-card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .gk-faculty-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .gk-faculty-card .card-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gk-faculty-card .card-body {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .gk-faculty-card .card-body h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 4px;
+        }
+
+        .gk-faculty-card .card-body span {
+            font-size: 0.82rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .gk-principal-section,
+            .gk-faculty-section {
+                padding: 60px 20px;
+            }
+
+            .gk-faculty-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 16px;
+            }
+
+            .gk-faculty-card .card-img {
+                height: 200px;
+            }
+        }
+
         /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 992px) {
             .mv-grid {
@@ -973,6 +1133,136 @@
         </div>
     </section>
 
+
+    <!-- PRINCIPAL'S DESK -->
+    <section class="gk-principal-section">
+        <div class="container-custom">
+            <h2 class="section-title" style="text-align:center; margin-bottom:40px;">Principal's Desk</h2>
+            <div class="gk-principal-card">
+                <div class="gk-principal-profile">
+                    <img src="/assets/supriya-aherkar-principal.webp" alt="Mrs. Supriya Aherkar - Principal">
+                    <h4>Mrs. Supriya Aherkar</h4>
+                    <div class="role">Principal, Gurukul English Medium School</div>
+                </div>
+                <div class="gk-principal-msg">
+                    <div class="label">Principal's Message</div>
+                    <blockquote>
+                        At Gurukul English Medium School, we believe every child is a unique learner with infinite potential. Our mission is to create a nurturing environment where students develop not just academically, but as confident, responsible, and compassionate individuals. We are committed to providing modern education rooted in strong values, preparing our students for a bright future.
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR TEAM - EXPERT FACULTY -->
+    <section class="gk-faculty-section">
+        <div class="container-custom">
+            <div class="section-header">
+                <h2>Our Team — Expert Faculty</h2>
+                <p>Passionate educators dedicated to nurturing young minds with care and expertise.</p>
+            </div>
+            <div class="gk-faculty-grid">
+                <div class="gk-faculty-card">
+                    <img src="/assets/supriya-aherkar-principal.webp" alt="Mrs. Supriya Aherkar" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Supriya Aherkar</h4>
+                        <span>Principal</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/ashwini-khomane.webp" alt="Mrs. Ashwini Khomane" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Ashwini Khomane</h4>
+                        <span>Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/asmita-wabale.webp" alt="Mrs. Asmita Wabale" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Asmita Wabale</h4>
+                        <span>Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/bhagyashri-bhapkar.webp" alt="Mrs. Bhagyshri Bhapkar" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Bhagyshri Bhapkar</h4>
+                        <span>Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/chaya-jadhav.webp" alt="Mrs. Chaya Jadhav" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Chaya Jadhav</h4>
+                        <span>Asst. Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/vidya-panasare.webp" alt="Mrs. Vidya Pansare" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Vidya Pansare</h4>
+                        <span>Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/lina-jarad.webp" alt="Mrs. Lina Jarad" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Lina Jarad</h4>
+                        <span>Asst. Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/pooja-jagtap.webp" alt="Mrs. Pooja Jagtap" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Pooja Jagtap</h4>
+                        <span>Asst. Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/priyanka-parkale.webp" alt="Mrs. Priyanaka Parkale" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Priyanaka Parkale</h4>
+                        <span>Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/anita-pisal.webp" alt="Mrs. Anita Pisal" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Anita Pisal</h4>
+                        <span>Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/swati-bhapkar.webp" alt="Mrs. Swati Bhapkar" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Swati Bhapkar</h4>
+                        <span>Asst. Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/shayra-bagwan.webp" alt="Mrs. Shayara Bagwan" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Shayara Bagwan</h4>
+                        <span>Care Taker</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/geetanjali-lonkar.webp" alt="Mrs. Geetanjali Lonkar" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Geetanjali Lonkar</h4>
+                        <span>Care Taker</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <img src="/assets/aarti-makar.webp" alt="Mrs. Arti Makar" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Arti Makar</h4>
+                        <span>Care Taker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer (Kept Same) -->
     <footer class="footer">

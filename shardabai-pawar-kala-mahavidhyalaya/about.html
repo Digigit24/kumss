@@ -280,6 +280,161 @@
       margin-top: 30px;
     }
 
+    /* ========================= PRINCIPAL'S DESK ========================= */
+    .spkm-principal-section {
+      padding: 100px 20px;
+      background: var(--soft-bg);
+    }
+
+    .spkm-principal-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      border-top: 5px solid var(--accent-orange);
+      overflow: hidden;
+    }
+
+    .spkm-principal-profile {
+      background: linear-gradient(135deg, var(--primary-blue), #0d1f4a);
+      color: #fff;
+      text-align: center;
+      padding: 44px 28px;
+    }
+
+    .spkm-principal-profile img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      display: block;
+      margin: 0 auto 18px;
+    }
+
+    .spkm-principal-profile h4 {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 0 0 4px;
+      font-family: "Gantari", sans-serif;
+    }
+
+    .spkm-principal-profile .role {
+      color: var(--accent-orange);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .spkm-principal-msg {
+      padding: 40px 28px 36px;
+    }
+
+    .spkm-principal-msg .label {
+      color: var(--accent-orange);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .spkm-principal-msg blockquote {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--primary-blue);
+      line-height: 1.7;
+      margin: 0;
+      padding: 0 0 0 22px;
+      border-left: 3px solid var(--accent-orange);
+    }
+
+    /* ========================= OUR TEAM / EXPERT FACULTY ========================= */
+    .spkm-faculty-section {
+      padding: 100px 20px;
+      background: var(--white);
+    }
+
+    .spkm-faculty-section h2 {
+      font-family: "Gantari", sans-serif;
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 800;
+      color: var(--primary-blue);
+      margin-bottom: 50px;
+      text-align: center;
+      position: relative;
+    }
+
+    .spkm-faculty-section h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--accent-orange);
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+
+    .spkm-faculty-section p.section-desc {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: -30px auto 50px;
+    }
+
+    .spkm-faculty-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+      gap: 25px;
+    }
+
+    .spkm-faculty-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .spkm-faculty-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+    }
+
+    .spkm-faculty-card .card-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .spkm-faculty-card .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .spkm-faculty-card .card-body h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 0 0 4px;
+      font-family: "Gantari", sans-serif;
+    }
+
+    .spkm-faculty-card .card-body span {
+      font-size: 0.82rem;
+      color: var(--accent-orange);
+      font-weight: 600;
+    }
+
     @media (max-width: 768px) {
       .hero {
         min-height: 70vh;
@@ -536,6 +691,74 @@
           <span>Expansion of eco-friendly Ganpati / Shadumati Ganpati creation workshops</span>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <!-- PRINCIPAL'S DESK -->
+  <section class="spkm-principal-section">
+    <div class="section-wrap">
+      <h2 style="font-family:'Gantari',sans-serif; font-size:clamp(30px,4vw,42px); font-weight:800; color:var(--primary-blue); margin-bottom:50px; text-align:center; position:relative;">
+        Principal's Desk
+        <span style="display:block; width:80px; height:4px; background:var(--accent-orange); margin:15px auto 0; border-radius:2px;"></span>
+      </h2>
+      <div class="spkm-principal-card">
+        <div class="spkm-principal-profile">
+          <img src="/assets/shirke-santosh-sambhaji.webp" alt="Mr. Shirke Santosh Sambhaji - Principal">
+          <h4>Mr. Shirke Santosh Sambhaji</h4>
+          <div class="role">Asst. Lecturer / Principal</div>
+        </div>
+        <div class="spkm-principal-msg">
+          <div class="label">Principal's Message</div>
+          <blockquote>
+            Shardabai Pawar Kala Mahavidhyalaya is dedicated to nurturing creativity with technique and tradition. We strive to build skilled, disciplined, and visionary art educators through real-world guidance and focused practice. Our aim is to empower every student to express their artistic vision with confidence and mastery.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR TEAM - EXPERT FACULTY -->
+  <section class="spkm-faculty-section">
+    <div class="section-wrap">
+      <h2>Our Team — Expert Faculty</h2>
+      <p class="section-desc">Experienced art educators dedicated to developing the next generation of creative professionals.</p>
+      <div class="spkm-faculty-grid">
+        <div class="spkm-faculty-card">
+          <img src="/assets/shirke-santosh-sambhaji.webp" alt="Mr. Shirke Santosh Sambhaji" class="card-img">
+          <div class="card-body">
+            <h4>Mr. Shirke Santosh S.</h4>
+            <span>Asst. Lecturer / Principal</span>
+          </div>
+        </div>
+        <div class="spkm-faculty-card">
+          <img src="/assets/jangam-preetam-suresh.webp" alt="Mr. Jangam Preetam Suresh" class="card-img">
+          <div class="card-body">
+            <h4>Mr. Jangam Preetam S.</h4>
+            <span>Asst. Lecturer</span>
+          </div>
+        </div>
+        <div class="spkm-faculty-card">
+          <img src="/assets/pappuraj-banwah.webp" alt="Mr. Pappuraj Altaf Banwah" class="card-img">
+          <div class="card-body">
+            <h4>Mr. Pappuraj A. Banwah</h4>
+            <span>Asst. Lecturer</span>
+          </div>
+        </div>
+        <div class="spkm-faculty-card">
+          <img src="/assets/dhumal-swapnil-satish.webp" alt="Mr. Dhumal Swapnil Satish" class="card-img">
+          <div class="card-body">
+            <h4>Mr. Dhumal Swapnil S.</h4>
+            <span>Clerk</span>
+          </div>
+        </div>
+        <div class="spkm-faculty-card">
+          <img src="/assets/mr-jagdale-shyam-madhukar.webp" alt="Mr. Jagdale Shyam Madhukar" class="card-img">
+          <div class="card-body">
+            <h4>Mr. Jagdale Shyam M.</h4>
+            <span>Peon</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

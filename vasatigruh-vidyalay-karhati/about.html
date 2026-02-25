@@ -414,6 +414,167 @@
         }
 
         /* =========================================
+           PRINCIPAL'S DESK
+           ========================================= */
+        .vvk-principal-section {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .vvk-principal-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+            border-top: 5px solid var(--pro-orange);
+            overflow: hidden;
+        }
+
+        .vvk-principal-profile {
+            background: linear-gradient(135deg, var(--pro-blue), #0f172a);
+            color: #fff;
+            text-align: center;
+            padding: 44px 28px;
+        }
+
+        .vvk-principal-profile img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            display: block;
+            margin: 0 auto 18px;
+        }
+
+        .vvk-principal-profile h4 {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 4px;
+        }
+
+        .vvk-principal-profile .role {
+            color: var(--pro-orange);
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .vvk-principal-quote {
+            padding: 40px 28px 36px;
+        }
+
+        .vvk-principal-quote .label {
+            color: var(--pro-orange);
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .vvk-principal-quote blockquote {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--pro-blue);
+            line-height: 1.7;
+            margin: 0 0 24px;
+            padding: 0 0 0 22px;
+            border-left: 3px solid var(--pro-orange);
+        }
+
+        /* =========================================
+           OUR TEAM / EXPERT FACULTY
+           ========================================= */
+        .vvk-faculty-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .vvk-faculty-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .vvk-faculty-section .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--pro-blue);
+            margin: 0 0 12px;
+        }
+
+        .vvk-faculty-section .section-header p {
+            color: var(--pro-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .vvk-faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .vvk-faculty-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .vvk-faculty-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .vvk-faculty-card .card-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .vvk-faculty-card .card-body {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .vvk-faculty-card .card-body h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--pro-blue);
+            margin: 0 0 4px;
+        }
+
+        .vvk-faculty-card .card-body span {
+            font-size: 0.82rem;
+            color: var(--pro-orange);
+            font-weight: 600;
+        }
+
+        @media (max-width: 576px) {
+            .vvk-principal-section,
+            .vvk-faculty-section {
+                padding: 60px 0;
+            }
+
+            .vvk-faculty-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 16px;
+            }
+
+            .vvk-faculty-card .card-img {
+                height: 200px;
+            }
+        }
+
+        /* =========================================
            RESPONSIVE
            ========================================= */
         @media (max-width: 992px) {
@@ -758,6 +919,150 @@
                     <img src="/assets/our-vision.webp" alt="Student Development">
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- PRINCIPAL'S DESK -->
+    <section class="vvk-principal-section">
+        <div class="pro-container">
+            <div class="vvk-principal-card">
+                <div class="vvk-principal-profile">
+                    <img src="/assets/anita-ravindra-chavan.webp" alt="Mrs. Anita Ravindra Chavan - Principal">
+                    <h4>Mrs. Anita Ravindra Chavan</h4>
+                    <div class="role">Principal, Vasatigruh Vidyalay Karhati</div>
+                </div>
+                <div class="vvk-principal-quote">
+                    <div class="label">Principal's Desk</div>
+                    <blockquote>
+                        Education is the most powerful tool for transforming society. At Vasatigruh Vidyalay, we are committed to nurturing each student's potential through quality education, value-based learning, and holistic development. Our goal is to prepare confident, responsible citizens who will serve society with integrity and dedication.
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR TEAM - EXPERT FACULTY -->
+    <section class="vvk-faculty-section">
+        <div class="pro-container">
+            <div class="section-header">
+                <span class="section-tag">Our Team</span>
+                <h2 class="section-heading">Expert Faculty</h2>
+                <p class="section-desc" style="margin: 0 auto;">Dedicated educators committed to building strong academic foundations and holistic student development.</p>
+            </div>
+            <div class="vvk-faculty-grid">
+                <div class="vvk-faculty-card">
+                    <img src="/assets/anita-ravindra-chavan.webp" alt="Mrs. Anita Ravindra Chavan" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Anita Ravindra Chavan</h4>
+                        <span>Principal</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/bhausaheb-pandurang-pisal.webp" alt="Mr. Bhausaheb P. Pisal" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Bhausaheb P. Pisal</h4>
+                        <span>Supervisor</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/abasaheb-malhari-kokare.webp" alt="Mr. Abasaheb M. Kokare" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Abasaheb M. Kokare</h4>
+                        <span>Asst. Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/bhapkar-manjushri-lalasaheb.webp" alt="Mrs. Bhapkar M. Lalasaheb" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Bhapkar M. Lalasaheb</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/khaire-reshma-vyankat.webp" alt="Mrs. Khaire Reshma V." class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Khaire Reshma V.</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/komal-chandgude.webp" alt="Mrs. Komal Chandgude" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Komal Chandgude</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/amol-subhash-kambale.webp" alt="Mr. Amol Subhash Kambale" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Amol Subhash Kambale</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/allabaksh-husen-shaikh.webp" alt="Mr. Allabaksh H. Shaikh" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Allabaksh H. Shaikh</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/sahebrao-parashram-devre.webp" alt="Mr. Sahebrao P. Devre" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Sahebrao P. Devre</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/nilesh-sampat-lavhe.webp" alt="Mr. Nilesh Sampat Lavhe" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Nilesh Sampat Lavhe</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/sarika-rajendra-shinde.webp" alt="Mrs. Sarika R. Shinde" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Sarika R. Shinde</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/kale-vijay-raosaheb.webp" alt="Mr. Kale Vijay Raosaheb" class="card-img">
+                    <div class="card-body">
+                        <h4>Mr. Kale Vijay Raosaheb</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/nilam-digambar-masal.webp" alt="Mrs. Nilam D. Masal" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Nilam D. Masal</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/shital-dashrath-thorat.webp" alt="Mrs. Shital D. Thorat" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Shital D. Thorat</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/dipali-bhimrao-yadande.webp" alt="Mrs. Dipali B. Yadande" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Dipali B. Yadande</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
+                <div class="vvk-faculty-card">
+                    <img src="/assets/prachi-pradeeprao-jagtap.webp" alt="Mrs. Prachi P. Jagtap" class="card-img">
+                    <div class="card-body">
+                        <h4>Mrs. Prachi P. Jagtap</h4>
+                        <span>Assistant Teacher</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
