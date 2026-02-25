@@ -127,8 +127,8 @@
 
         .gm-logo-img {
             background-color: transparent;
-            max-height: 127px;
-            height: 127px;
+            max-height: 70px;
+            height: 70px;
             width: auto;
             border-radius: 8px;
             display: inline-block;
@@ -170,8 +170,7 @@
             }
 
             .gm-logo-img {
-                height: 127px;
-                /* Kept consistent with desktop design */
+                height: 60px;
             }
 
             .ggm-logo-img {
@@ -196,10 +195,11 @@
         .gm-links {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 18px;
             list-style: none;
             margin: 0;
             padding: 0;
+            flex-wrap: nowrap;
         }
 
         .gm-link {
@@ -207,13 +207,14 @@
             text-decoration: none;
             color: #000;
             font-weight: 500;
-            font-size: 1.15rem;
+            font-size: 0.92rem;
             letter-spacing: .2px;
-            padding: 10px 2px;
+            padding: 8px 2px;
             position: relative;
             border: 0;
             background: transparent;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .gm-link:focus-visible {
