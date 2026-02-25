@@ -125,163 +125,81 @@
             left: -40px;
         }
 
-        /* GALLERY */
-        .gallery-wrap {
-            padding: 60px 0 80px;
+        /* CONTENT SECTION */
+        .content-section {
+            padding: 80px 0;
+            background: white;
         }
 
-        .masonry-grid {
-            column-count: 4;
-            column-gap: 16px;
-        }
-
-        .gallery-item {
+        .rules-card {
             background: var(--white);
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            transition: 0.4s;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
+            margin: -60px auto 0;
             position: relative;
-            break-inside: avoid;
-            cursor: pointer;
+            z-index: 10;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(30, 58, 138, 0.3);
-            opacity: 0;
-            transition: 0.3s;
-            z-index: 1;
-            border-radius: 14px;
-        }
-
-        .gallery-item:hover::before {
-            opacity: 1;
-        }
-
-        /* LIGHTBOX */
-        .lightbox {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.92);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox img {
-            max-width: 90vw;
-            max-height: 85vh;
-            border-radius: 12px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-            object-fit: contain;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            background: rgba(255, 255, 255, 0.15);
-            border: none;
-            color: white;
+        .marathi-title {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 40px;
             font-size: 1.8rem;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 15px;
+            line-height: 1.4;
         }
 
-        .lightbox-close:hover {
-            background: rgba(255, 255, 255, 0.3);
+        .marathi-list {
+            list-style: none;
+            padding: 0;
         }
 
-        .lightbox-nav {
+        .marathi-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        .marathi-list li::before {
+            content: "\f2e5";
+            font-family: 'remixicon';
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.15);
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
+            left: 0;
+            top: 2px;
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: bold;
         }
 
-        .lightbox-nav:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .lightbox-prev {
-            left: 20px;
-        }
-
-        .lightbox-next {
-            right: 20px;
-        }
-
-        .lightbox-counter {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 1024px) {
-            .masonry-grid {
-                column-count: 3;
-            }
+        .agreement-box {
+            margin-top: 40px;
+            padding: 25px;
+            background: #fffbeb;
+            border-left: 5px solid var(--accent);
+            font-weight: 600;
+            color: var(--primary);
+            text-align: center;
+            border-radius: 8px;
         }
 
         @media (max-width: 768px) {
-            .masonry-grid {
-                column-count: 2;
+            .rules-card {
+                padding: 30px 20px;
+                margin-top: -40px;
             }
 
-            .page-hero {
-                padding: 130px 0 70px;
+            .marathi-title {
+                font-size: 1.4rem;
             }
-        }
 
-        @media (max-width: 480px) {
-            .masonry-grid {
-                column-count: 1;
+            .marathi-list li {
+                font-size: 1rem;
             }
         }
     </style>
@@ -354,27 +272,39 @@
         <p>School rules, guidelines, and important notices for students, parents, and staff.</p>
     </section>
 
-    <!-- GALLERY -->
-    <section class="gallery-wrap">
+    <!-- CONTENT SECTION -->
+    <section class="content-section">
         <div class="container">
-            <div class="masonry-grid">
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-02.webp"
-                        alt="Rulebook Page 1" loading="lazy"></div>
-
+            <div class="rules-card">
+                <h2 class="marathi-title">या माध्यमिक शाळेतील विद्यार्थी व त्यांच्या पालकांसाठी शाळेची नियमावली</h2>
+                <ul class="marathi-list">
+                    <li>१) विद्यार्थी/विद्यार्थीनीने दररोज शाळेत वेळेवर व शाळेच्या स्वच्छ गणेवेशात आले पाहीजे.</li>
+                    <li>२) विद्यार्थी / विद्यार्थीनीने स्वतः टापटिपेत राहीले पाहीजे आणि वर्ग व शाळेचा परिसर स्वच्छ ठेवला
+                        पाहीजे.</li>
+                    <li>३) कार्यानुभव व विषयासाठी शिक्षकांनी दिलेली कामे दिलेल्या आदेशाप्रमाणे केली पाहीजे.</li>
+                    <li>४) वर्गातील बाके व भिंती स्वच्छ ठेवाव्यात मोडतोड करु नये. केल्यास नुकसान भरपाई द्यावी लागेल.
+                    </li>
+                    <li>५) विद्यालयीन फी वेळच्या वेळी भरावी.</li>
+                    <li>६) शिक्षकांनी दिलेला अभ्यास दररोज व वेळच्या वेळी केला पाहीजे.</li>
+                    <li>७) जादा तासास विद्यार्थी/विद्यार्थीनीने हजर राहिले पाहीजे.</li>
+                    <li>८) विद्यार्थी / विद्यार्थीनीने विद्यालयाच्या शिस्त विषयक नियमास अनुसरुन वेळोवेळी जे शिस्तीचे
+                        नियम करील ते त्यांनी काटेकोर पाळले पाहीजेत.</li>
+                    <li>९) पालकांनी आपल्या पाल्याची शाळेतील दैनंदिन उपस्थिती व अभ्यासा बाबत व स्वच्छते बाबत जागरुक राहुन
+                        वेळच्या वेळी शाळेच्या संपर्कात राहीले पाहीजे.</li>
+                    <li>१०) पालक शिक्षक संघाच्या सह विचार सभेत पालकांची उपस्थिती आवश्यक आहे.</li>
+                    <li>११) काही कामा निमित्त विद्यार्थी शाळेत गैरहजर राहीला असेल तर शाळेत आपण समक्ष येऊन वर्ग शिक्षकांस
+                        त्या संबंधी भेटले पाहीजे चिठ्ठी दिली पाहीजे.</li>
+                    <li>१२) या प्रवेश अर्जा सोबत जोडलेल्या शाळा सोडल्याचा दाखल्यावर आपल्या पाल्याचे नाव, जन्मतारीख, जात
+                        आणि इतर नोंदी बरोबर असल्याची खात्री करुन घ्यावी व जर काही चूक असेल तर मा. मुख्याध्यापकांच्या
+                        नजरेत त्वरीत लेखी स्वरुपात आणुन द्यावे. अन्यथा चुकीची तपशिल तसाच राहुन गेल्यास त्यास ती शाळा
+                        जबाबदार रहाणार नाही.</li>
+                </ul>
+                <div class="agreement-box">
+                    शाळेची वरील सर्व नियमावली मी वाचली असुन ती मला मान्य आहे.
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()"><i class="ri-close-line"></i></button>
-        <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)"><i
-                class="ri-arrow-left-s-line"></i></button>
-        <img id="lightboxImg" src="" alt="Rulebook Page">
-        <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)"><i
-                class="ri-arrow-right-s-line"></i></button>
-        <div class="lightbox-counter" id="lightboxCounter"></div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -449,7 +379,7 @@
                 <p>© 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">ISO 9001:2015
                     Certified Institute | Recognized by Government of Maharashtra</p>
-                <p class="last-updated">Last Updated: <span id="lastUpdated">24 Feb 2026, 05:31 PM</span></p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">25 Feb 2026, 09:39 AM</span></p>
             </div>
         </div>
     </footer>
@@ -458,30 +388,13 @@
 
     <script src="/assets/js/institute.js"></script>
     <script>
-        var allImages = [], currentIdx = 0;
-        document.querySelectorAll('.gallery-item img').forEach(function (img) { allImages.push(img.src); });
-
-        function openLightbox(item) {
-            var src = item.querySelector('img').src;
-            currentIdx = allImages.indexOf(src);
-            document.getElementById('lightboxImg').src = src;
-            document.getElementById('lightboxCounter').textContent = (currentIdx + 1) + ' / ' + allImages.length;
-            document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; }
-        function navLightbox(dir) {
-            currentIdx = (currentIdx + dir + allImages.length) % allImages.length;
-            document.getElementById('lightboxImg').src = allImages[currentIdx];
-            document.getElementById('lightboxCounter').textContent = (currentIdx + 1) + ' / ' + allImages.length;
-        }
-        document.addEventListener('keydown', function (e) {
-            if (!document.getElementById('lightbox').classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') navLightbox(-1);
-            if (e.key === 'ArrowRight') navLightbox(1);
+        // Smooth scroll progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
         });
-        document.getElementById('lightbox').addEventListener('click', function (e) { if (e.target === this) closeLightbox(); });
     </script>
 </body>
 
