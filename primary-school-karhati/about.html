@@ -643,145 +643,117 @@
       }
     }
 
-    /* =========================
-      PRINCIPAL'S DESK
-    ========================= */
-    .ps-principal {
-      padding: 72px 0;
-      background: var(--ps-soft);
+    /* ==================== PRINCIPAL'S DESK ==================== */
+    .ps-principal-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      justify-content: center;
+    }
+    .ps-principal-img-box {
       position: relative;
-      overflow: hidden;
+      flex: 0.7;
+      display: flex;
+      justify-content: flex-end;
     }
-
-    .ps-principal-card {
-      background: var(--ps-card);
-      border: 1px solid var(--ps-border);
-      border-radius: var(--ps-radius);
-      box-shadow: var(--ps-shadow);
-      overflow: hidden;
-      backdrop-filter: blur(10px);
+    .ps-principal-img-box img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 15px 15px 0 rgba(255, 151, 4, 0.1);
     }
-
-    .ps-principal-profile {
-      background: linear-gradient(135deg, var(--ps-blue), #1a2f74);
-      color: #fff;
-      text-align: center;
-      padding: 40px 24px;
+    .ps-principal-content {
+      flex: 1.3;
     }
-
-    .ps-principal-profile img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      display: block;
-      margin: 0 auto 16px;
-    }
-
-    .ps-principal-profile h4 {
-      color: #fff;
-      font-size: 1.2rem;
-      font-weight: 900;
-      margin: 0 0 4px;
-    }
-
-    .ps-principal-profile .role {
+    .ps-section-subtitle {
+      display: inline-block;
       color: var(--ps-accent);
-      font-size: 0.8rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .ps-principal-msg {
-      padding: 32px 24px;
-    }
-
-    .ps-principal-msg .label {
-      color: var(--ps-accent);
-      font-weight: 900;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
-    .ps-principal-msg blockquote {
-      font-size: 0.98rem;
-      font-style: italic;
-      color: var(--ps-blue);
-      line-height: 1.75;
-      margin: 0;
-      padding: 0 0 0 18px;
-      border-left: 3px solid var(--ps-accent);
-    }
-
-    /* =========================
-      OUR TEAM / EXPERT FACULTY
-    ========================= */
-    .ps-team {
-      padding: 72px 0;
-      background: var(--ps-bg);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ps-team-grid {
+    /* ==================== EXPERT FACULTY ==================== */
+    .ps-faculty-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 18px;
-      margin-top: 22px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
-
-    .ps-team-card {
-      background: var(--ps-card);
-      border: 1px solid var(--ps-border);
-      border-radius: 20px;
+    .ps-faculty-card {
+      background: #ffffff;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: 0.3s;
+      border: 1px solid #eeeeee;
     }
-
-    .ps-team-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 34px rgba(16, 24, 40, 0.14);
+    .ps-faculty-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
-
-    .ps-team-card img {
+    .ps-faculty-img-box {
+      height: 320px;
       width: 100%;
-      height: 240px;
-      object-fit: cover;
-      display: block;
+      overflow: hidden;
+      position: relative;
+      background-color: #f8f9fa;
     }
-
-    .ps-team-card .info {
-      padding: 14px;
+    .ps-faculty-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.5s ease;
+    }
+    .ps-faculty-card:hover .ps-faculty-img {
+      transform: scale(1.05);
+    }
+    .ps-faculty-info {
+      padding: 20px;
       text-align: center;
     }
-
-    .ps-team-card .info h4 {
-      font-size: 0.95rem;
-      font-weight: 900;
+    .ps-faculty-name {
       color: var(--ps-blue);
-      margin: 0 0 4px;
-    }
-
-    .ps-team-card .info span {
-      font-size: 0.78rem;
-      color: var(--ps-accent);
+      font-size: 1.1rem;
+      margin-bottom: 5px;
       font-weight: 700;
     }
-
-    @media (max-width: 980px) {
-      .ps-team-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 12px;
+    .ps-faculty-role {
+      color: var(--ps-accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .ps-btn-outline {
+      background: transparent;
+      color: var(--ps-blue);
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      border: 2px solid var(--ps-blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .ps-btn-outline:hover {
+      background: var(--ps-blue);
+      color: #ffffff;
+    }
+    @media (max-width: 991px) {
+      .ps-faculty-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-
-      .ps-team-card img {
-        height: 190px;
+    }
+    @media (max-width: 576px) {
+      .ps-faculty-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -839,6 +811,20 @@
 
       .ps-photo img {
         height: 300px;
+      }
+
+      .ps-principal-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+      }
+      .ps-principal-img-box {
+        justify-content: center;
+        flex: 1;
+      }
+      .ps-principal-img-box img {
+        max-width: 300px;
+        box-shadow: 10px 10px 0 rgba(255, 151, 4, 0.1);
       }
     }
 
@@ -975,9 +961,8 @@
 
           <li><a class="gm-link" href="./staff.html">Staff</a></li>
           <li><a class="gm-link" href="/primary-school-karhati/gallery.html">Gallery</a></li>
+          <li class="gm-cta"><a class="ggm-btn" href="/contact.html">Contact Us</a></li>
         </ul>
-
-        <a class="ggm-btn" href="/contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -1094,94 +1079,79 @@
   </section>
 
   <!-- PRINCIPAL'S DESK -->
-  <section class="ps-principal" id="principal">
+  <section class="ps-section ps-section--soft" id="principal">
     <div class="ps-wrap">
-      <div class="ps-head reveal">
-        <h2>Principal's Desk</h2>
-        <div class="ps-bar"></div>
-      </div>
-      <div class="ps-principal-card reveal delay-100">
-        <div class="ps-principal-profile">
-          <img src="/assets/kamal-gadekar.webp" alt="Ms. Kamal Sampat Gadekar - Principal">
-          <h4>Ms. Kamal Sampat Gadekar</h4>
-          <div class="role">Principal, Primary School Karhati</div>
+        <div class="ps-principal-wrapper">
+            <div class="ps-principal-img-box reveal-left">
+                <img src="/assets/kamal-gadekar.webp" alt="Ms. Kamal Sampat Gadekar">
+            </div>
+            <div class="ps-principal-content reveal-right">
+                <span class="ps-section-subtitle">Principal's Desk</span>
+                <h2 style="color: var(--ps-blue); font-size: 2rem; font-weight: 900; margin-bottom: 16px;">Nurturing Young Minds with Care</h2>
+                <i class="ri-double-quotes-l" style="font-size: 3rem; color: var(--ps-accent); opacity: 0.3;"></i>
+                <p class="reveal" style="font-style: italic; font-size: 1.05rem; color: var(--ps-muted); line-height: 1.8; margin: 16px 0;">
+                    "At Primary School Karhati, we believe every child deserves a warm, supportive start to their educational journey. Our focus is on building strong basics, good habits, and confident kids. We nurture young minds with care, patience, and daily practice to help them grow into responsible individuals."
+                </p>
+                <div>
+                    <h4 style="color: var(--ps-blue); font-weight: 900; margin: 0 0 4px;">Ms. Kamal Sampat Gadekar</h4>
+                    <small style="color: var(--ps-muted); text-transform: uppercase; font-weight: 700; font-size: 0.82rem;">Principal, Primary School Karhati</small>
+                </div>
+            </div>
         </div>
-        <div class="ps-principal-msg">
-          <div class="label">Principal's Message</div>
-          <blockquote>
-            At Primary School Karhati, we believe every child deserves a warm, supportive start to their educational journey. Our focus is on building strong basics, good habits, and confident kids. We nurture young minds with care, patience, and daily practice to help them grow into responsible individuals.
-          </blockquote>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- OUR TEAM - EXPERT FACULTY -->
-  <section class="ps-team" id="team">
+  <!-- EXPERT FACULTY -->
+  <section class="ps-section" id="team">
     <div class="ps-wrap">
-      <div class="ps-head reveal">
-        <h2>Our Team</h2>
-        <div class="ps-bar"></div>
-        <p>Dedicated teachers building strong foundations for young learners.</p>
-      </div>
-      <div class="ps-team-grid">
-        <div class="ps-team-card reveal delay-100">
-          <img src="/assets/kamal-gadekar.webp" alt="Ms. Kamal Sampat Gadekar">
-          <div class="info">
-            <h4>Ms. Kamal S. Gadekar</h4>
-            <span>Principal</span>
-          </div>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="ps-section-subtitle">Our Team</span>
+            <h2 style="font-size: 2rem; font-weight: 900; color: var(--ps-blue); margin: 0 0 12px;">Expert Faculty</h2>
+            <p style="color: var(--ps-muted); font-size: 1rem; max-width: 600px; margin: 0 auto;">Dedicated teachers building strong foundations for young learners.</p>
         </div>
-        <div class="ps-team-card reveal delay-200">
-          <img src="/assets/nita-jagtap.webp" alt="Mrs. Nita Madhukar Jagtap">
-          <div class="info">
-            <h4>Mrs. Nita M. Jagtap</h4>
-            <span>Asst. Teacher</span>
-          </div>
+        <div class="ps-faculty-grid">
+            <div class="ps-faculty-card reveal delay-100">
+                <div class="ps-faculty-img-box">
+                    <img src="/assets/kamal-gadekar.webp" alt="Ms. Kamal Sampat Gadekar" class="ps-faculty-img">
+                </div>
+                <div class="ps-faculty-info">
+                    <h4 class="ps-faculty-name">Ms. Kamal S. Gadekar</h4>
+                    <span class="ps-faculty-role">Principal</span>
+                </div>
+            </div>
+            <div class="ps-faculty-card reveal delay-200">
+                <div class="ps-faculty-img-box">
+                    <img src="/assets/nita-jagtap.webp" alt="Mrs. Nita Madhukar Jagtap" class="ps-faculty-img">
+                </div>
+                <div class="ps-faculty-info">
+                    <h4 class="ps-faculty-name">Mrs. Nita M. Jagtap</h4>
+                    <span class="ps-faculty-role">Asst. Teacher</span>
+                </div>
+            </div>
+            <div class="ps-faculty-card reveal delay-300">
+                <div class="ps-faculty-img-box">
+                    <img src="/assets/jyoti-shinde.webp" alt="Mrs. Jyoti Shankar Shinde" class="ps-faculty-img">
+                </div>
+                <div class="ps-faculty-info">
+                    <h4 class="ps-faculty-name">Mrs. Jyoti S. Shinde</h4>
+                    <span class="ps-faculty-role">Asst. Teacher</span>
+                </div>
+            </div>
+            <div class="ps-faculty-card reveal delay-100">
+                <div class="ps-faculty-img-box">
+                    <img src="/assets/alka-deokar.webp" alt="Mrs. Alka Ravindra Deokar" class="ps-faculty-img">
+                </div>
+                <div class="ps-faculty-info">
+                    <h4 class="ps-faculty-name">Mrs. Alka R. Deokar</h4>
+                    <span class="ps-faculty-role">Asst. Teacher</span>
+                </div>
+            </div>
         </div>
-        <div class="ps-team-card reveal delay-300">
-          <img src="/assets/jyoti-shinde.webp" alt="Mrs. Jyoti Shankar Shinde">
-          <div class="info">
-            <h4>Mrs. Jyoti S. Shinde</h4>
-            <span>Asst. Teacher</span>
-          </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="staff.html" class="ps-btn-outline">
+                View All Staff <i class="ri-arrow-right-line"></i>
+            </a>
         </div>
-        <div class="ps-team-card reveal delay-100">
-          <img src="/assets/alka-deokar.webp" alt="Mrs. Alka Ravindra Deokar">
-          <div class="info">
-            <h4>Mrs. Alka R. Deokar</h4>
-            <span>Asst. Teacher</span>
-          </div>
-        </div>
-        <div class="ps-team-card reveal delay-200">
-          <img src="/assets/harsha-pawar.webp" alt="Mrs. Harsha Vijay Pawar">
-          <div class="info">
-            <h4>Mrs. Harsha V. Pawar</h4>
-            <span>Asst. Teacher</span>
-          </div>
-        </div>
-        <div class="ps-team-card reveal delay-300">
-          <img src="/assets/chandrasingh-kokani.webp" alt="Mr. Chandrasing Gokul Kokani">
-          <div class="info">
-            <h4>Mr. Chandrasing G. Kokani</h4>
-            <span>Asst. Teacher</span>
-          </div>
-        </div>
-        <div class="ps-team-card reveal delay-100">
-          <img src="/assets/seema-mhetre.webp" alt="Mrs. Seema Chandrakant Mhetre">
-          <div class="info">
-            <h4>Mrs. Seema C. Mhetre</h4>
-            <span>LKG Asst. Teacher</span>
-          </div>
-        </div>
-        <div class="ps-team-card reveal delay-200">
-          <img src="/assets/manisha-raskar.webp" alt="Mrs. Manisha Bhanudas Raskar">
-          <div class="info">
-            <h4>Mrs. Manisha B. Raskar</h4>
-            <span>HKG Asst. Teacher</span>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 

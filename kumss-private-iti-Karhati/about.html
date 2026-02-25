@@ -204,30 +204,30 @@
             display: block;
         }
 
-        /* ==================== LEADERSHIP CARD (SIMPLE) ==================== */
-        .leadership-section {
-            padding: 100px 0;
-            background: var(--light);
+        /* ==================== PRINCIPAL'S DESK ==================== */
+        .iti-principal-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            justify-content: center;
         }
-
-        @media (max-width: 576px) {
-            .leadership-section {
-                padding: 60px 0;
-            }
+        .iti-principal-img-box {
+            position: relative;
+            flex: 0.7;
+            display: flex;
+            justify-content: flex-end;
         }
-
-        /* ==================== EXPERT FACULTY ==================== */
-        .iti-faculty-section {
-            padding: 100px 0;
-            background: #fff;
+        .iti-principal-img-box img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 15px 15px 0 rgba(255, 103, 0, 0.1);
         }
-
-        .iti-faculty-section .section-header {
-            text-align: center;
-            margin-bottom: 60px;
+        .iti-principal-content {
+            flex: 1.3;
         }
-
-        .iti-faculty-section .section-header .section-subtitle {
+        .iti-section-subtitle {
             display: inline-block;
             color: var(--orange);
             font-weight: 700;
@@ -237,77 +237,92 @@
             margin-bottom: 12px;
         }
 
-        .iti-faculty-section .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--blue);
-            margin: 0 0 12px;
+        /* ==================== EXPERT FACULTY ==================== */
+        .iti-faculty-section {
+            padding: 80px 0;
+            background: #fff;
         }
-
-        .iti-faculty-section .section-header p {
-            color: #666;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
+        .iti-faculty-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
-
         .iti-faculty-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
-
         .iti-faculty-card {
-            background: #fff;
-            border-radius: 16px;
+            background: #ffffff;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #f0f0f0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border: 1px solid #eeeeee;
         }
-
         .iti-faculty-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-
-        .iti-faculty-card .card-img {
+        .iti-faculty-img-box {
+            height: 320px;
             width: 100%;
-            height: 260px;
-            object-fit: cover;
-            display: block;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f9fa;
         }
-
-        .iti-faculty-card .card-body {
-            padding: 18px;
+        .iti-faculty-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+        .iti-faculty-card:hover .iti-faculty-img {
+            transform: scale(1.05);
+        }
+        .iti-faculty-info {
+            padding: 20px;
             text-align: center;
         }
-
-        .iti-faculty-card .card-body h4 {
-            font-size: 1rem;
-            font-weight: 700;
+        .iti-faculty-name {
             color: var(--blue);
-            margin: 0 0 4px;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 700;
         }
-
-        .iti-faculty-card .card-body span {
-            font-size: 0.82rem;
+        .iti-faculty-role {
             color: var(--orange);
+            font-size: 0.85rem;
             font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
         }
-
-        @media (max-width: 576px) {
-            .iti-faculty-section {
-                padding: 60px 0;
-            }
-
+        .iti-btn-outline {
+            background: transparent;
+            color: var(--blue);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid var(--blue);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .iti-btn-outline:hover {
+            background: var(--blue);
+            color: #ffffff;
+        }
+        @media (max-width: 991px) {
             .iti-faculty-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-                gap: 16px;
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            .iti-faculty-card .card-img {
-                height: 200px;
+        }
+        @media (max-width: 576px) {
+            .iti-faculty-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -353,6 +368,20 @@
 
             .gm-links {
                 z-index: 1001;
+            }
+
+            .iti-principal-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            .iti-principal-img-box {
+                justify-content: center;
+                flex: 1;
+            }
+            .iti-principal-img-box img {
+                max-width: 300px;
+                box-shadow: 10px 10px 0 rgba(255, 103, 0, 0.1);
             }
         }
 
@@ -532,69 +561,30 @@
         </div>
     </section>
 
-    <!-- LEADERSHIP MESSAGE -->
-    <section class="leadership-section">
+    <!-- PRINCIPAL'S DESK -->
+    <section style="padding: 80px 0; background: #f9f9f9;">
         <div class="container">
-
-            <!-- Card wrapper -->
-            <div
-                style="background:#fff; border-radius:20px; box-shadow:0 8px 40px rgba(0,0,0,0.06); border-top:5px solid #ff6700; overflow:hidden;">
-
-                <!-- Profile Section -->
-                <div
-                    style="background:linear-gradient(135deg,#003366,#001a33); color:#fff; text-align:center; padding:44px 28px;">
-                    <img src="/assets/vikas-nirmal-iti-principal.webp"
-                        onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.webp'"
-                        alt="Mr. Vikas Sanjay Nirmal - Principal"
-                        style="width:130px; height:130px; border-radius:50%; object-fit:cover; border:4px solid rgba(255,255,255,0.2); box-shadow:0 8px 24px rgba(0,0,0,0.3); display:block; margin:0 auto 18px;">
-                    <h4
-                        style="color:#fff; font-size:1.3rem; font-weight:700; margin:0 0 4px; font-family:'Gantari',sans-serif;">
-                        Er. Shri. Vikas Sanjay Nirmal</h4>
-                    <div
-                        style="color:#ff6700; font-size:0.82rem; font-weight:600; text-transform:uppercase; letter-spacing:1.5px;">
-                        CEO, Krishi Udyog Mool Shikshan Sanstha (KUMSS) </div>
-                    <div style="display:inline-flex; gap:10px; margin-top:20px;">
-                        <div
-                            style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); padding:8px 14px; border-radius:10px; text-align:center;">
-                            <i class="ri-award-line"
-                                style="font-size:1.1rem; color:#ff6700; display:block; margin-bottom:4px;"></i>
-                            <span
-                                style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.5px; opacity:0.8;">ISO
-                                Certified</span>
-                        </div>
-                        <div
-                            style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); padding:8px 14px; border-radius:10px; text-align:center;">
-                            <i class="ri-calendar-line"
-                                style="font-size:1.1rem; color:#ff6700; display:block; margin-bottom:4px;"></i>
-                            <span
-                                style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.5px; opacity:0.8;">Since
-                                1999</span>
-                        </div>
-                    </div>
+            <div class="iti-principal-wrapper">
+                <div class="iti-principal-img-box">
+                    <img src="/assets/vikas-nirmal-iti-principal.webp" alt="Er. Shri. Vikas Sanjay Nirmal">
                 </div>
-
-                <!-- Quote Section -->
-                <div style="padding:40px 28px 36px; position:relative;">
-                    <div
-                        style="color:#ff6700; font-weight:700; font-size:0.82rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:16px;">
-                        Leadership Message
-                    </div>
-                    <blockquote
-                        style="font-family:'Playfair Display',serif; font-size:1.15rem; font-style:italic; color:#003366; line-height:1.7; margin:0 0 24px; padding:0 0 0 22px; border-left:3px solid #ff6700;">
-                        We realize that we have to transform 10th class students into professionals within a period
+                <div class="iti-principal-content">
+                    <span class="iti-section-subtitle">Principal's Desk</span>
+                    <h2 class="mb-4" style="color: var(--blue);">Transforming Potential into Performance</h2>
+                    <i class="ri-double-quotes-l" style="font-size: 3rem; color: var(--orange); opacity: 0.3;"></i>
+                    <p class="fst-italic fs-5 text-muted my-4" style="line-height: 1.8;">
+                        "We realize that we have to transform 10th class students into professionals within a period
                         of 2 years. We want our students to be committed, dedicated to their goals along with
                         integrity and concern for the environment and rural society they live in. Each student
-                        studying in KUMSS Private ITI will be a young star of our family.
-                    </blockquote>
-                    <div style="font-family:'Playfair Display',serif; font-size:1.5rem; color:#ff6700;">Vikas Sanjay
-                        Nirmal
-                    </div>
-                    <div style="color:#999; font-size:0.85rem; font-weight:500;">Principal, KUMSS Private ITI Karhati
+                        studying in KUMSS Private ITI will be a young star of our family."
+                    </p>
+                    <div>
+                        <h4 class="mb-0 fw-bold" style="color: var(--blue);">Er. Shri. Vikas Sanjay Nirmal</h4>
+                        <small class="text-muted text-uppercase fw-bold">CEO, Krishi Udyog Mool Shikshan Sanstha (KUMSS)</small><br>
+                        <small class="text-muted text-uppercase fw-bold">Principal, KUMSS ITI</small>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
 
@@ -602,116 +592,52 @@
     <section class="iti-faculty-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Our Team</span>
-                <h2>Expert Faculty</h2>
-                <p>Dedicated professionals committed to transforming students into skilled industry-ready technicians.</p>
+                <span class="iti-section-subtitle">Our Team</span>
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--blue); margin: 0 0 12px;">Expert Faculty</h2>
+                <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Dedicated professionals committed to transforming students into skilled industry-ready technicians.</p>
             </div>
             <div class="iti-faculty-grid">
                 <div class="iti-faculty-card">
-                    <img src="/assets/chandgude-mahesh.webp" alt="Mr. Chandgude Mahesh Prakash" class="card-img">
-                    <div class="card-body">
-                        <h4>Mr. Chandgude Mahesh P.</h4>
-                        <span>Superintendent</span>
+                    <div class="iti-faculty-img-box">
+                        <img src="/assets/chandgude-mahesh.webp" alt="Mr. Chandgude Mahesh Prakash" class="iti-faculty-img">
+                    </div>
+                    <div class="iti-faculty-info">
+                        <h4 class="iti-faculty-name">Mr. Chandgude Mahesh P.</h4>
+                        <span class="iti-faculty-role">Superintendent</span>
                     </div>
                 </div>
                 <div class="iti-faculty-card">
-                    <img src="/assets/madane-vishal.webp" alt="Mr. Madane Vishal Laxman" class="card-img">
-                    <div class="card-body">
-                        <h4>Mr. Madane Vishal L.</h4>
-                        <span>Engg. Drawing Instructor</span>
+                    <div class="iti-faculty-img-box">
+                        <img src="/assets/madane-vishal.webp" alt="Mr. Madane Vishal Laxman" class="iti-faculty-img">
+                    </div>
+                    <div class="iti-faculty-info">
+                        <h4 class="iti-faculty-name">Mr. Madane Vishal L.</h4>
+                        <span class="iti-faculty-role">Engg. Drawing Instructor</span>
                     </div>
                 </div>
                 <div class="iti-faculty-card">
-                    <img src="/assets/jadhav-rahul.webp" alt="Mr. Jadhav Rahul Manikrao" class="card-img">
-                    <div class="card-body">
-                        <h4>Mr. Jadhav Rahul M.</h4>
-                        <span>Fitter Instructor</span>
+                    <div class="iti-faculty-img-box">
+                        <img src="/assets/jadhav-rahul.webp" alt="Mr. Jadhav Rahul Manikrao" class="iti-faculty-img">
+                    </div>
+                    <div class="iti-faculty-info">
+                        <h4 class="iti-faculty-name">Mr. Jadhav Rahul M.</h4>
+                        <span class="iti-faculty-role">Fitter Instructor</span>
                     </div>
                 </div>
                 <div class="iti-faculty-card">
-                    <img src="/assets/taware-akshay.webp" alt="Mr. Taware Akshay Chandrakant" class="card-img">
-                    <div class="card-body">
-                        <h4>Mr. Taware Akshay C.</h4>
-                        <span>Fitter Instructor</span>
+                    <div class="iti-faculty-img-box">
+                        <img src="/assets/taware-akshay.webp" alt="Mr. Taware Akshay Chandrakant" class="iti-faculty-img">
+                    </div>
+                    <div class="iti-faculty-info">
+                        <h4 class="iti-faculty-name">Mr. Taware Akshay C.</h4>
+                        <span class="iti-faculty-role">Fitter Instructor</span>
                     </div>
                 </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/khandale-babasaheb.webp" alt="Mr. Khandale Babasaheb B." class="card-img">
-                    <div class="card-body">
-                        <h4>Mr. Khandale Babasaheb B.</h4>
-                        <span>Welder Instructor</span>
-                    </div>
-                </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/madane-rajendra.webp" alt="Mr. Madane Rajendra Sopan" class="card-img">
-                    <div class="card-body">
-                        <h4>Mr. Madane Rajendra S.</h4>
-                        <span>Welder Instructor</span>
-                    </div>
-                </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/kalbhor-swapnil.webp" alt="Mr. Kalbhor Swapnil Jaywant" class="card-img">
-                    <div class="card-body">
-                        <h4>Mr. Kalbhor Swapnil J.</h4>
-                        <span>Surveyor Instructor</span>
-                    </div>
-                </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/ekatpure-sayali.webp" alt="Mrs. Ekatpure Sayali Ganpat" class="card-img">
-                    <div class="card-body">
-                        <h4>Mrs. Ekatpure Sayali G.</h4>
-                        <span>D'man Mechanical Instructor</span>
-                    </div>
-                </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/gaikwad-mahesh.webp" alt="Mr. Gaikwad Mahesh Santosh" class="card-img">
-                    <div class="card-body">
-                        <h4>Mr. Gaikwad Mahesh S.</h4>
-                        <span>Electrician Instructor</span>
-                    </div>
-                </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/jadhav-priti.webp" alt="Miss. Jadhav Priti Ishwar" class="card-img">
-                    <div class="card-body">
-                        <h4>Miss. Jadhav Priti I.</h4>
-                        <span>Electrician Instructor</span>
-                    </div>
-                </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/Mr.Pawar-abhijit.webp" alt="Mr. Pawar Abhijit Rajendra" class="card-img">
-                    <div class="card-body">
-                        <h4>Mr. Pawar Abhijit R.</h4>
-                        <span>Fitter Instructor</span>
-                    </div>
-                </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/bhise-ashwini.webp" alt="Miss. Bhise Ashwini Shivaji" class="card-img">
-                    <div class="card-body">
-                        <h4>Miss. Bhise Ashwini S.</h4>
-                        <span>Electronics Mechanic Instructor</span>
-                    </div>
-                </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/hake-anuja.webp" alt="Miss. Hake Anuja Ganpat" class="card-img">
-                    <div class="card-body">
-                        <h4>Miss. Hake Anuja G.</h4>
-                        <span>Electronics Mechanic Instructor</span>
-                    </div>
-                </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/jadhav-sushma.webp" alt="Miss. Jadhav Sushma Amol" class="card-img">
-                    <div class="card-body">
-                        <h4>Miss. Jadhav Sushma A.</h4>
-                        <span>RAC Instructor</span>
-                    </div>
-                </div>
-                <div class="iti-faculty-card">
-                    <img src="/assets/ketan-tambe.webp" alt="Mr. Tambe Ketan Vishwas" class="card-img">
-                    <div class="card-body">
-                        <h4>Mr. Tambe Ketan V.</h4>
-                        <span>Surveyor Instructor</span>
-                    </div>
-                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="faculty.html" class="iti-btn-outline">
+                    View All Faculty <i class="ri-arrow-right-line"></i>
+                </a>
             </div>
         </div>
     </section>
