@@ -1,1662 +1,1958 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | KUMSS</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | KUMSS</title>
+    <!-- CSS Files -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link href="/assets/kumss-logo.jpeg" type="image/x-icon" rel="icon" />
 
-  <!-- CSS Files -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/responsive.css">
-  <link href="/assets/kumss-logo.jpeg" type="image/x-icon" rel="icon">
+    <style>
+      :root {
+        --primary-color: #0a296c;
+        --secondary-color: #ff8402;
+        --accent-color: #28a745;
+        --deep: #1b222e;
+        --olive: #413d6b;
+        --fern: #152c8b;
+        --ivory: #faf8f4;
+        --linen: #f2ede5;
+        --clay: #f37a20;
+        --rust: #b85c38;
+        --charcoal: #2a2a2a;
+        --muted: #8a8a8a;
+        --border: #e5dfd6;
+        --radius: 20px;
+        --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
 
-  <style>
-    :root {
-      --primary-color: #0a296c;
-      --secondary-color: #ff8402;
-      --accent-color: #28a745;
-      --deep: #1b222e;
-      --olive: #413d6b;
-      --fern: #152c8b;
-      --ivory: #faf8f4;
-      --linen: #f2ede5;
-      --clay: #f37a20;
-      --rust: #b85c38;
-      --charcoal: #2a2a2a;
-      --muted: #8a8a8a;
-      --border: #e5dfd6;
-      --radius: 20px;
-      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-    /* ══════════════════════════════════════
+      /* ══════════════════════════════════════
        UNIQUE HERO — ANIMATED MESH GRADIENT
        No images used. 100% CSS liquid motion.
     ══════════════════════════════════════ */
-    .cx-hero {
-      position: relative;
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      z-index: 1;
-      background: #ffffff;
-    }
-
-    .star {
-      color: #fb0101;
-    }
-
-    .cx-hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      opacity: 0.6;
-    }
-
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(60px);
-      z-index: 0;
-      animation: blobFloat 20s infinite alternate cubic-bezier(0.45, 0, 0.55, 1);
-    }
-
-    .blob-1 {
-      width: 400px;
-      height: 400px;
-      background: var(--olive);
-      top: -100px;
-      left: -50px;
-      opacity: 0.5;
-    }
-
-    .blob-2 {
-      width: 350px;
-      height: 350px;
-      background: var(--clay);
-      bottom: -80px;
-      right: 10%;
-      opacity: 0.2;
-      animation-delay: -5s;
-    }
-
-    .blob-3 {
-      width: 300px;
-      height: 300px;
-      background: #2d5a3c;
-      top: 20%;
-      right: -50px;
-      opacity: 0.4;
-      animation-delay: -10s;
-    }
-
-    @keyframes blobFloat {
-      0% {
-        transform: translate(0, 0) scale(1);
-      }
-
-      33% {
-        transform: translate(30px, -50px) scale(1.1);
-      }
-
-      66% {
-        transform: translate(-20px, 20px) scale(0.9);
-      }
-
-      100% {
-        transform: translate(0, 0) scale(1);
-      }
-    }
-
-    .cx-hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 40px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-    }
-
-    .cx-hero-left {
-      max-width: 620px;
-    }
-
-    .cx-hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      margin-bottom: 24px;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 6px 16px;
-      border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      opacity: 0;
-      animation: heroFade 0.8s 0.2s var(--ease) forwards;
-    }
-
-    .cx-hero-left h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 6vw, 4.5rem);
-      font-weight: 700;
-      color: #131b56;
-      line-height: 1.05;
-      margin-bottom: 24px;
-      letter-spacing: -1px;
-      opacity: 0;
-      animation: heroFade 0.8s 0.4s var(--ease) forwards;
-    }
-
-    .cx-hero-left h1 span {
-      display: block;
-      background: linear-gradient(90deg, #131b56, var(--clay));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: #131b56;
-    }
-
-    .cx-hero-left p {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 300;
-      color: #131b56;
-      line-height: 1.8;
-      max-width: 480px;
-      margin-bottom: 40px;
-      opacity: 0;
-      animation: heroFade 0.8s 0.6s var(--ease) forwards;
-    }
-
-    .cx-hero-pills {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: heroFade 0.8s 0.8s var(--ease) forwards;
-    }
-
-    .cx-hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 100px;
-      padding: 12px 24px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #000000;
-      text-decoration: none;
-      transition: all 0.4s var(--ease);
-    }
-
-    .cx-hero-pill:hover {
-      background: #fcfcfc;
-      border-color: var(--clay);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(243, 122, 32, 0.3);
-    }
-
-    .cx-hero-pill i {
-      font-size: 1.1rem;
-      color: var(--clay);
-      transition: color 0.4s var(--ease);
-    }
-
-    .cx-hero-pill:hover i {
-      color: #000000;
-    }
-
-    .cx-hero-right {
-      opacity: 0;
-      animation: heroFade 1s 0.7s var(--ease) forwards;
-    }
-
-    .cx-hero-card {
-      background: #131b56;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 30px;
-      padding: 40px;
-      min-width: 280px;
-      position: relative;
-    }
-
-    .cx-hero-card h4 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--clay);
-      margin-bottom: 24px;
-    }
-
-    .cx-hero-stat {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      margin-bottom: 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .cx-hero-stat:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    .cx-hero-stat .num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--clay);
-      line-height: 1;
-      min-width: 60px;
-    }
-
-    .cx-hero-stat .txt {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.55);
-    }
-
-    @keyframes heroFade {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 991px) {
       .cx-hero {
-        min-height: 480px;
+        position: relative;
+        min-height: 520px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        z-index: 1;
+        background: #ffffff;
+      }
+
+      .star {
+        color: #fb0101;
+      }
+
+      .cx-hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        opacity: 0.6;
+      }
+
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        z-index: 0;
+        animation: blobFloat 20s infinite alternate
+          cubic-bezier(0.45, 0, 0.55, 1);
+      }
+
+      .blob-1 {
+        width: 400px;
+        height: 400px;
+        background: var(--olive);
+        top: -100px;
+        left: -50px;
+        opacity: 0.5;
+      }
+
+      .blob-2 {
+        width: 350px;
+        height: 350px;
+        background: var(--clay);
+        bottom: -80px;
+        right: 10%;
+        opacity: 0.2;
+        animation-delay: -5s;
+      }
+
+      .blob-3 {
+        width: 300px;
+        height: 300px;
+        background: #2d5a3c;
+        top: 20%;
+        right: -50px;
+        opacity: 0.4;
+        animation-delay: -10s;
+      }
+
+      @keyframes blobFloat {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+
+        33% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+
+        66% {
+          transform: translate(-20px, 20px) scale(0.9);
+        }
+
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
       }
 
       .cx-hero-content {
-        flex-direction: column;
-        text-align: center;
-        padding: 100px 24px 80px;
-        gap: 32px;
+        position: relative;
+        z-index: 3;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 40px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
       }
 
       .cx-hero-left {
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
+        max-width: 620px;
+      }
+
+      .cx-hero-tag {
+        display: inline-flex;
         align-items: center;
-      }
-
-      .cx-hero-left p {
-        max-width: 100%;
-      }
-
-      .cx-hero-pills {
-        justify-content: center;
-      }
-
-      .cx-hero-right {
-        width: 100%;
-      }
-
-      .cx-hero-card {
-        min-width: unset;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        padding: 24px;
-      }
-
-      .cx-hero-card h4 {
-        width: 100%;
-        margin-bottom: 4px;
-      }
-
-      .cx-hero-stat {
-        flex: 1;
-        min-width: 100px;
-        border-bottom: none;
-        padding-bottom: 0;
-        margin-bottom: 0;
-        flex-direction: column;
-        gap: 2px;
-        text-align: center;
-      }
-
-      .cx-hero-stat .num {
-        min-width: unset;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .cx-hero {
-        min-height: 420px;
-      }
-
-      .cx-hero-content {
-        padding: 80px 16px 70px;
+        gap: 12px;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--charcoal);
+        margin-bottom: 24px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 6px 16px;
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        animation: heroFade 0.8s 0.2s var(--ease) forwards;
       }
 
       .cx-hero-left h1 {
-        font-size: 2.2rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3rem, 6vw, 4.5rem);
+        font-weight: 700;
+        color: #131b56;
+        line-height: 1.05;
+        margin-bottom: 24px;
+        letter-spacing: -1px;
+        opacity: 0;
+        animation: heroFade 0.8s 0.4s var(--ease) forwards;
+      }
+
+      .cx-hero-left h1 span {
+        display: block;
+        background: linear-gradient(90deg, #131b56, var(--clay));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: #131b56;
+      }
+
+      .cx-hero-left p {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.15rem;
+        font-weight: 300;
+        color: #131b56;
+        line-height: 1.8;
+        max-width: 480px;
+        margin-bottom: 40px;
+        opacity: 0;
+        animation: heroFade 0.8s 0.6s var(--ease) forwards;
+      }
+
+      .cx-hero-pills {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: heroFade 0.8s 0.8s var(--ease) forwards;
       }
 
       .cx-hero-pill {
-        padding: 8px 14px;
-        font-size: 0.78rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 100px;
+        padding: 12px 24px;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #000000;
+        text-decoration: none;
+        transition: all 0.4s var(--ease);
       }
-    }
 
+      .cx-hero-pill:hover {
+        background: #fcfcfc;
+        border-color: var(--clay);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(243, 122, 32, 0.3);
+      }
 
-    /* ══════════ CONTACT STRIP ══════════ */
-    .cx-strip {
-      background: var(--ivory);
-      padding: 0;
-      position: relative;
-      z-index: 5;
-    }
+      .cx-hero-pill i {
+        font-size: 1.1rem;
+        color: var(--clay);
+        transition: color 0.4s var(--ease);
+      }
 
-    .cx-strip-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-      transform: translateY(-40px);
-    }
+      .cx-hero-pill:hover i {
+        color: #000000;
+      }
 
-    .cx-strip-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .cx-strip-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 36px 28px;
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-      transition: box-shadow 0.35s var(--ease), transform 0.35s var(--ease);
-    }
-
-    .cx-strip-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--linen);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color: var(--olive);
-      flex-shrink: 0;
-      transition: background 0.3s var(--ease), color 0.3s var(--ease);
-    }
-
-    .cx-strip-card:hover .cx-strip-icon {
-      background: var(--olive);
-      color: #f7f4f4;
-    }
-
-    .cx-strip-info h4 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .cx-strip-info p,
-    .cx-strip-info a {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--charcoal);
-      text-decoration: none;
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    .cx-strip-info a:hover {
-      color: var(--fern);
-    }
-
-    /* ══════════ FORM SECTION ══════════ */
-    .cx-body {
-      background: var(--ivory);
-      padding: 20px 0 100px;
-      font-family: 'Outfit', sans-serif;
-    }
-
-    .cx-container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .cx-form-section {
-      display: grid;
-      grid-template-columns: 5fr 4fr;
-      gap: 0;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: #fff;
-      box-shadow: 0 24px 64px rgba(27, 46, 32, 0.06);
-      margin-bottom: 60px;
-    }
-
-    .cx-form-panel {
-      padding: 56px 52px;
-    }
-
-    .cx-form-panel h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--deep);
-      margin-bottom: 6px;
-    }
-
-    .cx-form-panel .cx-subtitle {
-      font-size: 0.95rem;
-      font-weight: 400;
-      color: var(--muted);
-      margin-bottom: 36px;
-      line-height: 1.5;
-    }
-
-    .cx-form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-bottom: 18px;
-    }
-
-    .cx-form-row.full {
-      grid-template-columns: 1fr;
-    }
-
-    .cx-input-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .cx-input-group label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: var(--charcoal);
-    }
-
-    .cx-input-group input,
-    .cx-input-group textarea {
-      padding: 14px 16px;
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      background: var(--ivory);
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.95rem;
-      color: var(--charcoal);
-      transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease);
-      resize: vertical;
-    }
-
-    .cx-input-group input:focus,
-    .cx-input-group textarea:focus {
-      outline: none;
-      border-color: var(--olive);
-      background: #fff;
-      box-shadow: 0 0 0 3px rgba(61, 107, 78, 0.1);
-    }
-
-    .cx-input-group input::placeholder,
-    .cx-input-group textarea::placeholder {
-      color: #b8b0a5;
-    }
-
-    .cx-send-btn {
-      margin-top: 24px;
-      width: 100%;
-      padding: 16px 32px;
-      background: var(--deep);
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: background 0.3s var(--ease), transform 0.2s var(--ease), box-shadow 0.3s var(--ease);
-    }
-
-    .cx-send-btn:hover {
-      background: var(--olive);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(61, 107, 78, 0.2);
-    }
-
-    .cx-send-btn:active {
-      transform: translateY(0);
-    }
-
-    .cx-send-btn:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
-    }
-
-    /* Form feedback styles */
-    .cx-form-feedback {
-      margin-top: 16px;
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.92rem;
-      font-weight: 500;
-      display: none;
-      align-items: center;
-      gap: 10px;
-      animation: feedbackSlide 0.4s var(--ease);
-    }
-
-    .cx-form-feedback.show {
-      display: flex;
-    }
-
-    .cx-form-feedback.success {
-      background: #ecfdf5;
-      color: #065f46;
-      border: 1px solid #a7f3d0;
-    }
-
-    .cx-form-feedback.error {
-      background: #fef2f2;
-      color: #991b1b;
-      border: 1px solid #fecaca;
-    }
-
-    .cx-form-feedback i {
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    @keyframes feedbackSlide {
-      from {
+      .cx-hero-right {
         opacity: 0;
-        transform: translateY(-8px);
+        animation: heroFade 1s 0.7s var(--ease) forwards;
       }
 
-      to {
-        opacity: 1;
+      .cx-hero-card {
+        background: #131b56;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 30px;
+        padding: 40px;
+        min-width: 280px;
+        position: relative;
+      }
+
+      .cx-hero-card h4 {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--clay);
+        margin-bottom: 24px;
+      }
+
+      .cx-hero-stat {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .cx-hero-stat:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .cx-hero-stat .num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--clay);
+        line-height: 1;
+        min-width: 60px;
+      }
+
+      .cx-hero-stat .txt {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      @keyframes heroFade {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 991px) {
+        .cx-hero {
+          min-height: 480px;
+        }
+
+        .cx-hero-content {
+          flex-direction: column;
+          text-align: center;
+          padding: 100px 24px 80px;
+          gap: 32px;
+        }
+
+        .cx-hero-left {
+          max-width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cx-hero-left p {
+          max-width: 100%;
+        }
+
+        .cx-hero-pills {
+          justify-content: center;
+        }
+
+        .cx-hero-right {
+          width: 100%;
+        }
+
+        .cx-hero-card {
+          min-width: unset;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 16px;
+          padding: 24px;
+        }
+
+        .cx-hero-card h4 {
+          width: 100%;
+          margin-bottom: 4px;
+        }
+
+        .cx-hero-stat {
+          flex: 1;
+          min-width: 100px;
+          border-bottom: none;
+          padding-bottom: 0;
+          margin-bottom: 0;
+          flex-direction: column;
+          gap: 2px;
+          text-align: center;
+        }
+
+        .cx-hero-stat .num {
+          min-width: unset;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .cx-hero {
+          min-height: 420px;
+        }
+
+        .cx-hero-content {
+          padding: 80px 16px 70px;
+        }
+
+        .cx-hero-left h1 {
+          font-size: 2.2rem;
+        }
+
+        .cx-hero-pill {
+          padding: 8px 14px;
+          font-size: 0.78rem;
+        }
+      }
+
+      /* ══════════ CONTACT STRIP ══════════ */
+      .cx-strip {
+        background: var(--ivory);
+        padding: 0;
+        position: relative;
+        z-index: 5;
+      }
+
+      .cx-strip-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 24px;
+        transform: translateY(-40px);
+      }
+
+      .cx-strip-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .cx-strip-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 36px 28px;
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        transition:
+          box-shadow 0.35s var(--ease),
+          transform 0.35s var(--ease);
+      }
+
+      .cx-strip-icon {
+        width: 52px;
+        height: 52px;
+        background: var(--linen);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: var(--olive);
+        flex-shrink: 0;
+        transition:
+          background 0.3s var(--ease),
+          color 0.3s var(--ease);
+      }
+
+      .cx-strip-card:hover .cx-strip-icon {
+        background: var(--olive);
+        color: #f7f4f4;
+      }
+
+      .cx-strip-info h4 {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+
+      .cx-strip-info p,
+      .cx-strip-info a {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: var(--charcoal);
+        text-decoration: none;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .cx-strip-info a:hover {
+        color: var(--fern);
+      }
+
+      /* ══════════ FORM SECTION ══════════ */
+      .cx-body {
+        background: var(--ivory);
+        padding: 20px 0 100px;
+        font-family: "Outfit", sans-serif;
+      }
+
+      .cx-container {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .cx-form-section {
+        display: grid;
+        grid-template-columns: 5fr 4fr;
+        gap: 0;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: #fff;
+        box-shadow: 0 24px 64px rgba(27, 46, 32, 0.06);
+        margin-bottom: 60px;
+      }
+
+      .cx-form-panel {
+        padding: 56px 52px;
+      }
+
+      .cx-form-panel h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--deep);
+        margin-bottom: 6px;
+      }
+
+      .cx-form-panel .cx-subtitle {
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: var(--muted);
+        margin-bottom: 36px;
+        line-height: 1.5;
+      }
+
+      .cx-form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .cx-form-row.full {
+        grid-template-columns: 1fr;
+      }
+
+      .cx-input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .cx-input-group label {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: var(--charcoal);
+      }
+
+      .cx-input-group input,
+      .cx-input-group textarea {
+        padding: 14px 16px;
+        border: 1.5px solid var(--border);
+        border-radius: 12px;
+        background: var(--ivory);
+        font-family: "Outfit", sans-serif;
+        font-size: 0.95rem;
+        color: var(--charcoal);
+        transition:
+          border-color 0.3s var(--ease),
+          box-shadow 0.3s var(--ease),
+          background 0.3s var(--ease);
+        resize: vertical;
+      }
+
+      .cx-input-group input:focus,
+      .cx-input-group textarea:focus {
+        outline: none;
+        border-color: var(--olive);
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(61, 107, 78, 0.1);
+      }
+
+      .cx-input-group input::placeholder,
+      .cx-input-group textarea::placeholder {
+        color: #b8b0a5;
+      }
+
+      .cx-send-btn {
+        margin-top: 24px;
+        width: 100%;
+        padding: 16px 32px;
+        background: var(--deep);
+        color: #fff;
+        border: none;
+        border-radius: 14px;
+        font-family: "Outfit", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition:
+          background 0.3s var(--ease),
+          transform 0.2s var(--ease),
+          box-shadow 0.3s var(--ease);
+      }
+
+      .cx-send-btn:hover {
+        background: var(--olive);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(61, 107, 78, 0.2);
+      }
+
+      .cx-send-btn:active {
         transform: translateY(0);
       }
-    }
 
-    /* Spinner for loading state */
-    .cx-spinner {
-      width: 18px;
-      height: 18px;
-      border: 2.5px solid rgba(255, 255, 255, 0.3);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin 0.6s linear infinite;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
+      .cx-send-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
       }
-    }
 
-    .cx-info-panel {
-      background: #131b56;
-      padding: 56px 48px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-    }
+      /* Form feedback styles */
+      .cx-form-feedback {
+        margin-top: 16px;
+        padding: 14px 20px;
+        border-radius: 12px;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 500;
+        display: none;
+        align-items: center;
+        gap: 10px;
+        animation: feedbackSlide 0.4s var(--ease);
+      }
 
-    .cx-info-panel::before {
-      content: '';
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 50%;
-      top: -60px;
-      right: -60px;
-      pointer-events: none;
-    }
+      .cx-form-feedback.show {
+        display: flex;
+      }
 
-    .cx-info-panel::after {
-      content: '';
-      position: absolute;
-      width: 140px;
-      height: 140px;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      border-radius: 50%;
-      bottom: 40px;
-      left: -40px;
-      pointer-events: none;
-    }
+      .cx-form-feedback.success {
+        background: #ecfdf5;
+        color: #065f46;
+        border: 1px solid #a7f3d0;
+      }
 
-    .cx-info-top {
-      position: relative;
-      z-index: 1;
-    }
+      .cx-form-feedback.error {
+        background: #fef2f2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+      }
 
-    .cx-info-top h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 12px;
-      line-height: 1.2;
-    }
+      .cx-form-feedback i {
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
 
-    .cx-info-top>p {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.5);
-      line-height: 1.7;
-      margin-bottom: 40px;
-      max-width: 320px;
-    }
+      @keyframes feedbackSlide {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
 
-    .cx-stats-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 44px;
-      position: relative;
-      z-index: 1;
-    }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    .cx-stat-box {
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 22px 18px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.03);
-      transition: background 0.3s var(--ease);
-    }
+      /* Spinner for loading state */
+      .cx-spinner {
+        width: 18px;
+        height: 18px;
+        border: 2.5px solid rgba(255, 255, 255, 0.3);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+      }
 
-    .cx-stat-box:hover {
-      background: rgba(255, 255, 255, 0.06);
-    }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
 
-    .cx-stat-box .val {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--clay);
-      display: block;
-      line-height: 1;
-      margin-bottom: 4px;
-    }
+      .cx-info-panel {
+        background: #131b56;
+        padding: 56px 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
 
-    .cx-stat-box .lbl {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.4);
-    }
+      .cx-info-panel::before {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 50%;
+        top: -60px;
+        right: -60px;
+        pointer-events: none;
+      }
 
-    .cx-social-row {
-      display: flex;
-      gap: 12px;
-      position: relative;
-      z-index: 1;
-    }
+      .cx-info-panel::after {
+        content: "";
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        border-radius: 50%;
+        bottom: 40px;
+        left: -40px;
+        pointer-events: none;
+      }
 
-    .cx-soc {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: all 0.3s var(--ease);
-    }
+      .cx-info-top {
+        position: relative;
+        z-index: 1;
+      }
 
-    .cx-map-container {
-      border-radius: var(--radius);
-      overflow: hidden;
-      height: 400px;
-      border: 1px solid var(--border);
-      box-shadow: 0 16px 48px rgba(27, 46, 32, 0.05);
-      position: relative;
-    }
+      .cx-info-top h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 12px;
+        line-height: 1.2;
+      }
 
-    .cx-map-container iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
+      .cx-info-top > p {
+        font-size: 0.95rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.7;
+        margin-bottom: 40px;
+        max-width: 320px;
+      }
 
-    .cx-map-tag {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background: #fff;
-      border-radius: 12px;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
-      z-index: 5;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--charcoal);
-    }
+      .cx-stats-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 44px;
+        position: relative;
+        z-index: 1;
+      }
 
-    .cx-map-tag i {
-      color: var(--rust);
-      font-size: 1.15rem;
-    }
+      .cx-stat-box {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 22px 18px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.03);
+        transition: background 0.3s var(--ease);
+      }
 
+      .cx-stat-box:hover {
+        background: rgba(255, 255, 255, 0.06);
+      }
 
-    /* ===========================
+      .cx-stat-box .val {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--clay);
+        display: block;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .cx-stat-box .lbl {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .cx-social-row {
+        display: flex;
+        gap: 12px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .cx-soc {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.3s var(--ease);
+      }
+
+      .cx-map-container {
+        border-radius: var(--radius);
+        overflow: hidden;
+        height: 400px;
+        border: 1px solid var(--border);
+        box-shadow: 0 16px 48px rgba(27, 46, 32, 0.05);
+        position: relative;
+      }
+
+      .cx-map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+      }
+
+      .cx-map-tag {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+        z-index: 5;
+        font-family: "Outfit", sans-serif;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--charcoal);
+      }
+
+      .cx-map-tag i {
+        color: var(--rust);
+        font-size: 1.15rem;
+      }
+
+      /* ===========================
        NAVBAR STYLES (Synchronized)
        =========================== */
-    #navbar {
-      position: relative;
-      z-index: 1001;
-      background: #fff;
-    }
+      #navbar {
+        position: relative;
+        z-index: 1001;
+        background: #fff;
+      }
 
-    #navbar .nav-link {
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--primary-color) !important;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.3s ease;
-      padding: 12px 15px !important;
-    }
+      #navbar .nav-link {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.1;
+        color: var(--primary-color) !important;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.3s ease;
+        padding: 12px 15px !important;
+      }
 
-    #navbar .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 5px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--secondary-color), #ffb347);
-      border-radius: 2px;
-      width: 0;
-      transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    }
+      #navbar .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--secondary-color), #ffb347);
+        border-radius: 2px;
+        width: 0;
+        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+      }
 
-    #navbar .nav-link:hover::after,
-    #navbar .nav-link.active::after {
-      width: 60%;
-    }
+      #navbar .nav-link:hover::after,
+      #navbar .nav-link.active::after {
+        width: 60%;
+      }
 
-    #navbar .dropdown-toggle::after {
-      display: none !important;
-    }
+      #navbar .dropdown-toggle::after {
+        display: none !important;
+      }
 
-    #navbar .dropdown-toggle::before {
-      position: static !important;
-      font-size: 14px !important;
-      margin-left: 5px;
-      margin-top: 5px;
-    }
+      #navbar .dropdown-toggle::before {
+        position: static !important;
+        font-size: 14px !important;
+        margin-left: 5px;
+        margin-top: 5px;
+      }
 
-    .offcanvas {
-      z-index: 1050 !important;
-    }
+      .offcanvas {
+        z-index: 1050 !important;
+      }
 
-    .offcanvas-backdrop {
-      z-index: 1040 !important;
-    }
+      .offcanvas-backdrop {
+        z-index: 1040 !important;
+      }
 
-    .dropdown-item {
-      color: #fff;
-      font-size: 15px;
-    }
+      .dropdown-item {
+        color: #fff;
+        font-size: 15px;
+      }
 
-    .dropdown-item:hover {
-      color: #ff8402;
-      background: transparent;
-    }
+      .dropdown-item:hover {
+        color: #ff8402;
+        background: transparent;
+      }
 
-    /* ===========================
+      /* ===========================
        FOOTER STYLES (Synchronized)
        =========================== */
-    .social-link {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-
-
-    .footer-title {
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 30px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .footer-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 25px;
-      height: 2px;
-      background: #ff8402;
-    }
-
-    .footer-links {
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .footer-links li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-
-    .footer-links li:not(:has(i))::before {
-      content: '\203A';
-      color: #ff8402;
-      font-size: 1.2rem;
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: -1px;
-    }
-
-    .footer-links li i {
-      color: #ff8402;
-      font-size: 1.15rem;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 3px;
-      color: rgba(255, 255, 255, 0.75);
-      transition: all 0.3s ease;
-      line-height: 1.2;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-      transform: translateX(4px);
-    }
-
-
-
-    .footer-copy {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.4);
-      margin: 0;
-    }
-
-    .footer-note {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.3);
-      margin: 0;
-      font-weight: 500;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 6px 16px;
-      border-radius: 999px;
-    }
-
-    @media (max-width: 991px) {
-      .footer-grid {
-        grid-template-columns: 1.5fr 1fr;
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+      .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
 
-      .footer-bottom {
+      .footer-title {
+        font-size: 0.95rem;
+        font-weight: 800;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 30px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .footer-title::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 25px;
+        height: 2px;
+        background: #ff8402;
+      }
+
+      .footer-links {
+        padding: 0;
+        margin: 0;
+        display: flex;
         flex-direction: column;
-        text-align: center;
-        gap: 15px;
+        gap: 14px;
       }
-    }
 
-    /* Logo Styling */
-    .navbar .navbar-brand img,
-    .navbar-brand img,
-    .logo img,
-    img.black-logo,
-    .copyright-logo img,
-    .offcanvas-header .logo img {
-      background-color: white;
-      max-height: 127px;
-      height: 127px;
-      width: auto;
-      border-radius: 8px;
-      display: inline-block;
-      object-fit: contain;
-    }
+      .footer-links li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 6px;
+      }
 
-    /* Navbar Typography */
-    #navbar .nav-link {
-      font-family: "Inter", sans-serif;
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--primary-color) !important;
-    }
-  </style>
-</head>
+      .footer-links li:not(:has(i))::before {
+        content: "\203A";
+        color: #ff8402;
+        font-size: 1.2rem;
+        line-height: 1;
+        flex-shrink: 0;
+        margin-top: -1px;
+      }
 
-<body>
+      .footer-links li i {
+        color: #ff8402;
+        font-size: 1.15rem;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-  <div class="scroll-progress" aria-hidden="true">
-    <span class="scroll-progress__bar" id="scrollProgress"></span>
-  </div>
+      .footer-links a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 3px;
+        color: rgba(255, 255, 255, 0.75);
+        transition: all 0.3s ease;
+        line-height: 1.2;
+      }
 
-  <!-- Start Navbar Area -->
-  <nav class="navbar navbar-expand-lg style-3" id="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img class="black-logo" src="/assets/kumss-logo.jpeg" alt="black-logo">
-      </a>
+      .footer-links a:hover {
+        color: #fff;
+        transform: translateX(4px);
+      }
 
-      <button class="navbar-toggler text-decoration-none" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas">
-        <span class="burger-menu">
-          <span class="top-bar"></span>
-          <span class="middle-bar"></span>
-          <span class="bottom-bar"></span>
-        </span>
-      </button>
+      .footer-copy {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.4);
+        margin: 0;
+      }
 
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link"> Home </a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link"> About</a>
-          </li>
-          <li class="nav-item dropdown mega-menu-item">
-            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Our Educational Institutes
-            </a>
-            <div class="dropdown-menu mega-menu">
-              <div class="mega-menu-container">
-                <div class="mega-menu-grid">
-                  <!-- Institute 1 -->
-                  <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/vasatigruh-vidyalay-karhati-school.png" alt="VVK" loading="lazy">
-                    </div>
-                    <div class="m-content">
-                      <h5>Vasatigruh Vidyalaya, Karhati</h5>
-                      <span>Est. 1951 | Marathi & Semi-English</span>
-                    </div>
-                  </a>
+      .footer-note {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.3);
+        margin: 0;
+        font-weight: 500;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 6px 16px;
+        border-radius: 999px;
+      }
 
-                  <!-- Institute 2 -->
-                  <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/new-english-dhakale-building.JPG" alt="NESD" loading="lazy">
-                    </div>
-                    <div class="m-content">
-                      <h5>New English School, Dhakale</h5>
-                      <span>Est. 2000 | Marathi Medium</span>
-                    </div>
-                  </a>
+      @media (max-width: 991px) {
+        .footer-grid {
+          grid-template-columns: 1.5fr 1fr;
+          gap: 40px;
+        }
+      }
 
-                  <!-- Institute 3 -->
-                  <a href="./primary-school-karhati/primary-school-karhati.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/primary-school-karhati.png" alt="PST" loading="lazy">
-                    </div>
-                    <div class="m-content">
-                      <h5>Primary School, karhati</h5>
-                      <span>Est. 1999 | Marathi Medium</span>
-                    </div>
-                  </a>
+      @media (max-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
 
-                  <!-- Institute 4 -->
-                  <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/iti-building.png" alt="ITI" loading="lazy">
-                    </div>
-                    <div class="m-content">
-                      <h5>KUMSS Private I.T.I Karhati</h5>
-                      <span>Est. 2020 | Vocational Training</span>
-                    </div>
-                  </a>
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+          gap: 15px;
+        }
+      }
 
-                  <!-- Institute 5 -->
-                  <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/gurukul-english-medium.png" alt="Gurukul" loading="lazy">
-                    </div>
-                    <div class="m-content">
-                      <h5>Gurukul English Medium School</h5>
-                      <span>Est. 2021 | Modern Schooling</span>
-                    </div>
-                  </a>
+      /* Logo Styling */
+      .navbar .navbar-brand img,
+      .navbar-brand img,
+      .logo img,
+      img.black-logo,
+      .copyright-logo img,
+      .offcanvas-header .logo img {
+        background-color: white;
+        max-height: 127px;
+        height: 127px;
+        width: auto;
+        border-radius: 8px;
+        display: inline-block;
+        object-fit: contain;
+      }
 
-                  <!-- Institute 6 -->
-                  <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
-                    class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/kala.png" alt="SPKM" loading="lazy">
-                    </div>
-                    <div class="m-content">
-                      <h5>Shardabai Pawar Kala Mahavidyalaya</h5>
-                      <span>Est. 1993 | Arts College</span>
-                    </div>
-                  </a>
+      /* Navbar Typography */
+      #navbar .nav-link {
+        font-family: "Inter", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--primary-color) !important;
+      }
+    </style>
+  </head>
 
-                  <!-- Institute 7 -->
-                  <a href="/vasatigruh-junior-college/vasatigruh-junior-college.html" class="mega-menu-card">
-                    <div class="m-img">
-                      <img src="/assets/vvk-about-img.webp" alt="VVKP" loading="lazy">
-                    </div>
-                    <div class="m-content">
-                      <h5>Vasatigruh Junior college</h5>
-                      <span>Est. 2013 | Junior College</span>
-                    </div>
-                  </a>
+  <body>
+    <div class="scroll-progress" aria-hidden="true">
+      <span class="scroll-progress__bar" id="scrollProgress"></span>
+    </div>
+
+    <!-- Start Navbar Area -->
+    <nav class="navbar navbar-expand-lg style-3" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            class="black-logo"
+            src="/assets/kumss-logo.jpeg"
+            alt="black-logo"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler text-decoration-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbarOffcanvas"
+          aria-controls="navbarOffcanvas"
+        >
+          <span class="burger-menu">
+            <span class="top-bar"></span>
+            <span class="middle-bar"></span>
+            <span class="bottom-bar"></span>
+          </span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link"> About</a>
+            </li>
+            <li class="nav-item dropdown mega-menu-item">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Central Staff
+              </a>
+              <div class="dropdown-menu mega-menu">
+                <div class="mega-menu-container">
+                  <div class="mega-menu-grid">
+                    <!-- Staff 1 -->
+                    <a href="javascript:void(0)" class="mega-menu-card">
+                      <div class="m-content">
+                        <h5>Dr. Vikas S. Nirmal</h5>
+                        <span>Chief Executive Officer</span><br />
+                        <span style="font-size: 11px; opacity: 0.6"
+                          >BE(Civil), ME(Civil), AMIE, FIV, MBA, Hon.
+                          Doctorate</span
+                        >
+                      </div>
+                    </a>
+
+                    <!-- Staff 2 -->
+                    <a href="javascript:void(0)" class="mega-menu-card">
+                      <div class="m-content">
+                        <h5>Mr. Navanath A. Sirsat</h5>
+                        <span>Admission &amp; Marketing Coordinator</span><br />
+                        <span style="font-size: 11px; opacity: 0.6"
+                          >BA(English), MBA(Marketing)</span
+                        >
+                      </div>
+                    </a>
+
+                    <!-- Staff 3 -->
+                    <a href="javascript:void(0)" class="mega-menu-card">
+                      <div class="m-content">
+                        <h5>Mr. Sagar A. Nighul</h5>
+                        <span>Chief Accountant</span><br />
+                        <span style="font-size: 11px; opacity: 0.6"
+                          >B.Com, M.LIB.I.SC</span
+                        >
+                      </div>
+                    </a>
+
+                    <!-- Staff 4 -->
+                    <a href="javascript:void(0)" class="mega-menu-card">
+                      <div class="m-content">
+                        <h5>Mr. Pratik R. Kambale</h5>
+                        <span>Clerk</span><br />
+                        <span style="font-size: 11px; opacity: 0.6"
+                          >B.Com, Stenographer(Marathi)</span
+                        >
+                      </div>
+                    </a>
+
+                    <!-- Staff 5 -->
+                    <a href="javascript:void(0)" class="mega-menu-card">
+                      <div class="m-content">
+                        <h5>Mrs. Jayashree A. Jagtap</h5>
+                        <span>Public Relations Officer</span><br />
+                        <span style="font-size: 11px; opacity: 0.6">BCS</span>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
+            </li>
+            <li class="nav-item dropdown mega-menu-item">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Our Educational Institutes
+              </a>
+              <div class="dropdown-menu mega-menu">
+                <div class="mega-menu-container">
+                  <div class="mega-menu-grid">
+                    <!-- Institute 1 -->
+                    <a
+                      href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html"
+                      class="mega-menu-card"
+                    >
+                      <div class="m-img">
+                        <img
+                          src="/assets/vasatigruh-vidyalay-karhati-school.png"
+                          alt="VVK"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="m-content">
+                        <h5>Vasatigruh Vidyalaya, Karhati</h5>
+                        <span>Est. 1951 | Marathi & Semi-English</span>
+                      </div>
+                    </a>
+
+                    <!-- Institute 2 -->
+                    <a
+                      href="./new-english-school-dhakale/new-english-school-dhakale.html"
+                      class="mega-menu-card"
+                    >
+                      <div class="m-img">
+                        <img
+                          src="/assets/new-english-dhakale-building.JPG"
+                          alt="NESD"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="m-content">
+                        <h5>New English School, Dhakale</h5>
+                        <span>Est. 2000 | Marathi Medium</span>
+                      </div>
+                    </a>
+
+                    <!-- Institute 3 -->
+                    <a
+                      href="./primary-school-karhati/primary-school-karhati.html"
+                      class="mega-menu-card"
+                    >
+                      <div class="m-img">
+                        <img
+                          src="/assets/primary-school-karhati.png"
+                          alt="PST"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="m-content">
+                        <h5>Primary School, karhati</h5>
+                        <span>Est. 1999 | Marathi Medium</span>
+                      </div>
+                    </a>
+
+                    <!-- Institute 4 -->
+                    <a
+                      href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html"
+                      class="mega-menu-card"
+                    >
+                      <div class="m-img">
+                        <img
+                          src="/assets/iti-building.png"
+                          alt="ITI"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="m-content">
+                        <h5>KUMSS Private I.T.I Karhati</h5>
+                        <span>Est. 2020 | Vocational Training</span>
+                      </div>
+                    </a>
+
+                    <!-- Institute 5 -->
+                    <a
+                      href="./gurukul-english-medium-school/gurukul-english-medium-school.html"
+                      class="mega-menu-card"
+                    >
+                      <div class="m-img">
+                        <img
+                          src="/assets/gurukul-english-medium.png"
+                          alt="Gurukul"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="m-content">
+                        <h5>Gurukul English Medium School</h5>
+                        <span>Est. 2021 | Modern Schooling</span>
+                      </div>
+                    </a>
+
+                    <!-- Institute 6 -->
+                    <a
+                      href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
+                      class="mega-menu-card"
+                    >
+                      <div class="m-img">
+                        <img src="/assets/kala.png" alt="SPKM" loading="lazy" />
+                      </div>
+                      <div class="m-content">
+                        <h5>Shardabai Pawar Kala Mahavidyalaya</h5>
+                        <span>Est. 1993 | Arts College</span>
+                      </div>
+                    </a>
+
+                    <!-- Institute 7 -->
+                    <a
+                      href="/vasatigruh-junior-college/vasatigruh-junior-college.html"
+                      class="mega-menu-card"
+                    >
+                      <div class="m-img">
+                        <img
+                          src="/assets/vvk-about-img.webp"
+                          alt="VVKP"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div class="m-content">
+                        <h5>Vasatigruh Junior college</h5>
+                        <span>Est. 2013 | Junior College</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="/gallery.html" class="nav-link"> Gallery </a>
+            </li>
+            <li class="nav-item">
+              <a href="/careers.html" class="nav-link">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a href="/contact.html" class="nav-link">
+                Contact <span>Us</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="others-option">
+            <div class="d-flex align-items-center">
+              <div class="option-item">
+                <!--<a class="text-decoration-none default-btn" href="javascript:void(0)">
+                Donate Now
+                <i class="ri-heart-add-fill"></i>
+              </a>-->
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar Area -->
+
+    <!-- Start Responsive Navbar Area -->
+    <div
+      class="responsive-navbar offcanvas offcanvas-end border-0"
+      tabindex="-1"
+      id="navbarOffcanvas"
+    >
+      <div class="offcanvas-header">
+        <a href="index.html" class="logo d-inline-block">
+          <img src="/assets/kumss-logo.jpeg" alt="logo" />
+        </a>
+        <button
+          type="button"
+          class="close-btn bg-transparent position-relative lh-1 p-0 border-0"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          <i class="ri-close-fill"></i>
+        </button>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="responsive-menu">
+          <li class="responsive-menu-list without-icon">
+            <a href="index.html" class="nav-link">Home</a>
           </li>
-          <li class="nav-item">
-            <a href="/gallery.html" class="nav-link"> Gallery </a>
+          <li class="responsive-menu-list without-icon">
+            <a href="about.html" class="nav-link">About</a>
           </li>
-          <li class="nav-item">
+          <li class="responsive-menu-list without-icon">
+            <a href="javascript:void(0)" class="nav-link">Central Staff</a>
+          </li>
+          <li class="responsive-menu-list">
+            <a href="/all-institutes.html">Our Educational Institutes</a>
+            <ul class="responsive-menu-items">
+              <li class="nav-item">
+                <a
+                  href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html"
+                  class="nav-link"
+                >
+                  Vasatigruh Junior College
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="./new-english-school-dhakale/new-english-school-dhakale.html"
+                  class="nav-link"
+                >
+                  New English School, Dhakale
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="./primary-school-karhati/primary-school-karhati.html"
+                  class="nav-link"
+                >
+                  Primary School, karhati
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html"
+                  class="nav-link"
+                >
+                  KUMSS Private I.T.I Karhati
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="./gurukul-english-medium-school/gurukul-english-medium-school.html"
+                  class="nav-link"
+                >
+                  Gurukul English Medium School
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
+                  class="nav-link"
+                >
+                  Shardabai Pawar Kala Mahavidyalaya
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="/vasatigruh-junior-college/vasatigruh-junior-college.html"
+                  class="nav-link"
+                >
+                  Vasatigruh Primary School
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="responsive-menu-list without-icon">
+            <a href="/gallery.html" class="nav-link">Gallery</a>
+          </li>
+          <li class="responsive-menu-list without-icon">
             <a href="/careers.html" class="nav-link">Careers</a>
           </li>
-          <li class="nav-item">
-            <a href="/contact.html" class="nav-link">
+          <li class="responsive-menu-list without-icon">
+            <a href="/contact.html" class="nav-link active">
               Contact <span>Us</span>
             </a>
           </li>
         </ul>
 
-        <div class="others-option">
-          <div class="d-flex align-items-center">
-            <div class="option-item">
-              <!--<a class="text-decoration-none default-btn" href="javascript:void(0)">
-                Donate Now
-                <i class="ri-heart-add-fill"></i>
-              </a>-->
-            </div>
-          </div>
+        <div class="others-option d-md-flex align-items-center">
+          <div class="option-item"></div>
         </div>
       </div>
     </div>
-  </nav>
-  <!-- End Navbar Area -->
+    <!-- End Responsive Navbar Area -->
 
-  <!-- Start Responsive Navbar Area -->
-  <div class="responsive-navbar offcanvas offcanvas-end border-0" tabindex="-1" id="navbarOffcanvas">
-    <div class="offcanvas-header">
-      <a href="index.html" class="logo d-inline-block">
-        <img src="/assets/kumss-logo.jpeg" alt="logo">
-      </a>
-      <button type="button" class="close-btn bg-transparent position-relative lh-1 p-0 border-0"
-        data-bs-dismiss="offcanvas" aria-label="Close">
-        <i class="ri-close-fill"></i>
-      </button>
-    </div>
-
-    <div class="offcanvas-body">
-      <ul class="responsive-menu">
-        <li class="responsive-menu-list without-icon">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="about.html" class="nav-link">About</a>
-        </li>
-        <li class="responsive-menu-list">
-          <a href="/all-institutes.html">Our Educational Institutes</a>
-          <ul class="responsive-menu-items">
-            <li class="nav-item">
-              <a href="./vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html" class="nav-link">
-                Vasatigruh Junior College
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./new-english-school-dhakale/new-english-school-dhakale.html" class="nav-link">
-                New English School, Dhakale
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./primary-school-karhati/primary-school-karhati.html" class="nav-link">
-                Primary School, karhati
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./kumss-private-iti-Karhati/kumss-private-iti-karhati.html" class="nav-link">
-                KUMSS Private I.T.I Karhati
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./gurukul-english-medium-school/gurukul-english-medium-school.html" class="nav-link">
-                Gurukul English Medium School
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="./shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html" class="nav-link">
-                Shardabai Pawar Kala Mahavidyalaya
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="/vasatigruh-junior-college/vasatigruh-junior-college.html" class="nav-link">
-                Vasatigruh Primary School
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="/gallery.html" class="nav-link">Gallery</a>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="/careers.html" class="nav-link">Careers</a>
-        </li>
-        <li class="responsive-menu-list without-icon">
-          <a href="/contact.html" class="nav-link active">
-            Contact <span>Us</span>
-          </a>
-        </li>
-      </ul>
-
-      <div class="others-option d-md-flex align-items-center">
-        <div class="option-item">
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Responsive Navbar Area -->
-
-
-  <!-- ═══════════ UNIQUE HERO ═══════════ -->
-  <section class="cx-hero">
-    <div class="cx-hero-bg">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
-      <div class="blob blob-3"></div>
-    </div>
-
-    <div class="cx-hero-content">
-      <div class="cx-hero-left">
-        <div class="cx-hero-tag">Direct Access</div>
-        <h1>
-          <span>Modern Education.</span>
-          Human Connection.
-        </h1>
-        <p>Our mission is to be accessible. Whether you are a student, a parent, or a partner, we are ready to listen
-          and collaborate.</p>
-
-        <div class="cx-hero-pills">
-          <a href="tel:+919423694242" class="cx-hero-pill">
-            <i class="ri-phone-fill"></i> +91 94236 94242
-          </a>
-          <a href="mailto:kumss@kumss.org" class="cx-hero-pill">
-            <i class="ri-mail-fill"></i> kumss@kumss.org
-          </a>
-        </div>
+    <!-- ═══════════ UNIQUE HERO ═══════════ -->
+    <section class="cx-hero">
+      <div class="cx-hero-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
       </div>
 
-      <div class="cx-hero-right">
-        <div class="cx-hero-card">
-          <h4>At a Glance</h4>
-          <div class="cx-hero-stat">
-            <span class="num">75</span>
-            <span class="txt">Years of Legacy</span>
-          </div>
-          <div class="cx-hero-stat">
-            <span class="num">6</span>
-            <span class="txt">Educational Institutes</span>
-          </div>
-          <div class="cx-hero-stat">
-            <span class="num">15K+</span>
-            <span class="txt">Students Empowered</span>
-          </div>
-          <div class="cx-hero-stat">
-            <span class="num">ISO</span>
-            <span class="txt">9001:2015 Certified</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="cx-hero-content">
+        <div class="cx-hero-left">
+          <div class="cx-hero-tag">Direct Access</div>
+          <h1>
+            <span>Modern Education.</span>
+            Human Connection.
+          </h1>
+          <p>
+            Our mission is to be accessible. Whether you are a student, a
+            parent, or a partner, we are ready to listen and collaborate.
+          </p>
 
-
-  <!-- ═══════════ CONTACT STRIP ═══════════ -->
-  <section class="cx-strip">
-    <div class="cx-strip-inner">
-      <div class="cx-strip-grid">
-        <div class="cx-strip-card">
-          <div class="cx-strip-icon"><i class="ri-phone-fill"></i></div>
-          <div class="cx-strip-info">
-            <h4>Call Us</h4>
-            <a href="tel:+919423694242">+91 94236 94242</a>
-          </div>
-        </div>
-        <div class="cx-strip-card">
-          <div class="cx-strip-icon"><i class="ri-mail-fill"></i></div>
-          <div class="cx-strip-info">
-            <h4>Email Us</h4>
-            <a href="mailto:kumss@kumss.org">kumss@kumss.org</a>
-          </div>
-        </div>
-        <div class="cx-strip-card">
-          <div class="cx-strip-icon"><i class="ri-map-pin-2-fill"></i></div>
-          <div class="cx-strip-info">
-            <a href="https://maps.app.goo.gl/jHmuiYSpvozDLL357">
-              <h4>Visit Central Office</h4>
-              <p>Karhati, Tal-Baramati, Dist-Pune 412204</p>
+          <div class="cx-hero-pills">
+            <a href="tel:+919423694242" class="cx-hero-pill">
+              <i class="ri-phone-fill"></i> +91 94236 94242
+            </a>
+            <a href="mailto:kumss@kumss.org" class="cx-hero-pill">
+              <i class="ri-mail-fill"></i> kumss@kumss.org
             </a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-
-  <!-- ═══════════ FORM + INFO ═══════════ -->
-  <section class="cx-body">
-    <div class="cx-container">
-
-      <div class="cx-form-section">
-        <div class="cx-form-panel">
-          <h2>Send a Message</h2>
-          <p class="cx-subtitle">Fill in the details and our team will respond within 24 hours.</p>
-
-          <form id="contactForm" novalidate>
-            <div class="cx-form-row">
-              <div class="cx-input-group">
-                <label for="cf-name">Full Name <span class="star">*</span>
-                </label>
-                <input type="text" id="cf-name" name="name" placeholder="Enter your name" required>
-              </div>
-              <div class="cx-input-group">
-                <label for="cf-phone">Phone Number <span class="star">*</span></label>
-                <input type="tel" id="cf-phone" name="phone" placeholder="+91 00000 00000" required>
-              </div>
+        <div class="cx-hero-right">
+          <div class="cx-hero-card">
+            <h4>At a Glance</h4>
+            <div class="cx-hero-stat">
+              <span class="num">75</span>
+              <span class="txt">Years of Legacy</span>
             </div>
-            <div class="cx-form-row full">
-              <div class="cx-input-group">
-                <label for="cf-email">Email Address <span class="star">*</span></label>
-                <input type="email" id="cf-email" name="email" placeholder="example@mail.com" required>
-              </div>
+            <div class="cx-hero-stat">
+              <span class="num">6</span>
+              <span class="txt">Educational Institutes</span>
             </div>
-            <div class="cx-form-row full">
-              <div class="cx-input-group">
-                <label for="cf-message">Your Message <span class="star">*</span></label>
-                <textarea id="cf-message" name="message" rows="5" placeholder="How can we help you?"
-                  required></textarea>
-              </div>
+            <div class="cx-hero-stat">
+              <span class="num">15K+</span>
+              <span class="txt">Students Empowered</span>
             </div>
-            <button type="submit" class="cx-send-btn" id="submitBtn">
-              <span id="btnText">Send Message</span>
-              <i class="ri-send-plane-fill" id="btnIcon"></i>
-            </button>
-          </form>
-
-          <!-- Feedback message area -->
-          <div class="cx-form-feedback" id="formFeedback">
-            <i id="feedbackIcon"></i>
-            <span id="feedbackText"></span>
-          </div>
-        </div>
-
-        <div class="cx-info-panel">
-          <div class="cx-info-top">
-            <h3>Shaping Futures Since 1951</h3>
-            <p>A legacy of transforming rural education across Baramati, empowering generations through knowledge.</p>
-          </div>
-
-          <div class="cx-stats-row">
-            <div class="cx-stat-box">
-              <span class="val">75</span>
-              <span class="lbl">Years</span>
+            <div class="cx-hero-stat">
+              <span class="num">ISO</span>
+              <span class="txt">9001:2015 Certified</span>
             </div>
-            <div class="cx-stat-box">
-              <span class="val">6</span>
-              <span class="lbl">Institutes</span>
-            </div>
-            <div class="cx-stat-box">
-              <span class="val">15K+</span>
-              <span class="lbl">Students</span>
-            </div>
-            <div class="cx-stat-box">
-              <span class="val">ISO</span>
-              <span class="lbl">Certified</span>
-            </div>
-          </div>
-
-          <div class="cx-social-row">
-            <a href="https://www.facebook.com/share/1CPdstx3xj/" class="cx-soc" aria-label="Facebook"><i
-                class="ri-facebook-fill"></i></a>
-            <a href="https://www.instagram.com/kumss_baramati/" class="cx-soc" aria-label="Instagram"><i
-                class="ri-instagram-line"></i></a>
-            <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="cx-soc" aria-label="YouTube"><i
-                class="ri-youtube-fill"></i></a>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Map -->
-      <div class="cx-map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15164.757041766245!2d74.42223575460906!3d18.249670417662454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc301fd09e0a05b%3A0xc3f60f4c3f6e8e0!2sKarhati%2C%20Maharashtra%20412204!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-          allowfullscreen="" loading="lazy">
-        </iframe>
-        <div class="cx-map-tag">
-          <i class="ri-map-pin-2-fill"></i>
-          Karhati, Baramati — Pune 412204
+    <!-- ═══════════ CONTACT STRIP ═══════════ -->
+    <section class="cx-strip">
+      <div class="cx-strip-inner">
+        <div class="cx-strip-grid">
+          <div class="cx-strip-card">
+            <div class="cx-strip-icon"><i class="ri-phone-fill"></i></div>
+            <div class="cx-strip-info">
+              <h4>Call Us</h4>
+              <a href="tel:+919423694242">+91 94236 94242</a>
+            </div>
+          </div>
+          <div class="cx-strip-card">
+            <div class="cx-strip-icon"><i class="ri-mail-fill"></i></div>
+            <div class="cx-strip-info">
+              <h4>Email Us</h4>
+              <a href="mailto:kumss@kumss.org">kumss@kumss.org</a>
+            </div>
+          </div>
+          <div class="cx-strip-card">
+            <div class="cx-strip-icon"><i class="ri-map-pin-2-fill"></i></div>
+            <div class="cx-strip-info">
+              <a href="https://maps.app.goo.gl/jHmuiYSpvozDLL357">
+                <h4>Visit Central Office</h4>
+                <p>Karhati, Tal-Baramati, Dist-Pune 412204</p>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- ═══════════ FORM + INFO ═══════════ -->
+    <section class="cx-body">
+      <div class="cx-container">
+        <div class="cx-form-section">
+          <div class="cx-form-panel">
+            <h2>Send a Message</h2>
+            <p class="cx-subtitle">
+              Fill in the details and our team will respond within 24 hours.
+            </p>
 
+            <form id="contactForm" novalidate>
+              <div class="cx-form-row">
+                <div class="cx-input-group">
+                  <label for="cf-name"
+                    >Full Name <span class="star">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="cf-name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div class="cx-input-group">
+                  <label for="cf-phone"
+                    >Phone Number <span class="star">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    id="cf-phone"
+                    name="phone"
+                    placeholder="+91 00000 00000"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="cx-form-row full">
+                <div class="cx-input-group">
+                  <label for="cf-email"
+                    >Email Address <span class="star">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="cf-email"
+                    name="email"
+                    placeholder="example@mail.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="cx-form-row full">
+                <div class="cx-input-group">
+                  <label for="cf-message"
+                    >Your Message <span class="star">*</span></label
+                  >
+                  <textarea
+                    id="cf-message"
+                    name="message"
+                    rows="5"
+                    placeholder="How can we help you?"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <button type="submit" class="cx-send-btn" id="submitBtn">
+                <span id="btnText">Send Message</span>
+                <i class="ri-send-plane-fill" id="btnIcon"></i>
+              </button>
+            </form>
 
-  <footer class="footer" id="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col footer-brand">
-          <a href="index.html" class="footer-logo">
-            <img src="/assets/kumss-logo.jpeg" alt="KUMSS Logo" class="footer-logo-img">
-            <div class="footer-logo-text">
-              <span class="footer-since">KUMSS SINCE 1951</span>
+            <!-- Feedback message area -->
+            <div class="cx-form-feedback" id="formFeedback">
+              <i id="feedbackIcon"></i>
+              <span id="feedbackText"></span>
             </div>
-          </a>
+          </div>
 
-          <p class="footer-desc">
-            An educational society focused on overall development of students since 1951.
+          <div class="cx-info-panel">
+            <div class="cx-info-top">
+              <h3>Shaping Futures Since 1951</h3>
+              <p>
+                A legacy of transforming rural education across Baramati,
+                empowering generations through knowledge.
+              </p>
+            </div>
+
+            <div class="cx-stats-row">
+              <div class="cx-stat-box">
+                <span class="val">75</span>
+                <span class="lbl">Years</span>
+              </div>
+              <div class="cx-stat-box">
+                <span class="val">6</span>
+                <span class="lbl">Institutes</span>
+              </div>
+              <div class="cx-stat-box">
+                <span class="val">15K+</span>
+                <span class="lbl">Students</span>
+              </div>
+              <div class="cx-stat-box">
+                <span class="val">ISO</span>
+                <span class="lbl">Certified</span>
+              </div>
+            </div>
+
+            <div class="cx-social-row">
+              <a
+                href="https://www.facebook.com/share/1CPdstx3xj/"
+                class="cx-soc"
+                aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/kumss_baramati/"
+                class="cx-soc"
+                aria-label="Instagram"
+                ><i class="ri-instagram-line"></i
+              ></a>
+              <a
+                href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB"
+                class="cx-soc"
+                aria-label="YouTube"
+                ><i class="ri-youtube-fill"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="cx-map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15164.757041766245!2d74.42223575460906!3d18.249670417662454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc301fd09e0a05b%3A0xc3f60f4c3f6e8e0!2sKarhati%2C%20Maharashtra%20412204!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+          <div class="cx-map-tag">
+            <i class="ri-map-pin-2-fill"></i>
+            Karhati, Baramati — Pune 412204
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col footer-brand">
+            <a href="index.html" class="footer-logo">
+              <img
+                src="/assets/kumss-logo.jpeg"
+                alt="KUMSS Logo"
+                class="footer-logo-img"
+              />
+              <div class="footer-logo-text">
+                <span class="footer-since">KUMSS SINCE 1951</span>
+              </div>
+            </a>
+
+            <p class="footer-desc">
+              An educational society focused on overall development of students
+              since 1951.
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+
+              <a
+                href="https://www.instagram.com/kumss_baramati/"
+                class="social-link"
+                aria-label="Instagram"
+                ><i class="ri-instagram-fill"></i
+              ></a>
+
+              <a
+                href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB"
+                class="social-link"
+                aria-label="YouTube"
+                ><i class="ri-youtube-fill"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About KUMSS</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Our Institutes</h3>
+            <ul class="footer-links">
+              <li>
+                <a
+                  href="vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html"
+                  >Vasatigruh Junior College</a
+                >
+              </li>
+              <li>
+                <a
+                  href="new-english-school-dhakale/new-english-school-dhakale.html"
+                  >New English School, Dhakale</a
+                >
+              </li>
+              <li>
+                <a href="primary-school-karhati/primary-school-karhati.html"
+                  >Primary School, karhati</a
+                >
+              </li>
+              <li>
+                <a
+                  href="kumss-private-iti-Karhati/kumss-private-iti-karhati.html"
+                  >KUMSS Private I.T.I</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/gurukul-english-medium-school/gurukul-english-medium-school.html"
+                  >Gurukul English Medium</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
+                  >Shardabai Pawar Kala Mahavidyalaya</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/vasatigruh-junior-college/vasatigruh-junior-college.html"
+                  >Vasatigruh Primary School</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Contact Info</h3>
+            <ul class="footer-links">
+              <li>
+                <i class="ri-phone-fill"></i>
+                <a href="tel:+919423684242">+91 94236 84242</a>
+              </li>
+              <li>
+                <i class="ri-phone-fill"></i>
+                <a href="tel:+919423694242">+91 94236 94242</a>
+              </li>
+              <li>
+                <i class="ri-mail-line"></i>
+                <a href="mailto:kumss@kumss.org">kumss@kumss.org</a>
+              </li>
+              <li>
+                <i class="ri-map-pin-line"></i>
+                <a
+                  href="https://maps.app.goo.gl/S1J6rKbm6cHSpKrj8"
+                  target="_blank"
+                  >A/p-Karhati, Tal-Baramati, Dist-Pune 412204</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            © 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights
+            reserved.
           </p>
-
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-
-            <a href="https://www.instagram.com/kumss_baramati/" class="social-link" aria-label="Instagram"><i
-                class="ri-instagram-fill"></i></a>
-
-            <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="social-link"
-              aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h3 class="footer-title">Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About KUMSS</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3 class="footer-title">Our Institutes</h3>
-          <ul class="footer-links">
-            <li><a href="vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Junior College</a>
-            </li>
-            <li><a href="new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
-            </li>
-            <li><a href="primary-school-karhati/primary-school-karhati.html">Primary School, karhati</a></li>
-            <li><a href="kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
-            <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
-                Medium</a></li>
-            <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
-                Pawar Kala Mahavidyalaya</a></li>
-            <li><a href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh
-                Primary School</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3 class="footer-title">Contact Info</h3>
-          <ul class="footer-links">
-            <li><i class="ri-phone-fill"></i> <a href="tel:+919423684242">+91 94236 84242</a></li>
-            <li><i class="ri-phone-fill"></i> <a href="tel:+919423694242">+91 94236 94242</a></li>
-            <li><i class="ri-mail-line"></i> <a href="mailto:kumss@kumss.org">kumss@kumss.org</a></li>
-            <li><i class="ri-map-pin-line"></i> <a href="https://maps.app.goo.gl/S1J6rKbm6cHSpKrj8"
-                target="_blank">A/p-Karhati, Tal-Baramati, Dist-Pune 412204</a></li>
-          </ul>
+          <p class="footer-copy">
+            ISO 9001:2015 Certified Institute | Recognized by Government of
+            Maharashtra
+          </p>
+          <p class="last-updated">
+            Last Updated: <span id="lastUpdated">26 Feb 2026, 12:20 PM</span>
+          </p>
         </div>
       </div>
+    </footer>
 
-      <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
-        <p class="footer-copy">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
-        <p class="last-updated">Last Updated: <span id="lastUpdated">25 Feb 2026, 09:49 AM</span></p>
-      </div>
-    </div>
-  </footer>
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+      <i class="ri-arrow-up-double-fill"></i>
+    </button>
 
-  <button type="button" id="back-to-top" aria-label="Back to Top"><i class="ri-arrow-up-double-fill"></i></button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudflare-email-decode/1.0.0/email-decode.min.js"></script>
+    <!-- Bootstrap 5.3 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/assets/js/custom.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudflare-email-decode/1.0.0/email-decode.min.js"></script>
-  <!-- Bootstrap 5.3 -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="/assets/js/custom.js"></script>
+    <script>
+      // Scroll Progress Bar Logic
+      window.onscroll = function () {
+        var winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        var height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        var bar = document.getElementById("scrollProgress");
+        if (bar) bar.style.width = scrolled + "%";
+      };
 
-  <script>
-    // Scroll Progress Bar Logic
-    window.onscroll = function () {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      var bar = document.getElementById("scrollProgress");
-      if (bar) bar.style.width = scrolled + "%";
-    };
-
-    // Dropdown Toggle Fix
-    document.addEventListener('click', function (e) {
-      const t = e.target.closest('#navbar .dropdown-toggle');
-      if (t && t.getAttribute('href') === '#') {
-        e.preventDefault();
-      }
-    });
-  </script>
-
-  <!-- Contact Form Submission -->
-  <script>
-    (function () {
-      const CELIYO_ENDPOINT = 'https://forms.celiyo.com/api/forms/submit/4f1886c9-e2e6-4e4d-8e5d-b3f9c0f1c734';
-
-      const form = document.getElementById('contactForm');
-      const submitBtn = document.getElementById('submitBtn');
-      const btnText = document.getElementById('btnText');
-      const btnIcon = document.getElementById('btnIcon');
-      const feedback = document.getElementById('formFeedback');
-      const feedbackIcon = document.getElementById('feedbackIcon');
-      const feedbackText = document.getElementById('feedbackText');
-
-      function showFeedback(type, message) {
-        feedback.className = 'cx-form-feedback show ' + type;
-        feedbackIcon.className = type === 'success' ? 'ri-checkbox-circle-fill' : 'ri-error-warning-fill';
-        feedbackText.textContent = message;
-      }
-
-      function hideFeedback() {
-        feedback.className = 'cx-form-feedback';
-      }
-
-      function setLoading(loading) {
-        submitBtn.disabled = loading;
-        if (loading) {
-          btnText.textContent = 'Sending...';
-          btnIcon.className = '';
-          btnIcon.innerHTML = '<span class="cx-spinner"></span>';
-          const spinner = document.createElement('span');
-          spinner.className = 'cx-spinner';
-          btnIcon.replaceWith(spinner);
-          submitBtn._spinner = spinner;
-        } else {
-          if (submitBtn._spinner) {
-            const icon = document.createElement('i');
-            icon.className = 'ri-send-plane-fill';
-            icon.id = 'btnIcon';
-            submitBtn._spinner.replaceWith(icon);
-            submitBtn._spinner = null;
-          }
-          btnText.textContent = 'Send Message';
-        }
-      }
-
-      function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      }
-
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        hideFeedback();
-
-        const name = document.getElementById('cf-name').value.trim();
-        const phone = document.getElementById('cf-phone').value.trim();
-        const email = document.getElementById('cf-email').value.trim();
-        const message = document.getElementById('cf-message').value.trim();
-
-        if (!name || !phone || !email || !message) {
-          showFeedback('error', 'Please fill in all fields before submitting.');
-          return;
-        }
-
-        if (!validateEmail(email)) {
-          showFeedback('error', 'Please enter a valid email address.');
-          return;
-        }
-
-        setLoading(true);
-
-        try {
-          const response = await fetch(CELIYO_ENDPOINT, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-              name: name,
-              phone: phone,
-              email: email,
-              message: message
-            })
-          });
-
-          if (response.ok) {
-            showFeedback('success', 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.');
-            form.reset();
-          } else {
-            let errorMsg = 'Something went wrong. Please try again or contact us directly.';
-            try {
-              const errorData = await response.json();
-              if (errorData && errorData.message) {
-                errorMsg = errorData.message;
-              }
-            } catch (_) { }
-            showFeedback('error', errorMsg);
-          }
-        } catch (err) {
-          showFeedback('error', 'Network error. Please check your connection and try again.');
-        } finally {
-          setLoading(false);
+      // Dropdown Toggle Fix
+      document.addEventListener("click", function (e) {
+        const t = e.target.closest("#navbar .dropdown-toggle");
+        if (t && t.getAttribute("href") === "#") {
+          e.preventDefault();
         }
       });
-    })();
-  </script>
+    </script>
 
-</body>
+    <!-- Contact Form Submission -->
+    <script>
+      (function () {
+        const CELIYO_ENDPOINT =
+          "https://forms.celiyo.com/api/forms/submit/4f1886c9-e2e6-4e4d-8e5d-b3f9c0f1c734";
 
+        const form = document.getElementById("contactForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const btnText = document.getElementById("btnText");
+        const btnIcon = document.getElementById("btnIcon");
+        const feedback = document.getElementById("formFeedback");
+        const feedbackIcon = document.getElementById("feedbackIcon");
+        const feedbackText = document.getElementById("feedbackText");
+
+        function showFeedback(type, message) {
+          feedback.className = "cx-form-feedback show " + type;
+          feedbackIcon.className =
+            type === "success"
+              ? "ri-checkbox-circle-fill"
+              : "ri-error-warning-fill";
+          feedbackText.textContent = message;
+        }
+
+        function hideFeedback() {
+          feedback.className = "cx-form-feedback";
+        }
+
+        function setLoading(loading) {
+          submitBtn.disabled = loading;
+          if (loading) {
+            btnText.textContent = "Sending...";
+            btnIcon.className = "";
+            btnIcon.innerHTML = '<span class="cx-spinner"></span>';
+            const spinner = document.createElement("span");
+            spinner.className = "cx-spinner";
+            btnIcon.replaceWith(spinner);
+            submitBtn._spinner = spinner;
+          } else {
+            if (submitBtn._spinner) {
+              const icon = document.createElement("i");
+              icon.className = "ri-send-plane-fill";
+              icon.id = "btnIcon";
+              submitBtn._spinner.replaceWith(icon);
+              submitBtn._spinner = null;
+            }
+            btnText.textContent = "Send Message";
+          }
+        }
+
+        function validateEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          hideFeedback();
+
+          const name = document.getElementById("cf-name").value.trim();
+          const phone = document.getElementById("cf-phone").value.trim();
+          const email = document.getElementById("cf-email").value.trim();
+          const message = document.getElementById("cf-message").value.trim();
+
+          if (!name || !phone || !email || !message) {
+            showFeedback(
+              "error",
+              "Please fill in all fields before submitting.",
+            );
+            return;
+          }
+
+          if (!validateEmail(email)) {
+            showFeedback("error", "Please enter a valid email address.");
+            return;
+          }
+
+          setLoading(true);
+
+          try {
+            const response = await fetch(CELIYO_ENDPOINT, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify({
+                name: name,
+                phone: phone,
+                email: email,
+                message: message,
+              }),
+            });
+
+            if (response.ok) {
+              showFeedback(
+                "success",
+                "Thank you! Your message has been sent successfully. We'll get back to you soon.",
+              );
+              form.reset();
+            } else {
+              let errorMsg =
+                "Something went wrong. Please try again or contact us directly.";
+              try {
+                const errorData = await response.json();
+                if (errorData && errorData.message) {
+                  errorMsg = errorData.message;
+                }
+              } catch (_) {}
+              showFeedback("error", errorMsg);
+            }
+          } catch (err) {
+            showFeedback(
+              "error",
+              "Network error. Please check your connection and try again.",
+            );
+          } finally {
+            setLoading(false);
+          }
+        });
+      })();
+    </script>
+  </body>
 </html>
