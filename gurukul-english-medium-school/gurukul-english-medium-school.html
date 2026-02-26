@@ -470,6 +470,137 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+
+/* ==================== PRINCIPAL'S DESK ==================== */
+        .gk-principal-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            justify-content: center;
+        }
+        .gk-principal-img-box {
+            position: relative;
+            flex: 0.7;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .gk-principal-img-box img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 15px 15px 0 rgba(255, 151, 4, 0.1);
+        }
+        .gk-principal-content {
+            flex: 1.3;
+        }
+        .gk-section-subtitle {
+            display: inline-block;
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        @media (max-width: 991px) {
+            .gk-principal-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            .gk-principal-img-box {
+                justify-content: center;
+                flex: 1;
+            }
+            .gk-principal-img-box img {
+                max-width: 300px;
+                box-shadow: 10px 10px 0 rgba(255, 151, 4, 0.1);
+            }
+        }
+
+        /* ==================== EXPERT FACULTY ==================== */
+        .gk-faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .gk-faculty-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border: 1px solid #eeeeee;
+        }
+        .gk-faculty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .gk-faculty-img-box {
+            height: 320px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f9fa;
+        }
+        .gk-faculty-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+        .gk-faculty-card:hover .gk-faculty-img {
+            transform: scale(1.05);
+        }
+        .gk-faculty-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .gk-faculty-name {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        .gk-faculty-role {
+            color: var(--secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .gk-btn-outline {
+            background: transparent;
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .gk-btn-outline:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+        @media (max-width: 991px) {
+            .gk-faculty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .gk-faculty-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 
@@ -632,6 +763,85 @@
                         style="background: white; color: var(--brand-blue); padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; align-self: start;">Contact
                         Now</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- PRINCIPAL'S DESK -->
+    <section style="padding: 80px 20px; background: var(--bg-light);">
+        <div class="container-custom">
+            <div class="gk-principal-wrapper">
+                <div class="gk-principal-img-box">
+                    <img src="/assets/supriya-aherkar.webp" alt="Mrs. Supriya Aherkar">
+                </div>
+                <div class="gk-principal-content">
+                    <span class="gk-section-subtitle">Principal's Desk</span>
+                    <h2 style="color: var(--primary); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 16px; font-family: 'Gantari', sans-serif;">Shaping Future Leaders</h2>
+                    <i class="ri-double-quotes-l" style="font-size: 3rem; color: var(--secondary); opacity: 0.3;"></i>
+                    <p style="font-style: italic; font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin: 16px 0;">
+                        "At Gurukul English Medium School, we are committed to nurturing young minds with a balanced approach to academics, creativity, and character building. Our goal is to create an environment where every student can discover their unique potential and grow into confident, responsible citizens."
+                    </p>
+                    <div>
+                        <h4 style="color: var(--primary); font-weight: 700; margin: 0 0 4px; font-family: 'Gantari', sans-serif;">Mrs. Supriya Aherkar</h4>
+                        <small style="color: var(--text-light); text-transform: uppercase; font-weight: 600; font-size: 0.82rem;">Principal, Gurukul English Medium School</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERT FACULTY -->
+    <section style="padding: 80px 20px; background: var(--white);">
+        <div class="container-custom">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="gk-section-subtitle">Our Team</span>
+                <h2 style="font-family: 'Gantari', sans-serif; font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 800; color: var(--primary); margin: 0 0 12px;">Expert Faculty</h2>
+                <p style="color: var(--text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Passionate educators nurturing the next generation of leaders.</p>
+            </div>
+            <div class="gk-faculty-grid">
+                <div class="gk-faculty-card">
+                    <div class="gk-faculty-img-box">
+                        <img src="/assets/supriya-aherkar.webp" alt="Mrs. Supriya Aherkar" class="gk-faculty-img">
+                    </div>
+                    <div class="gk-faculty-info">
+                        <h4 class="gk-faculty-name">Mrs. Supriya Aherkar</h4>
+                        <span class="gk-faculty-role">Principal</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <div class="gk-faculty-img-box">
+                        <img src="/assets/mahendra-nagargoje.webp" alt="Mr. Mahendra Nagargoje" class="gk-faculty-img">
+                    </div>
+                    <div class="gk-faculty-info">
+                        <h4 class="gk-faculty-name">Mr. Mahendra Nagargoje</h4>
+                        <span class="gk-faculty-role">Vice Principal</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <div class="gk-faculty-img-box">
+                        <img src="/assets/sneha-dhumal.webp" alt="Mrs. Sneha Dhumal" class="gk-faculty-img">
+                    </div>
+                    <div class="gk-faculty-info">
+                        <h4 class="gk-faculty-name">Mrs. Sneha Dhumal</h4>
+                        <span class="gk-faculty-role">Teacher</span>
+                    </div>
+                </div>
+                <div class="gk-faculty-card">
+                    <div class="gk-faculty-img-box">
+                        <img src="/assets/pradnya-joshi.webp" alt="Mrs. Pradnya Joshi" class="gk-faculty-img">
+                    </div>
+                    <div class="gk-faculty-info">
+                        <h4 class="gk-faculty-name">Mrs. Pradnya Joshi</h4>
+                        <span class="gk-faculty-role">Teacher</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="./staff.html" class="gm-link" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border: 2px solid #2f3390; border-radius: 50px; font-weight: 700; color: #2f3390; text-decoration: none; transition: all 0.3s ease;">
+                    View All Staff <i class="ri-arrow-right-line"></i>
+                </a>
             </div>
         </div>
     </section>
