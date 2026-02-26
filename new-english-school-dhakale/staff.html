@@ -1,564 +1,760 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Staff | New English School Dhakale</title>
-    <link rel="icon" href="/assets/kumss-logo.jpeg" type="image/x-icon">
+    <link rel="icon" href="/assets/kumss-logo.jpeg" type="image/x-icon" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="/assets/css/institute.css">
+    <link rel="stylesheet" href="/assets/css/institute.css" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    />
 
     <style>
-        /* --- Page Specific Styles --- */
+      /* --- Page Specific Styles --- */
 
-        :root {
-            --primary-color: #233f92;
-            --brand-orange: #ff9704;
-            --text-dark: #1a1a1a;
-            --text-light: #666;
-        }
+      :root {
+        --primary-color: #233f92;
+        --brand-orange: #ff9704;
+        --text-dark: #1a1a1a;
+        --text-light: #666;
+      }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
 
-        /* Page Hero Section */
+      /* Page Hero Section */
+      .page-hero {
+        background:
+          linear-gradient(rgba(35, 63, 146, 0.9), rgba(15, 23, 42, 0.9)),
+          url("/assets/New English School,Dhakale.jpeg");
+        background-size: cover;
+        background-position: center top;
+        padding: 160px 0 80px;
+        text-align: center;
+        color: white;
+      }
+
+      .page-hero h1 {
+        font-family: "Gantari", sans-serif;
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .page-hero p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .container {
+        width: min(1200px, 92%);
+        margin: 0 auto;
+      }
+
+      /* --- Glassmorphism Section Styling --- */
+
+      .perfect-faculty-section {
+        background-color: #eef2ff;
+        background-image:
+          radial-gradient(
+            at 0% 0%,
+            hsla(225, 63%, 93%, 1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 0%,
+            hsla(225, 63%, 96%, 1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 100%,
+            hsla(225, 63%, 93%, 1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 0% 100%,
+            hsla(225, 63%, 96%, 1) 0px,
+            transparent 50%
+          );
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-subtitle {
+        color: var(--brand-orange);
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        font-family: "Gantari", sans-serif;
+        font-size: 2.5rem;
+        color: var(--text-dark);
+        margin: 0 0 15px;
+      }
+
+      /* Grid Layout */
+      .faculty-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 30px;
+      }
+
+      /* --- Glass Card Styling --- */
+      .faculty-card {
+        background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .faculty-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0 15px 40px 0 rgba(35, 63, 146, 0.15);
+        border-color: rgba(255, 255, 255, 0.9);
+      }
+
+      .card-image {
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        background: rgba(0, 0, 0, 0.03);
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.6s ease;
+      }
+
+      .faculty-card:hover .card-image img {
+        transform: scale(1.08);
+      }
+
+      /* Placeholder avatar for cards without photos */
+      .card-image .placeholder-avatar {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #233f92 0%, #1a2d6b 100%);
+      }
+
+      .card-image .placeholder-avatar i {
+        font-size: 5rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .card-content {
+        padding: 20px;
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 5px;
+      }
+
+      .faculty-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 0;
+        font-family: "Gantari", sans-serif;
+        text-transform: uppercase;
+        line-height: 1.4;
+      }
+
+      .faculty-designation {
+        color: var(--text-dark);
+        font-weight: 600;
+        font-size: 0.85rem;
+        margin: 5px 0;
+        text-transform: uppercase;
+      }
+
+      .faculty-qualification {
+        color: var(--text-light);
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-top: auto;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        background: rgba(35, 63, 146, 0.08);
+        padding: 4px 8px;
+        border-radius: 6px;
+        align-self: center;
+      }
+
+      /* Navbar force white bg */
+      .gm-header {
+        background: white !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      @media (max-width: 768px) {
         .page-hero {
-            background: linear-gradient(rgba(35, 63, 146, 0.9), rgba(15, 23, 42, 0.9)), url('/assets/New English School,Dhakale.jpeg');
-            background-size: cover;
-            background-position: center top;
-            padding: 160px 0 80px;
-            text-align: center;
-            color: white;
+          padding: 120px 0 60px;
         }
 
         .page-hero h1 {
-            font-family: 'Gantari', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+          font-size: 2.2rem;
         }
 
-        .page-hero p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .container {
-            width: min(1200px, 92%);
-            margin: 0 auto;
-        }
-
-        /* --- Glassmorphism Section Styling --- */
-
-        .perfect-faculty-section {
-            background-color: #eef2ff;
-            background-image:
-                radial-gradient(at 0% 0%, hsla(225, 63%, 93%, 1) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, hsla(225, 63%, 96%, 1) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, hsla(225, 63%, 93%, 1) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, hsla(225, 63%, 96%, 1) 0px, transparent 50%);
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-subtitle {
-            color: var(--brand-orange);
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            font-family: 'Gantari', sans-serif;
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            margin: 0 0 15px;
-        }
-
-        /* Grid Layout */
         .faculty-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 30px;
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         }
-
-        /* --- Glass Card Styling --- */
-        .faculty-card {
-            background: rgba(255, 255, 255, 0.45);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .faculty-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.65);
-            box-shadow: 0 15px 40px 0 rgba(35, 63, 146, 0.15);
-            border-color: rgba(255, 255, 255, 0.9);
-        }
-
-        .card-image {
-            height: 300px;
-            overflow: hidden;
-            position: relative;
-            background: rgba(0, 0, 0, 0.03);
-        }
-
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-            transition: transform 0.6s ease;
-        }
-
-        .faculty-card:hover .card-image img {
-            transform: scale(1.08);
-        }
-
-        /* Placeholder avatar for cards without photos */
-        .card-image .placeholder-avatar {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #233f92 0%, #1a2d6b 100%);
-        }
-
-        .card-image .placeholder-avatar i {
-            font-size: 5rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .card-content {
-            padding: 20px;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            gap: 5px;
-        }
-
-        .faculty-name {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin: 0;
-            font-family: 'Gantari', sans-serif;
-            text-transform: uppercase;
-            line-height: 1.4;
-        }
-
-        .faculty-designation {
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin: 5px 0;
-            text-transform: uppercase;
-        }
-
-        .faculty-qualification {
-            color: var(--text-light);
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-top: auto;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background: rgba(35, 63, 146, 0.08);
-            padding: 4px 8px;
-            border-radius: 6px;
-            align-self: center;
-        }
-
-        /* Navbar force white bg */
-        .gm-header {
-            background: white !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        @media (max-width: 768px) {
-            .page-hero {
-                padding: 120px 0 60px;
-            }
-
-            .page-hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .faculty-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <a href="/" class="back-to-main-btn" title="Back to Main Website">
-        <i class="ri-home-4-line"></i>
+      <i class="ri-home-4-line"></i>
     </a>
     <!-- Header -->
     <header class="gm-header" id="header">
-        <div class="gm-container">
-            <nav class="gm-nav" aria-label="Primary">
-                <a href="/index.html" class="gm-logo">
-                    <img src="/assets/kumss-logo.jpeg" alt="KUMSS Logo" class="gm-logo-img">
-                </a>
-                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu">
-                    <span class="gm-burger-line"></span><span class="gm-burger-line"></span><span
-                        class="gm-burger-line"></span>
-                </button>
-                <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="./new-english-school-dhakale.html">Home</a></li>
-                    <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
-                    <li><a class="gm-link" href="./admissions.html">Admissions</a></li>
-                    <li class="gm-item gm-dropdown" data-dropdown>
-                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
-                            aria-controls="institutesMenu">
-                            Our Educational Institutes
-                            <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
-                        </button>
+      <div class="gm-container">
+        <nav class="gm-nav" aria-label="Primary">
+          <a href="/index.html" class="gm-logo">
+            <img
+              src="/assets/kumss-logo.jpeg"
+              alt="KUMSS Logo"
+              class="gm-logo-img"
+            />
+          </a>
+          <button
+            class="gm-burger"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open menu"
+          >
+            <span class="gm-burger-line"></span
+            ><span class="gm-burger-line"></span
+            ><span class="gm-burger-line"></span>
+          </button>
+          <ul class="gm-links" id="navLinks">
+            <li>
+              <a class="gm-link" href="./new-english-school-dhakale.html"
+                >Home</a
+              >
+            </li>
+            <li class="gm-item">
+              <a class="gm-link" href="./about.html">About</a>
+            </li>
+            <li><a class="gm-link" href="./admissions.html">Admissions</a></li>
+            <li class="gm-item gm-dropdown" data-dropdown>
+              <button
+                class="gm-link gm-dropbtn"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="institutesMenu"
+              >
+                Our Educational Institutes
+                <i
+                  class="ri-arrow-down-s-line gm-chevron"
+                  aria-hidden="true"
+                ></i>
+              </button>
 
-                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem"
-                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
-                                    Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
-                                    School Dhakale</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/primary-school-karhati/primary-school-karhati.html">Primary School Karhati
-                                    karhati</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
-                                    Karhati</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
-                                    English Medium School</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
-                                    Pawar Kala Mahavidhyalaya</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh
-                                    Junior College</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="gm-link" href="./news-events.html">News & Events</a></li>
-                    <li class="gm-item"><a class="gm-link active" href="./staff.html">Staff</a></li>
-                    <li><a class="gm-link" href="./gallery.html">Gallery</a></li>
-                    <li><a class="gm-link" href="./policy.html">Policy</a></li>
-                    <li class="gm-cta"><a class="ggm-btn" href="/contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
+              <ul
+                class="gm-submenu"
+                id="institutesMenu"
+                role="menu"
+                aria-label="Institutes submenu"
+              >
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html"
+                    >Vasatigruh Vidyalay Karhati</a
+                  >
+                </li>
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="/new-english-school-dhakale/new-english-school-dhakale.html"
+                    >New English School Dhakale</a
+                  >
+                </li>
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="/primary-school-karhati/primary-school-karhati.html"
+                    >Primary School Karhati karhati</a
+                  >
+                </li>
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html"
+                    >KUMSS Private I.T.I Karhati</a
+                  >
+                </li>
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html"
+                    >Gurukul English Medium School</a
+                  >
+                </li>
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
+                    >Shardabai Pawar Kala Mahavidhyalaya</a
+                  >
+                </li>
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href="/vasatigruh-junior-college/vasatigruh-junior-college.html"
+                    >Vasatigruh Junior College</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="gm-link" href="./news-events.html">News & Events</a>
+            </li>
+            <li class="gm-item">
+              <a class="gm-link active" href="./staff.html">Staff</a>
+            </li>
+            <li><a class="gm-link" href="./gallery.html">Gallery</a></li>
+            <li><a class="gm-link" href="./policy.html">Policy</a></li>
+            <li class="gm-cta">
+              <a class="ggm-btn" href="/contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero -->
     <section class="page-hero">
-        <div class="container">
-            <h1>Our Dedicated Staff</h1>
-            <p>Meet the passionate educators and support staff who make learning possible at New English School
-                Dhakale.</p>
-        </div>
+      <div class="container">
+        <h1>Our Dedicated Staff</h1>
+        <p>
+          Meet the passionate educators and support staff who make learning
+          possible at New English School Dhakale.
+        </p>
+      </div>
     </section>
 
     <!-- Faculty Grid (Glassmorphism Effect) -->
     <section class="perfect-faculty-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">The Team</span>
-                <h2 class="section-title">Teaching & Non-Teaching Staff</h2>
-            </div>
-
-            <div class="faculty-grid">
-
-                <!-- 1 - Headmaster -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Kumbhar Girish Shivaji</h3>
-                        <p class="faculty-designation">Headmaster</p>
-                        <p class="faculty-qualification">B.Sc. B.Ed, D.S.M</p>
-                    </div>
-                </div>
-
-                <!-- 2 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Paithankar Rajendra Uttam</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">M.E. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 3 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Ejgar Pintu Sambhaji</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">M.A. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 4 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Miss. Jagtap Geetanjali Vijay</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B.Sc. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 5 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Lonkar Sandip Bhauso</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">M.A. M.Ed. SET</p>
-                    </div>
-                </div>
-
-                <!-- 6 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Miss. Kumbhar Bharati Girish</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B.A. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 7 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Miss. Lonkar Rupali Sandip</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">D.Ed. S.Y.B.A</p>
-                    </div>
-                </div>
-
-                <!-- 8 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Miss. Survekar Savita Shahaji</h3>
-                        <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B.A. B.Ed.</p>
-                    </div>
-                </div>
-
-                <!-- 9 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Deshmane Rushikesh Rajendra</h3>
-                        <p class="faculty-designation">Clerk</p>
-                        <p class="faculty-qualification">T.Y. B.Com</p>
-                    </div>
-                </div>
-
-                <!-- 10 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Soumitra Malhari Jagtap</h3>
-                        <p class="faculty-designation">Peon</p>
-                        <p class="faculty-qualification">12th Pass</p>
-                    </div>
-                </div>
-
-                <!-- 11 -->
-                <div class="faculty-card">
-                    <div class="card-image">
-                        <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="faculty-name">Mr. Chavan Gajanan Balaso</h3>
-                        <p class="faculty-designation">Peon</p>
-                        <p class="faculty-qualification">7th Pass</p>
-                    </div>
-                </div>
-
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">The Team</span>
+          <h2 class="section-title">Teaching & Non-Teaching Staff</h2>
         </div>
+
+        <div class="faculty-grid">
+          <!-- 1 - Headmaster -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <div class="placeholder-avatar"><i class="ri-user-line"></i></div>
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Mr. Kumbhar Girish Shivaji</h3>
+              <p class="faculty-designation">Headmaster</p>
+              <p class="faculty-qualification">B.Sc. B.Ed, D.S.M</p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <img
+                src="/assets/paithankar%20rajendra.png"
+                alt="Mr. Paithankar Rajendra Uttam"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Mr. Paithankar Rajendra Uttam</h3>
+              <p class="faculty-designation">Teacher</p>
+              <p class="faculty-qualification">M.E. B.Ed.</p>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <img
+                src="/assets/Ejgar%20Pintu%20Sambhaji.png"
+                alt="Mr. Ejgar Pintu Sambhaji"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Mr. Ejgar Pintu Sambhaji</h3>
+              <p class="faculty-designation">Teacher</p>
+              <p class="faculty-qualification">M.A. B.Ed.</p>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <img
+                src="/assets/Jagtap%20geetanjali%20Vijay.png"
+                alt="Miss. Jagtap Geetanjali Vijay"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Miss. Jagtap Geetanjali Vijay</h3>
+              <p class="faculty-designation">Teacher</p>
+              <p class="faculty-qualification">B.Sc. B.Ed.</p>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <img
+                src="/assets/Lonkar%20Sandip%20Bhauso.png"
+                alt="Mr. Lonkar Sandip Bhauso"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Mr. Lonkar Sandip Bhauso</h3>
+              <p class="faculty-designation">Teacher</p>
+              <p class="faculty-qualification">M.A. M.Ed. SET</p>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <img
+                src="/assets/Kumbhar%20Bharati%20Girish.png"
+                alt="Miss. Kumbhar Bharati Girish"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Miss. Kumbhar Bharati Girish</h3>
+              <p class="faculty-designation">Teacher</p>
+              <p class="faculty-qualification">B.A. B.Ed.</p>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <img
+                src="/assets/Lonkar%20Rupali%20Sandip.png"
+                alt="Miss. Lonkar Rupali Sandip"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Miss. Lonkar Rupali Sandip</h3>
+              <p class="faculty-designation">Teacher</p>
+              <p class="faculty-qualification">D.Ed. S.Y.B.A</p>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <img
+                src="/assets/Survekar%20Savita%20Shahaji.png"
+                alt="Miss. Survekar Savita Shahaji"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Miss. Survekar Savita Shahaji</h3>
+              <p class="faculty-designation">Teacher</p>
+              <p class="faculty-qualification">B.A. B.Ed.</p>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <img
+                src="/assets/Deshmane%20Rushikesh%20Rajendra.png"
+                alt="Mr. Deshmane Rushikesh Rajendra"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Mr. Deshmane Rushikesh Rajendra</h3>
+              <p class="faculty-designation">Clerk</p>
+              <p class="faculty-qualification">T.Y. B.Com</p>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <img
+                src="/assets/Soumitra%20Malhari%20Jagtap.png"
+                alt="Mr. Soumitra Malhari Jagtap"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Mr. Soumitra Malhari Jagtap</h3>
+              <p class="faculty-designation">Peon</p>
+              <p class="faculty-qualification">12th Pass</p>
+            </div>
+          </div>
+
+          <!-- 11 -->
+          <div class="faculty-card">
+            <div class="card-image">
+              <img
+                src="/assets/Chavan%20Gajanan%20Balaso.png"
+                alt="Mr. Chavan Gajanan Balaso"
+              />
+            </div>
+            <div class="card-content">
+              <h3 class="faculty-name">Mr. Chavan Gajanan Balaso</h3>
+              <p class="faculty-designation">Peon</p>
+              <p class="faculty-qualification">7th Pass</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="/index.html" class="logo kumss-since"
-                        style="margin-bottom: 2rem; align-items: flex-start;">
-                        <img src="/assets/kumss-logo.jpeg" alt="KUMSS Logo" class="footer-logo-img">
-                        <div><span>KUMSS SINCE 1951</span></div>
-                    </a>
-                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
-                        An educational society focused on overall development of students since 1951.
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61586048980596" class="social-link"
-                            aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-                        <a href="https://www.instagram.com/new_english_school_dhakale?igsh=MWJsOHZ3NTRoZ2Uwbg=="
-                            class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
-                        <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="social-link"
-                            aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="./new-english-school-dhakale.html">Home</a></li>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./admissions.html">Admissions</a></li>
-                        <li><a href="./staff.html">Staff</a></li>
-                        <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="./policy.html">Policy</a></li>
-                        <li><a href="/contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Our Institutes</h3>
-                    <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay,
-                                Karhati</a></li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
-                                Dhakale</a></li>
-                        <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a>
-                        </li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
-                        </li>
-                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
-                                Medium</a></li>
-                        <li><a href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Shardabai
-                                Pawar Kala Mahavidyalaya</a></li>
-                        <li><a href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior
-                                College</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h3
-                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Contact Info</h3>
-                    <ul class="footer-links">
-                        <li>
-                            <i class="ri-phone-line"></i>
-                            <a href="tel:+919423694242">+91 94236 94242</a>
-                        </li>
-                        <li>
-                            <i class="ri-phone-line"></i>
-                            <a href="tel:+918379043117">+91 83790 43117</a>
-                        </li>
-                        <li>
-                            <i class="ri-mail-line"></i>
-                            <a href="mailto:nesdhakale4902@gmail.com">nesdhakale4902@gmail.com</a>
-                        </li>
-                        <li style="color: #000;">
-                            <i class="ri-map-pin-line"></i>
-                            A/P – Dhakale, Tal – Baramati, Dist – Pune - 412204
-                        </li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a
+              href="/index.html"
+              class="logo kumss-since"
+              style="margin-bottom: 2rem; align-items: flex-start"
+            >
+              <img
+                src="/assets/kumss-logo.jpeg"
+                alt="KUMSS Logo"
+                class="footer-logo-img"
+              />
+              <div><span>KUMSS SINCE 1951</span></div>
+            </a>
+            <p style="color: var(--paragraphColor); margin-bottom: 2rem">
+              An educational society focused on overall development of students
+              since 1951.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/profile.php?id=61586048980596"
+                class="social-link"
+                aria-label="Facebook"
+                ><i class="ri-facebook-fill"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/new_english_school_dhakale?igsh=MWJsOHZ3NTRoZ2Uwbg=="
+                class="social-link"
+                aria-label="Instagram"
+                ><i class="ri-instagram-fill"></i
+              ></a>
+              <a
+                href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB"
+                class="social-link"
+                aria-label="YouTube"
+                ><i class="ri-youtube-fill"></i
+              ></a>
             </div>
+          </div>
 
-            <div class="footer-bottom">
-                <p>© 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
-                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
-                </p>
-                <p class="last-updated">Last Updated: <span id="lastUpdated">26 Feb 2026, 12:20 PM</span></p>
-            </div>
+          <div class="footer-col">
+            <h3
+              style="
+                color: var(--blackColor);
+                margin-bottom: 1.5rem;
+                font-family: var(--heading-font-family);
+                font-weight: 700;
+                font-size: 1.25rem;
+              "
+            >
+              Quick Links
+            </h3>
+            <ul class="footer-links">
+              <li><a href="./new-english-school-dhakale.html">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./admissions.html">Admissions</a></li>
+              <li><a href="./staff.html">Staff</a></li>
+              <li><a href="./gallery.html">Gallery</a></li>
+              <li><a href="./policy.html">Policy</a></li>
+              <li><a href="/contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3
+              style="
+                color: var(--blackColor);
+                margin-bottom: 1.5rem;
+                font-family: var(--heading-font-family);
+                font-weight: 700;
+                font-size: 1.25rem;
+              "
+            >
+              Our Institutes
+            </h3>
+            <ul class="footer-links">
+              <li>
+                <a
+                  href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html"
+                  >Vasatigruh Vidyalay, Karhati</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/new-english-school-dhakale/new-english-school-dhakale.html"
+                  >New English School, Dhakale</a
+                >
+              </li>
+              <li>
+                <a href="/primary-school-karhati/primary-school-karhati.html"
+                  >Primary School, Karhati</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html"
+                  >KUMSS Private I.T.I</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/gurukul-english-medium-school/gurukul-english-medium-school.html"
+                  >Gurukul English Medium</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html"
+                  >Shardabai Pawar Kala Mahavidyalaya</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/vasatigruh-junior-college/vasatigruh-junior-college.html"
+                  >Vasatigruh Junior College</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3
+              style="
+                color: var(--blackColor);
+                margin-bottom: 1.5rem;
+                font-family: var(--heading-font-family);
+                font-weight: 700;
+                font-size: 1.25rem;
+              "
+            >
+              Contact Info
+            </h3>
+            <ul class="footer-links">
+              <li>
+                <i class="ri-phone-line"></i>
+                <a href="tel:+919423694242">+91 94236 94242</a>
+              </li>
+              <li>
+                <i class="ri-phone-line"></i>
+                <a href="tel:+918379043117">+91 83790 43117</a>
+              </li>
+              <li>
+                <i class="ri-mail-line"></i>
+                <a href="mailto:nesdhakale4902@gmail.com"
+                  >nesdhakale4902@gmail.com</a
+                >
+              </li>
+              <li style="color: #000">
+                <i class="ri-map-pin-line"></i>
+                A/P – Dhakale, Tal – Baramati, Dist – Pune - 412204
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p>
+            © 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights
+            reserved.
+          </p>
+          <p
+            style="
+              margin-top: 0.5rem;
+              font-size: 0.875rem;
+              color: var(--paragraphColor);
+            "
+          >
+            ISO 9001:2015 Certified Institute | Recognized by Government of
+            Maharashtra
+          </p>
+          <p class="last-updated">
+            Last Updated: <span id="lastUpdated">26 Feb 2026, 12:20 PM</span>
+          </p>
+        </div>
+      </div>
     </footer>
 
     <button type="button" id="back-to-top" aria-label="Back to Top">
-        <i class="ri-arrow-up-double-fill"></i>
+      <i class="ri-arrow-up-double-fill"></i>
     </button>
 
     <!-- Scripts -->
     <script>
-        // Mobile Menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuBtn.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        });
+      // Mobile Menu
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenuBtn.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        if (navLinks.classList.contains("active")) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
+      });
     </script>
     <script src="/assets/js/institute.js"></script>
     <script src="/assets/js/custom.js"></script>
-
-</body>
-
+  </body>
 </html>
