@@ -2671,7 +2671,7 @@ textarea.form-control-lg {
     box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
 }
 
-.form-select[Mool tiple],
+.form-select[multiple],
 .form-select[size]:not([size="1"]) {
     padding-right: .75rem;
     background-image: none
@@ -3250,10 +3250,10 @@ textarea.form-control.is-valid {
     border-color: var(--bs-form-valid-border-color)
 }
 
-.form-select.is-valid:not([Mool tiple]):not([size]),
-.form-select.is-valid:not([Mool tiple])[size="1"],
-.was-validated .form-select:valid:not([Mool tiple]):not([size]),
-.was-validated .form-select:valid:not([Mool tiple])[size="1"] {
+.form-select.is-valid:not([multiple]):not([size]),
+.form-select.is-valid:not([multiple])[size="1"],
+.was-validated .form-select:valid:not([multiple]):not([size]),
+.was-validated .form-select:valid:not([multiple])[size="1"] {
     --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/1999/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
     padding-right: 4.125rem;
     background-position: right .75rem center, center right 2.25rem;
@@ -3360,10 +3360,10 @@ textarea.form-control.is-invalid {
     border-color: var(--bs-form-invalid-border-color)
 }
 
-.form-select.is-invalid:not([Mool tiple]):not([size]),
-.form-select.is-invalid:not([Mool tiple])[size="1"],
-.was-validated .form-select:invalid:not([Mool tiple]):not([size]),
-.was-validated .form-select:invalid:not([Mool tiple])[size="1"] {
+.form-select.is-invalid:not([multiple]):not([size]),
+.form-select.is-invalid:not([multiple])[size="1"],
+.was-validated .form-select:invalid:not([multiple]):not([size]),
+.was-validated .form-select:invalid:not([multiple])[size="1"] {
     --bs-form-select-bg-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/1999/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
     padding-right: 4.125rem;
     background-position: right .75rem center, center right 2.25rem;
