@@ -3103,3 +3103,58 @@ Back to Top Style
                 grid-template-columns: 1fr;
             }
         }
+
+        /* View Staff Button Styles */
+.view-staff-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #003366;
+  color: #fffefe;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Center the button */
+.view-staff-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Hover Effect */
+.view-staff-btn:hover {
+  color: #ffffff;
+  border-color: #3a3a3a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 15, 197, 0.15);
+}
+
+.view-staff-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .view-staff-btn {
+    padding: 10px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .view-staff-btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    width: 80%;
+    max-width: 280px;
+  }
+}

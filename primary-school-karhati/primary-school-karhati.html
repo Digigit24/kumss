@@ -696,103 +696,143 @@
       margin-bottom: 12px;
     }
 
-    /* ==================== EXPERT FACULTY ==================== */
-    .ps-faculty-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .ps-faculty-card {
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: 0.3s;
-      border: 1px solid #eeeeee;
-    }
-    .ps-faculty-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-    .ps-faculty-img-box {
-      height: 320px;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-      background-color: #f8f9fa;
-    }
-    .ps-faculty-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      transition: transform 0.5s ease;
-    }
-    .ps-faculty-card:hover .ps-faculty-img {
-      transform: scale(1.05);
-    }
-    .ps-faculty-info {
-      padding: 20px;
-      text-align: center;
-    }
-    .ps-faculty-name {
-      color: var(--ps-blue);
-      font-size: 1.1rem;
-      margin-bottom: 5px;
-      font-weight: 700;
-    }
-    .ps-faculty-role {
-      color: var(--ps-accent);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 10px;
-    }
-    .ps-btn-outline {
-      background: transparent;
-      color: var(--ps-blue);
-      padding: 12px 30px;
-      border-radius: 50px;
-      font-weight: 600;
-      border: 2px solid var(--ps-blue);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: 0.3s;
-      text-decoration: none;
-    }
-    .ps-btn-outline:hover {
-      background: var(--ps-blue);
-      color: #ffffff;
-    }
-    @media (max-width: 991px) {
-      .ps-faculty-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 576px) {
-      .ps-faculty-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (max-width: 980px) {
-      .ps-principal-wrapper {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-      }
-      .ps-principal-img-box {
-        justify-content: center;
-        flex: 1;
-      }
-      .ps-principal-img-box img {
-        max-width: 300px;
-        box-shadow: 10px 10px 0 rgba(255, 151, 4, 0.1);
-      }
-    }
+  
+/* ==================== PRINCIPAL'S DESK ==================== */
+        .iti-principal-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            justify-content: center;
+        }
+        .iti-principal-img-box {
+            position: relative;
+            flex: 0.7;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .iti-principal-img-box img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 15px 15px 0 rgba(255, 103, 0, 0.1);
+        }
+        .iti-principal-content {
+            flex: 1.3;
+        }
+        .iti-section-subtitle {
+            display: inline-block;
+            color: var(--orange);
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        /* ==================== EXPERT FACULTY ==================== */
+        .iti-faculty-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .iti-faculty-section .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .iti-faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .iti-faculty-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border: 1px solid #eeeeee;
+        }
+        .iti-faculty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .iti-faculty-img-box {
+            height: 320px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f9fa;
+        }
+        .iti-faculty-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+        .iti-faculty-card:hover .iti-faculty-img {
+            transform: scale(1.05);
+        }
+        .iti-faculty-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .iti-faculty-name {
+            color: var(--blue);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        .iti-faculty-role {
+            color: var(--orange);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .iti-btn-outline {
+            background: transparent;
+            color: var(--blue);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid var(--blue);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .iti-btn-outline:hover {
+            background: var(--blue);
+            color: #ffffff;
+        }
+        @media (max-width: 991px) {
+            .iti-faculty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .iti-faculty-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 991px) {
+            .iti-principal-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            .iti-principal-img-box {
+                justify-content: center;
+                flex: 1;
+            }
+            .iti-principal-img-box img {
+                max-width: 300px;
+                box-shadow: 10px 10px 0 rgba(255, 103, 0, 0.1);
+            }
+        }
 
     </style>
 </head>
@@ -1025,74 +1065,86 @@
         </div>
     </section>
 
+   
+
     <!-- PRINCIPAL'S DESK -->
-  <section class="ps-section ps-section--soft" id="principal">
-    <div class="ps-wrap">
-        <div class="ps-principal-wrapper">
-            <div class="ps-principal-img-box reveal-left">
-                <img src="/assets/kamal-gadekar.webp" alt="Ms. Kamal Sampat Gadekar">
-            </div>
-            <div class="ps-principal-content reveal-right">
-                <span class="ps-section-subtitle">Principal's Desk</span>
-                <h2 style="color: var(--ps-blue); font-size: 2rem; font-weight: 900; margin-bottom: 16px;">Nurturing Young Minds with Care</h2>
-                <i class="ri-double-quotes-l" style="font-size: 3rem; color: var(--ps-accent); opacity: 0.3;"></i>
-                <p class="reveal" style="font-style: italic; font-size: 1.05rem; color: var(--ps-muted); line-height: 1.8; margin: 16px 0;">
-                    "At Primary School Karhati, we believe every child deserves a warm, supportive start to their educational journey. Our focus is on building strong basics, good habits, and confident kids. We nurture young minds with care, patience, and daily practice to help them grow into responsible individuals."
-                </p>
-                <div>
-                    <h4 style="color: var(--ps-blue); font-weight: 900; margin: 0 0 4px;">Ms. Kamal Sampat Gadekar</h4>
-                    <small style="color: var(--ps-muted); text-transform: uppercase; font-weight: 700; font-size: 0.82rem;">Principal, Primary School Karhati</small>
+    <section style="padding: 80px 0; background: #ffffff;">
+        <div class="container">
+            <div class="iti-principal-wrapper">
+                <div class="iti-principal-img-box">
+                    <img src="/assets/kamal-gadekar.webp" alt="Er. Shri. Kamal Gadekar">
+                </div>
+                <div class="iti-principal-content">
+                    <span class="iti-section-subtitle">Principal's Desk</span>
+                    <h2 class="mb-4" style="color: var(--blue);">Inspiring Young Minds, Shaping Bright Futures</h2>
+                    <i class="ri-double-quotes-l" style="font-size: 3rem; color: var(--orange); opacity: 0.3;"></i>
+                    <p class="fst-italic fs-5 text-muted my-4" style="line-height: 1.8;">
+                      
+"We believe that the early years are the foundation of a child's future. Our mission is to nurture curious minds and kind hearts within a warm, supportive environment. We want our students to grow with confidence, creativity, and a deep respect for others and the world around them. Each child at Primary School Karhati is a precious member of our family, and we are committed to helping them blossom into their brightest selves."
+                    </p>
+                    <div>
+                        <h4 class="mb-0 fw-bold" style="color: var(--blue);">Ms. Kamal Sampat Gadekar</h4>
+                       
+                        <small class="text-muted text-uppercase fw-bold">Principal, Primary School Karhati</small>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-  </section>
+    </section>
 
     <!-- EXPERT FACULTY -->
-  <section class="ps-section" id="team">
-    <div class="ps-wrap">
-        <div style="text-align: center; margin-bottom: 60px;">
-            <span class="ps-section-subtitle">Our Team</span>
-            <h2 style="font-size: 2rem; font-weight: 900; color: var(--ps-blue); margin: 0 0 12px;">Expert Faculty</h2>
-            <p style="color: var(--ps-muted); font-size: 1rem; max-width: 600px; margin: 0 auto;">Dedicated teachers building strong foundations for young learners.</p>
-        </div>
-        <div class="ps-faculty-grid">
-
-            <div class="ps-faculty-card reveal delay-200">
-                <div class="ps-faculty-img-box">
-                    <img src="/assets/nita-jagtap.webp" alt="Mrs. Nita Madhukar Jagtap" class="ps-faculty-img">
+    <section class="iti-faculty-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="iti-section-subtitle">Our Team</span>
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--blue); margin: 0 0 12px;">Expert Faculty</h2>
+                <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Dedicated professionals committed to transforming students into skilled industry-ready technicians.</p>
+            </div>
+            <div class="iti-faculty-grid">
+                <div class="iti-faculty-card">
+                    <div class="iti-faculty-img-box">
+                        <img src="/assets/nita-jagtap.webp" alt="Ms. Nita Jagtap" class="iti-faculty-img">
+                    </div>
+                    <div class="iti-faculty-info">
+                        <h4 class="iti-faculty-name">MRS. NITA MADHUKAR JAGTAP</h4>
+                        <span class="iti-faculty-role">Asst. Teacher</span>
+                    </div>
                 </div>
-                <div class="ps-faculty-info">
-                    <h4 class="ps-faculty-name">Mrs. Nita M. Jagtap</h4>
-                    <span class="ps-faculty-role">Asst. Teacher</span>
+                <div class="iti-faculty-card">
+                    <div class="iti-faculty-img-box">
+                        <img src="/assets/jyoti-shinde.webp" alt="Ms. Jyoti Shinde" class="iti-faculty-img">
+                    </div>
+                    <div class="iti-faculty-info">
+                        <h4 class="iti-faculty-name">MRS. JYOTI SHANKAR SHINDE</h4>
+                        <span class="iti-faculty-role">Asst. Teacher</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <div class="iti-faculty-img-box">
+                        <img src="/assets/alka-deokar.webp" alt="Ms. Alka Deokar" class="iti-faculty-img">
+                    </div>
+                    <div class="iti-faculty-info">
+                        <h4 class="iti-faculty-name">MRS. ALKA RAVINDRA DEOKAR</h4>
+                        <span class="iti-faculty-role">Asst. Teacher</span>
+                    </div>
+                </div>
+                <div class="iti-faculty-card">
+                    <div class="iti-faculty-img-box">
+                        <img src="/assets/harsha-pawar.webp" alt="Mr. Harsha Pawar" class="iti-faculty-img">
+                    </div>
+                    <div class="iti-faculty-info">
+                        <h4 class="iti-faculty-name">MRS. HARSHA VIJAY PAWAR</h4>
+                        <span class="iti-faculty-role">Fitter Instructor</span>
+                    </div>
                 </div>
             </div>
-            <div class="ps-faculty-card reveal delay-300">
-                <div class="ps-faculty-img-box">
-                    <img src="/assets/jyoti-shinde.webp" alt="Mrs. Jyoti Shankar Shinde" class="ps-faculty-img">
-                </div>
-                <div class="ps-faculty-info">
-                    <h4 class="ps-faculty-name">Mrs. Jyoti S. Shinde</h4>
-                    <span class="ps-faculty-role">Asst. Teacher</span>
-                </div>
-            </div>
-            <div class="ps-faculty-card reveal delay-100">
-                <div class="ps-faculty-img-box">
-                    <img src="/assets/alka-deokar.webp" alt="Mrs. Alka Ravindra Deokar" class="ps-faculty-img">
-                </div>
-                <div class="ps-faculty-info">
-                    <h4 class="ps-faculty-name">Mrs. Alka R. Deokar</h4>
-                    <span class="ps-faculty-role">Asst. Teacher</span>
-                </div>
+            <div class="view-staff-btn-wrapper">
+                <a href="faculty.html" class="view-staff-btn">
+                    View All Faculty <i class="ri-arrow-right-line"></i>
+                </a>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="staff.html" class="ps-btn-outline">
-                View All Staff <i class="ri-arrow-right-line"></i>
-            </a>
-        </div>
-    </div>
-  </section>
+    </section>
 
     <!-- 5. STATS SECTION -->
     <section class="stats-section">
@@ -1211,7 +1263,7 @@
                 <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
                     ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
                 </p>
-                <p class="last-updated">Last Updated: <span id="lastUpdated">27 Feb 2026, 09:52 AM</span></p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">27 Feb 2026, 11:00 AM</span></p>
             </div>
         </div>
     </footer>
