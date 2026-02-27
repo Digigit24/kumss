@@ -466,6 +466,8 @@
         color: var(--fern);
       }
 
+      
+
       /* ══════════ FORM SECTION ══════════ */
       .cx-body {
         background: var(--ivory);
@@ -825,6 +827,594 @@
         font-size: 1.15rem;
       }
 
+      /* ══════════════════════════════════════
+   FORM SECTION - RESPONSIVE CSS
+   Add this after your base form styles
+══════════════════════════════════════ */
+
+/* ══════════════════════════════════════
+   TABLET (991px and below)
+══════════════════════════════════════ */
+@media (max-width: 991px) {
+  .cx-body {
+    padding: 15px 0 80px;
+  }
+
+  .cx-container {
+    padding: 0 20px;
+  }
+
+  /* Stack form and info panel vertically */
+  .cx-form-section {
+    grid-template-columns: 1fr;
+    margin-bottom: 50px;
+  }
+
+  .cx-form-panel {
+    padding: 44px 36px;
+  }
+
+  .cx-form-panel h2 {
+    font-size: 2.1rem;
+  }
+
+  .cx-form-panel .cx-subtitle {
+    margin-bottom: 30px;
+  }
+
+  /* Info Panel */
+  .cx-info-panel {
+    padding: 44px 36px;
+  }
+
+  .cx-info-top > p {
+    max-width: 100%;
+  }
+
+  /* Map */
+  .cx-map-container {
+    height: 350px;
+    border-radius: 16px;
+  }
+
+  .cx-map-tag {
+    bottom: 16px;
+    left: 16px;
+  }
+}
+
+/* ══════════════════════════════════════
+   MOBILE (768px and below)
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .cx-body {
+    padding: 10px 0 60px;
+  }
+
+  .cx-container {
+    padding: 0 16px;
+  }
+
+  .cx-form-section {
+    border-radius: 16px;
+    margin-bottom: 40px;
+  }
+
+  /* ─── Form Panel ─── */
+  .cx-form-panel {
+    padding: 28px 20px;
+  }
+
+  .cx-form-panel h2 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+  }
+
+  .cx-form-panel .cx-subtitle {
+    font-size: 0.88rem;
+    margin-bottom: 24px;
+  }
+
+  /* ─── Form Rows - Stack inputs vertically ─── */
+  .cx-form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .cx-form-row.full {
+    grid-template-columns: 1fr;
+  }
+
+  /* ─── Input Groups ─── */
+  .cx-input-group {
+    gap: 5px;
+  }
+
+  .cx-input-group label {
+    font-size: 0.72rem;
+    letter-spacing: 0.6px;
+  }
+
+  .cx-input-group input,
+  .cx-input-group textarea {
+    padding: 14px 14px;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    border-radius: 10px;
+  }
+
+  .cx-input-group input::placeholder,
+  .cx-input-group textarea::placeholder {
+    font-size: 0.88rem;
+  }
+
+  .cx-input-group textarea {
+    min-height: 120px;
+  }
+
+  /* ─── Submit Button ─── */
+  .cx-send-btn {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    margin-top: 20px;
+    gap: 8px;
+  }
+
+  .cx-send-btn i {
+    font-size: 1rem;
+  }
+
+  /* ─── Form Feedback ─── */
+  .cx-form-feedback {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    margin-top: 14px;
+  }
+
+  .cx-form-feedback i {
+    font-size: 1.1rem;
+  }
+
+  /* ─── Spinner ─── */
+  .cx-spinner {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+  }
+
+  /* ─── Info Panel ─── */
+  .cx-info-panel {
+    padding: 28px 20px;
+  }
+
+  /* Hide decorative circles on mobile */
+  .cx-info-panel::before,
+  .cx-info-panel::after {
+    display: none;
+  }
+
+  .cx-info-top h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .cx-info-top > p {
+    font-size: 0.88rem;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* ─── Stats Row ─── */
+  .cx-stats-row {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .cx-stat-box {
+    padding: 16px 10px;
+    border-radius: 12px;
+  }
+
+  .cx-stat-box .val {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+  }
+
+  .cx-stat-box .lbl {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+
+  /* ─── Social Row ─── */
+  .cx-social-row {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .cx-soc {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+  }
+
+  /* ─── Map Container ─── */
+  .cx-map-container {
+    height: 280px;
+    border-radius: 14px;
+  }
+
+  .cx-map-tag {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .cx-map-tag i {
+    font-size: 1rem;
+  }
+}
+
+/* ══════════════════════════════════════
+   SMALL MOBILE (576px and below)
+══════════════════════════════════════ */
+@media (max-width: 576px) {
+  .cx-body {
+    padding: 5px 0 50px;
+  }
+
+  .cx-container {
+    padding: 0 12px;
+  }
+
+  .cx-form-section {
+    border-radius: 14px;
+    margin-bottom: 32px;
+  }
+
+  /* ─── Form Panel ─── */
+  .cx-form-panel {
+    padding: 24px 16px;
+  }
+
+  .cx-form-panel h2 {
+    font-size: 1.5rem;
+  }
+
+  .cx-form-panel .cx-subtitle {
+    font-size: 0.82rem;
+    margin-bottom: 20px;
+  }
+
+  /* ─── Form Rows ─── */
+  .cx-form-row {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .cx-input-group label {
+    font-size: 0.68rem;
+  }
+
+  .cx-input-group input,
+  .cx-input-group textarea {
+    padding: 12px 12px;
+    border-radius: 8px;
+  }
+
+  .cx-input-group textarea {
+    min-height: 100px;
+  }
+
+  /* ─── Submit Button ─── */
+  .cx-send-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    margin-top: 16px;
+  }
+
+  /* ─── Form Feedback ─── */
+  .cx-form-feedback {
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  /* ─── Info Panel ─── */
+  .cx-info-panel {
+    padding: 24px 16px;
+  }
+
+  .cx-info-top h3 {
+    font-size: 1.35rem;
+  }
+
+  .cx-info-top > p {
+    font-size: 0.82rem;
+    margin-bottom: 20px;
+  }
+
+  /* ─── Stats Row ─── */
+  .cx-stats-row {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .cx-stat-box {
+    padding: 14px 8px;
+    border-radius: 10px;
+  }
+
+  .cx-stat-box .val {
+    font-size: 1.3rem;
+  }
+
+  .cx-stat-box .lbl {
+    font-size: 0.55rem;
+  }
+
+  /* ─── Social Row ─── */
+  .cx-soc {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  /* ─── Map ─── */
+  .cx-map-container {
+    height: 220px;
+    border-radius: 12px;
+  }
+
+  .cx-map-tag {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+/* ══════════════════════════════════════
+   EXTRA SMALL MOBILE (380px and below)
+══════════════════════════════════════ */
+@media (max-width: 380px) {
+  .cx-container {
+    padding: 0 10px;
+  }
+
+  .cx-form-panel {
+    padding: 20px 14px;
+  }
+
+  .cx-form-panel h2 {
+    font-size: 1.35rem;
+  }
+
+  .cx-form-panel .cx-subtitle {
+    font-size: 0.78rem;
+  }
+
+  .cx-input-group input,
+  .cx-input-group textarea {
+    padding: 10px 10px;
+    font-size: 15px;
+  }
+
+  .cx-send-btn {
+    padding: 11px 16px;
+    font-size: 0.85rem;
+  }
+
+  .cx-info-panel {
+    padding: 20px 14px;
+  }
+
+  .cx-info-top h3 {
+    font-size: 1.2rem;
+  }
+
+  .cx-info-top > p {
+    font-size: 0.78rem;
+  }
+
+  .cx-stat-box {
+    padding: 12px 6px;
+  }
+
+  .cx-stat-box .val {
+    font-size: 1.15rem;
+  }
+
+  .cx-stat-box .lbl {
+    font-size: 0.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .cx-soc {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+
+  .cx-map-container {
+    height: 180px;
+  }
+
+  .cx-map-tag {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+    gap: 6px;
+  }
+
+  .cx-map-tag i {
+    font-size: 0.9rem;
+  }
+}
+
+/* ══════════════════════════════════════
+   TOUCH DEVICE OPTIMIZATIONS
+══════════════════════════════════════ */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .cx-send-btn:hover {
+    transform: none;
+    box-shadow: none;
+    background: var(--deep);
+  }
+
+  .cx-stat-box:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .cx-soc:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Add active states instead */
+  .cx-send-btn:active {
+    background: var(--olive);
+    transform: scale(0.98);
+  }
+
+  .cx-soc:active {
+    background: var(--clay);
+    border-color: var(--clay);
+    color: #fff;
+  }
+
+  /* Better tap targets - minimum 48px */
+  .cx-input-group input,
+  .cx-input-group textarea {
+    min-height: 48px;
+  }
+
+  .cx-send-btn {
+    min-height: 50px;
+  }
+
+  .cx-soc {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* ══════════════════════════════════════
+   iOS SPECIFIC FIXES
+══════════════════════════════════════ */
+@supports (-webkit-touch-callout: none) {
+  /* Fix iOS input zoom - must be 16px or larger */
+  .cx-input-group input,
+  .cx-input-group textarea {
+    font-size: 16px;
+  }
+
+  /* Fix iOS button styling */
+  .cx-send-btn {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Disable textarea resize on iOS */
+  .cx-input-group textarea {
+    resize: none;
+  }
+
+  /* Fix input styling */
+  .cx-input-group input {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+
+/* ══════════════════════════════════════
+   LANDSCAPE MOBILE FIXES
+══════════════════════════════════════ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .cx-body {
+    padding: 10px 0 40px;
+  }
+
+  .cx-form-section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cx-form-panel {
+    flex: 1.2;
+    padding: 24px 20px;
+  }
+
+  .cx-info-panel {
+    flex: 1;
+    padding: 24px 20px;
+  }
+
+  .cx-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cx-stats-row {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .cx-stat-box {
+    padding: 10px 6px;
+  }
+
+  .cx-stat-box .val {
+    font-size: 1.1rem;
+  }
+
+  .cx-stat-box .lbl {
+    font-size: 0.5rem;
+  }
+
+  .cx-map-container {
+    height: 180px;
+  }
+}
+
+/* ══════════════════════════════════════
+   REDUCED MOTION PREFERENCE
+══════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .cx-send-btn,
+  .cx-soc,
+  .cx-stat-box,
+  .cx-input-group input,
+  .cx-input-group textarea {
+    transition: none;
+  }
+
+  .cx-spinner {
+    animation: none;
+  }
+
+  @keyframes feedbackSlide {
+    from {
+      opacity: 1;
+      transform: none;
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
       /* ===========================
        NAVBAR STYLES (Synchronized)
        =========================== */
@@ -1015,6 +1605,11 @@
           text-align: center;
           gap: 15px;
         }
+        .cx-strip-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+      }
       }
 
       /* Logo Styling */
@@ -1795,7 +2390,7 @@
             Maharashtra
           </p>
           <p class="last-updated">
-            Last Updated: <span id="lastUpdated">27 Feb 2026, 11:31 AM</span>
+            Last Updated: <span id="lastUpdated">27 Feb 2026, 11:56 AM</span>
           </p>
         </div>
       </div>
