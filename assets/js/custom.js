@@ -219,36 +219,5 @@
     });
   });
 
-  // Auto Last Updated Date
-  document.addEventListener("DOMContentLoaded", () => {
-    const lastUpdatedEl = document.getElementById("lastUpdated");
-    if (lastUpdatedEl && document.lastModified) {
-      const lastMod = new Date(document.lastModified);
-      const day = lastMod.getDate().toString().padStart(2, "0");
-      const monthNames = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ];
-      const month = monthNames[lastMod.getMonth()];
-      const year = lastMod.getFullYear();
-      let hours = lastMod.getHours();
-      const minutes = lastMod.getMinutes().toString().padStart(2, "0");
-      const ampm = hours >= 12 ? "PM" : "AM";
-      hours = hours % 12;
-      hours = hours ? hours : 12;
-      hours = hours.toString().padStart(2, "0");
-      const formatted = `${day} ${month} ${year}, ${hours}:${minutes} ${ampm}`;
-      lastUpdatedEl.textContent = formatted;
-    }
-  });
+
 })();
