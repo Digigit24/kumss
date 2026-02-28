@@ -149,12 +149,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 // Redundant utilities removed as they are handled by custom.js
 
-
-
-
-
-
-
-
-
-
+// Dynamically update Last Updated element if present
+document.addEventListener('DOMContentLoaded', function () {
+  const lastUpdatedEl = document.getElementById("lastUpdated");
+  if (lastUpdatedEl) {
+    const d = new Date(document.lastModified);
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let hours = d.getHours();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    const minutes = d.getMinutes().toString().padStart(2, '0');
+    // Format: 27 Feb 2026, 05:26 PM
+    lastUpdatedEl.textContent = `${d.getDate().toString().padStart(2, '0')} ${months[d.getMonth()]} ${d.getFullYear()}, ${hours.toString().padStart(2, '0')}:${minutes} ${ampm}`;
+  }
+});
