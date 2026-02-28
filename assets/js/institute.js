@@ -153,8 +153,10 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   const lastUpdatedEl = document.getElementById("lastUpdated");
   if (lastUpdatedEl) {
-    // Try to fetch the latest push/commit time from the GitHub repo
-    fetch('https://api.github.com/repos/Digigit24/kumss/commits/main')
+    // Try to fetch the latest push/commit time from the GitHub repo, circumventing browser cache
+    fetch(`https://api.github.com/repos/Digigit24/kumss/commits/main?_t=${new Date().getTime()}`, {
+      cache: "no-store"
+    })
       .then(response => response.json())
       .then(data => {
         let d;
