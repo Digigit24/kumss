@@ -153,7 +153,25 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   const lastUpdatedEl = document.getElementById("lastUpdated");
   if (lastUpdatedEl) {
-    const d = new Date(document.lastModified);
+    // Try to fetch the latest push/commit time from the GitHub repo
+    fetch('https://api.github.com/repos/Digigit24/kumss/commits/main')
+      .then(response => response.json())
+      .then(data => {
+        let d;
+        if (data && data.commit && data.commit.committer && data.commit.committer.date) {
+          d = new Date(data.commit.committer.date);
+        } else {
+          d = new Date(document.lastModified);
+        }
+        formatAndSetDate(d, lastUpdatedEl);
+      })
+      .catch((error) => {
+        console.error('Error fetching last commit:', error);
+        formatAndSetDate(new Date(document.lastModified), lastUpdatedEl);
+      });
+  }
+
+  function formatAndSetDate(d, el) {
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let hours = d.getHours();
     const ampm = hours >= 12 ? 'PM' : 'AM';
@@ -161,6 +179,6 @@ document.addEventListener('DOMContentLoaded', function () {
     hours = hours ? hours : 12;
     const minutes = d.getMinutes().toString().padStart(2, '0');
     // Format: 27 Feb 2026, 05:26 PM
-    lastUpdatedEl.textContent = `${d.getDate().toString().padStart(2, '0')} ${months[d.getMonth()]} ${d.getFullYear()}, ${hours.toString().padStart(2, '0')}:${minutes} ${ampm}`;
+    el.textContent = `${d.getDate().toString().padStart(2, '0')} ${months[d.getMonth()]} ${d.getFullYear()}, ${hours.toString().padStart(2, '0')}:${minutes} ${ampm}`;
   }
 });
