@@ -166,8 +166,31 @@
       color: #fff;
     }
 
-    .ne-gallery-item:hover .ne-gallery-overlay {
+    .ne-gallery-item:hover .ne-gallery-overlay,
+    .ne-featured-image:hover .ne-gallery-overlay {
       opacity: 1;
+    }
+
+    .ne-featured-image {
+      position: relative;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(10, 41, 108, 0.08);
+      background: #e2e8f0;
+      cursor: pointer;
+    }
+
+    .ne-featured-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+    }
+
+    .ne-featured-image:hover img {
+      transform: scale(1.03);
     }
 
     .ne-lightbox {
@@ -248,7 +271,8 @@
 
         <ul class="gm-links" id="navLinks">
           <li>
-            <a class="gm-link" href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Home</a>
+            <a class="gm-link"
+              href="/shardabai-pawar-kala-mahavidhyalaya/shardabai-pawar-kala-mahavidhyalaya.html">Home</a>
           </li>
           <li><a class="gm-link" href="./about.html">About</a></li>
           <li><a class="gm-link" href="./academics.html">Academics</a></li>
@@ -292,7 +316,7 @@
               </li>
             </ul>
           </li>
-          <li><a class="gm-link active" href="./news-events.html" style="">News & Events</a></li>
+          <li><a class="gm-link active" href="./news-events.html">News & Events</a></li>
 
           <li><a class="gm-link" href="./staff.html">Staff</a></li>
           <li><a class="gm-link" href="./gallery.html">Gallery</a></li>
@@ -321,23 +345,38 @@
         <h2>Highlights & Moments</h2>
         <p>A glimpse into the events, activities, and everyday life at Shardabai Pawar Kala Mahavidyalaya.</p>
       </div>
+
+      <div class="ne-featured-image">
+        <img src="/assets/kala-vidlay.png" alt="Shardabai Pawar Kala Mahavidyalaya Event" loading="lazy">
+        <div class="ne-gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+      </div>
+
       <div class="ne-gallery-grid">
-        <div class="ne-gallery-item"><img src="/assets/shardabai-1.jpeg" alt="Shardabai Pawar Kala Mahavidyalaya Event"
+        <div class="ne-gallery-item"><img src="/assets/img/3.jpeg" alt="Shardabai Pawar Kala Mahavidyalaya Event"
             loading="lazy">
           <div class="ne-gallery-overlay"><i class="ri-zoom-in-line"></i></div>
         </div>
-        <div class="ne-gallery-item"><img src="/assets/shardabai-2.jpeg" alt="Shardabai Pawar Kala Mahavidyalaya Event"
+        <div class="ne-gallery-item"><img src="/assets/img/4.jpeg" alt="Shardabai Pawar Kala Mahavidyalaya Event"
             loading="lazy">
           <div class="ne-gallery-overlay"><i class="ri-zoom-in-line"></i></div>
         </div>
-       
-          <div class="ne-gallery-overlay"><i class="ri-zoom-in-line"></i></div>
-        </div>
-        <div class="ne-gallery-item"><img src="/assets/kala-vidlay.png" alt="Shardabai Pawar Kala Mahavidyalaya Event"
+        <div class="ne-gallery-item"><img src="/assets/img/5.jpeg" alt="Shardabai Pawar Kala Mahavidyalaya Event"
             loading="lazy">
           <div class="ne-gallery-overlay"><i class="ri-zoom-in-line"></i></div>
         </div>
-        <div class="ne-gallery-item"><img src="/assets/kala.png" alt="Shardabai Pawar Kala Mahavidyalaya Event"
+        <div class="ne-gallery-item"><img src="/assets/img/6.jpeg" alt="Shardabai Pawar Kala Mahavidyalaya Event"
+            loading="lazy">
+          <div class="ne-gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+        <div class="ne-gallery-item"><img src="/assets/img/7.jpeg" alt="Shardabai Pawar Kala Mahavidyalaya Event"
+            loading="lazy">
+          <div class="ne-gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+        <div class="ne-gallery-item"><img src="/assets/img/8.jpeg" alt="Shardabai Pawar Kala Mahavidyalaya Event"
+            loading="lazy">
+          <div class="ne-gallery-overlay"><i class="ri-zoom-in-line"></i></div>
+        </div>
+        <div class="ne-gallery-item"><img src="/assets/img/9.jpeg" alt="Shardabai Pawar Kala Mahavidyalaya Event"
             loading="lazy">
           <div class="ne-gallery-overlay"><i class="ri-zoom-in-line"></i></div>
         </div>
@@ -484,7 +523,7 @@
   <script src="/assets/js/institute.js"></script>
   <script>
     // Lightbox
-    document.querySelectorAll('.ne-gallery-item').forEach(item => {
+    document.querySelectorAll('.ne-gallery-item, .ne-featured-image').forEach(item => {
       item.addEventListener('click', () => {
         const img = item.querySelector('img');
         document.getElementById('lightboxImg').src = img.src;
