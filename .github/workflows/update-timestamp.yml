@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update timestamps in HTML files
         run: |
@@ -28,5 +30,5 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "chore: Update timestamps [skip-ci]"
-            git push
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
           fi
