@@ -1,0 +1,32 @@
+name: Update Timestamps
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  update-timestamps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update timestamps in HTML files
+        run: |
+          TIMESTAMP=$(date '+%d %b %Y, %I:%M %p')
+          find . -name "*.html" -type f -exec grep -l 'id="lastUpdated"' {} \; | while read file; do
+            sed -i "s/<span id=\"lastUpdated\">[^<]*<\/span>/<span id=\"lastUpdated\">$TIMESTAMP<\/span>/g" "$file"
+          done
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: Update timestamps [skip-ci]"
+            git push
+          fi
