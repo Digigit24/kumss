@@ -1,7 +1,0 @@
-﻿Has footer: kumss-private-iti-Karhati
-Has footer: gurukul-english-medium-school
-Has footer: new-english-school-dhakale
-Has footer: primary-school-karhati
-Has footer: shardabai-pawar-kala-Mahavidyalaya
-Has footer: vasatigruh-junior-college
-Has footer: vasatigruh-vidyalay-karhati
