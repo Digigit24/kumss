@@ -11,58 +11,36 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- External CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
 
-    <!-- GSAP & ScrollTrigger -->
-
-
-
     <style>
-        /* --- Page Specific Styles --- */
-
         :root {
-            --primary-color: #0f8042;
-            --text-dark: #1a1a1a;
-            --text-light: #666;
+            --primary: #1a3a6b;
+            --primary-light: #2450a0;
+            --primary-pale: #eaf0fb;
+            --accent: #e87722;
+            --accent-light: #f59240;
+            --accent-pale: #fff3e8;
+            --text-dark: #111827;
+            --text-light: #6b7280;
+            --bg: #f5f6f9;
+            --white: #ffffff;
+            --border: rgba(26, 58, 107, 0.1);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9;
+            background-color: var(--bg);
             margin: 0;
             padding: 0;
         }
 
-        /* Page Hero Section */
-        .page-hero {
-            background: linear-gradient( 135deg, rgba(35, 63, 146, 0.7), rgba(15, 23, 42, 0.85));
-            background-size: cover;
-            background-position: center top;
-            padding: 160px 0 80px;
-            text-align: center;
-            color: white;
-            /* No margin bottom here so it flows into the gradient section */
-        }
-
-        .page-hero h1 {
-            font-family: 'Gantari', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .page-hero p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+        .gm-header {
+            background: white !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         .container {
@@ -70,84 +48,141 @@
             margin: 0 auto;
         }
 
-        /* --- Glassmorphism Section Styling --- */
+        /* ── HERO ── */
+        .page-hero {
+            background: linear-gradient(135deg, #0d2245 0%, #1a3a6b 55%, #1e4580 100%);
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
 
-        .perfect-faculty-section {
-            /* Soft Abstract Background to make glass visible */
-            background-color: #f0fdf4;
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
             background-image:
-                radial-gradient(at 0% 0%, hsla(145, 63%, 93%, 1) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, hsla(145, 63%, 96%, 1) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, hsla(145, 63%, 93%, 1) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, hsla(145, 63%, 96%, 1) 0px, transparent 50%);
-            padding-top: 80px;
-            padding-bottom: 80px;
+                radial-gradient(circle at 15% 60%, rgba(232,119,34,0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 20%, rgba(232,119,34,0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .hero-content { position: relative; z-index: 1; }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(232,119,34,0.15);
+            border: 1px solid rgba(232,119,34,0.35);
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 50px;
+            margin-bottom: 22px;
+        }
+
+        .page-hero h1 {
+            font-family: 'Gantari', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            margin: 0 0 14px;
+        }
+
+        .page-hero p {
+            font-size: 1rem;
+            opacity: 0.7;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        /* ── SECTION ── */
+        .faculty-section {
+            padding: 80px 0 100px;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 56px;
         }
 
         .section-subtitle {
-            color: var(--primary-color);
-            font-weight: 600;
-            letter-spacing: 1px;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            display: block;
-            margin-bottom: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle::before,
+        .section-subtitle::after {
+            content: '';
+            width: 28px;
+            height: 1.5px;
+            background: var(--accent);
+            opacity: 0.5;
         }
 
         .section-title {
             font-family: 'Gantari', sans-serif;
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
             color: var(--text-dark);
-            margin: 0 0 15px;
+            font-weight: 800;
+            margin: 0 0 8px;
         }
 
-        /* Grid Layout */
+        .section-desc {
+            color: var(--text-light);
+            font-size: 0.88rem;
+        }
+
+        /* ── GRID ── */
         .faculty-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+            gap: 24px;
         }
 
-        /* --- Glass Card Styling --- */
+        /* ── CARD ── */
         .faculty-card {
-            /* Glass Effect properties */
-            background: rgba(255, 255, 255, 0.45);
-            /* Semi-transparent white */
-            backdrop-filter: blur(12px);
-            /* The Frost Effect */
-            -webkit-backdrop-filter: blur(12px);
-            /* Safari Support */
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            /* Subtle border highlight */
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-            /* Soft colored shadow */
-
+            background: var(--white);
             border-radius: 16px;
             overflow: hidden;
-            transition: all 0.4s ease;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 16px rgba(0,0,0,0.04);
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
         .faculty-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.65);
-            /* More opaque on hover */
-            box-shadow: 0 15px 40px 0 rgba(15, 128, 66, 0.15);
-            /* Greenish glow shadow */
-            border-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(26, 58, 107, 0.12);
+            border-color: rgba(26, 58, 107, 0.22);
         }
 
         .card-image {
-            height: 300px;
+            height: 290px;
             overflow: hidden;
-            position: relative;
-            background: rgba(0, 0, 0, 0.03);
-            /* Slight tint behind image */
+            background: var(--primary-pale);
         }
 
         .card-image img {
@@ -155,73 +190,76 @@
             height: 100%;
             object-fit: cover;
             object-position: top center;
-            transition: transform 0.6s ease;
+            transition: transform 0.5s ease;
+            display: block;
         }
 
         .faculty-card:hover .card-image img {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
 
+        .card-accent {
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: height 0.3s ease;
+        }
+
+        .faculty-card:hover .card-accent { height: 4px; }
+
         .card-content {
-            padding: 20px;
+            padding: 20px 18px 22px;
             text-align: center;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            gap: 5px;
+            gap: 4px;
         }
 
         .faculty-name {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin: 0;
             font-family: 'Gantari', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0;
             text-transform: uppercase;
-            line-height: 1.4;
+            letter-spacing: 0.3px;
+            line-height: 1.35;
         }
 
         .faculty-designation {
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin: 5px 0;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent);
             text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin: 2px 0 6px;
+        }
+
+        .faculty-divider {
+            width: 30px;
+            height: 2px;
+            background: var(--accent-pale);
+            border-radius: 2px;
+            margin: 4px auto 8px;
+            transition: width 0.3s ease, background 0.3s ease;
+        }
+
+        .faculty-card:hover .faculty-divider {
+            width: 50px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
 
         .faculty-qualification {
             color: var(--text-light);
-            font-size: 0.75rem;
+            font-size: 0.71rem;
             font-weight: 500;
-            margin-top: auto;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            background: rgba(15, 128, 66, 0.08);
-            /* Tiny tag bg */
-            padding: 4px 8px;
-            border-radius: 6px;
+            background: var(--primary-pale);
+            padding: 5px 12px;
+            border-radius: 50px;
             align-self: center;
-        }
-
-        /* Navbar force white bg */
-        .gm-header {
-            background: white !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        @media (max-width: 768px) {
-            .page-hero {
-                padding: 120px 0 60px;
-            }
-
-            .page-hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .faculty-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            }
+            margin-top: 4px;
         }
 
         .ggm-btn {
@@ -232,318 +270,35 @@
             border-radius: 999px;
             text-decoration: none;
             font-weight: 700;
-            color: rgba(0, 0, 0, 0.785);
+            color: rgba(0,0,0,0.785);
             background-color: var(--primaryColor);
         }
 
-        .ggm-btn:hover {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
+        .ggm-btn:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
         @media (max-width: 768px) {
-            a.ggm-btn {
-                display: none !important;
-                visibility: hidden !important;
-                opacity: 0 !important;
-                pointer-events: none !important;
-            }
+            a.ggm-btn { display: none !important; }
+            .faculty-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+            .card-image { height: 240px; }
         }
 
-        .mobile-nav-toggle {
-            display: none;
-            /* Hidden by default on desktop */
-            background: #f37a20;
-            border: none;
-            cursor: pointer;
-            padding: 12px;
-            z-index: 1000;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .mobile-nav-toggle:hover {
-            transform: scale(1.1);
-        }
-
-        .mobile-nav-toggle:focus {
-            outline: 2px solid #337425;
-            outline-offset: 2px;
-        }
-
-        .mobile-nav-toggle:active {
-            transform: scale(0.95);
-        }
-
-        .toggle-line {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background-color: #fff;
-            margin: 4px 0;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-
-        /* Active/Open state */
-        .mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(1) {
-            transform: translateY(6px) rotate(45deg);
-        }
-
-        .mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(2) {
-            opacity: 0;
-            transform: translateX(-10px);
-        }
-
-        .mobile-nav-toggle[aria-expanded="true"] .toggle-line:nth-child(3) {
-            transform: translateY(-6px) rotate(-45deg);
-        }
-
-        /* Dark theme variation */
-        .mobile-nav-toggle.dark-theme .toggle-line {
-            background-color: #fff;
-        }
-
-        /* Animated variation */
-        .mobile-nav-toggle.animated .toggle-line {
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-        }
-
-        /* Media query for mobile display */
-        @media (max-width: 768px) {
-            .mobile-nav-toggle {
-                display: block;
-            }
-        }
-
-        /* Navigation Links Container */
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Navigation Items */
-        .nav-item {
-            position: relative;
-        }
-
-        /* Navigation Links */
-        .nav-link {
-            color: #000;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover,
-        .nav-link:focus {
-            color: #f37a20;
-        }
-
-        /* Dropdown Button */
-        .nav-dropbtn {
-            background: none;
-            border: none;
-            font-weight: 500;
-            font: inherit;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0;
-        }
-
-        .nav-dropbtn .nav-chevron {
-            transition: transform 0.3s ease;
-        }
-
-        .nav-dropdown[data-dropdown-open] .nav-chevron {
-            transform: rotate(180deg);
-        }
-
-        /* Submenu */
-        .nav-submenu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            min-width: 220px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            list-style: none;
-            margin: 0;
-            padding: 0.5rem 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-
-        .nav-submenu::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: 20px;
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid white;
-        }
-
-        .nav-dropdown[data-dropdown-open] .nav-submenu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .nav-submenu li {
-            margin: 0;
-        }
-
-        .nav-submenu a {
-            display: block;
-            padding: 0.75rem 1.5rem;
-            color: #1a1a1a;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .nav-submenu a:hover,
-        .nav-submenu a:focus {
-            background-color: #f8f9fa;
-            color: #f37a20;
-        }
-
-        /* Call to Action Button */
-        .nav-cta {
-            margin-left: 1rem;
-        }
-
-        .nav-button {
-            background: #007bff;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-button:hover {
-            background: #0056b3;
-        }
-
-        /* MOBILE STYLES */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 280px;
-                height: 100vh;
-                background: #eee;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 80px 20px 40px;
-                transform: translateX(100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-                z-index: 999;
-                overflow-y: auto;
-            }
-
-            .nav-links.active {
-                transform: translateX(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .nav-item,
-            .nav-cta {
-                width: 100%;
-                margin: 0;
-            }
-
-            .nav-link,
-            .nav-dropbtn {
-                width: 100%;
-                text-align: left;
-                padding: 1rem 0;
-                border-bottom: 1px solid #eee;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            /* Mobile Submenu Styles */
-            .nav-submenu {
-                position: static;
-                width: 100%;
-                max-height: 0;
-                overflow: hidden;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                background: #f8f9fa;
-                border-radius: 0;
-                padding: 0;
-                transition: max-height 0.3s ease;
-            }
-
-            .nav-submenu::before {
-                display: none;
-            }
-
-            .nav-dropdown[data-dropdown-open] .nav-submenu {
-                max-height: 500px;
-                padding: 0.5rem 0;
-                margin-top: 0.5rem;
-            }
-
-            .nav-submenu a {
-                padding: 0.75rem 1rem 0.75rem 2rem;
-                border-bottom: 1px solid #eee;
-            }
-
-            .nav-submenu li:last-child a {
-                border-bottom: none;
-            }
-
-            .nav-cta {
-                margin-top: auto;
-                padding-top: 2rem;
-            }
-
-            .nav-button {
-                display: block;
-                text-align: center;
-                width: 100%;
-            }
+        @media (max-width: 480px) {
+            .faculty-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .card-image { height: 200px; }
+            .card-content { padding: 14px 12px 16px; }
+            .faculty-name { font-size: 0.82rem; }
         }
     </style>
 </head>
 
 <body>
 
-
-
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-    <!-- Mobile overlay (added) -->
     <div class="gm-overlay" id="gmOverlay" aria-hidden="true"></div>
     <a href="/" class="back-to-main-btn" title="Back to Main Website">
         <i class="ri-home-4-line"></i>
     </a>
+
     <!-- Header -->
     <header class="gm-header" id="header">
         <div class="gm-container">
@@ -551,47 +306,29 @@
                 <a href="/index.html" class="gm-logo">
                     <img src="/assets/kumss-logo.webp" alt="KUMSS Logo" class="gm-logo-img">
                 </a>
-                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
-                    aria-controls="navLinks" aria-expanded="false">
-                    <span class="gm-burger-line"></span><span class="gm-burger-line"></span><span
-                        class="gm-burger-line"></span>
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span><span class="gm-burger-line"></span><span class="gm-burger-line"></span>
                 </button>
                 <ul class="gm-links" id="navLinks">
                     <li><a class="gm-link" href="./gurukul-english-medium-school.html">Home</a></li>
                     <li><a class="gm-link" href="./about.html">About</a></li>
                     <li><a class="gm-link" href="./admissions.html">Admissions</a></li>
                     <li class="gm-item gm-dropdown" data-dropdown>
-                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
-                            aria-controls="institutesMenu">
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="institutesMenu">
                             Our Educational Institutes
                             <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
                         </button>
-
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
-                            <li role="none"><a role="menuitem"
-                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
-                                    Vidyalay Karhati</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
-                                    School Dhakale</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/primary-school-karhati/primary-school-karhati.html">Primary School Karhati
-                                    karhati</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
-                                    Karhati</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
-                                    English Medium School</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
-                                    Pawar Kala Mahavidyalaya</a></li>
-                            <li role="none"><a role="menuitem"
-                                    href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh
-                                    Junior College</a></li>
+                            <li role="none"><a role="menuitem" href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem" href="/primary-school-karhati/primary-school-karhati.html">Primary School Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
+                            <li role="none"><a role="menuitem" href="/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai Pawar Kala Mahavidyalaya</a></li>
+                            <li role="none"><a role="menuitem" href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior College</a></li>
                         </ul>
                     </li>
-                    <li><a class="gm-link" href="./news-events.html">News & Events</a></li>
+                    <li><a class="gm-link" href="./news-events.html">News &amp; Events</a></li>
                     <li><a class="gm-link active" href="./staff.html">Staff</a></li>
                     <li><a class="gm-link" href="./gallery.html">Gallery</a></li>
                     <li><a class="gm-link" href="./student-rulebook.html">Rulebook</a></li>
@@ -601,225 +338,240 @@
         </div>
     </header>
 
-
     <!-- Hero -->
     <section class="page-hero">
-        <div class="container">
+        <div class="hero-content">
+            <span class="hero-tag">Gurukul English Medium School</span>
             <h1>Our Dedicated Staff</h1>
-            <p>Meet the passionate educators and support staff who make learning possible at Gurukul English Medium
-                School.</p>
+            <p>Meet the passionate educators and support staff who make learning possible at Gurukul English Medium School.</p>
         </div>
     </section>
 
-    <!-- Faculty Grid (Glassmorphism Effect) -->
-    <section class="perfect-faculty-section">
+    <!-- Faculty Grid -->
+    <section class="faculty-section">
         <div class="container">
             <div class="section-header">
                 <span class="section-subtitle">The Team</span>
-                <h2 class="section-title">Teaching & Non-Teaching Staff</h2>
+                <h2 class="section-title">Teaching &amp; Non-Teaching Staff</h2>
+                <p class="section-desc">Dedicated professionals committed to excellence in education</p>
             </div>
 
             <div class="faculty-grid">
 
                 <!-- 1 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/supriya-aherkar-principal.webp" alt="Mrs. Supriya Aherkar"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/supriya-aherkar-principal.webp" alt="Mrs. Supriya Aherkar" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Supriya Aherkar</h3>
                         <p class="faculty-designation">Principal</p>
-                        <p class="faculty-qualification">Msc.B.Ed</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">Msc. B.Ed</p>
                     </div>
                 </div>
 
                 <!-- 2 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/ashwini-khomane.webp" alt="Mrs. Ashwini Khomane"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/ashwini-khomane.webp" alt="Mrs. Ashwini Khomane" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Ashwini Khomane</h3>
                         <p class="faculty-designation">Teacher</p>
+                        <div class="faculty-divider"></div>
                         <p class="faculty-qualification">M.A.B.Ed (Eng) MBA (HR)</p>
                     </div>
                 </div>
 
                 <!-- 3 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/asmita-wabale.webp" alt="Mrs. Asmita Wabale"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/asmita-wabale.webp" alt="Mrs. Asmita Wabale" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Asmita Wabale</h3>
                         <p class="faculty-designation">Teacher</p>
+                        <div class="faculty-divider"></div>
                         <p class="faculty-qualification">M.A. B.Ed.</p>
                     </div>
                 </div>
 
                 <!-- 4 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/bhagyashri-bhapkar.webp" alt="Mrs. Bhagyshri Bhapkar"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/bhagyashri-bhapkar.webp" alt="Mrs. Bhagyshri Bhapkar" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Bhagyshri Bhapkar</h3>
                         <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">Bsc Micro.DMLT</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">Bsc Micro. DMLT</p>
                     </div>
                 </div>
 
                 <!-- 5 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/chaya-jadhav.webp" alt="Mrs. Chaya Jadhav" loading="lazy"
-                            decoding="async"></div>
+                    <div class="card-image"><img src="/assets/chaya-jadhav.webp" alt="Mrs. Chaya Jadhav" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Chaya Jadhav</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">D.ed. BA</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">D.Ed. BA</p>
                     </div>
                 </div>
 
                 <!-- 6 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/komal-chandgude_1.webp" alt="Mrs. Komal Chandgude"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/komal-chandgude_1.webp" alt="Mrs. Komal Chandgude" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Komal Chandgude</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
+                        <div class="faculty-divider"></div>
                         <p class="faculty-qualification">B.C.S, B.Ed (Appear)</p>
                     </div>
                 </div>
 
                 <!-- 7 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/vidya-panasare.webp" alt="Mrs. Vidya Pansare"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/vidya-panasare.webp" alt="Mrs. Vidya Pansare" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Vidya Pansare</h3>
                         <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">MA, Mon.TT</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">MA, Mon. TT</p>
                     </div>
                 </div>
 
                 <!-- 8 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/lina-jarad.webp" alt="Mrs. Lina Jarad" loading="lazy"
-                            decoding="async"></div>
+                    <div class="card-image"><img src="/assets/lina-jarad.webp" alt="Mrs. Lina Jarad" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Lina Jarad</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">M.A.B.Ed. Mh-SE</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">M.A. B.Ed. Mh-SE</p>
                     </div>
                 </div>
 
                 <!-- 9 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/placeholder-image.webp" alt="Mrs. Pawar Shital"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/placeholder-image.webp" alt="Mrs. Pawar Shital" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Pawar Shital</h3>
                         <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B.sc (Botany)</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">B.Sc (Botany)</p>
                     </div>
                 </div>
 
                 <!-- 10 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/pooja-jagtap.webp" alt="pooja jagtap" loading="lazy"
-                            decoding="async"></div>
+                    <div class="card-image"><img src="/assets/pooja-jagtap.webp" alt="Mrs. Pooja Jagtap" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Pooja Jagtap</h3>
                         <p class="faculty-designation">Assistant Teacher</p>
-                        <p class="faculty-qualification">BA(English), D.ed</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">BA (English), D.Ed</p>
                     </div>
                 </div>
 
                 <!-- 11 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/placeholder-image.webp" alt="Mrs. Priti Londhe"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/placeholder-image.webp" alt="Mrs. Priti Londhe" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Priti Londhe</h3>
                         <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">B. Sc (Micro)</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">B.Sc (Micro)</p>
                     </div>
                 </div>
 
                 <!-- 12 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/priyanka-parkale.webp" alt="Mrs. Priyanaka Parkale"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/priyanka-parkale.webp" alt="Mrs. Priyanka Parkale" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
-                        <h3 class="faculty-name">Mrs. Priyanaka Parkale</h3>
+                        <h3 class="faculty-name">Mrs. Priyanka Parkale</h3>
                         <p class="faculty-designation">Teacher</p>
+                        <div class="faculty-divider"></div>
                         <p class="faculty-qualification">Diploma in Computer Engg.</p>
                     </div>
                 </div>
 
                 <!-- 13 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/placeholder-image.webp" alt="Miss. Rupali Kaule"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/placeholder-image.webp" alt="Miss. Rupali Kaule" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Miss. Rupali Kaule</h3>
                         <p class="faculty-designation">Teacher</p>
+                        <div class="faculty-divider"></div>
                         <p class="faculty-qualification">MSc (Organic Chemistry)</p>
                     </div>
                 </div>
 
                 <!-- 14 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/shayra-bagwan.webp" alt="Mrs. Shayara Bagwan"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/shayra-bagwan.webp" alt="Mrs. Shayara Bagwan" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Shayara Bagwan</h3>
                         <p class="faculty-designation">Care Taker</p>
+                        <div class="faculty-divider"></div>
                         <p class="faculty-qualification">10th</p>
                     </div>
                 </div>
 
                 <!-- 15 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/anita-pisal.webp" alt="Mrs. Anita Pisal" loading="lazy"
-                            decoding="async"></div>
+                    <div class="card-image"><img src="/assets/anita-pisal.webp" alt="Mrs. Anita Pisal" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Anita Pisal</h3>
                         <p class="faculty-designation">Teacher</p>
-                        <p class="faculty-qualification">MA BEd NTT Hindi with Ð¡Ð¢Ð•Ð¢</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">MA BEd NTT Hindi with CTET</p>
                     </div>
                 </div>
 
                 <!-- 16 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/swati-bhapkar.webp" alt="Mrs. Swati Bhapkar"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/swati-bhapkar.webp" alt="Mrs. Swati Bhapkar" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Swati Bhapkar</h3>
                         <p class="faculty-designation">Asst. Teacher</p>
-                        <p class="faculty-qualification">M.A.BEd, BPEd</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">M.A. BEd, BPEd</p>
                     </div>
                 </div>
 
                 <!-- 17 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/geetanjali-lonkar.webp" alt="Mrs. Geetanjali Lonkar"
-                            loading="lazy" decoding="async"></div>
+                    <div class="card-image"><img src="/assets/geetanjali-lonkar.webp" alt="Mrs. Geetanjali Lonkar" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Geetanjali Lonkar</h3>
                         <p class="faculty-designation">Care Taker</p>
-                        <p class="faculty-qualification">--</p>
+                        <div class="faculty-divider"></div>
                     </div>
                 </div>
 
                 <!-- 18 -->
                 <div class="faculty-card">
-                    <div class="card-image"><img src="/assets/aarti-makar.webp" alt="Mrs. Arti Makar" loading="lazy"
-                            decoding="async"></div>
+                    <div class="card-image"><img src="/assets/aarti-makar.webp" alt="Mrs. Arti Makar" loading="lazy" decoding="async"></div>
+                    <div class="card-accent"></div>
                     <div class="card-content">
                         <h3 class="faculty-name">Mrs. Arti Makar</h3>
                         <p class="faculty-designation">Care Taker</p>
-                        <p class="faculty-qualification">Sy Bsc</p>
+                        <div class="faculty-divider"></div>
+                        <p class="faculty-qualification">Sy BSc</p>
                     </div>
                 </div>
-
-
 
             </div>
         </div>
@@ -830,32 +582,19 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="https://kumss.org" class="logo"
-                        style="margin-bottom: 2rem; align-items: flex-start; color: var(--primaryColor); text-decoration: none;">
+                    <a href="https://kumss.org" class="logo" style="margin-bottom: 2rem; align-items: flex-start; color: var(--primaryColor); text-decoration: none;">
                         <img src="/assets/kumss-logo.webp" alt="KUMSS Logo" class="footer-logo-img">
-                        <div>
-                            <div class="logo-text">KUMSS SINCE 1951</div>
-                        </div>
+                        <div><div class="logo-text">KUMSS SINCE 1951</div></div>
                     </a>
-                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
-                        An educational society focused on overall development of students since 1951.
-                    </p>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">An educational society focused on overall development of students since 1951.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/share/183EbmmjGX/" class="social-link"
-                            aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-
-                        <a href="https://www.instagram.com/kumss_gurukul?igsh=MTh3cmlsaGVtYWlqMA==" class="social-link"
-                            aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
-
-                        <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="social-link"
-                            aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
-
+                        <a href="https://www.facebook.com/share/183EbmmjGX/" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="https://www.instagram.com/kumss_gurukul?igsh=MTh3cmlsaGVtYWlqMA==" class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h3
-                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">
-                        Quick Links</h3>
+                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Home</a></li>
                         <li><a href="/gurukul-english-medium-school/admissions.html">Admissions</a></li>
@@ -865,44 +604,24 @@
                         <li><a href="/gurukul-english-medium-school/refund-policy.html">Refund Policy</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
-                    <h3
-                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
-                        Our Institutes</h3>
+                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay,
-                                Karhati</a>
-                        </li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
-                                Dhakale</a>
-                        </li>
-                        <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a>
-                        </li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
-                        </li>
-                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
-                                Medium</a></li>
-                        <li><a href="/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
-                                Pawar Kala Mahavidyalaya</a></li>
-                        <li><a href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior
-                                College</a>
-                        </li>
+                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay, Karhati</a></li>
+                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a></li>
+                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium</a></li>
+                        <li><a href="/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai Pawar Kala Mahavidyalaya</a></li>
+                        <li><a href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior College</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
-                    <h3
-                        style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">
-                        Contact Info</h3>
+                    <h3 style="color: var(--primaryColor); margin-bottom: 1.5rem; font-weight: 700; font-size: 1.25rem;">Contact Info</h3>
                     <ul class="footer-links">
-                        <li><i class="ri-phone-line"></i> <a href="tel:+917757833496">+91 7757833496</a></li>
-                        <li><i class="ri-mail-line"></i> <a
-                                href="mailto:gemskarhati@gmail.com">gemskarhati@gmail.com</a></li>
-                        <li style="color: #000;">
-                            <i class="ri-map-pin-line"></i>
-                            A/P – Karhati, Tal – Baramati, Dist – Pune - 412204
-                        </li>
+                        <li><i class="ri-phone-line"></i><a href="tel:+917757833496">+91 7757833496</a></li>
+                        <li><i class="ri-mail-line"></i><a href="mailto:gemskarhati@gmail.com">gemskarhati@gmail.com</a></li>
+                        <li><i class="ri-map-pin-line"></i> A/P – Karhati, Tal – Baramati, Dist – Pune - 412204</li>
                     </ul>
                 </div>
             </div>
@@ -925,256 +644,76 @@
                 this.navLinks = document.getElementById('navLinks');
                 this.dropdowns = document.querySelectorAll('[data-dropdown]');
                 this.isAnimating = false;
-
                 this.init();
             }
-
             init() {
-                // Initialize menu toggle
                 this.initMenuToggle();
-
-                // Initialize dropdowns
                 this.initDropdowns();
-
-                // Handle clicks outside
                 this.handleClickOutside();
-
-                // Handle keyboard navigation
                 this.handleKeyboard();
-
-                // Handle resize
                 this.handleResize();
             }
-
             initMenuToggle() {
                 if (!this.toggleBtn || !this.navLinks) return;
-
-                this.toggleBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    this.toggleMenu();
-                });
+                this.toggleBtn.addEventListener('click', (e) => { e.stopPropagation(); this.toggleMenu(); });
             }
-
             initDropdowns() {
                 this.dropdowns.forEach(dropdown => {
-                    const button = dropdown.querySelector('.nav-dropbtn');
-                    const submenu = dropdown.querySelector('.nav-submenu');
-
-                    if (!button || !submenu) return;
-
-                    // Click event for dropdown button
-                    button.addEventListener('click', (e) => {
-                        e.stopPropagation();
-
-                        // On mobile, only toggle dropdown
-                        if (window.innerWidth <= 768) {
-                            this.toggleDropdown(dropdown);
-                        }
-                    });
-
-                    // Hover for desktop
+                    const button = dropdown.querySelector('.gm-dropbtn');
+                    if (!button) return;
+                    button.addEventListener('click', (e) => { e.stopPropagation(); if (window.innerWidth <= 768) this.toggleDropdown(dropdown); });
                     if (window.innerWidth > 768) {
-                        dropdown.addEventListener('mouseenter', () => {
-                            this.openDropdown(dropdown);
-                        });
-
-                        dropdown.addEventListener('mouseleave', () => {
-                            this.closeDropdown(dropdown);
-                        });
-
-                        dropdown.addEventListener('focusin', () => {
-                            this.openDropdown(dropdown);
-                        });
-
-                        dropdown.addEventListener('focusout', (e) => {
-                            if (!dropdown.contains(e.relatedTarget)) {
-                                this.closeDropdown(dropdown);
-                            }
-                        });
+                        dropdown.addEventListener('mouseenter', () => this.openDropdown(dropdown));
+                        dropdown.addEventListener('mouseleave', () => this.closeDropdown(dropdown));
                     }
                 });
             }
-
             toggleMenu() {
                 if (this.isAnimating) return;
-
                 this.isAnimating = true;
                 const isExpanded = this.toggleBtn.getAttribute('aria-expanded') === 'true';
-                const newState = !isExpanded;
-
-                // Update toggle button
-                this.toggleBtn.setAttribute('aria-expanded', newState);
-
-                // Toggle navigation menu
+                this.toggleBtn.setAttribute('aria-expanded', !isExpanded);
                 this.navLinks.classList.toggle('active');
-
-                // Toggle body class
-                document.body.classList.toggle('menu-open', newState);
-
-                // Close all dropdowns when closing menu
-                if (!newState) {
-                    this.closeAllDropdowns();
-                }
-
-                // Reset animation flag
-                setTimeout(() => {
-                    this.isAnimating = false;
-                }, 300);
+                document.body.classList.toggle('menu-open', !isExpanded);
+                if (isExpanded) this.closeAllDropdowns();
+                setTimeout(() => { this.isAnimating = false; }, 300);
             }
-
             toggleDropdown(dropdown) {
                 const isOpen = dropdown.hasAttribute('data-dropdown-open');
-
-                // Close other dropdowns
                 this.closeAllDropdownsExcept(dropdown);
-
-                if (isOpen) {
-                    this.closeDropdown(dropdown);
-                } else {
-                    this.openDropdown(dropdown);
-                }
+                isOpen ? this.closeDropdown(dropdown) : this.openDropdown(dropdown);
             }
-
             openDropdown(dropdown) {
-                const button = dropdown.querySelector('.nav-dropbtn');
-                const submenu = dropdown.querySelector('.nav-submenu');
-
-                if (!button || !submenu) return;
-
+                const button = dropdown.querySelector('.gm-dropbtn');
                 dropdown.setAttribute('data-dropdown-open', '');
-                button.setAttribute('aria-expanded', 'true');
-
-                // On mobile, adjust submenu height
-                if (window.innerWidth <= 768) {
-                    submenu.style.maxHeight = submenu.scrollHeight + 'px';
-                }
+                if (button) button.setAttribute('aria-expanded', 'true');
             }
-
             closeDropdown(dropdown) {
-                const button = dropdown.querySelector('.nav-dropbtn');
-                const submenu = dropdown.querySelector('.nav-submenu');
-
-                if (!button || !submenu) return;
-
+                const button = dropdown.querySelector('.gm-dropbtn');
                 dropdown.removeAttribute('data-dropdown-open');
-                button.setAttribute('aria-expanded', 'false');
-
-                // On mobile, reset height
-                if (window.innerWidth <= 768) {
-                    submenu.style.maxHeight = '0';
-                }
+                if (button) button.setAttribute('aria-expanded', 'false');
             }
-
-            closeAllDropdowns() {
-                this.dropdowns.forEach(dropdown => {
-                    this.closeDropdown(dropdown);
-                });
-            }
-
-            closeAllDropdownsExcept(exceptDropdown) {
-                this.dropdowns.forEach(dropdown => {
-                    if (dropdown !== exceptDropdown) {
-                        this.closeDropdown(dropdown);
-                    }
-                });
-            }
-
+            closeAllDropdowns() { this.dropdowns.forEach(d => this.closeDropdown(d)); }
+            closeAllDropdownsExcept(except) { this.dropdowns.forEach(d => { if (d !== except) this.closeDropdown(d); }); }
             handleClickOutside() {
                 document.addEventListener('click', (e) => {
-                    // Close menu if clicking outside
-                    if (this.navLinks.classList.contains('active') &&
-                        !this.navLinks.contains(e.target) &&
-                        !this.toggleBtn.contains(e.target)) {
-                        this.toggleMenu();
-                    }
-
-                    // Close dropdowns if clicking outside
-                    this.dropdowns.forEach(dropdown => {
-                        if (dropdown.hasAttribute('data-dropdown-open') &&
-                            !dropdown.contains(e.target)) {
-                            this.closeDropdown(dropdown);
-                        }
-                    });
+                    if (this.navLinks.classList.contains('active') && !this.navLinks.contains(e.target) && !this.toggleBtn.contains(e.target)) this.toggleMenu();
+                    this.dropdowns.forEach(d => { if (d.hasAttribute('data-dropdown-open') && !d.contains(e.target)) this.closeDropdown(d); });
                 });
             }
-
             handleKeyboard() {
                 document.addEventListener('keydown', (e) => {
-                    // Escape key
-                    if (e.key === 'Escape') {
-                        if (this.navLinks.classList.contains('active')) {
-                            this.toggleMenu();
-                            this.toggleBtn.focus();
-                        } else {
-                            this.closeAllDropdowns();
-                        }
-                    }
-
-                    // Close dropdown on Tab if focusing outside
-                    if (e.key === 'Tab') {
-                        this.dropdowns.forEach(dropdown => {
-                            if (dropdown.hasAttribute('data-dropdown-open')) {
-                                const focusableElements = dropdown.querySelectorAll(
-                                    'a, button, input, [tabindex]:not([tabindex="-1"])'
-                                );
-
-                                const lastElement = focusableElements[focusableElements.length - 1];
-                                const isLeaving = !dropdown.contains(document.activeElement);
-
-                                if (isLeaving || (e.shiftKey && document.activeElement === dropdown.querySelector('.nav-dropbtn'))) {
-                                    this.closeDropdown(dropdown);
-                                }
-                            }
-                        });
-                    }
+                    if (e.key === 'Escape') { if (this.navLinks.classList.contains('active')) { this.toggleMenu(); this.toggleBtn.focus(); } else this.closeAllDropdowns(); }
                 });
             }
-
             handleResize() {
-                window.addEventListener('resize', () => {
-                    // Reset mobile menu on desktop
-                    if (window.innerWidth > 768) {
-                        if (this.navLinks.classList.contains('active')) {
-                            this.toggleMenu();
-                        }
-
-                        // Reset dropdown styles for desktop
-                        this.dropdowns.forEach(dropdown => {
-                            const submenu = dropdown.querySelector('.nav-submenu');
-                            if (submenu) {
-                                submenu.style.maxHeight = '';
-                            }
-                        });
-                    }
-                });
-            }
-
-            // Public methods
-            openMenu() {
-                if (!this.navLinks.classList.contains('active')) {
-                    this.toggleMenu();
-                }
-            }
-
-            closeMenu() {
-                if (this.navLinks.classList.contains('active')) {
-                    this.toggleMenu();
-                }
+                window.addEventListener('resize', () => { if (window.innerWidth > 768 && this.navLinks.classList.contains('active')) this.toggleMenu(); });
             }
         }
-
-        // Initialize on DOM load
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileNav = new MobileNavigation();
-
-            // Make available globally if needed
-            window.mobileNav = mobileNav;
-        });
+        document.addEventListener('DOMContentLoaded', () => { window.mobileNav = new MobileNavigation(); });
     </script>
-    <!-- JS file -->
     <script src="/assets/js/institute.js"></script>
     <script src="/assets/js/custom.js"></script>
 
 </body>
-
 </html>
