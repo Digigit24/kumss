@@ -17,13 +17,14 @@ jobs:
 
       - name: Update timestamps in HTML files
         run: |
-          # Get current date in format "Month DD, YYYY"
-          CURRENT_DATE=$(date -u '+%B %d, %Y')
+          # Get current date and time in IST format "DD Mon YYYY, HH:MM AM/PM"
+          export TZ='Asia/Kolkata'
+          CURRENT_DATETIME=$(date '+%d %b %Y, %I:%M %p')
 
           # Find all HTML files excluding .git directory
           find . -name "*.html" -not -path "./.git/*" | while read -r file; do
-            # Replace content inside <span id="last-updated">...</span>
-            sed -i "s|<span id=\"last-updated\">[^<]*</span>|<span id=\"last-updated\">$CURRENT_DATE</span>|g" "$file"
+            # Replace content inside <span id="lastUpdated">...</span>
+            sed -i "s|<span id=\"lastUpdated\">[^<]*</span>|<span id=\"lastUpdated\">$CURRENT_DATETIME</span>|g" "$file"
           done
 
       - name: Check for changes
