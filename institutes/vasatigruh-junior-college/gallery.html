@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Shardabai Pawar Kala Mahavidyalaya</title>
+    <title>Gallery | Vasatigruh Junior College</title>
     <link rel="icon" href="/assets/kumss-logo.webp" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,7 @@
         }
 
         .container {
-            width: min(1500px, 94%);
+            width: min(1280px, 90%);
             margin: auto;
         }
 
@@ -131,20 +131,20 @@
         }
 
         .masonry-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
+            column-count: 4;
+            column-gap: 16px;
         }
 
         .gallery-item {
             background: var(--white);
             border-radius: 14px;
             overflow: hidden;
+            margin-bottom: 16px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
             transition: 0.4s;
             position: relative;
+            break-inside: avoid;
             cursor: pointer;
-            height: 480px;
         }
 
         .gallery-item:hover {
@@ -154,9 +154,8 @@
 
         .gallery-item img {
             width: 100%;
-            height: 100%;
+            height: auto;
             display: block;
-            object-fit: cover;
             transition: transform 0.5s ease;
         }
 
@@ -266,21 +265,13 @@
 
         @media (max-width: 1024px) {
             .masonry-grid {
-                gap: 24px;
-            }
-
-            .gallery-item {
-                height: 400px;
+                column-count: 3;
             }
         }
 
         @media (max-width: 768px) {
             .masonry-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-item {
-                height: 350px;
+                column-count: 2;
             }
 
             .page-hero {
@@ -288,9 +279,9 @@
             }
         }
 
-        @media (max-width: 580px) {
-            .gallery-item {
-                height: 280px;
+        @media (max-width: 480px) {
+            .masonry-grid {
+                column-count: 1;
             }
         }
     </style>
@@ -312,9 +303,11 @@
                         class="gm-burger-line"></span>
                 </button>
                 <ul class="gm-links" id="navLinks">
-                    <li><a class="gm-link" href="/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Home</a>
+                    <li><a class="gm-link" href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Home</a>
                     </li>
-                    <li><a class="gm-link" href="./academics.html">Academics</a></li>
+                    <li><a class="gm-link" href="./about.html">About</a>
+                    </li>
+                    <li><a class="gm-link" href="/institutes/vasatigruh-junior-college/admissions.html">Admissions</a></li>
                     <li class="gm-item gm-dropdown" data-dropdown>
                         <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
                             aria-controls="institutesMenu">
@@ -324,32 +317,32 @@
 
                         <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
                             <li role="none"><a role="menuitem"
-                                    href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    href="/institutes/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
                                     Vidyalay Karhati</a></li>
                             <li role="none"><a role="menuitem"
-                                    href="/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">New English
                                     School Dhakale</a></li>
                             <li role="none"><a role="menuitem"
-                                    href="/primary-school-karhati/primary-school-karhati.html">Primary School Karhati
+                                    href="/institutes/primary-school-karhati/primary-school-karhati.html">Primary School Karhati
                                     karhati</a></li>
                             <li role="none"><a role="menuitem"
-                                    href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    href="/institutes/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
                                     Karhati</a></li>
                             <li role="none"><a role="menuitem"
-                                    href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    href="/institutes/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
                                     English Medium School</a></li>
                             <li role="none"><a role="menuitem"
-                                    href="/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
+                                    href="/institutes/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
                                     Pawar Kala Mahavidyalaya</a></li>
                             <li role="none"><a role="menuitem"
-                                    href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh
+                                    href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh
                                     Junior College</a></li>
                         </ul>
                     </li>
-                    <li><a class="gm-link" href="./news-events.html">News & Events</a></li>
-                    <li><a class="gm-link" href="./staff.html">Staff</a></li>
-                    <li><a class="gm-link active" href="./gallery.html">Gallery</a></li>
-
+                    <li><a class="gm-link" href="/institutes/vasatigruh-junior-college/news-events.html">News & Events</a></li>
+                    <li><a class="gm-link" href="/institutes/vasatigruh-junior-college/staff.html">Staff</a></li>
+                    <li><a class="gm-link active" href="/institutes/vasatigruh-junior-college/gallery.html">Gallery</a></li>
+                    <li><a class="gm-link" href="/institutes/vasatigruh-junior-college/rulebook.html">Rulebook</a></li>
                 </ul>
                 <a class="ggm-btn" href="/contact.html">Contact Us</a>
             </nav>
@@ -360,7 +353,7 @@
     <section class="page-hero">
         <div class="hero-shape hero-shape-1"></div>
         <div class="hero-shape hero-shape-2"></div>
-        <span class="hero-pill">Shardabai Pawar Kala Mahavidyalaya</span>
+        <span class="hero-pill">Vasatigruh Junior College</span>
         <h1>Gallery</h1>
         <p>Glimpses of our campus life, cultural events, academic activities, and proud achievements.</p>
     </section>
@@ -369,29 +362,119 @@
     <section class="gallery-wrap">
         <div class="container">
             <div class="masonry-grid">
-                
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img/shardabai-one.webp"
-                        alt="Cultural Event" loading="lazy"></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img/shardabai-two.webp"
-                        alt="Academic Activity" loading="lazy"></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img/kv-one.webp"
-                        alt="Student Life" loading="lazy"></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img/kv-two.webp"
-                        alt="Classroom Work" loading="lazy"></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img/kv-three.webp"
-                        alt="Art Workshop" loading="lazy"></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img/kv-four.webp" alt="Exhibition"
-                        loading="lazy"></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img/kv-five.webp"
-                        alt="Award Ceremony" loading="lazy"></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img/kv-six.webp" alt="Campus View"
-                        loading="lazy"></div>
-                <div class="gallery-item" onclick="openLightbox(this)"><img src="../assets/img/kv-seven.webp"
-                        alt="Creative Studio" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-01.webp"
+                        alt="Gallery Image 1" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-03.webp"
+                        alt="Gallery Image 3" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-05.webp"
+                        alt="Gallery Image 5" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-06.webp"
+                        alt="Gallery Image 6" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-07.webp"
+                        alt="Gallery Image 7" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-08.webp"
+                        alt="Gallery Image 8" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-09.webp"
+                        alt="Gallery Image 9" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-11.webp"
+                        alt="Gallery Image 11" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-12.webp"
+                        alt="Gallery Image 12" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-13.webp"
+                        alt="Gallery Image 13" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-14.webp"
+                        alt="Gallery Image 14" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-15.webp"
+                        alt="Gallery Image 15" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-16.webp"
+                        alt="Gallery Image 16" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-18.webp"
+                        alt="Gallery Image 18" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-19.webp"
+                        alt="Gallery Image 19" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-20.webp"
+                        alt="Gallery Image 20" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-21.webp"
+                        alt="Gallery Image 21" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-22.webp"
+                        alt="Gallery Image 22" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-23.webp"
+                        alt="Gallery Image 23" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-24.webp"
+                        alt="Gallery Image 24" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-26.webp"
+                        alt="Gallery Image 26" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-27.webp"
+                        alt="Gallery Image 27" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-28.webp"
+                        alt="Gallery Image 28" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-29.webp"
+                        alt="Gallery Image 29" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-30.webp"
+                        alt="Gallery Image 30" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-31.webp"
+                        alt="Gallery Image 31" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-32.webp"
+                        alt="Gallery Image 32" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-33.webp"
+                        alt="Gallery Image 33" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-36.webp"
+                        alt="Gallery Image 36" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-38.webp"
+                        alt="Gallery Image 38" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-39.webp"
+                        alt="Gallery Image 39" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-40.webp"
+                        alt="Gallery Image 40" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-41.webp"
+                        alt="Gallery Image 41" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-42.webp"
+                        alt="Gallery Image 42" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-43.webp"
+                        alt="Gallery Image 43" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-44.webp"
+                        alt="Gallery Image 44" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-45.webp"
+                        alt="Gallery Image 45" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-46.webp"
+                        alt="Gallery Image 46" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-47.webp"
+                        alt="Gallery Image 47" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-49.webp"
+                        alt="Gallery Image 49" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-50.webp"
+                        alt="Gallery Image 50" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-51.webp"
+                        alt="Gallery Image 51" loading="lazy"></div>
             </div>
         </div>
     </section>
 
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-head">
+                <h1>News</h1>
+            </div>
+            <div class="masonry-grid">
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-04.webp"
+                        alt="Gallery Image 4" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-10.webp"
+                        alt="Gallery Image 10" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-17.webp"
+                        alt="Gallery Image 17" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-25.webp"
+                        alt="Gallery Image 25" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-34.webp"
+                        alt="Gallery Image 34" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-35.webp"
+                        alt="Gallery Image 35" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-37.webp"
+                        alt="Gallery Image 37" loading="lazy"></div>
+                <div class="gallery-item" onclick="openLightbox(this)"><img src="/assets/vvk-48.webp"
+                        alt="Gallery Image 48" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -419,7 +502,7 @@
                     <p style="color: var(--paragraphColor); margin-bottom: 2rem;">An educational society dedicated to
                         the holistic development of students since 1951.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61585109434355" class="social-link"
+                        <a href="https://www.facebook.com/profile.php?id=61586413522479" class="social-link"
                             aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
                         <a href="https://www.instagram.com/vasatigruh_vidyalaya_karhati?igsh=cmFwM2JmeWk3aGR6"
                             class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
@@ -432,10 +515,12 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="./shardabai-pawar-kala-mahavidyalaya.html">Home</a></li>
-                        <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="./academics.html">Academics</a></li>
+                        <li><a href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
                         <li><a href="./staff.html">Staff</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="./admissions.html">Admissions</a></li>
+                        <li><a href="./rulebook.html">Rulebook</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -444,21 +529,21 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Our Institutes</h3>
                     <ul class="footer-links">
-                        <li><a href="/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay,
+                        <li><a href="/institutes/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay,
                                 Karhati</a>
                         </li>
-                        <li><a href="/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                        <li><a href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
                                 Dhakale</a>
                         </li>
-                        <li><a href="/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a>
+                        <li><a href="/institutes/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a>
                         </li>
-                        <li><a href="/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        <li><a href="/institutes/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
                         </li>
-                        <li><a href="/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
+                        <li><a href="/institutes/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
                                 Medium</a></li>
-                        <li><a href="/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
+                        <li><a href="/institutes/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
                                 Pawar Kala Mahavidyalaya</a></li>
-                        <li><a href="/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior
+                        <li><a href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior
                                 College</a>
                         </li>
                     </ul>
@@ -468,13 +553,10 @@
                         style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
                         Contact Info</h3>
                     <ul class="footer-links">
-                        <li><i class="ri-phone-line"></i><a href="tel:+919922415158">+91 9922415158</a></li>
-                        <li><i class="ri-phone-line"></i><a href="tel:+919075192092">+91 9075192092</a></li>
-                        <li><i class="ri-phone-line"></i><a href="tel:+919657465627">+91 9657465627</a></li>
-                        <li><i class="ri-mail-line"></i> <a href="mailto:spkm.4242@gmail.com">spkm.4242@gmail.com</a>
-                        </li>
-                        <li style="color: #000;"><i class="ri-map-pin-line"></i> Karhati, (Morgaon–Baramati Road) Tal.
-                            Baramati, Dist. Pune Pin code No. 412204</li>
+                        <li><i class="ri-phone-line"></i><a href="tel:+918149707678"> +91 81497 07678</a></li>
+                        <li><i class="ri-phone-line"></i><a href="tel:+919142917272"> +91 91429 17272</a></li>
+                        <li><i class="ri-mail-line"></i><a href="mailto:vvk3352@gmail.com">vvk3352@gmail.com</a></li>
+                        <li><i class="ri-map-pin-line"></i> Shivaji Nagar, Karhati, Baramati, Maharashtra 413102</li>
                     </ul>
                 </div>
             </div>

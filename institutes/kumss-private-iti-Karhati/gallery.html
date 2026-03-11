@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | KUMSS Private ITI Karhati</title>
+    <link rel="icon" href="/assets/kumss-logo.webp" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/institute.css">
+
+    <!-- Remix Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+    <style>
+        /* ITI wider navbar for extra logos */
+        .gm-container { max-width: 1440px; }
+        .gm-links { gap: 14px; }
+
+        /* ==================== BASE ==================== */
+        :root {
+            --blue: #003366;
+            --orange: #ff6700;
+            --dark: #111;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #555;
+            background-color: var(--light);
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Gantari', sans-serif;
+            font-weight: 700;
+        }
+
+
+
+        /* ==================== HERO ==================== */
+        .page-hero {
+            position: relative;
+            height: 80vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .hero-bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.8), rgba(0, 20, 40, 0.7));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            background: rgba(255, 103, 0, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 900;
+            margin: 0 0 14px;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==================== STATS RIBBON ==================== */
+        .stats-ribbon {
+            background: var(--blue);
+            padding: 0;
+        }
+
+        .ribbon-flex {
+            display: flex;
+            justify-content: center;
+        }
+
+        .ribbon-item {
+            flex: 1;
+            max-width: 250px;
+            text-align: center;
+            padding: 30px 20px;
+            color: white;
+            position: relative;
+        }
+
+        .ribbon-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 36px;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .ribbon-item i {
+            font-size: 1.5rem;
+            color: var(--orange);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .ribbon-item h3 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin: 0;
+            color: white;
+        }
+
+        .ribbon-item span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            font-weight: 500;
+        }
+
+        /* ==================== GALLERY SECTION ==================== */
+        .gallery-section {
+            padding: 80px 0 100px;
+        }
+
+        .gallery-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(0, 51, 102, 0.1);
+            color: var(--blue);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--blue);
+            margin: 0 0 14px;
+        }
+
+        .section-desc {
+            color: #888;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* ==================== GRID ==================== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #e9ecef;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .gallery-item.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+        }
+
+        .gallery-img-wrapper {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .gallery-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .gallery-item:hover .gallery-img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        /* Expand icon */
+        .item-expand {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            z-index: 3;
+            opacity: 0;
+            transform: scale(0.7);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item:hover .item-expand {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ==================== LIGHTBOX ==================== */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .lightbox.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-img-wrap {
+            position: relative;
+            max-width: 90vw;
+            max-height: 85vh;
+        }
+
+        .lightbox-img-wrap img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 12px;
+            object-fit: contain;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .lightbox.open .lightbox-img-wrap img {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 54px;
+            height: 54px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--orange);
+            border-color: var(--orange);
+        }
+
+        .lightbox-prev {
+            left: 24px;
+        }
+
+        .lightbox-next {
+            right: 24px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 6px 18px;
+            border-radius: 30px;
+        }
+
+        /* ==================== CTA ==================== */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: #fff;
+        }
+
+        .cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--blue);
+            border-radius: 30px;
+            padding: 60px;
+            color: white;
+            box-shadow: 0 20px 50px rgba(0, 51, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+
+        .cta-box::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+
+        .cta-box h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 0 10px;
+            color: white;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: white;
+            color: var(--blue);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn-cta:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .gallery-img-wrapper {
+                height: 250px;
+            }
+
+            .ribbon-flex {
+                flex-wrap: wrap;
+            }
+
+            .ribbon-item {
+                min-width: 140px;
+                padding: 22px 16px;
+            }
+
+            .ribbon-item:not(:last-child)::after {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+
+            .lightbox-nav {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+
+            .cta-box {
+                padding: 40px 24px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999; width: 0%;"></div>
+    <a href="/" class="back-to-main-btn" title="Back to Main Website">
+        <i class="ri-home-4-line"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <a href="/index.html" class="gm-logo">
+                    <img src="/assets/kumss-logo.webp" alt="KUMSS Logo" class="ggm-logo-img">
+                </a>
+                <div class="gm-partner-logos">
+                    <img src="/assets/iti-logo-one.webp" alt="Partner Logo 1" class="gm-partner-logo">
+                    <img src="/assets/iti-logo-two.webp" alt="Partner Logo 2" class="gm-partner-logo">
+                    <img src="/assets/iti-logo-three.webp" alt="Partner Logo 3" class="gm-partner-logo">
+                </div>
+
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                </button>
+
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link" href="./kumss-private-iti-karhati.html">Home</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./admissions.html">Admissions</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./faculty.html">Faculty</a></li>
+                    <li><a class="gm-link" href="./trades.html">Trades</a></li>
+
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+                        </button>
+
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/primary-school-karhati/primary-school-karhati.html">Primary School Karhati
+                                    karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
+                                    Pawar Kala Mahavidyalaya</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh
+                                    Junior College</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="gm-link" href="./news-events.html">News & Events</a></li>
+                    <li><a class="gm-link active" href="./gallery.html">Gallery</a></li>
+                    <li class="gm-cta"><a class="ggm-btn" href="/contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <img src="#" alt="KUMSS Private ITI Karhati" class="hero-bg-img" onerror="this.style.display='none'">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+
+            <h1 class="hero-title">Gallery</h1>
+            <p class="hero-subtitle">A visual tour of our campus, labs, workshops, and events at KUMSS Private ITI
+                Karhati</p>
+        </div>
+    </section>
+
+    <!-- Stats Ribbon -->
+    <section class="stats-ribbon">
+        <div class="container">
+            <div class="ribbon-flex">
+                <div class="ribbon-item">
+                    <i class="ri-image-line"></i>
+                    <h3>6</h3>
+                    <span>Photos</span>
+                </div>
+                <div class="ribbon-item">
+                    <i class="ri-tools-line"></i>
+                    <h3>3</h3>
+                    <span>Trade Labs</span>
+                </div>
+                <div class="ribbon-item">
+                    <i class="ri-building-line"></i>
+                    <h3>1</h3>
+                    <span>Campus</span>
+                </div>
+                <div class="ribbon-item">
+                    <i class="ri-newspaper-line"></i>
+                    <h3>2</h3>
+                    <span>News Features</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <span class="section-tag">Explore Our Campus</span>
+                <h2 class="section-title">Photo Gallery</h2>
+                <p class="section-desc">Browse through images of our workshops, labs, campus life, and media coverage.
+                </p>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+
+                <div class="gallery-item" data-caption="Workshop Practice">
+                    <div class="gallery-img-wrapper">
+                        <img src="/assets/news.webp" alt="Workshop Practice"
+                            onerror="this.src='https://placehold.co/800x600?text=Workshop'" loading="lazy">
+                    </div>
+                    <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+                </div>
+
+                <div class="gallery-item" data-caption="Welding Lab">
+                    <div class="gallery-img-wrapper">
+                        <img src="/assets/news-1.webp" alt="Welding Lab"
+                            onerror="this.src='https://placehold.co/800x600?text=Welding+Lab'" loading="lazy">
+                    </div>
+                    <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+                </div>
+
+                <div class="gallery-item" data-caption="Electrical Lab">
+                    <div class="gallery-img-wrapper">
+                        <img src="/assets/news-2.webp" alt="Electrical Lab"
+                            onerror="this.src='https://placehold.co/800x600?text=Electrical+Lab'" loading="lazy">
+                    </div>
+                    <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+                </div>
+
+                <div class="gallery-item" data-caption="Classroom Session">
+                    <div class="gallery-img-wrapper">
+                        <img src="/assets/news-3.webp" alt="Classroom"
+                            onerror="this.src='https://placehold.co/800x600?text=Classroom'" loading="lazy">
+                    </div>
+                    <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+                </div>
+
+                <div class="gallery-item" data-caption="Campus Visit">
+                    <div class="gallery-img-wrapper">
+                        <img src="/assets/news-4.webp" alt="Campus Visit"
+                            onerror="this.src='https://placehold.co/800x600?text=Campus+Life'" loading="lazy">
+                    </div>
+                    <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+                </div>
+
+                <div class="gallery-item" data-caption="Electronics Lab">
+                    <div class="gallery-img-wrapper">
+                        <img src="/assets/news-5.webp" alt="Electronics Lab"
+                            onerror="this.src='https://placehold.co/800x600?text=Electronics+Lab'" loading="lazy">
+                    </div>
+                    <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lbClose" aria-label="Close"><i class="ri-close-line"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous"><i
+                class="ri-arrow-left-s-line"></i></button>
+        <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next"><i
+                class="ri-arrow-right-s-line"></i></button>
+        <div class="lightbox-img-wrap">
+            <img id="lbImg" src="" alt="">
+        </div>
+        <div class="lightbox-counter" id="lbCounter"></div>
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Want to Visit Our Campus?</h2>
+                <p style="margin: 15px 0 30px; opacity: 0.9;">See our world-class labs and workshops in person. Schedule
+                    a campus tour today.</p>
+                <a href="tel:+919423694242" class="btn-cta">Call Us Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/index.html" class="logo kumss-since"
+                        style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="/assets/kumss-logo.webp" alt="KUMSS Logo" class="footer-logo-img">
+                        <div><span>KUMSS SINCE 1951</span></div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/KUMSS.ITI/" class="social-link" aria-label="Facebook"><i
+                                class="ri-facebook-fill"></i></a>
+                        <a href="https://www.instagram.com/kumss.iti?igsh=ZXJ5dnRyMGcyM2Y4" class="social-link"
+                            aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="social-link"
+                            aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./kumss-private-iti-karhati.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./admissions.html">Admissions</a></li>
+                        <li><a href="./trades.html">Trades</a></li>
+                        <li><a href="./faculty.html">Faculty</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="/institutes/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay,
+                                Karhati</a>
+                        </li>
+                        <li><a href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a>
+                        </li>
+                        <li><a href="/institutes/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a>
+                        </li>
+                        <li><a href="/institutes/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
+                        <li><a href="/institutes/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
+                                Medium</a></li>
+                        <li><a href="/institutes/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
+                                Pawar Kala Mahavidyalaya</a></li>
+                        <li><a href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior
+                                College</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="ri-phone-line"></i> <a href="tel:+919423684242">+91 94236 84242</a></li>
+                        <li><i class="ri-phone-line"></i> <a href="tel:+919423694242">+91 94236 94242</a></li>
+                        <li><i class="ri-mail-line"></i> <a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                        <li style="color: #000;"><i class="ri-map-pin-line"></i>6CXH+VQ5, Malwadi, Maharashtra 412204
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+                </p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">11 Mar 2026, 3:40 PM </span></p>
+            </div>
+        </div>
+    </footer>
+
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+        <i class="ri-arrow-up-double-fill"></i>
+    </button>
+
+    <script src="/assets/js/institute.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* Header scroll */
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            /* Mobile menu */
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            /* Scroll reveal */
+            const items = document.querySelectorAll('.gallery-item');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('revealed')) {
+                        const siblings = Array.from(items).filter(
+                            el => !el.classList.contains('revealed') &&
+                                el.getBoundingClientRect().top < window.innerHeight + 100
+                        );
+                        const idx = siblings.indexOf(entry.target);
+                        setTimeout(() => {
+                            entry.target.classList.add('revealed');
+                        }, Math.max(0, idx) * 120);
+                    }
+                });
+            }, { threshold: 0.08 });
+
+            items.forEach(el => revealObserver.observe(el));
+
+            /* Lightbox */
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lbImg');
+            const lbCounter = document.getElementById('lbCounter');
+            let currentIdx = 0;
+
+            function openLightbox(idx) {
+                currentIdx = idx;
+                updateLightbox();
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            function updateLightbox() {
+                const item = items[currentIdx];
+                if (!item) return;
+                const img = item.querySelector('img');
+                lbImg.src = img.src;
+                lbImg.alt = img.alt;
+                lbCounter.textContent = (currentIdx + 1) + ' / ' + items.length;
+            }
+
+            function nextSlide() {
+                currentIdx = (currentIdx + 1) % items.length;
+                updateLightbox();
+            }
+
+            function prevSlide() {
+                currentIdx = (currentIdx - 1 + items.length) % items.length;
+                updateLightbox();
+            }
+
+            items.forEach((item, i) => {
+                item.addEventListener('click', () => openLightbox(i));
+            });
+
+            document.getElementById('lbClose').addEventListener('click', closeLightbox);
+            document.getElementById('lbNext').addEventListener('click', nextSlide);
+            document.getElementById('lbPrev').addEventListener('click', prevSlide);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            });
+        });
+    </script>
+    <script src="/assets/js/custom.js"></script>
+</body>
+
+</html>

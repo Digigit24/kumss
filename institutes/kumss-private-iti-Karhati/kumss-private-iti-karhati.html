@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUMSS Private ITI Karhati | ISO 9001:2015 Certified</title>
+    <link rel="icon" href="/assets/kumss-logo.webp" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/institute.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; color: #555555; overflow-x: hidden; }
+        h1,h2,h3,h4,h5,h6 { font-family: 'Gantari', sans-serif; font-weight: 700; }
+        a { text-decoration: none; }
+
+        .gm-logo { display:flex; align-items:center; gap:10px; }
+        .gm-logo-img { height:50px; width:auto; object-fit:contain; }
+        .gm-logo-divider { width:1px; height:35px; background:rgba(0,0,0,0.15); margin:0 4px; }
+        .gm-container { max-width:1440px; }
+        .gm-links { gap:14px; }
+
+        .hero-modern { position:relative; padding-top:160px; padding-bottom:120px; background-color:#003366; overflow:hidden; }
+        .hero-bg-accent { position:absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at 80% 20%, #004080 0%, transparent 40%), linear-gradient(135deg, #002244 0%, #003366 100%); z-index:0; }
+        .hero-shape-1 { position:absolute; top:-10%; right:-5%; width:500px; height:500px; background:#ff6700; border-radius:50%; filter:blur(100px); opacity:0.15; z-index:0; }
+        .hero-container { position:relative; z-index:2; }
+
+        .hero-badge-modern { display:inline-flex; align-items:center; gap:8px; background:rgba(255,103,0,0.15); border:1px solid rgba(255,103,0,0.3); color:#ff6700; padding:8px 16px; border-radius:30px; font-size:0.85rem; font-weight:700; text-transform:uppercase; margin-bottom:25px; backdrop-filter:blur(5px); }
+        .hero-heading { font-size:clamp(2.5rem,5vw,4rem); font-weight:800; line-height:1.1; color:#ffffff; margin-bottom:20px; }
+        .hero-heading span { color:transparent; -webkit-text-stroke:1px #ffffff; position:relative; }
+        .hero-heading span::after { content:'Skills'; position:absolute; left:0; top:0; color:#ff6700; -webkit-text-stroke:0; width:100%; overflow:hidden; }
+        .hero-lead { color:rgba(255,255,255,0.8); font-size:1.1rem; max-width:500px; margin-bottom:35px; line-height:1.7; }
+
+        .btn-premium { background:#ff6700; color:#ffffff; padding:15px 35px; border-radius:50px; font-weight:600; display:inline-flex; align-items:center; gap:10px; transition:all 0.3s; box-shadow:0 10px 20px rgba(255,103,0,0.3); border:2px solid #ff6700; }
+        .btn-premium:hover { transform:translateY(-3px); background:transparent; color:#ff6700; }
+        .btn-premium-outline { background:transparent; color:#ffffff; padding:15px 35px; border-radius:50px; font-weight:600; border:2px solid rgba(255,255,255,0.2); display:inline-flex; align-items:center; gap:10px; transition:0.3s; }
+        .btn-premium-outline:hover { border-color:#ffffff; background:#ffffff; color:#003366; }
+
+        .hero-img-box { position:relative; height:100%; display:flex; justify-content:center; align-items:center; }
+        .main-img-wrap { position:relative; width:100%; border-radius:20px; overflow:hidden; box-shadow:20px 20px 0 rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); transform:perspective(1000px) rotateY(-5deg); transition:transform 0.5s ease; }
+        .hero-img-box:hover .main-img-wrap { transform:perspective(1000px) rotateY(0deg); }
+        .main-hero-img { width:100%; display:block; }
+
+        .float-card { position:absolute; bottom:30px; left:-20px; background:#ffffff; padding:15px 25px; border-radius:12px; box-shadow:0 15px 35px rgba(0,0,0,0.2); display:flex; align-items:center; gap:15px; z-index:5; animation:floatCard 4s ease-in-out infinite; }
+        @keyframes floatCard { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+        .fc-icon { width:40px; height:40px; background:#003366; color:#ffffff; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+
+        .stats-overlap-section { position:relative; margin-top:-80px; z-index:10; padding-bottom:50px; }
+        .stats-grid-modern { display:grid; grid-template-columns:repeat(4,1fr); background:#ffffff; border-radius:15px; box-shadow:0 20px 50px rgba(0,0,0,0.1); overflow:hidden; }
+        .stat-box-modern { padding:30px; text-align:center; border-right:1px solid #eeeeee; transition:0.3s; }
+        .stat-box-modern:last-child { border-right:none; }
+        .stat-box-modern:hover { background:#ff6700; }
+        .stat-box-modern:hover * { color:#ffffff !important; }
+        .stat-icon-m { font-size:2rem; color:#ff6700; margin-bottom:15px; transition:0.3s; }
+        .stat-num-m { display:block; font-size:2.2rem; font-weight:800; color:#003366; font-family:'Gantari',sans-serif; line-height:1; }
+        .stat-label-m { font-size:0.85rem; text-transform:uppercase; font-weight:600; color:#666666; letter-spacing:1px; }
+
+        .section-padding { padding:80px 0; }
+        .section-header { text-align:center; margin-bottom:60px; }
+        .section-subtitle { color:#ff6700; font-weight:700; letter-spacing:2px; text-transform:uppercase; display:block; margin-bottom:10px; font-size:0.9rem; }
+        .section-title h2 { font-size:2.5rem; color:#003366; font-weight:800; }
+
+        .philo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
+        .philo-card { background:#ffffff; padding:40px 30px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.05); transition:0.4s; border-bottom:4px solid transparent; }
+        .philo-card:hover { transform:translateY(-10px); box-shadow:0 20px 40px rgba(0,0,0,0.1); border-bottom-color:#ff6700; }
+        .card-icon { width:70px; height:70px; background:rgba(0,51,102,0.05); color:#003366; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; margin-bottom:20px; transition:0.3s; }
+        .philo-card:hover .card-icon { background:#ff6700; color:#ffffff; }
+        .philo-title { color:#003366; margin-bottom:15px; }
+
+        .trades-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+        .trade-card { background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:0.3s; border:1px solid #eeeeee; }
+        .trade-card:hover { transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,0,0,0.1); }
+        .trade-thumb { height:180px; position:relative; overflow:hidden; }
+        .trade-thumb img { width:100%; height:100%; object-fit:cover; transition:0.5s; }
+        .trade-card:hover .trade-thumb img { transform:scale(1.1); }
+        .trade-body { padding:25px; }
+        .trade-title { color:#003366; }
+        .contact-cta { background:linear-gradient(135deg,#003366,#002244); color:#ffffff; border-radius:15px; padding:50px; }
+
+        /* Principal */
+        .iti-principal-wrapper { display:flex; align-items:center; gap:50px; justify-content:center; }
+        .iti-principal-img-box { position:relative; flex:0.7; display:flex; justify-content:flex-end; }
+        .iti-principal-img-box img { width:100%; max-width:350px; height:auto; border-radius:12px; box-shadow:15px 15px 0 rgba(255,103,0,0.1); }
+        .iti-principal-content { flex:1.3; }
+        .iti-section-subtitle { display:inline-block; color:#ff6700; font-weight:700; font-size:0.82rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px; }
+
+        /* Faculty */
+        .iti-faculty-section { padding:80px 0; background:#fff; }
+        .iti-faculty-section .section-header { text-align:center; margin-bottom:60px; }
+        .iti-faculty-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+        .iti-faculty-card { background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:0.3s; border:1px solid #eeeeee; }
+        .iti-faculty-card:hover { transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,0,0,0.1); }
+        .iti-faculty-img-box { height:320px; width:100%; overflow:hidden; position:relative; background-color:#f8f9fa; }
+        .iti-faculty-img { width:100%; height:100%; object-fit:contain; object-position:center; transition:transform 0.5s ease; }
+        .iti-faculty-card:hover .iti-faculty-img { transform:scale(1.05); }
+        .iti-faculty-info { padding:20px; text-align:center; }
+        .iti-faculty-name { color:#003366; font-size:1.1rem; margin-bottom:5px; font-weight:700; }
+        .iti-faculty-role { color:#ff6700; font-size:0.85rem; font-weight:600; text-transform:uppercase; display:block; margin-bottom:10px; }
+
+        @media(max-width:991px) {
+            .hero-img-box { margin-top:50px; }
+            .stats-grid-modern { grid-template-columns:1fr 1fr; }
+            .stat-box-modern { border-bottom:1px solid #eeeeee; }
+            .iti-principal-wrapper { flex-direction:column; text-align:center; gap:30px; }
+            .iti-principal-img-box { justify-content:center; flex:1; }
+            .iti-principal-img-box img { max-width:300px; }
+            .iti-faculty-grid { grid-template-columns:repeat(2,1fr); }
+            .trades-grid { grid-template-columns:repeat(2,1fr); }
+        }
+        @media(max-width:576px) {
+            .stats-grid-modern { grid-template-columns:1fr; }
+            .stat-box-modern { border-right:none; }
+            .float-card { display:none; }
+            .trades-grid { grid-template-columns:1fr; }
+            .iti-faculty-grid { grid-template-columns:1fr; }
+        }
+
+        /* ── Scroll progress ── */
+        #scrollProgress { position:fixed; top:0; left:0; height:3px; background:#ff6700; z-index:9999; width:0%; transition:width 0.1s linear; }
+    </style>
+</head>
+
+<body>
+    <div id="scrollProgress" aria-hidden="true"></div>
+
+    <a href="/" class="back-to-main-btn" title="Back to Main Website">
+        <i class="ri-home-4-line"></i>
+    </a>
+
+    <!-- HEADER -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <a href="/index.html" class="gm-logo">
+                    <img src="/assets/kumss-logo.webp" alt="KUMSS Logo" class="gm-logo-img">
+                    <div class="gm-partner-logos">
+                        <img src="/assets/iti-logo-one.webp" alt="Partner Logo 1" class="gm-partner-logo">
+                        <img src="/assets/iti-logo-two.webp" alt="Partner Logo 2" class="gm-partner-logo">
+                        <img src="/assets/iti-logo-three.webp" alt="Partner Logo 3" class="gm-partner-logo">
+                    </div>
+                </a>
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                </button>
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link active" href="./kumss-private-iti-karhati.html">Home</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./admissions.html">Admissions</a></li>
+                    <li><a class="gm-link" href="./trades.html">Trades</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./faculty.html">Faculty</a></li>
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+                        </button>
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem" href="/institutes/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">New English School Dhakale</a></li>
+                            <li role="none"><a role="menuitem" href="/institutes/primary-school-karhati/primary-school-karhati.html">Primary School Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/institutes/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I Karhati</a></li>
+                            <li role="none"><a role="menuitem" href="/institutes/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium School</a></li>
+                            <li role="none"><a role="menuitem" href="/institutes/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai Pawar Kala Mahavidyalaya</a></li>
+                            <li role="none"><a role="menuitem" href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior College</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="gm-link" href="./news-events.html">News & Events</a></li>
+                    <li><a class="gm-link" href="./gallery.html">Gallery</a></li>
+                    <li class="gm-cta"><a class="ggm-btn" href="/contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-modern" id="home">
+        <div class="hero-bg-accent"></div>
+        <div class="hero-shape-1"></div>
+        <div class="container hero-container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="gs-hero-text">
+                        <div class="hero-badge-modern">
+                            <i class="ri-flashlight-fill"></i> Admissions Open 2026
+                        </div>
+                        <h1 class="hero-heading">Master Industrial <br> <span>Skills</span> Today.</h1>
+                        <p class="hero-lead">Transforming 10th-grade students into skilled industry professionals in just 1–2 years. Join KUMSS ITI Karhati — a leader in technical education since 2020.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="tel:+919423694242" class="btn-premium">Apply Now <i class="ri-arrow-right-line"></i></a>
+                            <a href="./trades.html" class="btn-premium-outline">View Trades <i class="ri-search-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-img-box gs-hero-img">
+                        <div class="main-img-wrap">
+                            <img src="/assets/iti-building.webp" alt="ITI Workshop" class="main-hero-img">
+                        </div>
+                        <div class="float-card">
+                            <div class="fc-icon"><i class="ri-check-line"></i></div>
+                            <div>
+                                <h6 class="mb-0 fw-bold" style="color:#003366">100% Placement</h6>
+                                <small class="text-muted">Assistance Guaranteed</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-overlap-section">
+        <div class="container">
+            <div class="stats-grid-modern gs-stats">
+                <div class="stat-box-modern">
+                    <i class="ri-calendar-line stat-icon-m"></i>
+                    <span class="stat-num-m" data-target="5">0</span>
+                    <span class="stat-label-m">Years of Legacy</span>
+                </div>
+                <div class="stat-box-modern">
+                    <i class="ri-settings-4-line stat-icon-m"></i>
+                    <span class="stat-num-m" data-target="15">0</span>
+                    <span class="stat-label-m">Technical Trades</span>
+                </div>
+                <div class="stat-box-modern">
+                    <i class="ri-user-star-line stat-icon-m"></i>
+                    <span class="stat-num-m" data-target="1200">0</span>
+                    <span class="stat-label-m">Alumni Network</span>
+                </div>
+                <div class="stat-box-modern">
+                    <i class="ri-presentation-line stat-icon-m"></i>
+                    <span class="stat-num-m" data-target="30">0</span>
+                    <span class="stat-label-m">Expert Faculty</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MISSION & VISION -->
+    <section class="section-padding" id="about" style="background-color:#f4f7f6;">
+        <div class="container">
+            <div class="section-header gs-reveal">
+                <span class="section-subtitle">Our Philosophy</span>
+                <div class="section-title"><h2>Building Character & Skill</h2></div>
+                <p class="mt-3 text-muted" style="max-width:600px;margin:0 auto;">We believe in total personality development through individual counseling and industrial guidance.</p>
+            </div>
+            <div class="philo-grid">
+                <div class="philo-card gs-card">
+                    <div class="card-icon"><i class="ri-eye-line"></i></div>
+                    <h3 class="philo-title">Our Vision</h3>
+                    <p class="text-muted mb-3">To be a world-class institution providing career-oriented skill development training.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="ri-checkbox-circle-fill" style="color:#ff6700;margin-right:8px;"></i>Empowering students through quality education.</li>
+                        <li class="mb-2"><i class="ri-checkbox-circle-fill" style="color:#ff6700;margin-right:8px;"></i>Creating global leaders in technical fields.</li>
+                    </ul>
+                </div>
+                <div class="philo-card gs-card">
+                    <div class="card-icon"><i class="ri-focus-3-line"></i></div>
+                    <h3 class="philo-title">Our Mission</h3>
+                    <p class="text-muted mb-3">To improve social well-being by providing industrial training for sustainable income.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="ri-checkbox-circle-fill" style="color:#ff6700;margin-right:8px;"></i>Tailoring learning to individual needs.</li>
+                        <li class="mb-2"><i class="ri-checkbox-circle-fill" style="color:#ff6700;margin-right:8px;"></i>Improving rural economic stability.</li>
+                    </ul>
+                </div>
+                <div class="philo-card gs-card">
+                    <div class="card-icon"><i class="ri-shield-check-line"></i></div>
+                    <h3 class="philo-title">Our Values</h3>
+                    <p class="text-muted mb-3">Upholding the highest standards of integrity and ethics in all our actions.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="ri-checkbox-circle-fill" style="color:#ff6700;margin-right:8px;"></i>Transparency & Integrity.</li>
+                        <li class="mb-2"><i class="ri-checkbox-circle-fill" style="color:#ff6700;margin-right:8px;"></i>Inspiring Leadership.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRADES -->
+    <section class="section-padding" id="trades" style="background-color:#f4f7f6;">
+        <div class="container">
+            <div class="section-header gs-reveal">
+                <span class="section-subtitle">Academic Programs</span>
+                <div class="section-title"><h2>Our Popular Trades</h2></div>
+                <p class="mt-3 text-muted">Industry-relevant courses designed for immediate employment.</p>
+            </div>
+            <div class="trades-grid">
+                <div class="trade-card gs-card">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2 YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Electrician">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Electrician</h3>
+                        <p class="text-muted mb-3" style="font-size:0.9rem;">Wiring, safety standards, fire extinguishers, conductors, cabling, and industrial electrical maintenance.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color:#ff6700;">View Syllabus <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+                <div class="trade-card gs-card">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2 YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fitter">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Fitter</h3>
+                        <p class="text-muted mb-3" style="font-size:0.9rem;">Training in sawing, filing, drilling, brazing, and allied trades like Welding (Gas & Arc) with safety aspects.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color:#ff6700;">View Syllabus <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+                <div class="trade-card gs-card">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">2 YEARS</span>
+                        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Electronics">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Electronics Mech</h3>
+                        <p class="text-muted mb-3" style="font-size:0.9rem;">Includes Solar panel installation, Radio Tech, Optical fiber, TV installation, and industrial controls repair.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color:#ff6700;">View Syllabus <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+                <div class="trade-card gs-card">
+                    <div class="trade-thumb">
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fw-bold">1 YEAR</span>
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Interior Design">
+                    </div>
+                    <div class="trade-body">
+                        <h3 class="trade-title">Interior Design</h3>
+                        <p class="text-muted mb-3" style="font-size:0.9rem;">Learn 2D Software designs, layout designs for plumbing/lighting, and analysis of paints, polish, and varnish.</p>
+                        <a href="#" class="text-decoration-none fw-bold" style="color:#ff6700;">View Syllabus <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="/institutes/kumss-private-iti-Karhati/trades.html" class="ggm-btn" style="background:#003366;color:white;display:inline-block;padding:12px 30px;border-radius:50px;">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRINCIPAL'S DESK -->
+    <section style="padding:80px 0;background:#f9f9f9;" id="principal">
+        <div class="container">
+            <div class="iti-principal-wrapper">
+                <div class="iti-principal-img-box gs-principal-img">
+                    <img src="/assets/vikas-nirmal-iti-principal.webp" alt="Er. Vikas Mangal Sanjay Nirmal">
+                </div>
+                <div class="iti-principal-content gs-principal-text">
+                    <span class="iti-section-subtitle">Principal's Desk</span>
+                    <h2 class="mb-4" style="color:#003366;">Transforming Potential into Performance</h2>
+                    <i class="ri-double-quotes-l" style="font-size:3rem;color:#ff6700;opacity:0.3;"></i>
+                    <p class="fst-italic fs-5 text-muted my-4" style="line-height:1.8;">
+                        "We realize that we have to transform 10th class students into professionals within a period of 2 years. We want our students to be committed, dedicated to their goals along with integrity and concern for the environment and rural society they live in. Each student studying in KUMSS Private ITI will be a young star of our family."
+                    </p>
+                    <div>
+                        <h4 class="mb-0 fw-bold" style="color:#003366;">Er. Vikas Mangal Sanjay Nirmal</h4>
+                        <small class="text-muted text-uppercase fw-bold">CEO, Krishi Udyog Mool Shikshan Sanstha (KUMSS)</small><br>
+                        <small class="text-muted text-uppercase fw-bold">Principal, KUMSS ITI</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERT FACULTY -->
+    <section class="iti-faculty-section">
+        <div class="container">
+            <div class="section-header gs-reveal">
+                <span class="iti-section-subtitle">Our Team</span>
+                <h2 style="font-size:2.5rem;font-weight:700;color:#003366;margin:0 0 12px;">Expert Faculty</h2>
+                <p style="color:#666;font-size:1.1rem;max-width:600px;margin:0 auto;">Dedicated professionals committed to transforming students into skilled industry-ready technicians.</p>
+            </div>
+            <div class="iti-faculty-grid">
+                <div class="iti-faculty-card gs-card">
+                    <div class="iti-faculty-img-box"><img src="/assets/chandgude-mahesh.webp" alt="Mr. Chandgude Mahesh Prakash" class="iti-faculty-img"></div>
+                    <div class="iti-faculty-info"><h4 class="iti-faculty-name">Mr. Chandgude Mahesh P.</h4><span class="iti-faculty-role">Superintendent</span></div>
+                </div>
+                <div class="iti-faculty-card gs-card">
+                    <div class="iti-faculty-img-box"><img src="/assets/madane-vishal.webp" alt="Mr. Madane Vishal Laxman" class="iti-faculty-img"></div>
+                    <div class="iti-faculty-info"><h4 class="iti-faculty-name">Mr. Madane Vishal L.</h4><span class="iti-faculty-role">Engg. Drawing Instructor</span></div>
+                </div>
+                <div class="iti-faculty-card gs-card">
+                    <div class="iti-faculty-img-box"><img src="/assets/jadhav-rahul.webp" alt="Mr. Jadhav Rahul Manikrao" class="iti-faculty-img"></div>
+                    <div class="iti-faculty-info"><h4 class="iti-faculty-name">Mr. Jadhav Rahul M.</h4><span class="iti-faculty-role">Fitter Instructor</span></div>
+                </div>
+                <div class="iti-faculty-card gs-card">
+                    <div class="iti-faculty-img-box"><img src="/assets/taware-akshay.webp" alt="Mr. Taware Akshay Chandrakant" class="iti-faculty-img"></div>
+                    <div class="iti-faculty-info"><h4 class="iti-faculty-name">Mr. Taware Akshay C.</h4><span class="iti-faculty-role">Fitter Instructor</span></div>
+                </div>
+            </div>
+            <div class="view-staff-btn-wrapper">
+                <a href="faculty.html" class="view-staff-btn">View All Faculty <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="section-padding bg-white" id="contact">
+        <div class="container">
+            <div class="contact-cta shadow gs-reveal">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2 class="text-white mb-2">Ready to Start Your Career?</h2>
+                        <p class="mb-0 opacity-75">Admissions Open for Academic Year 2026-27. Limited seats available for Fitter & Electrician.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="tel:+919423694242" class="btn bg-white text-dark fw-bold rounded-pill px-4 py-3">
+                            <i class="ri-phone-fill me-2" style="color:#ff6700;"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/index.html" class="logo kumss-since" style="margin-bottom:2rem;align-items:flex-start;">
+                        <img src="/assets/kumss-logo.webp" alt="KUMSS Logo" class="footer-logo-img">
+                        <div><span>KUMSS SINCE 1951</span></div>
+                    </a>
+                    <p style="color:var(--paragraphColor);margin-bottom:2rem;">An educational society focused on overall development of students since 1951.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/KUMSS.ITI/" class="social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="https://www.instagram.com/kumss.iti?igsh=ZXJ5dnRyMGcyM2Y4" class="social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="social-link" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 style="color:var(--blackColor);margin-bottom:1.5rem;font-family:var(--heading-font-family);font-weight:700;font-size:1.25rem;">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./admissions.html">Admissions</a></li>
+                        <li><a href="./trades.html">Trades</a></li>
+                        <li><a href="./faculty.html">Faculty</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 style="color:var(--blackColor);margin-bottom:1.5rem;font-family:var(--heading-font-family);font-weight:700;font-size:1.25rem;">Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="/institutes/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay, Karhati</a></li>
+                        <li><a href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a></li>
+                        <li><a href="/institutes/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a></li>
+                        <li><a href="/institutes/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+                        <li><a href="/institutes/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English Medium</a></li>
+                        <li><a href="/institutes/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai Pawar Kala Mahavidyalaya</a></li>
+                        <li><a href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior College</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 style="color:var(--blackColor);margin-bottom:1.5rem;font-family:var(--heading-font-family);font-weight:700;font-size:1.25rem;">Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="ri-phone-line"></i><a href="tel:+919423684242">+91 94236 84242</a></li>
+                        <li><i class="ri-phone-line"></i><a href="tel:+919423694242">+91 94236 94242</a></li>
+                        <li><i class="ri-mail-line"></i><a href="mailto:iti@kumss.org">iti@kumss.org</a></li>
+                        <li style="color:#000;"><i class="ri-map-pin-line"></i>6CXH+VQ5, Malwadi, Maharashtra 412204</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
+                <p style="margin-top:0.5rem;font-size:0.875rem;color:var(--paragraphColor);">ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra</p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">11 Mar 2026, 3:40 PM </span></p>
+            </div>
+        </div>
+    </footer>
+
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+        <i class="ri-arrow-up-double-fill"></i>
+    </button>
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="/assets/js/institute.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        /* ── Guard: only run GSAP if it loaded ── */
+        if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+            console.warn("GSAP or ScrollTrigger not loaded.");
+            return;
+        }
+
+        /* REQUIRED: register the plugin before any ScrollTrigger is created */
+        gsap.registerPlugin(ScrollTrigger);
+
+        /* ══════════════════════════════════════════
+           1. HERO TEXT ENTRANCE  – staggered slide-up
+        ══════════════════════════════════════════ */
+        var heroText = document.querySelector(".gs-hero-text");
+        if (heroText) {
+            var heroChildren = heroText.querySelectorAll(
+                ".hero-badge-modern, .hero-heading, .hero-lead, .d-flex"
+            );
+            gsap.fromTo(
+                heroChildren,
+                { y: 40, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "power3.out",
+                    delay: 0.2
+                }
+            );
+        }
+
+        /* ══════════════════════════════════════════
+           2. HERO IMAGE ENTRANCE  – scale + fade + tilt reset
+        ══════════════════════════════════════════ */
+        var heroImg = document.querySelector(".gs-hero-img");
+        if (heroImg) {
+            gsap.fromTo(
+                heroImg,
+                { scale: 0.92, opacity: 0, x: 40 },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: 0.4
+                }
+            );
+        }
+
+        /* ══════════════════════════════════════════
+           3. STATS BAR ENTRANCE  – slide up from below hero
+        ══════════════════════════════════════════ */
+        var statsGrid = document.querySelector(".gs-stats");
+        if (statsGrid) {
+            gsap.fromTo(
+                statsGrid,
+                { y: 60, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: statsGrid,
+                        start: "top 90%",
+                        once: true
+                    }
+                }
+            );
+        }
+
+        /* ══════════════════════════════════════════
+           4. COUNTER ANIMATION  – count up on enter
+        ══════════════════════════════════════════ */
+        document.querySelectorAll(".stat-num-m").forEach(function (counter) {
+            var target = parseInt(counter.getAttribute("data-target"), 10) || 0;
+
+            ScrollTrigger.create({
+                trigger: counter,
+                start: "top 90%",
+                once: true,
+                onEnter: function () {
+                    var obj = { val: 0 };
+                    gsap.to(obj, {
+                        val: target,
+                        duration: 2,
+                        ease: "power2.out",
+                        onUpdate: function () {
+                            counter.textContent = Math.ceil(obj.val) + "+";
+                        },
+                        onComplete: function () {
+                            counter.textContent = target + "+";
+                        }
+                    });
+                }
+            });
+        });
+
+        /* ══════════════════════════════════════════
+           5. CARD REVEALS  – staggered per group
+        ══════════════════════════════════════════ */
+        /* Section headers */
+        document.querySelectorAll(".gs-reveal").forEach(function (el) {
+            gsap.fromTo(
+                el,
+                { y: 30, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.7,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 88%",
+                        once: true
+                    }
+                }
+            );
+        });
+
+        /* Cards (philo, trade, faculty) – stagger within their parent */
+        document.querySelectorAll(".philo-grid, .trades-grid, .iti-faculty-grid").forEach(function (grid) {
+            var cards = grid.querySelectorAll(".gs-card");
+            if (!cards.length) return;
+            gsap.fromTo(
+                cards,
+                { y: 50, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.7,
+                    stagger: 0.12,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: grid,
+                        start: "top 85%",
+                        once: true
+                    }
+                }
+            );
+        });
+
+        /* ══════════════════════════════════════════
+           6. PRINCIPAL SECTION  – left / right reveal
+        ══════════════════════════════════════════ */
+        var principalImg = document.querySelector(".gs-principal-img");
+        var principalText = document.querySelector(".gs-principal-text");
+
+        if (principalImg) {
+            gsap.fromTo(
+                principalImg,
+                { x: -60, opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: principalImg,
+                        start: "top 82%",
+                        once: true
+                    }
+                }
+            );
+        }
+
+        if (principalText) {
+            gsap.fromTo(
+                principalText,
+                { x: 60, opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: principalText,
+                        start: "top 82%",
+                        once: true
+                    }
+                }
+            );
+        }
+
+        /* ══════════════════════════════════════════
+           7. CONTACT CTA PULSE  – subtle scale on enter
+        ══════════════════════════════════════════ */
+        var cta = document.querySelector(".contact-cta");
+        if (cta) {
+            gsap.fromTo(
+                cta,
+                { scale: 0.96, opacity: 0 },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: cta,
+                        start: "top 88%",
+                        once: true
+                    }
+                }
+            );
+        }
+
+        /* ══════════════════════════════════════════
+           8. SCROLL PROGRESS BAR  (rAF-throttled)
+        ══════════════════════════════════════════ */
+        var progressBar = document.getElementById("scrollProgress");
+        if (progressBar) {
+            var ticking = false;
+            window.addEventListener("scroll", function () {
+                if (!ticking) {
+                    requestAnimationFrame(function () {
+                        var scrolled =
+                            window.scrollY /
+                            (document.documentElement.scrollHeight - window.innerHeight);
+                        progressBar.style.width = (scrolled * 100).toFixed(1) + "%";
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+
+        /* ══════════════════════════════════════════
+           9. MOBILE MENU
+        ══════════════════════════════════════════ */
+        var mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        var navLinks = document.getElementById("navLinks");
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener("click", function () {
+                var isOpen = navLinks.classList.toggle("active");
+                mobileMenuBtn.classList.toggle("active", isOpen);
+                mobileMenuBtn.setAttribute("aria-expanded", String(isOpen));
+            });
+        }
+
+    }); /* end DOMContentLoaded */
+    </script>
+
+    <script src="/assets/js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty | KUMSS Private ITI Karhati</title>
+    <link rel="icon" href="/assets/kumss-logo.webp" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Existing Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/institute.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+    <style>
+        /* ITI wider navbar for extra logos */
+        .gm-container { max-width: 1440px; }
+        .gm-links { gap: 14px; }
+
+        /* ==================== GLOBAL & THEME VARIABLES ==================== */
+        :root {
+            --blue: #003366;
+            --orange: #ff6700;
+            --dark: #111;
+            --light: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #555555;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Gantari', sans-serif;
+            font-weight: 700;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .faculty-hero {
+            background-color: var(--blue);
+            color: #ffffff;
+            padding: 180px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faculty-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(255, 103, 0, 0.15) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .faculty-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .faculty-hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ==================== FACULTY CARDS ==================== */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 991px) {
+            .faculty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .faculty-card {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: rgba(255, 103, 0, 0.3);
+        }
+
+        .faculty-img-box {
+            height: 320px;
+            width: 100%;
+            overflow: hidden;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .faculty-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .faculty-card:hover .faculty-img {
+            transform: scale(1.05);
+        }
+
+        .faculty-info {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faculty-name {
+            color: var(--blue);
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        .faculty-role {
+            color: var(--orange);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .faculty-bio {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+
+
+        .fc-link {
+            padding: 8px 15px;
+            border-radius: 5px;
+            background: rgba(0, 51, 102, 0.05);
+            color: var(--blue);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        .fc-link:hover {
+            background: var(--blue);
+            color: #ffffff;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .faculty-hero {
+                padding: 100px 0 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"
+        style="position: fixed; top: 0; left: 0; height: 3px; background: #ff6700; z-index: 9999; width: 0%;"></div>
+    <a href="/" class="back-to-main-btn" title="Back to Main Website">
+        <i class="ri-home-4-line"></i>
+    </a>
+    <!-- ==================== HEADER (PRESERVED) ==================== -->
+    <header class="gm-header" id="header">
+        <div class="gm-container">
+            <nav class="gm-nav" aria-label="Primary">
+                <!-- Logo -->
+                <a href="/index.html" class="gm-logo">
+                    <img src="/assets/kumss-logo.webp" alt="KUMSS Logo" class="ggm-logo-img">
+                </a>
+                <div class="gm-partner-logos">
+                    <img src="/assets/iti-logo-one.webp" alt="Partner Logo 1" class="gm-partner-logo">
+                    <img src="/assets/iti-logo-two.webp" alt="Partner Logo 2" class="gm-partner-logo">
+                    <img src="/assets/iti-logo-three.webp" alt="Partner Logo 3" class="gm-partner-logo">
+                </div>
+
+                <!-- Mobile toggle -->
+                <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu"
+                    aria-controls="navLinks" aria-expanded="false">
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                    <span class="gm-burger-line"></span>
+                </button>
+
+                <!-- Links -->
+                <ul class="gm-links" id="navLinks">
+                    <li><a class="gm-link" href="./kumss-private-iti-karhati.html">Home</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./about.html">About</a></li>
+                    <li class="gm-item"><a class="gm-link" href="./admissions.html">Admissions</a></li>
+                    <li class="gm-item"><a class="gm-link active" href="./faculty.html">Faculty</a>
+                    </li>
+                    <li><a class="gm-link" href="./trades.html">Trades</a></li>
+
+                    <!-- Dropdown -->
+                    <li class="gm-item gm-dropdown" data-dropdown>
+                        <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="institutesMenu">
+                            Our Educational Institutes
+                            <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+                        </button>
+
+                        <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                                    Vidyalay Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">New English
+                                    School Dhakale</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/primary-school-karhati/primary-school-karhati.html">Primary School Karhati
+                                    karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I
+                                    Karhati</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                                    English Medium School</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
+                                    Pawar Kala Mahavidyalaya</a></li>
+                            <li role="none"><a role="menuitem"
+                                    href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh
+                                    Junior College</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="gm-link" href="news-events.html">News & Events</a></li>
+                    <li><a class="gm-link" href="gallery.html">Gallery</a></li>
+
+                    <li class="gm-cta"><a class="ggm-btn" href="/contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="faculty-hero">
+        <div class="container">
+            <h1 class="gs-reveal">Our Expert Faculty</h1>
+            <p class="gs-reveal">Dedicated professionals committed to shaping the future of industrial talent.</p>
+        </div>
+    </section>
+
+    <!-- ==================== FACULTY LIST ==================== -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <!-- Principal / Leadership -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10">
+                    <div
+                        class="faculty-card flex-md-row align-items-center p-0 overflow-hidden bg-white shadow-sm gs-reveal">
+                        <div class="col-md-5">
+                            <div style="height: 100%; min-height: 350px;">
+                                <img src="/assets/vikas-nirmal-iti-principal.webp"
+                                    onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'"
+                                    alt="Mr. Vikas Sanjay Nirmal" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="col-md-7 p-4 p-lg-5">
+                            <span class="faculty-role text-primary">Principal</span>
+                            <h2 class="mb-3" style="color: var(--blue);">Er. Vikas Mangal Sanjay Nirmal</h2>
+                            <p class="text-muted mb-4">
+                                "With over 15 years of experience in technical education, I believe in practical
+                                learning that translates directly to industry success. My mission is to ensure every
+                                student leaves our campus as a skilled professional ready to contribute to the nation's
+                                growth."
+                            </p>
+                            <p><b>- CEO, Krishi Udyog Mool Shikshan Sanstha (KUMSS)</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header text-center mb-5">
+                <h2 style="color: var(--blue);">Academic Staff</h2>
+                <div style="width: 60px; height: 4px; background: var(--orange); margin: 15px auto;"></div>
+            </div>
+
+            <div class="faculty-grid">
+                <!-- Faculty 1 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/chandgude-mahesh.webp" alt="Mr. Chandgude Mahesh Prakash" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Chandgude Mahesh Prakash</h3>
+                        <span class="faculty-role">Superintendent</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 2 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/madane-vishal.webp" alt="Mr. Madane Vishal Laxman" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Madane Vishal Laxman</h3>
+                        <span class="faculty-role">Engg.Drawing Instructor</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 3 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/jadhav-rahul.webp" alt="Mr. Jadhav Rahul Manikrao" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Jadhav Rahul Manikrao</h3>
+                        <span class="faculty-role">Fitter Instructor</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 4 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/taware-akshay.webp" alt="Mr. Taware Akshay Chandrakant" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Taware Akshay Chandrakant</h3>
+                        <span class="faculty-role">Fitter Instructor</span>
+
+
+                    </div>
+                </div>
+
+                <!-- Faculty 5 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/khandale-babasaheb.webp" alt="Mr. Khandale Babasaheb Balkrushna"
+                            class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Khandale Babasaheb Balkrushna</h3>
+                        <span class="faculty-role">Welder Instructor</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 6 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/madane-rajendra.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Madane Rajendra Sopan</h3>
+                        <span class="faculty-role">Welder Instructor</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 7 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/kalbhor-swapnil.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Kalbhor Swapnil Jaywant</h3>
+                        <span class="faculty-role">Surveyor Instructor</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 8 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/ekatpure-sayali.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mrs. Ekatpure Sayali Ganpat</h3>
+                        <span class="faculty-role">D'man Mechanical Instructor</span>
+
+
+                    </div>
+                </div>
+
+                <!-- Faculty 9 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/dhumal-swapnil.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Dhumal Swapnil Satish</h3>
+                        <span class="faculty-role">Store Keeper</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 10 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/nighul-sagar.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Nighul Sagar Ashok</h3>
+                        <span class="faculty-role">Accountatnt</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 11 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/borawake-sandip.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Borawake Sandip Gangaram</h3>
+                        <span class="faculty-role">Clerk</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 12 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/rohini-shivaji.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Miss. Rohini Shivaji Madane</h3>
+                        <span class="faculty-role">Accountatnt</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 13 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/salunke-vishal.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Salunke Vishal Shantaram</h3>
+                        <span class="faculty-role">Peon</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 14 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/gaikwad-mahesh.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr.Gaikwad Mahesh Santosh</h3>
+                        <span class="faculty-role">Electrician Instructor</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 15 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/jadhav-priti.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Miss.Jadhav Priti Ishwar</h3>
+                        <span class="faculty-role">Electrician Instructor</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 16 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/abhijit-pawar.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr.Pawar Abhijit Rajendra</h3>
+                        <span class="faculty-role">Fitter Instructor</span>
+                    </div>
+                </div>
+
+                <!-- Faculty 17 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/bhise-ashwini.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Miss.Bhise Ashwini Shivaji</h3>
+                        <span class="faculty-role">Electronics Mechanic Instructor</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 18 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/jamdade-sonali.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Miss.Jamdade Sonali Sanjay</h3>
+                        <span class="faculty-role">Human Resource Executive</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 19 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/jadhav-sushma.webp" alt="Mr. Madane Rajendra Sopan" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Miss. Jadhav Sushma Amol</h3>
+                        <span class="faculty-role">Refrigeration and Air Conditioning Instructor </span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 20 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/kambale-pratik.webp" alt="Mr. Kambale Pratik Ravindra" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Kambale Pratik Ravindra</h3>
+                        <span class="faculty-role">Clerk</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 21 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/jadhav-kiran.webp" alt="Mr. Jadhav Kiran Vilas" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Jadhav Kiran Vilas</h3>
+                        <span class="faculty-role">Peon</span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 22 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/lonkar-ganesh.webp" alt="Mr. Lonkar Ganesh Kishor" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr. Lonkar Ganesh Kishor</h3>
+                        <span class="faculty-role">Peon</span>
+                    </div>
+                </div>
+
+                <!-- Faculty 23 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/hake-anuja.webp" alt="Miss. Hake Anuja Ganpat" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Miss. Hake Anuja Ganpat</h3>
+                        <span class="faculty-role">Electronics Mechanic Instructor </span>
+
+                    </div>
+                </div>
+
+                <!-- Faculty 24 -->
+                <div class="faculty-card gs-reveal">
+                    <div class="faculty-img-box">
+                        <img src="/assets/ketan-tambe.webp" alt="Mr.Tambe Ketan Vishwas" class="faculty-img">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">Mr.Tambe Ketan Vishwas</h3>
+                        <span class="faculty-role">Surveyor Instructor </span>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER (PRESERVED) ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="/index.html" class="logo kumss-since"
+                        style="margin-bottom: 2rem; align-items: flex-start;">
+                        <img src="/assets/kumss-logo.webp" alt="KUMSS Logo" class="footer-logo-img">
+                        <div><span>KUMSS SINCE 1951</span></div>
+                    </a>
+                    <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+                        An educational society focused on overall development of students since 1951.
+                    </p>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/KUMSS.ITI/" class="social-link" aria-label="Facebook"><i
+                                class="ri-facebook-fill"></i></a>
+                        <a href="https://www.instagram.com/kumss.iti?igsh=ZXJ5dnRyMGcyM2Y4" class="social-link"
+                            aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="social-link"
+                            aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./kumss-private-iti-karhati.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./admissions.html">Admissions</a></li>
+                        <li><a href="./trades.html">Trades</a></li>
+                        <li><a href="./faculty.html">Faculty</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Our Institutes</h3>
+                    <ul class="footer-links">
+                        <li><a href="/institutes/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay,
+                                Karhati</a>
+                        </li>
+                        <li><a href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">New English School,
+                                Dhakale</a>
+                        </li>
+                        <li><a href="/institutes/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a>
+                        </li>
+                        <li><a href="/institutes/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a>
+                        </li>
+                        <li><a href="/institutes/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
+                                Medium</a></li>
+                        <li><a href="/institutes/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
+                                Pawar Kala Mahavidyalaya</a></li>
+                        <li><a href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior
+                                College</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3
+                        style="color: var(--blackColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+                        Contact Info</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <i class="ri-phone-line"></i>
+                            <a href="tel:+919423684242">+91 94236 84242</a>
+                        </li>
+                        <li>
+                            <i class="ri-phone-line"></i>
+                            <a href="tel:+919423694242">+91 94236 94242</a>
+                        </li>
+
+                        <li>
+                            <i class="ri-mail-line"></i>
+                            <a href="mailto:iti@kumss.org">iti@kumss.org</a>
+                        </li>
+                        <li style="color: #000;"><i class="ri-map-pin-line"></i>6CXH+VQ5, Malwadi, Maharashtra 412204
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+                    ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+                </p>
+                <p class="last-updated">Last Updated: <span id="lastUpdated">11 Mar 2026, 3:40 PM </span></p>
+            </div>
+        </div>
+    </footer>
+
+    <button type="button" id="back-to-top" aria-label="Back to Top">
+        <i class="ri-arrow-up-double-fill"></i>
+    </button>
+
+
+    <!-- JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="/assets/js/institute.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // Simple Reveal Animation
+            const revealElements = document.querySelectorAll('.gs-reveal');
+            revealElements.forEach(el => {
+                gsap.fromTo(el,
+                    { y: 30, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 85%"
+                        }
+                    }
+                );
+            });
+
+            // Scroll Progress Bar
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("scrollProgress").style.width = scrolled + "%";
+            });
+        });
+    </script>
+    <script src="/assets/js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | New English School  Dhakale</title>
+  <link rel="icon" href="/assets/kumss-logo.webp" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/assets/css/institute.css">
+
+  <!-- Remix Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+  <style>
+    /* =========================================
+       VARIABLES
+       ========================================= */
+    :root {
+      --brand-blue: #233f92;
+      --brand-blue-dark: #0b2a5b;
+      --brand-orange: #ff9704;
+      --text-dark: #1f2937;
+      --text-gray: #6b7280;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--text-dark);
+      background-color: var(--white);
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Gantari", sans-serif;
+    }
+
+
+
+    .container-custom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: rgba(35, 63, 146, 0.1);
+      color: var(--brand-blue);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--brand-blue);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .section-desc {
+      color: var(--text-gray);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       HERO (matches about page style)
+       ========================================= */
+    .page-hero {
+      position: relative;
+      height: 50vh;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(35, 63, 146, 0.75), rgba(15, 23, 42, 0.65));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    .hero-badge {
+      background: rgba(255, 151, 4, 0.9);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.1;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      font-weight: 300;
+      opacity: 0.95;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       GALLERY STATS RIBBON
+       ========================================= */
+    .gallery-ribbon {
+      background: var(--brand-blue);
+      padding: 0;
+      position: relative;
+      z-index: 5;
+    }
+
+    .ribbon-flex {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .ribbon-item {
+      flex: 1;
+      max-width: 300px;
+      text-align: center;
+      padding: 32px 24px;
+      color: white;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+
+    .ribbon-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 40px;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .ribbon-item i {
+      font-size: 1.6rem;
+      color: var(--brand-orange);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .ribbon-item h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .ribbon-item span {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.75;
+      font-weight: 500;
+    }
+
+    /* =========================================
+       FILTER TABS
+       ========================================= */
+    .gallery-main {
+      padding: 80px 0 100px;
+      background: var(--bg-light);
+      min-height: 60vh;
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .filter-btn {
+      background: var(--white);
+      color: var(--text-dark);
+      border: 2px solid #e5e7eb;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .filter-btn i {
+      font-size: 1.1rem;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(35, 63, 146, 0.12);
+    }
+
+    .filter-btn.active {
+      background: var(--brand-blue);
+      color: var(--white);
+      border-color: var(--brand-blue);
+      box-shadow: 0 4px 16px rgba(35, 63, 146, 0.3);
+    }
+
+    .filter-btn .count {
+      background: rgba(0, 0, 0, 0.1);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .filter-btn.active .count {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* =========================================
+       MASONRY GRID
+       ========================================= */
+    .masonry-grid {
+      column-count: 4;
+      column-gap: 22px;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 22px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.4s ease,
+        opacity 0.5s ease;
+      /* Reveal animation */
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .gallery-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-item.hiding {
+      opacity: 0;
+      transform: scale(0.9);
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Hover overlay */
+    .item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(11, 42, 91, 0.85) 100%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      z-index: 2;
+    }
+
+    .gallery-item:hover .item-overlay {
+      opacity: 1;
+    }
+
+    .item-overlay .caption {
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      transform: translateY(10px);
+      transition: transform 0.35s ease;
+    }
+
+    .item-overlay .sub-caption {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.8rem;
+      font-weight: 400;
+      transform: translateY(10px);
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover .item-overlay .caption,
+    .gallery-item:hover .item-overlay .sub-caption {
+      transform: translateY(0);
+    }
+
+    /* Category tag on card */
+    .item-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--brand-orange);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 3;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover .item-tag {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Expand icon */
+    .item-expand {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--brand-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      z-index: 3;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-item:hover .item-expand {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* =========================================
+       LIGHTBOX
+       ========================================= */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-img-wrap {
+      position: relative;
+      max-width: 90vw;
+      max-height: 85vh;
+    }
+
+    .lightbox-img-wrap img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      transform: scale(0.9);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .lightbox.open .lightbox-img-wrap img {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      color: white;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: rotate(90deg);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 54px;
+      height: 54px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      color: white;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .lightbox-nav:hover {
+      background: var(--brand-orange);
+      border-color: var(--brand-orange);
+    }
+
+    .lightbox-prev {
+      left: 24px;
+    }
+
+    .lightbox-next {
+      right: 24px;
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      font-weight: 500;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 6px 18px;
+      border-radius: 30px;
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      white-space: nowrap;
+    }
+
+    /* =========================================
+       CTA SECTION
+       ========================================= */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+      background: url('https://www.transparenttextures.com/patterns/cubes.webp'), var(--white);
+    }
+
+    .cta-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--brand-blue);
+      border-radius: 30px;
+      padding: 60px;
+      color: white;
+      box-shadow: 0 20px 50px rgba(35, 63, 146, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    .cta-box::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    .cta-box h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0 0 10px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--brand-orange);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid var(--brand-orange);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--brand-orange);
+    }
+
+    /* =========================================
+       RESPONSIVE
+       ========================================= */
+    @media (max-width: 1100px) {
+      .masonry-grid {
+        column-count: 3;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .masonry-grid {
+        column-count: 2;
+        column-gap: 14px;
+      }
+
+      .gallery-item {
+        margin-bottom: 14px;
+      }
+
+      .ribbon-flex {
+        flex-wrap: wrap;
+      }
+
+      .ribbon-item {
+        min-width: 140px;
+        padding: 24px 16px;
+      }
+
+      .ribbon-item:not(:last-child)::after {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2.4rem;
+      }
+
+      .filter-btn {
+        padding: 8px 18px;
+        font-size: 0.82rem;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+
+      .lightbox-nav {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+      }
+
+      .cta-box {
+        padding: 40px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .masonry-grid {
+        column-count: 1;
+        column-gap: 0;
+      }
+
+      .gallery-item {
+        margin-bottom: 18px;
+      }
+
+      .ribbon-item h3 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <a href="/" class="back-to-main-btn" title="Back to Main Website">
+    <i class="ri-home-4-line"></i>
+  </a>
+
+  <!-- HEADER -->
+  <header class="gm-header" id="header">
+    <div class="gm-container">
+      <nav class="gm-nav" aria-label="Primary">
+        <a href="/index.html" class="gm-logo">
+          <img src="/assets/kumss-logo.webp" alt="KUMSS Logo" class="gm-logo-img">
+        </a>
+
+        <button class="gm-burger" id="mobileMenuBtn" type="button" aria-label="Open menu" aria-controls="navLinks"
+          aria-expanded="false">
+          <span class="gm-burger-line"></span>
+          <span class="gm-burger-line"></span>
+          <span class="gm-burger-line"></span>
+        </button>
+
+        <ul class="gm-links" id="navLinks">
+          <li><a class="gm-link" href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">Home</a></li>
+          <li><a class="gm-link" href="/institutes/new-english-school-dhakale/about.html">About</a></li>
+          <li><a class="gm-link" href="/institutes/new-english-school-dhakale/admissions.html">Admissions</a></li>
+          <li class="gm-item gm-dropdown" data-dropdown>
+            <button class="gm-link gm-dropbtn" type="button" aria-haspopup="true" aria-expanded="false"
+              aria-controls="institutesMenu">
+              Our Educational Institutes
+              <i class="ri-arrow-down-s-line gm-chevron" aria-hidden="true"></i>
+            </button>
+
+            <ul class="gm-submenu" id="institutesMenu" role="menu" aria-label="Institutes submenu">
+              <li role="none"><a role="menuitem"
+                  href="/institutes/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh
+                  Vidyalay Karhati</a></li>
+              <li role="none"><a role="menuitem" href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">New
+                  English
+                  School Dhakale</a></li>
+              <li role="none"><a role="menuitem" href="/institutes/primary-school-karhati/primary-school-karhati.html">Primary
+                  School Karhati
+                  karhati</a></li>
+              <li role="none"><a role="menuitem" href="/institutes/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS
+                  Private I.T.I
+                  Karhati</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/institutes/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul
+                  English Medium School</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/institutes/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
+                  Pawar Kala Mahavidyalaya</a></li>
+              <li role="none"><a role="menuitem"
+                  href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh
+                  Junior College</a></li>
+            </ul>
+          </li>
+          <li><a class="gm-link" href="/institutes/new-english-school-dhakale/news-events.html">News & Events</a></li>
+          <li class="gm-item"><a class="gm-link" href="/institutes/new-english-school-dhakale/staff.html">Staff</a></li>
+          <li><a class="gm-link active" href="/institutes/new-english-school-dhakale/gallery.html">Gallery</a></li>
+          <li><a class="gm-link" href="/institutes/new-english-school-dhakale/policy.html">Policy</a></li>
+        </ul>
+
+        <a class="ggm-btn" href="/contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <img src="/assets/english-medium.webp" alt="New English School Dhakale" class="hero-bg-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+
+      <h1 class="hero-title">Gallery & Archives</h1>
+      <p class="hero-subtitle">Glimpses of events, celebrations, news coverage, and everyday moments at New English School Dhakale</p>
+    </div>
+  </section>
+
+ 
+
+  <!-- GALLERY MAIN -->
+  <section class="gallery-main">
+    <div class="container-custom">
+
+      <div class="gallery-header">
+        <span class="section-tag">Explore Our Moments</span>
+        <h2 class="section-title">School Photo Gallery</h2>
+        <p class="section-desc">Browse through our collection of memories — from academic events and cultural programs
+          to news features.</p>
+
+        <!-- Filter Tabs -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">
+            <i class="ri-layout-grid-line"></i> All <span class="count">11</span>
+          </button>
+          <button class="filter-btn" data-filter="events">
+            <i class="ri-calendar-event-line"></i> Events <span class="count">6</span>
+          </button>
+          <button class="filter-btn" data-filter="campus">
+            <i class="ri-building-line"></i> Campus <span class="count">2</span>
+          </button>
+          <button class="filter-btn" data-filter="cultural">
+            <i class="ri-music-2-line"></i> Cultural <span class="count">2</span>
+          </button>
+          <button class="filter-btn" data-filter="news">
+            <i class="ri-newspaper-line"></i> News <span class="count">1</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="masonry-grid" id="galleryGrid">
+
+        <div class="gallery-item" data-category="events" data-caption="School Event Celebration">
+          <img src="/assets/new-english-event-1.webp" alt="School Event 1" loading="lazy">
+          <span class="item-tag">Events</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">School Event Celebration</div>
+            <div class="sub-caption">Annual Day Function</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="cultural" data-caption="Cultural Programme">
+          <img src="/assets/new-english-event-2.webp" alt="Cultural Event" loading="lazy">
+          <span class="item-tag">Cultural</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">Cultural Programme</div>
+            <div class="sub-caption">Student Performances</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events" data-caption="Prize Distribution Ceremony">
+          <img src="/assets/new-english-event-3.webp" alt="Prize Distribution" loading="lazy">
+          <span class="item-tag">Events</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">Prize Distribution Ceremony</div>
+            <div class="sub-caption">Rewarding Excellence</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="campus" data-caption="Campus Life">
+          <img src="/assets/new-english-event-4.webp" alt="Campus Life" loading="lazy">
+          <span class="item-tag">Campus</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">Campus Life</div>
+            <div class="sub-caption">Everyday at Dhakale</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events" data-caption="Sports Day Event">
+          <img src="/assets/new-english-event-5.webp" alt="Sports Day" loading="lazy">
+          <span class="item-tag">Events</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">Sports Day Event</div>
+            <div class="sub-caption">Physical Excellence</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="cultural" data-caption="Cultural Festival">
+          <img src="/assets/new-english-event-6.webp" alt="Cultural Festival" loading="lazy">
+          <span class="item-tag">Cultural</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">Cultural Festival</div>
+            <div class="sub-caption">Celebrating Traditions</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events" data-caption="School Assembly">
+          <img src="/assets/new-english-event-7.webp" alt="School Assembly" loading="lazy">
+          <span class="item-tag">Events</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">School Assembly</div>
+            <div class="sub-caption">Morning Gathering</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events" data-caption="Annual Function">
+          <img src="/assets/new-english-event-8.webp" alt="Annual Function" loading="lazy">
+          <span class="item-tag">Events</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">Annual Function</div>
+            <div class="sub-caption">Year-End Celebrations</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="campus" data-caption="School Infrastructure">
+          <img src="/assets/new-english-event-9.webp" alt="School Infrastructure" loading="lazy">
+          <span class="item-tag">Campus</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">School Infrastructure</div>
+            <div class="sub-caption">Modern Facilities</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events" data-caption="Special Event">
+          <img src="/assets/new-english-event-10.webp" alt="Special Event" loading="lazy">
+          <span class="item-tag">Events</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">Special Event</div>
+            <div class="sub-caption">Memorable Moments</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="news" data-caption="News Coverage">
+          <img src="/assets/new-english-school-news.webp" alt="News Coverage" loading="lazy">
+          <span class="item-tag">News</span>
+          <div class="item-expand"><i class="ri-zoom-in-line"></i></div>
+          <div class="item-overlay">
+            <div class="caption">News Coverage</div>
+            <div class="sub-caption">Media Recognition</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lbClose" aria-label="Close"><i class="ri-close-line"></i></button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous"><i
+        class="ri-arrow-left-s-line"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next"><i
+        class="ri-arrow-right-s-line"></i></button>
+    <div class="lightbox-img-wrap">
+      <img id="lbImg" src="" alt="">
+    </div>
+    <div class="lightbox-caption" id="lbCaption"></div>
+    <div class="lightbox-counter" id="lbCounter"></div>
+  </div>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container-custom">
+      <div class="cta-box">
+        <h2>Want to See More?</h2>
+        <p style="margin: 15px 0 30px; opacity: 0.9;">Visit our school campus and experience the vibrant culture
+          firsthand. We'd love to show you around.</p>
+        <a href="tel:+918379043117" class="btn-primary"
+          style="background: white; color: var(--brand-blue); border-color: white;">Schedule a Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/index.html" class="logo"
+            style="margin-bottom: 2rem; align-items: flex-start; text-decoration: none;">
+            <img src="/assets/kumss-logo.webp" alt="KUMSS Logo" class="footer-logo-img">
+            <div>
+              <div style="color: #ff9704;">KUMSS SINCE 1951</div>
+            </div>
+          </a>
+          <p style="color: var(--paragraphColor); margin-bottom: 2rem;">
+            An educational society focused on overall development of students since 1951.
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61586048980596" class="social-link"
+              aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="https://www.instagram.com/new_english_school_dhakale?igsh=MWJsOHZ3NTRoZ2Uwbg==" class="social-link"
+              aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+            <a href="https://youtube.com/@kumss-baramati?si=jGEUBqWEuLE_zmHB" class="social-link"
+              aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="./new-english-school-dhakale.html">Home</a></li>
+            <li><a href="/institutes/new-english-school-dhakale/about.html">About</a></li>
+            <li><a href="./admissions.html">Admissions</a></li>
+            <li><a href="/institutes/new-english-school-dhakale/staff.html">Staff</a></li>
+            <li><a href="/institutes/new-english-school-dhakale/gallery.html">Gallery</a></li>
+            <li><a href="policy.html">Policy</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Our Institutes</h3>
+          <ul class="footer-links">
+            <li><a href="/institutes/vasatigruh-vidyalay-karhati/vasatigruh-vidyalay-karhati.html">Vasatigruh Vidyalay, Karhati</a>
+            </li>
+            <li><a href="/institutes/new-english-school-dhakale/new-english-school-dhakale.html">New English School, Dhakale</a>
+            </li>
+            <li><a href="/institutes/primary-school-karhati/primary-school-karhati.html">Primary School, Karhati</a></li>
+            <li><a href="/institutes/kumss-private-iti-Karhati/kumss-private-iti-karhati.html">KUMSS Private I.T.I</a></li>
+            <li><a href="/institutes/gurukul-english-medium-school/gurukul-english-medium-school.html">Gurukul English
+                Medium</a></li>
+            <li><a href="/institutes/shardabai-pawar-kala-mahavidyalaya/shardabai-pawar-kala-mahavidyalaya.html">Shardabai
+                Pawar Kala Mahavidyalaya</a></li>
+            <li><a href="/institutes/vasatigruh-junior-college/vasatigruh-junior-college.html">Vasatigruh Junior College</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3
+            style="color: var(--primaryColor); margin-bottom: 1.5rem; font-family: var(--heading-font-family); font-weight: 700; font-size: 1.25rem;">
+            Contact Info</h3>
+          <ul class="footer-links">
+            <li>
+              <i class="ri-phone-line"></i>
+              <a href="tel:+918379043117">+91 83790 43117</a>
+            </li>
+            <li>
+              <i class="ri-mail-line"></i>
+              <a href="mailto:nesdhakale4902@gmail.com">nesdhakale4902@gmail.com</a>
+            </li>
+            <li style="color: #000;">
+              <i class="ri-map-pin-line"></i>
+              A/P – Dhakale, Tal – Baramati, Dist – Pune - 412204
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Krishi Udyog Mool Shikshan Sanstha (KUMSS). All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--paragraphColor);">
+          ISO 9001:2015 Certified Institute | Recognized by Government of Maharashtra
+        </p>
+        <p class="last-updated">Last Updated: <span id="lastUpdated">11 Mar 2026, 3:40 PM </span></p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" id="back-to-top" aria-label="Back to Top">
+    <i class="ri-arrow-up-double-fill"></i>
+  </button>
+
+  <script src="/assets/js/institute.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      /* ── Header Scroll ── */
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      });
+
+      /* ── Mobile Menu ── */
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.getElementById('navLinks');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenuBtn.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+      }
+
+      /* ── Scroll Reveal (staggered) ── */
+      const items = document.querySelectorAll('.gallery-item');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting && !entry.target.classList.contains('revealed')) {
+            // stagger the reveal based on position in current batch
+            const delay = Array.from(items).filter(
+              el => !el.classList.contains('revealed') && el.getBoundingClientRect().top < window.innerHeight
+            ).indexOf(entry.target);
+            setTimeout(() => {
+              entry.target.classList.add('revealed');
+            }, Math.max(0, delay) * 80);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      items.forEach(el => revealObserver.observe(el));
+
+      /* ── Filter ── */
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const grid = document.getElementById('galleryGrid');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+
+          items.forEach(item => {
+            const cat = item.dataset.category;
+            if (filter === 'all' || cat === filter) {
+              item.style.display = '';
+              item.classList.remove('hiding');
+              // Re-trigger reveal if not already
+              if (!item.classList.contains('revealed')) {
+                setTimeout(() => item.classList.add('revealed'), 100);
+              }
+            } else {
+              item.style.display = 'none';
+              item.classList.add('hiding');
+            }
+          });
+        });
+      });
+
+      /* ── Lightbox ── */
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbCaption = document.getElementById('lbCaption');
+      const lbCounter = document.getElementById('lbCounter');
+      let currentIdx = 0;
+      let visibleItems = [];
+
+      function getVisibleItems() {
+        return Array.from(items).filter(el => el.style.display !== 'none');
+      }
+
+      function openLightbox(idx) {
+        visibleItems = getVisibleItems();
+        currentIdx = idx;
+        updateLightbox();
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      function updateLightbox() {
+        const item = visibleItems[currentIdx];
+        if (!item) return;
+        const img = item.querySelector('img');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCaption.textContent = item.dataset.caption || '';
+        lbCounter.textContent = `${currentIdx + 1} / ${visibleItems.length}`;
+      }
+
+      function nextSlide() {
+        currentIdx = (currentIdx + 1) % visibleItems.length;
+        updateLightbox();
+      }
+
+      function prevSlide() {
+        currentIdx = (currentIdx - 1 + visibleItems.length) % visibleItems.length;
+        updateLightbox();
+      }
+
+      // Click handlers
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          const vis = getVisibleItems();
+          const idx = vis.indexOf(item);
+          if (idx !== -1) openLightbox(idx);
+        });
+      });
+
+      document.getElementById('lbClose').addEventListener('click', closeLightbox);
+      document.getElementById('lbNext').addEventListener('click', nextSlide);
+      document.getElementById('lbPrev').addEventListener('click', prevSlide);
+
+      // Click backdrop to close
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+      });
+
+    });
+  </script>
+  <script src="/assets/js/custom.js"></script>
+</body>
+
+</html>
