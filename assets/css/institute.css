@@ -1,4 +1,6 @@
         /* === CSS Reset & Custom Properties === */
+        html, body { overflow-x: hidden; max-width: 100%; }
+
         :root {
             /* --- TYPOGRAPHY --- */
             --heading-font-family: "Gantari", sans-serif;
@@ -3293,10 +3295,15 @@ Back to Top Style
   }
 }
 
- .sticky-phone-btn{position:fixed;top:calc(50% - 58px);right:5px;width:52px;height:52px;background:#124aff;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:9999;text-decoration:none;transition:background .2s,transform .2s;}
- 
+ .sticky-phone-btn{position:fixed;bottom:76px;left:20px;width:50px;height:50px;background:#124aff;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:9999;text-decoration:none;transition:background .2s,transform .2s;}
+
  .sticky-phone-btn:hover{background:#2f63f1;transform:scale(1.1);}
- 
- .sticky-whatsapp-btn{position:fixed;top:calc(50% + 8px);right:5px;width:52px;height:52px;background: #25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:9999;text-decoration:none;transition:background .2s,transform .2s;}
- 
+
+ .sticky-whatsapp-btn{position:fixed;bottom:20px;left:20px;width:50px;height:50px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:9999;text-decoration:none;transition:background .2s,transform .2s;}
+
  .sticky-whatsapp-btn:hover{background:#1de078;transform:scale(1.1);}
+
+@media (max-width: 767px) {
+  .sticky-phone-btn{width:28px;height:28px;font-size:15px;bottom:58px;left:12px;}
+  .sticky-whatsapp-btn{width:28px;height:28px;font-size:15px;bottom:22px;left:12px;}
+}
