@@ -821,6 +821,23 @@
         gap: 20px;
       }
 
+      /* ══════════ NEWS GRID (uniform cards, row order) ══════════ */
+      .gl-news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .gl-news-grid .gl-card {
+        margin-bottom: 0;
+      }
+
+      .gl-news-grid .gl-card img {
+        height: 340px;
+        object-fit: cover;
+        object-position: top;
+      }
+
       /* ══════════ GALLERY CARD ══════════ */
       .gl-card {
         break-inside: avoid;
@@ -1534,7 +1551,7 @@
             ><i class="ri-newspaper-line"></i>&ensp;14 Photos</span
           >
         </div>
-        <div class="gl-masonry">
+        <div class="gl-news-grid">
 
           <div
             class="gl-card gl-reveal"
