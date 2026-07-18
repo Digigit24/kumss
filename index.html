@@ -3723,13 +3723,22 @@ src="https://www.facebook.com/tr?id=800019209837353&ev=PageView&noscript=1"
     /* ============================================================
        1. PREMIUM LOADER
     ============================================================ */
-    window.addEventListener('load', function () {
-      var loader = document.getElementById('kumss-preloader');
-      setTimeout(function () {
-        loader.classList.add('fade-out');
+    (function () {
+      var hidden = false;
+      function hideLoader() {
+        if (hidden) return;
+        hidden = true;
+        var loader = document.getElementById('kumss-preloader');
+        if (loader) loader.classList.add('fade-out');
         document.body.style.overflowY = 'visible';
-      }, 2500);
-    });
+      }
+      // hide shortly after page load
+      window.addEventListener('load', function () {
+        setTimeout(hideLoader, 1200);
+      });
+      // failsafe: never let the loader stick (video/images may load slowly)
+      setTimeout(hideLoader, 4000);
+    })();
 
     /* ============================================================
        2. NAVBAR – sticky + shadow on scroll
