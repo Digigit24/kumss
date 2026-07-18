@@ -1635,7 +1635,7 @@
             <a href="/careers" class="nav-link">Careers</a>
           </li>
           <li class="nav-item"><a href="/vision-mission" class="nav-link">Vision &amp; Mission</a></li>
-            <li class="nav-item">
+          <li class="nav-item">
             <a href="/contact" class="nav-link">
               Contact <span>Us</span>
             </a>
@@ -2436,4 +2436,72 @@
         img: "/assets/word_media_image5.webp",
         details: [
           { icon: "ri-shield-keyhole-line", text: "24/7 SECURITY" },
-         
+          { icon: "ri-flashlight-line", text: "GRID BACKUP" },
+          { icon: "ri-wifi-line", text: "MESH FIBER" },
+        ],
+      },
+      resilience: {
+        img: "/assets/iti-teach.webp",
+        details: [
+          { icon: "ri-signal-tower-line", text: "LOW LATENCY" },
+          { icon: "ri-node-tree", text: "REDUNDANCY" },
+          { icon: "ri-server-line", text: "CLOUD READY" },
+        ],
+      },
+    };
+
+    function commandNexus(target) {
+      // Manage Active State
+      document.querySelectorAll(".nexus-node").forEach((n) => {
+        n.classList.remove("active");
+        if (n.getAttribute("data-nexus") === target) {
+          n.classList.add("active");
+        }
+      });
+
+      const data = commandData[target];
+      if (!data) return;
+
+      const img = document.getElementById("command-img");
+      const detailBox = document.getElementById("command-details");
+
+      // Visual Transition Sequence
+      img.style.opacity = "0";
+      img.style.transform = "scale(0.85) rotate(4deg)";
+
+      setTimeout(() => {
+        // Switch content
+        img.src = data.img;
+
+        data.details.forEach((d, i) => {
+          const icon = document.getElementById(`detail-icon-${i + 1}`);
+          const text = document.getElementById(`detail-text-${i + 1}`);
+          if (icon) icon.className = d.icon;
+          if (text) text.innerText = d.text;
+        });
+
+        // Trigger reveal
+        img.onload = () => {
+          img.style.opacity = "1";
+          img.style.transform = "scale(1.1) rotate(0deg)";
+        };
+
+        // Fallback if cached or immediate
+        if (img.complete) {
+          img.style.opacity = "1";
+          img.style.transform = "scale(1.1) rotate(0deg)";
+        }
+      }, 350);
+    }
+
+    // Initialize display
+    document.addEventListener("DOMContentLoaded", () => {
+      commandNexus("academy");
+    });
+  </script>
+ 
+  <a href="tel:+919423684242" class="sticky-phone-btn" aria-label="Call Us" title="Call Us"><i class="ri-phone-fill"></i></a>
+  <a href="https://wa.me/919423684242" class="sticky-whatsapp-btn" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i></a>
+</body>
+
+</html>

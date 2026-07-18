@@ -847,7 +847,7 @@
               <a href="/careers" class="nav-link active">Careers</a>
             </li>
             <li class="nav-item"><a href="/vision-mission" class="nav-link">Vision &amp; Mission</a></li>
-            <li class="nav-item">
+          <li class="nav-item">
               <a href="/contact" class="nav-link">
                 Contact <span>Us</span>
               </a>
@@ -1350,4 +1350,37 @@
               showNext();
               break;
           }
- 
+        });
+
+        // Touch swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        lightbox.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+          const swipeThreshold = 50;
+          const diff = touchStartX - touchEndX;
+
+          if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+              showNext(); // Swipe left
+            } else {
+              showPrev(); // Swipe right
+            }
+          }
+        }
+      })();
+    </script>
+   
+  <a href="tel:+919423684242" class="sticky-phone-btn" aria-label="Call Us" title="Call Us"><i class="ri-phone-fill"></i></a>
+  <a href="https://wa.me/919423684242" class="sticky-whatsapp-btn" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i></a>
+</body>
+</html>
