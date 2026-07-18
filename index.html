@@ -3019,7 +3019,7 @@ src="https://www.facebook.com/tr?id=800019209837353&ev=PageView&noscript=1"
           <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
           <li class="nav-item"><a href="/careers" class="nav-link">Careers</a></li>
           <li class="nav-item"><a href="/vision-mission" class="nav-link">Vision &amp; Mission</a></li>
-            <li class="nav-item"><a href="/contact" class="nav-link">Contact <span>Us</span></a></li>
+          <li class="nav-item"><a href="/contact" class="nav-link">Contact <span>Us</span></a></li>
         </ul>
         <div class="others-option">
           <div class="d-flex align-items-center">
@@ -3721,7 +3721,7 @@ src="https://www.facebook.com/tr?id=800019209837353&ev=PageView&noscript=1"
 
   <script>
     /* ============================================================
-       1. PREMIUM LOADER
+       1. PREMIUM LOADER  (fail-safe: can never stick permanently)
     ============================================================ */
     (function () {
       var hidden = false;
@@ -3732,11 +3732,11 @@ src="https://www.facebook.com/tr?id=800019209837353&ev=PageView&noscript=1"
         if (loader) loader.classList.add('fade-out');
         document.body.style.overflowY = 'visible';
       }
-      // hide shortly after page load
+      // normal path: shortly after full page load
       window.addEventListener('load', function () {
         setTimeout(hideLoader, 1200);
       });
-      // failsafe: never let the loader stick (video/images may load slowly)
+      // failsafe: hide even if video/images never finish loading
       setTimeout(hideLoader, 4000);
     })();
 
@@ -3797,4 +3797,98 @@ src="https://www.facebook.com/tr?id=800019209837353&ev=PageView&noscript=1"
 
     /* ============================================================
        5. DROPDOWN TOGGLE FIX
-    ==============================================
+    ============================================================ */
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest('#navbar .dropdown-toggle');
+      if (t && t.getAttribute('href') === '#') e.preventDefault();
+    });
+
+    /* ============================================================
+       6. SCROLL REVEAL  –  single IntersectionObserver, no GSAP
+       Only transform + opacity; never triggers layout.
+    ============================================================ */
+    (function () {
+      // Skip if user prefers reduced motion
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('[data-reveal]').forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('[data-reveal]').forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+
+    /* ============================================================
+       7. INSTITUTE LIST – line-draw animation
+    ============================================================ */
+    (function () {
+      var items = document.querySelectorAll('.ei-item');
+      if (!items.length) return;
+
+      var lineObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('line-drawn');
+            lineObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      items.forEach(function (item) { lineObs.observe(item); });
+    })();
+
+    /* ============================================================
+       8. COUNTERS  –  run after loader (2.8s buffer)
+    ============================================================ */
+    (function () {
+      var LOADER_DELAY = 2800;
+      var DURATION = 1800;
+
+      function animateCounter(el) {
+        var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        var startTime = null;
+
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / DURATION, 1);
+          var ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+          el.textContent = Math.round(target * ease);
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target;
+        }
+        requestAnimationFrame(step);
+      }
+
+      setTimeout(function () {
+        var numEls = document.querySelectorAll('.stat-num, .ei-stat__num');
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+
+        numEls.forEach(function (el) { obs.observe(el); });
+      }, LOADER_DELAY);
+    })();
+  </script>
+ 
+  <a href="tel:+919423684242" class="sticky-phone-btn" aria-label="Call Us" title="Call Us"><i class="ri-phone-fill"></i></a>
+  <a href="https://wa.me/919423684242" class="sticky-whatsapp-btn" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i></a>
+</body>
+
+</html>
