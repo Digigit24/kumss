@@ -1836,6 +1836,7 @@
             <li class="nav-item">
               <a href="/careers" class="nav-link">Careers</a>
             </li>
+            <li class="nav-item"><a href="/vision-mission" class="nav-link">Vision &amp; Mission</a></li>
             <li class="nav-item">
               <a href="/contact" class="nav-link">
                 Contact <span>Us</span>
@@ -1956,7 +1957,8 @@
           <li class="responsive-menu-list without-icon">
             <a href="/careers" class="nav-link">Careers</a>
           </li>
-          <li class="responsive-menu-list without-icon">
+          <li class="responsive-menu-list without-icon"><a href="/vision-mission" class="nav-link">Vision &amp; Mission</a></li>
+        <li class="responsive-menu-list without-icon">
             <a href="/contact" class="nav-link active">
               Contact <span>Us</span>
             </a>
@@ -2428,69 +2430,4 @@
 
           const name = document.getElementById("cf-name").value.trim();
           const phone = document.getElementById("cf-phone").value.trim();
-          const email = document.getElementById("cf-email").value.trim();
-          const message = document.getElementById("cf-message").value.trim();
-
-          if (!name || !phone || !email || !message) {
-            showFeedback(
-              "error",
-              "Please fill in all fields before submitting.",
-            );
-            return;
-          }
-
-          if (!validateEmail(email)) {
-            showFeedback("error", "Please enter a valid email address.");
-            return;
-          }
-
-          setLoading(true);
-
-          try {
-            const response = await fetch(CELIYO_ENDPOINT, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify({
-                name: name,
-                phone: phone,
-                email: email,
-                message: message,
-              }),
-            });
-
-            if (response.ok) {
-              showFeedback(
-                "success",
-                "Thank you! Your message has been sent successfully. We'll get back to you soon.",
-              );
-              form.reset();
-            } else {
-              let errorMsg =
-                "Something went wrong. Please try again or contact us directly.";
-              try {
-                const errorData = await response.json();
-                if (errorData && errorData.message) {
-                  errorMsg = errorData.message;
-                }
-              } catch (_) {}
-              showFeedback("error", errorMsg);
-            }
-          } catch (err) {
-            showFeedback(
-              "error",
-              "Network error. Please check your connection and try again.",
-            );
-          } finally {
-            setLoading(false);
-          }
-        });
-      })();
-    </script>
-   
-  <a href="tel:+919423684242" class="sticky-phone-btn" aria-label="Call Us" title="Call Us"><i class="ri-phone-fill"></i></a>
-  <a href="https://wa.me/919423684242" class="sticky-whatsapp-btn" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i></a>
-</body>
-</html>
+          const email = document

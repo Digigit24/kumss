@@ -1346,6 +1346,7 @@
             <li class="nav-item">
               <a href="/careers" class="nav-link">Careers</a>
             </li>
+            <li class="nav-item"><a href="/vision-mission" class="nav-link">Vision &amp; Mission</a></li>
             <li class="nav-item">
               <a href="/contact" class="nav-link">
                 Contact <span>Us</span>
@@ -1466,7 +1467,8 @@
           <li class="responsive-menu-list without-icon">
             <a href="/careers" class="nav-link">Careers</a>
           </li>
-          <li class="responsive-menu-list without-icon">
+          <li class="responsive-menu-list without-icon"><a href="/vision-mission" class="nav-link">Vision &amp; Mission</a></li>
+        <li class="responsive-menu-list without-icon">
             <a href="/contact" class="nav-link">
               Contact <span>Us</span>
             </a>
@@ -2143,52 +2145,4 @@
           const img = card.querySelector("img");
           currentImages = collectVisibleImages();
           currentIndex = currentImages.findIndex((i) => i.src === img.src);
-          if (currentIndex === -1) currentIndex = 0;
-
-          lbImg.src = currentImages[currentIndex].src;
-          lbCaption.textContent = currentImages[currentIndex].alt;
-          lightbox.classList.add("open");
-          document.body.style.overflow = "hidden";
-        };
-
-        window.closeLightbox = function () {
-          lightbox.classList.remove("open");
-          document.body.style.overflow = "";
-        };
-
-        window.navLightbox = function (dir) {
-          currentIndex =
-            (currentIndex + dir + currentImages.length) % currentImages.length;
-          lbImg.style.opacity = "0";
-          lbImg.style.transform = "scale(0.95)";
-          setTimeout(() => {
-            lbImg.src = currentImages[currentIndex].src;
-            lbCaption.textContent = currentImages[currentIndex].alt;
-            lbImg.style.opacity = "1";
-            lbImg.style.transform = "scale(1)";
-          }, 150);
-        };
-
-        // Close on background click
-        lightbox.addEventListener("click", (e) => {
-          if (e.target === lightbox) closeLightbox();
-        });
-
-        // Keyboard nav
-        document.addEventListener("keydown", (e) => {
-          if (!lightbox.classList.contains("open")) return;
-          if (e.key === "Escape") closeLightbox();
-          if (e.key === "ArrowLeft") navLightbox(-1);
-          if (e.key === "ArrowRight") navLightbox(1);
-        });
-
-        // Smooth transition for lightbox image
-        lbImg.style.transition =
-          "opacity 0.2s ease, transform 0.3s cubic-bezier(0.34,1.56,0.64,1)";
-      })();
-    </script>
-   
-  <a href="tel:+919423684242" class="sticky-phone-btn" aria-label="Call Us" title="Call Us"><i class="ri-phone-fill"></i></a>
-  <a href="https://wa.me/919423684242" class="sticky-whatsapp-btn" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i></a>
-</body>
-</html>
+        

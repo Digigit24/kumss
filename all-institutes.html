@@ -612,6 +612,7 @@
             <li class="nav-item">
               <a href="/careers" class="nav-link">Careers</a>
             </li>
+            <li class="nav-item"><a href="/vision-mission" class="nav-link">Vision &amp; Mission</a></li>
             <li class="nav-item">
               <a href="/contact" class="nav-link">
                 Contact <span>Us</span>
@@ -732,7 +733,8 @@
           <li class="responsive-menu-list without-icon">
             <a href="/careers" class="nav-link">Careers</a>
           </li>
-          <li class="responsive-menu-list without-icon">
+          <li class="responsive-menu-list without-icon"><a href="/vision-mission" class="nav-link">Vision &amp; Mission</a></li>
+        <li class="responsive-menu-list without-icon">
             <a href="/contact" class="nav-link">
               Contact <span>Us</span>
             </a>
@@ -1156,25 +1158,4 @@
       // Scroll Progress Bar Logic
       window.onscroll = function () {
         var winScroll =
-          document.body.scrollTop || document.documentElement.scrollTop;
-        var height =
-          document.documentElement.scrollHeight -
-          document.documentElement.clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        var bar = document.getElementById("scrollProgress");
-        if (bar) bar.style.width = scrolled + "%";
-      };
-
-      // Dropdown Toggle Fix
-      document.addEventListener("click", function (e) {
-        const t = e.target.closest("#navbar .dropdown-toggle");
-        if (t && t.getAttribute("href") === "#") {
-          e.preventDefault();
-        }
-      });
-    </script>
-   
-  <a href="tel:+919423684242" class="sticky-phone-btn" aria-label="Call Us" title="Call Us"><i class="ri-phone-fill"></i></a>
-  <a href="https://wa.me/919423684242" class="sticky-whatsapp-btn" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="ri-whatsapp-line"></i></a>
-</body>
-</html>
+          document.body.scrollTop ||
