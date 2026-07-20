@@ -8,6 +8,12 @@ Options -Indexes
 RewriteEngine On
 
 ############################################
+# Redirect old vision-mission URL
+############################################
+
+RewriteRule ^vision-mission(\.html)?/?$ /ajit-career-academy [R=301,L]
+
+############################################
 # 1. Force HTTPS
 ############################################
 
